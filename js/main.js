@@ -543,6 +543,25 @@ class QuoteCarousel {
 
 // Initialize the QuoteJourneyState when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll animations and smooth scrolling first
+    // This ensures they're available for all subsequent content
+    window.revealOnScroll = new RevealOnScroll({
+        threshold: 0.15, // Trigger when 15% of element is visible
+        rootMargin: '0px 0px -50px 0px', // Start revealing 50px before element comes into view
+        selector: '.reveal', // Target elements with .reveal class
+        activeClass: 'active' // Add .active class when revealed
+    });
+    
+    // Initialize SmoothScroll
+    window.smoothScroll = new SmoothScroll({
+        duration: 800, // Animation duration in ms
+        easing: 'easeInOutCubic', // Natural easing
+        offset: 0, // No additional offset
+        selector: 'a[href^="#"]' // All anchor links starting with #
+    });
+    
+    console.log('Scroll animations and smooth scrolling initialized');
+    
     // Initialize the new QuoteJourneyState with quote data
     // Note: quoteData should be loaded from js/quote_data.js before this script
     if (typeof quoteData !== 'undefined') {
@@ -1002,6 +1021,23 @@ function initializeInsightCards() {
     // First populate carousel with quote data
     populateCarouselView();
     
+    // Reinitialize scroll animations after populating carousel
+    // This ensures new dynamically added elements are observed
+    if (window.revealOnScroll) {
+        // Destroy existing observer to avoid duplicate observations
+        window.revealOnScroll.destroy();
+        
+        // Reinitialize with new elements
+        window.revealOnScroll = new RevealOnScroll({
+            threshold: 0.15, // Trigger when 15% of element is visible
+            rootMargin: '0px 0px -50px 0px', // Start revealing 50px before element comes into view
+            selector: '.reveal', // Target elements with .reveal class
+            activeClass: 'active' // Add .active class when revealed
+        });
+        
+        console.log('Reinitialized scroll animations for carousel content');
+    }
+    
     const insightCards = document.querySelectorAll('.insight-card');
     insightCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -1033,8 +1069,11 @@ function populateCarouselView() {
     const quotesToDisplay = window.quoteJourneyState.quoteData.quotes.slice(0, 6);
     
     // Generate HTML for each quote
-    const quoteCardsHTML = quotesToDisplay.map(quote => `
-        <div class="insight-card p-6 text-cream cursor-pointer">
+    const quoteCardsHTML = quotesToDisplay.map((quote, index) => {
+        // Add staggered delay classes for reveal animation
+        const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
+        return `
+        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer">
             <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
             <p class="mt-4 italic opacity-80">"${quote.quote}"</p>
             <div class="insight-reveal-content text-sm">
@@ -1042,7 +1081,8 @@ function populateCarouselView() {
                 <p class="mt-2 text-gold font-bold">Click to hide.</p>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
     
     // Set the HTML content
     carouselView.innerHTML = quoteCardsHTML;
@@ -1349,4 +1389,314 @@ function updateBreadcrumbs() {
             ${breadcrumbsHTML}
         </div>
     `;
+}
+
+// Scroll Reveal with Intersection Observer
+class RevealOnScroll {
+    constructor(options = {}) {
+        // Default configuration
+        this.options = {
+            threshold: options.threshold || 0.15, // 15% of element visible
+            rootMargin: options.rootMargin || '0px 0px -50px 0px', // Trigger slightly before element comes into view
+            selector: options.selector || '.reveal', // Elements to observe
+            activeClass: options.activeClass || 'active' // Class to add when revealed
+        };
+        
+        // Store observer instance
+        this.observer = null;
+        
+        // Initialize
+        this.init();
+    }
+    
+    init() {
+        // Check if Intersection Observer is supported
+        if (!window.IntersectionObserver) {
+            console.warn('Intersection Observer is not supported in this browser');
+            this.fallbackInit();
+            return;
+        }
+        
+        // Get all elements to observe
+        const elementsToReveal = document.querySelectorAll(this.options.selector);
+        if (elementsToReveal.length === 0) {
+            console.log(`No elements found with selector "${this.options.selector}"`);
+            return;
+        }
+        
+        // Create Intersection Observer
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // When element comes into view
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(this.options.activeClass);
+                    
+                    // Optional: Stop observing after element is revealed
+                    // this.observer.unobserve(entry.target);
+                }
+                // Optional: Remove class when element leaves view
+                // else {
+                //     entry.target.classList.remove(this.options.activeClass);
+                // }
+            });
+        }, {
+            threshold: this.options.threshold,
+            rootMargin: this.options.rootMargin
+        });
+        
+        // Start observing each element
+        elementsToReveal.forEach(element => {
+            // Set initial state (will be overridden by CSS)
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            
+            this.observer.observe(element);
+        });
+        
+        console.log(`RevealOnScroll initialized with ${elementsToReveal.length} elements`);
+    }
+    
+    // Fallback for browsers that don't support Intersection Observer
+    fallbackInit() {
+        const elementsToReveal = document.querySelectorAll(this.options.selector);
+        
+        // Simple scroll event listener as fallback
+        const checkScroll = () => {
+            const triggerBottom = window.innerHeight * 0.8; // 80% of viewport height
+            
+            elementsToReveal.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                
+                if (elementTop < triggerBottom) {
+                    element.classList.add(this.options.activeClass);
+                }
+            });
+        };
+        
+        // Initial check
+        checkScroll();
+        
+        // Throttled scroll event
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    checkScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+    
+    // Method to manually reveal an element
+    revealElement(element) {
+        if (element && element.classList.contains(this.options.selector.replace('.', ''))) {
+            element.classList.add(this.options.activeClass);
+        }
+    }
+    
+    // Method to manually hide an element
+    hideElement(element) {
+        if (element && element.classList.contains(this.options.selector.replace('.', ''))) {
+            element.classList.remove(this.options.activeClass);
+        }
+    }
+    
+    // Method to destroy the observer
+    destroy() {
+        if (this.observer) {
+            this.observer.disconnect();
+            this.observer = null;
+        }
+    }
+}
+
+// Smooth Scroll Implementation
+class SmoothScroll {
+    constructor(options = {}) {
+        this.options = {
+            duration: options.duration || 800, // Animation duration in ms
+            easing: options.easing || 'easeInOutCubic', // Easing function
+            offset: options.offset || 0, // Offset from target position
+            selector: options.selector || 'a[href^="#"]' // Links to handle
+        };
+        
+        // Store animation frame ID for cancellation
+        this.animationFrameId = null;
+        
+        // Initialize
+        this.init();
+    }
+    
+    init() {
+        // Check if CSS smooth-scroll is supported
+        const supportsCSSSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+        
+        // Get all navigation links
+        const scrollLinks = document.querySelectorAll(this.options.selector);
+        
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Get the target element from href attribute
+                const href = link.getAttribute('href');
+                
+                // Skip if it's just "#" or empty
+                if (!href || href === '#') {
+                    return;
+                }
+                
+                // Try to find the target element
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Use CSS smooth scroll if supported and no custom easing needed
+                    if (supportsCSSSmoothScroll && this.options.easing === 'easeInOutCubic') {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else {
+                        // Use JavaScript smooth scroll with custom easing
+                        this.smoothScrollTo(targetElement);
+                    }
+                }
+            });
+        });
+        
+        console.log(`SmoothScroll initialized with ${scrollLinks.length} links`);
+    }
+    
+    // JavaScript smooth scroll implementation with custom easing
+    smoothScrollTo(targetElement) {
+        // Cancel any ongoing animation
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+        }
+        
+        const startPosition = window.pageYOffset;
+        const targetPosition = this.getOffsetTop(targetElement) - this.options.offset;
+        const distance = targetPosition - startPosition;
+        const duration = this.options.duration;
+        
+        let startTime = null;
+        
+        // Easing function
+        const easing = {
+            // Linear
+            linear: t => t,
+            
+            // Quadratic
+            easeInQuad: t => t * t,
+            easeOutQuad: t => t * (2 - t),
+            easeInOutQuad: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t,
+            
+            // Cubic
+            easeInCubic: t => t * t * t,
+            easeOutCubic: t => (--t) * t * t + 1,
+            easeInOutCubic: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+            
+            // Exponential
+            easeInExpo: t => t === 0 ? 0 : Math.pow(2, 10 * (t - 1)),
+            easeOutExpo: t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t),
+            easeInOutExpo: t => t === 0 ? 0 : t === 1 ? 1 : t < 0.5 ? Math.pow(2, 20 * t - 10) / 2 : (2 - Math.pow(2, -20 * t + 10)) / 2
+        };
+        
+        // Get the appropriate easing function
+        const easingFunction = easing[this.options.easing] || easing.easeInOutCubic;
+        
+        // Animation loop
+        const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // Calculate the new scroll position
+            const position = startPosition + distance * easingFunction(progress);
+            
+            // Scroll to the new position
+            window.scrollTo(0, position);
+            
+            // Continue animation if not complete
+            if (timeElapsed < duration) {
+                this.animationFrameId = requestAnimationFrame(animation);
+            }
+        };
+        
+        // Start the animation
+        this.animationFrameId = requestAnimationFrame(animation);
+    }
+    
+    // Get the element's offset from the top of the document
+    getOffsetTop(element) {
+        let offsetTop = 0;
+        
+        while (element) {
+            offsetTop += element.offsetTop;
+            element = element.offsetParent;
+        }
+        
+        return offsetTop;
+    }
+    
+    // Method to scroll to a specific position
+    scrollToPosition(position) {
+        // Cancel any ongoing animation
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+        }
+        
+        const startPosition = window.pageYOffset;
+        const distance = position - startPosition;
+        const duration = this.options.duration;
+        
+        let startTime = null;
+        
+        // Animation loop
+        const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const progress = Math.min(timeElapsed / duration, 1);
+            
+            // Simple ease-in-out cubic
+            const easeProgress = progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+            
+            // Calculate the new scroll position
+            const newPosition = startPosition + distance * easeProgress;
+            
+            // Scroll to the new position
+            window.scrollTo(0, newPosition);
+            
+            // Continue animation if not complete
+            if (timeElapsed < duration) {
+                this.animationFrameId = requestAnimationFrame(animation);
+            }
+        };
+        
+        // Start the animation
+        this.animationFrameId = requestAnimationFrame(animation);
+    }
+    
+    // Method to destroy the smooth scroll
+    destroy() {
+        // Cancel any ongoing animation
+        if (this.animationFrameId) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
+        
+        // Remove event listeners
+        const scrollLinks = document.querySelectorAll(this.options.selector);
+        scrollLinks.forEach(link => {
+            // Clone the node to remove all event listeners
+            const newLink = link.cloneNode(true);
+            link.parentNode.replaceChild(newLink, link);
+        });
+    }
 }

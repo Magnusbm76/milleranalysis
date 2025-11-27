@@ -25,6 +25,16 @@
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    
+    /* Section Spacing Standard */
+    --section-padding: var(--spacing-xl); /* 8rem for consistent section spacing */
+    
+    /* Transition Timing */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
 }
 
 /* Apply base styling to the body */
@@ -38,47 +48,114 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Standard Section Spacing */
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section-sm {
+    padding: calc(var(--section-padding) / 2) 0;
+}
+
+.section-lg {
+    padding: calc(var(--section-padding) * 1.5) 0;
+}
+
 /* Typography improvements for headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
     line-height: var(--line-height-tight);
     font-weight: 700;
+    letter-spacing: 0.025em;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.125rem;
 }
 
 /* Typography improvements for paragraphs */
 p {
-    line-height: var(--line-height-relaxed);
-    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.125rem;
 }
 
 /* Primary Button Styles */
-.btn-primary {
+.btn-primary, .btn-convert {
     background-color: var(--color-gold); /* Deep Gold background */
     color: var(--color-oxford-blue); /* Oxford Blue text */
     font-family: var(--font-sans);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem; /* Consistent padding */
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem; /* Consistent border-radius */
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-block;
     text-decoration: none;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px);
+.btn-primary:hover, .btn-convert:hover {
+    transform: translateY(-2px); /* Consistent lift effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     background-color: #FFC700; /* Slightly darker gold on hover */
 }
 
-.btn-primary:active {
+.btn-primary:active, .btn-convert:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:focus, .btn-convert:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Button ripple effect */
+.btn-primary::before, .btn-convert::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:active::before, .btn-convert:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 /* --- 2. Full-Screen Video Background --- */
@@ -115,9 +192,11 @@ p {
 .nav-link {
     position: relative;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     color: var(--color-cream); /* Text starts as Cream (High contrast on dark background) */
-    transition: color 0.3s ease-in-out;
+    transition: all var(--transition-normal);
+    font-weight: 500;
+    letter-spacing: 0.025em;
 }
 
 /* The 'path' (underline/border) element */
@@ -125,12 +204,12 @@ p {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%; 
+    left: 50%;
     transform: translateX(-50%);
     width: 0; /* Start with zero width (invisible) */
-    height: 2px;
+    height: 3px;
     background-color: var(--color-gold); /* The gold path color (the accent) */
-    transition: width 0.3s ease-in-out; 
+    transition: width var(--transition-normal);
 }
 
 /* Hover State: The path appears (grows from the center) */
@@ -140,7 +219,13 @@ p {
 
 /* Hover State: Keep the text color as Cream for high contrast. */
 .nav-link:hover {
-    color: var(--color-cream); 
+    color: var(--color-cream);
+    transform: translateY(-2px);
+}
+
+.nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
 }
 
 /* --- 4. Books Showcase Specific Styles --- */
@@ -150,13 +235,39 @@ p {
     width: 400px; /* Target size */
     height: 600px; /* Target size */
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all var(--transition-normal);
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
 }
 
 /* Book hover effects */
 .book-cover-container:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 33, 71, 0.3);
+}
+
+.book-cover-container:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Add a subtle glow effect on hover */
+.book-cover-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.1), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    pointer-events: none;
+}
+
+.book-cover-container:hover::after {
+    opacity: 1;
 }
 
 /* Placeholder style for the missing cover images */
@@ -180,12 +291,39 @@ p {
     /* Base style for the interactive quote cards */
     background-color: var(--color-oxford-blue);
     border: 1px solid var(--color-gold);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: all var(--transition-normal);
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .insight-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: #FFC700;
+}
+
+.insight-card:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Add a subtle glow effect on hover */
+.insight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+    transform: translateY(-100%);
+    transition: transform var(--transition-normal);
+}
+
+.insight-card:hover::before {
+    transform: translateY(0);
 }
 
 .insight-reveal-content {
@@ -226,29 +364,47 @@ p {
 
 .contact-form {
     /* Base styles for the contact form */
-    transition: all 0.3s ease-in-out;
+    transition: all var(--transition-normal);
+    padding: var(--spacing-lg);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
 }
 
 .form-field {
     /* Individual form field container */
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 .form-input {
     /* Base styles for form inputs */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all var(--transition-normal);
+    padding: 0.75rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.375rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 1rem;
 }
 
 .form-input:focus {
     /* Focus state for form inputs */
+    border-color: var(--color-gold);
     box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .form-input.invalid {
     /* Invalid state for form inputs */
     border-color: #dc3545;
-    background-color: rgba(220, 53, 69, 0.05);
+    background-color: rgba(220, 53, 69, 0.1);
 }
 
 .error-message {
@@ -257,7 +413,7 @@ p {
     font-size: 0.875rem;
     margin-top: 0.5rem;
     display: block;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn var(--transition-normal);
 }
 
 .success-message {
@@ -267,8 +423,8 @@ p {
     color: #155724;
     padding: 1rem;
     border-radius: 0.375rem;
-    margin-top: 1rem;
-    animation: slideDown 0.5s ease-out;
+    margin-top: var(--spacing-md);
+    animation: slideDown var(--transition-slow);
 }
 
 .form-button {
@@ -279,16 +435,18 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem; /* Consistent with other buttons */
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem; /* Consistent with other buttons */
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .form-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px); /* Consistent lift effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     background-color: #FFC700; /* Slightly darker gold on hover */
 }
@@ -298,9 +456,33 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.form-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Button ripple effect */
+.form-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.form-button:active::before {
+    width: 300px;
+    height: 300px;
+}
+
 /* Conditional phone field transition */
 #phoneField {
-    transition: all 0.3s ease-in-out;
+    transition: all var(--transition-normal);
     overflow: hidden;
 }
 
@@ -313,7 +495,7 @@ p {
 #phoneField:not(.hidden) {
     max-height: 200px;
     opacity: 1;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 /* Animation keyframes */
@@ -333,6 +515,85 @@ p {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+/* Utility classes for common effects */
+.hover-lift {
+    transition: transform var(--transition-normal);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+.hover-glow {
+    transition: all var(--transition-normal);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.hover-scale {
+    transition: transform var(--transition-normal);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Interactive link styles */
+.interactive-link {
+    position: relative;
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+.interactive-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width var(--transition-normal);
+}
+
+.interactive-link:hover {
+    color: #FFC700;
+}
+
+.interactive-link:hover::after {
+    width: 100%;
+}
+
+/* Card component styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-gold);
 }
 
 /* --- 8. Network View Specific Styles --- */
@@ -402,20 +663,23 @@ p {
 .view-toggle-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-sm);
 }
 
 .view-toggle-btn {
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     font-family: var(--font-sans);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border: none;
-    border-radius: 0.375rem;
-    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    transition: all var(--transition-normal);
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .view-toggle-btn.active {
@@ -432,11 +696,36 @@ p {
 .view-toggle-btn:not(.active):hover {
     background-color: rgba(255, 215, 0, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .view-toggle-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.view-toggle-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Button ripple effect */
+.view-toggle-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.view-toggle-btn:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 /* Responsive adjustments for network view */
@@ -678,16 +967,16 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem; /* Consistent with other buttons */
     border: none;
-    border-radius: 0.375rem;
+    border-radius: 0.5rem; /* Consistent with other buttons */
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .journey-nav-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px); /* Consistent lift effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     background-color: #FFC700; /* Slightly darker gold on hover */
 }
@@ -695,6 +984,11 @@ p {
 .journey-nav-button:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.journey-nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
 }
 
 .journey-nav-button::before {
@@ -707,12 +1001,12 @@ p {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s;
+    transition: width 0.6s, height 0.6s;
 }
 
 .journey-nav-button:active::before {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
 }
 
 /* Accessibility Focus Styles */
@@ -722,4 +1016,118 @@ p {
 #closeInsightsBtn:focus {
     outline: 2px solid var(--color-gold);
     outline-offset: 2px;
+}
+
+/* --- 10. Scroll Reveal Animations --- */
+
+/* Base styles for reveal elements */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State when element is revealed */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reveal variations for different effects */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-fade-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-fade-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Staggered reveal for lists or grids */
+.reveal-stagger-1 { transition-delay: 0.1s; }
+.reveal-stagger-2 { transition-delay: 0.2s; }
+.reveal-stagger-3 { transition-delay: 0.3s; }
+.reveal-stagger-4 { transition-delay: 0.4s; }
+.reveal-stagger-5 { transition-delay: 0.5s; }
+
+/* Delay classes for sequential animations */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+
+/* Enhanced focus styles for better accessibility during smooth scrolling */
+:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-gold);
+    color: var(--color-oxford-blue);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Performance optimization for scroll animations */
+.reveal {
+    will-change: opacity, transform;
+}
+
+/* Remove will-change after animation completes */
+.reveal.active {
+    will-change: auto;
 }
