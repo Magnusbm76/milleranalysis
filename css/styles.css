@@ -118,3 +118,32 @@ body {
     text-align: center;
     padding: var(--spacing-md);
 }
+
+/* --- 5. Insights Section Specific Styles (Quote Cards) --- */
+
+.insight-card {
+    /* Base style for the interactive quote cards */
+    background-color: var(--color-oxford-blue);
+    border: 1px solid var(--color-gold);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.insight-reveal-content {
+    /* Initially hidden content for the interactive reveal feature */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.insight-card.active .insight-reveal-content {
+    /* Class to be toggled by Vanilla JS */
+    max-height: 500px; /* Large enough to accommodate text */
+    opacity: 1;
+    padding-top: 1rem;
+}
