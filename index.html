@@ -119,7 +119,76 @@
                     Insights from the Labyrinth
                 </h2>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- View Toggle Controls -->
+                <div class="flex justify-center mb-8">
+                    <div class="bg-cream/20 rounded-lg p-1 inline-flex">
+                        <button id="carouselViewBtn" class="px-6 py-2 rounded-md text-cream font-medium transition-colors duration-200 bg-cream/30">
+                            Carousel View
+                        </button>
+                        <button id="networkViewBtn" class="px-6 py-2 rounded-md text-cream font-medium transition-colors duration-200 hover:bg-cream/10">
+                            Network View
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Breadcrumbs Navigation Trail -->
+                <nav id="journeyBreadcrumbs" class="mb-6 px-4" aria-label="Journey navigation">
+                    <ol class="flex items-center space-x-2 text-sm text-cream/80 overflow-x-auto py-2">
+                        <li class="flex items-center">
+                            <span class="text-cream/60">Your Journey:</span>
+                        </li>
+                        <li id="breadcrumbPlaceholder" class="text-cream/60 italic">
+                            No quotes visited yet
+                        </li>
+                        <!-- Breadcrumb items will be dynamically added here -->
+                    </ol>
+                </nav>
+                
+                <!-- Breadcrumbs Container for Dynamic Updates -->
+                <div id="breadcrumbsContainer" class="hidden mb-6 px-4">
+                    <!-- Breadcrumbs will be dynamically inserted here -->
+                </div>
+
+                <!-- Journey Navigation Controls -->
+                <div class="flex justify-center mb-6">
+                    <div class="bg-cream/20 rounded-lg p-2 inline-flex items-center space-x-2">
+                        <button id="journeyBackBtn" class="px-4 py-2 rounded-md text-cream font-medium transition-colors duration-200 hover:bg-cream/10 disabled:opacity-50 disabled:cursor-not-allowed" disabled aria-label="Go back to previous quote">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        
+                        <span id="journeyPositionDisplay" class="px-3 py-1 text-cream font-medium" aria-live="polite">0/0</span>
+                        
+                        <button id="journeyForwardBtn" class="px-4 py-2 rounded-md text-cream font-medium transition-colors duration-200 hover:bg-cream/10 disabled:opacity-50 disabled:cursor-not-allowed" disabled aria-label="Go forward to next quote">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        
+                        <div class="border-l border-cream/30 h-6 mx-1"></div>
+                        
+                        <button id="journeyInsightsBtn" class="px-4 py-2 rounded-md text-cream font-medium transition-colors duration-200 hover:bg-cream/10" aria-label="View journey insights">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </button>
+                        
+                        <button id="journeyResetBtn" class="px-4 py-2 rounded-md text-cream font-medium transition-colors duration-200 hover:bg-red-500/20" aria-label="Reset journey">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Network View Container -->
+                <div id="networkView" class="hidden w-full h-96 md:h-[600px] bg-cream rounded-lg shadow-xl mb-8 relative">
+                    <canvas id="quoteNetworkCanvas" class="w-full h-full rounded-lg"></canvas>
+                </div>
+
+                <!-- Carousel View Container -->
+                <div id="carouselView" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <div class="insight-card p-6 text-cream cursor-pointer">
                         <h3 class="text-xl font-bold text-gold">The Failure of Language</h3>
@@ -148,6 +217,53 @@
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Quote Details Panel -->
+                <div id="detailsPanel" class="hidden bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <!-- Details will be dynamically inserted here -->
+                </div>
+                
+                <aside id="quoteDetailsPanel" class="fixed right-0 top-0 h-full w-80 md:w-96 bg-oxford-blue shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-40 overflow-y-auto" aria-labelledby="detailsPanelTitle">
+                    <div class="sticky top-0 bg-oxford-blue border-b border-gold p-4 flex justify-between items-center">
+                        <h2 id="detailsPanelTitle" class="text-xl font-bold text-cream">Quote Details</h2>
+                        <button id="closeDetailsBtn" class="text-cream hover:text-gold transition-colors duration-200 p-1 rounded" aria-label="Close details panel">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="p-6 text-cream">
+                        <div id="detailsContent" class="space-y-4">
+                            <!-- Quote details will be dynamically inserted here -->
+                            <div class="text-center py-8 text-cream/60">
+                                <p>Select a quote to view details</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Journey Insights Panel -->
+                <div id="journeyInsightsPanel" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" aria-labelledby="insightsPanelTitle">
+                    <div class="bg-cream rounded-lg shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+                        <div class="sticky top-0 bg-cream border-b border-charcoal p-4 flex justify-between items-center">
+                            <h2 id="insightsPanelTitle" class="text-2xl font-bold text-oxford-blue">Journey Insights</h2>
+                            <button id="closeInsightsBtn" class="text-charcoal hover:text-oxford-blue transition-colors duration-200 p-1 rounded" aria-label="Close insights panel">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div id="insightsContent" class="p-6 space-y-6">
+                            <!-- Journey insights will be dynamically inserted here -->
+                            <div class="text-center py-8 text-charcoal/60">
+                                <p>Loading journey insights...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
 
             </div>
@@ -304,6 +420,9 @@
 
     </main>
 
+    <script src="js/quote_data.js"></script>
+    <script src="js/journey-tracker.js"></script>
+    <script src="js/quote-network.js"></script>
     <script src="js/main.js"></script>
     <script src="js/contact.js"></script>
 </body>
