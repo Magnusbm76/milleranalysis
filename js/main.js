@@ -24,6 +24,7 @@ class QuoteJourneyState {
       ui: {
         isJourneyViewActive: false,
         selectedTheme: null,
+        viewMode: 'carousel', // 'carousel' or 'network'
         filterCriteria: {
           themes: [],
           difficulty: null,
@@ -356,6 +357,37 @@ class QuoteJourneyState {
     
     return filteredQuotes;
   }
+  
+  // Set view mode (carousel or network)
+  setViewMode(viewMode) {
+    if (!['carousel', 'network'].includes(viewMode)) {
+      console.error('Invalid view mode:', viewMode);
+      return false;
+    }
+    
+    this.state.ui.viewMode = viewMode;
+    
+    // Notify subscribers
+    this.notifySubscribers('viewModeChanged', {
+      viewMode: viewMode
+    });
+    
+    // Persist state
+    this.persistState();
+    
+    return true;
+  }
+  
+  // Get current view mode
+  getViewMode() {
+    return this.state.ui.viewMode;
+  }
+  
+  // Toggle between carousel and network views
+  toggleViewMode() {
+    const newMode = this.state.ui.viewMode === 'carousel' ? 'network' : 'carousel';
+    return this.setViewMode(newMode);
+  }
 }
 
 /*
@@ -494,12 +526,32 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create global instance of QuoteJourneyState
         window.quoteJourneyState = new QuoteJourneyState(quoteData);
         
+        // Initialize QuoteNetwork if canvas is available
+        const canvas = document.getElementById('quoteNetworkCanvas');
+        if (canvas && typeof QuoteNetwork !== 'undefined') {
+            window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
+            console.log('QuoteNetwork initialized');
+        } else {
+            console.warn('QuoteNetwork could not be initialized - canvas or QuoteNetwork class not available');
+        }
+        
+        // Initialize view switching
+        initializeViewSwitching();
+        
+        // Initialize insight card interactions
+        initializeInsightCards();
+        
         // Log initialization
         console.log('QuoteJourneyState initialized with', quoteData.quotes.length, 'quotes');
         
         // Example subscription to demonstrate state changes
         const unsubscribe = window.quoteJourneyState.subscribe((eventType, data, state) => {
             console.log('State change event:', eventType, data);
+            
+            // Handle view mode changes
+            if (eventType === 'viewModeChanged') {
+                updateViewDisplay(data.viewMode);
+            }
         });
         
         // For debugging: expose unsubscribe function globally
@@ -527,3 +579,87 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.setupNewsletterForm();
     */
 });
+
+/**
+ * Initialize view switching functionality
+ */
+function initializeViewSwitching() {
+    const carouselViewBtn = document.getElementById('carouselViewBtn');
+    const networkViewBtn = document.getElementById('networkViewBtn');
+    
+    if (carouselViewBtn && networkViewBtn) {
+        // Set initial button states based on current view mode
+        updateViewButtons(window.quoteJourneyState.getViewMode());
+        
+        // Add click event listeners
+        carouselViewBtn.addEventListener('click', () => {
+            window.quoteJourneyState.setViewMode('carousel');
+        });
+        
+        networkViewBtn.addEventListener('click', () => {
+            window.quoteJourneyState.setViewMode('network');
+        });
+    }
+}
+
+/**
+ * Update view display based on current mode
+ */
+function updateViewDisplay(viewMode) {
+    const carouselView = document.getElementById('carouselView');
+    const networkView = document.getElementById('networkView');
+    
+    if (carouselView && networkView) {
+        if (viewMode === 'carousel') {
+            carouselView.classList.remove('hidden');
+            networkView.classList.add('hidden');
+        } else {
+            carouselView.classList.add('hidden');
+            networkView.classList.remove('hidden');
+            
+            // Trigger network resize when switching to network view
+            if (window.quoteNetwork) {
+                setTimeout(() => {
+                    window.quoteNetwork.resizeCanvas();
+                }, 100);
+            }
+        }
+    }
+    
+    // Update button states
+    updateViewButtons(viewMode);
+}
+
+/**
+ * Update view button states
+ */
+function updateViewButtons(viewMode) {
+    const carouselViewBtn = document.getElementById('carouselViewBtn');
+    const networkViewBtn = document.getElementById('networkViewBtn');
+    
+    if (carouselViewBtn && networkViewBtn) {
+        if (viewMode === 'carousel') {
+            carouselViewBtn.classList.add('bg-cream/30');
+            carouselViewBtn.classList.remove('hover:bg-cream/10');
+            networkViewBtn.classList.remove('bg-cream/30');
+            networkViewBtn.classList.add('hover:bg-cream/10');
+        } else {
+            networkViewBtn.classList.add('bg-cream/30');
+            networkViewBtn.classList.remove('hover:bg-cream/10');
+            carouselViewBtn.classList.remove('bg-cream/30');
+            carouselViewBtn.classList.add('hover:bg-cream/10');
+        }
+    }
+}
+
+/**
+ * Initialize insight card interactions
+ */
+function initializeInsightCards() {
+    const insightCards = document.querySelectorAll('.insight-card');
+    insightCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    });
+}
