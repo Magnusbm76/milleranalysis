@@ -1,91 +1,120 @@
+/*
+ * Custom Styles for Dr. John F. Miller Promotional Website
+ * Tailwind Utility Classes are primarily used, but this file defines
+ * custom variables, media queries, and bespoke interactions (like navigation).
+ */
+
+/* --- 1. Project-Wide CSS Variables --- */
 :root {
-  --oxford-blue: #002147;
-  --cream: #F5F5DC;
-  --charcoal: #36454F;
-  --gold: #FFD700;
+    /* Color Palette */
+    --color-oxford-blue: #002147; /* Primary Dark (Academic) */
+    --color-cream: #F5F5DC;      /* Primary Light (Base background) */
+    --color-charcoal: #36454F;   /* Secondary Dark */
+    --color-gold: #FFD700;       /* Accent (Subtle Playfulness/Emphasis) */
+
+    /* Typography */
+    --font-serif: 'Times New Roman', Times, serif;
+    --font-sans: 'Arial', sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
 }
 
-/* Tailwind CSS extensions for custom colors */
-@layer utilities {
-  .bg-oxford-blue {
-    background-color: var(--oxford-blue);
-  }
-  .text-oxford-blue {
-    color: var(--oxford-blue);
-  }
-  .bg-cream {
-    background-color: var(--cream);
-  }
-  .text-cream {
-    color: var(--cream);
-  }
-  .bg-charcoal {
-    background-color: var(--charcoal);
-  }
-  .text-charcoal {
-    color: var(--charcoal);
-  }
-  .bg-gold {
-    background-color: var(--gold);
-  }
-  .text-gold {
-    color: var(--gold);
-  }
-}
-
-/* Video background styling */
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translateX(-50%) translateY(-50%);
-  object-fit: cover;
-}
-
-/* Navigation styling */
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: var(--gold);
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--gold);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Add basic styling to use the Inter font and set background */
+/* Apply base styling to the body */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--cream);
-    color: var(--charcoal);
+    font-family: var(--font-serif);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* --- 2. Full-Screen Video Background --- */
+.hero-video-container {
+    /* Position the video fixed to the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -10; /* Keep it behind all content */
+}
+
+.hero-video-container video {
+    /* Ensure the video covers the entire container while maintaining aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* The initial color overlay before the asset loads, matching Oxford Blue */
+    background-color: var(--color-oxford-blue);
+    object-fit: cover; /* Important for covering the space */
+    filter: brightness(0.4) opacity(0.8); /* Subtly dim the video to keep text readable */
+}
+
+/* --- 3. Custom Navigation Hover Effect (Contrast Fixed) --- */
+
+/* Style for the individual navigation links */
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--color-cream); /* Text starts as Cream (High contrast on dark background) */
+    transition: color 0.3s ease-in-out;
+}
+
+/* The 'path' (underline/border) element */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 0; /* Start with zero width (invisible) */
+    height: 2px;
+    background-color: var(--color-gold); /* The gold path color (the accent) */
+    transition: width 0.3s ease-in-out; 
+}
+
+/* Hover State: The path appears (grows from the center) */
+.nav-link:hover::after {
+    width: 100%; /* Grow the path to the full width */
+}
+
+/* Hover State: Keep the text color as Cream for high contrast. */
+.nav-link:hover {
+    color: var(--color-cream); 
+}
+
+/* --- 4. Books Showcase Specific Styles --- */
+
+/* Set a consistent size for the book cover containers */
+.book-cover-container {
+    width: 400px; /* Target size */
+    height: 600px; /* Target size */
+    overflow: hidden;
+    /* Optional: Subtle 3D tilt effect on hover will be added later with JS */
+}
+
+/* Placeholder style for the missing cover images */
+.book-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-oxford-blue);
+    border: 5px solid var(--color-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cream);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: var(--spacing-md);
 }
