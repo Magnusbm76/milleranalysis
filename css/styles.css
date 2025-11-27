@@ -4,6 +4,83 @@
   --charcoal: #36454F;
   --gold: #FFD700;
 }
+
+/* Tailwind CSS extensions for custom colors */
+@layer utilities {
+  .bg-oxford-blue {
+    background-color: var(--oxford-blue);
+  }
+  .text-oxford-blue {
+    color: var(--oxford-blue);
+  }
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .text-cream {
+    color: var(--cream);
+  }
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .text-gold {
+    color: var(--gold);
+  }
+}
+
+/* Video background styling */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+}
+
+/* Navigation styling */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 /* Add basic styling to use the Inter font and set background */
 body {
     font-family: 'Inter', sans-serif;

@@ -10,17 +10,49 @@
 </head>
 <body class="min-h-screen">
 
-    <!-- HERO SECTION PLACEHOLDER -->
+    <!-- Primary Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-oxford-blue/90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-white font-serif text-xl">
+                    <span class="text-gold">J.F.</span> Miller
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="nav-link text-white">Home</a>
+                    <a href="#about" class="nav-link text-white">About</a>
+                    <a href="#books" class="nav-link text-white">Publications</a>
+                    <a href="#insights" class="nav-link text-white">Insights</a>
+                    <a href="#contact" class="nav-link text-white">Contact</a>
+                </div>
+                <!-- Mobile menu button would go here -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
     <header id="hero" class="relative min-h-screen flex items-center justify-center">
-        <!-- Video Background Placeholder (Will be filled with Veo 3.1 asset) -->
-        <div class="video-background absolute inset-0 overflow-hidden bg-gray-900/80">
-            <!-- Actual video tag will go here, using assets/video/hero/hero-loop-v1.mp4 -->
+        <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="assets/video/hero/hero-loop-v1.mp4" type="video/mp4">
+                <source src="assets/video/hero/hero-loop-v1.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
-        <div class="z-10 text-center text-white p-6 bg-oxford-blue/70 rounded-xl shadow-2xl">
-            <h1 class="text-5xl font-serif tracking-wide mb-2">Dr. John F. Miller</h1>
-            <h2 class="text-2xl font-light italic">Psychoanalyst & Author</h2>
-            <p class="mt-4 text-sm tracking-widest">ENTER THE LABYRINTH OF INTERPRETATION</p>
+        <!-- Hero Content -->
+        <div class="z-10 text-center text-white p-8 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-serif tracking-wide mb-4">Dr. John F. Miller</h1>
+            <h2 class="text-2xl md:text-3xl font-light italic mb-6">Psychoanalyst & Author</h2>
+            <p class="text-lg md:text-xl tracking-widest mb-8">ENTER THE LABYRINTH OF INTERPRETATION</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#books" class="px-8 py-3 bg-gold text-oxford-blue font-semibold rounded hover:bg-opacity-90 transition-all">
+                    Explore Publications
+                </a>
+                <a href="#about" class="px-8 py-3 border-2 border-gold text-gold font-semibold rounded hover:bg-gold hover:text-oxford-blue transition-all">
+                    Learn More
+                </a>
+            </div>
         </div>
     </header>
 
