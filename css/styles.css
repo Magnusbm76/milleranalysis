@@ -147,3 +147,122 @@ body {
     opacity: 1;
     padding-top: 1rem;
 }
+
+/* --- 6. About Section Specific Styles --- */
+
+.about-section {
+    /* Subtle scrolling effect for the about section */
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--color-cream));
+    z-index: 1;
+}
+
+/* --- 7. Contact Form Specific Styles --- */
+
+.contact-form {
+    /* Base styles for the contact form */
+    transition: all 0.3s ease-in-out;
+}
+
+.form-field {
+    /* Individual form field container */
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    /* Base styles for form inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    /* Focus state for form inputs */
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.form-input.invalid {
+    /* Invalid state for form inputs */
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+}
+
+.error-message {
+    /* Style for inline error messages */
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.success-message {
+    /* Style for success message */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    animation: slideDown 0.5s ease-out;
+}
+
+.form-button {
+    /* Style for form submission button */
+    transition: all 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:active {
+    transform: translateY(0);
+}
+
+/* Conditional phone field transition */
+#phoneField {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+#phoneField.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+}
+
+#phoneField:not(.hidden) {
+    max-height: 200px;
+    opacity: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
