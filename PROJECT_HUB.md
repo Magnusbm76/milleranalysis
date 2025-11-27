@@ -1,10 +1,10 @@
 # Project Hub: Labyrinth of Interpretation
 
-This is the central hub for the Dr. John F. Miller website project.
+This is the central hub for the Mr. John F. Miller website project.
 
 ## Project Overview
 
-The Labyrinth of Interpretation website showcases the work of Dr. John F. Miller, a distinguished psychoanalyst and semiotician. The site features an atmospheric design with video backgrounds, interactive elements, and comprehensive information about his published works and philosophical approach.
+The Labyrinth of Interpretation website showcases the work of Mr. John F. Miller, a distinguished psychoanalyst and semiotician. The site features an atmospheric design with video backgrounds, interactive elements, and comprehensive information about his published works and philosophical approach.
 
 ## Core Website Structure - COMPLETED ✅
 
@@ -63,7 +63,7 @@ The Labyrinth of Interpretation website showcases the work of Dr. John F. Miller
 
 ## Project Status
 
-The core website structure is now complete with all six main sections implemented. The site provides a comprehensive showcase of Dr. Miller's work with professional design and user-friendly interactions.
+The core website structure is now complete with all six main sections implemented. The site provides a comprehensive showcase of Mr. Miller's work with professional design and user-friendly interactions.
 
 ## Codebase Cleansing - COMPLETED ✅ (November 27, 2025)
 
@@ -90,3 +90,11 @@ Future enhancements may include:
 - Speaking events calendar
 - Academic resources and downloads
 - Enhanced mobile experience
+
+## AGENT CONTEXT DIRECTIVES
+
+### CRITICAL DIRECTIVE
+All agent-generated prose and reports must strictly use **"Mr. John F. Miller"** as the client's official title. Any deviation (Dr., Prof., etc.) requires immediate STOP PROTOCOL and correction.
+
+### RATIONALE
+This directive ensures brand consistency and maintains the professional academic identity established in the client profile. All future content generation must reference this standard.
