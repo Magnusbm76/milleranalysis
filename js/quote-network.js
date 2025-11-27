@@ -159,13 +159,47 @@ class QuoteNetwork {
     // Build network data structures
     this.buildNetwork();
     
-    // Start layout simulation
-    this.startAnimation();
-    
     // Subscribe to journey state changes
     this.subscribeToJourneyState();
     
-    console.log('QuoteNetwork initialized with', this.nodes.length, 'nodes and', this.connections.length, 'connections');
+    // Check if canvas is visible and has valid dimensions
+    const isVisible = this.canvas.offsetWidth > 0 && this.canvas.offsetHeight > 0;
+    
+    if (isVisible) {
+      // Start animation immediately if canvas is visible
+      this.startAnimation();
+      console.log('QuoteNetwork initialized with', this.nodes.length, 'nodes and', this.connections.length, 'connections');
+      console.log('Canvas dimensions:', this.config.width, 'x', this.config.height);
+    } else {
+      // Defer animation start until canvas becomes visible
+      console.log('QuoteNetwork initialized but canvas not visible, deferring animation start');
+      console.log('Canvas dimensions will be set when view becomes active');
+      
+      // Set up a one-time event listener to detect when network view becomes visible
+      const checkVisibility = () => {
+        if (this.canvas.offsetWidth > 0 && this.canvas.offsetHeight > 0) {
+          // Canvas is now visible, resize and start animation
+          this.resizeCanvas();
+          this.startAnimation();
+          console.log('QuoteNetwork animation started after view became visible');
+          console.log('Canvas dimensions:', this.config.width, 'x', this.config.height);
+          
+          // Remove the event listener
+          document.removeEventListener('viewChanged', checkVisibility);
+        }
+      };
+      
+      // Listen for custom view change event
+      document.addEventListener('viewChanged', checkVisibility);
+      
+      // Also check periodically as fallback
+      const visibilityCheck = setInterval(() => {
+        if (this.canvas.offsetWidth > 0 && this.canvas.offsetHeight > 0) {
+          clearInterval(visibilityCheck);
+          checkVisibility();
+        }
+      }, 500);
+    }
   }
   
   /**
@@ -189,6 +223,47 @@ class QuoteNetwork {
     const container = this.canvas.parentElement;
     if (!container) return;
     
+    // Make sure container is visible and has dimensions
+    if (container.offsetWidth === 0 || container.offsetHeight === 0) {
+      // Container might be hidden, try to show it briefly
+      const originalDisplay = container.style.display;
+      const originalVisibility = container.style.visibility;
+      const originalOpacity = container.style.opacity;
+      
+      // Make container visible but keep it hidden from user
+      container.style.display = 'block';
+      container.style.visibility = 'hidden';
+      container.style.opacity = '0';
+      container.style.position = 'absolute'; // Take it out of flow to get proper dimensions
+      container.style.left = '-9999px'; // Move off screen
+      
+      setTimeout(() => {
+        this.performResize(container);
+        // Restore original positioning and display
+        container.style.position = '';
+        container.style.left = '';
+        if (originalDisplay !== undefined) {
+          container.style.display = originalDisplay;
+        }
+        if (originalVisibility !== undefined) {
+          container.style.visibility = originalVisibility;
+        }
+        if (originalOpacity !== undefined) {
+          container.style.opacity = originalOpacity;
+        }
+        // Trigger a render after restoring
+        this.needsRedraw = true;
+        this.render();
+      }, 100);
+    } else {
+      this.performResize(container);
+    }
+  }
+  
+  /**
+   * Perform the actual canvas resize
+   */
+  performResize(container) {
     const rect = container.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
     
@@ -209,6 +284,8 @@ class QuoteNetwork {
     
     // Mark for redraw
     this.needsRedraw = true;
+    
+    console.log('Canvas resized to:', rect.width, 'x', rect.height);
   }
   
   /**
@@ -235,11 +312,37 @@ class QuoteNetwork {
    * Build network data structures from quote data
    */
   buildNetwork() {
+    // Ensure config has width and height before building network
+    if (!this.config.width || !this.config.height) {
+      const container = this.canvas.parentElement;
+      if (container) {
+        this.config.width = container.offsetWidth || 800;
+        this.config.height = container.offsetHeight || 600;
+      } else {
+        this.config.width = 800;
+        this.config.height = 600;
+      }
+    }
+    
+    console.log('Building network with dimensions:', this.config.width, 'x', this.config.height);
+    
     // Create nodes from quotes
     this.nodes = this.quoteData.quotes.map(quote => {
       // Calculate initial position
-      const x = (quote.position?.x || Math.random()) * this.config.width;
-      const y = (quote.position?.y || Math.random()) * this.config.height;
+      let x, y;
+      if (quote.position?.x !== undefined && quote.position?.y !== undefined) {
+        // Use provided position as percentage of canvas dimensions
+        x = quote.position.x * this.config.width;
+        y = quote.position.y * this.config.height;
+      } else {
+        // Random position within canvas bounds
+        x = Math.random() * (this.config.width - 100) + 50;
+        y = Math.random() * (this.config.height - 100) + 50;
+      }
+      
+      // Handle node type - map 'node' type to 'standard' for sizing
+      const nodeType = quote.visual?.type || 'standard';
+      const normalizedType = nodeType === 'node' ? 'standard' : nodeType;
       
       return {
         id: quote.id,
@@ -249,39 +352,75 @@ class QuoteNetwork {
         vx: 0,
         vy: 0,
         fx: quote.position?.fixed ? x : null,
+
         fy: quote.position?.fixed ? y : null,
-        radius: this.config.nodeSizes[quote.visual?.type || 'standard'],
+        radius: this.config.nodeSizes[normalizedType] || this.config.nodeSizes.standard,
         color: quote.visual?.color || this.config.colors.nodeBorder,
-        type: quote.visual?.type || 'standard',
+        type: normalizedType,
         isFixed: quote.position?.fixed || false
       };
     });
     
-    // Create connections from quote relationships
+    // Create connections - use both quote relationships and standalone connections
     this.connections = [];
+    
+    // First, add connections from quote relationships
     this.quoteData.quotes.forEach(quote => {
       if (quote.relatedQuotes) {
         quote.relatedQuotes.forEach(related => {
           // Check if connection already exists
-          const exists = this.connections.some(conn => 
+          const exists = this.connections.some(conn =>
             (conn.from === quote.id && conn.to === related.id) ||
             (conn.from === related.id && conn.to === quote.id)
           );
           
           if (!exists) {
+            // Validate connection type exists in config
+            const connectionType = related.relationship || 'expands';
+            const visualStyle = related.visual || this.config.connectionStyles[connectionType] || this.config.connectionStyles.expands;
+            
             this.connections.push({
               from: quote.id,
               to: related.id,
-              type: related.relationship,
+              type: connectionType,
               strength: related.strength || 0.5,
-              label: related.label,
+              label: related.label || '',
               bidirectional: true,
-              visual: related.visual || this.config.connectionStyles[related.relationship]
+              visual: visualStyle
             });
           }
         });
       }
     });
+    
+    // Then, add any standalone connections from data structure
+    if (this.quoteData.connections && Array.isArray(this.quoteData.connections)) {
+      this.quoteData.connections.forEach(conn => {
+        // Check if connection already exists
+        const exists = this.connections.some(existingConn =>
+          (existingConn.from === conn.from && existingConn.to === conn.to) ||
+          (existingConn.from === conn.to && existingConn.to === conn.from)
+        );
+        
+        if (!exists) {
+          // Validate connection type exists in config
+          const connectionType = conn.type || 'expands';
+          const visualStyle = conn.visual || this.config.connectionStyles[connectionType] || this.config.connectionStyles.expands;
+          
+          this.connections.push({
+            from: conn.from,
+            to: conn.to,
+            type: connectionType,
+            strength: conn.strength || 0.5,
+            label: conn.label || '',
+            bidirectional: conn.bidirectional !== undefined ? conn.bidirectional : true,
+            visual: visualStyle
+          });
+        }
+      });
+    }
+    
+    console.log('Created', this.nodes.length, 'nodes and', this.connections.length, 'connections');
     
     // Create lookup maps for performance
     this.nodeMap = new Map(this.nodes.map(node => [node.id, node]));
@@ -313,6 +452,29 @@ class QuoteNetwork {
           break;
       }
     });
+    
+    // Also subscribe to JourneyTracker events if available
+    if (typeof window !== 'undefined' && window.journeyTracker) {
+      window.journeyTracker.addEventListener('journeyEntryAdded', (data) => {
+        this.highlightJourneyPath(data.history);
+      });
+      
+      window.journeyTracker.addEventListener('journeyNavigatedBack', (data) => {
+        this.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
+      });
+      
+      window.journeyTracker.addEventListener('journeyNavigatedForward', (data) => {
+        this.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
+      });
+      
+      window.journeyTracker.addEventListener('journeyReset', () => {
+        this.highlightJourneyPath([]);
+      });
+      
+      window.journeyTracker.addEventListener('journeyNavigatedToPosition', () => {
+        this.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
+      });
+    }
   }
   
   /**
@@ -391,6 +553,9 @@ class QuoteNetwork {
     
     // Update node positions
     this.updateNodePositions();
+    
+    // Check if simulation should stop
+    this.checkSimulationStability();
   }
   
   /**
@@ -403,10 +568,14 @@ class QuoteNetwork {
     const dy = node2.y - node1.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
     
-    if (distance > 0 && distance < 200) {
-      const force = this.config.physics.repulsionForce / (distance * distance);
-      const fx = (dx / distance) * force;
-      const fy = (dy / distance) * force;
+    // Prevent division by zero and apply minimum distance
+    const minDistance = node1.radius + node2.radius + 5;
+    const effectiveDistance = Math.max(distance, minDistance);
+    
+    if (effectiveDistance > 0) {
+      const force = this.config.physics.repulsionForce / (effectiveDistance * effectiveDistance);
+      const fx = (dx / effectiveDistance) * force;
+      const fy = (dy / effectiveDistance) * force;
       
       if (!node1.isFixed) {
         node1.vx -= fx;
@@ -469,6 +638,9 @@ class QuoteNetwork {
    * Update node positions based on velocities
    */
   updateNodePositions() {
+    let totalVelocity = 0;
+    let movingNodes = 0;
+    
     for (const node of this.nodes) {
       if (node.isFixed) continue;
       
@@ -498,6 +670,24 @@ class QuoteNetwork {
         node.vx = 0;
         node.vy = 0;
       }
+      
+      // Track total velocity for stability check
+      totalVelocity += Math.sqrt(node.vx * node.vx + node.vy * node.vy);
+      movingNodes++;
+    }
+    
+    // Store average velocity for stability checking
+    this.averageVelocity = movingNodes > 0 ? totalVelocity / movingNodes : 0;
+  }
+  
+  /**
+   * Check if simulation has reached stability and should stop
+   */
+  checkSimulationStability() {
+    // Stop simulation if average velocity is very low
+    if (this.averageVelocity < this.config.physics.minVelocity) {
+      this.simulationRunning = false;
+      console.log('Network layout stabilized, stopping simulation');
     }
   }
   
@@ -506,6 +696,12 @@ class QuoteNetwork {
    */
   render() {
     if (!this.needsRedraw && !this.isAnimating) return;
+    
+    // Ensure canvas has valid dimensions before rendering
+    if (!this.config.width || !this.config.height || this.config.width <= 0 || this.config.height <= 0) {
+      console.warn('Canvas has invalid dimensions, skipping render');
+      return;
+    }
     
     // Clear canvas
     this.ctx.clearRect(0, 0, this.config.width, this.config.height);
@@ -540,22 +736,27 @@ class QuoteNetwork {
   renderConnection(connection, fromNode, toNode) {
     const style = this.config.connectionStyles[connection.type] || connection.visual;
     const isHighlighted = this.hoveredConnection === connection;
+    const isInJourneyPath = connection.isInJourneyPath || false;
     
     // Set line style
-    this.ctx.strokeStyle = style.color;
-    this.ctx.globalAlpha = isHighlighted ? 1.0 : style.opacity;
-    this.ctx.lineWidth = style.width * (isHighlighted ? 1.5 : 1.0);
+    this.ctx.strokeStyle = isInJourneyPath ? '#FFD700' : style.color;
+    this.ctx.globalAlpha = isHighlighted ? 1.0 : (isInJourneyPath ? 1.0 : style.opacity);
+    this.ctx.lineWidth = style.width * (isHighlighted ? 1.5 : (isInJourneyPath ? 1.5 : 1.0));
     
     // Set line dash pattern
-    switch (style.style) {
-      case 'dashed':
-        this.ctx.setLineDash([10, 5]);
-        break;
-      case 'dotted':
-        this.ctx.setLineDash([2, 3]);
-        break;
-      default:
-        this.ctx.setLineDash([]);
+    if (isInJourneyPath) {
+      this.ctx.setLineDash([]); // Solid line for journey path
+    } else {
+      switch (style.style) {
+        case 'dashed':
+          this.ctx.setLineDash([10, 5]);
+          break;
+        case 'dotted':
+          this.ctx.setLineDash([2, 3]);
+          break;
+        default:
+          this.ctx.setLineDash([]);
+      }
     }
     
     // Draw connection line
@@ -589,6 +790,23 @@ class QuoteNetwork {
   renderNode(node) {
     const isHovered = this.hoveredNode === node;
     const isSelected = this.selectedNode === node;
+    const isInJourneyPath = node.isInJourneyPath || false;
+    const isCurrentPosition = node.isCurrentPosition || false;
+    
+    // Draw journey path highlight
+    if (isInJourneyPath) {
+      const gradient = this.ctx.createRadialGradient(
+        node.x, node.y, 0,
+        node.x, node.y, node.radius * 2
+      );
+      gradient.addColorStop(0, isCurrentPosition ? 'rgba(255, 215, 0, 0.6)' : 'rgba(255, 215, 0, 0.3)');
+      gradient.addColorStop(1, 'transparent');
+      
+      this.ctx.fillStyle = gradient;
+      this.ctx.beginPath();
+      this.ctx.arc(node.x, node.y, node.radius * 2, 0, Math.PI * 2);
+      this.ctx.fill();
+    }
     
     // Draw glow effect for hovered or selected nodes
     if (isHovered || isSelected) {
@@ -612,10 +830,10 @@ class QuoteNetwork {
     this.ctx.fill();
     
     // Draw border
-    this.ctx.strokeStyle = isSelected ? 
-      this.config.colors.selectedBorder : 
-      this.config.colors.nodeBorder;
-    this.ctx.lineWidth = isSelected ? 3 : 2;
+    this.ctx.strokeStyle = isSelected ?
+      this.config.colors.selectedBorder :
+      (isCurrentPosition ? '#FF6B35' : (isInJourneyPath ? '#FFD700' : this.config.colors.nodeBorder));
+    this.ctx.lineWidth = isSelected ? 4 : (isCurrentPosition ? 3 : (isInJourneyPath ? 3 : 2));
     this.ctx.stroke();
     
     // Draw selection indicator
@@ -627,6 +845,26 @@ class QuoteNetwork {
       this.ctx.arc(node.x, node.y, node.radius + 5, 0, Math.PI * 2);
       this.ctx.stroke();
       this.ctx.setLineDash([]);
+    }
+    
+    // Draw current position indicator
+    if (isCurrentPosition) {
+      this.ctx.strokeStyle = '#FF6B35';
+      this.ctx.lineWidth = 2;
+      this.ctx.setLineDash([3, 3]);
+      this.ctx.beginPath();
+      this.ctx.arc(node.x, node.y, node.radius + 8, 0, Math.PI * 2);
+      this.ctx.stroke();
+      this.ctx.setLineDash([]);
+    }
+    
+    // Draw journey position indicator if applicable
+    if (isInJourneyPath && node.journeyPosition >= 0) {
+      this.ctx.fillStyle = isCurrentPosition ? '#FF6B35' : '#FFD700';
+      this.ctx.font = 'bold 12px Arial';
+      this.ctx.textAlign = 'center';
+      this.ctx.textBaseline = 'middle';
+      this.ctx.fillText(node.journeyPosition + 1, node.x, node.y - node.radius - 10);
     }
     
     // Draw node type indicator
@@ -904,14 +1142,26 @@ class QuoteNetwork {
    */
   selectNode(nodeId) {
     const node = this.nodeMap.get(nodeId);
-    if (!node) return;
+    if (!node) {
+      console.warn('Node not found for ID:', nodeId);
+      return;
+    }
     
     // Update selected node
     this.selectedNode = node;
     this.needsRedraw = true;
     
-    // Update journey state
-    this.journeyState.setCurrentQuote(nodeId);
+    // Update journey state (this will trigger journey tracker automatically)
+    if (this.journeyState) {
+      this.journeyState.setCurrentQuote(nodeId);
+    } else {
+      console.warn('JourneyState not available');
+    }
+    
+    // Add to JourneyTracker if available
+    if (typeof window !== 'undefined' && window.journeyTracker) {
+      window.journeyTracker.addToJourney(nodeId);
+    }
     
     // Emit selection event
     this.emitEvent('nodeSelected', {
@@ -919,6 +1169,9 @@ class QuoteNetwork {
       node: node,
       quote: node.quote
     });
+    
+    // Force a render to show selection immediately
+    this.render();
   }
   
   /**
@@ -1002,6 +1255,53 @@ class QuoteNetwork {
     // Implementation for highlighting the journey path
     // This would visually emphasize the nodes and connections
     // that represent the user's journey through the quotes
+    
+    // Reset all node highlights
+    this.nodes.forEach(node => {
+      node.isInJourneyPath = false;
+      node.journeyPosition = -1;
+      node.isCurrentPosition = false;
+    });
+    
+    // Reset all connection highlights
+    this.connections.forEach(conn => {
+      conn.isInJourneyPath = false;
+    });
+    
+    // Get current position from JourneyTracker if available
+    let currentPosition = -1;
+    if (typeof window !== 'undefined' && window.journeyTracker) {
+      const pos = window.journeyTracker.getCurrentPosition();
+      currentPosition = pos.position - 1; // Convert to 0-based index
+    }
+    
+    // Highlight nodes in journey history
+    if (journeyHistory && journeyHistory.length > 0) {
+      journeyHistory.forEach((entry, index) => {
+        const node = this.nodeMap.get(entry.quoteId);
+        if (node) {
+          node.isInJourneyPath = true;
+          node.journeyPosition = index;
+          node.isCurrentPosition = (index === currentPosition);
+        }
+      });
+      
+      // Highlight connections between consecutive journey entries
+      for (let i = 0; i < journeyHistory.length - 1; i++) {
+        const fromId = journeyHistory[i].quoteId;
+        const toId = journeyHistory[i + 1].quoteId;
+        
+        // Find connection between these nodes
+        const connection = this.connections.find(conn =>
+          (conn.from === fromId && conn.to === toId) ||
+          (conn.from === toId && conn.to === fromId)
+        );
+        
+        if (connection) {
+          connection.isInJourneyPath = true;
+        }
+      }
+    }
     
     this.needsRedraw = true;
   }

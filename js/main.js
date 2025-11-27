@@ -43,13 +43,13 @@ class QuoteJourneyState {
     // State subscribers
     this.subscribers = [];
     
-    // Initialize with first quote if available
-    if (this.quoteData.quotes.length > 0) {
+    // Try to load persisted state first
+    const hasPersistedState = this.loadState();
+    
+    // Only initialize with first quote if no persisted state
+    if (!hasPersistedState && this.quoteData.quotes.length > 0) {
       this.setCurrentQuote(this.quoteData.quotes[0].id);
     }
-    
-    // Try to load persisted state
-    this.loadState();
   }
   
   // Get current quote object
@@ -569,15 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('JourneyTracker could not be initialized - JourneyTracker class not available');
         }
         
-        // Initialize QuoteNetwork if canvas is available
-        const canvas = document.getElementById('quoteNetworkCanvas');
-        if (canvas && typeof QuoteNetwork !== 'undefined') {
-            window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
-            console.log('QuoteNetwork initialized');
-        } else {
-            console.warn('QuoteNetwork could not be initialized - canvas or QuoteNetwork class not available');
-        }
-        
         // Initialize journey navigation controls
         initializeJourneyNavigation();
         
@@ -599,13 +590,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set up QuoteJourneyState event listeners
         setupQuoteJourneyStateEvents();
         
-        // For debugging: expose unsubscribe function globally
-        window.unsubscribeFromQuoteJourney = () => {
-            // Implementation would depend on actual subscription system
-        };
-        
-        // Populate carousel view with quote data after a short delay to ensure DOM is ready
+        // Initialize QuoteNetwork after a delay to ensure DOM elements are ready
         setTimeout(() => {
+            const canvas = document.getElementById('quoteNetworkCanvas');
+            if (canvas && typeof QuoteNetwork !== 'undefined') {
+                window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
+                console.log('QuoteNetwork initialized');
+            } else {
+                console.warn('QuoteNetwork could not be initialized - canvas or QuoteNetwork class not available');
+                if (!canvas) {
+                    console.error('Canvas element with ID "quoteNetworkCanvas" not found');
+                }
+                if (typeof QuoteNetwork === 'undefined') {
+                    console.error('QuoteNetwork class is not defined');
+                }
+            }
+            
+            // Populate carousel view with quote data after a short delay to ensure DOM is ready
             if (typeof populateCarouselView === 'function') {
                 populateCarouselView();
             }
@@ -651,10 +652,12 @@ function initializeViewSwitching() {
         // Add click event listeners
         carouselViewBtn.addEventListener('click', () => {
             window.quoteJourneyState.setViewMode('carousel');
+            updateViewDisplay('carousel'); // Immediately update display
         });
         
         networkViewBtn.addEventListener('click', () => {
             window.quoteJourneyState.setViewMode('network');
+            updateViewDisplay('network'); // Immediately update display
         });
     }
 }
@@ -674,15 +677,30 @@ function updateViewDisplay(viewMode) {
             carouselView.classList.add('hidden');
             networkView.classList.remove('hidden');
             
+            // Emit custom event to notify QuoteNetwork that view is now visible
+            document.dispatchEvent(new CustomEvent('viewChanged', {
+                detail: { viewMode: 'network' }
+            }));
+            
             // Trigger network resize when switching to network view
             if (window.quoteNetwork) {
+                // Make sure the canvas container is visible before resizing
+                networkView.style.display = 'block';
+                
                 setTimeout(() => {
                     window.quoteNetwork.resizeCanvas();
                     // Sync journey path with network view
                     if (window.journeyTracker) {
                         window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
                     }
-                }, 100);
+                }, 300);
+            } else {
+                // Try to initialize QuoteNetwork if it failed earlier
+                const canvas = document.getElementById('quoteNetworkCanvas');
+                if (canvas && typeof QuoteNetwork !== 'undefined' && window.quoteJourneyState) {
+                    window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
+                    console.log('QuoteNetwork initialized on view switch');
+                }
             }
         }
     }
@@ -698,15 +716,25 @@ function updateViewDisplay(viewMode) {
  * Synchronize state across all systems
  */
 function synchronizeState() {
-    if (!window.quoteJourneyState || !window.journeyTracker) return;
+    if (!window.quoteJourneyState) return;
     
-    // Ensure current quote is synchronized
+    // Get current quote ID from QuoteJourneyState
     const currentQuoteId = window.quoteJourneyState.state.currentQuoteId;
-    if (currentQuoteId && window.journeyTracker.journeyHistory.length > 0) {
-        const lastJourneyEntry = window.journeyTracker.journeyHistory[window.journeyTracker.currentIndex];
-        if (lastJourneyEntry && lastJourneyEntry.quoteId !== currentQuoteId) {
-            // Sync JourneyTracker with QuoteJourneyState
+    
+    // Sync with JourneyTracker if available
+    if (window.journeyTracker) {
+        // Check if current quote is in JourneyTracker history
+        const isInHistory = window.journeyTracker.journeyHistory.some(entry => entry.quoteId === currentQuoteId);
+        
+        if (!isInHistory && currentQuoteId) {
+            // Add current quote to JourneyTracker if not already there
             window.journeyTracker.addToJourney(currentQuoteId);
+        } else if (isInHistory) {
+            // Update JourneyTracker current position to match QuoteJourneyState
+            const currentIndex = window.journeyTracker.journeyHistory.findIndex(entry => entry.quoteId === currentQuoteId);
+            if (currentIndex !== -1 && currentIndex !== window.journeyTracker.currentIndex) {
+                window.journeyTracker.currentIndex = currentIndex;
+            }
         }
     }
     
@@ -849,82 +877,100 @@ function updateNavigationButtons() {
  * @param {Object} report - Journey report object
  */
 function displayJourneyInsights(insights, report) {
-    // Try to find an existing insights container
-    let insightsContainer = document.getElementById('journeyInsightsContainer');
+    // Use the existing journey insights panel from HTML
+    const journeyInsightsPanel = document.getElementById('journeyInsightsPanel');
+    const insightsContent = document.getElementById('insightsContent');
+    const closeInsightsBtn = document.getElementById('closeInsightsBtn');
     
-    // If not found, create one
-    if (!insightsContainer) {
-        insightsContainer = document.createElement('div');
-        insightsContainer.id = 'journeyInsightsContainer';
-        insightsContainer.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4';
-        document.body.appendChild(insightsContainer);
+    if (!journeyInsightsPanel || !insightsContent) {
+        console.error('Journey insights panel not found in HTML');
+        return;
+    }
+    
+    // Add close button functionality if not already added
+    if (closeInsightsBtn) {
+        // Remove existing listeners to avoid duplicates
+        const newCloseBtn = closeInsightsBtn.cloneNode(true);
+        closeInsightsBtn.parentNode.replaceChild(newCloseBtn, closeInsightsBtn);
         
-        // Add click outside to close
-        insightsContainer.addEventListener('click', (e) => {
-            if (e.target === insightsContainer) {
-                insightsContainer.remove();
-            }
+        newCloseBtn.addEventListener('click', () => {
+            journeyInsightsPanel.classList.add('hidden');
         });
     }
     
     // Generate insights HTML
     const insightsHTML = `
-        <div class="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-800">Journey Insights</h2>
-                <button id="closeInsights" class="text-gray-500 hover:text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
+        <div class="insights-section">
+            <h3 class="insights-title">Summary</h3>
+            <div class="insights-metric">
+                <span class="insights-label">Total quotes visited:</span>
+                <span class="insights-value">${insights.totalQuotesVisited}</span>
             </div>
-            
-            <div class="space-y-4">
-                <div class="border-b pb-4">
-                    <h3 class="font-semibold text-lg mb-2">Summary</h3>
-                    <p>Total quotes visited: <span class="font-medium">${insights.totalQuotesVisited}</span></p>
-                    <p>Unique quotes visited: <span class="font-medium">${insights.uniqueQuotesVisited}</span></p>
-                    <p>Journey duration: <span class="font-medium">${Math.round(insights.journeyDuration / 1000)} seconds</span></p>
-                    <p>Current position: <span class="font-medium">${report.summary.journeyProgress}</span></p>
-                </div>
-                
-                <div class="border-b pb-4">
-                    <h3 class="font-semibold text-lg mb-2">Most Visited Themes</h3>
-                    ${insights.mostVisitedThemes.length > 0 ?
-                        insights.mostVisitedThemes.map(theme =>
-                            `<p>${theme.name}: <span class="font-medium">${theme.count} visits (${theme.percentage}%)</span></p>`
-                        ).join('') :
-                        '<p>No themes visited yet</p>'
-                    }
-                </div>
-                
-                <div class="border-b pb-4">
-                    <h3 class="font-semibold text-lg mb-2">Navigation Patterns</h3>
-                    <p>Back navigations: <span class="font-medium">${insights.navigationPatterns.backNavigationCount}</span></p>
-                    <p>Forward navigations: <span class="font-medium">${insights.navigationPatterns.forwardNavigationCount}</span></p>
-                    <p>Circular patterns detected: <span class="font-medium">${insights.navigationPatterns.circularPatterns.length}</span></p>
-                </div>
-                
-                <div>
-                    <h3 class="font-semibold text-lg mb-2">Efficiency Metrics</h3>
-                    <p>Exploration rate: <span class="font-medium">${Math.round(insights.efficiencyMetrics.explorationRate * 100)}%</span></p>
-                    <p>Revisit rate: <span class="font-medium">${Math.round(insights.efficiencyMetrics.revisitRate * 100)}%</span></p>
-                    <p>Theme consistency: <span class="font-medium">${Math.round(insights.efficiencyMetrics.themeConsistency * 100)}%</span></p>
-                </div>
+            <div class="insights-metric">
+                <span class="insights-label">Unique quotes visited:</span>
+                <span class="insights-value">${insights.uniqueQuotesVisited}</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Journey duration:</span>
+                <span class="insights-value">${Math.round(insights.journeyDuration / 1000)} seconds</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Current position:</span>
+                <span class="insights-value">${report.summary.journeyProgress}</span>
+            </div>
+        </div>
+        
+        <div class="insights-section">
+            <h3 class="insights-title">Most Visited Themes</h3>
+            ${insights.mostVisitedThemes.length > 0 ?
+                insights.mostVisitedThemes.map(theme =>
+                    `<div class="insights-metric">
+                        <span class="insights-label">${theme.name}:</span>
+                        <span class="insights-value">${theme.count} visits (${theme.percentage}%)</span>
+                    </div>`
+                ).join('') :
+                '<p class="text-charcoal/60">No themes visited yet</p>'
+            }
+        </div>
+        
+        <div class="insights-section">
+            <h3 class="insights-title">Navigation Patterns</h3>
+            <div class="insights-metric">
+                <span class="insights-label">Back navigations:</span>
+                <span class="insights-value">${insights.navigationPatterns.backNavigationCount}</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Forward navigations:</span>
+                <span class="insights-value">${insights.navigationPatterns.forwardNavigationCount}</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Circular patterns detected:</span>
+                <span class="insights-value">${insights.navigationPatterns.circularPatterns.length}</span>
+            </div>
+        </div>
+        
+        <div class="insights-section">
+            <h3 class="insights-title">Efficiency Metrics</h3>
+            <div class="insights-metric">
+                <span class="insights-label">Exploration rate:</span>
+                <span class="insights-value">${Math.round(insights.efficiencyMetrics.explorationRate * 100)}%</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Revisit rate:</span>
+                <span class="insights-value">${Math.round(insights.efficiencyMetrics.revisitRate * 100)}%</span>
+            </div>
+            <div class="insights-metric">
+                <span class="insights-label">Theme consistency:</span>
+                <span class="insights-value">${Math.round(insights.efficiencyMetrics.themeConsistency * 100)}%</span>
             </div>
         </div>
     `;
     
     // Set the HTML
-    insightsContainer.innerHTML = insightsHTML;
+    insightsContent.innerHTML = insightsHTML;
     
-    // Add close button functionality
-    const closeBtn = document.getElementById('closeInsights');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            insightsContainer.remove();
-        });
-    }
+    // Show the panel
+    journeyInsightsPanel.classList.remove('hidden');
 }
 
 /**
@@ -953,8 +999,6 @@ function updateViewButtons(viewMode) {
  * Initialize insight card interactions
  */
 function initializeInsightCards() {
-    // First populate carousel with quote data
-    populateCarouselView();
     // First populate carousel with quote data
     populateCarouselView();
     
@@ -1088,6 +1132,12 @@ function setupQuoteJourneyStateEvents() {
                 if (window.quoteNetwork) {
                     window.quoteNetwork.selectNode(data.currentQuoteId);
                 }
+                
+                // Show quote details panel when quote changes
+                const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
+                if (quoteDetailsPanel && data.currentQuoteId) {
+                    quoteDetailsPanel.classList.add('open');
+                }
                 break;
                 
             case 'viewModeChanged':
@@ -1105,7 +1155,18 @@ function setupQuoteJourneyStateEvents() {
  * Initialize details panel
  */
 function initializeDetailsPanel() {
-    // Create details panel if it doesn't exist
+    // Initialize the sliding quote details panel
+    const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
+    const closeDetailsBtn = document.getElementById('closeDetailsBtn');
+    
+    if (quoteDetailsPanel && closeDetailsBtn) {
+        // Add close button functionality
+        closeDetailsBtn.addEventListener('click', () => {
+            quoteDetailsPanel.classList.remove('open');
+        });
+    }
+    
+    // Create inline details panel if it doesn't exist
     let detailsPanel = document.getElementById('detailsPanel');
     if (!detailsPanel) {
         detailsPanel = document.createElement('div');
@@ -1133,12 +1194,21 @@ function initializeDetailsPanel() {
  * Update details panel with current quote information
  */
 function updateDetailsPanel() {
+    // Update both the inline details panel and the sliding panel
     const detailsPanel = document.getElementById('detailsPanel');
-    if (!detailsPanel || !window.quoteJourneyState) return;
+    const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
+    const detailsContent = document.getElementById('detailsContent');
+    
+    if (!window.quoteJourneyState) return;
     
     const currentQuote = window.quoteJourneyState.getCurrentQuote();
     if (!currentQuote) {
-        detailsPanel.innerHTML = '<p class="text-gray-500">No quote selected</p>';
+        if (detailsPanel) {
+            detailsPanel.innerHTML = '<p class="text-gray-500">No quote selected</p>';
+        }
+        if (detailsContent) {
+            detailsContent.innerHTML = '<div class="text-center py-8 text-cream/60"><p>Select a quote to view details</p></div>';
+        }
         return;
     }
     
@@ -1146,14 +1216,14 @@ function updateDetailsPanel() {
     let journeyPosition = '';
     if (window.journeyTracker) {
         const position = window.journeyTracker.getCurrentPosition();
-        journeyPosition = `<div class="text-sm text-gray-500 mb-2">Journey Position: ${position.position}/${position.total}</div>`;
+        journeyPosition = `<div class="text-sm text-cream/70 mb-2">Journey Position: ${position.position}/${position.total}</div>`;
     }
     
     // Generate themes HTML
     const themesHTML = currentQuote.themes && currentQuote.themes.length > 0 ?
         currentQuote.themes.map(themeId => {
             const theme = window.quoteJourneyState.quoteData.themes.find(t => t.id === themeId);
-            return theme ? `<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-2 mb-2">${theme.name}</span>` : '';
+            return theme ? `<span class="theme-tag">${theme.name}</span>` : '';
         }).join('') : '';
     
     // Generate related quotes HTML
@@ -1161,41 +1231,49 @@ function updateDetailsPanel() {
         currentQuote.relatedQuotes.map(related => {
             const relatedQuote = window.quoteJourneyState.quoteData.quotes.find(q => q.id === related.id);
             return relatedQuote ? `
-                <div class="border-l-4 border-blue-500 pl-4 mb-2">
-                    <h4 class="font-semibold text-sm">${relatedQuote.title}</h4>
-                    <p class="text-xs text-gray-600 italic">"${relatedQuote.quote.substring(0, 100)}..."</p>
-                    <button class="text-xs text-blue-600 hover:text-blue-800 mt-1" onclick="window.quoteJourneyState.setCurrentQuote('${related.id}')">
+                <div class="border-l-4 border-gold pl-4 mb-2">
+                    <h4 class="font-semibold text-sm text-cream">${relatedQuote.title}</h4>
+                    <p class="text-xs text-cream/70 italic">"${relatedQuote.quote.substring(0, 100)}..."</p>
+                    <button class="text-xs text-gold hover:text-cream mt-1" onclick="window.quoteJourneyState.setCurrentQuote('${related.id}')">
                         View Quote →
                     </button>
                 </div>
             ` : '';
-        }).join('') : '<p class="text-gray-500 text-sm">No related quotes</p>';
+        }).join('') : '<p class="text-cream/60 text-sm">No related quotes</p>';
     
-    detailsPanel.innerHTML = `
-        <div class="details-panel">
+    const detailsHTML = `
+        <div class="quote-details">
             ${journeyPosition}
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">${currentQuote.title}</h2>
-            <div class="quote-text mb-4">
-                <p class="text-lg italic text-gray-700">"${currentQuote.quote}"</p>
+            <h2 class="quote-details-title">${currentQuote.title}</h2>
+            <div class="quote-details-text">
+                <p>"${currentQuote.quote}"</p>
             </div>
-            <div class="quote-context mb-4">
-                <p class="text-sm text-gray-600">${currentQuote.context}</p>
+            <div class="quote-details-context">
+                <p>${currentQuote.context}</p>
             </div>
-            <div class="quote-source mb-4">
-                <p class="text-sm text-gray-500">
-                    <strong>Source:</strong> ${currentQuote.source.work}, ${currentQuote.source.year}
-                </p>
+            <div class="quote-details-source">
+                <p><strong>Source:</strong> ${currentQuote.source.work}, ${currentQuote.source.year}</p>
             </div>
-            <div class="quote-themes mb-4">
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">Themes:</h3>
+            <div class="quote-details-themes">
+                <h3 class="quote-details-themes-title">Themes:</h3>
                 ${themesHTML}
             </div>
             <div class="related-quotes">
-                <h3 class="text-sm font-semibold text-gray-700 mb-2">Related Quotes:</h3>
+                <h3 class="text-sm font-semibold text-cream mb-2">Related Quotes:</h3>
                 ${relatedQuotesHTML}
             </div>
         </div>
     `;
+    
+    // Update inline details panel
+    if (detailsPanel) {
+        detailsPanel.innerHTML = detailsHTML;
+    }
+    
+    // Update sliding panel content
+    if (detailsContent) {
+        detailsContent.innerHTML = detailsHTML;
+    }
 }
 
 /**

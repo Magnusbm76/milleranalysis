@@ -93,7 +93,7 @@ class JourneyTracker {
     }
     
     // Check if this is a duplicate of the last entry
-    if (this.journeyHistory.length > 0 && 
+    if (this.journeyHistory.length > 0 &&
         this.journeyHistory[this.journeyHistory.length - 1].quoteId === quoteId) {
       // Update the timestamp of the last entry instead of adding a new one
       this.journeyHistory[this.journeyHistory.length - 1].timestamp = currentTime;
@@ -113,7 +113,7 @@ class JourneyTracker {
       // Add to journey history
       this.journeyHistory.push(journeyEntry);
       
-      // Update current index
+      // Update current index to point to the new entry
       this.currentIndex = this.journeyHistory.length - 1;
       
       // Enforce maximum history size
@@ -667,10 +667,22 @@ class JourneyTracker {
    */
   handleStateRestore(state) {
     // Load journey data if available in restored state
-    if (state.journeyHistory) {
+    if (state.journeyHistory && Array.isArray(state.journeyHistory)) {
+      // Find the current quote ID in the journey history
+      const currentQuoteId = state.currentQuoteId;
+      let targetIndex = state.journeyHistory.length - 1; // Default to last entry
+      
+      if (currentQuoteId) {
+        // Find the index of the current quote in the journey history
+        const foundIndex = state.journeyHistory.findIndex(entry => entry.quoteId === currentQuoteId);
+        if (foundIndex !== -1) {
+          targetIndex = foundIndex;
+        }
+      }
+      
       this.importJourneyData({
         journeyHistory: state.journeyHistory,
-        currentIndex: state.journeyHistory.length - 1
+        currentIndex: targetIndex
       });
     }
   }
