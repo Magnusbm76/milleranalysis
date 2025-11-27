@@ -101,7 +101,13 @@ body {
     width: 400px; /* Target size */
     height: 600px; /* Target size */
     overflow: hidden;
-    /* Optional: Subtle 3D tilt effect on hover will be added later with JS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Book hover effects */
+.book-cover-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 33, 71, 0.3);
 }
 
 /* Placeholder style for the missing cover images */

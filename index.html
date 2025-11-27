@@ -47,11 +47,18 @@
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
             
             <div class="text-xl font-bold tracking-widest text-cream uppercase">
-                MILLER ANALYSIS
+                JOHN F. MILLER
             </div>
 
             <ul class="flex space-x-8">
-                <li><a href="#books" class="nav-link">Books</a></li>
+                <li class="relative group">
+                    <a href="#books" class="nav-link">Books</a>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <a href="#pathway-beginner" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">Beginner's Path</a>
+                        <a href="#pathway-academic" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">Academic Focus</a>
+                        <a href="#pathway-clinical" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">Clinical Application</a>
+                    </div>
+                </li>
                 <li><a href="#insights" class="nav-link">Insights</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -160,9 +167,9 @@
                         <div class="space-y-4">
                             <h3 class="text-2xl font-bold text-oxford-blue">Academic Credentials</h3>
                             <ul class="space-y-2 text-charcoal">
-                                <li>Ph.D. in Psychoanalytic Semiotics, University of Paris VIII</li>
-                                <li>M.A. in Clinical Psychology, Columbia University</li>
-                                <li>B.A. in Philosophy & Literature, Harvard University</li>
+                                <li>Oxford-affiliated psychoanalyst with clinical practice</li>
+                                <li>Specialization in psychoanalytic semiotics and Lacanian theory</li>
+                                <li>Author of "Do You Read Me" and "Triumphant Victim"</li>
                             </ul>
                         </div>
                     </div>
@@ -184,24 +191,12 @@
 
                         <div>
                             <h3 class="text-2xl font-bold text-oxford-blue mb-4">Career Timeline</h3>
-                            <ul class="space-y-3 text-charcoal">
-                                <li class="flex items-start">
-                                    <span class="font-bold text-gold mr-3">2020-Present:</span>
-                                    <span>Director of the Center for Psychoanalytic Semiotics, London</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="font-bold text-gold mr-3">2010-2020:</span>
-                                    <span>Senior Fellow, Institute for Advanced Psychoanalytic Studies</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="font-bold text-gold mr-3">2005-2010:</span>
-                                    <span>Clinical Director, Lacanian Clinic of New York</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="font-bold text-gold mr-3">1995-2005:</span>
-                                    <span>Private Practice, New York & Paris</span>
-                                </li>
-                            </ul>
+                            <div>
+                                <p class="text-charcoal leading-relaxed">
+                                    With over three decades of experience in psychoanalytic practice and academic research,
+                                    Dr. Miller has established himself as a leading voice in modern psychoanalytic interpretation.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,6 +284,19 @@
                         <p class="font-bold">Thank you for your message!</p>
                         <p>Your inquiry has been received. Reference number: <span id="referenceNumber"></span></p>
                         <p>We will respond within 3-5 business days.</p>
+                    </div>
+                    
+                    <div class="mt-12 p-6 bg-oxford-blue/10 border border-oxford-blue rounded-lg">
+                        <h3 class="text-xl font-bold text-oxford-blue mb-4">Stay Updated</h3>
+                        <p class="text-charcoal mb-4">Receive updates on new publications and insights</p>
+                        <form id="newsletterForm" class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Your email address" required
+                                   class="flex-1 px-4 py-2 border border-charcoal rounded focus:ring-2 focus:ring-gold focus:border-transparent">
+                            <button type="submit" class="px-6 py-2 bg-oxford-blue text-cream rounded hover:bg-charcoal transition">Subscribe</button>
+                        </form>
+                        <div id="newsletterSuccess" class="hidden mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+                            <p>Thank you for subscribing to our newsletter!</p>
+                        </div>
                     </div>
                 </div>
             </div>
