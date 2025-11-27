@@ -4,6 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mr. John F. Miller | The Labyrinth of Interpretation</title>
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Mr. John F. Miller - Oxford Psychoanalyst specializing in Lacanian Theory. Author of 'Do You Read Me' and 'Triumphant Victim'. Explore the labyrinth of psychoanalytic interpretation.">
+    <meta name="keywords" content="John F. Miller, Oxford Psychoanalyst, Lacanian Theory, Psychoanalysis, Semiotics, Do You Read Me, Triumphant Victim">
+    <meta name="author" content="Mr. John F. Miller">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Mr. John F. Miller | The Labyrinth of Interpretation">
+    <meta property="og:description" content="Oxford Psychoanalyst specializing in Lacanian Theory. Author of 'Do You Read Me' and 'Triumphant Victim'.">
+    <meta property="og:image" content="https://example.com/assets/images/atmospheric/portrait-placeholder.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Labyrinth of Interpretation">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mr. John F. Miller | The Labyrinth of Interpretation">
+    <meta name="twitter:description" content="Oxford Psychoanalyst specializing in Lacanian Theory. Author of 'Do You Read Me' and 'Triumphant Victim'.">
+    <meta name="twitter:image" content="https://example.com/assets/images/atmospheric/portrait-placeholder.jpg">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "#person",
+                "name": "Mr. John F. Miller",
+                "jobTitle": "Psychoanalyst",
+                "description": "Oxford-affiliated psychoanalyst with clinical practice specializing in psychoanalytic semiotics and Lacanian theory",
+                "alumniOf": "Oxford University",
+                "knowsAbout": ["Psychoanalysis", "Lacanian Theory", "Semiotics"],
+                "author": [
+                    {
+                        "@type": "Book",
+                        "@id": "#book1",
+                        "name": "Do You Read Me",
+                        "alternateName": "Do You Read Me: The Semiotics of Psychoanalysis",
+                        "isbn": "978-0-123456-78-9",
+                        "datePublished": "2020",
+                        "genre": ["Psychology", "Psychoanalysis", "Semiotics"],
+                        "inLanguage": "en",
+                        "about": "The fundamental semiotic gap between the signifier and the signified in psychoanalytic practice"
+                    },
+                    {
+                        "@type": "Book",
+                        "@id": "#book2",
+                        "name": "Triumphant Victim",
+                        "alternateName": "Triumphant Victim: A Study in Lacanian Theory",
+                        "isbn": "978-0-987654-32-1",
+                        "datePublished": "2022",
+                        "genre": ["Psychology", "Psychoanalysis", "Lacanian Theory"],
+                        "inLanguage": "en",
+                        "about": "How contemporary social structures encourage and validate a performative identity rooted in structural inadequacy"
+                    }
+                ]
+            },
+            {
+                "@type": "WebSite",
+                "@id": "#website",
+                "name": "The Labyrinth of Interpretation",
+                "url": "https://example.com",
+                "description": "Explore the work of Oxford Psychoanalyst Mr. John F. Miller, specializing in Lacanian Theory and psychoanalytic semiotics",
+                "about": {
+                    "@type": "Thing",
+                    "name": "Psychoanalysis and Lacanian Theory"
+                },
+                "author": {
+                    "@id": "#person"
+                },
+                "publisher": {
+                    "@id": "#person"
+                }
+            }
+        ]
+    }
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -36,7 +121,6 @@
     <div class="hero-video-container">
         <video autoplay muted loop playsinline poster="">
             <source src="assets/video/hero/hero-loop-v1.mp4" type="video/mp4">
-            <source src="assets/video/hero/hero-loop-v1.webm" type="video/webm">
             <div class="w-screen h-screen bg-oxford-blue flex items-center justify-center">
                 <p class="text-cream text-xl">Loading atmosphere...</p>
             </div>
@@ -84,27 +168,23 @@
 
                     <div class="w-full md:w-auto text-center max-w-sm">
                         <div class="book-cover-container mx-auto">
-                            <div class="book-placeholder">
-                                <span class="font-sans">COVER: Do You Read Me (400x600px)</span>
-                            </div>
+                            <img src="assets/images/book-covers/do-you-read-me/cover-do-you-read-me.jpg" alt="Do You Read Me Book Cover" class="w-full rounded-lg shadow-lg">
                         </div>
                         <h3 class="text-3xl font-bold mt-6 text-oxford-blue">Do You Read Me</h3>
                         <p class="text-charcoal italic mt-2">The Semiotics of Psychoanalysis</p>
-                        <a href="#" class="inline-block mt-4 text-gold hover:text-oxford-blue transition duration-300 border-b border-gold hover:border-oxford-blue">
-                            View Book Details &rarr;
+                        <a href="https://www.amazon.com/dp/B0placeholder1" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-4 px-6 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300">
+                            Buy on Amazon
                         </a>
                     </div>
 
                     <div class="w-full md:w-auto text-center max-w-sm">
                         <div class="book-cover-container mx-auto">
-                            <div class="book-placeholder">
-                                <span class="font-sans">COVER: Triumphant Victim (400x600px)</span>
-                            </div>
+                            <img src="assets/images/book-covers/triumphant-victim/cover-triumphant-victim.jpg" alt="Triumphant Victim Book Cover" class="w-full rounded-lg shadow-lg">
                         </div>
                         <h3 class="text-3xl font-bold mt-6 text-oxford-blue">Triumphant Victim</h3>
                         <p class="text-charcoal italic mt-2">A Study in Lacanian Theory</p>
-                        <a href="#" class="inline-block mt-4 text-gold hover:text-oxford-blue transition duration-300 border-b border-gold hover:border-oxford-blue">
-                            View Book Details &rarr;
+                        <a href="https://www.amazon.com/dp/B0placeholder2" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block mt-4 px-6 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300">
+                            Buy on Amazon
                         </a>
                     </div>
 
@@ -278,7 +358,7 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="mb-8">
-                            <img src="assets/images/atmospheric/portrait-placeholder.jpg" alt="John F. Miller" class="w-full rounded-lg shadow-lg">
+                            <img src="assets/images/miller-portrait.jpg" alt="John F. Miller" class="w-full rounded-lg shadow-lg">
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-2xl font-bold text-oxford-blue">Academic Credentials</h3>
