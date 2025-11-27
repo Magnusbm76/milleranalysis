@@ -1,0 +1,14 @@
+:root {
+  --oxford-blue: #002147;
+  --cream: #F5F5DC;
+  --charcoal: #36454F;
+  --gold: #FFD700;
+}
+/* Add basic styling to use the Inter font and set background */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    margin: 0;
+    padding: 0;
+}
