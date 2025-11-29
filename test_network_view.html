@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network View Test - Miller Analysis</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .test-container {
+            background: #F5F5DC;
+            border: 2px solid #002147;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+        }
+        
+        .test-results {
+            background: white;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-pass { background-color: #28a745; }
+        .status-fail { background-color: #dc3545; }
+        .status-pending { background-color: #ffc107; }
+    </style>
+</head>
+
+<body class="font-serif bg-cream">
+    <div class="max-w-4xl mx-auto p-6">
+        <h1 class="text-3xl font-bold text-oxford-blue mb-6">Network View Diagnostic Test</h1>
+        
+        <div class="test-container">
+            <h2 class="text-xl font-bold text-oxford-blue mb-4">Network Canvas</h2>
+            
+            <!-- View Toggle Controls -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-cream/20 rounded-lg p-1 inline-flex">
+                    <button id="carouselViewBtn" class="px-6 py-2 rounded-md text-oxford-blue font-medium transition-colors duration-200 hover:bg-cream/10">
+                        Carousel View
+                    </button>
+                    <button id="networkViewBtn" class="px-6 py-2 rounded-md text-oxford-blue font-medium transition-colors duration-200 bg-cream/30">
+                        Network View
+                    </button>
+                </div>
+            </div>
+
+            <!-- Network View Container -->
+            <div id="networkView" class="w-full h-96 md:h-[600px] bg-cream rounded-lg shadow-xl mb-8 relative">
+                <canvas id="quoteNetworkCanvas" class="w-full h-full rounded-lg"></canvas>
+            </div>
+
+            <!-- Carousel View Container -->
+            <div id="carouselView" class="hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 text-oxford-blue">
+                    <h3 class="text-xl font-bold">Test Quote 1</h3>
+                    <p class="mt-4 italic">"Test quote content here"</p>
+                </div>
+                <div class="p-6 text-oxford-blue">
+                    <h3 class="text-xl font-bold">Test Quote 2</h3>
+                    <p class="mt-4 italic">"Another test quote"</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-results">
+            <h2 class="text-xl font-bold text-oxford-blue mb-4">Diagnostic Results</h2>
+            <div id="testOutput">
+                <div class="mb-2">
+                    <span class="status-indicator status-pending"></span>
+                    <span>Initializing network...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts in correct order -->
+    <script src="js/quote_data.js"></script>
+    <script src="js/journey-tracker.js"></script>
+    <script src="js/quote-network.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Test script to verify network functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const testOutput = document.getElementById('testOutput');
+            
+            function addTestResult(message, status = 'pending') {
+                const div = document.createElement('div');
+                div.className = 'mb-2';
+                div.innerHTML = `
+                    <span class="status-indicator status-${status}"></span>
+                    <span>${message}</span>
+                `;
+                testOutput.appendChild(div);
+            }
+            
+            // Wait for initialization
+            setTimeout(() => {
+                // Test 1: Check if QuoteNetwork class is loaded
+                if (typeof QuoteNetwork === 'undefined') {
+                    addTestResult('QuoteNetwork class not loaded', 'fail');
+                    return;
+                } else {
+                    addTestResult('QuoteNetwork class loaded successfully', 'pass');
+                }
+                
+                // Test 2: Check if quoteData is available
+                if (typeof quoteData === 'undefined') {
+                    addTestResult('quoteData not available', 'fail');
+                    return;
+                } else {
+                    addTestResult('quoteData loaded successfully', 'pass');
+                }
+                
+                // Test 3: Check if QuoteJourneyState is initialized
+                if (typeof window.quoteJourneyState === 'undefined') {
+                    addTestResult('QuoteJourneyState not initialized', 'fail');
+                    return;
+                } else {
+                    addTestResult('QuoteJourneyState initialized successfully', 'pass');
+                }
+                
+                // Test 4: Check if JourneyTracker is initialized
+                if (typeof window.journeyTracker === 'undefined') {
+                    addTestResult('JourneyTracker not initialized', 'fail');
+                    return;
+                } else {
+                    addTestResult('JourneyTracker initialized successfully', 'pass');
+                }
+                
+                // Test 5: Check if QuoteNetwork instance is created
+                if (typeof window.quoteNetwork === 'undefined') {
+                    addTestResult('QuoteNetwork instance not created', 'fail');
+                    return;
+                } else {
+                    addTestResult('QuoteNetwork instance created successfully', 'pass');
+                }
+                
+                // Test 6: Check canvas element
+                const canvas = document.getElementById('quoteNetworkCanvas');
+                if (!canvas) {
+                    addTestResult('Canvas element not found', 'fail');
+                    return;
+                } else {
+                    addTestResult('Canvas element found', 'pass');
+                }
+                
+                // Test 7: Check canvas dimensions
+                if (canvas.width === 0 || canvas.height === 0) {
+                    addTestResult('Canvas has zero dimensions', 'fail');
+                } else {
+                    addTestResult(`Canvas dimensions: ${canvas.width}x${canvas.height}`, 'pass');
+                }
+                
+                // Test 8: Check if network has nodes
+                if (window.quoteNetwork && window.quoteNetwork.nodes) {
+                    if (window.quoteNetwork.nodes.length === 0) {
+                        addTestResult('Network has no nodes', 'fail');
+                    } else {
+                        addTestResult(`Network has ${window.quoteNetwork.nodes.length} nodes`, 'pass');
+                    }
+                } else {
+                    addTestResult('Network nodes not accessible', 'fail');
+                }
+                
+                // Test 9: Check if network has connections
+                if (window.quoteNetwork && window.quoteNetwork.connections) {
+                    if (window.quoteNetwork.connections.length === 0) {
+                        addTestResult('Network has no connections', 'fail');
+                    } else {
+                        addTestResult(`Network has ${window.quoteNetwork.connections.length} connections`, 'pass');
+                    }
+                } else {
+                    addTestResult('Network connections not accessible', 'fail');
+                }
+                
+                // Test 10: Try switching to network view
+                const networkViewBtn = document.getElementById('networkViewBtn');
+                const carouselViewBtn = document.getElementById('carouselViewBtn');
+                
+                if (networkViewBtn && carouselViewBtn) {
+                    addTestResult('View switching buttons found', 'pass');
+                    
+                    // Simulate clicking network view button
+                    networkViewBtn.click();
+                    
+                    setTimeout(() => {
+                        // Check if network view is now visible
+                        const networkView = document.getElementById('networkView');
+                        const carouselView = document.getElementById('carouselView');
+                        
+                        if (networkView.classList.contains('hidden')) {
+                            addTestResult('Network view is still hidden after click', 'fail');
+                        } else {
+                            addTestResult('Network view is now visible', 'pass');
+                        }
+                        
+                        if (carouselView.classList.contains('hidden')) {
+                            addTestResult('Carousel view is now hidden', 'pass');
+                        } else {
+                            addTestResult('Carousel view is still visible', 'fail');
+                        }
+                        
+                        // Test 11: Check if canvas is properly resized after view switch
+                        setTimeout(() => {
+                            if (canvas.width > 0 && canvas.height > 0) {
+                                addTestResult(`Canvas properly resized: ${canvas.width}x${canvas.height}`, 'pass');
+                            } else {
+                                addTestResult('Canvas not properly resized after view switch', 'fail');
+                            }
+                            
+                            // Test 12: Check if animation is running
+                            if (window.quoteNetwork && window.quoteNetwork.isAnimating) {
+                                addTestResult('Network animation is running', 'pass');
+                            } else {
+                                addTestResult('Network animation is not running', 'fail');
+                            }
+                        }, 500);
+                    }, 100);
+                } else {
+                    addTestResult('View switching buttons not found', 'fail');
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

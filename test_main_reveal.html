@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page Reveal Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="font-serif bg-cream">
+    <div class="debug-info" id="debugInfo">
+        <h3>Debug Info:</h3>
+        <div id="debugContent">Initializing...</div>
+    </div>
+
+    <!-- Test section similar to main page -->
+    <section id="hero" class="reveal h-[80vh] flex items-center justify-center">
+        <h1 class="reveal reveal-delay-1 text-6xl text-cream font-bold text-center leading-tight tracking-wider p-4">
+            The Labyrinth of Interpretation
+        </h1>
+    </section>
+
+    <section id="books" class="reveal min-h-screen bg-cream py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="reveal reveal-delay-1 text-5xl text-oxford-blue font-bold mb-12 border-b border-charcoal pb-4 text-center">
+                The Published Works
+            </h2>
+
+            <div class="flex flex-col md:flex-row justify-center items-start space-y-12 md:space-y-0 md:space-x-12">
+                <div class="reveal reveal-stagger-1 reveal-fade-left w-full md:w-auto text-center max-w-sm">
+                    <h3 class="text-3xl font-bold mt-6 text-oxford-blue">Do You Read Me</h3>
+                    <p class="text-charcoal italic mt-2">The Semiotics of Psychoanalysis</p>
+                </div>
+
+                <div class="reveal reveal-stagger-2 reveal-fade-right w-full md:w-auto text-center max-w-sm">
+                    <h3 class="text-3xl font-bold mt-6 text-oxford-blue">Triumphant Victim</h3>
+                    <p class="text-charcoal italic mt-2">A Study in Lacanian Theory</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Debug function to update debug info
+        function updateDebugInfo(message) {
+            const debugContent = document.getElementById('debugContent');
+            debugContent.innerHTML += '<br>' + new Date().toLocaleTimeString() + ': ' + message;
+            console.log(message);
+        }
+
+        // Check if IntersectionObserver is supported
+        updateDebugInfo('IntersectionObserver supported: ' + ('IntersectionObserver' in window));
+
+        // RevealOnScroll class from main.js
+        class RevealOnScroll {
+            constructor(options = {}) {
+                // Default configuration
+                this.options = {
+                    threshold: options.threshold || 0.15, // 15% of element visible
+                    rootMargin: options.rootMargin || '0px 0px -50px 0px', // Trigger slightly before element comes into view
+                    selector: options.selector || '.reveal', // Elements to observe
+                    activeClass: options.activeClass || 'active' // Class to add when revealed
+                };
+                
+                // Store observer instance
+                this.observer = null;
+                
+                // Initialize
+                this.init();
+            }
+            
+            init() {
+                updateDebugInfo('RevealOnScroll.init() called');
+                
+                // Check if Intersection Observer is supported
+                if (!window.IntersectionObserver) {
+                    updateDebugInfo('IntersectionObserver not supported, using fallback');
+                    console.warn('Intersection Observer is not supported in this browser');
+                    this.fallbackInit();
+                    return;
+                }
+                
+                // Get all elements to observe
+                const elementsToReveal = document.querySelectorAll(this.options.selector);
+                updateDebugInfo('Found ' + elementsToReveal.length + ' elements with selector "' + this.options.selector + '"');
+                
+                if (elementsToReveal.length === 0) {
+                    console.log(`No elements found with selector "${this.options.selector}"`);
+                    return;
+                }
+                
+                // Create Intersection Observer
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        updateDebugInfo('Element ' + entry.target.tagName + ' isIntersecting: ' + entry.isIntersecting);
+                        
+                        // When element comes into view
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(this.options.activeClass);
+                            updateDebugInfo('Added "active" class to element');
+                            
+                            // Optional: Stop observing after element is revealed
+                            // this.observer.unobserve(entry.target);
+                        }
+                        // Optional: Remove class when element leaves view
+                        // else {
+                        //     entry.target.classList.remove(this.options.activeClass);
+                        // }
+                    });
+                }, {
+                    threshold: this.options.threshold,
+                    rootMargin: this.options.rootMargin
+                });
+                
+                // Start observing each element
+                elementsToReveal.forEach((element, index) => {
+                    // Set initial state (will be overridden by CSS)
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    
+                    this.observer.observe(element);
+                    updateDebugInfo('Started observing element ' + (index + 1) + ': ' + element.tagName + ' with classes: ' + element.className);
+                });
+                
+                updateDebugInfo('RevealOnScroll initialized with ' + elementsToReveal.length + ' elements');
+            }
+            
+            // Fallback for browsers that don't support Intersection Observer
+            fallbackInit() {
+                updateDebugInfo('Using fallback initialization');
+                const elementsToReveal = document.querySelectorAll(this.options.selector);
+                
+                // Simple scroll event listener as fallback
+                const checkScroll = () => {
+                    const triggerBottom = window.innerHeight * 0.8; // 80% of viewport height
+                    
+                    elementsToReveal.forEach(element => {
+                        const elementTop = element.getBoundingClientRect().top;
+                        
+                        if (elementTop < triggerBottom) {
+                            element.classList.add(this.options.activeClass);
+                            updateDebugInfo('Fallback: Added "active" class to element');
+                        }
+                    });
+                };
+                
+                // Initial check
+                checkScroll();
+                
+                // Throttled scroll event
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            checkScroll();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
+            
+            // Method to manually reveal an element
+            revealElement(element) {
+                if (element && element.classList.contains(this.options.selector.replace('.', ''))) {
+                    element.classList.add(this.options.activeClass);
+                }
+            }
+            
+            // Method to manually hide an element
+            hideElement(element) {
+                if (element && element.classList.contains(this.options.selector.replace('.', ''))) {
+                    element.classList.remove(this.options.activeClass);
+                }
+            }
+            
+            // Method to destroy the observer
+            destroy() {
+                if (this.observer) {
+                    this.observer.disconnect();
+                    this.observer = null;
+                    updateDebugInfo('Observer destroyed');
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded - mimicking main.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugInfo('DOM loaded');
+            
+            // Check if elements with reveal class exist
+            const revealElements = document.querySelectorAll('.reveal');
+            updateDebugInfo('Found ' + revealElements.length + ' elements with .reveal class before initialization');
+            
+            try {
+                // Initialize scroll animations and smooth scrolling first
+                // This ensures they're available for all subsequent content
+                window.revealOnScroll = new RevealOnScroll({
+                    threshold: 0.15, // Trigger when 15% of element is visible
+                    rootMargin: '0px 0px -50px 0px', // Start revealing 50px before element comes into view
+                    selector: '.reveal', // Target elements with .reveal class
+                    activeClass: 'active' // Add .active class when revealed
+                });
+                
+                updateDebugInfo('RevealOnScroll instance created successfully');
+                
+                // Check if instance was created
+                if (window.revealOnScroll) {
+                    updateDebugInfo('RevealOnScroll instance exists in window object');
+                } else {
+                    updateDebugInfo('ERROR: RevealOnScroll instance not found in window object');
+                }
+                
+            } catch (error) {
+                updateDebugInfo('Error creating RevealOnScroll: ' + error.message);
+                console.error('Error creating RevealOnScroll:', error);
+            }
+        });
+    </script>
+</body>
+</html>

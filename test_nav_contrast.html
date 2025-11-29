@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Title Contrast Test</title>
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['var(--font-serif)'],
+                        'sans': ['var(--font-sans)'],
+                    },
+                    colors: {
+                        'oxford-blue': 'var(--color-oxford-blue)',
+                        'cream': 'var(--color-cream)',
+                        'charcoal': 'var(--color-charcoal)',
+                        'gold': 'var(--color-gold)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-serif bg-cream">
+    <!-- Hero section with video background -->
+    <div class="hero-video-container">
+        <video autoplay muted loop playsinline>
+            <source src="assets/video/hero/hero-loop-v1.mp4" type="video/mp4">
+            <div class="w-screen h-screen bg-oxford-blue flex items-center justify-center">
+                <p class="text-cream text-xl">Loading atmosphere...</p>
+            </div>
+        </video>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
+             
+            <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
+                <a href="#" class="text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded" aria-label="Return to top of page">
+                    JOHN F. MILLER
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="#test" class="nav-link">Test Link</a></li>
+                    <li><a href="#test2" class="nav-link">Test Link 2</a></li>
+                </ul>
+                
+                <button class="flex items-center text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded px-3 py-1">
+                    Test Button
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="relative z-10 pt-24 min-h-screen">
+        <section id="test" class="h-screen flex items-center justify-center">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl font-bold text-oxford-blue mb-8">
+                    Navigation Title Contrast Test
+                </h1>
+                <p class="text-xl text-charcoal">
+                    Scroll down to test the navigation title contrast changes.
+                </p>
+                <p class="mt-4 text-charcoal">
+                    - At the top: Title should be cream color on transparent background<br>
+                    - After scrolling 50px: Title should be oxford-blue on cream background
+                </p>
+            </div>
+        </section>
+        
+        <section id="test2" class="h-screen flex items-center justify-center bg-oxford-blue">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-5xl font-bold text-cream mb-8">
+                    Second Section
+                </h2>
+                <p class="text-xl text-cream">
+                    Navigation should maintain proper contrast in this section as well.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Add visual indicator for current scroll position
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollIndicator = document.createElement('div');
+            scrollIndicator.style.position = 'fixed';
+            scrollIndicator.style.bottom = '20px';
+            scrollIndicator.style.right = '20px';
+            scrollIndicator.style.padding = '10px';
+            scrollIndicator.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            scrollIndicator.style.color = 'white';
+            scrollIndicator.style.borderRadius = '5px';
+            scrollIndicator.style.fontSize = '14px';
+            scrollIndicator.style.zIndex = '1000';
+            document.body.appendChild(scrollIndicator);
+            
+            function updateScrollIndicator() {
+                scrollIndicator.innerHTML = `
+                    Scroll Y: ${window.scrollY}px<br>
+                    Nav Class: ${document.querySelector('nav').classList.contains('scrolled-nav') ? 'scrolled-nav' : 'no class'}
+                `;
+            }
+            
+            window.addEventListener('scroll', updateScrollIndicator);
+            updateScrollIndicator();
+        });
+    </script>
+</body>
+</html>

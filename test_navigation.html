@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Color Switch Test</title>
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['var(--font-serif)'],
+                        'sans': ['var(--font-sans)'],
+                    },
+                    colors: {
+                        'oxford-blue': 'var(--color-oxford-blue)',
+                        'cream': 'var(--color-cream)',
+                        'charcoal': 'var(--color-charcoal)',
+                        'gold': 'var(--color-gold)',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Test-specific styles */
+        .test-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .test-info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-info div {
+            margin: 5px 0;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-pass { background-color: #28a745; }
+        .status-fail { background-color: #dc3545; }
+        .status-pending { background-color: #ffc107; }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .rapid-scroll-test {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .test-button {
+            background: var(--color-gold);
+            color: var(--color-oxford-blue);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .test-button:hover {
+            background: #FFC700;
+        }
+    </style>
+</head>
+
+<body class="font-serif bg-cream">
+    <!-- Test Control Panel -->
+    <div class="rapid-scroll-test">
+        <button class="test-button" onclick="runRapidScrollTest()">Rapid Scroll Test</button>
+        <button class="test-button" onclick="runIntersectionObserverTest()">Test Observer Support</button>
+        <button class="test-button" onclick="resetTest()">Reset Test</button>
+    </div>
+    
+    <!-- Scroll Position Indicator -->
+    <div class="scroll-indicator">
+        <div>Scroll: <span id="scrollPosition">0</span>px</div>
+        <div>Section: <span id="currentSection">hero</span></div>
+    </div>
+    
+    <!-- Test Results Panel -->
+    <div class="test-info">
+        <h3>Navigation Test Results</h3>
+        <div><span class="status-indicator status-pending" id="navObserverStatus"></span>NavigationObserver: <span id="navObserverResult">Pending</span></div>
+        <div><span class="status-indicator status-pending" id="darkModeStatus"></span>Dark Mode Detection: <span id="darkModeResult">Pending</span></div>
+        <div><span class="status-indicator status-pending" id="transitionStatus"></span>CSS Transitions: <span id="transitionResult">Pending</span></div>
+        <div><span class="status-indicator status-pending" id="initialStateStatus"></span>Initial State: <span id="initialStateResult">Pending</span></div>
+        <div><span class="status-indicator status-pending" id="browserSupportStatus"></span>Browser Support: <span id="browserSupportResult">Pending</span></div>
+    </div>
+
+    <!-- Navigation (copied from main site) -->
+    <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
+            <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
+                JOHN F. MILLER
+            </div>
+
+            <ul class="flex space-x-8">
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#key-concepts" class="nav-link">Key Concepts</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Test Sections -->
+    <main id="main-content" class="relative z-10 pt-24">
+        <!-- Hero Video Section (Dark Background) -->
+        <section id="hero" class="hero-video-container">
+            <div class="test-section">
+                <h1 class="text-6xl text-cream font-bold text-center">Hero Video Section</h1>
+                <p class="text-cream text-xl">Dark background - Navigation should be cream</p>
+                <div class="bg-oxford-blue p-4 rounded">
+                    <p class="text-cream">This section has hero-video-container class</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section (Light Background) -->
+        <section id="books" class="test-section bg-cream">
+            <h1 class="text-6xl text-oxford-blue font-bold text-center">Books Section</h1>
+            <p class="text-charcoal text-xl">Light background - Navigation should be Oxford Blue</p>
+            <div class="bg-cream p-4 rounded border border-oxford-blue">
+                <p class="text-charcoal">This section has bg-cream class</p>
+            </div>
+            
+            <!-- Test Book Links -->
+            <div class="mt-8">
+                <h3>Book Link Tests</h3>
+                <a href="https://www.karnacbooks.com/product/do-you-read-me-learning-difficulties-dyslexia-and-the-denial-of-meaning/36710/" 
+                   target="_blank" 
+                   class="btn-primary inline-block mx-2"
+                   id="book1-link">
+                    Do You Read Me - Test Link
+                </a>
+                <a href="https://www.karnacbooks.com/product/the-triumphant-victim-a-psychoanalytical-perspective-on-sadomasochism-and-perverse-thinking/33895/" 
+                   target="_blank" 
+                   class="btn-primary inline-block mx-2"
+                   id="book2-link">
+                    Triumphant Victim - Test Link
+                </a>
+            </div>
+        </section>
+
+        <!-- Insights Section (Dark Background) -->
+        <section id="insights" class="test-section bg-oxford-blue">
+            <h1 class="text-6xl text-cream font-bold text-center">Insights Section</h1>
+            <p class="text-cream text-xl">Dark background - Navigation should be cream</p>
+            <div class="bg-oxford-blue p-4 rounded">
+                <p class="text-cream">This section has bg-oxford-blue class</p>
+            </div>
+        </section>
+
+        <!-- About Section (Light Background) -->
+        <section id="about" class="test-section bg-cream">
+            <h1 class="text-6xl text-oxford-blue font-bold text-center">About Section</h1>
+            <p class="text-charcoal text-xl">Light background - Navigation should be Oxford Blue</p>
+            <div class="bg-cream p-4 rounded border border-oxford-blue">
+                <p class="text-charcoal">This section has bg-cream class</p>
+            </div>
+        </section>
+
+        <!-- Key Concepts Section (Light Background) -->
+        <section id="key-concepts" class="test-section bg-cream">
+            <h1 class="text-6xl text-oxford-blue font-bold text-center">Key Concepts Section</h1>
+            <p class="text-charcoal text-xl">Light background - Navigation should be Oxford Blue</p>
+            <div class="bg-cream p-4 rounded border border-oxford-blue">
+                <p class="text-charcoal">This section has bg-cream class</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Dark Background) -->
+        <section id="faq" class="test-section bg-oxford-blue">
+            <h1 class="text-6xl text-cream font-bold text-center">FAQ Section</h1>
+            <p class="text-cream text-xl">Dark background - Navigation should be cream</p>
+            <div class="bg-oxford-blue p-4 rounded">
+                <p class="text-cream">This section has bg-oxford-blue class</p>
+            </div>
+        </section>
+
+        <!-- Contact Section (Dark Background) -->
+        <section id="contact" class="test-section bg-oxford-blue">
+            <h1 class="text-6xl text-cream font-bold text-center">Contact Section</h1>
+            <p class="text-cream text-xl">Dark background - Navigation should be cream</p>
+            <div class="bg-oxford-blue p-4 rounded">
+                <p class="text-cream">This section has bg-oxford-blue class</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Test variables
+        let testResults = {
+            navObserver: false,
+            darkModeDetection: false,
+            cssTransitions: false,
+            initialState: false,
+            browserSupport: false,
+            bookLinks: false
+        };
+        
+        let rapidScrollCount = 0;
+        let lastScrollTime = 0;
+        
+        // Update scroll position indicator
+        window.addEventListener('scroll', () => {
+            document.getElementById('scrollPosition').textContent = window.scrollY;
+            
+            // Update current section
+            const sections = document.querySelectorAll('section');
+            let currentSection = 'unknown';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    currentSection = section.id;
+                }
+            });
+            
+            document.getElementById('currentSection').textContent = currentSection;
+            
+            // Test rapid scrolling
+            const now = Date.now();
+            if (now - lastScrollTime < 100) {
+                rapidScrollCount++;
+                if (rapidScrollCount > 10) {
+                    updateTestResult('rapidScroll', true);
+                }
+            }
+            lastScrollTime = now;
+        });
+        
+        // Test functions
+        function updateTestResult(testName, passed) {
+            const statusElement = document.getElementById(testName + 'Status');
+            const resultElement = document.getElementById(testName + 'Result');
+            
+            if (statusElement && resultElement) {
+                statusElement.className = 'status-indicator ' + (passed ? 'status-pass' : 'status-fail');
+                resultElement.textContent = passed ? 'PASS' : 'FAIL';
+            }
+            
+            // Update corresponding test result
+            switch(testName) {
+                case 'navObserver':
+                    testResults.navObserver = passed;
+                    break;
+                case 'darkMode':
+                    testResults.darkModeDetection = passed;
+                    break;
+                case 'transition':
+                    testResults.cssTransitions = passed;
+                    break;
+                case 'initialState':
+                    testResults.initialState = passed;
+                    break;
+                case 'browserSupport':
+                    testResults.browserSupport = passed;
+                    break;
+            }
+        }
+        
+        function runRapidScrollTest() {
+            console.log('Starting rapid scroll test...');
+            rapidScrollCount = 0;
+            
+            // Scroll rapidly through sections
+            const sections = document.querySelectorAll('section');
+            let index = 0;
+            
+            const scrollInterval = setInterval(() => {
+                if (index < sections.length) {
+                    sections[index].scrollIntoView({ behavior: 'smooth' });
+                    index++;
+                } else {
+                    clearInterval(scrollInterval);
+                    console.log('Rapid scroll test completed');
+                }
+            }, 200);
+        }
+        
+        function runIntersectionObserverTest() {
+            console.log('Testing IntersectionObserver support...');
+            
+            if ('IntersectionObserver' in window) {
+                updateTestResult('browserSupport', true);
+                console.log('✓ IntersectionObserver is supported');
+            } else {
+                updateTestResult('browserSupport', false);
+                console.log('✗ IntersectionObserver is not supported');
+            }
+        }
+        
+        function resetTest() {
+            console.log('Resetting test...');
+            window.scrollTo(0, 0);
+            rapidScrollCount = 0;
+            
+            // Reset all test results to pending
+            Object.keys(testResults).forEach(key => {
+                testResults[key] = false;
+            });
+            
+            // Reset UI
+            ['navObserver', 'darkMode', 'transition', 'initialState', 'browserSupport'].forEach(test => {
+                const statusElement = document.getElementById(test + 'Status');
+                const resultElement = document.getElementById(test + 'Result');
+                if (statusElement && resultElement) {
+                    statusElement.className = 'status-indicator status-pending';
+                    resultElement.textContent = 'Pending';
+                }
+            });
+        }
+        
+        function checkNavigationState() {
+            const nav = document.querySelector('nav');
+            const hasDarkMode = nav.classList.contains('nav-dark-mode');
+            const currentSection = document.getElementById('currentSection').textContent;
+            
+            // Determine expected state based on current section
+            const darkSections = ['hero', 'insights', 'faq', 'contact'];
+            const expectedDarkMode = darkSections.includes(currentSection);
+            
+            if (hasDarkMode === expectedDarkMode) {
+                updateTestResult('darkMode', true);
+            } else {
+                updateTestResult('darkMode', false);
+            }
+        }
+        
+        function testBookLinks() {
+            const book1Link = document.getElementById('book1-link');
+            const book2Link = document.getElementById('book2-link');
+            
+            const book1Correct = book1Link && book1Link.href === 'https://www.karnacbooks.com/product/do-you-read-me-learning-difficulties-dyslexia-and-the-denial-of-meaning/36710/';
+            const book2Correct = book2Link && book2Link.href === 'https://www.karnacbooks.com/product/the-triumphant-victim-a-psychoanalytical-perspective-on-sadomasochism-and-perverse-thinking/33895/';
+            
+            const book1Text = book1Link && book1Link.textContent.includes('Do You Read Me');
+            const book2Text = book2Link && book2Link.textContent.includes('Triumphant Victim');
+            
+            testResults.bookLinks = book1Correct && book2Correct && book1Text && book2Text;
+            
+            console.log('Book link tests:', {
+                book1Correct,
+                book2Correct,
+                book1Text,
+                book2Text,
+                overall: testResults.bookLinks
+            });
+        }
+        
+        function testCSSTransitions() {
+            const navLink = document.querySelector('.nav-link');
+            if (navLink) {
+                const styles = window.getComputedStyle(navLink);
+                const hasTransition = styles.transition && styles.transition.includes('color') && styles.transition.includes('0.3s');
+                updateTestResult('transition', hasTransition);
+            }
+        }
+        
+        // Initialize tests when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Test page loaded, starting tests...');
+            
+            // Wait a bit for NavigationObserver to initialize
+            setTimeout(() => {
+                // Test NavigationObserver initialization
+                if (window.navigationObserver) {
+                    updateTestResult('navObserver', true);
+                    console.log('✓ NavigationObserver initialized');
+                } else {
+                    updateTestResult('navObserver', false);
+                    console.log('✗ NavigationObserver not found');
+                }
+                
+                // Test initial state
+                const nav = document.querySelector('nav');
+                const initialDarkMode = nav.classList.contains('nav-dark-mode');
+                // Hero section should trigger dark mode initially
+                updateTestResult('initialState', initialDarkMode);
+                
+                // Test CSS transitions
+                testCSSTransitions();
+                
+                // Test book links
+                testBookLinks();
+                
+                // Test browser support
+                runIntersectionObserverTest();
+                
+                // Set up continuous monitoring
+                setInterval(checkNavigationState, 500);
+                
+                console.log('All tests initialized');
+            }, 1000);
+        });
+        
+        // Log final results
+        window.addEventListener('beforeunload', () => {
+            console.log('Final test results:', testResults);
+        });
+    </script>
+</body>
+</html>

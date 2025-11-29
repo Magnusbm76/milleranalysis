@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Fix Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 400px;
+            z-index: 9999;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .test-section {
+            min-height: 100vh;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body class="font-serif bg-cream">
+    <div class="debug-info" id="debugInfo">
+        <h3>Debug Info:</h3>
+        <div id="debugContent">Initializing...</div>
+    </div>
+
+    <section class="test-section">
+        <h1 class="text-4xl text-oxford-blue font-bold mb-8">Timing Fix Test</h1>
+        <p class="text-lg mb-8">This test verifies that the RevealOnScroll observer is properly reinitialized after dynamic content is added.</p>
+    </section>
+
+    <section id="carouselView" class="test-section">
+        <h2 class="text-3xl text-oxford-blue font-bold mb-6">Dynamic Content Area</h2>
+        <div id="carouselContent">
+            <!-- Content will be dynamically added here -->
+        </div>
+    </section>
+
+    <script>
+        // Debug function to update debug info
+        function updateDebugInfo(message) {
+            const debugContent = document.getElementById('debugContent');
+            const timestamp = new Date().toLocaleTimeString() + '.' + new Date().getMilliseconds();
+            debugContent.innerHTML += '<br>' + timestamp + ': ' + message;
+            console.log(message);
+        }
+
+        // Mock quote data for testing
+        const mockQuoteData = {
+            quotes: [
+                {
+                    id: 'quote1',
+                    title: "Test Quote 1",
+                    quote: "This is a test quote for timing verification.",
+                    context: "Testing the timing fix for RevealOnScroll observer reinitialization."
+                },
+                {
+                    id: 'quote2',
+                    title: "Test Quote 2",
+                    quote: "Another test quote to verify dynamic content handling.",
+                    context: "Ensuring that dynamically added elements are properly observed."
+                },
+                {
+                    id: 'quote3',
+                    title: "Test Quote 3",
+                    quote: "Third test quote for comprehensive testing.",
+                    context: "Verifying that all reveal elements work correctly after timing fix."
+                }
+            ]
+        };
+
+        // RevealOnScroll class from main.js
+        class RevealOnScroll {
+            constructor(options = {}) {
+                this.options = {
+                    threshold: options.threshold || 0.15,
+                    rootMargin: options.rootMargin || '0px 0px -50px 0px',
+                    selector: options.selector || '.reveal',
+                    activeClass: options.activeClass || 'active'
+                };
+                this.observer = null;
+                this.init();
+            }
+            
+            init() {
+                updateDebugInfo('RevealOnScroll.init() called');
+                
+                if (!window.IntersectionObserver) {
+                    updateDebugInfo('IntersectionObserver not supported, using fallback');
+                    this.fallbackInit();
+                    return;
+                }
+                
+                const elementsToReveal = document.querySelectorAll(this.options.selector);
+                updateDebugInfo('Found ' + elementsToReveal.length + ' elements with selector "' + this.options.selector + '"');
+                
+                if (elementsToReveal.length === 0) {
+                    updateDebugInfo('No elements found to observe');
+                    return;
+                }
+                
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(this.options.activeClass);
+                            updateDebugInfo('Added "active" class to element: ' + entry.target.className);
+                        }
+                    });
+                }, {
+                    threshold: this.options.threshold,
+                    rootMargin: this.options.rootMargin
+                });
+                
+                elementsToReveal.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    this.observer.observe(element);
+                    updateDebugInfo('Started observing element ' + (index + 1) + ': ' + element.tagName);
+                });
+                
+                updateDebugInfo('RevealOnScroll initialized with ' + elementsToReveal.length + ' elements');
+            }
+            
+            fallbackInit() {
+                updateDebugInfo('Using fallback initialization');
+                // Fallback implementation would go here
+            }
+            
+            destroy() {
+                if (this.observer) {
+                    this.observer.disconnect();
+                    this.observer = null;
+                    updateDebugInfo('Observer destroyed');
+                }
+            }
+        }
+
+        // Simulate populateCarouselView function
+        function populateCarouselView() {
+            updateDebugInfo('populateCarouselView() called');
+            
+            const carouselContent = document.getElementById('carouselContent');
+            if (!carouselContent) {
+                updateDebugInfo('ERROR: carouselContent element not found');
+                return;
+            }
+            
+            // Generate HTML for each quote
+            const quoteCardsHTML = mockQuoteData.quotes.map((quote, index) => {
+                const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
+                return `
+                <div class="reveal ${staggerClass} insight-card p-6 bg-white rounded-lg shadow-lg mb-4 cursor-pointer">
+                    <h3 class="text-xl font-bold text-oxford-blue">${quote.title}</h3>
+                    <p class="mt-4 italic opacity-80">"${quote.quote}"</p>
+                    <div class="insight-reveal-content text-sm mt-4">
+                        <p>${quote.context}</p>
+                        <p class="mt-2 text-blue-600 font-bold">Click to hide.</p>
+                    </div>
+                </div>
+            `;
+            }).join('');
+            
+            // Set the HTML content
+            carouselContent.innerHTML = quoteCardsHTML;
+            updateDebugInfo('Dynamic content added to carousel');
+            
+            // Check how many reveal elements exist now
+            const revealElements = document.querySelectorAll('.reveal');
+            updateDebugInfo('Total .reveal elements after population: ' + revealElements.length);
+        }
+
+        // Simulate the fixed initializeInsightCards function
+        function initializeInsightCards() {
+            try {
+                updateDebugInfo('initializeInsightCards() called');
+                
+                // First populate carousel with quote data
+                populateCarouselView();
+                
+                // Use requestAnimationFrame to ensure DOM is updated before reinitializing observer
+                requestAnimationFrame(() => {
+                    // Add a small delay to ensure all DOM updates are complete
+                    setTimeout(() => {
+                        reinitializeScrollObserver();
+                        setupInsightCardListeners();
+                    }, 50); // Small delay to ensure DOM is fully updated
+                });
+                
+            } catch (error) {
+                updateDebugInfo('ERROR in initializeInsightCards: ' + error.message);
+                console.error('Error in initializeInsightCards:', error);
+            }
+        }
+
+        // Simulate the fixed reinitializeScrollObserver function
+        function reinitializeScrollObserver() {
+            try {
+                updateDebugInfo('reinitializeScrollObserver() called');
+                
+                if (window.revealOnScroll) {
+                    updateDebugInfo('Destroying existing observer...');
+                    window.revealOnScroll.destroy();
+                    window.revealOnScroll = null;
+                }
+                
+                // Check if there are any .reveal elements to observe
+                const revealElements = document.querySelectorAll('.reveal');
+                updateDebugInfo('Found ' + revealElements.length + ' .reveal elements to observe');
+                
+                if (revealElements.length > 0) {
+                    // Create new observer instance
+                    window.revealOnScroll = new RevealOnScroll({
+                        threshold: 0.15,
+                        rootMargin: '0px 0px -50px 0px',
+                        selector: '.reveal',
+                        activeClass: 'active'
+                    });
+                    
+                    updateDebugInfo('Scroll observer successfully reinitialized with ' + revealElements.length + ' elements');
+                } else {
+                    updateDebugInfo('WARNING: No .reveal elements found to observe');
+                }
+                
+            } catch (error) {
+                updateDebugInfo('ERROR reinitializing scroll observer: ' + error.message);
+                console.error('Error reinitializing scroll observer:', error);
+            }
+        }
+
+        // Simulate the fixed setupInsightCardListeners function
+        function setupInsightCardListeners() {
+            try {
+                updateDebugInfo('setupInsightCardListeners() called');
+                
+                const insightCards = document.querySelectorAll('.insight-card');
+                updateDebugInfo('Found ' + insightCards.length + ' insight cards');
+                
+                insightCards.forEach((card, index) => {
+                    card.addEventListener('click', function() {
+                        this.classList.toggle('active');
+                        updateDebugInfo('Insight card ' + (index + 1) + ' clicked');
+                    });
+                });
+                
+                updateDebugInfo('Insight card listeners setup complete');
+                
+            } catch (error) {
+                updateDebugInfo('ERROR setting up insight card listeners: ' + error.message);
+                console.error('Error setting up insight card listeners:', error);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebugInfo('DOM loaded');
+            
+            try {
+                // Initialize initial RevealOnScroll
+                window.revealOnScroll = new RevealOnScroll({
+                    threshold: 0.15,
+                    rootMargin: '0px 0px -50px 0px',
+                    selector: '.reveal',
+                    activeClass: 'active'
+                });
+                
+                updateDebugInfo('Initial RevealOnScroll instance created');
+                
+                // Simulate the timing issue scenario after a delay
+                setTimeout(() => {
+                    updateDebugInfo('=== SIMULATING TIMING ISSUE SCENARIO ===');
+                    initializeInsightCards();
+                }, 2000);
+                
+            } catch (error) {
+                updateDebugInfo('ERROR during initialization: ' + error.message);
+                console.error('Error during initialization:', error);
+            }
+        });
+    </script>
+</body>
+</html>

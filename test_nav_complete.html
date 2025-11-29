@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Navigation Contrast Test</title>
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['var(--font-serif)'],
+                        'sans': ['var(--font-sans)'],
+                    },
+                    colors: {
+                        'oxford-blue': 'var(--color-oxford-blue)',
+                        'cream': 'var(--color-cream)',
+                        'charcoal': 'var(--color-charcoal)',
+                        'gold': 'var(--color-gold)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-serif bg-cream">
+    <!-- Hero section with video background -->
+    <div class="hero-video-container">
+        <video autoplay muted loop playsinline>
+            <source src="assets/video/hero/hero-loop-v1.mp4" type="video/mp4">
+            <div class="w-screen h-screen bg-oxford-blue flex items-center justify-center">
+                <p class="text-cream text-xl">Loading atmosphere...</p>
+            </div>
+        </video>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
+             
+            <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
+                <a href="#" class="text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded" aria-label="Return to top of page">
+                    JOHN F. MILLER
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li class="relative group">
+                        <button class="nav-link flex items-center" aria-expanded="false" aria-haspopup="true" aria-controls="books-dropdown">
+                            Books
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Dropdown arrow icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="books-dropdown" class="absolute top-full left-0 mt-2 w-48 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
+                            <a href="#test" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">Test Link</a>
+                        </div>
+                    </li>
+                    <li><a href="#test" class="nav-link">Insights</a></li>
+                    <li><a href="#test" class="nav-link">About</a></li>
+                </ul>
+                
+                <!-- Language Selector -->
+                <div class="relative group">
+                    <button class="flex items-center text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded px-3 py-1" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Language icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                        </svg>
+                        EN
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Dropdown arrow icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-32 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
+                        <a href="/" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">EN</a>
+                        <a href="/fr/" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">FR</a>
+                        <a href="/es/" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">ES</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="relative z-10 pt-24 min-h-screen">
+        <section id="test" class="h-screen flex items-center justify-center">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl font-bold text-oxford-blue mb-8">
+                    Complete Navigation Contrast Test
+                </h1>
+                <p class="text-xl text-charcoal mb-4">
+                    Scroll down to test navigation title contrast changes.
+                </p>
+                <div class="text-left max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-2xl font-bold text-oxford-blue mb-4">Test Checklist:</h2>
+                    <ul class="space-y-2 text-charcoal">
+                        <li>✓ At top: Title should be cream color on transparent background</li>
+                        <li>✓ After scrolling 50px: Title should be oxford-blue on cream background</li>
+                        <li>✓ Books dropdown button should follow same contrast rules</li>
+                        <li>✓ Language selector button should follow same contrast rules</li>
+                        <li>✓ Navigation links should follow same contrast rules</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="test2" class="h-screen flex items-center justify-center bg-oxford-blue">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h2 class="text-5xl font-bold text-cream mb-8">
+                    Second Section
+                </h2>
+                <p class="text-xl text-cream">
+                    Navigation should maintain proper contrast in this section as well.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Add visual indicators for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            const indicators = document.createElement('div');
+            indicators.style.position = 'fixed';
+            indicators.style.bottom = '20px';
+            indicators.style.left = '20px';
+            indicators.style.padding = '15px';
+            indicators.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            indicators.style.color = 'white';
+            indicators.style.borderRadius = '5px';
+            indicators.style.fontSize = '14px';
+            indicators.style.zIndex = '1000';
+            indicators.style.maxWidth = '300px';
+            document.body.appendChild(indicators);
+            
+            function updateIndicators() {
+                const nav = document.querySelector('nav');
+                const titleElement = nav.querySelector('.text-xl');
+                const buttonElements = nav.querySelectorAll('button');
+                
+                indicators.innerHTML = `
+                    <strong>Navigation State:</strong><br>
+                    Scroll Y: ${window.scrollY}px<br>
+                    Nav Class: ${nav.classList.contains('scrolled-nav') ? 'scrolled-nav' : 'no class'}<br>
+                    <br>
+                    <strong>Element Colors:</strong><br>
+                    Title color: ${window.getComputedStyle(titleElement).color}<br>
+                    Button count: ${buttonElements.length}<br>
+                    Button 1 color: ${window.getComputedStyle(buttonElements[0]).color}<br>
+                    Button 2 color: ${buttonElements[1] ? window.getComputedStyle(buttonElements[1]).color : 'N/A'}<br>
+                `;
+            }
+            
+            window.addEventListener('scroll', updateIndicators);
+            updateIndicators();
+        });
+    </script>
+</body>
+</html>

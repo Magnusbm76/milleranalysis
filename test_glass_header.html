@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Header Test</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['var(--font-serif)'],
+                        'sans': ['var(--font-sans)'],
+                    },
+                    colors: {
+                        'oxford-blue': 'var(--color-oxford-blue)',
+                        'cream': 'var(--color-cream)',
+                        'charcoal': 'var(--color-charcoal)',
+                        'gold': 'var(--color-gold)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-serif bg-cream">
+    <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
+            <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
+                JOHN F. MILLER
+            </div>
+
+            <ul class="flex space-x-8">
+                <li><a href="#section1" class="nav-link">Section 1</a></li>
+                <li><a href="#section2" class="nav-link">Section 2</a></li>
+                <li><a href="#section3" class="nav-link">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" class="relative z-10 pt-24">
+        <!-- Hero Section - Full screen -->
+        <section id="hero" class="h-screen flex items-center justify-center bg-oxford-blue">
+            <h1 class="text-6xl text-cream font-bold text-center">
+                Scroll Down to Test Glass Header
+            </h1>
+        </section>
+
+        <!-- Content Section -->
+        <section id="section1" class="min-h-screen bg-cream py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-5xl text-oxford-blue font-bold mb-12">Section 1</h2>
+                <p class="text-charcoal text-lg leading-relaxed mb-8">
+                    This is a test page for the Glass Header implementation. When you scroll down, the navigation should change from transparent 
+                    to a cream-colored background with a subtle shadow effect.
+                </p>
+                <p class="text-charcoal text-lg leading-relaxed mb-8">
+                    The navigation should remain transparent until you scroll past 50px, at which point it should gain the cream glass effect 
+                    with rgba(245, 245, 220, 0.95) background and a box-shadow of 0 2px 10px rgba(0,0,0,0.1).
+                </p>
+                <p class="text-charcoal text-lg leading-relaxed">
+                    The text color in the navigation should also change to maintain high contrast (Oxford Blue on cream background).
+                </p>
+            </div>
+        </section>
+
+        <section id="section2" class="min-h-screen bg-oxford-blue py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-5xl text-cream font-bold mb-12">Section 2</h2>
+                <p class="text-cream text-lg leading-relaxed mb-8">
+                    This section has a dark background to test how the Glass Header works with different content backgrounds.
+                </p>
+                <p class="text-cream text-lg leading-relaxed">
+                    The Glass Header should maintain its cream background regardless of the section background color.
+                </p>
+            </div>
+        </section>
+
+        <section id="section3" class="min-h-screen bg-cream py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-5xl text-oxford-blue font-bold mb-12">Section 3</h2>
+                <p class="text-charcoal text-lg leading-relaxed mb-8">
+                    This is another section with a light background to verify the Glass Header effect is consistent.
+                </p>
+                <p class="text-charcoal text-lg leading-relaxed">
+                    Scroll back to the top to see the navigation return to its transparent state.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
