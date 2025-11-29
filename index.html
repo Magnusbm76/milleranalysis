@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Mr. John F. Miller - Oxford Psychoanalyst specializing in Lacanian Theory. Author of 'Do You Read Me' and 'Triumphant Victim'. Explore the labyrinth of psychoanalytic interpretation.">
+    <meta name="description" content="Official site of Oxford Psychoanalyst John F. Miller. Explore seminal works on Lacanian semiotics, the 'Triumphant Victim' complex, and the clinical interpretation of silence. Available for academic and general readership.">
     <meta name="keywords" content="John F. Miller, Oxford Psychoanalyst, Lacanian Theory, Psychoanalysis, Semiotics, Do You Read Me, Triumphant Victim">
     <meta name="author" content="Mr. John F. Miller">
     <meta name="robots" content="index, follow">
@@ -23,7 +23,14 @@
     <meta property="og:url" content="https://johnmilleranalysis.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Labyrinth of Interpretation">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="en_GB">
+    
+    <!-- Hreflang Tags for International SEO -->
+    <link rel="alternate" hreflang="en-gb" href="https://johnmilleranalysis.com/">
+    <link rel="alternate" hreflang="fr" href="https://johnmilleranalysis.com/fr/">
+    <link rel="alternate" hreflang="es" href="https://johnmilleranalysis.com/es/">
+    <link rel="alternate" hreflang="de" href="https://johnmilleranalysis.com/de/">
+    <link rel="alternate" hreflang="x-default" href="https://johnmilleranalysis.com/">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Professional portrait of John F. Miller, Oxford psychoanalyst and author">
@@ -90,6 +97,76 @@
                 "publisher": {
                     "@id": "#person"
                 }
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "#triumphant-victim",
+                "name": "The Triumphant Victim",
+                "description": "A central paradox in Miller's work where contemporary social structures encourage and validate a performative identity rooted in structural inadequacy. This concept explores how individuals derive power and social validation through the adoption of victimhood, transforming perceived weakness into a form of triumph within modern discourse.",
+                "inDefinedTermSet": "Miller's Psychoanalytic Concepts",
+                "termCode": "TV-001"
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "#analytic-semiotics",
+                "name": "Analytic Semiotics",
+                "description": "Miller's specific methodological approach that combines rigorous semiotic analysis with clinical psychoanalytic practice. This framework examines how language structures unconscious desires and shapes our understanding of self, focusing on the fundamental gap between signifier and signified in human communication.",
+                "inDefinedTermSet": "Miller's Psychoanalytic Concepts",
+                "termCode": "AS-002"
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "#the-labyrinth",
+                "name": "The Labyrinth",
+                "description": "The central metaphor of Miller's work representing the complex, recursive nature of psychoanalytic interpretation. The labyrinth symbolizes both the structure of the human psyche and the process of therapeutic exploration—where paths may circle back, where meaning is found in the journey rather than the destination.",
+                "inDefinedTermSet": "Miller's Psychoanalytic Concepts",
+                "termCode": "TL-003"
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is this book suitable for clinical practice?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, both \"Do You Read Me\" and \"Triumphant Victim\" are designed to enhance clinical practice by providing theoretical frameworks that can be directly applied to therapeutic work. Miller's analytic semiotics offers practitioners new tools for understanding patient narratives and the role of language in the therapeutic process."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does it cover Lacanian theory?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Extensively. Miller's work is deeply rooted in Lacanian theory, particularly the concepts of the symbolic order, the role of language in structuring the unconscious, and the function of desire. \"Triumphant Victim\" specifically applies Lacanian frameworks to contemporary cultural phenomena, while \"Do You Read Me\" explores the semiotic implications of Lacan's early work."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What academic background is recommended?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "While the books are academically rigorous, they are accessible to readers with foundational knowledge in psychoanalysis or cultural theory. For clinical practitioners, familiarity with basic psychoanalytic concepts is helpful. For academics and students, background in critical theory, semiotics, or continental philosophy provides useful context, though Miller's clear writing style makes complex ideas approachable."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does this approach differ from traditional psychoanalysis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Miller's approach uniquely combines traditional Lacanian psychoanalysis with rigorous semiotic methodology, creating what he terms \"analytic semiotics.\" This differs from traditional practice by explicitly focusing on the structural limitations of language in therapeutic settings and examining how contemporary cultural phenomena reshape classic psychoanalytic concepts."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are there practical case studies included?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, both books include carefully anonymized case studies that demonstrate the application of Miller's theoretical frameworks in clinical practice. These examples illustrate how analytic semiotics operates in therapeutic settings and how the concept of the triumphant victim manifests in contemporary patient presentations."
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -157,6 +234,8 @@
                 </li>
                 <li><a href="#insights" class="nav-link">Insights</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#key-concepts" class="nav-link">Key Concepts</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -200,6 +279,16 @@
                         </a>
                     </div>
 
+                </div>
+
+                <!-- International Availability Badge -->
+                <div class="reveal reveal-stagger-3 mt-12 text-center">
+                    <p class="text-charcoal italic text-sm">
+                        <svg class="inline-block w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"/>
+                        </svg>
+                        Available Worldwide via Amazon Global Shipping
+                    </p>
                 </div>
 
             </div>
@@ -292,6 +381,109 @@
                                     Mr. Miller has established himself as a leading voice in modern psychoanalytic interpretation.
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-concepts" class="reveal min-h-screen bg-cream py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-oxford-blue font-bold mb-12 border-b border-charcoal pb-4 text-center">
+                    Key Concepts
+                </h2>
+
+                <div class="reveal reveal-stagger-1 max-w-4xl mx-auto">
+                    <dl class="space-y-8">
+                        <div class="concept-item">
+                            <dt class="text-2xl font-bold text-oxford-blue mb-3">The Triumphant Victim</dt>
+                            <dd class="text-charcoal leading-relaxed ml-0">
+                                A central paradox in Miller's work where contemporary social structures encourage and validate a performative identity rooted in structural inadequacy. This concept explores how individuals derive power and social validation through the adoption of victimhood, transforming perceived weakness into a form of triumph within modern discourse. The phenomenon represents a fundamental shift in how identity is constructed and validated in contemporary culture.
+                            </dd>
+                        </div>
+
+                        <div class="concept-item">
+                            <dt class="text-2xl font-bold text-oxford-blue mb-3">Analytic Semiotics</dt>
+                            <dd class="text-charcoal leading-relaxed ml-0">
+                                Miller's specific methodological approach that combines rigorous semiotic analysis with clinical psychoanalytic practice. This framework examines how language structures unconscious desires and shapes our understanding of self, focusing on the fundamental gap between signifier and signified in human communication. Analytic semiotics reveals the limitations of language in conveying psychological truth while acknowledging its necessity in therapeutic practice.
+                            </dd>
+                        </div>
+
+                        <div class="concept-item">
+                            <dt class="text-2xl font-bold text-oxford-blue mb-3">The Labyrinth</dt>
+                            <dd class="text-charcoal leading-relaxed ml-0">
+                                The central metaphor of Miller's work representing the complex, recursive nature of psychoanalytic interpretation. The labyrinth symbolizes both the structure of the human psyche and the process of therapeutic exploration—where paths may circle back, where meaning is found in the journey rather than the destination, and where the analyst and analysand navigate together through the intricate corridors of unconscious meaning. This metaphor emphasizes that interpretation is not about finding answers but about embracing the complexity of human subjectivity.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="reveal min-h-screen bg-oxford-blue py-24">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-cream font-bold mb-12 border-b border-gold pb-4 text-center">
+                    Frequently Asked Questions
+                </h2>
+
+                <div class="reveal reveal-stagger-1 space-y-4">
+                    <div class="faq-item bg-cream rounded-lg overflow-hidden">
+                        <button class="faq-question w-full px-6 py-4 text-left font-bold text-oxford-blue flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false">
+                            <span>Is this book suitable for clinical practice?</span>
+                            <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-charcoal">
+                            <p>Yes, both "Do You Read Me" and "Triumphant Victim" are designed to enhance clinical practice by providing theoretical frameworks that can be directly applied to therapeutic work. Miller's analytic semiotics offers practitioners new tools for understanding patient narratives and the role of language in the therapeutic process.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-cream rounded-lg overflow-hidden">
+                        <button class="faq-question w-full px-6 py-4 text-left font-bold text-oxford-blue flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false">
+                            <span>Does it cover Lacanian theory?</span>
+                            <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-charcoal">
+                            <p>Extensively. Miller's work is deeply rooted in Lacanian theory, particularly the concepts of the symbolic order, the role of language in structuring the unconscious, and the function of desire. "Triumphant Victim" specifically applies Lacanian frameworks to contemporary cultural phenomena, while "Do You Read Me" explores the semiotic implications of Lacan's early work.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-cream rounded-lg overflow-hidden">
+                        <button class="faq-question w-full px-6 py-4 text-left font-bold text-oxford-blue flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false">
+                            <span>What academic background is recommended?</span>
+                            <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-charcoal">
+                            <p>While the books are academically rigorous, they are accessible to readers with foundational knowledge in psychoanalysis or cultural theory. For clinical practitioners, familiarity with basic psychoanalytic concepts is helpful. For academics and students, background in critical theory, semiotics, or continental philosophy provides useful context, though Miller's clear writing style makes complex ideas approachable.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-cream rounded-lg overflow-hidden">
+                        <button class="faq-question w-full px-6 py-4 text-left font-bold text-oxford-blue flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false">
+                            <span>How does this approach differ from traditional psychoanalysis?</span>
+                            <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-charcoal">
+                            <p>Miller's approach uniquely combines traditional Lacanian psychoanalysis with rigorous semiotic methodology, creating what he terms "analytic semiotics." This differs from traditional practice by explicitly focusing on the structural limitations of language in therapeutic settings and examining how contemporary cultural phenomena reshape classic psychoanalytic concepts. His work is particularly attentive to how modern identity formation differs from the contexts in which psychoanalysis originally developed.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-cream rounded-lg overflow-hidden">
+                        <button class="faq-question w-full px-6 py-4 text-left font-bold text-oxford-blue flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false">
+                            <span>Are there practical case studies included?</span>
+                            <svg class="faq-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-4 text-charcoal">
+                            <p>Yes, both books include carefully anonymized case studies that demonstrate the application of Miller's theoretical frameworks in clinical practice. These examples illustrate how analytic semiotics operates in therapeutic settings and how the concept of the triumphant victim manifests in contemporary patient presentations. The case studies bridge theory and practice, showing how Miller's approach enhances traditional psychoanalytic technique.</p>
                         </div>
                     </div>
                 </div>
