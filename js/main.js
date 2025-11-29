@@ -747,7 +747,7 @@ function initializeDetailsPanel() {
     if (!detailsPanel) {
         detailsPanel = document.createElement('div');
         detailsPanel.id = 'detailsPanel';
-        detailsPanel.className = 'bg-white rounded-lg shadow-lg p-6 mb-6';
+        detailsPanel.className = 'insight-card rounded-lg shadow-lg p-6 mb-6';
         
         // Add to main content area
         const mainContent = document.querySelector('main');
