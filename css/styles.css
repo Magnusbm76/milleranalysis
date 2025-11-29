@@ -1005,3 +1005,11 @@ html {
         padding: 0 var(--spacing-md) var(--spacing-md);
     }
 }
+/* FORCE OVERRIDE FOR INSIGHT CARDS */
+.insight-card {
+    background-color: #002147 !important;
+    color: #F5F5DC !important;
+}
+.insight-card h3 {
+    color: #FFD700 !important;
+}

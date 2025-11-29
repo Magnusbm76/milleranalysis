@@ -677,27 +677,25 @@ function populateCarouselView() {
     const carouselView = document.getElementById('carouselView');
     if (!carouselView || !window.quoteJourneyState) return;
     
-    // Get first 6 quotes for carousel display
-    const quotesToDisplay = window.quoteJourneyState.quoteData.quotes.slice(0, 6);
+    // Get ALL quotes to display
+    const quotes = window.quoteJourneyState.quoteData.quotes;
     
-    // Generate HTML for each quote
-    const quoteCardsHTML = quotesToDisplay.map((quote, index) => {
-        // Add staggered delay classes for reveal animation
-        const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
+    // Generate HTML for the grid layout
+    const quoteCardsHTML = quotes.slice(0, 6).map((quote, index) => {
         return `
-        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer">
-            <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
-            <p class="mt-4 italic opacity-80">"${quote.quote}"</p>
-            <div class="insight-reveal-content text-sm">
-                <p>${quote.context}</p>
-                <p class="mt-2 text-gold font-bold">Click to hide.</p>
+        <div class="insight-card p-8 text-center rounded-lg shadow-xl cursor-pointer hover:transform hover:scale-105 transition-all duration-300" style="background-color: #002147; border: 1px solid #FFD700;">
+            <h3 class="text-2xl font-bold mb-4" style="color: #FFD700; font-family: 'Playfair Display', serif;">${quote.title}</h3>
+            <p class="text-xl italic mb-6 leading-relaxed" style="color: #F5F5DC; font-family: 'Playfair Display', serif;">"${quote.quote}"</p>
+            <div class="insight-reveal-content text-sm mt-4 pt-4 border-t border-gold/30">
+                <p style="color: #F5F5DC; opacity: 0.9;">${quote.context}</p>
+                <p class="mt-2 font-bold uppercase tracking-widest text-xs" style="color: #FFD700;">Click to Toggle</p>
             </div>
         </div>
-    `;
+        `;
     }).join('');
     
-    // Set the HTML content
     carouselView.innerHTML = quoteCardsHTML;
+    carouselView.className = "grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto";
 }
 
 
