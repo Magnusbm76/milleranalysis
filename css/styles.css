@@ -325,6 +325,15 @@ nav .text-xl {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Explicit title contrast rules for navigation */
+nav:not(.scrolled-nav) .text-xl, nav:not(.scrolled-nav) button {
+    color: var(--color-cream) !important;
+}
+
+.scrolled-nav .text-xl, .scrolled-nav button {
+    color: var(--color-oxford-blue) !important;
+}
+
 /* Glass Header Effect - scrolled-nav class */
 .scrolled-nav {
     background-color: rgba(245, 245, 220, 0.95); /* Cream glass effect */
