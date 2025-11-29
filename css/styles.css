@@ -102,6 +102,73 @@ p {
     font-size: 1.125rem;
 }
 
+/* Quote Typography Styles */
+.quote-text {
+    font-family: var(--font-serif); /* Use serif font for quotes to distinguish them */
+    line-height: 1.8; /* Comfortable reading rhythm as requested */
+    font-size: 1.25rem; /* Slightly larger than regular paragraphs */
+    font-style: italic; /* Italic styling for quotes */
+    opacity: 0.9; /* Slightly reduced opacity for subtle effect */
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--color-gold); /* Gold accent bar on the left */
+    position: relative;
+}
+
+/* Quote color adjustments for different backgrounds */
+.bg-cream .quote-text {
+    color: var(--color-charcoal); /* Dark text on light background */
+}
+
+.bg-oxford-blue .quote-text {
+    color: var(--color-cream); /* Light text on dark background */
+}
+
+/* Quote attribution styling */
+.quote-text .quote-attribution {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-family: var(--font-sans);
+    margin-top: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+/* Attribution color adjustments for different backgrounds */
+.bg-cream .quote-text .quote-attribution {
+    color: var(--color-charcoal);
+}
+
+.bg-oxford-blue .quote-text .quote-attribution {
+    color: var(--color-cream);
+}
+
+/* Quote mark styling */
+.quote-text::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--color-gold);
+    opacity: 0.3;
+    position: absolute;
+    left: -0.5rem;
+    top: -0.5rem;
+    font-family: var(--font-serif);
+}
+
+/* Responsive adjustments for quotes */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 1.1rem;
+        padding-left: var(--spacing-sm);
+    }
+    
+    .quote-text::before {
+        font-size: 2.5rem;
+        top: -0.3rem;
+    }
+}
+
 /* Primary Button Styles */
 .btn-primary, .btn-convert {
     background-color: var(--color-gold); /* Deep Gold background */
@@ -270,20 +337,6 @@ p {
     opacity: 1;
 }
 
-/* Placeholder style for the missing cover images */
-.book-placeholder {
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-oxford-blue);
-    border: 5px solid var(--color-charcoal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-cream);
-    font-size: 1.5rem;
-    text-align: center;
-    padding: var(--spacing-md);
-}
 
 /* --- 5. Insights Section Specific Styles (Quote Cards) --- */
 
