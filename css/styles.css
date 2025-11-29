@@ -76,13 +76,18 @@ h1 {
 
 /* Hero Title Styling */
 .hero-title {
-    font-family: var(--font-serif); /* Playfair Display */
-    font-size: 4rem;
-    line-height: 1.1;
-    letter-spacing: 0.05em; /* tracking-wide */
-    color: var(--color-cream);
+    font-family: 'Playfair Display';
+    color: #F5F5DC;
     text-align: center;
-    margin-bottom: 0; /* Override default h1 margin */
+    margin-bottom: 2rem;
+}
+
+/* Hero Subtitle Styling */
+.hero-subtitle {
+    font-family: 'Lato';
+    color: #F5F5DC;
+    text-align: center;
+    max-width: 800px;
 }
 
 /* Responsive adjustments for hero title */
@@ -350,6 +355,15 @@ nav:not(.scrolled-nav) .text-xl { color: var(--color-cream) !important; }
 
 .scrolled-nav .text-xl {
     color: var(--color-oxford-blue); /* Oxford Blue text on Cream background */
+}
+
+/* Logo text color rules */
+nav .logo-text {
+    color: #F5F5DC !important; /* Default */
+}
+
+.scrolled-nav .logo-text {
+    color: #002147 !important; /* Scrolled */
 }
 
 /* --- 4. Books Showcase Specific Styles --- */

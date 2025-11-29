@@ -222,7 +222,18 @@
 
             <div class="flex items-center space-x-8">
                 <ul class="flex space-x-8">
-                    <li><a href="#books" class="nav-link">Libros</a></li>
+                    <li class="relative group">
+                        <button class="flex items-center nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="books-dropdown">
+                            Libros
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Dropdown arrow icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="books-dropdown" class="absolute top-full left-0 mt-2 w-48 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
+                            <a href="../books/do-you-read-me.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">¿Me Lees?</a>
+                            <a href="../books/triumphant-victim.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">Víctima Triunfante</a>
+                        </div>
+                    </li>
                     <li><a href="#insights" class="nav-link">Perspectivas</a></li>
                     <li><a href="#about" class="nav-link">Acerca de</a></li>
                     <li><a href="#concepts" class="nav-link">Conceptos Clave</a></li>
@@ -255,12 +266,8 @@
         
         <section id="hero" class="reveal h-[80vh] flex items-center justify-center">
             <div class="text-center max-w-4xl mx-auto px-6">
-                <h1 class="reveal reveal-delay-1 hero-title">
-                    El Laberinto de la Interpretación
-                </h1>
-                <p class="reveal reveal-delay-2 mt-8 text-xl md:text-2xl text-cream font-sans leading-relaxed tracking-wide max-w-2xl mx-auto">
-                    Explorando los intrincados caminos de la semiótica psicoanalítica y el poder transformador de la interpretación lacaniana en la práctica contemporánea
-                </p>
+                <h1 class="hero-title reveal reveal-delay-1">El Laberinto de la Interpretación</h1>
+                <p class="hero-subtitle reveal reveal-delay-2">Explorando los intrincados caminos de la semiótica psicoanalítica y el poder transformador de la interpretación lacaniana.</p>
             </div>
         </section>
 
