@@ -511,10 +511,10 @@ document.addEventListener('DOMContentLoaded', function() {
         selector: 'a[href^="#"]' // All anchor links starting with #
     });
     
-    // Initialize NavigationObserver for dynamic navigation color changes
-    window.navigationObserver = new NavigationObserver();
+    // Initialize simple scroll listener for glass header effect
+    initializeGlassHeader();
     
-    console.log('Scroll animations, smooth scrolling, and navigation observer initialized');
+    console.log('Scroll animations, smooth scrolling, and glass header initialized');
     
     // Initialize the new QuoteJourneyState with quote data
     // Note: quoteData should be loaded from js/quote_data.js before this script
@@ -1230,105 +1230,37 @@ class SmoothScroll {
     }
 }
 
-// Navigation Observer for dynamic navigation color changes based on section backgrounds
-class NavigationObserver {
-    constructor() {
-        this.navElement = document.querySelector('nav');
-        this.sections = document.querySelectorAll('section');
-        this.observer = null;
-        
-        if (!this.navElement) {
-            console.warn('Navigation element not found');
-            return;
-        }
-        
-        this.init();
+// Simple scroll listener for glass header effect
+function initializeGlassHeader() {
+    const navElement = document.querySelector('nav');
+    
+    if (!navElement) {
+        console.warn('Navigation element not found');
+        return;
     }
     
-    init() {
-        // Check if Intersection Observer is supported
-        if (!window.IntersectionObserver) {
-            console.warn('Intersection Observer is not supported in this browser');
-            this.fallbackInit();
-            return;
-        }
-        
-        // Create Intersection Observer
-        this.observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // When section intersects with the top of the viewport
-                if (entry.isIntersecting) {
-                    this.updateNavigationColor(entry.target);
-                }
+    // Initial check
+    updateNavBackground();
+    
+    // Throttled scroll event
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateNavBackground();
+                ticking = false;
             });
-        }, {
-            threshold: [0, 0.1, 0.5], // Multiple thresholds for better detection
-            rootMargin: '-10% 0px -60% 0px' // Focus on the top part of sections
-        });
-        
-        // Start observing each section
-        this.sections.forEach(section => {
-            this.observer.observe(section);
-        });
-        
-        console.log('NavigationObserver initialized with', this.sections.length, 'sections');
-    }
+            ticking = true;
+        }
+    });
     
-    updateNavigationColor(section) {
-        // Check if section has dark background classes
-        const hasDarkBackground = section.classList.contains('bg-oxford-blue') ||
-                                section.classList.contains('hero-video-container');
-        
-        if (hasDarkBackground) {
-            // Add dark mode class for cream text on dark backgrounds
-            this.navElement.classList.add('nav-dark-mode');
+    function updateNavBackground() {
+        if (window.scrollY > 50) {
+            navElement.classList.add('scrolled-nav');
         } else {
-            // Remove dark mode class for Oxford Blue text on light backgrounds
-            this.navElement.classList.remove('nav-dark-mode');
+            navElement.classList.remove('scrolled-nav');
         }
     }
     
-    // Fallback for browsers that don't support Intersection Observer
-    fallbackInit() {
-        const checkScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight * 0.3; // Check 30% from top
-            
-            let currentSection = null;
-            this.sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    currentSection = section;
-                }
-            });
-            
-            if (currentSection) {
-                this.updateNavigationColor(currentSection);
-            }
-        };
-        
-        // Initial check
-        checkScroll();
-        
-        // Throttled scroll event
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    checkScroll();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-    }
-    
-    // Method to destroy the observer
-    destroy() {
-        if (this.observer) {
-            this.observer.disconnect();
-            this.observer = null;
-        }
-    }
+    console.log('Glass header scroll listener initialized');
 }

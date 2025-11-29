@@ -74,6 +74,24 @@ h1 {
     font-size: 3.5rem;
 }
 
+/* Hero Title Styling */
+.hero-title {
+    font-family: var(--font-serif); /* Playfair Display */
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: 0.05em; /* tracking-wide */
+    color: var(--color-cream);
+    text-align: center;
+    margin-bottom: 0; /* Override default h1 margin */
+}
+
+/* Responsive adjustments for hero title */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
 h2 {
     font-size: 2.5rem;
 }
@@ -295,34 +313,31 @@ p {
     box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
 }
 
-/* Navigation dark mode class for sections with dark backgrounds */
-.nav-dark-mode .nav-link {
-    color: var(--color-cream); /* Cream text on dark backgrounds */
-}
-
 /* Default navigation color (Oxford Blue) for light backgrounds */
-nav:not(.nav-dark-mode) .nav-link {
-    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
-}
-
-/* Ensure smooth color transitions for navigation links */
 nav .nav-link {
+    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
     transition: color 0.3s ease;
 }
 
 /* Navigation brand/site name color transitions */
 nav .text-xl {
+    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
     transition: color 0.3s ease;
 }
 
-/* Navigation dark mode class for sections with dark backgrounds */
-.nav-dark-mode .text-xl {
-    color: var(--color-cream); /* Cream text on dark backgrounds */
+/* Glass Header Effect - scrolled-nav class */
+.scrolled-nav {
+    background-color: rgba(245, 245, 220, 0.95); /* Cream glass effect */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Default navigation color (Oxford Blue) for light backgrounds */
-nav:not(.nav-dark-mode) .text-xl {
-    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
+/* Ensure text color in scrolled-nav is high-contrast */
+.scrolled-nav .nav-link {
+    color: var(--color-oxford-blue);
+}
+
+.scrolled-nav .text-xl {
+    color: var(--color-oxford-blue);
 }
 
 /* --- 4. Books Showcase Specific Styles --- */
