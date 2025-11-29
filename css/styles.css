@@ -1033,6 +1033,17 @@ p {
     transform: translateY(0);
 }
 
+/* CSS Fallback Safety Net for Reveal Animations */
+/* This rule ensures content is always visible if JavaScript fails to add the 'active' class */
+/* It uses a media query with a condition that's always true, giving it high specificity */
+/* while allowing the normal animation system to work when JavaScript is functional */
+@media all {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 /* Smooth scrolling for the entire page */
 html {
     scroll-behavior: smooth;

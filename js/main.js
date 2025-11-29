@@ -1018,44 +1018,118 @@ function updateViewButtons(viewMode) {
  * Initialize insight card interactions
  */
 function initializeInsightCards() {
-    // First populate carousel with quote data
-    populateCarouselView();
-    
-    // Reinitialize scroll animations after populating carousel
-    // This ensures new dynamically added elements are observed
-    if (window.revealOnScroll) {
-        // Destroy existing observer to avoid duplicate observations
-        window.revealOnScroll.destroy();
+    try {
+        console.log('Initializing insight cards...');
         
-        // Reinitialize with new elements
-        window.revealOnScroll = new RevealOnScroll({
-            threshold: 0.15, // Trigger when 15% of element is visible
-            rootMargin: '0px 0px -50px 0px', // Start revealing 50px before element comes into view
-            selector: '.reveal', // Target elements with .reveal class
-            activeClass: 'active' // Add .active class when revealed
+        // First populate carousel with quote data
+        populateCarouselView();
+        
+        // Use requestAnimationFrame to ensure DOM is updated before reinitializing observer
+        requestAnimationFrame(() => {
+            // Add a small delay to ensure all DOM updates are complete
+            setTimeout(() => {
+                reinitializeScrollObserver();
+                setupInsightCardListeners();
+            }, 50); // Small delay to ensure DOM is fully updated
         });
         
-        console.log('Reinitialized scroll animations for carousel content');
+    } catch (error) {
+        console.error('Error in initializeInsightCards:', error);
     }
-    
-    const insightCards = document.querySelectorAll('.insight-card');
-    insightCards.forEach(card => {
-        card.addEventListener('click', function() {
-            this.classList.toggle('active');
+}
+
+/**
+ * Reinitialize the scroll observer with proper cleanup and error handling
+ */
+function reinitializeScrollObserver() {
+    try {
+        console.log('Reinitializing scroll observer...');
+        
+        if (window.revealOnScroll) {
+            // Properly destroy existing observer to avoid memory leaks
+            console.log('Destroying existing observer...');
+            window.revealOnScroll.destroy();
+            window.revealOnScroll = null;
+        }
+        
+        // Check if there are any .reveal elements to observe
+        const revealElements = document.querySelectorAll('.reveal');
+        console.log(`Found ${revealElements.length} .reveal elements to observe`);
+        
+        if (revealElements.length > 0) {
+            // Create new observer instance
+            window.revealOnScroll = new RevealOnScroll({
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: '0px 0px -50px 0px', // Start revealing 50px before element comes into view
+                selector: '.reveal', // Target elements with .reveal class
+                activeClass: 'active' // Add .active class when revealed
+            });
             
-            // If JourneyTracker is available, try to navigate to this quote
-            if (window.journeyTracker && window.quoteJourneyState) {
-                // Try to find a matching quote based on the title
-                const title = this.querySelector('h3').textContent.trim();
-                const matchingQuote = window.quoteJourneyState.quoteData.quotes.find(q => q.title === title);
+            console.log('Scroll observer successfully reinitialized with', revealElements.length, 'elements');
+        } else {
+            console.warn('No .reveal elements found to observe');
+        }
+        
+    } catch (error) {
+        console.error('Error reinitializing scroll observer:', error);
+        // Attempt to create a basic observer as fallback
+        try {
+            window.revealOnScroll = new RevealOnScroll({
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px',
+                selector: '.reveal',
+                activeClass: 'active'
+            });
+            console.log('Fallback observer created successfully');
+        } catch (fallbackError) {
+            console.error('Failed to create fallback observer:', fallbackError);
+        }
+    }
+}
+
+/**
+ * Setup event listeners for insight cards
+ */
+function setupInsightCardListeners() {
+    try {
+        console.log('Setting up insight card listeners...');
+        
+        const insightCards = document.querySelectorAll('.insight-card');
+        console.log(`Found ${insightCards.length} insight cards`);
+        
+        insightCards.forEach((card, index) => {
+            // Remove any existing click listeners to avoid duplicates
+            const newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            
+            // Add click listener
+            newCard.addEventListener('click', function() {
+                this.classList.toggle('active');
                 
-                if (matchingQuote) {
-                    window.quoteJourneyState.setCurrentQuote(matchingQuote.id);
-                    console.log('Navigated to quote from insight card:', matchingQuote.id);
+                // If JourneyTracker is available, try to navigate to this quote
+                if (window.journeyTracker && window.quoteJourneyState) {
+                    // Try to find a matching quote based on the title
+                    const titleElement = this.querySelector('h3');
+                    if (titleElement) {
+                        const title = titleElement.textContent.trim();
+                        const matchingQuote = window.quoteJourneyState.quoteData.quotes.find(q => q.title === title);
+                        
+                        if (matchingQuote) {
+                            window.quoteJourneyState.setCurrentQuote(matchingQuote.id);
+                            console.log('Navigated to quote from insight card:', matchingQuote.id);
+                        } else {
+                            console.warn('No matching quote found for title:', title);
+                        }
+                    }
                 }
-            }
+            });
         });
-    });
+        
+        console.log('Insight card listeners setup complete');
+        
+    } catch (error) {
+        console.error('Error setting up insight card listeners:', error);
+    }
 }
 
 /**
