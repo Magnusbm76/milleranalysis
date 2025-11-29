@@ -1052,3 +1052,66 @@ html {
 
 /* Hide the ugly list if it exists */
 .related-quotes-list { display: none !important; }
+/* --- EMERGENCY CAROUSEL FIX START --- */
+#carouselView {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 400px !important;
+    background-color: transparent !important; /* Let body bg show or override */
+}
+
+/* Force the Card Container */
+.insight-card {
+    background-color: #002147 !important; /* Oxford Blue - Dark Background */
+    color: #F5F5DC !important; /* Cream - Light Text */
+    border: 2px solid #FFD700 !important; /* Gold Border */
+    padding: 3rem !important;
+    max-width: 800px !important;
+    width: 90% !important; /* Responsive width */
+    margin: 2rem auto !important; /* Center horizontally */
+    text-align: center !important; /* Center text */
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+    opacity: 1 !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Force Text Colors to be Readable */
+.insight-card h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.5rem !important;
+    color: #FFD700 !important; /* Gold Header */
+    margin-bottom: 1.5rem !important;
+    text-shadow: 1px 1px 2px black !important;
+}
+
+.insight-card p {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.25rem !important;
+    line-height: 1.8 !important;
+    color: #F5F5DC !important; /* Cream Body Text */
+    margin-bottom: 1.5rem !important;
+}
+
+.insight-card .quote-text {
+    font-style: italic !important;
+    font-size: 1.4rem !important;
+    border-left: none !important; /* Remove default border */
+    padding: 0 !important;
+}
+
+/* Fix the Source/Theme small text */
+.insight-card small, 
+.insight-card .meta-info {
+    color: #AAAAAA !important; /* Light Grey for metadata */
+    display: block !important;
+    margin-top: 1rem !important;
+}
+
+/* Hide the ugly list if it exists */
+.related-quotes-list { display: none !important; }
+/* --- EMERGENCY CAROUSEL FIX END --- */

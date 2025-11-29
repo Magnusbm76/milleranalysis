@@ -674,28 +674,29 @@ function setupInsightCardListeners() {
  * Populate carousel view with quote data
  */
 function populateCarouselView() {
-    const carouselView = document.getElementById('carouselView');
-    if (!carouselView || !window.quoteJourneyState) return;
-    
-    // Get ALL quotes to display
-    const quotes = window.quoteJourneyState.quoteData.quotes;
-    
-    // Generate HTML for the grid layout
-    const quoteCardsHTML = quotes.slice(0, 6).map((quote, index) => {
-        return `
-        <div class="insight-card p-8 text-center rounded-lg shadow-xl cursor-pointer hover:transform hover:scale-105 transition-all duration-300" style="background-color: #002147; border: 1px solid #FFD700;">
-            <h3 class="text-2xl font-bold mb-4" style="color: #FFD700; font-family: 'Playfair Display', serif;">${quote.title}</h3>
-            <p class="text-xl italic mb-6 leading-relaxed" style="color: #F5F5DC; font-family: 'Playfair Display', serif;">"${quote.quote}"</p>
-            <div class="insight-reveal-content text-sm mt-4 pt-4 border-t border-gold/30">
-                <p style="color: #F5F5DC; opacity: 0.9;">${quote.context}</p>
-                <p class="mt-2 font-bold uppercase tracking-widest text-xs" style="color: #FFD700;">Click to Toggle</p>
+    const carousel = document.getElementById('carouselView');
+    if (!carousel) return;
+
+    // Get the first insight (Clinical Semiotics) as default for now
+    // In a real app, this would be dynamic or random
+    const insight = quoteData.quotes[0];
+
+    carousel.innerHTML = `
+        <div class="insight-card">
+            <h3>${insight.title}</h3>
+            <p class="quote-text">"${insight.content}"</p>
+            <p>${insight.interpretation}</p>
+            <div class="meta-info">
+                <strong>Source:</strong> ${insight.source} <br>
+                <strong>Themes:</strong> ${insight.themes.join(', ')}
+            </div>
+            <div style="margin-top: 2rem;">
+                <button onclick="window.location.href='books/do-you-read-me.html'" style="background-color: #FFD700; color: #002147; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+                    View Book
+                </button>
             </div>
         </div>
-        `;
-    }).join('');
-    
-    carouselView.innerHTML = quoteCardsHTML;
-    carouselView.className = "grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto";
+    `;
 }
 
 
