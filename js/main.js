@@ -545,9 +545,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('quoteData not available. Make sure js/quote_data.js is loaded before js/main.js');
     }
     
-    // Initialize FAQ accordion functionality
-    initializeFAQAccordion();
-    
     /*
     ================================================================================================
     LEGACY INITIALIZATION CODE - Temporarily commented out during refactoring
@@ -567,83 +564,6 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.setupNewsletterForm();
     */
 });
-
-/**
- * Initialize FAQ accordion functionality
- */
-function initializeFAQAccordion() {
-    try {
-        console.log('Initializing FAQ accordion...');
-        
-        const faqItems = document.querySelectorAll('.faq-item');
-        console.log(`Found ${faqItems.length} FAQ items`);
-        
-        faqItems.forEach((item, index) => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            const icon = item.querySelector('.faq-icon');
-            
-            if (!question || !answer || !icon) {
-                console.warn(`FAQ item ${index} is missing required elements`);
-                return;
-            }
-            
-            // Add click event listener to question button
-            question.addEventListener('click', function() {
-                // Toggle current item
-                const isActive = item.classList.contains('active');
-                
-                // Close all other FAQ items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        const otherIcon = otherItem.querySelector('.faq-icon');
-                        const otherQuestion = otherItem.querySelector('.faq-question');
-                        
-                        if (otherAnswer) {
-                            otherAnswer.classList.add('hidden');
-                        }
-                        if (otherIcon) {
-                            otherIcon.style.transform = 'rotate(0deg)';
-                        }
-                        if (otherQuestion) {
-                            otherQuestion.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
-                
-                // Toggle current item
-                if (isActive) {
-                    // Close current item
-                    item.classList.remove('active');
-                    answer.classList.add('hidden');
-                    icon.style.transform = 'rotate(0deg)';
-                    question.setAttribute('aria-expanded', 'false');
-                } else {
-                    // Open current item
-                    item.classList.add('active');
-                    answer.classList.remove('hidden');
-                    icon.style.transform = 'rotate(180deg)';
-                    question.setAttribute('aria-expanded', 'true');
-                }
-            });
-            
-            // Add keyboard support
-            question.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    question.click();
-                }
-            });
-        });
-        
-        console.log('FAQ accordion initialized successfully');
-        
-    } catch (error) {
-        console.error('Error initializing FAQ accordion:', error);
-    }
-}
 
 
 

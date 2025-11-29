@@ -278,8 +278,8 @@ p {
     position: relative;
     display: inline-block;
     padding: 0.75rem 1.25rem;
-    color: var(--color-oxford-blue); /* Default to Oxford Blue for light backgrounds */
-    transition: all var(--transition-normal);
+    color: var(--color-cream); /* Default to Cream for transparent Hero background */
+    transition: color 0.3s ease, background-color 0.3s ease;
     font-weight: 500;
     letter-spacing: 0.025em;
 }
@@ -313,16 +313,16 @@ p {
     box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
 }
 
-/* Default navigation color (Oxford Blue) for light backgrounds */
+/* Default navigation color (Cream) for transparent Hero background */
 nav .nav-link {
-    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
-    transition: color 0.3s ease;
+    color: var(--color-cream); /* Cream text on transparent Hero background */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Navigation brand/site name color transitions */
 nav .text-xl {
-    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
-    transition: color 0.3s ease;
+    color: var(--color-cream); /* Cream text on transparent Hero background */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Glass Header Effect - scrolled-nav class */
@@ -333,11 +333,11 @@ nav .text-xl {
 
 /* Ensure text color in scrolled-nav is high-contrast */
 .scrolled-nav .nav-link {
-    color: var(--color-oxford-blue);
+    color: var(--color-oxford-blue); /* Oxford Blue text on Cream background */
 }
 
 .scrolled-nav .text-xl {
-    color: var(--color-oxford-blue);
+    color: var(--color-oxford-blue); /* Oxford Blue text on Cream background */
 }
 
 /* --- 4. Books Showcase Specific Styles --- */
@@ -828,6 +828,7 @@ html {
     background-color: rgba(0, 33, 71, 0.02);
     border-radius: 0 0.5rem 0.5rem 0;
     transition: all var(--transition-normal);
+    height: 100%;
 }
 
 .concept-item:hover {
@@ -851,6 +852,21 @@ html {
     background-color: var(--color-gold);
 }
 
+/* Responsive adjustments for Key Concepts grid */
+@media (max-width: 768px) {
+    .grid.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid.md\:grid-cols-3 {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
 /* --- 10. FAQ Section Styles --- */
 .faq-item {
     transition: all var(--transition-normal);
@@ -862,40 +878,47 @@ html {
     border-color: var(--color-gold);
 }
 
-.faq-question {
+/* Style for the summary element (question) */
+.faq-item summary {
     background-color: transparent;
     border: none;
     transition: all var(--transition-normal);
+    cursor: pointer;
+    user-select: none; /* Prevent text selection on click */
+    position: relative;
+    padding-right: 2rem; /* Space for the default marker */
 }
 
-.faq-question:hover {
+.faq-item summary:hover {
     background-color: rgba(0, 33, 71, 0.05);
 }
 
-.faq-question:focus {
+.faq-item summary:focus {
     background-color: rgba(0, 33, 71, 0.05);
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
 }
 
-.faq-icon {
-    transition: transform var(--transition-normal);
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
+/* Style for the details content (answer) */
+.faq-item div {
     animation: fadeIn var(--transition-normal);
+}
+
+/* Custom marker for the details element */
+.faq-item summary::marker {
+    color: var(--color-oxford-blue);
+    font-size: 1.2rem;
 }
 
 /* Responsive adjustments for FAQ */
 @media (max-width: 768px) {
-    .faq-question {
+    .faq-item summary {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 1rem;
+        padding-right: 2rem; /* Space for the default marker */
     }
     
-    .faq-answer {
+    .faq-item div {
         padding: 0 var(--spacing-md) var(--spacing-md);
     }
 }
