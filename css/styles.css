@@ -260,7 +260,7 @@ p {
     position: relative;
     display: inline-block;
     padding: 0.75rem 1.25rem;
-    color: var(--color-cream); /* Text starts as Cream (High contrast on dark background) */
+    color: var(--color-oxford-blue); /* Default to Oxford Blue for light backgrounds */
     transition: all var(--transition-normal);
     font-weight: 500;
     letter-spacing: 0.025em;
@@ -293,6 +293,36 @@ p {
 .nav-link:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
+}
+
+/* Navigation dark mode class for sections with dark backgrounds */
+.nav-dark-mode .nav-link {
+    color: var(--color-cream); /* Cream text on dark backgrounds */
+}
+
+/* Default navigation color (Oxford Blue) for light backgrounds */
+nav:not(.nav-dark-mode) .nav-link {
+    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
+}
+
+/* Ensure smooth color transitions for navigation links */
+nav .nav-link {
+    transition: color 0.3s ease;
+}
+
+/* Navigation brand/site name color transitions */
+nav .text-xl {
+    transition: color 0.3s ease;
+}
+
+/* Navigation dark mode class for sections with dark backgrounds */
+.nav-dark-mode .text-xl {
+    color: var(--color-cream); /* Cream text on dark backgrounds */
+}
+
+/* Default navigation color (Oxford Blue) for light backgrounds */
+nav:not(.nav-dark-mode) .text-xl {
+    color: var(--color-oxford-blue); /* Oxford Blue text on light backgrounds */
 }
 
 /* --- 4. Books Showcase Specific Styles --- */
@@ -774,4 +804,83 @@ html {
 /* Remove will-change after animation completes */
 .reveal.active {
     will-change: auto;
+}
+
+/* --- 9. Key Concepts Section Styles --- */
+.concept-item {
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--color-gold);
+    background-color: rgba(0, 33, 71, 0.02);
+    border-radius: 0 0.5rem 0.5rem 0;
+    transition: all var(--transition-normal);
+}
+
+.concept-item:hover {
+    transform: translateX(5px);
+    background-color: rgba(0, 33, 71, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 33, 71, 0.1);
+}
+
+.concept-item dt {
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.concept-item dt::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-gold);
+}
+
+/* --- 10. FAQ Section Styles --- */
+.faq-item {
+    transition: all var(--transition-normal);
+    border: 1px solid transparent;
+}
+
+.faq-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-gold);
+}
+
+.faq-question {
+    background-color: transparent;
+    border: none;
+    transition: all var(--transition-normal);
+}
+
+.faq-question:hover {
+    background-color: rgba(0, 33, 71, 0.05);
+}
+
+.faq-question:focus {
+    background-color: rgba(0, 33, 71, 0.05);
+}
+
+.faq-icon {
+    transition: transform var(--transition-normal);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    animation: fadeIn var(--transition-normal);
+}
+
+/* Responsive adjustments for FAQ */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 var(--spacing-md) var(--spacing-md);
+    }
 }

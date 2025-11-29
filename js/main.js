@@ -511,7 +511,10 @@ document.addEventListener('DOMContentLoaded', function() {
         selector: 'a[href^="#"]' // All anchor links starting with #
     });
     
-    console.log('Scroll animations and smooth scrolling initialized');
+    // Initialize NavigationObserver for dynamic navigation color changes
+    window.navigationObserver = new NavigationObserver();
+    
+    console.log('Scroll animations, smooth scrolling, and navigation observer initialized');
     
     // Initialize the new QuoteJourneyState with quote data
     // Note: quoteData should be loaded from js/quote_data.js before this script
@@ -542,6 +545,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('quoteData not available. Make sure js/quote_data.js is loaded before js/main.js');
     }
     
+    // Initialize FAQ accordion functionality
+    initializeFAQAccordion();
+    
     /*
     ================================================================================================
     LEGACY INITIALIZATION CODE - Temporarily commented out during refactoring
@@ -561,6 +567,83 @@ document.addEventListener('DOMContentLoaded', function() {
     carousel.setupNewsletterForm();
     */
 });
+
+/**
+ * Initialize FAQ accordion functionality
+ */
+function initializeFAQAccordion() {
+    try {
+        console.log('Initializing FAQ accordion...');
+        
+        const faqItems = document.querySelectorAll('.faq-item');
+        console.log(`Found ${faqItems.length} FAQ items`);
+        
+        faqItems.forEach((item, index) => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            
+            if (!question || !answer || !icon) {
+                console.warn(`FAQ item ${index} is missing required elements`);
+                return;
+            }
+            
+            // Add click event listener to question button
+            question.addEventListener('click', function() {
+                // Toggle current item
+                const isActive = item.classList.contains('active');
+                
+                // Close all other FAQ items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-icon');
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        
+                        if (otherAnswer) {
+                            otherAnswer.classList.add('hidden');
+                        }
+                        if (otherIcon) {
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                        if (otherQuestion) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+                
+                // Toggle current item
+                if (isActive) {
+                    // Close current item
+                    item.classList.remove('active');
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                    question.setAttribute('aria-expanded', 'false');
+                } else {
+                    // Open current item
+                    item.classList.add('active');
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
+            
+            // Add keyboard support
+            question.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+        
+        console.log('FAQ accordion initialized successfully');
+        
+    } catch (error) {
+        console.error('Error initializing FAQ accordion:', error);
+    }
+}
 
 
 
@@ -1144,5 +1227,108 @@ class SmoothScroll {
             const newLink = link.cloneNode(true);
             link.parentNode.replaceChild(newLink, link);
         });
+    }
+}
+
+// Navigation Observer for dynamic navigation color changes based on section backgrounds
+class NavigationObserver {
+    constructor() {
+        this.navElement = document.querySelector('nav');
+        this.sections = document.querySelectorAll('section');
+        this.observer = null;
+        
+        if (!this.navElement) {
+            console.warn('Navigation element not found');
+            return;
+        }
+        
+        this.init();
+    }
+    
+    init() {
+        // Check if Intersection Observer is supported
+        if (!window.IntersectionObserver) {
+            console.warn('Intersection Observer is not supported in this browser');
+            this.fallbackInit();
+            return;
+        }
+        
+        // Create Intersection Observer
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // When section intersects with the top of the viewport
+                if (entry.isIntersecting) {
+                    this.updateNavigationColor(entry.target);
+                }
+            });
+        }, {
+            threshold: [0, 0.1, 0.5], // Multiple thresholds for better detection
+            rootMargin: '-10% 0px -60% 0px' // Focus on the top part of sections
+        });
+        
+        // Start observing each section
+        this.sections.forEach(section => {
+            this.observer.observe(section);
+        });
+        
+        console.log('NavigationObserver initialized with', this.sections.length, 'sections');
+    }
+    
+    updateNavigationColor(section) {
+        // Check if section has dark background classes
+        const hasDarkBackground = section.classList.contains('bg-oxford-blue') ||
+                                section.classList.contains('hero-video-container');
+        
+        if (hasDarkBackground) {
+            // Add dark mode class for cream text on dark backgrounds
+            this.navElement.classList.add('nav-dark-mode');
+        } else {
+            // Remove dark mode class for Oxford Blue text on light backgrounds
+            this.navElement.classList.remove('nav-dark-mode');
+        }
+    }
+    
+    // Fallback for browsers that don't support Intersection Observer
+    fallbackInit() {
+        const checkScroll = () => {
+            const scrollPosition = window.scrollY + window.innerHeight * 0.3; // Check 30% from top
+            
+            let currentSection = null;
+            this.sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    currentSection = section;
+                }
+            });
+            
+            if (currentSection) {
+                this.updateNavigationColor(currentSection);
+            }
+        };
+        
+        // Initial check
+        checkScroll();
+        
+        // Throttled scroll event
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    checkScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+    
+    // Method to destroy the observer
+    destroy() {
+        if (this.observer) {
+            this.observer.disconnect();
+            this.observer = null;
+        }
     }
 }
