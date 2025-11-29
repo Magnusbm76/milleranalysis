@@ -24,7 +24,6 @@ class QuoteJourneyState {
       ui: {
         isJourneyViewActive: false,
         selectedTheme: null,
-        viewMode: 'carousel', // 'carousel' or 'network'
         filterCriteria: {
           themes: [],
           difficulty: null,
@@ -89,10 +88,6 @@ class QuoteJourneyState {
       this.addToJourney(quoteId);
     }
     
-    // Also add to JourneyTracker if available
-    if (typeof window !== 'undefined' && window.journeyTracker) {
-      window.journeyTracker.addToJourney(quoteId);
-    }
     
     // Notify subscribers
     this.notifySubscribers('currentQuoteChanged', { 
@@ -227,10 +222,6 @@ class QuoteJourneyState {
       
       localStorage.setItem('quoteJourneyState', JSON.stringify(stateToPersist));
       
-      // Also persist JourneyTracker data if available
-      if (typeof window !== 'undefined' && window.journeyTracker) {
-        window.journeyTracker.persistJourneyData();
-      }
       
       return true;
     } catch (error) {
@@ -272,12 +263,6 @@ class QuoteJourneyState {
       // Notify subscribers of state restoration
       this.notifySubscribers('stateRestored', { state: this.state });
       
-      // Load JourneyTracker data after a delay to ensure it's initialized
-      setTimeout(() => {
-        if (typeof window !== 'undefined' && window.journeyTracker) {
-          window.journeyTracker.loadJourneyData();
-        }
-      }, 200);
       
       return true;
     } catch (error) {
@@ -291,10 +276,6 @@ class QuoteJourneyState {
     try {
       localStorage.removeItem('quoteJourneyState');
       
-      // Also clear JourneyTracker data if available
-      if (typeof window !== 'undefined' && window.journeyTracker) {
-        window.journeyTracker.clearJourneyData();
-      }
       
       // Reset current state
       this.state.journeyHistory = [];
@@ -381,36 +362,6 @@ class QuoteJourneyState {
     return filteredQuotes;
   }
   
-  // Set view mode (carousel or network)
-  setViewMode(viewMode) {
-    if (!['carousel', 'network'].includes(viewMode)) {
-      console.error('Invalid view mode:', viewMode);
-      return false;
-    }
-    
-    this.state.ui.viewMode = viewMode;
-    
-    // Notify subscribers
-    this.notifySubscribers('viewModeChanged', {
-      viewMode: viewMode
-    });
-    
-    // Persist state
-    this.persistState();
-    
-    return true;
-  }
-  
-  // Get current view mode
-  getViewMode() {
-    return this.state.ui.viewMode;
-  }
-  
-  // Toggle between carousel and network views
-  toggleViewMode() {
-    const newMode = this.state.ui.viewMode === 'carousel' ? 'network' : 'carousel';
-    return this.setViewMode(newMode);
-  }
 }
 
 /*
@@ -568,31 +519,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create global instance of QuoteJourneyState
         window.quoteJourneyState = new QuoteJourneyState(quoteData);
         
-        // Initialize JourneyTracker if available
-        if (typeof JourneyTracker !== 'undefined') {
-            window.journeyTracker = new JourneyTracker(window.quoteJourneyState, quoteData, 50);
-            
-            // Initialize JourneyTracker with existing journey history from QuoteJourneyState
-            const existingHistory = window.quoteJourneyState.getJourneyHistory();
-            if (existingHistory.length > 0) {
-                existingHistory.forEach(entry => {
-                    window.journeyTracker.addToJourney(entry.quoteId);
-                });
-            }
-            
-            console.log('JourneyTracker initialized with', existingHistory.length, 'existing journey entries');
-            
-            // Set up JourneyTracker event listeners for UI updates
-            setupJourneyTrackerEvents();
-        } else {
-            console.warn('JourneyTracker could not be initialized - JourneyTracker class not available');
-        }
-        
-        // Initialize journey navigation controls
-        initializeJourneyNavigation();
-        
-        // Initialize view switching
-        initializeViewSwitching();
         
         // Initialize insight card interactions
         initializeInsightCards();
@@ -600,38 +526,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize details panel
         initializeDetailsPanel();
         
-        // Initialize breadcrumbs
-        initializeBreadcrumbs();
-        
         // Log initialization
         console.log('QuoteJourneyState initialized with', quoteData.quotes.length, 'quotes');
         
         // Set up QuoteJourneyState event listeners
         setupQuoteJourneyStateEvents();
         
-        // Initialize QuoteNetwork after a delay to ensure DOM elements are ready
+        // Populate carousel view with quote data after a short delay to ensure DOM is ready
         setTimeout(() => {
-            const canvas = document.getElementById('quoteNetworkCanvas');
-            if (canvas && typeof QuoteNetwork !== 'undefined') {
-                window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
-                console.log('QuoteNetwork initialized');
-            } else {
-                console.warn('QuoteNetwork could not be initialized - canvas or QuoteNetwork class not available');
-                if (!canvas) {
-                    console.error('Canvas element with ID "quoteNetworkCanvas" not found');
-                }
-                if (typeof QuoteNetwork === 'undefined') {
-                    console.error('QuoteNetwork class is not defined');
-                }
-            }
-            
-            // Populate carousel view with quote data after a short delay to ensure DOM is ready
             if (typeof populateCarouselView === 'function') {
                 populateCarouselView();
             }
-            
-            // Synchronize state across all systems after initialization
-            synchronizeState();
         }, 100);
     } else {
         console.error('quoteData not available. Make sure js/quote_data.js is loaded before js/main.js');
@@ -657,362 +562,8 @@ document.addEventListener('DOMContentLoaded', function() {
     */
 });
 
-/**
- * Initialize view switching functionality
- */
-function initializeViewSwitching() {
-    const carouselViewBtn = document.getElementById('carouselViewBtn');
-    const networkViewBtn = document.getElementById('networkViewBtn');
-    
-    if (carouselViewBtn && networkViewBtn) {
-        // Set initial button states based on current view mode
-        updateViewButtons(window.quoteJourneyState.getViewMode());
-        
-        // Add click event listeners
-        carouselViewBtn.addEventListener('click', () => {
-            window.quoteJourneyState.setViewMode('carousel');
-            updateViewDisplay('carousel'); // Immediately update display
-        });
-        
-        networkViewBtn.addEventListener('click', () => {
-            window.quoteJourneyState.setViewMode('network');
-            updateViewDisplay('network'); // Immediately update display
-        });
-    }
-}
 
-/**
- * Update view display based on current mode
- */
-function updateViewDisplay(viewMode) {
-    const carouselView = document.getElementById('carouselView');
-    const networkView = document.getElementById('networkView');
-    
-    if (carouselView && networkView) {
-        if (viewMode === 'carousel') {
-            carouselView.classList.remove('hidden');
-            networkView.classList.add('hidden');
-        } else {
-            carouselView.classList.add('hidden');
-            networkView.classList.remove('hidden');
-            
-            // Emit custom event to notify QuoteNetwork that view is now visible
-            document.dispatchEvent(new CustomEvent('viewChanged', {
-                detail: { viewMode: 'network' }
-            }));
-            
-            // Trigger network resize when switching to network view
-            if (window.quoteNetwork) {
-                // Make sure the canvas container is visible before resizing
-                networkView.style.display = 'block';
-                
-                setTimeout(() => {
-                    window.quoteNetwork.resizeCanvas();
-                    // Sync journey path with network view
-                    if (window.journeyTracker) {
-                        window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-                    }
-                }, 300);
-            } else {
-                // Try to initialize QuoteNetwork if it failed earlier
-                const canvas = document.getElementById('quoteNetworkCanvas');
-                if (canvas && typeof QuoteNetwork !== 'undefined' && window.quoteJourneyState) {
-                    window.quoteNetwork = new QuoteNetwork(canvas, quoteData, window.quoteJourneyState);
-                    console.log('QuoteNetwork initialized on view switch');
-                }
-            }
-        }
-    }
-    
-    // Update button states
-    updateViewButtons(viewMode);
-    
-    // Synchronize state across systems when view changes
-    synchronizeState();
-}
 
-/**
- * Synchronize state across all systems
- */
-function synchronizeState() {
-    if (!window.quoteJourneyState) return;
-    
-    // Get current quote ID from QuoteJourneyState
-    const currentQuoteId = window.quoteJourneyState.state.currentQuoteId;
-    
-    // Sync with JourneyTracker if available
-    if (window.journeyTracker) {
-        // Check if current quote is in JourneyTracker history
-        const isInHistory = window.journeyTracker.journeyHistory.some(entry => entry.quoteId === currentQuoteId);
-        
-        if (!isInHistory && currentQuoteId) {
-            // Add current quote to JourneyTracker if not already there
-            window.journeyTracker.addToJourney(currentQuoteId);
-        } else if (isInHistory) {
-            // Update JourneyTracker current position to match QuoteJourneyState
-            const currentIndex = window.journeyTracker.journeyHistory.findIndex(entry => entry.quoteId === currentQuoteId);
-            if (currentIndex !== -1 && currentIndex !== window.journeyTracker.currentIndex) {
-                window.journeyTracker.currentIndex = currentIndex;
-            }
-        }
-    }
-    
-    // Update UI elements
-    updateNavigationButtons();
-    updateBreadcrumbs();
-    updateDetailsPanel();
-    
-    // Update network view if available
-    if (window.quoteNetwork && window.journeyTracker) {
-        window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-    }
-}
-
-/**
- * Initialize journey navigation functionality
- */
-function initializeJourneyNavigation() {
-    // Back button
-    const backButton = document.getElementById('journeyBackBtn');
-    if (backButton && window.journeyTracker) {
-        backButton.addEventListener('click', () => {
-            const previousQuoteId = window.journeyTracker.goBack();
-            if (previousQuoteId) {
-                console.log('Navigated back to quote:', previousQuoteId);
-            }
-        });
-        
-        // Update button state initially
-        backButton.disabled = !window.journeyTracker.canGoBack();
-    }
-    
-    // Forward button
-    const forwardButton = document.getElementById('journeyForwardBtn');
-    if (forwardButton && window.journeyTracker) {
-        forwardButton.addEventListener('click', () => {
-            const nextQuoteId = window.journeyTracker.goForward();
-            if (nextQuoteId) {
-                console.log('Navigated forward to quote:', nextQuoteId);
-            }
-        });
-        
-        // Update button state initially
-        forwardButton.disabled = !window.journeyTracker.canGoForward();
-    }
-    
-    // Reset journey button
-    const resetButton = document.getElementById('journeyResetBtn');
-    if (resetButton && window.journeyTracker) {
-        resetButton.addEventListener('click', () => {
-            if (confirm('Are you sure you want to reset your journey history?')) {
-                window.journeyTracker.resetJourney();
-                console.log('Journey history reset');
-            }
-        });
-    }
-    
-    // Journey insights button
-    const insightsButton = document.getElementById('journeyInsightsBtn');
-    if (insightsButton && window.journeyTracker) {
-        insightsButton.addEventListener('click', () => {
-            const insights = window.journeyTracker.getJourneyInsights();
-            const report = window.journeyTracker.generateJourneyReport();
-            console.log('Journey Insights:', insights);
-            console.log('Journey Report:', report);
-            
-            // Display insights in a modal or panel if available
-            displayJourneyInsights(insights, report);
-        });
-    }
-    
-    // Subscribe to journey tracker events to update navigation buttons
-    if (window.journeyTracker) {
-        window.journeyTracker.addEventListener('journeyEntryAdded', (data) => {
-            updateNavigationButtons();
-            
-            // Update network view if available
-            if (window.quoteNetwork) {
-                window.quoteNetwork.highlightJourneyPath(data.history);
-            }
-        });
-        
-        window.journeyTracker.addEventListener('journeyNavigatedBack', () => {
-            updateNavigationButtons();
-            
-            // Update network view if available
-            if (window.quoteNetwork) {
-                window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-            }
-        });
-        
-        window.journeyTracker.addEventListener('journeyNavigatedForward', () => {
-            updateNavigationButtons();
-            
-            // Update network view if available
-            if (window.quoteNetwork) {
-                window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-            }
-        });
-        
-        window.journeyTracker.addEventListener('journeyReset', () => {
-            updateNavigationButtons();
-            
-            // Update network view if available
-            if (window.quoteNetwork) {
-                window.quoteNetwork.highlightJourneyPath([]);
-            }
-        });
-    }
-}
-
-/**
- * Update navigation button states based on current journey position
- */
-function updateNavigationButtons() {
-    if (!window.journeyTracker) return;
-    
-    const backButton = document.getElementById('journeyBackBtn');
-    const forwardButton = document.getElementById('journeyForwardBtn');
-    
-    if (backButton) {
-        backButton.disabled = !window.journeyTracker.canGoBack();
-    }
-    
-    if (forwardButton) {
-        forwardButton.disabled = !window.journeyTracker.canGoForward();
-    }
-    
-    // Update journey position display if available
-    const positionDisplay = document.getElementById('journeyPositionDisplay');
-    if (positionDisplay) {
-        const position = window.journeyTracker.getCurrentPosition();
-        positionDisplay.textContent = `${position.position}/${position.total}`;
-    }
-}
-
-/**
- * Display journey insights in the UI
- * @param {Object} insights - Journey insights object
- * @param {Object} report - Journey report object
- */
-function displayJourneyInsights(insights, report) {
-    // Use the existing journey insights panel from HTML
-    const journeyInsightsPanel = document.getElementById('journeyInsightsPanel');
-    const insightsContent = document.getElementById('insightsContent');
-    const closeInsightsBtn = document.getElementById('closeInsightsBtn');
-    
-    if (!journeyInsightsPanel || !insightsContent) {
-        console.error('Journey insights panel not found in HTML');
-        return;
-    }
-    
-    // Add close button functionality if not already added
-    if (closeInsightsBtn) {
-        // Remove existing listeners to avoid duplicates
-        const newCloseBtn = closeInsightsBtn.cloneNode(true);
-        closeInsightsBtn.parentNode.replaceChild(newCloseBtn, closeInsightsBtn);
-        
-        newCloseBtn.addEventListener('click', () => {
-            journeyInsightsPanel.classList.add('hidden');
-        });
-    }
-    
-    // Generate insights HTML
-    const insightsHTML = `
-        <div class="insights-section">
-            <h3 class="insights-title">Summary</h3>
-            <div class="insights-metric">
-                <span class="insights-label">Total quotes visited:</span>
-                <span class="insights-value">${insights.totalQuotesVisited}</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Unique quotes visited:</span>
-                <span class="insights-value">${insights.uniqueQuotesVisited}</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Journey duration:</span>
-                <span class="insights-value">${Math.round(insights.journeyDuration / 1000)} seconds</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Current position:</span>
-                <span class="insights-value">${report.summary.journeyProgress}</span>
-            </div>
-        </div>
-        
-        <div class="insights-section">
-            <h3 class="insights-title">Most Visited Themes</h3>
-            ${insights.mostVisitedThemes.length > 0 ?
-                insights.mostVisitedThemes.map(theme =>
-                    `<div class="insights-metric">
-                        <span class="insights-label">${theme.name}:</span>
-                        <span class="insights-value">${theme.count} visits (${theme.percentage}%)</span>
-                    </div>`
-                ).join('') :
-                '<p class="text-charcoal/60">No themes visited yet</p>'
-            }
-        </div>
-        
-        <div class="insights-section">
-            <h3 class="insights-title">Navigation Patterns</h3>
-            <div class="insights-metric">
-                <span class="insights-label">Back navigations:</span>
-                <span class="insights-value">${insights.navigationPatterns.backNavigationCount}</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Forward navigations:</span>
-                <span class="insights-value">${insights.navigationPatterns.forwardNavigationCount}</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Circular patterns detected:</span>
-                <span class="insights-value">${insights.navigationPatterns.circularPatterns.length}</span>
-            </div>
-        </div>
-        
-        <div class="insights-section">
-            <h3 class="insights-title">Efficiency Metrics</h3>
-            <div class="insights-metric">
-                <span class="insights-label">Exploration rate:</span>
-                <span class="insights-value">${Math.round(insights.efficiencyMetrics.explorationRate * 100)}%</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Revisit rate:</span>
-                <span class="insights-value">${Math.round(insights.efficiencyMetrics.revisitRate * 100)}%</span>
-            </div>
-            <div class="insights-metric">
-                <span class="insights-label">Theme consistency:</span>
-                <span class="insights-value">${Math.round(insights.efficiencyMetrics.themeConsistency * 100)}%</span>
-            </div>
-        </div>
-    `;
-    
-    // Set the HTML
-    insightsContent.innerHTML = insightsHTML;
-    
-    // Show the panel
-    journeyInsightsPanel.classList.remove('hidden');
-}
-
-/**
- * Update view button states
- */
-function updateViewButtons(viewMode) {
-    const carouselViewBtn = document.getElementById('carouselViewBtn');
-    const networkViewBtn = document.getElementById('networkViewBtn');
-    
-    if (carouselViewBtn && networkViewBtn) {
-        if (viewMode === 'carousel') {
-            carouselViewBtn.classList.add('bg-cream/30');
-            carouselViewBtn.classList.remove('hover:bg-cream/10');
-            networkViewBtn.classList.remove('bg-cream/30');
-            networkViewBtn.classList.add('hover:bg-cream/10');
-        } else {
-            networkViewBtn.classList.add('bg-cream/30');
-            networkViewBtn.classList.remove('hover:bg-cream/10');
-            carouselViewBtn.classList.remove('bg-cream/30');
-            carouselViewBtn.classList.add('hover:bg-cream/10');
-        }
-    }
-}
 
 /**
  * Initialize insight card interactions
@@ -1106,22 +657,6 @@ function setupInsightCardListeners() {
             newCard.addEventListener('click', function() {
                 this.classList.toggle('active');
                 
-                // If JourneyTracker is available, try to navigate to this quote
-                if (window.journeyTracker && window.quoteJourneyState) {
-                    // Try to find a matching quote based on the title
-                    const titleElement = this.querySelector('h3');
-                    if (titleElement) {
-                        const title = titleElement.textContent.trim();
-                        const matchingQuote = window.quoteJourneyState.quoteData.quotes.find(q => q.title === title);
-                        
-                        if (matchingQuote) {
-                            window.quoteJourneyState.setCurrentQuote(matchingQuote.id);
-                            console.log('Navigated to quote from insight card:', matchingQuote.id);
-                        } else {
-                            console.warn('No matching quote found for title:', title);
-                        }
-                    }
-                }
             });
         });
         
@@ -1162,72 +697,6 @@ function populateCarouselView() {
     carouselView.innerHTML = quoteCardsHTML;
 }
 
-/**
- * Set up JourneyTracker event listeners for UI updates
- */
-function setupJourneyTrackerEvents() {
-    if (!window.journeyTracker) return;
-    
-    // Listen for journey entry added
-    window.journeyTracker.addEventListener('journeyEntryAdded', (data) => {
-        updateNavigationButtons();
-        updateBreadcrumbs();
-        updateDetailsPanel();
-        
-        // Update network view if available
-        if (window.quoteNetwork) {
-            window.quoteNetwork.highlightJourneyPath(data.history);
-        }
-    });
-    
-    // Listen for journey navigation back
-    window.journeyTracker.addEventListener('journeyNavigatedBack', (data) => {
-        updateNavigationButtons();
-        updateBreadcrumbs();
-        updateDetailsPanel();
-        
-        // Update network view if available
-        if (window.quoteNetwork) {
-            window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-        }
-    });
-    
-    // Listen for journey navigation forward
-    window.journeyTracker.addEventListener('journeyNavigatedForward', (data) => {
-        updateNavigationButtons();
-        updateBreadcrumbs();
-        updateDetailsPanel();
-        
-        // Update network view if available
-        if (window.quoteNetwork) {
-            window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-        }
-    });
-    
-    // Listen for journey reset
-    window.journeyTracker.addEventListener('journeyReset', (data) => {
-        updateNavigationButtons();
-        updateBreadcrumbs();
-        updateDetailsPanel();
-        
-        // Update network view if available
-        if (window.quoteNetwork) {
-            window.quoteNetwork.highlightJourneyPath([]);
-        }
-    });
-    
-    // Listen for journey navigation to specific position
-    window.journeyTracker.addEventListener('journeyNavigatedToPosition', (data) => {
-        updateNavigationButtons();
-        updateBreadcrumbs();
-        updateDetailsPanel();
-        
-        // Update network view if available
-        if (window.quoteNetwork) {
-            window.quoteNetwork.highlightJourneyPath(window.journeyTracker.getJourneyHistory());
-        }
-    });
-}
 
 /**
  * Set up QuoteJourneyState event listeners
@@ -1240,12 +709,7 @@ function setupQuoteJourneyStateEvents() {
         switch (eventType) {
             case 'currentQuoteChanged':
                 updateDetailsPanel();
-                updateBreadcrumbs();
                 
-                // Update network view if available
-                if (window.quoteNetwork) {
-                    window.quoteNetwork.selectNode(data.currentQuoteId);
-                }
                 
                 // Show quote details panel when quote changes
                 const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
@@ -1254,12 +718,8 @@ function setupQuoteJourneyStateEvents() {
                 }
                 break;
                 
-            case 'viewModeChanged':
-                updateViewDisplay(data.viewMode);
-                break;
                 
             case 'journeyUpdated':
-                updateBreadcrumbs();
                 break;
         }
     });
@@ -1287,16 +747,10 @@ function initializeDetailsPanel() {
         detailsPanel.id = 'detailsPanel';
         detailsPanel.className = 'bg-white rounded-lg shadow-lg p-6 mb-6';
         
-        // Insert after view controls
-        const viewControls = document.querySelector('.view-controls');
-        if (viewControls) {
-            viewControls.parentNode.insertBefore(detailsPanel, viewControls.nextSibling);
-        } else {
-            // Fallback: add to main content area
-            const mainContent = document.querySelector('main');
-            if (mainContent) {
-                mainContent.insertBefore(detailsPanel, mainContent.firstChild);
-            }
+        // Add to main content area
+        const mainContent = document.querySelector('main');
+        if (mainContent) {
+            mainContent.insertBefore(detailsPanel, mainContent.firstChild);
         }
     }
     
@@ -1326,13 +780,6 @@ function updateDetailsPanel() {
         return;
     }
     
-    // Get journey position if available
-    let journeyPosition = '';
-    if (window.journeyTracker) {
-        const position = window.journeyTracker.getCurrentPosition();
-        journeyPosition = `<div class="text-sm text-cream/70 mb-2">Journey Position: ${position.position}/${position.total}</div>`;
-    }
-    
     // Generate themes HTML
     const themesHTML = currentQuote.themes && currentQuote.themes.length > 0 ?
         currentQuote.themes.map(themeId => {
@@ -1357,7 +804,6 @@ function updateDetailsPanel() {
     
     const detailsHTML = `
         <div class="quote-details">
-            ${journeyPosition}
             <h2 class="quote-details-title">${currentQuote.title}</h2>
             <div class="quote-details-text">
                 <p>"${currentQuote.quote}"</p>
@@ -1390,80 +836,6 @@ function updateDetailsPanel() {
     }
 }
 
-/**
- * Initialize breadcrumbs
- */
-function initializeBreadcrumbs() {
-    // Create breadcrumbs container if it doesn't exist
-    let breadcrumbsContainer = document.getElementById('breadcrumbsContainer');
-    if (!breadcrumbsContainer) {
-        breadcrumbsContainer = document.createElement('div');
-        breadcrumbsContainer.id = 'breadcrumbsContainer';
-        breadcrumbsContainer.className = 'bg-gray-100 rounded-lg p-3 mb-4 text-sm';
-        
-        // Insert after details panel
-        const detailsPanel = document.getElementById('detailsPanel');
-        if (detailsPanel) {
-            detailsPanel.parentNode.insertBefore(breadcrumbsContainer, detailsPanel.nextSibling);
-        } else {
-            // Fallback: add to main content area
-            const mainContent = document.querySelector('main');
-            if (mainContent) {
-                mainContent.insertBefore(breadcrumbsContainer, mainContent.firstChild);
-            }
-        }
-    }
-    
-    // Initialize with current journey
-    updateBreadcrumbs();
-}
-
-/**
- * Update breadcrumbs with current journey history
- */
-function updateBreadcrumbs() {
-    const breadcrumbsContainer = document.getElementById('breadcrumbsContainer');
-    if (!breadcrumbsContainer || !window.journeyTracker) return;
-    
-    const journeyHistory = window.journeyTracker.getJourneyHistory();
-    const currentPosition = window.journeyTracker.getCurrentPosition();
-    
-    if (journeyHistory.length === 0) {
-        breadcrumbsContainer.innerHTML = '<div class="text-gray-500">No journey history</div>';
-        return;
-    }
-    
-    // Generate breadcrumb HTML
-    const breadcrumbsHTML = journeyHistory.map((entry, index) => {
-        const isCurrent = index === currentPosition.position - 1;
-        const isPast = index < currentPosition.position - 1;
-        const isFuture = index > currentPosition.position - 1;
-        
-        let className = 'breadcrumb-item inline-block mx-1 ';
-        if (isCurrent) {
-            className += 'font-bold text-blue-600';
-        } else if (isPast) {
-            className += 'text-gray-600 hover:text-blue-600 cursor-pointer';
-        } else {
-            className += 'text-gray-400';
-        }
-        
-        return `
-            <span class="${className}"
-                  ${isPast ? `onclick="window.journeyTracker.goToPosition(${index})"` : ''}>
-                ${entry.title}
-            </span>
-            ${index < journeyHistory.length - 1 ? '→' : ''}
-        `;
-    }).join('');
-    
-    breadcrumbsContainer.innerHTML = `
-        <div class="flex items-center flex-wrap">
-            <span class="text-gray-500 mr-2">Journey:</span>
-            ${breadcrumbsHTML}
-        </div>
-    `;
-}
 
 // Scroll Reveal with Intersection Observer
 class RevealOnScroll {
