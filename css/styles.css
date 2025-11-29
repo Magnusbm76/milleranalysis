@@ -1013,3 +1013,42 @@ html {
 .insight-card h3 {
     color: #FFD700 !important;
 }
+/* --- NUCLEAR OVERRIDE FOR INSIGHT CARDS --- */
+#carouselView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    flex-wrap: wrap; /* Safety for small screens */
+}
+
+/* Force specific styling for the cards */
+.insight-card {
+    background-color: #002147 !important; /* Oxford Blue */
+    border: 1px solid #FFD700 !important; /* Gold */
+    color: #F5F5DC !important; /* Cream */
+    padding: 3rem !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    border-radius: 8px !important;
+    opacity: 1 !important; /* Force visibility */
+    transform: none !important;
+    display: block !important;
+}
+
+/* Force Header Colors */
+.insight-card h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2rem !important;
+    color: #FFD700 !important; /* Gold */
+    margin-bottom: 1.5rem !important;
+}
+
+.insight-card p {
+    color: #F5F5DC !important; /* Cream */
+}
+
+/* Hide the ugly list if it exists */
+.related-quotes-list { display: none !important; }
