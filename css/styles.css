@@ -1005,17 +1005,58 @@ html {
         padding: 0 var(--spacing-md) var(--spacing-md);
     }
 }
-/* --- FINAL SURGICAL FIX (23:55) --- */
-.insight-card, #detailsPanel {
+/* --- PREMIUM VISUAL FIX (00:10) --- */
+/* Target both the Carousel Card and the Details Panel */
+.insight-card,
+#detailsPanel {
+    /* 1. LAYOUT & CENTERING */
+    display: block !important;
+    margin: 3rem auto !important; /* Center horizontally with vertical breathing room */
+    max-width: 900px !important;  /* Prevent full-width stretching */
+    width: 90% !important;        /* Responsive width for mobile */
+    position: relative !important;
+    z-index: 10 !important;
+
+    /* 2. COLORS & BACKGROUND */
     background-color: #002147 !important; /* Oxford Blue */
+    background: linear-gradient(145deg, #002147, #001a38) !important; /* Subtle depth */
     color: #F5F5DC !important;            /* Cream */
-    border: 2px solid #FFD700 !important; /* Gold */
+
+    /* 3. BORDERS & SHADOWS (IMPACT) */
+    border: 1px solid #FFD700 !important; /* Elegant Gold Border */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important; /* Deep shadow for "pop" */
+    border-radius: 8px !important;
+
+    /* 4. SPACING & TYPOGRAPHY */
+    padding: 3rem !important;
+    text-align: center !important; /* Center the text content */
 }
-.insight-card h3, #detailsPanel h2 {
-    color: #FFD700 !important;
+
+/* Elegant Typography for Headers */
+.insight-card h3,
+#detailsPanel h2,
+#detailsPanel h3 {
+    font-family: 'Playfair Display', serif !important;
+    color: #FFD700 !important; /* Gold */
+    font-size: 2.2rem !important;
+    margin-bottom: 1.5rem !important;
+    letter-spacing: 0.05em !important;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2) !important;
+    padding-bottom: 1rem !important;
+    display: inline-block !important; /* Allows border to wrap text only */
 }
-.insight-card p, #detailsPanel p {
+
+/* Readable Body Text */
+.insight-card p,
+#detailsPanel p {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
     color: #F5F5DC !important;
+    max-width: 700px !important; /* readable line length */
+    margin: 0 auto 1.5rem auto !important;
 }
-/* Hide the unwanted list if present */
+
+/* Hide the ugly list if it exists */
 .related-quotes-list { display: none !important; }
+/* --- END PREMIUM FIX --- */
