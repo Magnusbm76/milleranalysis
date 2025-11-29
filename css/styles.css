@@ -330,6 +330,9 @@ nav:not(.scrolled-nav) .text-xl, nav:not(.scrolled-nav) button {
     color: var(--color-cream) !important;
 }
 
+/* Force navigation title to be cream color when navbar is transparent */
+nav:not(.scrolled-nav) .text-xl { color: var(--color-cream) !important; }
+
 .scrolled-nav .text-xl, .scrolled-nav button {
     color: var(--color-oxford-blue) !important;
 }
@@ -403,6 +406,39 @@ nav:not(.scrolled-nav) .text-xl, nav:not(.scrolled-nav) button {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    padding: 1.5rem; /* Increased padding for better readability */
+    line-height: var(--line-height-relaxed); /* Increased line height for better readability */
+}
+
+/* Ensure all text in insight cards is cream for high contrast */
+.insight-card,
+.insight-card p,
+.insight-card div {
+    color: var(--color-cream);
+}
+
+/* Fix h3 (Title) to be gold but legible with proper contrast */
+.insight-card h3 {
+    color: var(--color-gold);
+    font-size: 1.5rem; /* Increased font size for better readability */
+    line-height: var(--line-height-normal);
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better contrast */
+}
+
+/* Ensure quote text has proper contrast and readability */
+.insight-card .quote-text {
+    color: var(--color-cream);
+    font-size: 1.125rem; /* Slightly larger for better readability */
+    line-height: var(--line-height-relaxed);
+    margin-bottom: 1rem;
+    opacity: 1; /* Full opacity for better contrast */
+}
+
+/* Ensure the reveal content text is cream with good contrast */
+.insight-card .insight-reveal-content {
+    color: var(--color-cream);
+    line-height: var(--line-height-relaxed);
 }
 
 .insight-card:hover {
@@ -446,6 +482,19 @@ nav:not(.scrolled-nav) .text-xl, nav:not(.scrolled-nav) button {
     max-height: 500px; /* Large enough to accommodate text */
     opacity: 1;
     padding-top: 1rem;
+}
+
+/* Ensure the active state maintains proper contrast */
+.insight-card.active {
+    background-color: var(--color-oxford-blue);
+}
+
+/* Fix any gold text in the reveal content to be more legible */
+.insight-card .insight-reveal-content .text-gold,
+.insight-card .insight-reveal-content p.text-gold {
+    color: var(--color-gold);
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better contrast */
 }
 
 /* --- 6. About Section Specific Styles --- */
