@@ -373,7 +373,7 @@ function renderAllInsightsInGrid() {
     if (!cardContainer || !window.quoteJourneyState) return;
 
     // Use all available quotes for display (assuming content balancing happens elsewhere)
-    const quotesToDisplay = window.quoteJourneyState.quoteData.quotes;
+    const quotesToDisplay = window.quoteJourneyState.quoteData.quotes.slice(0, 3);
 
     // Generate HTML for ALL available quotes
     cardContainer.innerHTML = quotesToDisplay.map((quote, index) => {
@@ -562,9 +562,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize insight card interactions
         initializeInsightCards();
         
-        // Initialize details panel
-        initializeDetailsPanel();
-        
         // Log initialization
         console.log('QuoteJourneyState initialized with', quoteData.quotes.length, 'quotes');
         
@@ -712,14 +709,7 @@ function setupQuoteJourneyStateEvents() {
     window.quoteJourneyState.subscribe((eventType, data, state) => {
         switch (eventType) {
             case 'currentQuoteChanged':
-                updateDetailsPanel();
-                
-                
-                // Show quote details panel when quote changes
-                const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
-                if (quoteDetailsPanel && data.currentQuoteId) {
-                    quoteDetailsPanel.classList.add('open');
-                }
+                // Details panel functionality removed
                 break;
                 
                 
@@ -729,116 +719,7 @@ function setupQuoteJourneyStateEvents() {
     });
 }
 
-/**
- * Initialize details panel
- */
-function initializeDetailsPanel() {
-    // Initialize the sliding quote details panel
-    const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
-    const closeDetailsBtn = document.getElementById('closeDetailsBtn');
-    
-    if (quoteDetailsPanel && closeDetailsBtn) {
-        // Add close button functionality
-        closeDetailsBtn.addEventListener('click', () => {
-            quoteDetailsPanel.classList.remove('open');
-        });
-    }
-    
-    // Create inline details panel if it doesn't exist
-    let detailsPanel = document.getElementById('detailsPanel');
-    if (!detailsPanel) {
-        detailsPanel = document.createElement('div');
-        detailsPanel.id = 'detailsPanel';
-        detailsPanel.className = 'insight-card rounded-lg shadow-lg p-6 mb-6';
-        
-        // Add to main content area
-        const mainContent = document.querySelector('main');
-        if (mainContent) {
-            mainContent.insertBefore(detailsPanel, mainContent.firstChild);
-        }
-    }
-    
-    // Initialize with current quote
-    updateDetailsPanel();
-}
 
-/**
- * Update details panel with current quote information
- */
-function updateDetailsPanel() {
-    // Update both the inline details panel and the sliding panel
-    const detailsPanel = document.getElementById('detailsPanel');
-    const quoteDetailsPanel = document.getElementById('quoteDetailsPanel');
-    const detailsContent = document.getElementById('detailsContent');
-    
-    if (!window.quoteJourneyState) return;
-    
-    const currentQuote = window.quoteJourneyState.getCurrentQuote();
-    if (!currentQuote) {
-        if (detailsPanel) {
-            detailsPanel.innerHTML = '<p class="text-gray-500">No quote selected</p>';
-        }
-        if (detailsContent) {
-            detailsContent.innerHTML = '<div class="text-center py-8 text-cream/60"><p>Select a quote to view details</p></div>';
-        }
-        return;
-    }
-    
-    // Generate themes HTML
-    const themesHTML = currentQuote.themes && currentQuote.themes.length > 0 ?
-        currentQuote.themes.map(themeId => {
-            const theme = window.quoteJourneyState.quoteData.themes.find(t => t.id === themeId);
-            return theme ? `<span class="theme-tag">${theme.name}</span>` : '';
-        }).join('') : '';
-    
-    // Generate related quotes HTML
-    const relatedQuotesHTML = currentQuote.relatedQuotes && currentQuote.relatedQuotes.length > 0 ?
-        currentQuote.relatedQuotes.map(related => {
-            const relatedQuote = window.quoteJourneyState.quoteData.quotes.find(q => q.id === related.id);
-            return relatedQuote ? `
-                <div class="border-l-4 border-gold pl-4 mb-2">
-                    <h4 class="font-semibold text-sm text-cream">${relatedQuote.title}</h4>
-                    <p class="text-xs text-cream/70 italic">"${relatedQuote.quote.substring(0, 100)}..."</p>
-                    <button class="text-xs text-gold hover:text-cream mt-1" onclick="window.quoteJourneyState.setCurrentQuote('${related.id}')">
-                        View Quote →
-                    </button>
-                </div>
-            ` : '';
-        }).join('') : '<p class="text-cream/60 text-sm">No related quotes</p>';
-    
-    const detailsHTML = `
-        <div class="quote-details">
-            <h2 class="quote-details-title">${currentQuote.title}</h2>
-            <div class="quote-details-text">
-                <p>"${currentQuote.quote}"</p>
-            </div>
-            <div class="quote-details-context">
-                <p>${currentQuote.context}</p>
-            </div>
-            <div class="quote-details-source">
-                <p><strong>Source:</strong> ${currentQuote.source.work}, ${currentQuote.source.year}</p>
-            </div>
-            <div class="quote-details-themes">
-                <h3 class="quote-details-themes-title">Themes:</h3>
-                ${themesHTML}
-            </div>
-            <div class="related-quotes">
-                <h3 class="text-sm font-semibold text-cream mb-2">Related Quotes:</h3>
-                ${relatedQuotesHTML}
-            </div>
-        </div>
-    `;
-    
-    // Update inline details panel
-    if (detailsPanel) {
-        detailsPanel.innerHTML = detailsHTML;
-    }
-    
-    // Update sliding panel content
-    if (detailsContent) {
-        detailsContent.innerHTML = detailsHTML;
-    }
-}
 
 
 // Scroll Reveal with Intersection Observer
