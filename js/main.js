@@ -1,6 +1,11 @@
 // Import quote data from the newly created js/quote_data.js file
 // This will be loaded as a script tag in index.html, so quoteData is available globally
 
+// --- PAGINATION STATE ---
+const QUOTES_PER_PAGE = 3;
+let currentPage = 0; // Starts at 0
+// --- END PAGINATION STATE ---
+
 // QuoteJourneyState - Centralized State Management for Contextual Quote Journey
 class QuoteJourneyState {
   constructor(quoteData) {
@@ -365,24 +370,53 @@ class QuoteJourneyState {
 }
 
 /**
- * Renders ALL available insights into the grid container.
- * This restores the 3-column visual layout.
+ * Renders insights with pagination support.
+ * Shows 3 cards per page with Previous/Next navigation.
  */
 function renderAllInsightsInGrid() {
     const cardContainer = document.getElementById('insightContainer');
     if (!cardContainer || !window.quoteJourneyState) return;
 
-    // Use all available quotes for display (assuming content balancing happens elsewhere)
-    const quotesToDisplay = window.quoteJourneyState.quoteData.quotes.slice(0, 3);
+    // Get all available quotes
+    const allQuotes = window.quoteJourneyState.quoteData.quotes;
+    
+    // Calculate pagination
+    const startIndex = currentPage * QUOTES_PER_PAGE;
+    const endIndex = Math.min(startIndex + QUOTES_PER_PAGE, allQuotes.length);
+    const quotesToDisplay = allQuotes.slice(startIndex, endIndex);
+    
+    // Calculate total pages for counter display
+    const totalPages = Math.ceil(allQuotes.length / QUOTES_PER_PAGE);
+    
+    // Update pagination counter
+    const counterElement = document.getElementById('paginationCounter');
+    if (counterElement) {
+        counterElement.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+    }
+    
+    // Update button states
+    const prevBtn = document.getElementById('prevInsightBtn');
+    const nextBtn = document.getElementById('nextInsightBtn');
+    
+    if (prevBtn) {
+        prevBtn.disabled = currentPage === 0;
+        prevBtn.setAttribute('aria-disabled', currentPage === 0);
+    }
+    
+    if (nextBtn) {
+        nextBtn.disabled = currentPage >= totalPages - 1;
+        nextBtn.setAttribute('aria-disabled', currentPage >= totalPages - 1);
+    }
 
-    // Generate HTML for ALL available quotes
+    // Generate HTML for current page's quotes
     cardContainer.innerHTML = quotesToDisplay.map((quote, index) => {
+        const globalIndex = startIndex + index;
         const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
         return `
-        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer" tabindex="${index + 1}" role="button" aria-expanded="false" aria-controls="insight-content-${index + 1}">
+        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer" tabindex="${index + 1}" role="button" aria-expanded="false" aria-controls="insight-content-${globalIndex + 1}">
             <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
             <p class="quote-text">"${quote.quote}"</p>
-            <div id="insight-content-${index + 1}" class="insight-reveal-content text-sm hidden">
+            <div id="insight-content-${globalIndex + 1}" class="insight-reveal-content text-sm hidden">
                 <p>${quote.context}</p>
                 <div class="meta-info mt-3">
                     <strong>Source:</strong> ${quote.source.work}, Page ${quote.source.sourcePage}
@@ -396,6 +430,35 @@ function renderAllInsightsInGrid() {
     // Re-initialize click listeners for the newly generated cards
     setupInsightCardListeners();
     reinitializeScrollObserver();
+}
+
+/**
+ * Sets up listeners for the Previous/Next pagination buttons.
+ */
+function setupPaginationControls() {
+    const prevBtn = document.getElementById('prevInsightBtn');
+    const nextBtn = document.getElementById('nextInsightBtn');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                renderAllInsightsInGrid();
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const totalQuotes = window.quoteJourneyState.quoteData.quotes.length;
+            const totalPages = Math.ceil(totalQuotes / QUOTES_PER_PAGE);
+
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                renderAllInsightsInGrid();
+            }
+        });
+    }
 }
 
 /*
@@ -558,6 +621,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Render all insights in grid to restore 3-column visual layout
         renderAllInsightsInGrid();
+        
+        // Set up pagination controls
+        setupPaginationControls();
         
         // Initialize insight card interactions
         initializeInsightCards();
