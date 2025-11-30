@@ -277,34 +277,21 @@
 
                 <!-- Carousel View Container -->
                 <div id="carouselView" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="reveal reveal-stagger-1 insight-card p-6 text-cream cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded" tabindex="0" role="button" aria-expanded="false" aria-controls="insight-content-1">
-                        <h3 class="text-xl font-bold text-gold">El Fracaso del Lenguaje</h3>
-                        <p class="quote-text">"Cada oración ya es una traición al pensamiento inicial."</p>
-                        <div id="insight-content-1" class="insight-reveal-content text-sm hidden">
-                            <p>Esta perspectiva explora la brecha semiótica fundamental entre el significante (la palabra) y el significado (el concepto), basándose ampliamente en el trabajo temprano de Lacan sobre los límites de la comunicación.</p>
-                            <p class="mt-2 text-gold font-bold">Haga clic para ocultar.</p>
+                    <div id="insightContainer" class="relative max-w-4xl mx-auto">
+                        <div id="singleInsightCard" class="min-h-[500px] flex items-center justify-center">
+                            <p class="text-cream">Cargando perspectiva...</p>
                         </div>
-                    </div>
-                    
-                    <div class="reveal reveal-stagger-2 insight-card p-6 text-cream cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded" tabindex="0" role="button" aria-expanded="false" aria-controls="insight-content-2">
-                        <h3 class="text-xl font-bold text-gold">La Victimización como Identidad</h3>
-                        <p class="quote-text">"Adoptar el rol de víctima es alcanzar la única forma de triunfo que el ego realmente entiende."</p>
-                        <div id="insight-content-2" class="insight-reveal-content text-sm hidden">
-                            <p>Un extracto de *Víctima Triunfante*, discutiendo cómo las estructuras sociales contemporáneas fomentan y validan una identidad performativa arraigada en la inadequación estructural, otorgando así poder al sujeto.</p>
-                            <p class="mt-2 text-gold font-bold">Haga clic para ocultar.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="reveal reveal-stagger-3 insight-card p-6 text-cream cursor-pointer focus:outline-none focus:ring-2 focus:ring-gold rounded" tabindex="0" role="button" aria-expanded="false" aria-controls="insight-content-3">
-                        <h3 class="text-xl font-bold text-gold">El Fin de la Interpretación</h3>
-                        <p class="quote-text">"El propósito del psicoanálisis no es proporcionar respuestas, sino terminar el deseo por ellas."</p>
-                        <div id="insight-content-3" class="insight-reveal-content text-sm hidden">
-                            <p>Un principio central de la filosofía de Miller: que la verdadera resolución llega cuando el sujeto cesa de proyectar el deseo de finalización sobre el analista o una narrativa externa.</p>
-                            <p class="mt-2 text-gold font-bold">Haga clic para ocultar.</p>
-                        </div>
-                    </div>
 
+                        <div id="insightFooter" class="flex justify-between items-center mt-6 p-4 bg-oxford-blue/50 rounded-lg shadow-xl">
+                            <button id="prevInsightBtn" class="btn-primary" disabled>
+                                ← Anterior
+                            </button>
+                            <span id="insightCounter" class="text-cream font-bold text-lg">1 / 12</span>
+                            <button id="nextInsightBtn" class="btn-primary">
+                                Siguiente →
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
 

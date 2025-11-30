@@ -535,10 +535,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set up QuoteJourneyState event listeners
         setupQuoteJourneyStateEvents();
         
-        // Populate carousel view with quote data after a short delay to ensure DOM is ready
+        // Initialize robust navigation for insights section after a short delay to ensure DOM is ready
         setTimeout(() => {
-            if (typeof populateCarouselView === 'function') {
-                populateCarouselView();
+            if (typeof initializeRobustNavigation === 'function') {
+                initializeRobustNavigation();
             }
         }, 100);
     } else {
@@ -575,8 +575,10 @@ function initializeInsightCards() {
     try {
         console.log('Initializing insight cards...');
         
-        // First populate carousel with quote data
-        populateCarouselView();
+        // Initialize robust navigation for insights section
+        if (typeof initializeRobustNavigation === 'function') {
+            initializeRobustNavigation();
+        }
         
         // Use requestAnimationFrame to ensure DOM is updated before reinitializing observer
         requestAnimationFrame(() => {
@@ -671,41 +673,97 @@ function setupInsightCardListeners() {
 }
 
 /**
- * Populate carousel view with quote data
+ * Renders the HTML content for the current active quote into the UI.
  */
-function populateCarouselView() {
-    const carousel = document.getElementById('carouselView');
-    if (!carousel) return;
-
-    // Get the first 3 insights to match user request
-    const selectedInsights = (typeof quoteData !== 'undefined' && quoteData.quotes && Array.isArray(quoteData.quotes))
-        ? quoteData.quotes.slice(0, 3)
-        : [];
-
-    if (selectedInsights.length === 0) {
-        console.warn('No insights found in quoteData.quotes');
+function renderCurrentInsight(quote) {
+    const cardContainer = document.getElementById('singleInsightCard');
+    const counter = document.getElementById('insightCounter');
+    
+    if (!cardContainer || !quote) {
+        cardContainer.innerHTML = '<p class="text-cream/70">No quote data available.</p>';
         return;
     }
 
-    // Generate HTML for ALL 3 cards, ensuring existing CSS classes are respected
-    carousel.innerHTML = selectedInsights.map(insight => `
-        <div class="insight-card">
-            <h3>${insight.title}</h3>
-            <p class="quote-text">"${insight.quote}"</p>
-            <p>${insight.context}</p>
+    const totalQuotes = window.quoteJourneyState.quoteData.quotes.length;
+    const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === quote.id) + 1;
+
+    // Update Counter
+    if (counter) {
+        counter.textContent = `${currentIndex} / ${totalQuotes}`;
+    }
+    
+    // Generate the visually styled card HTML
+    cardContainer.innerHTML = `
+        <div class="insight-card full-width-card">
+            <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
+            <p class="quote-text">"${quote.content}"</p>
+            <p>${quote.context}</p>
             <div class="meta-info">
-                <strong>Source:</strong> ${insight.source.work} <br>
-                <div style="margin-top: 10px; color: #888;">
-                    <strong>Themes:</strong> ${insight.themes.join(', ')}
-                </div>
+                <strong>Source:</strong> ${quote.source.work}, ${quote.source.sourcePage}
             </div>
             <div style="margin-top: 2rem;">
-                <a href="books/do-you-read-me.html" class="action-button">
+                <a href="books/do-you-read-me.html" class="btn-primary">
                     View Book
                 </a>
             </div>
         </div>
-    `).join('');
+    `;
+}
+
+/**
+ * Initializes listeners and state subscriptions for the Robust Navigation UI.
+ */
+function initializeRobustNavigation() {
+    const nextBtn = document.getElementById('nextInsightBtn');
+    const prevBtn = document.getElementById('prevInsightBtn');
+
+    if (!window.quoteJourneyState) return;
+
+    // 1. Navigation Event Listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const currentQuote = window.quoteJourneyState.getCurrentQuote();
+            if (!currentQuote) return;
+
+            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
+            const nextIndex = (currentIndex + 1) % window.quoteJourneyState.quoteData.quotes.length;
+            const nextQuoteId = window.quoteJourneyState.quoteData.quotes[nextIndex].id;
+
+            window.quoteJourneyState.setCurrentQuote(nextQuoteId);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            const currentQuote = window.quoteJourneyState.getCurrentQuote();
+            if (!currentQuote) return;
+
+            const total = window.quoteJourneyState.quoteData.quotes.length;
+            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
+            const prevIndex = (currentIndex - 1 + total) % total;
+            const prevQuoteId = window.quoteJourneyState.quoteData.quotes[prevIndex].id;
+
+            window.quoteJourneyState.setCurrentQuote(prevQuoteId);
+        });
+    }
+
+    // 2. State Subscription (Updates UI on change)
+    window.quoteJourneyState.subscribe((eventType, data) => {
+        if (eventType === 'currentQuoteChanged' && data.quote) {
+            renderCurrentInsight(data.quote);
+            
+            // 3. Update Button State (Disabled/Enabled)
+            const currentQuote = window.quoteJourneyState.getCurrentQuote();
+            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
+            
+            // Assuming cyclic navigation, buttons are always enabled unless list is short
+            nextBtn.disabled = false;
+            prevBtn.disabled = false;
+        }
+    });
+
+    // 4. Initial Render
+    renderCurrentInsight(window.quoteJourneyState.getCurrentQuote());
 }
 
 
