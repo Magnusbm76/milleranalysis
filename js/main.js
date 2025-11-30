@@ -364,6 +364,40 @@ class QuoteJourneyState {
   
 }
 
+/**
+ * Renders ALL available insights into the grid container.
+ * This restores the 3-column visual layout.
+ */
+function renderAllInsightsInGrid() {
+    const cardContainer = document.getElementById('insightContainer');
+    if (!cardContainer || !window.quoteJourneyState) return;
+
+    // Use all available quotes for display (assuming content balancing happens elsewhere)
+    const quotesToDisplay = window.quoteJourneyState.quoteData.quotes;
+
+    // Generate HTML for ALL available quotes
+    cardContainer.innerHTML = quotesToDisplay.map((quote, index) => {
+        const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
+        return `
+        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer" tabindex="${index + 1}" role="button" aria-expanded="false" aria-controls="insight-content-${index + 1}">
+            <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
+            <p class="quote-text">"${quote.quote}"</p>
+            <div id="insight-content-${index + 1}" class="insight-reveal-content text-sm hidden">
+                <p>${quote.context}</p>
+                <div class="meta-info mt-3">
+                    <strong>Source:</strong> ${quote.source.work}, Page ${quote.source.sourcePage}
+                </div>
+            </div>
+            <p class="mt-2 text-gold font-bold">Click for context.</p>
+        </div>
+        `;
+    }).join('');
+    
+    // Re-initialize click listeners for the newly generated cards
+    setupInsightCardListeners();
+    reinitializeScrollObserver();
+}
+
 /*
 ================================================================================
 LEGACY CODE - Temporarily commented out during refactoring
@@ -522,6 +556,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create global instance of QuoteJourneyState
         window.quoteJourneyState = new QuoteJourneyState(quoteData);
         
+        // Render all insights in grid to restore 3-column visual layout
+        renderAllInsightsInGrid();
         
         // Initialize insight card interactions
         initializeInsightCards();
@@ -535,12 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set up QuoteJourneyState event listeners
         setupQuoteJourneyStateEvents();
         
-        // Initialize robust navigation for insights section after a short delay to ensure DOM is ready
-        setTimeout(() => {
-            if (typeof initializeRobustNavigation === 'function') {
-                initializeRobustNavigation();
-            }
-        }, 100);
+        // Single-card navigation logic removed as part of visual layout reversal
     } else {
         console.error('quoteData not available. Make sure js/quote_data.js is loaded before js/main.js');
     }
@@ -575,10 +606,7 @@ function initializeInsightCards() {
     try {
         console.log('Initializing insight cards...');
         
-        // Initialize robust navigation for insights section
-        if (typeof initializeRobustNavigation === 'function') {
-            initializeRobustNavigation();
-        }
+        // Single-card navigation logic removed as part of visual layout reversal
         
         // Use requestAnimationFrame to ensure DOM is updated before reinitializing observer
         requestAnimationFrame(() => {
@@ -672,99 +700,6 @@ function setupInsightCardListeners() {
     }
 }
 
-/**
- * Renders the HTML content for the current active quote into the UI.
- */
-function renderCurrentInsight(quote) {
-    const cardContainer = document.getElementById('singleInsightCard');
-    const counter = document.getElementById('insightCounter');
-    
-    if (!cardContainer || !quote) {
-        cardContainer.innerHTML = '<p class="text-cream/70">No quote data available.</p>';
-        return;
-    }
-
-    const totalQuotes = window.quoteJourneyState.quoteData.quotes.length;
-    const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === quote.id) + 1;
-
-    // Update Counter
-    if (counter) {
-        counter.textContent = `${currentIndex} / ${totalQuotes}`;
-    }
-    
-    // Generate the visually styled card HTML
-    cardContainer.innerHTML = `
-        <div class="insight-card full-width-card">
-            <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
-            <p class="quote-text">"${quote.content}"</p>
-            <p>${quote.context}</p>
-            <div class="meta-info">
-                <strong>Source:</strong> ${quote.source.work}, ${quote.source.sourcePage}
-            </div>
-            <div style="margin-top: 2rem;">
-                <a href="books/do-you-read-me.html" class="btn-primary">
-                    View Book
-                </a>
-            </div>
-        </div>
-    `;
-}
-
-/**
- * Initializes listeners and state subscriptions for the Robust Navigation UI.
- */
-function initializeRobustNavigation() {
-    const nextBtn = document.getElementById('nextInsightBtn');
-    const prevBtn = document.getElementById('prevInsightBtn');
-
-    if (!window.quoteJourneyState) return;
-
-    // 1. Navigation Event Listeners
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const currentQuote = window.quoteJourneyState.getCurrentQuote();
-            if (!currentQuote) return;
-
-            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
-            const nextIndex = (currentIndex + 1) % window.quoteJourneyState.quoteData.quotes.length;
-            const nextQuoteId = window.quoteJourneyState.quoteData.quotes[nextIndex].id;
-
-            window.quoteJourneyState.setCurrentQuote(nextQuoteId);
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            const currentQuote = window.quoteJourneyState.getCurrentQuote();
-            if (!currentQuote) return;
-
-            const total = window.quoteJourneyState.quoteData.quotes.length;
-            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
-            const prevIndex = (currentIndex - 1 + total) % total;
-            const prevQuoteId = window.quoteJourneyState.quoteData.quotes[prevIndex].id;
-
-            window.quoteJourneyState.setCurrentQuote(prevQuoteId);
-        });
-    }
-
-    // 2. State Subscription (Updates UI on change)
-    window.quoteJourneyState.subscribe((eventType, data) => {
-        if (eventType === 'currentQuoteChanged' && data.quote) {
-            renderCurrentInsight(data.quote);
-            
-            // 3. Update Button State (Disabled/Enabled)
-            const currentQuote = window.quoteJourneyState.getCurrentQuote();
-            const currentIndex = window.quoteJourneyState.quoteData.quotes.findIndex(q => q.id === currentQuote.id);
-            
-            // Assuming cyclic navigation, buttons are always enabled unless list is short
-            nextBtn.disabled = false;
-            prevBtn.disabled = false;
-        }
-    });
-
-    // 4. Initial Render
-    renderCurrentInsight(window.quoteJourneyState.getCurrentQuote());
-}
 
 
 /**
