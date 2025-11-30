@@ -138,7 +138,6 @@
 
     <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
         <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="Navigation principale">
-             
             <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
                 <a href="../../fr/index.html" class="text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded" aria-label="Retour à la page principale">
                     JOHN F. MILLER
@@ -147,29 +146,35 @@
 
             <div class="flex items-center space-x-8">
                 <ul class="flex space-x-8">
-                    <li><a href="../../fr/index.html#books" class="nav-link">Livres</a></li>
-                    <li><a href="../../fr/index.html#insights" class="nav-link">Perspectives</a></li>
-                    <li><a href="../../fr/index.html#about" class="nav-link">À Propos</a></li>
-                    <li><a href="../../fr/index.html#concepts" class="nav-link">Concepts Clés</a></li>
+                    <li class="relative group">
+                        <button class="flex items-center nav-link" aria-expanded="false" aria-haspopup="true" aria-controls="books-dropdown">
+                            Livres
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="books-dropdown" class="absolute top-full left-0 mt-2 w-48 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
+                            <a href="do-you-read-me.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">Me Recevez-Vous ?</a>
+                            <a href="triumphant-victim.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">Victoire Triomphante</a>
+                        </div>
+                    </li>
+                    <li><a href="../../fr/index.html#insights" class="nav-link">Aperçus</a></li>
+                    <li><a href="../../fr/index.html#about" class="nav-link">À propos</a></li>
+                    <li><a href="../../fr/index.html#concepts" class="nav-link">Concepts</a></li>
                     <li><a href="../../fr/index.html#faq" class="nav-link">FAQ</a></li>
                     <li><a href="../../fr/index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
                 
-                <!-- Language Selector -->
                 <div class="relative group">
-                    <button class="flex items-center text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded px-3 py-1" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Icône de langue">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-                        </svg>
+                    <button class="flex items-center text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded px-3 py-1">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
                         FR
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="Icône de flèche déroulante">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-32 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
-                        <a href="../../index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">EN</a>
-                        <a href="../../fr/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">FR</a>
-                        <a href="../../es/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">ES</a>
+                    <div class="absolute top-full right-0 mt-2 w-32 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <a href="../../index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">EN</a>
+                        <a href="../../fr/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">FR</a>
+                        <a href="../../es/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream">ES</a>
                     </div>
                 </div>
             </div>
