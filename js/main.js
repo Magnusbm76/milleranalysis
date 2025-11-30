@@ -370,65 +370,68 @@ class QuoteJourneyState {
 }
 
 /**
- * Renders insights with pagination support.
- * Shows 3 cards per page with Previous/Next navigation.
+ * Renders the active page of insights into the grid container.
  */
 function renderAllInsightsInGrid() {
     const cardContainer = document.getElementById('insightContainer');
-    if (!cardContainer || !window.quoteJourneyState) return;
-
-    // Get all available quotes
-    const allQuotes = window.quoteJourneyState.quoteData.quotes;
-    
-    // Calculate pagination
-    const startIndex = currentPage * QUOTES_PER_PAGE;
-    const endIndex = Math.min(startIndex + QUOTES_PER_PAGE, allQuotes.length);
-    const quotesToDisplay = allQuotes.slice(startIndex, endIndex);
-    
-    // Calculate total pages for counter display
-    const totalPages = Math.ceil(allQuotes.length / QUOTES_PER_PAGE);
-    
-    // Update pagination counter
-    const counterElement = document.getElementById('paginationCounter');
-    if (counterElement) {
-        counterElement.textContent = `Page ${currentPage + 1} of ${totalPages}`;
-    }
-    
-    // Update button states
+    const counter = document.getElementById('insightCounter');
     const prevBtn = document.getElementById('prevInsightBtn');
     const nextBtn = document.getElementById('nextInsightBtn');
     
-    if (prevBtn) {
-        prevBtn.disabled = currentPage === 0;
-        prevBtn.setAttribute('aria-disabled', currentPage === 0);
-    }
-    
-    if (nextBtn) {
-        nextBtn.disabled = currentPage >= totalPages - 1;
-        nextBtn.setAttribute('aria-disabled', currentPage >= totalPages - 1);
+    if (!cardContainer || !window.quoteJourneyState) return;
+
+    const allQuotes = window.quoteJourneyState.quoteData.quotes;
+    const totalQuotes = allQuotes.length;
+    const totalPages = Math.ceil(totalQuotes / QUOTES_PER_PAGE);
+
+    // Calculate slice
+    const startIndex = currentPage * QUOTES_PER_PAGE;
+    const endIndex = Math.min(startIndex + QUOTES_PER_PAGE, totalQuotes);
+    const quotesToDisplay = allQuotes.slice(startIndex, endIndex);
+
+    // Update Counter (Force update)
+    if (counter) {
+        // Use a localized format if possible, otherwise standard "Page X / Y"
+        counter.textContent = `Page ${currentPage + 1} / ${totalPages}`;
     }
 
-    // Generate HTML for current page's quotes
+    // Generate HTML
     cardContainer.innerHTML = quotesToDisplay.map((quote, index) => {
-        const globalIndex = startIndex + index;
-        const staggerClass = index < 5 ? ` reveal-stagger-${index + 1}` : '';
+        const staggerClass = index < 3 ? ` reveal-stagger-${index + 1}` : '';
+        
+        // Determine Book Link
+        let bookLink = "#";
+        let linkText = "View Book Context →";
+        
+        if (quote.source.work.includes("Do You Read Me")) {
+            bookLink = "books/do-you-read-me.html";
+        } else if (quote.source.work.includes("Triumphant Victim")) {
+            bookLink = "books/triumphant-victim.html";
+        }
+
         return `
-        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer" tabindex="${index + 1}" role="button" aria-expanded="false" aria-controls="insight-content-${globalIndex + 1}">
+        <div class="reveal ${staggerClass} insight-card p-6 text-cream cursor-pointer" tabindex="${index + 1}">
             <h3 class="text-xl font-bold text-gold">${quote.title}</h3>
             <p class="quote-text">"${quote.quote}"</p>
-            <div id="insight-content-${globalIndex + 1}" class="insight-reveal-content text-sm hidden">
+            <div class="insight-reveal-content text-sm mt-4">
                 <p>${quote.context}</p>
-                <div class="meta-info mt-3">
-                    <strong>Source:</strong> ${quote.source.work}, Page ${quote.source.sourcePage}
+                <div class="meta-info mt-3 opacity-75 text-xs">
+                    <strong>Source:</strong> ${quote.source.work}
                 </div>
             </div>
-            <p class="mt-2 text-gold font-bold">Click for context.</p>
+            <div class="mt-6 pt-4 border-t border-gold/30">
+                <a href="${bookLink}" class="text-gold font-bold hover:text-cream transition-colors duration-300 inline-flex items-center">
+                    ${linkText}
+                </a>
+            </div>
         </div>
         `;
     }).join('');
     
-    // Re-initialize click listeners for the newly generated cards
-    setupInsightCardListeners();
+    // Update Button States
+    if (prevBtn) prevBtn.disabled = currentPage === 0;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages - 1;
+    
     reinitializeScrollObserver();
 }
 
