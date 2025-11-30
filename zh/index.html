@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>诠释的迷宫 - John Miller</title>
+    
+    <!-- Google Fonts Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="探索John F. Miller在精神分析符号学和拉康理论方面的开创性工作。了解他的书籍《Do You Read Me》和《Triumphant Victim》，以及他对现代主体性的深刻见解。">
+    <meta name="keywords" content="John F. Miller, 精神分析, 拉康理论, 符号学, Do You Read Me, Triumphant Victim, 诠释的迷宫">
+    <meta name="author" content="Mr. John F. Miller">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="诠释的迷宫 - John Miller">
+    <meta property="og:description" content="探索John F. Miller在精神分析符号学和拉康理论方面的开创性工作。了解他的书籍《Do You Read Me》和《Triumphant Victim》，以及他对现代主体性的深刻见解。">
+    <meta property="og:image" content="../assets/images/atmospheric/portrait-placeholder.jpg">
+    <meta property="og:url" content="https://johnmilleranalysis.com/zh/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="诠释的迷宫">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Hreflang Tags for International SEO -->
+    <link rel="alternate" hreflang="en-gb" href="https://johnmilleranalysis.com/">
+    <link rel="alternate" hreflang="fr" href="https://johnmilleranalysis.com/fr/">
+    <link rel="alternate" hreflang="es" href="https://johnmilleranalysis.com/es/">
+    <link rel="alternate" hreflang="no" href="https://johnmilleranalysis.com/no/">
+    <link rel="alternate" hreflang="pl" href="https://johnmilleranalysis.com/pl/">
+    <link rel="alternate" hreflang="la" href="https://johnmilleranalysis.com/la/">
+    <link rel="alternate" hreflang="egy" href="https://johnmilleranalysis.com/egy/">
+    <link rel="alternate" hreflang="zh" href="https://johnmilleranalysis.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://johnmilleranalysis.com/">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="诠释的迷宫 - John Miller">
+    <meta name="twitter:description" content="探索John F. Miller在精神分析符号学和拉康理论方面的开创性工作。了解他的书籍《Do You Read Me》和《Triumphant Victim》，以及他对现代主体性的深刻见解。">
+    <meta name="twitter:image" content="../assets/images/atmospheric/portrait-placeholder.jpg">
+    <meta name="twitter:site" content="@JohnMillerAnalysis">
+    <meta name="twitter:creator" content="@JohnMillerAnalysis">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "#person",
+                "name": "Mr. John F. Miller",
+                "jobTitle": "精神分析师",
+                "description": "牛津大学附属精神分析师，临床实践专长为精神分析符号学和拉康理论",
+                "alumniOf": "牛津大学",
+                "knowsAbout": ["精神分析", "拉康理论", "符号学"],
+                "url": "https://johnmilleranalysis.com/zh/"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "#website",
+                "name": "诠释的迷宫",
+                "url": "https://johnmilleranalysis.com/zh/",
+                "description": "探索John F. Miller在精神分析符号学和拉康理论方面的开创性工作",
+                "inLanguage": "zh-CN",
+                "about": {
+                    "@type": "Thing",
+                    "name": "精神分析符号学和拉康理论"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Using the variables defined in styles.css
+                        'serif': ['var(--font-serif)'],
+                        'sans': ['var(--font-sans)'],
+                    },
+                    colors: {
+                        // Using the variables defined in styles.css
+                        'oxford-blue': 'var(--color-oxford-blue)',
+                        'cream': 'var(--color-cream)',
+                        'charcoal': 'var(--color-charcoal)',
+                        'gold': 'var(--color-gold)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-serif bg-cream">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-oxford-blue text-cream px-4 py-2 rounded-md z-50 focus:outline-none focus:ring-2 focus:ring-gold">跳转到主要内容</a>
+
+    <div class="hero-video-container">
+        <video autoplay muted loop playsinline poster="../assets/images/atmospheric/portrait-placeholder.jpg" aria-label="氛围英雄视频">
+            <source src="../assets/video/hero/hero-loop-v1.mp4" type="video/mp4">
+            <div class="w-screen h-screen bg-oxford-blue flex items-center justify-center">
+                <p class="text-cream text-xl">加载氛围中...</p>
+            </div>
+        </video>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full p-6 z-50" role="banner">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto" role="navigation" aria-label="主导航">
+             
+            <div class="text-xl font-bold tracking-widest text-oxford-blue uppercase">
+                <a href="#hero" class="text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded" aria-label="返回主页">
+                    JOHN F. MILLER
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-8">
+                <ul class="flex space-x-8">
+                    <li><a href="#books" class="nav-link">书籍</a></li>
+                    <li><a href="#insights" class="nav-link">见解</a></li>
+                    <li><a href="#about" class="nav-link">关于</a></li>
+                    <li><a href="#concepts" class="nav-link">关键概念</a></li>
+                    <li><a href="#faq" class="nav-link">常见问题</a></li>
+                    <li><a href="#contact" class="nav-link">联系</a></li>
+                </ul>
+                
+                <!-- Language Selector -->
+                <div class="relative group">
+                    <button class="flex items-center text-oxford-blue hover:text-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold rounded px-3 py-1" aria-expanded="false" aria-haspopup="true" aria-controls="lang-dropdown">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="语言图标">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                        </svg>
+                        ZH
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" alt="下拉箭头图标">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="lang-dropdown" class="absolute top-full right-0 mt-2 w-32 bg-cream border border-charcoal rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" role="menu">
+                        <a href="../index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">EN</a>
+                        <a href="../fr/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">FR</a>
+                        <a href="../es/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">ES</a>
+                        <a href="../no/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">NO</a>
+                        <a href="../pl/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">PL</a>
+                        <a href="../la/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">LA</a>
+                        <a href="../egy/index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">EGY</a>
+                        <a href="index.html" class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream" role="menuitem">ZH</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="relative z-10">
+        
+        <section id="hero" class="reveal min-h-screen flex items-center justify-center">
+            <div class="text-center max-w-4xl mx-auto px-6">
+                <h1 class="reveal reveal-delay-1 hero-title">
+                    诠释的迷宫
+                </h1>
+                <p class="reveal reveal-delay-2 mt-8 text-xl md:text-2xl text-cream font-sans leading-relaxed tracking-wide max-w-2xl mx-auto">
+                    探索John F. Miller在精神分析符号学和拉康理论方面的开创性工作
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="reveal min-h-screen bg-cream py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal reveal-stagger-1 reveal-fade-left">
+                        <img src="../assets/images/atmospheric/portrait-placeholder.jpg" alt="John F. Miller肖像" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="reveal reveal-stagger-2 reveal-fade-right">
+                        <h2 class="text-5xl font-bold text-oxford-blue mb-6">关于John F. Miller</h2>
+                        <p class="text-charcoal leading-relaxed mb-6">
+                            John F. Miller是一位牛津大学附属的精神分析师，以其在精神分析符号学和拉康理论方面的开创性工作而闻名。他的临床实践专注于通过符号学框架探索人类主体性，将古典精神分析理论与当代文化现象相结合。
+                        </p>
+                        <p class="text-charcoal leading-relaxed mb-6">
+                            Miller的研究探讨了语言、符号和意义在塑造人类经验中的作用，特别关注现代主体性如何在当代文化背景中形成。他的工作为理解当代心理现象提供了独特的视角。
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <span class="px-4 py-2 bg-oxford-blue text-cream rounded-full text-sm">精神分析</span>
+                            <span class="px-4 py-2 bg-oxford-blue text-cream rounded-full text-sm">拉康理论</span>
+                            <span class="px-4 py-2 bg-oxford-blue text-cream rounded-full text-sm">符号学</span>
+                            <span class="px-4 py-2 bg-oxford-blue text-cream rounded-full text-sm">主体性</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="books" class="reveal min-h-screen bg-oxford-blue py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-cream font-bold mb-12 border-b border-gold pb-4 text-center">
+                    书籍
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div id="book-1" class="reveal reveal-stagger-1 reveal-fade-up text-center">
+                        <div class="book-cover-container mx-auto">
+                            <img src="../assets/images/book-covers/do-you-read-me/Do You Read Me.jpg" alt="《Do You Read Me》书籍封面" class="w-full rounded-lg shadow-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold mt-6 text-cream">Do You Read Me</h3>
+                        <p class="text-gold italic mt-2">精神分析的符号学</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                            <a href="books/do-you-read-me.html" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="了解更多关于《Do You Read Me》">
+                                了解更多
+                            </a>
+                            <a href="https://www.amazon.com/Do-You-Read-Me-Difficulties-ebook/dp/B07D17VWDD/ref=sr_1_1" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="在亚马逊美国购买《Do You Read Me》">
+                                在亚马逊美国购买
+                            </a>
+                            <a href="https://www.amazon.co.uk/Do-You-Read-Me-Difficulties/dp/0367102463/ref=sr_1_1" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="在亚马逊英国购买《Do You Read Me》">
+                                在亚马逊英国购买
+                            </a>
+                        </div>
+                    </div>
+                    <div id="book-2" class="reveal reveal-stagger-2 reveal-fade-up text-center">
+                        <div class="book-cover-container mx-auto">
+                            <img src="../assets/images/book-covers/triumphant-victim/Triumphant Victim.jpg" alt="《Triumphant Victim》书籍封面" class="w-full rounded-lg shadow-lg">
+                        </div>
+                        <h3 class="text-3xl font-bold mt-6 text-cream">Triumphant Victim</h3>
+                        <p class="text-gold italic mt-2">拉康理论研究</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                            <a href="books/triumphant-victim.html" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="了解更多关于《Triumphant Victim》">
+                                了解更多
+                            </a>
+                            <a href="https://www.amazon.com/Triumphant-Victim-Psychoanalytical-Perspective-Sadomasochism-ebook/dp/B07B9YRR41/ref=sr_1_1" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="在亚马逊美国购买《Triumphant Victim》">
+                                在亚马逊美国购买
+                            </a>
+                            <a href="https://www.amazon.co.uk/Triumphant-Victim-Psychoanalytical-Perspective-Sadomasochism/dp/1780490577/ref=sr_1_1" target="_blank" rel="noopener noreferrer" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="在亚马逊英国购买《Triumphant Victim》">
+                                在亚马逊英国购买
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="insights" class="reveal min-h-screen bg-cream py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-oxford-blue font-bold mb-12 border-b border-charcoal pb-4 text-center">
+                    见解
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="reveal reveal-stagger-1 insight-card p-6 border-l-4 border-oxford-blue">
+                        <h3 class="text-xl font-bold text-oxford-blue">符号学诠释</h3>
+                        <p class="text-charcoal mt-2">"在精神分析的语境中，每一个符号都承载着无意识的回响，等待被诠释。"</p>
+                    </div>
+                    <div class="reveal reveal-stagger-2 insight-card p-6 border-l-4 border-oxford-blue">
+                        <h3 class="text-xl font-bold text-oxford-blue">主体性探索</h3>
+                        <p class="text-charcoal mt-2">"现代主体性不再是一个稳定的实体，而是一个不断被语言和文化重塑的过程。"</p>
+                    </div>
+                    <div class="reveal reveal-stagger-3 insight-card p-6 border-l-4 border-oxford-blue">
+                        <h3 class="text-xl font-bold text-oxford-blue">拉康理论应用</h3>
+                        <p class="text-charcoal mt-2">"通过拉康的视角，我们能够看到欲望如何结构化我们的现实，以及我们如何通过他者的凝视来定义自己。"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepts" class="reveal min-h-screen bg-oxford-blue py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-cream font-bold mb-12 border-b border-gold pb-4 text-center">
+                    关键概念
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="reveal reveal-stagger-1 text-center">
+                        <div class="concept-icon mx-auto mb-4">
+                            <svg class="w-16 h-16 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-2">精神分析符号学</h3>
+                        <p class="text-gold">探索符号如何承载无意识意义</p>
+                    </div>
+                    <div class="reveal reveal-stagger-2 text-center">
+                        <div class="concept-icon mx-auto mb-4">
+                            <svg class="w-16 h-16 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-2">拉康理论</h3>
+                        <p class="text-gold">镜像阶段与象征秩序</p>
+                    </div>
+                    <div class="reveal reveal-stagger-3 text-center">
+                        <div class="concept-icon mx-auto mb-4">
+                            <svg class="w-16 h-16 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-2">主体性</h3>
+                        <p class="text-gold">现代身份的形成与解构</p>
+                    </div>
+                    <div class="reveal reveal-stagger-4 text-center">
+                        <div class="concept-icon mx-auto mb-4">
+                            <svg class="w-16 h-16 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-cream mb-2">文化分析</h3>
+                        <p class="text-gold">当代现象的精神分析解读</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="reveal min-h-screen bg-cream py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-oxford-blue font-bold mb-12 border-b border-charcoal pb-4 text-center">
+                    常见问题
+                </h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="reveal reveal-stagger-1">
+                        <button class="faq-question w-full text-left p-4 bg-oxford-blue text-cream rounded-lg hover:bg-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false" aria-controls="faq-answer-1">
+                            <h3 class="text-xl font-bold">什么是精神分析符号学？</h3>
+                        </button>
+                        <div id="faq-answer-1" class="faq-answer hidden p-4 bg-cream border border-oxford-blue rounded-lg mt-2">
+                            <p class="text-charcoal">精神分析符号学是研究符号如何承载和传达无意识意义的学科。它探索语言、图像和其他符号形式如何在精神分析过程中揭示深层心理结构。</p>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-stagger-2">
+                        <button class="faq-question w-full text-left p-4 bg-oxford-blue text-cream rounded-lg hover:bg-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false" aria-controls="faq-answer-2">
+                            <h3 class="text-xl font-bold">拉康理论如何应用于当代文化分析？</h3>
+                        </button>
+                        <div id="faq-answer-2" class="faq-answer hidden p-4 bg-cream border border-oxford-blue rounded-lg mt-2">
+                            <p class="text-charcoal">拉康理论提供了理解当代文化现象的框架，特别是关于主体性如何通过语言和他者凝视形成。Miller将这一理论应用于分析现代身份、社交媒体影响和当代心理现象。</p>
+                        </div>
+                    </div>
+                    <div class="reveal reveal-stagger-3">
+                        <button class="faq-question w-full text-left p-4 bg-oxford-blue text-cream rounded-lg hover:bg-charcoal transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold" aria-expanded="false" aria-controls="faq-answer-3">
+                            <h3 class="text-xl font-bold">Miller的研究如何影响临床实践？</h3>
+                        </button>
+                        <div id="faq-answer-3" class="faq-answer hidden p-4 bg-cream border border-oxford-blue rounded-lg mt-2">
+                            <p class="text-charcoal">Miller的研究为临床实践提供了理解当代患者的新视角，特别是那些在数字文化中形成的身份和焦虑。他的工作帮助治疗师更好地理解现代主体性的复杂性。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal min-h-screen bg-oxford-blue py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="reveal reveal-delay-1 text-5xl text-cream font-bold mb-12 border-b border-gold pb-4 text-center">
+                    联系
+                </h2>
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-xl text-cream mb-8">
+                        对于咨询、合作或媒体咨询，请通过以下方式联系
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:contact@johnmilleranalysis.com" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="发送电子邮件给John F. Miller">
+                            <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            发送电子邮件
+                        </a>
+                        <a href="tel:+441234567890" class="btn-primary inline-block px-6 py-3 bg-gold text-oxford-blue font-bold rounded-md hover:bg-cream transition duration-300 focus:outline-none focus:ring-2 focus:ring-cream" aria-label="致电John F. Miller的办公室">
+                            <svg class="inline-block w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            致电办公室
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-charcoal text-cream py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">John F. Miller</h3>
+                    <p class="text-sm">牛津大学附属精神分析师，专长于精神分析符号学和拉康理论。</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-gold transition-colors duration-300">关于</a></li>
+                        <li><a href="#books" class="hover:text-gold transition-colors duration-300">书籍</a></li>
+                        <li><a href="#insights" class="hover:text-gold transition-colors duration-300">见解</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors duration-300">联系</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">联系信息</h3>
+                    <address class="text-sm not-italic">
+                        <p>牛津大学</p>
+                        <p>英国牛津</p>
+                        <p class="mt-2">电子邮件: contact@johnmilleranalysis.com</p>
+                        <p>电话: +44 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-oxford-blue text-center text-sm">
+                <p>&copy; 2023 John F. Miller. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/quote_data.js"></script>
+    <script src="../js/journey-tracker.js"></script>
+    <script src="../js/quote-network.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
