@@ -437,16 +437,34 @@ function renderAllInsightsInGrid() {
 
 /**
  * Sets up listeners for the Previous/Next pagination buttons.
+ * Includes auto-scroll to top of section for better UX.
  */
 function setupPaginationControls() {
     const prevBtn = document.getElementById('prevInsightBtn');
     const nextBtn = document.getElementById('nextInsightBtn');
+    const insightsSection = document.getElementById('insights');
+
+    // Scroll helper
+    const scrollToTop = () => {
+        if (insightsSection) {
+            // Scroll to the top of the section with a slight offset for the fixed header
+            const headerOffset = 100;
+            const elementPosition = insightsSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    };
 
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             if (currentPage > 0) {
                 currentPage--;
                 renderAllInsightsInGrid();
+                scrollToTop(); // <--- Auto-scroll added
             }
         });
     }
@@ -459,6 +477,7 @@ function setupPaginationControls() {
             if (currentPage < totalPages - 1) {
                 currentPage++;
                 renderAllInsightsInGrid();
+                scrollToTop(); // <--- Auto-scroll added
             }
         });
     }
