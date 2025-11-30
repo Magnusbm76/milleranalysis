@@ -1060,3 +1060,7 @@ html {
 /* Hide the ugly list if it exists */
 .related-quotes-list { display: none !important; }
 /* --- END PREMIUM FIX --- */
+/* Ensure multiple cards stack with adequate vertical separation */
+.insight-card {
+    margin-bottom: 4rem !important;
+}

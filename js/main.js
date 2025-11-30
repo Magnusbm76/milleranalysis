@@ -677,26 +677,35 @@ function populateCarouselView() {
     const carousel = document.getElementById('carouselView');
     if (!carousel) return;
 
-    // Get the first insight (Clinical Semiotics) as default for now
-    // In a real app, this would be dynamic or random
-    const insight = quoteData.quotes[0];
+    // Get the first 3 insights to match user request
+    const selectedInsights = (typeof quoteData !== 'undefined' && quoteData.quotes && Array.isArray(quoteData.quotes))
+        ? quoteData.quotes.slice(0, 3)
+        : [];
 
-    carousel.innerHTML = `
+    if (selectedInsights.length === 0) {
+        console.warn('No insights found in quoteData.quotes');
+        return;
+    }
+
+    // Generate HTML for ALL 3 cards, ensuring existing CSS classes are respected
+    carousel.innerHTML = selectedInsights.map(insight => `
         <div class="insight-card">
             <h3>${insight.title}</h3>
-            <p class="quote-text">"${insight.content}"</p>
-            <p>${insight.interpretation}</p>
+            <p class="quote-text">"${insight.quote}"</p>
+            <p>${insight.context}</p>
             <div class="meta-info">
-                <strong>Source:</strong> ${insight.source} <br>
-                <strong>Themes:</strong> ${insight.themes.join(', ')}
+                <strong>Source:</strong> ${insight.source.work} <br>
+                <div style="margin-top: 10px; color: #888;">
+                    <strong>Themes:</strong> ${insight.themes.join(', ')}
+                </div>
             </div>
             <div style="margin-top: 2rem;">
-                <button onclick="window.location.href='books/do-you-read-me.html'" style="background-color: #FFD700; color: #002147; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+                <a href="books/do-you-read-me.html" class="action-button">
                     View Book
-                </button>
+                </a>
             </div>
         </div>
-    `;
+    `).join('');
 }
 
 
