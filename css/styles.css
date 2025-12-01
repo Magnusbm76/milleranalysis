@@ -1064,3 +1064,9 @@ html {
 .insight-card {
     margin-bottom: 4rem !important;
 }
+
+/* --- 11. FAQ Icon Rotation --- */
+.rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}

@@ -656,6 +656,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set up QuoteJourneyState event listeners
         setupQuoteJourneyStateEvents();
         
+        // Initialize FAQ expand/collapse functionality
+        initializeFAQListeners();
+        
         // Single-card navigation logic removed as part of visual layout reversal
     } else {
         console.error('quoteData not available. Make sure js/quote_data.js is loaded before js/main.js');
@@ -1153,4 +1156,70 @@ function initializeGlassHeader() {
     }
     
     console.log('Glass header scroll listener initialized');
+}
+
+/**
+ * Initializes listeners for the FAQ section to enable expand/collapse functionality.
+ */
+function initializeFAQListeners() {
+    // Handle button-based FAQ structure (used in most languages)
+    const faqButtons = document.querySelectorAll('.faq-question');
+    
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const answer = this.nextElementSibling; // The answer div
+            const icon = this.querySelector('.faq-icon');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Toggle answer visibility
+            if (answer) {
+                answer.classList.toggle('hidden');
+            }
+            
+            // Toggle aria-expanded state
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            
+            // Toggle icon rotation class (assuming 'rotate-180' exists in CSS)
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+    
+    // Handle details/summary-based FAQ structure (used in Spanish version)
+    const faqDetails = document.querySelectorAll('.faq-item details');
+    
+    faqDetails.forEach(details => {
+        details.addEventListener('toggle', function() {
+            const summary = this.querySelector('summary');
+            
+            // Update aria-expanded on the summary element
+            if (summary) {
+                summary.setAttribute('aria-expanded', String(this.open));
+            }
+            
+            // Note: Spanish version doesn't have faq-icon elements, so we skip icon rotation
+            // The default browser behavior for details/summary elements provides the expand/collapse functionality
+        });
+    });
+    
+    // Handle Chinese version FAQ structure (buttons without icons)
+    const chineseFaqButtons = document.querySelectorAll('.faq-question:not(:has(.faq-icon))');
+    
+    chineseFaqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const answer = this.nextElementSibling; // The answer div
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            // Toggle answer visibility
+            if (answer) {
+                answer.classList.toggle('hidden');
+            }
+            
+            // Toggle aria-expanded state
+            this.setAttribute('aria-expanded', String(!isExpanded));
+            
+            // Note: Chinese version doesn't have faq-icon elements, so we skip icon rotation
+        });
+    });
 }
