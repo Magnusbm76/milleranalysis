@@ -401,7 +401,22 @@ function renderAllInsightsInGrid() {
         
         // Determine Book Link
         let bookLink = "#";
-        let linkText = "View Book Context →";
+        let linkText;
+
+        // Use a simple switch for the three primary languages, defaulting to English,
+        // and assuming the language code is available via the URL or a global var.
+        const langCode = document.documentElement.lang.substring(0, 2).toUpperCase();
+
+        switch (langCode) {
+            case 'FR': linkText = "Voir le contexte du livre →"; break;
+            case 'ES': linkText = "Ver contexto del libro →"; break;
+            case 'NO': linkText = "Se bokkontekst →"; break;
+            case 'PL': linkText = "Zobacz kontekst książki →"; break;
+            case 'LA': linkText = "Vide contextum libri →"; break;
+            case 'ZH': linkText = "查看书籍语境 →"; break;
+            case 'EGY': linkText = "عرض سياق الكتاب →"; break;
+            default: linkText = "View Book Context →"; break;
+        }
         
         if (quote.source.work.includes("Do You Read Me")) {
             bookLink = "books/do-you-read-me.html";
