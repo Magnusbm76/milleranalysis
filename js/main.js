@@ -1280,8 +1280,24 @@ function getLocalizedContent(data) {
     const currentLang = document.documentElement.lang || 'en';
     const langCode = currentLang.substring(0, 2).toUpperCase();
     
-    // Return the localized content for the current language, or default to English
-    return data[langCode] || data.EN || data;
+    // Verbose logging: Log detected language code
+    console.log(`[getLocalizedContent] Detected language code: ${langCode}`);
+    
+    // Verbose logging: Log available keys in data object
+    const availableKeys = Object.keys(data);
+    console.log(`[getLocalizedContent] Available language keys: ${availableKeys.join(', ')}`);
+    
+    // Verbose logging: Log fallback logic
+    if (data[langCode]) {
+        console.log(`[getLocalizedContent] Using localized content for ${langCode}`);
+        return data[langCode];
+    } else if (data.EN) {
+        console.log(`[getLocalizedContent] No content for ${langCode}, falling back to English (EN)`);
+        return data.EN;
+    } else {
+        console.log(`[getLocalizedContent] No content for ${langCode} or English (EN), returning base data object`);
+        return data;
+    }
 }
 
 /**
@@ -1409,14 +1425,38 @@ async function renderInitialScreen(quizList) {
  */
 async function loadQuizData(filePath) {
     try {
+        // Verbose logging: Log file path being loaded
+        console.log(`[loadQuizData] Attempting to load quiz data from: ${filePath}`);
+        
         const response = await fetch(filePath);
+        
+        // Verbose logging: Log response status
+        console.log(`[loadQuizData] Response status: ${response.status} ${response.statusText}`);
+        
         if (!response.ok) {
             throw new Error(`Failed to load quiz data: ${response.status} ${response.statusText}`);
         }
-        const data = await response.json();
+        
+        // Verbose logging: Read as text first for detailed logging
+        const responseText = await response.text();
+        console.log(`[loadQuizData] Raw response text length: ${responseText.length} characters`);
+        
+        // Verbose logging: Log parsing attempt
+        console.log(`[loadQuizData] Attempting to parse JSON...`);
+        let data;
+        try {
+            data = JSON.parse(responseText);
+            console.log(`[loadQuizData] JSON parsing successful`);
+        } catch (parseError) {
+            console.error(`[loadQuizData] JSON parsing failed: ${parseError.message}`);
+            console.error(`[loadQuizData] Response text preview: ${responseText.substring(0, 200)}...`);
+            throw new Error(`Failed to parse quiz data JSON: ${parseError.message}`);
+        }
+        
         return data;
     } catch (error) {
-        console.error('Error loading quiz data:', error);
+        console.error(`[loadQuizData] Error loading quiz data: ${error.message}`);
+        console.error(`[loadQuizData] Error details:`, error);
         throw error;
     }
 }
