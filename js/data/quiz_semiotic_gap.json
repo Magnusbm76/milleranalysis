@@ -1,0 +1,543 @@
+{
+  "EN": {
+    "title": "Semiotic Gap Assessment",
+    "description": "This assessment explores the fundamental semiotic gaps between signifier and signified in therapeutic communication, based on John F. Miller's theoretical framework of analytic semiotics and language limitations in psychoanalytic contexts.",
+    "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "I often struggle to express my deepest feelings because words feel inadequate to capture my internal experience.",
+        "context": "Exploring the fundamental gap between signifier and signified in personal expression."
+      },
+      {
+        "id": "sg2",
+        "text": "In therapy or deep conversations, I sense that what I say reveals only a fragment of what I truly mean.",
+        "context": "Examining how language simultaneously reveals and conceals psychological truth."
+      },
+      {
+        "id": "sg3",
+        "text": "I notice that the more precisely I try to describe my emotional states, the more something essential seems to escape articulation.",
+        "context": "Investigating the paradox of precision in emotional language."
+      },
+      {
+        "id": "sg4",
+        "text": "I sometimes feel misunderstood not because others aren't listening, but because language itself creates distance between my experience and their understanding.",
+        "context": "Analyzing structural gaps in therapeutic communication."
+      },
+      {
+        "id": "sg5",
+        "text": "I experience moments when words fail entirely, and I must resort to metaphor, silence, or gesture to communicate something vital.",
+        "context": "Exploring the limits of linguistic representation in psychological contexts."
+      },
+      {
+        "id": "sg6",
+        "text": "I find that different cultures or languages provide access to aspects of my experience that my primary language cannot express.",
+        "context": "Examining how linguistic structures shape and limit psychological understanding."
+      },
+      {
+        "id": "sg7",
+        "text": "In attempting to put my experiences into words, I sometimes feel I'm creating a version that is more comprehensible but less true to the original experience.",
+        "context": "Investigating the transformation that occurs in the process of semiotic representation."
+      },
+      {
+        "id": "sg8",
+        "text": "I recognize that my most profound psychological insights often emerge in the spaces between words rather than in the words themselves.",
+        "context": "Exploring the role of silence and absence in meaning-making."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Integrated Semiotic Awareness",
+        "summary": "Your responses indicate a sophisticated understanding of the inherent limitations of language in capturing psychological experience. You appear to navigate the semiotic gap with awareness, recognizing that words both reveal and conceal truth simultaneously. This suggests you've developed a nuanced relationship with language that allows you to work within its constraints while maintaining connection to experiences that transcend verbal expression. Your ability to recognize the structural gaps in communication indicates advanced metalinguistic awareness.",
+        "recommendation": "Continue cultivating this balanced approach to language and meaning. Your awareness of semiotic limitations serves as a foundation for authentic communication and deep psychological work. For further exploration of these concepts, see the chapter on 'Analytic Semiotics' in 'Do You Read Me' and the section on 'The Space Between Words' in 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Moderate Semiotic Tension",
+        "summary": "Your responses reveal a moderate awareness of the gaps between language and experience. You may occasionally feel frustrated by the limitations of verbal expression while still maintaining faith in language as a communication tool. This suggests you're navigating the complex relationship between signifier and signified with some success, though there may be moments when the semiotic gap creates genuine difficulty in expressing or understanding psychological truth.",
+        "recommendation": "Consider developing greater comfort with the inherent ambiguities of language. Practicing tolerance for the spaces between words can enhance your communication and psychological insight. For deeper understanding of these dynamics, refer to the chapter on 'Language and Limitation' in 'Do You Read Me' and the section on 'Structural Gaps in Therapy' in 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Significant Semiotic Dissonance",
+        "summary": "Your responses indicate a strong experience of the semiotic gap as a source of frustration and alienation. You may frequently feel that language fundamentally fails to capture your psychological experience, creating a sense of isolation or misunderstanding. This pattern suggests the structural limitations of language significantly impact your ability to communicate authentically and feel understood in therapeutic or intimate contexts.",
+        "recommendation": "Your relationship with language and meaning warrants careful exploration. Consider developing strategies for working within semiotic limitations rather than fighting against them. The chapter on 'Beyond Words' in 'Do You Read Me' and the section on 'Therapeutic Silence' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
+      }
+    ]
+  },
+  "FR": {
+    "title": "Évaluation du Fossé Sémiotique",
+    "description": "Cette évaluation explore les fossés sémiotiques fondamentaux entre signifiant et signifié dans la communication thérapeutique, basée sur le cadre théorique de John F. Miller sur la sémiotique analytique et les limitations du langage dans les contextes psychanalytiques.",
+    "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation ou un diagnostic clinique professionnel. Vos réponses sont destinées à la réflexion personnelle et à l'apprentissage.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "Je lutte souvent pour exprimer mes sentiments les plus profonds car les mots me semblent inadéquats pour capturer mon expérience interne.",
+        "context": "Explorer le fossé fondamental entre signifiant et signifié dans l'expression personnelle."
+      },
+      {
+        "id": "sg2",
+        "text": "En thérapie ou dans les conversations profondes, je sens que ce que je dis ne révèle qu'un fragment de ce que je veux vraiment dire.",
+        "context": "Examiner comment le langage révèle et cache simultanément la vérité psychologique."
+      },
+      {
+        "id": "sg3",
+        "text": "Je remarque que plus j'essaie de décrire précisément mes états émotionnels, plus quelque chose d'essentiel semble échapper à l'articulation.",
+        "context": "Investiguer le paradoxe de la précision dans le langage émotionnel."
+      },
+      {
+        "id": "sg4",
+        "text": "Je me sens parfois incompris non pas parce que les autres n'écoutent pas, mais parce que le langage lui-même crée une distance entre mon expérience et leur compréhension.",
+        "context": "Analyser les fossés structurels dans la communication thérapeutique."
+      },
+      {
+        "id": "sg5",
+        "text": "J'expérimente des moments où les mots échouent entièrement, et je dois recourir à la métaphore, au silence ou au geste pour communiquer quelque chose de vital.",
+        "context": "Explorer les limites de la représentation linguistique dans les contextes psychologiques."
+      },
+      {
+        "id": "sg6",
+        "text": "Je trouve que différentes cultures ou langues donnent accès à des aspects de mon expérience que ma langue maternelle ne peut pas exprimer.",
+        "context": "Examiner comment les structures linguistiques façonnent et limitent la compréhension psychologique."
+      },
+      {
+        "id": "sg7",
+        "text": "En essayant de mettre mes expériences en mots, je sens parfois que je crée une version plus compréhensible mais moins fidèle à l'expérience originale.",
+        "context": "Investiguer la transformation qui se produit dans le processus de représentation sémiotique."
+      },
+      {
+        "id": "sg8",
+        "text": "Je reconnais que mes idées psychologiques les plus profondes émergent souvent dans les espaces entre les mots plutôt que dans les mots eux-mêmes.",
+        "context": "Explorer le rôle du silence et de l'absence dans la création de sens."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Conscience Sémiotique Intégrée",
+        "summary": "Vos réponses indiquent une compréhension sophistiquée des limitations inhérentes du langage pour capturer l'expérience psychologique. Vous semblez naviguer le fossé sémiotique avec conscience, reconnaissant que les mots révèlent et cachent simultanément la vérité. Ceci suggère que vous avez développé une relation nuancée avec le langage qui vous permet de travailler dans ses contraintes tout en maintenant une connexion aux expériences qui transcendent l'expression verbale. Votre capacité à reconnaître les fossés structurels dans la communication indique une conscience métalinguistique avancée.",
+        "recommendation": "Continuez à cultiver cette approche équilibrée du langage et du sens. Votre conscience des limitations sémiotiques sert de fondement à une communication authentique et à un travail psychologique profond. Pour une exploration plus approfondie de ces concepts, voir le chapitre sur 'La Sémiotique Analytique' dans 'Do You Read Me' et la section sur 'L'Espace Entre les Mots' dans 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Tension Sémiotique Modérée",
+        "summary": "Vos réponses révèlent une conscience modérée des fossés entre langage et expérience. Vous pouvez ressentir occasionnellement de la frustration face aux limitations de l'expression verbale tout en maintenant une confiance dans le langage comme outil de communication. Ceci suggère que vous naviguez la relation complexe entre signifiant et signifié avec un certain succès, bien qu'il puisse y avoir des moments où le fossé sémiotique crée une réelle difficulté à exprimer ou comprendre la vérité psychologique.",
+        "recommendation": "Considérez développer un plus grand confort avec les ambiguïtés inhérentes du langage. Pratiquer la tolérance pour les espaces entre les mots peut améliorer votre communication et votre insight psychologique. Pour une compréhension plus profonde de ces dynamiques, référez-vous au chapitre sur 'Le Langage et la Limitation' dans 'Do You Read Me' et à la section sur 'Les Fossés Structurels en Thérapie' dans 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Dissonance Sémiotique Significative",
+        "summary": "Vos réponses indiquent une forte expérience du fossé sémiotique comme source de frustration et d'aliénation. Vous pouvez fréquemment ressentir que le langage échoue fondamentalement à capturer votre expérience psychologique, créant un sentiment d'isolement ou d'incompréhension. Ce schéma suggère que les limitations structurelles du langage impactent significativement votre capacité à communiquer authentiquement et à vous sentir compris dans des contextes thérapeutiques ou intimes.",
+        "recommendation": "Votre relation avec le langage et le sens mérite une exploration attentive. Considérez développer des stratégies pour travailler dans les limitations sémiotiques plutôt que de lutter contre elles. Le chapitre sur 'Au-delà des Mots' dans 'Do You Read Me' et la section sur 'Le Silence Thérapeutique' dans 'Triumphant Victim' fournissent des cadres essentiels pour comprendre ces dynamiques."
+      }
+    ]
+  },
+  "ES": {
+    "title": "Evaluación de la Brecha Semiótica",
+    "description": "Esta evaluación explora las brechas semióticas fundamentales entre significante y significado en la comunicación terapéutica, basada en el marco teórico de John F. Miller sobre la semiótica analítica y las limitaciones del lenguaje en contextos psicoanalíticos.",
+    "disclaimer": "Esta evaluación está diseñada para fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación o diagnóstico clínico profesional. Sus respuestas son para reflexión personal y aprendizaje.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "A menudo lucho por expresar mis sentimientos más profundos porque las palabras se sienten inadecuadas para capturar mi experiencia interna.",
+        "context": "Explorando la brecha fundamental entre significante y significado en la expresión personal."
+      },
+      {
+        "id": "sg2",
+        "text": "En terapia o conversaciones profundas, siento que lo que digo revela solo un fragmento de lo que realmente quiero decir.",
+        "context": "Examinando cómo el lenguaje simultáneamente revela y oculta la verdad psicológica."
+      },
+      {
+        "id": "sg3",
+        "text": "Noto que cuanto más precisamente intento describir mis estados emocionales, más algo esencial parece escapar a la articulación.",
+        "context": "Investigando la paradoja de la precisión en el lenguaje emocional."
+      },
+      {
+        "id": "sg4",
+        "text": "A veces me siento malinterpretado no porque otros no escuchen, sino porque el lenguaje mismo crea distancia entre mi experiencia y su comprensión.",
+        "context": "Analizando las brechas estructurales en la comunicación terapéutica."
+      },
+      {
+        "id": "sg5",
+        "text": "Experimento momentos en que las palabras fallan completamente, y debo recurrir a metáfora, silencio o gesto para comunicar algo vital.",
+        "context": "Explorando los límites de la representación lingüística en contextos psicológicos."
+      },
+      {
+        "id": "sg6",
+        "text": "Encuentro que diferentes culturas o idiomas dan acceso a aspectos de mi experiencia que mi idioma principal no puede expresar.",
+        "context": "Examinando cómo las estructuras lingüísticas dan forma y limitan el entendimiento psicológico."
+      },
+      {
+        "id": "sg7",
+        "text": "Al intentar poner mis experiencias en palabras, a veces siento que estoy creando una versión más comprensible pero menos fiel a la experiencia original.",
+        "context": "Investigando la transformación que ocurre en el proceso de representación semiótica."
+      },
+      {
+        "id": "sg8",
+        "text": "Reconozco que mis ideas psicológicas más profundas a menudo emergen en los espacios entre las palabras más que en las palabras mismas.",
+        "context": "Explorando el rol del silencio y la ausencia en la creación de significado."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Conciencia Semiótica Integrada",
+        "summary": "Sus respuestas indican una comprensión sofisticada de las limitaciones inherentes del lenguaje para capturar la experiencia psicológica. Parece navegar la brecha semiótica con conciencia, reconociendo que las palabras revelan y ocultan simultáneamente la verdad. Esto sugiere que ha desarrollado una relación matizada con el lenguaje que le permite trabajar dentro de sus limitaciones mientras mantiene conexión con experiencias que trascienden la expresión verbal. Su capacidad para reconocer las brechas estructurales en la comunicación indica conciencia metalingüística avanzada.",
+        "recommendation": "Continúe cultivando este enfoque equilibrado del lenguaje y significado. Su conciencia de las limitaciones semióticas sirve como base para comunicación auténtica y trabajo psicológico profundo. Para mayor exploración de estos conceptos, vea el capítulo sobre 'Semiótica Analítica' en 'Do You Read Me' y la sección sobre 'El Espacio Entre Palabras' en 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Tensión Semiótica Moderada",
+        "summary": "Sus respuestas revelan una conciencia moderada de las brechas entre lenguaje y experiencia. Puede ocasionalmente sentir frustración por las limitaciones de la expresión verbal mientras mantiene fe en el lenguaje como herramienta de comunicación. Esto sugiere que navega la relación compleja entre significante y significado con cierto éxito, aunque puede haber momentos en que la brecha semiótica crea dificultad real para expresar o entender la verdad psicológica.",
+        "recommendation": "Considere desarrollar mayor comodidad con las ambigüedades inherentes del lenguaje. Practicar tolerancia para los espacios entre palabras puede mejorar su comunicación e insight psicológico. Para comprensión más profunda de estas dinámicas, consulte el capítulo sobre 'Lenguaje y Limitación' en 'Do You Read Me' y la sección sobre 'Brechas Estructurales en Terapia' en 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Disonancia Semiótica Significativa",
+        "summary": "Sus respuestas indican una fuerte experiencia de la brecha semiótica como fuente de frustración y alienación. Puede frecuentemente sentir que el lenguaje falla fundamentalmente para capturar su experiencia psicológica, creando un sentido de aislamiento o incomprensión. Este patrón sugiere que las limitaciones estructurales del lenguaje impactan significativamente su capacidad para comunicar auténticamente y sentirse comprendido en contextos terapéuticos o íntimos.",
+        "recommendation": "Su relación con el lenguaje y significado merece exploración cuidadosa. Considere desarrollar estrategias para trabajar dentro de limitaciones semióticas más que luchar contra ellas. El capítulo sobre 'Más Allá de las Palabras' en 'Do You Read Me' y la sección sobre 'Silencio Terapéutico' en 'Triumphant Victim' proporcionan marcos esenciales para entender estas dinámicas."
+      }
+    ]
+  },
+  "NO": {
+    "title": "Semiotisk Gap-vurdering",
+    "description": "Denne vurderingen utforsker de fundamentale semiotiske gapene mellom signifikant og signifikat i terapeutisk kommunikasjon, basert på John F. Millers teoretiske rammeverk for analytisk semiotikk og språkbegrensninger i psykoanalytiske kontekster.",
+    "disclaimer": "Denne vurderingen er designet for utdanningsformål for å utforske psykoanalytiske konsepter. Den er ikke en erstatning for profesjonell klinisk evaluering eller diagnose. Dine svar er for personlig refleksjon og læring.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "Jeg sliter ofte med å uttrykke mine dypeste følelser fordi ord føles utilstrekkelige for å fange min interne opplevelse.",
+        "context": "Utforske det fundamentale gapet mellom signifikant og signifikat i personlig uttrykk."
+      },
+      {
+        "id": "sg2",
+        "text": "I terapi eller dype samtaler, føler jeg at det jeg sier bare avslører et fragment av det jeg egentlig mener.",
+        "context": "Undersøke hvordan språk samtidig avslører og skjuler psykologisk sannhet."
+      },
+      {
+        "id": "sg3",
+        "text": "Jeg legger merke til at jo mer presist jeg prøver å beskrive mine emosjonelle tilstander, jo mer virker det som noe essensielt unngår artikulasjon.",
+        "context": "Undersøke paradokset med presisjon i emosjonelt språk."
+      },
+      {
+        "id": "sg4",
+        "text": "Jeg føler meg noen ganger misforstått ikke fordi andre ikke lytter, men fordi språket selv skaper avstand mellom min opplevelse og deres forståelse.",
+        "context": "Analysere strukturelle gap i terapeutisk kommunikasjon."
+      },
+      {
+        "id": "sg5",
+        "text": "Jeg opplever øyeblikk når ord helt feiler, og jeg må ty til metafor, stillhet eller gest for å kommunisere noe vitalt.",
+        "context": "Utforske grensene for lingvistisk representasjon i psykologiske kontekster."
+      },
+      {
+        "id": "sg6",
+        "text": "Jeg finner at forskjellige kulturer eller språk gir tilgang til aspekter av min opplevelse som mitt primærspråk ikke kan uttrykke.",
+        "context": "Undersøke hvordan lingvistiske strukturer former og begrenser psykologisk forståelse."
+      },
+      {
+        "id": "sg7",
+        "text": "I å forsøke å sette mine opplevelser inn i ord, føler jeg noen ganger at jeg skaper en versjon som er mer forståelig, men mindre tro mot den originale opplevelsen.",
+        "context": "Undersøke transformasjonen som skjer i prosessen med semiotisk representasjon."
+      },
+      {
+        "id": "sg8",
+        "text": "Jeg gjenkjenner at mine dypeste psykologiske innsikter ofte dukker opp i rommene mellom ordene heller enn i ordene selv.",
+        "context": "Utforske rollen til stillhet og fravær i meningsdannelse."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Integrert Semiotisk Bevissthet",
+        "summary": "Dine svar indikerer en sofistikert forståelse av de iboende begrensningene i språket for å fange psykologisk opplevelse. Du ser ut til å navigere det semiotiske gapet med bevissthet, og anerkjenner at ord samtidig avslører og skjuler sannhet. Dette antyder at du har utviklet en nyansert relasjon til språk som lar deg jobbe innenfor dets begrensninger mens du opprettholder tilknytning til opplevelser som transcenderer verbal uttrykk. Din evne til å gjenkjenne de strukturelle gapene i kommunikasjon indikerer avansert metalingvistisk bevissthet.",
+        "recommendation": "Fortsett å dyrke denne balanserte tilnærmingen til språk og mening. Din bevissthet om semiotiske begrensninger tjener som et fundament for autentisk kommunikasjon og dypt psykologisk arbeid. For videre utforskning av disse konseptene, se kapittelet om 'Analytisk Semiotikk' i 'Do You Read Me' og seksjonen om 'Rommet Mellom Ord' i 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Moderat Semiotisk Spenning",
+        "summary": "Dine svar avslører en moderat bevissthet om gapene mellom språk og opplevelse. Du kan av og til føle frustrasjon over begrensningene i verbal uttrykk mens du fortsatt opprettholder tro på språk som kommunikasjonsverktøy. Dette antyder at du navigerer den komplekse relasjonen mellom signifikant og signifikat med en viss suksess, selv om det kan være øyeblikk når det semiotiske gapet skaper reell vanskelighet i å uttrykke eller forstå psykologisk sannhet.",
+        "recommendation": "Vurder å utvikle større komfort med de iboende tvetydighetene i språk. Å praktisere toleranse for rommene mellom ord kan forbedre din kommunikasjon og psykologisk innsikt. For dypere forståelse av disse dynamikkene, se kapittelet om 'Språk og Begrensning' i 'Do You Read Me' og seksjonen om 'Strukturelle Gap i Terapi' i 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Betydelig Semiotisk Dissonans",
+        "summary": "Dine svar indikerer en sterk opplevelse av det semiotiske gapet som kilde til frustrasjon og alienasjon. Du kan ofte føle at språk fundamentalt feiler i å fange din psykologiske opplevelse, og skaper en følelse av isolasjon eller misforståelse. Dette mønsteret antyder at de strukturelle begrensningene i språk betydelig påvirker din evne til å kommunisere autentisk og føle deg forstått i terapeutiske eller intime kontekster.",
+        "recommendation": "Din relasjon til språk og mening fortjener nøye utforskning. Vurder å utvikle strategier for å jobbe innen semiotiske begrensninger heller enn å kjempe mot dem. Kapittelet om 'Utover Ord' i 'Do You Read Me' og seksjonen om 'Terapeutisk Stillhet' i 'Triumphant Victim' gir essensielle rammeverk for å forstå disse dynamikkene."
+      }
+    ]
+  },
+  "PL": {
+    "title": "Ocena Luki Semiotycznej",
+    "description": "Ta ocena bada fundamentalne luki semiotyczne między znacznikiem a znacznym w komunikacji terapeutycznej, opierając się na teoretycznym ramie Johna F. Millera dotyczącym semiotyki analitycznej i ograniczeń języka w kontekstach psychoanalitycznych.",
+    "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy. Twoje odpowiedzi służą do osobistej refleksji i nauki.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "Często walczę o wyrażenie moich najgłębszych uczuć, ponieważ słowa wydają się niewystarczające do uchwycenia mojego wewnętrznego doświadczenia.",
+        "context": "Eksplorowanie fundamentalnej luki między znacznikiem a znacznym w wyrażaniu osobistym."
+      },
+      {
+        "id": "sg2",
+        "text": "W terapii lub głębokich rozmowach czuję, że to, co mówię, ujawnia tylko fragment tego, co naprawdę mam na myśli.",
+        "context": "Badanie, jak język jednocześnie ujawnia i ukrywa prawdę psychologiczną."
+      },
+      {
+        "id": "sg3",
+        "text": "Zauważam, że im bardziej precyzyjnie próbuję opisać moje stany emocjonalne, tym więcej czegoś istotnego wydaje się wymykać artykulacji.",
+        "context": "Badanie paradoksu precyzji w języku emocjonalnym."
+      },
+      {
+        "id": "sg4",
+        "text": "Czasem czuję się niezrozumiany nie dlatego, że inni nie słuchają, ale dlatego, że sam język tworzy dystans między moim doświadczeniem a ich zrozumieniem.",
+        "context": "Analizowanie strukturalnych luk w komunikacji terapeutycznej."
+      },
+      {
+        "id": "sg5",
+        "text": "Doświadczam momentów, gdy słowa całkowicie zawodzą i muszę uciec się do metafory, ciszy lub gestu, aby zakomunikować coś istotnego.",
+        "context": "Eksplorowanie ograniczeń reprezentacji językowej w kontekstach psychologicznych."
+      },
+      {
+        "id": "sg6",
+        "text": "Odkrywam, że różne kultury lub języki dają dostęp do aspektów mojego doświadczenia, których mój język ojczysty nie może wyrazić.",
+        "context": "Badanie, jak struktury językowe kształtują i ograniczają rozumienie psychologiczne."
+      },
+      {
+        "id": "sg7",
+        "text": "Próbując przekształcić moje doświadczenia w słowa, czuję czasem, że tworzę wersję bardziej zrozumiałą, ale mniej wierną oryginalnemu doświadczeniu.",
+        "context": "Badanie transformacji, która zachodzi w procesie reprezentacji semiotycznej."
+      },
+      {
+        "id": "sg8",
+        "text": "Rozpoznaję, że moje najgłębsze wnioski psychologiczne często pojawiają się w przestrzeniach między słowami, a nie w samych słowach.",
+        "context": "Eksplorowanie roli ciszy i nieobecności w tworzeniu znaczenia."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Zintegrowana Świadomość Semiotyczna",
+        "summary": "Twoje odpowiedzi wskazują na wyrafinowane zrozumienie wrodzonych ograniczeń języka w uchwyceniu doświadczenia psychologicznego. Wydaje się, że nawigujesz lukę semiotyczną ze świadomością, uznając, że słowa jednocześnie ujawniają i ukrywają prawdę. To sugeruje, że rozwinąłeś zniuansowaną relację z językiem, która pozwala ci pracować w ramach jego ograniczeń, utrzymując jednocześnie połączenie z doświadczeniami, które przekraczają ekspresję werbalną. Twoja zdolność do rozpoznawania strukturalnych luk w komunikacji wskazuje na zaawansowaną świadomość metajęzykową.",
+        "recommendation": "Kontynuuj kultywowanie tego zrównoważonego podejścia do języka i znaczenia. Twoja świadomość ograniczeń semiotycznych służy jako podstawa autentycznej komunikacji i głębokiej pracy psychologicznej. Dla dalszej eksploracji tych koncepcji, zobacz rozdział o 'Semiotyce Analitycznej' w 'Do You Read Me' i sekcję o 'Przestrzeni Między Słowami' w 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Umiarkowane Napięcie Semiotyczne",
+        "summary": "Twoje odpowiedzi ujawniają umiarkowaną świadomość luk między językiem a doświadczeniem. Możesz okazjonalnie odczuwać frustrację z powodu ograniczeń ekspresji werbalnej, jednocześnie zachowując wiarę w język jako narzędzie komunikacji. To sugeruje, że nawigujesz złożoną relację między znacznikiem a znacznym z pewnym sukcesem, choć mogą występować momenty, gdy luka semiotyczna tworzy prawdziwą trudność w wyrażaniu lub rozumieniu prawdy psychologicznej.",
+        "recommendation": "Rozważ rozwijanie większej komfortu z wrodzonymi niejasnościami języka. Praktykowanie tolerancji dla przestrzeni między słowami może poprawić twoją komunikację i wgląd psychologiczny. Dla głębszego zrozumienia tych dynamik, odwołaj się do rozdziału o 'Języku i Ograniczeniu' w 'Do You Read Me' i sekcji o 'Strukturalnych Lukach w Terapii' w 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Znaczna Dysonans Semiotyczna",
+        "summary": "Twoje odpowiedzi wskazują na silne doświadczenie luki semiotycznej jako źródło frustracji i alienacji. Możesz często odczuwać, że język fundamentalnie zawodzi w uchwyceniu twojego doświadczenia psychologicznego, tworząc poczucie izolacji lub niezrozumienia. Ten wzorzec sugeruje, że strukturalne ograniczenia języka znacząco wpływają na twoją zdolność do autentycznej komunikacji i poczucia bycia zrozumianym w kontekstach terapeutycznych lub intymnych.",
+        "recommendation": "Twoja relacja z językiem i znaczeniem wymaga starannej eksploracji. Rozważ rozwijanie strategii pracy w ramach ograniczeń semiotycznych zamiast walki z nimi. Rozdział o 'Poza Słowami' w 'Do You Read Me' i sekcja o 'Terapeutycznej Ciszy' w 'Triumphant Victim' dostarczają istotnych ram do zrozumienia tych dynamik."
+      }
+    ]
+  },
+  "LA": {
+    "title": "Aestimatio Fossae Semioticae",
+    "description": "Haec aestimatio fossas semioticas fundamentales inter signans et signatum in communicatione therapeutica explorat, secundum theorethicum Ioannis F. Milleris de semiotica analytica et limitationibus linguae in contextibus psychoanalyticis.",
+    "disclaimer": "Haec aestimatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis. Responsiones tuae ad reflectionem personalem et discendum sunt.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "Saepe pugno ut profundissimos affectus meos exprimam quia verba inadequata videntur ad internam experientiam meam capiendam.",
+        "context": "Explorans fossam fundamentalem inter signans et signatum in expressione personali."
+      },
+      {
+        "id": "sg2",
+        "text": "In therapia vel colloquiis profundis, sentio quod quod dico solum fragmentum eius quod vere volo dicere revelat.",
+        "context": "Examinans quomodo lingua simul veritatem psychologicam revelat et celat."
+      },
+      {
+        "id": "sg3",
+        "text": "Observo quo magis precise affectus meos describere conor, eo magis aliquid essentiale articulationem videri fugere.",
+        "context": "Investigans paradoxum praecisionis in lingua affectuali."
+      },
+      {
+        "id": "sg4",
+        "text": "Nonnumquam me non intellegi sentio non quod alii non audiunt, sed quod ipsa lingua distantiam inter experientiam meam et eorum intellegentiam creat.",
+        "context": "Analyticans fossas structurales in communicatione therapeutica."
+      },
+      {
+        "id": "sg5",
+        "text": "Momenta experior cum verba omnino fallunt, et ad metaphoram, silentium, vel gestum recurrere debeo ut aliquid vitale communicem.",
+        "context": "Explorans limites representationis linguisticae in contextibus psychologicis."
+      },
+      {
+        "id": "sg6",
+        "text": "Invenio quod diversae culturae vel linguae ad aspectus experientiae meae dant accessum quos lingua mea prima exprimere non potest.",
+        "context": "Examinans quomodo structurae linguisticae intellegentiam psychologicam formant et limitant."
+      },
+      {
+        "id": "sg7",
+        "text": "Conans experientias meas in verba ponere, nonnumquam sentio me versionem creare quae est magis comprehensibilis sed minus vera ad experientiam originalem.",
+        "context": "Investigans transformationem quae in processu representationis semioticae fit."
+      },
+      {
+        "id": "sg8",
+        "text": "Reconosco quod profundissimae cognitiones meae psychologiae saepe in spatiis inter verba potius quam in ipsis verbis emergunt.",
+        "context": "Explorans rolem silentii et absentiae in significatione facienda."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "Conscientia Semiotica Integrata",
+        "summary": "Responsiones tuae indicant intellegentiam sophisticatam limitationum innatarum linguae ad capiendam experientiam psychologicam. Videris fossam semioticam cum conscientia navigare, recognoscens quod verba simul veritatem revelant et celant. Hoc suggerit te relationem nuancatam cum lingua evolvisse quae te intra limites eius laborare permittet dum ad experientias quae expressionem verbalem transcendunt connectionem servas. Tua facultas ad fossas structurales in communicatione recognoscendas conscientiam metalinguisticam progressam indicat.",
+        "recommendation": "Perge hanc approachum aequilibratum ad linguam et significationem colere. Tua conscientia limitationum semioticarum ut fundamentum communicationis authenticae et operis psychologiae profundi fungit. Ad ulteriorem explorationem horum conceptuum, vide capitulum de 'Semiotica Analytica' in 'Do You Read Me' et sectionem de 'Spatio Inter Verba' in 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "Tensio Semiotica Moderata",
+        "summary": "Responsiones tuae conscientiam moderatam fossarum inter linguam et experientiam revelant. Fortasse nonnumquam frustrationem de limitationibus expressionis verbalis sentis dum fidem in linguam ut instrumentum communicationis servas. Hoc suggerit te relationem complexam inter signans et signatum cum quodam successu navigare, etsi esse possunt momenta cum fossa semiotica difficultatem realem in exprimenda vel intellegenda veritate psychologica creat.",
+        "recommendation": "Considera maiorem commoditatem cum ambiguitatibus innatis linguae evolvendam. Practicandi tolerantia pro spatiis inter verba communicationem tuam et intellegentiam psychologicam meliorare potest. Ad profundiorem intellegentiam harum dynamicalium, refere ad capitulum de 'Lingua et Limitatio' in 'Do You Read Me' et sectionem de 'Fossis Structuralibus in Therapia' in 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "Dissonantia Semiotica Significans",
+        "summary": "Responsiones tuae indicant fortem experientiam fossae semioticae ut fontem frustrationis et alienationis. Fortasse saepe sentis linguam fundamentaliter fallere in experientia tua psychologia capienda, sensum isolationis vel non intellegentiae creans. Hoc pattern suggerit limitationes structurales linguae significanter capacitatem tuam ad communicandum authentice et intellectum in contextibus therapeuticis vel intimis impedicere.",
+        "recommendation": "Relatio tua cum lingua et significatione diligentem explorationem meretur. Considera strategias evolvendas ad laborandum intra limitationes semioticas potius quam contra eas pugnandum. Capitulum de 'Ultra Verba' in 'Do You Read Me' et sectio de 'Silentio Therapeutico' in 'Triumphant Victim' fundamenta essentialia pro his dynamicalibus intellegendis praebent."
+      }
+    ]
+  },
+  "EGY": {
+    "title": "تقييم الفجوة السيميائية",
+    "description": "هذا التقييم يستكشف الفجوات السيميائية الأساسية بين الدال والمدلول في التواصل العلاجي، بناءً على الإطار النظري لجون ف. ميلر حول السيميائية التحليلية وقيود اللغة في السياقات التحليلية النفسية.",
+    "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليلية النفسية. إنه ليس بديلاً عن التقييم السريري أو التشخيص الاحترافي. إجاباتك هي للتأمل الشخصي والتعلم.",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "أكافح غالبًا للتعبير عن أعمق مشاعري لأن الكلمات تبدو غير كافية لالتقاط تجربتي الداخلية.",
+        "context": "استكشاف الفجوة الأساسية بين الدال والمدلول في التعبير الشخصي."
+      },
+      {
+        "id": "sg2",
+        "text": "في العلاج أو المحادثات العميقة، أشعر أن ما أقوله يكشف فقط عن جزء مما أعنيه حقًا.",
+        "context": "فحص كيف تكشف اللغة وتخفي الحقيقة النفسية في نفس الوقت."
+      },
+      {
+        "id": "sg3",
+        "text": "لاحظت أن كلما حاولت وصف حالاتي العاطفية بشكل أكثر دقة، كلما بدا أن شيء أساسي يفلت من التعبير.",
+        "context": "التحقيق في مفارقة الدقة في اللغة العاطفية."
+      },
+      {
+        "id": "sg4",
+        "text": "أشعر أحيانًا بالسوء فهم ليس لأن الآخرين لا يستمعون، ولكن لأن اللغة نفسها تخلق مسافة بين تجربتي وفهمهم.",
+        "context": "تحليل الفجوات الهيكلية في التواصل العلاجي."
+      },
+      {
+        "id": "sg5",
+        "text": "أختبر لحظات تفشل فيها الكلمات تمامًا، وأضطر إلى اللجوء إلى الاستعارة أو الصمت أو الإيماءة للتواصل بشيء حيوي.",
+        "context": "استكشاف حدود التمثيل اللغوي في السياقات النفسية."
+      },
+      {
+        "id": "sg6",
+        "text": "أجد أن ثقافات أو لغات مختلفة تمنحني الوصول إلى جوانب من تجربتي لا يمكن للغتي الأساسية التعبير عنها.",
+        "context": "فحص كيف تشكل الهياكل اللغوية وتحد من الفهم النفسي."
+      },
+      {
+        "id": "sg7",
+        "text": "في محاولة لوضع تجاربي في كلمات، أشعر أحيانًا أنني أخلق نسخة أكثر قابلية للفهم ولكن أقل صدقًا للتجربة الأصلية.",
+        "context": "التحقيق في التحول الذي يحدث في عملية التمثيل السيميائي."
+      },
+      {
+        "id": "sg8",
+        "text": "أدرك أن أعمق رؤاي النفسية غالبًا ما تظهر في المسافات بين الكلمات بدلاً من في الكلمات نفسها.",
+        "context": "استكشاف دور الصمت والغياب في خلق المعنى."
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "الوعي السيميائي المتكامل",
+        "summary": "تشير إجاباتك إلى فهم متقدم للقيود المتأصلة في اللغة لالتقاط التجربة النفسية. يبدو أنك تتنقل في الفجوة السيميائية بوعي، مدركًا أن الكلمات تكشف وتخفي الحقيقة في نفس الوقت. هذا يشير إلى أنك طورت علاقة متطورة مع اللغة تتيح لك العمل ضمن قيودها مع الحفاظ على الاتصال بالتجارب التي تتجاوز التعبير اللفظي. قدرتك على التعرف على الفجوات الهيكلية في التواصل تشير إلى وعي لغوي متقدم.",
+        "recommendation": "استمر في تنمية هذا النهج المتوازن للغة والمعنى. وعيك بالقيود السيميائية يخدم كأساس للتواصل الحقيقي والعمل النفسي العميق. لمزيد من استكشاف هذه المفاهيم، انظر الفصل حول 'السيميائية التحليلية' في 'Do You Read Me' والقسم حول 'المسافة بين الكلمات' في 'Triumphant Victim'."
+      },
+      {
+        "range": [11, 22],
+        "title": "التوتر السيميائي المعتدل",
+        "summary": "تكشف إجاباتك عن وعي معتدل بالفجوات بين اللغة والتجربة. قد تشعر أحيانًا بالإحباط من قيود التعبير اللفظي مع الحفاظ على الإيمان باللغة كأداة للتواصل. هذا يشير إلى أنك تتنقل في العلاقة المعقدة بين الدال والمدلول بنجاح معين، على الرغم من أن هناك لحظات قد تخلق فيها الفجوة السيميائية صعوبة حقيقية في التعبير عن فهم الحقيقة النفسية.",
+        "recommendation": "فكر في تطوير راحة أكبر مع الغموض المتأصل في اللغة. ممارسة التسامح للمسافات بين الكلمات يمكن أن تعزز تواصلكك وبصيرتك النفسية. لفهم أعمق لهذه الديناميكيات، راجع الفصل حول 'اللغة والقيود' في 'Do You Read Me' والقسم حول 'الفجوات الهيكلية في العلاج' في 'Triumphant Victim'."
+      },
+      {
+        "range": [23, 32],
+        "title": "التنافر السيميائي الكبير",
+        "summary": "تشير إجاباتك إلى تجربة قوية للفجوة السيميائية كمصدر للإحباط والاغتراب. قد تشعر غالبًا أن اللغة تفشل بشكل أساسي في التقاط تجربتك النفسية، مما يخلق شعورًا بالعزلة أو سوء الفهم. هذا النمط يشير إلى أن القيود الهيكلية للغة تؤثر بشكل كبير على قدرتك على التواصل بشكل حقيقي والشعور بالفهم في السياقات العلاجية أو الحميمة.",
+        "recommendation": "علاقتك باللغة والمعنى تستحق استكشافًا دقيقًا. فكر في تطوير استراتيجيات للعمل ضمن القيود السيميائية بدلاً من القتال ضدها. الفصل حول 'ما وراء الكلمات' في 'Do You Read Me' والقسم حول 'الصمت العلاجي' في 'Triumphant Victim' يوفران أطرًا أساسية لفهم هذه الديناميكيات."
+      }
+    ]
+  },
+  "ZH": {
+    "title": "符号学差距评估",
+    "description": "本评估探讨治疗沟通中能指与所指之间的基本符号学差距，基于约翰·F·米勒关于分析符号学和语言在精神分析情境中局限性的理论框架。",
+    "disclaimer": "本评估专为教育目的设计，用于探索精神分析概念。它不能替代专业临床评估或诊断。您的回答仅供个人反思和学习。",
+    "questions": [
+      {
+        "id": "sg1",
+        "text": "我经常难以表达我最深的感受，因为词语似乎不足以捕捉我的内在体验。",
+        "context": "探索个人表达中能指与所指之间的基本差距。"
+      },
+      {
+        "id": "sg2",
+        "text": "在治疗或深度对话中，我感觉到我所说的只揭示了我真正意思的一小部分。",
+        "context": "检查语言如何同时揭示和隐藏心理真相。"
+      },
+      {
+        "id": "sg3",
+        "text": "我注意到，我越是试图精确描述我的情绪状态，就越觉得有些本质的东西难以表达。",
+        "context": "研究情感语言中精确性的悖论。"
+      },
+      {
+        "id": "sg4",
+        "text": "我有时感到被误解，不是因为别人不听，而是因为语言本身在我的体验和他们理解之间创造了距离。",
+        "context": "分析治疗沟通中的结构性差距。"
+      },
+      {
+        "id": "sg5",
+        "text": "我经历词语完全失效的时刻，必须求助于隐喻、沉默或手势来传达重要的事情。",
+        "context": "探索心理情境中语言表达的极限。"
+      },
+      {
+        "id": "sg6",
+        "text": "我发现不同的文化或语言让我能够接触到我的主要语言无法表达的经验方面。",
+        "context": "检查语言结构如何塑造和限制心理理解。"
+      },
+      {
+        "id": "sg7",
+        "text": "在试图将我的经验转化为词语时，我有时感觉我在创造一个更容易理解但更不忠于原始体验的版本。",
+        "context": "研究符号表征过程中发生的转变。"
+      },
+      {
+        "id": "sg8",
+        "text": "我认识到我最深刻的心理洞察力往往出现在词语之间的空间中，而不是在词语本身。",
+        "context": "探索沉默和缺席在意义创造中的作用。"
+      }
+    ],
+    "results": [
+      {
+        "range": [0, 10],
+        "title": "整合的符号学意识",
+        "summary": "您的回答表明您对语言捕捉心理体验的内在局限性有复杂的理解。您似乎能够带着意识导航符号学差距，认识到词语同时揭示和隐藏真相。这表明您已经发展了与语言的微妙关系，允许您在其限制内工作，同时保持与超越言语表达的体验的联系。您识别沟通中结构性差距的能力表明您具有高级的元语言意识。",
+        "recommendation": "继续培养这种平衡的语言和意义方法。您对符号学局限性的意识为真实沟通和深度心理工作提供了基础。为进一步探索这些概念，请参阅《Do You Read Me》中关于'分析符号学'的章节和《Triumphant Victim》中关于'词语之间的空间'的部分。"
+      },
+      {
+        "range": [11, 22],
+        "title": "中度符号学张力",
+        "summary": "您的回答揭示了您对语言与体验之间差距的中等意识。您可能偶尔会因言语表达的局限性感到沮丧，同时仍保持对语言作为沟通工具的信心。这表明您在某种程度上成功地导航了能指与所指之间的复杂关系，尽管可能有时符号学差距会在表达或理解心理真相时造成真正的困难。",
+        "recommendation": "考虑发展对语言内在模糊性的更大舒适度。练习对词语之间空间的容忍可以增强您的沟通和心理洞察力。要更深入地理解这些动态，请参阅《Do You Read Me》中关于'语言与局限'的章节和《Triumphant Victim》中关于'治疗中的结构性差距'的部分。"
+      },
+      {
+        "range": [23, 32],
+        "title": "显著的符号学失调",
+        "summary": "您的回答表明您强烈体验符号学差距作为沮丧和疏离的来源。您可能经常感到语言根本上无法捕捉您的心理体验，造成孤立或误解的感觉。这种模式表明语言的结构性限制显著影响您在治疗或亲密情境中真实沟通和被理解的能力。",
+        "recommendation": "您与语言和意义的关系值得仔细探索。考虑发展在符号学限制内工作的策略，而不是与之对抗。《Do You Read Me》中关于'超越言语'的章节和《Triumphant Victim》中关于'治疗性沉默'的部分为理解这些动态提供了基本框架。"
+      }
+    ]
+  },
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-12-03",
+    "author": "John F. Miller"
+  }
+}
