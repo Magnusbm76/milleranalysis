@@ -1242,6 +1242,166 @@ function initializeFAQListeners() {
     });
 }
 
+// List of the 4 quiz JSON file names (without path)
+const quizFiles = [
+    'quiz_social_symptom.json',
+    'quiz_semiotic_gap.json',
+    'quiz_analyst_dilemma.json',
+    'quiz_victimhood_architecture.json'
+];
+
+/**
+ * Fetches a specific JSON file from js/data/ asynchronously
+ * @param {string} fileName - The name of the JSON file to fetch
+ * @returns {Promise<Object>} - The JSON data from the file
+ */
+async function fetchAssessmentData(fileName) {
+    try {
+        const filePath = `js/data/${fileName}`;
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch assessment data: ${response.status} ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching assessment data from ${fileName}:`, error);
+        throw error;
+    }
+}
+
+/**
+ * Determines active language from document.documentElement.lang and returns corresponding localized data
+ * @param {Object} data - The data object containing localized content
+ * @returns {Object} - The localized content for the active language
+ */
+function getLocalizedContent(data) {
+    // Get the current language from the HTML document
+    const currentLang = document.documentElement.lang || 'en';
+    const langCode = currentLang.substring(0, 2).toUpperCase();
+    
+    // Return the localized content for the current language, or default to English
+    return data[langCode] || data.EN || data;
+}
+
+/**
+ * Displays welcome message, disclaimer for first quiz, and "Start" button
+ * @param {Array} quizList - List of quiz file names
+ */
+async function renderInitialScreen(quizList) {
+    try {
+        // Find the assessments section
+        const assessmentsSection = document.getElementById('assessments');
+        if (!assessmentsSection) {
+            console.error('Assessments section not found');
+            return;
+        }
+        
+        // Fetch the first quiz data to display its title and description
+        const firstQuizData = await fetchAssessmentData(quizList[0]);
+        const localizedContent = getLocalizedContent(firstQuizData);
+        
+        // Localized text based on language
+        const currentLang = document.documentElement.lang || 'en';
+        const localizedText = {
+            startButton: {
+                'en': 'Start Assessment',
+                'fr': 'Commencer l\'évaluation',
+                'es': 'Comenzar evaluación',
+                'no': 'Start vurdering',
+                'pl': 'Rozpocznij ocenę',
+                'la': 'Incepta aestimationem',
+                'zh': '开始评估',
+                'egy': 'ابدأ التقييم'
+            }[currentLang] || 'Start Assessment'
+        };
+        
+        // Create the assessment content container
+        const assessmentContainer = document.createElement('div');
+        assessmentContainer.className = 'assessment-container max-w-4xl mx-auto';
+        
+        // Add the disclaimer and start button
+        assessmentContainer.innerHTML = `
+            <div class="bg-oxford-blue/10 border border-oxford-blue rounded-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-oxford-blue mb-4">${localizedContent.title}</h3>
+                <p class="text-charcoal mb-6">${localizedContent.description}</p>
+                <div class="disclaimer bg-cream/50 p-6 rounded-md border-l-4 border-gold">
+                    <p class="text-charcoal italic mb-4">
+                        ${localizedContent.disclaimer || 'This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.'}
+                    </p>
+                    <p class="text-charcoal text-sm">
+                        By proceeding, you acknowledge that this is a self-assessment tool and agree to use it
+                        for educational purposes only.
+                    </p>
+                </div>
+                <div class="mt-6 text-center">
+                    <button id="startAssessmentBtn" class="px-8 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
+                        ${localizedText.startButton}
+                    </button>
+                </div>
+            </div>
+            <div id="assessmentContent" class="hidden">
+                <!-- Quiz content will be displayed here when the user starts the assessment -->
+            </div>
+        `;
+        
+        // Clear any existing content and add the new container
+        assessmentsSection.innerHTML = '';
+        assessmentsSection.appendChild(assessmentContainer);
+        
+        // Add event listener for the start button
+        const startButton = document.getElementById('startAssessmentBtn');
+        if (startButton) {
+            startButton.addEventListener('click', () => {
+                console.log('Start Assessment button clicked');
+                // Full quiz logic will be implemented in a future task
+                alert('Full quiz functionality will be implemented in the next phase.');
+            });
+        }
+        
+        console.log('Initial assessment screen rendered successfully');
+        
+    } catch (error) {
+        console.error('Failed to render initial assessment screen:', error);
+        
+        // Display an error message to the user
+        const assessmentsSection = document.getElementById('assessments');
+        if (assessmentsSection) {
+            const currentLang = document.documentElement.lang || 'en';
+            const localizedText = {
+                errorTitle: {
+                    'en': 'Unable to Load Assessment',
+                    'fr': 'Impossible de charger l\'évaluation',
+                    'es': 'No se puede cargar la evaluación',
+                    'no': 'Kan ikke laste vurdering',
+                    'pl': 'Nie można załadować oceny',
+                    'la': 'Aestimatio non potest onerari',
+                    'zh': '无法加载评估',
+                    'egy': 'غير قادر على تحميل التقييم'
+                }[currentLang] || 'Unable to Load Assessment',
+                errorMessage: {
+                    'en': 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.',
+                    'fr': 'Nous sommes désolés, mais l\'évaluation n\'a pas pu être chargée pour le moment. Veuillez réessayer plus tard.',
+                    'es': 'Lo sentimos, pero la evaluación no se pudo cargar en este momento. Por favor, inténtelo de nuevo más tarde.',
+                    'no': 'Vi er lei oss, men vurderingen kunne ikke lastes inn på dette tidspunktet. Vennligst prøv igjen senere.',
+                    'pl': 'Przykro namy, ale ocena nie mogła zostać załadowana w tym czasie. Spróbuj ponownie później.',
+                    'la': 'Dolemus, sed aestimatio non potest onerari hoc tempore. Quaeso conare iterum postea.',
+                    'zh': '很抱歉，评估目前无法加载。请稍后再试。',
+                    'egy': 'نحن آسفون ، ولكن لا يمكن تحميل التقييم في هذا الوقت. يرجى المحاولة مرة أخرى لاحقاً.'
+                }[currentLang] || 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.'
+            };
+            
+            const errorContainer = document.createElement('div');
+            errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
+            errorContainer.innerHTML = `
+                <h3 class="text-xl font-bold text-red-800 mb-2">${localizedText.errorTitle}</h3>
+                <p class="text-red-700">${localizedText.errorMessage}</p>
+            `;
+            assessmentsSection.appendChild(errorContainer);
+        }
+    }
+}
+
 /**
  * Loads quiz data from the specified JSON file
  * @param {string} filePath - Path to the JSON file
@@ -1263,7 +1423,7 @@ async function loadQuizData(filePath) {
 
 /**
  * Initializes the assessment engine for the Conceptual Assessments section
- * Handles language detection, data loading, and displays the initial disclaimer
+ * Uses the new functions to fetch data and render the initial screen
  */
 async function initializeAssessmentEngine() {
     try {
@@ -1271,92 +1431,8 @@ async function initializeAssessmentEngine() {
         const currentLang = document.documentElement.lang || 'en';
         console.log(`Initializing assessment engine for language: ${currentLang}`);
         
-        // Load the quiz data
-        const quizData = await loadQuizData('js/data/quiz_social_symptom.json');
-        console.log('Quiz data loaded successfully:', quizData);
-        
-        // Localized text based on language
-        const localizedText = {
-            startButton: {
-                'en': 'Start Assessment',
-                'fr': 'Commencer l\'évaluation',
-                'es': 'Comenzar evaluación',
-                'no': 'Start vurdering',
-                'pl': 'Rozpocznij ocenę',
-                'la': 'Incepta aestimationem',
-                'zh': '开始评估',
-                'egy': 'ابدأ التقييم'
-            }[currentLang] || 'Start Assessment',
-            errorTitle: {
-                'en': 'Unable to Load Assessment',
-                'fr': 'Impossible de charger l\'évaluation',
-                'es': 'No se puede cargar la evaluación',
-                'no': 'Kan ikke laste vurdering',
-                'pl': 'Nie można załadować oceny',
-                'la': 'Aestimatio non potest onerari',
-                'zh': '无法加载评估',
-                'egy': 'غير قادر على تحميل التقييم'
-            }[currentLang] || 'Unable to Load Assessment',
-            errorMessage: {
-                'en': 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.',
-                'fr': 'Nous sommes désolés, mais l\'évaluation n\'a pas pu être chargée pour le moment. Veuillez réessayer plus tard.',
-                'es': 'Lo sentimos, pero la evaluación no se pudo cargar en este momento. Por favor, inténtelo de nuevo más tarde.',
-                'no': 'Vi er lei oss, men vurderingen kunne ikke lastes inn på dette tidspunktet. Vennligst prøv igjen senere.',
-                'pl': 'Przykro namy, ale ocena nie mogła zostać załadowana w tym czasie. Spróbuj ponownie później.',
-                'la': 'Dolemus, sed aestimatio non potest onerari hoc tempore. Quaeso conare iterum postea.',
-                'zh': '很抱歉，评估目前无法加载。请稍后再试。',
-                'egy': 'نحن آسفون ، ولكن لا يمكن تحميل التقييم في هذا الوقت. يرجى المحاولة مرة أخرى لاحقاً.'
-            }[currentLang] || 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.'
-        };
-        
-        // Find the assessments section
-        const assessmentsSection = document.getElementById('assessments');
-        if (!assessmentsSection) {
-            console.error('Assessments section not found');
-            return;
-        }
-        
-        // Create the assessment content container
-        const assessmentContainer = document.createElement('div');
-        assessmentContainer.className = 'assessment-container max-w-4xl mx-auto';
-        
-        // Add the disclaimer and start button
-        assessmentContainer.innerHTML = `
-            <div class="bg-oxford-blue/10 border border-oxford-blue rounded-lg p-8 mb-8">
-                <h3 class="text-2xl font-bold text-oxford-blue mb-4">${quizData.title}</h3>
-                <p class="text-charcoal mb-6">${quizData.description}</p>
-                <div class="disclaimer bg-cream/50 p-6 rounded-md border-l-4 border-gold">
-                    <p class="text-charcoal italic mb-4">
-                        ${quizData.disclaimer || 'This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.'}
-                    </p>
-                    <p class="text-charcoal text-sm">
-                        By proceeding, you acknowledge that this is a self-assessment tool and agree to use it
-                        for educational purposes only.
-                    </p>
-                </div>
-                <div class="mt-6 text-center">
-                    <button id="startAssessmentBtn" class="px-8 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                        ${localizedText.startButton}
-                    </button>
-                </div>
-            </div>
-            <div id="assessmentContent" class="hidden">
-                <!-- Quiz content will be displayed here when the user starts the assessment -->
-            </div>
-        `;
-        
-        // Add the container to the assessments section
-        assessmentsSection.appendChild(assessmentContainer);
-        
-        // Add event listener for the start button (for now, just log that it was clicked)
-        const startButton = document.getElementById('startAssessmentBtn');
-        if (startButton) {
-            startButton.addEventListener('click', () => {
-                console.log('Start Assessment button clicked');
-                // Full quiz logic will be implemented in a future task
-                alert('Full quiz functionality will be implemented in the next phase.');
-            });
-        }
+        // Render the initial screen with the quiz list
+        await renderInitialScreen(quizFiles);
         
         console.log('Assessment engine initialized successfully');
         
@@ -1366,6 +1442,30 @@ async function initializeAssessmentEngine() {
         // Display an error message to the user
         const assessmentsSection = document.getElementById('assessments');
         if (assessmentsSection) {
+            const currentLang = document.documentElement.lang || 'en';
+            const localizedText = {
+                errorTitle: {
+                    'en': 'Unable to Load Assessment',
+                    'fr': 'Impossible de charger l\'évaluation',
+                    'es': 'No se puede cargar la evaluación',
+                    'no': 'Kan ikke laste vurdering',
+                    'pl': 'Nie można załadować oceny',
+                    'la': 'Aestimatio non potest onerari',
+                    'zh': '无法加载评估',
+                    'egy': 'غير قادر على تحميل التقييم'
+                }[currentLang] || 'Unable to Load Assessment',
+                errorMessage: {
+                    'en': 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.',
+                    'fr': 'Nous sommes désolés, mais l\'évaluation n\'a pas pu être chargée pour le moment. Veuillez réessayer plus tard.',
+                    'es': 'Lo sentimos, pero la evaluación no se pudo cargar en este momento. Por favor, inténtelo de nuevo más tarde.',
+                    'no': 'Vi er lei oss, men vurderingen kunne ikke lastes inn på dette tidspunktet. Vennligst prøv igjen senere.',
+                    'pl': 'Przykro namy, ale ocena nie mogła zostać załadowana w tym czasie. Spróbuj ponownie później.',
+                    'la': 'Dolemus, sed aestimatio non potest onerari hoc tempore. Quaeso conare iterum postea.',
+                    'zh': '很抱歉，评估目前无法加载。请稍后再试。',
+                    'egy': 'نحن آسفون ، ولكن لا يمكن تحميل التقييم في هذا الوقت. يرجى المحاولة مرة أخرى لاحقاً.'
+                }[currentLang] || 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.'
+            };
+            
             const errorContainer = document.createElement('div');
             errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
             errorContainer.innerHTML = `

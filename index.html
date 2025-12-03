@@ -625,7 +625,22 @@
                 <h2 class="reveal reveal-delay-1 text-5xl text-oxford-blue font-bold mb-12 border-b border-charcoal pb-4 text-center">
                     Conceptual Assessments
                 </h2>
-                <!-- Assessment content will be added here -->
+                
+                <!-- Container for dynamic assessment content -->
+                <div id="assessmentsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
+                    <!-- Assessment cards will be dynamically inserted here -->
+                </div>
+                
+                <!-- Loading indicator (shown while assessments are loading) -->
+                <div id="assessmentsLoading" class="text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-oxford-blue"></div>
+                    <p class="mt-4 text-charcoal">Loading assessments...</p>
+                </div>
+                
+                <!-- Error message (shown if assessments fail to load) -->
+                <div id="assessmentsError" class="hidden text-center py-12">
+                    <p class="text-red-600">Failed to load assessments. Please try again later.</p>
+                </div>
             </div>
         </section>
 
