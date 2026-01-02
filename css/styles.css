@@ -1777,6 +1777,7 @@ html {
         padding: 0.6rem 1rem;
     }
 }
+
 /* ============================================
    QUIZ LOBBY STYLES
    ============================================ */
@@ -1798,7 +1799,7 @@ html {
 
 .quiz-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin: 0 auto;
 }

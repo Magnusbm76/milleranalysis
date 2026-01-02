@@ -1376,49 +1376,6 @@ async function renderInitialScreen(quizList) {
 
         // ==================== QUIZ ENGINE IMPLEMENTATION ====================
 
-        // Quiz State Management
-        let quizState = {
-            currentQuizIndex: 0,
-            currentQuestionIndex: 0,
-            answers: [],
-            isComplete: false,
-            quizData: null
-        };
-
-        /**
-         * Starts the quiz with the specified quiz file
-         * @param {string} quizFileName - The quiz file to load
-         */
-        async function startQuiz(quizFileName) {
-            try {
-                console.log(`[Quiz Engine] Starting quiz: ${quizFileName}`);
-
-                // Find the index of the quiz file in the list
-                const quizIndex = quizFiles.indexOf(quizFileName);
-                if (quizIndex === -1) {
-                    console.error(`Quiz file not found: ${quizFileName}`);
-                    return;
-                }
-
-                quizState.currentQuizIndex = quizIndex;
-                quizState.currentQuestionIndex = 0;
-                quizState.answers = [];
-                quizState.isComplete = false;
-
-                // Load quiz data
-                const data = await loadQuizData(`js/data/${quizFileName}`);
-                quizState.quizData = data;
-
-                // Render quiz interface
-                renderQuizInterface();
-
-                console.log('[Quiz Engine] Quiz started successfully');
-            } catch (error) {
-                console.error('[Quiz Engine] Error starting quiz:', error);
-                showQuizError();
-            }
-        }
-
         /**
          * Loads quiz data from JSON file and normalizes structure
          * @param {string} filePath - Path to the quiz JSON file
@@ -2323,13 +2280,13 @@ async function initializeAssessmentEngine() {
             assessmentsSection.appendChild(errorContainer);
         }
     }
-}  
-  
+}
+
 /**  
  * Renders quiz lobby with all available assessments  
  * Displays cards for all 4 quiz files with localized content  
- */  
-async function renderQuizLobby() { 
+ */
+async function renderQuizLobby() {
     try {
         const assessmentsSection = document.getElementById('assessments');
         if (!assessmentsSection) {
