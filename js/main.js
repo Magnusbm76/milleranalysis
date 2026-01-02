@@ -1810,6 +1810,16 @@ async function renderInitialScreen(quizList) {
         }
 
         /**
+         * Clears the selected state from all quiz scale buttons
+         */
+        function clearQuizButtonState() {
+            const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
+            scaleButtons.forEach(btn => {
+                btn.classList.remove('selected');
+            });
+        }
+
+        /**
          * Shows warning that answer is required
          */
         function showAnswerRequiredWarning() {
@@ -1921,8 +1931,20 @@ async function renderInitialScreen(quizList) {
                     }
                 };
 
+                // Clear existing button state before regeneration
+                clearQuizButtonState();
+
                 scaleContainer.innerHTML = generateScaleHTML(questionIndex, scaleMax,
                     scaleLabels.map(l => l[currentLang] || l['en']));
+
+                // Restore selected state after innerHTML replacement
+                const currentAnswer = quizState.answers[questionIndex];
+                if (currentAnswer !== undefined) {
+                    const selectedBtn = document.querySelector(`.quiz-scale-btn[data-score="${currentAnswer}"]`);
+                    if (selectedBtn) {
+                        selectedBtn.classList.add('selected');
+                    }
+                }
             }
 
             // Update navigation buttons
@@ -2258,7 +2280,7 @@ async function initializeAssessmentEngine() {
         console.log(`Initializing assessment engine for language: ${currentLang}`);
 
         // Render the initial screen with the quiz list
-        await renderInitialScreen(quizFiles);
+        await renderQuizLobby();
 
         console.log('Assessment engine initialized successfully');
 
@@ -2298,6 +2320,114 @@ async function initializeAssessmentEngine() {
                 <h3 class="text-xl font-bold text-red-800 mb-2">${localizedText.errorTitle}</h3>
                 <p class="text-red-700">${localizedText.errorMessage}</p>
             `;
+            assessmentsSection.appendChild(errorContainer);
+        }
+    }
+}  
+  
+/**  
+ * Renders quiz lobby with all available assessments  
+ * Displays cards for all 4 quiz files with localized content  
+ */  
+async function renderQuizLobby() { 
+    try {
+        const assessmentsSection = document.getElementById('assessments');
+        if (!assessmentsSection) {
+            console.error('Assessments section not found');
+            return;
+        }
+
+        const currentLang = document.documentElement.lang || 'en';
+        const isRTL = currentLang === 'ar-EG';
+
+        // Fetch metadata for all quizzes
+        const quizMetadata = await Promise.all(
+            quizFiles.map(async (fileName) => {
+                const data = await fetchAssessmentData(fileName);
+                const localized = getLocalizedContent(data);
+                return {
+                    fileName,
+                    title: localized.title,
+                    description: localized.description
+                };
+            })
+        );
+
+        // Localized lobby title
+        const lobbyTitle = {
+            'en': 'Select Assessment',
+            'fr': 'Sélectionnez votre évaluation',
+            'es': 'Seleccione su evaluación',
+            'no': 'Velg din vurdering',
+            'pl': 'Wybierz swoją ocenę',
+            'la': 'Elige tuam aestimationem',
+            'egy': 'اختيار التقييم',
+            'zh': '选择评估'
+        }[currentLang] || 'Select Assessment';
+
+        // Localized start button text
+        const startButtonText = {
+            'en': 'Start',
+            'fr': 'Commencer',
+            'es': 'Comenzar',
+            'no': 'Start',
+            'pl': 'Rozpocznij',
+            'la': 'Incepta',
+            'egy': 'ابدأ',
+            'zh': '开始'
+        }[currentLang] || 'Start';
+
+        // Generate lobby HTML
+        const lobbyHTML = `
+            <div class="quiz-lobby ${isRTL ? 'rtl' : ''}">
+                <h2 class="quiz-lobby-title">${lobbyTitle}</h2>
+                <div class="quiz-cards">
+                    ${quizMetadata.map((quiz, index) => `
+                        <div class="quiz-card" data-quiz-index="${index}">
+                            <h3 class="quiz-card-title">${quiz.title}</h3>
+                            <p class="quiz-card-description">${quiz.description.substring(0, 150)}...</p>
+                            <button class="btn-start-quiz" data-index="${index}">
+                                ${startButtonText}
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+
+        assessmentsSection.innerHTML = lobbyHTML;
+
+        // Attach event listeners to start buttons
+        document.querySelectorAll('.btn-start-quiz').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const quizIndex = parseInt(e.target.getAttribute('data-index'));
+                startQuiz(quizFiles[quizIndex]);
+            });
+        });
+
+        console.log('Quiz lobby rendered successfully');
+
+    } catch (error) {
+        console.error('Failed to render quiz lobby:', error);
+
+        // Display error message
+        const assessmentsSection = document.getElementById('assessments');
+        if (assessmentsSection) {
+            const currentLang = document.documentElement.lang || 'en';
+            const errorText = {
+                'en': 'Failed to load assessments. Please try again later.',
+                'fr': 'Échec du chargement des évaluations. Veuillez réessayer plus tard.',
+                'es': 'Error al cargar evaluaciones. Por favor, inténtelo de nuevo más tarde.',
+                'no': 'Kunne ikke laste vurderinger. Vennligst prøv igjen senere.',
+                'pl': 'Nie udało się załadować ocen. Proszę spróbować ponownie później.',
+                'la': 'Aestimationes onerari non potuerunt. Quaeso conare iterum postea.',
+                'egy': 'فشل تحميل التقييمات. يرجى المحاولة مرة أخرى لاحقًا.',
+                'zh': '加载评估失败。请稍后再试。'
+            }[currentLang] || 'Failed to load assessments. Please try again later.';
+
+            const errorContainer = document.createElement('div');
+            errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
+            errorContainer.innerHTML = `<p class="text-red-700">${errorText}</p>`;
             assessmentsSection.appendChild(errorContainer);
         }
     }
