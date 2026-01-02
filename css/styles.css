@@ -7,15 +7,19 @@
 /* --- 1. Project-Wide CSS Variables --- */
 :root {
     /* Color Palette */
-    --color-oxford-blue: #002147; /* Primary Dark (Academic) */
-    --color-cream: #F5F5DC;      /* Primary Light (Base background) */
-    --color-charcoal: #36454F;   /* Secondary Dark */
-    --color-gold: #FFD700;       /* Accent (Subtle Playfulness/Emphasis) */
+    --color-oxford-blue: #002147;
+    /* Primary Dark (Academic) */
+    --color-cream: #F5F5DC;
+    /* Primary Light (Base background) */
+    --color-charcoal: #36454F;
+    /* Secondary Dark */
+    --color-gold: #FFD700;
+    /* Accent (Subtle Playfulness/Emphasis) */
 
     /* Typography */
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Lato', sans-serif;
-    
+
     /* Line Heights for Improved Readability */
     --line-height-tight: 1.2;
     --line-height-normal: 1.5;
@@ -27,17 +31,18 @@
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     --spacing-xl: 8rem;
-    
+
     /* Section Spacing Standard */
-    --section-padding: var(--spacing-xl); /* 8rem for consistent section spacing */
-    
+    --section-padding: var(--spacing-xl);
+    /* 8rem for consistent section spacing */
+
     /* Transition Timing */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* Apply base styling to the body */
+/* Apply base styling to body */
 body {
     font-family: var(--font-sans);
     line-height: var(--line-height-normal);
@@ -45,9 +50,12 @@ body {
     color: var(--color-charcoal);
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    -webkit-font-smoothing: antialiased; /* Clean text rendering */
-    text-rendering: optimizeLegibility; /* Modern text rendering */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    -webkit-font-smoothing: antialiased;
+    /* Clean text rendering */
+    text-rendering: optimizeLegibility;
+    /* Modern text rendering */
 }
 
 /* Standard Section Spacing */
@@ -64,7 +72,12 @@ body {
 }
 
 /* Typography improvements for headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-serif);
     line-height: var(--line-height-tight);
     font-weight: 700;
@@ -138,24 +151,32 @@ p {
 
 /* Quote Typography Styles */
 .quote-text {
-    font-family: var(--font-serif); /* Use serif font for quotes to distinguish them */
-    line-height: 1.8; /* Comfortable reading rhythm as requested */
-    font-size: 1.25rem; /* Slightly larger than regular paragraphs */
-    font-style: italic; /* Italic styling for quotes */
-    opacity: 0.9; /* Slightly reduced opacity for subtle effect */
+    font-family: var(--font-serif);
+    /* Use serif font for quotes to distinguish them */
+    line-height: 1.8;
+    /* Comfortable reading rhythm as requested */
+    font-size: 1.25rem;
+    /* Slightly larger than regular paragraphs */
+    font-style: italic;
+    /* Italic styling for quotes */
+    opacity: 0.9;
+    /* Slightly reduced opacity for subtle effect */
     margin: var(--spacing-md) 0;
     padding-left: var(--spacing-md);
-    border-left: 3px solid var(--color-gold); /* Gold accent bar on the left */
+    border-left: 3px solid var(--color-gold);
+    /* Gold accent bar on left */
     position: relative;
 }
 
 /* Quote color adjustments for different backgrounds */
 .bg-cream .quote-text {
-    color: var(--color-charcoal); /* Dark text on light background */
+    color: var(--color-charcoal);
+    /* Dark text on light background */
 }
 
 .bg-oxford-blue .quote-text {
-    color: var(--color-cream); /* Light text on dark background */
+    color: var(--color-cream);
+    /* Light text on dark background */
 }
 
 /* Quote attribution styling */
@@ -196,7 +217,7 @@ p {
         font-size: 1.1rem;
         padding-left: var(--spacing-sm);
     }
-    
+
     .quote-text::before {
         font-size: 2.5rem;
         top: -0.3rem;
@@ -204,16 +225,21 @@ p {
 }
 
 /* Primary Button Styles */
-.btn-primary, .btn-convert {
-    background-color: var(--color-gold); /* Deep Gold background */
-    color: var(--color-oxford-blue); /* Oxford Blue text */
+.btn-primary,
+.btn-convert {
+    background-color: var(--color-gold);
+    /* Deep Gold background */
+    color: var(--color-oxford-blue);
+    /* Oxford Blue text */
     font-family: var(--font-sans);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 1rem 2rem; /* Consistent padding */
+    padding: 1rem 2rem;
+    /* Consistent padding */
     border: none;
-    border-radius: 0.5rem; /* Consistent border-radius */
+    border-radius: 0.5rem;
+    /* Consistent border-radius */
     cursor: pointer;
     transition: all var(--transition-normal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -224,24 +250,30 @@ p {
     overflow: hidden;
 }
 
-.btn-primary:hover, .btn-convert:hover {
-    transform: translateY(-2px); /* Consistent lift effect */
+.btn-primary:hover,
+.btn-convert:hover {
+    transform: translateY(-2px);
+    /* Consistent lift effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #FFC700; /* Slightly darker gold on hover */
+    background-color: #FFC700;
+    /* Slightly darker gold on hover */
 }
 
-.btn-primary:active, .btn-convert:active {
+.btn-primary:active,
+.btn-convert:active {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.btn-primary:focus, .btn-convert:focus {
+.btn-primary:focus,
+.btn-convert:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
 }
 
 /* Button ripple effect */
-.btn-primary::before, .btn-convert::before {
+.btn-primary::before,
+.btn-convert::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -254,25 +286,27 @@ p {
     transition: width 0.6s, height 0.6s;
 }
 
-.btn-primary:active::before, .btn-convert:active::before {
+.btn-primary:active::before,
+.btn-convert:active::before {
     width: 300px;
     height: 300px;
 }
 
 /* --- 2. Full-Screen Video Background --- */
 .hero-video-container {
-    /* Position the video fixed to the viewport */
+    /* Position video fixed to viewport */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    z-index: -10; /* Keep it behind all content */
+    z-index: -10;
+    /* Keep it behind all content */
 }
 
 .hero-video-container video {
-    /* Ensure the video covers the entire container while maintaining aspect ratio */
+    /* Ensure video covers entire container while maintaining aspect ratio */
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -281,20 +315,23 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* The initial color overlay before the asset loads, matching Oxford Blue */
+    /* The initial color overlay before asset loads, matching Oxford Blue */
     background-color: var(--color-oxford-blue);
-    object-fit: cover; /* Important for covering the space */
-    filter: brightness(0.4) opacity(0.8); /* Subtly dim the video to keep text readable */
+    object-fit: cover;
+    /* Important for covering space */
+    filter: brightness(0.4) opacity(0.8);
+    /* Subtly dim video to keep text readable */
 }
 
 /* --- 3. Custom Navigation Hover Effect (Contrast Fixed) --- */
 
-/* Style for the individual navigation links */
+/* Style for individual navigation links */
 .nav-link {
     position: relative;
     display: inline-block;
     padding: 0.75rem 1.25rem;
-    color: var(--color-cream); /* Default to Cream for transparent Hero background */
+    color: var(--color-cream);
+    /* Default to Cream for transparent Hero background */
     transition: color 0.3s ease, background-color 0.3s ease;
     font-weight: 500;
     letter-spacing: 0.025em;
@@ -307,18 +344,21 @@ p {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 0; /* Start with zero width (invisible) */
+    width: 0;
+    /* Start with zero width (invisible) */
     height: 3px;
-    background-color: var(--color-gold); /* The gold path color (the accent) */
+    background-color: var(--color-gold);
+    /* The gold path color (the accent) */
     transition: width var(--transition-normal);
 }
 
-/* Hover State: The path appears (grows from the center) */
+/* Hover State: The path appears (grows from center) */
 .nav-link:hover::after {
-    width: 100%; /* Grow the path to the full width */
+    width: 100%;
+    /* Grow path to full width */
 }
 
-/* Hover State: Keep the text color as Cream for high contrast. */
+/* Hover State: Keep text color as Cream for high contrast. */
 .nav-link:hover {
     color: var(--color-cream);
     transform: translateY(-2px);
@@ -331,58 +371,71 @@ p {
 
 /* Default navigation color (Cream) for transparent Hero background */
 nav .nav-link {
-    color: var(--color-cream); /* Cream text on transparent Hero background */
+    color: var(--color-cream);
+    /* Cream text on transparent Hero background */
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Navigation brand/site name color transitions */
 nav .text-xl {
-    color: var(--color-cream); /* Cream text on transparent Hero background */
+    color: var(--color-cream);
+    /* Cream text on transparent Hero background */
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* Explicit title contrast rules for navigation */
-nav:not(.scrolled-nav) .text-xl, nav:not(.scrolled-nav) button {
+nav:not(.scrolled-nav) .text-xl,
+nav:not(.scrolled-nav) button {
     color: var(--color-cream) !important;
 }
 
 /* Force navigation title to be cream color when navbar is transparent */
-nav:not(.scrolled-nav) .text-xl { color: var(--color-cream) !important; }
+nav:not(.scrolled-nav) .text-xl {
+    color: var(--color-cream) !important;
+}
 
-.scrolled-nav .text-xl, .scrolled-nav button {
+.scrolled-nav .text-xl,
+.scrolled-nav button {
     color: var(--color-oxford-blue) !important;
 }
 
 /* Glass Header Effect - scrolled-nav class */
 .scrolled-nav {
-    background-color: rgba(245, 245, 220, 0.95); /* Cream glass effect */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: rgba(245, 245, 220, 0.95);
+    /* Cream glass effect */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Ensure text color in scrolled-nav is high-contrast */
 .scrolled-nav .nav-link {
-    color: var(--color-oxford-blue); /* Oxford Blue text on Cream background */
+    color: var(--color-oxford-blue);
+    /* Oxford Blue text on Cream background */
 }
 
 .scrolled-nav .text-xl {
-    color: var(--color-oxford-blue); /* Oxford Blue text on Cream background */
+    color: var(--color-oxford-blue);
+    /* Oxford Blue text on Cream background */
 }
 
 /* Logo text color rules */
 nav .logo-text {
-    color: #F5F5DC !important; /* Default */
+    color: #F5F5DC !important;
+    /* Default */
 }
 
 .scrolled-nav .logo-text {
-    color: #002147 !important; /* Scrolled */
+    color: #002147 !important;
+    /* Scrolled */
 }
 
 /* --- 4. Books Showcase Specific Styles --- */
 
-/* Set a consistent size for the book cover containers */
+/* Set a consistent size for book cover containers */
 .book-cover-container {
-    width: 400px; /* Target size */
-    height: 600px; /* Target size */
+    width: 400px;
+    /* Target size */
+    height: 600px;
+    /* Target size */
     overflow: hidden;
     transition: all var(--transition-normal);
     border-radius: 0.5rem;
@@ -422,8 +475,9 @@ nav .logo-text {
 
 /* --- 5. Insights Section Specific Styles (Quote Cards) --- */
 
+/* Set a consistent size for book cover containers */
 .insight-card {
-    /* Base style for the interactive quote cards */
+    /* Base style for interactive quote cards */
     background-color: var(--color-oxford-blue);
     border: 1px solid var(--color-gold);
     transition: all var(--transition-normal);
@@ -431,8 +485,10 @@ nav .logo-text {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    padding: 1.5rem; /* Increased padding for better readability */
-    line-height: var(--line-height-relaxed); /* Increased line height for better readability */
+    padding: 1.5rem;
+    /* Increased padding for better readability */
+    line-height: var(--line-height-relaxed);
+    /* Increased line height for better readability */
 }
 
 /* Ensure all text in insight cards is cream for high contrast */
@@ -445,22 +501,26 @@ nav .logo-text {
 /* Fix h3 (Title) to be gold but legible with proper contrast */
 .insight-card h3 {
     color: var(--color-gold);
-    font-size: 1.5rem; /* Increased font size for better readability */
+    font-size: 1.5rem;
+    /* Increased font size for better readability */
     line-height: var(--line-height-normal);
     margin-bottom: 1rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /* Add shadow for better contrast */
 }
 
 /* Ensure quote text has proper contrast and readability */
 .insight-card .quote-text {
     color: var(--color-cream);
-    font-size: 1.125rem; /* Slightly larger for better readability */
+    font-size: 1.125rem;
+    /* Slightly larger for better readability */
     line-height: var(--line-height-relaxed);
     margin-bottom: 1rem;
-    opacity: 1; /* Full opacity for better contrast */
+    opacity: 1;
+    /* Full opacity for better contrast */
 }
 
-/* Ensure the reveal content text is cream with good contrast */
+/* Ensure reveal content text is cream with good contrast */
 .insight-card .insight-reveal-content {
     color: var(--color-cream);
     line-height: var(--line-height-relaxed);
@@ -495,7 +555,7 @@ nav .logo-text {
 }
 
 .insight-reveal-content {
-    /* Initially hidden content for the interactive reveal feature */
+    /* Initially hidden content for interactive reveal feature */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -504,28 +564,30 @@ nav .logo-text {
 
 .insight-card.active .insight-reveal-content {
     /* Class to be toggled by Vanilla JS */
-    max-height: 500px; /* Large enough to accommodate text */
+    max-height: 500px;
+    /* Large enough to accommodate text */
     opacity: 1;
     padding-top: 1rem;
 }
 
-/* Ensure the active state maintains proper contrast */
+/* Ensure active state maintains proper contrast */
 .insight-card.active {
     background-color: var(--color-oxford-blue);
 }
 
-/* Fix any gold text in the reveal content to be more legible */
+/* Fix any gold text in reveal content to be more legible */
 .insight-card .insight-reveal-content .text-gold,
 .insight-card .insight-reveal-content p.text-gold {
     color: var(--color-gold);
     font-weight: bold;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better contrast */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    /* Add shadow for better contrast */
 }
 
 /* --- 6. About Section Specific Styles --- */
 
 .about-section {
-    /* Subtle scrolling effect for the about section */
+    /* Subtle scrolling effect for about section */
     position: relative;
     overflow: hidden;
 }
@@ -544,7 +606,7 @@ nav .logo-text {
 /* --- 7. Contact Form Specific Styles --- */
 
 .contact-form {
-    /* Base styles for the contact form */
+    /* Base styles for contact form */
     transition: all var(--transition-normal);
     padding: var(--spacing-lg);
     border-radius: 0.5rem;
@@ -610,15 +672,19 @@ nav .logo-text {
 
 .form-button {
     /* Style for form submission button - now using btn-primary styles */
-    background-color: var(--color-gold); /* Deep Gold background */
-    color: var(--color-oxford-blue); /* Oxford Blue text */
+    background-color: var(--color-gold);
+    /* Deep Gold background */
+    color: var(--color-oxford-blue);
+    /* Oxford Blue text */
     font-family: var(--font-sans);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 1rem 2rem; /* Consistent with other buttons */
+    padding: 1rem 2rem;
+    /* Consistent with other buttons */
     border: none;
-    border-radius: 0.5rem; /* Consistent with other buttons */
+    border-radius: 0.5rem;
+    /* Consistent with other buttons */
     cursor: pointer;
     transition: all var(--transition-normal);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -627,9 +693,11 @@ nav .logo-text {
 }
 
 .form-button:hover {
-    transform: translateY(-2px); /* Consistent lift effect */
+    transform: translateY(-2px);
+    /* Consistent lift effect */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    background-color: #FFC700; /* Slightly darker gold on hover */
+    background-color: #FFC700;
+    /* Slightly darker gold on hover */
 }
 
 .form-button:active {
@@ -681,8 +749,13 @@ nav .logo-text {
 
 /* Animation keyframes */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideDown {
@@ -691,6 +764,7 @@ nav .logo-text {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         max-height: 500px;
         opacity: 1;
@@ -699,15 +773,31 @@ nav .logo-text {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
-    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
 }
 
 /* Utility classes for common effects */
@@ -795,9 +885,9 @@ nav .logo-text {
 }
 
 /* CSS Fallback Safety Net for Reveal Animations */
-/* This rule ensures content is always visible if JavaScript fails to add the 'active' class */
+/* This rule ensures content is always visible if JavaScript fails to add 'active' class */
 /* It uses a media query with a condition that's always true, giving it high specificity */
-/* while allowing the normal animation system to work when JavaScript is functional */
+/* while allowing normal animation system to work when JavaScript is functional */
 @media all {
     .reveal {
         opacity: 1 !important;
@@ -805,7 +895,7 @@ nav .logo-text {
     }
 }
 
-/* Smooth scrolling for the entire page */
+/* Smooth scrolling for entire page */
 html {
     scroll-behavior: smooth;
 }
@@ -856,18 +946,46 @@ html {
 }
 
 /* Staggered reveal for lists or grids */
-.reveal-stagger-1 { transition-delay: 0.1s; }
-.reveal-stagger-2 { transition-delay: 0.2s; }
-.reveal-stagger-3 { transition-delay: 0.3s; }
-.reveal-stagger-4 { transition-delay: 0.4s; }
-.reveal-stagger-5 { transition-delay: 0.5s; }
+.reveal-stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-stagger-4 {
+    transition-delay: 0.4s;
+}
+
+.reveal-stagger-5 {
+    transition-delay: 0.5s;
+}
 
 /* Delay classes for sequential animations */
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+    transition-delay: 0.5s;
+}
 
 
 /* Enhanced focus styles for better accessibility during smooth scrolling */
@@ -961,15 +1079,17 @@ html {
     border-color: var(--color-gold);
 }
 
-/* Style for the summary element (question) */
+/* Style for summary element (question) */
 .faq-item summary {
     background-color: transparent;
     border: none;
     transition: all var(--transition-normal);
     cursor: pointer;
-    user-select: none; /* Prevent text selection on click */
+    user-select: none;
+    /* Prevent text selection on click */
     position: relative;
-    padding-right: 2rem; /* Space for the default marker */
+    padding-right: 2rem;
+    /* Space for default marker */
 }
 
 .faq-item summary:hover {
@@ -982,12 +1102,12 @@ html {
     outline-offset: 2px;
 }
 
-/* Style for the details content (answer) */
+/* Style for details content (answer) */
 .faq-item div {
     animation: fadeIn var(--transition-normal);
 }
 
-/* Custom marker for the details element */
+/* Custom marker for details element */
 .faq-item summary::marker {
     color: var(--color-oxford-blue);
     font-size: 1.2rem;
@@ -998,38 +1118,49 @@ html {
     .faq-item summary {
         padding: var(--spacing-sm) var(--spacing-md);
         font-size: 1rem;
-        padding-right: 2rem; /* Space for the default marker */
+        padding-right: 2rem;
+        /* Space for default marker */
     }
-    
+
     .faq-item div {
         padding: 0 var(--spacing-md) var(--spacing-md);
     }
 }
+
 /* --- PREMIUM VISUAL FIX (00:10) --- */
-/* Target both the Carousel Card and the Details Panel */
+/* Target both Carousel Card and Details Panel */
 .insight-card,
 #detailsPanel {
     /* 1. LAYOUT & CENTERING */
     display: block !important;
-    margin: 3rem auto !important; /* Center horizontally with vertical breathing room */
-    max-width: 900px !important;  /* Prevent full-width stretching */
-    width: 90% !important;        /* Responsive width for mobile */
+    margin: 3rem auto !important;
+    /* Center horizontally with vertical breathing room */
+    max-width: 900px !important;
+    /* Prevent full-width stretching */
+    width: 90% !important;
+    /* Responsive width for mobile */
     position: relative !important;
     z-index: 10 !important;
 
     /* 2. COLORS & BACKGROUND */
-    background-color: #002147 !important; /* Oxford Blue */
-    background: linear-gradient(145deg, #002147, #001a38) !important; /* Subtle depth */
-    color: #F5F5DC !important;            /* Cream */
+    background-color: #002147 !important;
+    /* Oxford Blue */
+    background: linear-gradient(145deg, #002147, #001a38) !important;
+    /* Subtle depth */
+    color: #F5F5DC !important;
+    /* Cream */
 
     /* 3. BORDERS & SHADOWS (IMPACT) */
-    border: 1px solid #FFD700 !important; /* Elegant Gold Border */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important; /* Deep shadow for "pop" */
+    border: 1px solid #FFD700 !important;
+    /* Elegant Gold Border */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    /* Deep shadow for "pop" */
     border-radius: 8px !important;
 
     /* 4. SPACING & TYPOGRAPHY */
     padding: 3rem !important;
-    text-align: center !important; /* Center the text content */
+    text-align: center !important;
+    /* Center text content */
 }
 
 /* Elegant Typography for Headers */
@@ -1037,13 +1168,15 @@ html {
 #detailsPanel h2,
 #detailsPanel h3 {
     font-family: 'Playfair Display', serif !important;
-    color: #FFD700 !important; /* Gold */
+    color: #FFD700 !important;
+    /* Gold */
     font-size: 2.2rem !important;
     margin-bottom: 1.5rem !important;
     letter-spacing: 0.05em !important;
     border-bottom: 1px solid rgba(255, 215, 0, 0.2) !important;
     padding-bottom: 1rem !important;
-    display: inline-block !important; /* Allows border to wrap text only */
+    display: inline-block !important;
+    /* Allows border to wrap text only */
 }
 
 /* Readable Body Text */
@@ -1053,12 +1186,16 @@ html {
     font-size: 1.2rem !important;
     line-height: 1.8 !important;
     color: #F5F5DC !important;
-    max-width: 700px !important; /* readable line length */
+    max-width: 700px !important;
+    /* readable line length */
     margin: 0 auto 1.5rem auto !important;
 }
 
-/* Hide the ugly list if it exists */
-.related-quotes-list { display: none !important; }
+/* Hide ugly list if it exists */
+.related-quotes-list {
+    display: none !important;
+}
+
 /* --- END PREMIUM FIX --- */
 /* Ensure multiple cards stack with adequate vertical separation */
 .insight-card {
@@ -1071,11 +1208,12 @@ html {
     transition: transform 0.3s ease;
 }
 
-/* --- 12. Assessments Section Styles --- */
+/* --- 12. Assessment Section Styles --- */
 
 /* Assessment card container */
 #assessmentsContainer {
-    min-height: 400px; /* Ensure container has height even when empty */
+    min-height: 400px;
+    /* Ensure container has height even when empty */
 }
 
 /* Assessment card styling */
@@ -1139,8 +1277,13 @@ html {
 
 /* Loading spinner animation */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .animate-spin {
@@ -1152,12 +1295,485 @@ html {
     .assessment-card {
         margin-bottom: 1.5rem;
     }
-    
+
     .assessment-card h3 {
         font-size: 1.3rem;
     }
-    
+
     .assessment-card p {
         font-size: 1rem;
+    }
+}
+
+/* ==================== QUIZ ENGINE STYLES ==================== */
+
+/* Quiz Interface Container */
+.quiz-interface {
+    background-color: var(--color-oxford-blue);
+    border: 1px solid var(--color-gold);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+}
+
+/* Progress Bar */
+.quiz-progress-container {
+    margin-bottom: 2rem;
+}
+
+.quiz-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-gold), #FFC700);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+.quiz-progress-text {
+    text-align: center;
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.current-question {
+    font-weight: bold;
+    color: var(--color-gold);
+}
+
+/* Question Container */
+.quiz-question-container {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.quiz-question-text {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: 0.5rem;
+}
+
+.quiz-question-context {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: rgba(245, 245, 220, 0.8);
+    line-height: var(--line-height-normal);
+    font-style: italic;
+}
+
+/* Likert Scale Container */
+.quiz-scale-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Scale Buttons */
+.quiz-scale-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.quiz-scale-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.2);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quiz-scale-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-scale-btn.selected {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+.quiz-scale-btn:active {
+    transform: translateY(-1px);
+}
+
+.quiz-scale-btn:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+.score-value {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-oxford-blue);
+}
+
+.score-label {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-cream);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Navigation Buttons */
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.btn-quiz {
+    background-color: var(--color-gold);
+    color: var(--color-oxford-blue);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-quiz:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #FFC700;
+}
+
+.btn-quiz:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-quiz:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+.btn-quiz:disabled {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-quiz-prev {
+    margin-right: auto;
+}
+
+.btn-quiz-next,
+.btn-quiz-submit {
+    margin-left: auto;
+}
+
+/* Quiz Results */
+.quiz-results {
+    background-color: var(--color-oxford-blue);
+    border: 1px solid var(--color-gold);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.quiz-results-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.quiz-results-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.quiz-score-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.5rem;
+}
+
+.score-label {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-cream);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.score-value {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+/* Quiz Result Content */
+.quiz-result-content {
+    margin-bottom: 2rem;
+}
+
+.result-title {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.result-summary {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-cream);
+    margin-bottom: 1.5rem;
+}
+
+.result-recommendation {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--color-gold);
+}
+
+.result-recommendation strong {
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.result-recommendation p {
+    color: var(--color-cream);
+    margin: 0;
+}
+
+/* Quiz Results Actions */
+.quiz-results-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-quiz-retake {
+    background-color: var(--color-gold);
+    color: var(--color-oxford-blue);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-quiz-retake:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #FFC700;
+}
+
+.btn-quiz-retake:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-quiz-retake:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* Quiz Error */
+.quiz-error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.quiz-error .error-message {
+    color: #dc3545;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ==================== RTL SUPPORT ==================== */
+
+/* RTL Layout Adjustments */
+.quiz-interface[dir="rtl"] {
+    text-align: right;
+}
+
+.quiz-interface[dir="rtl"] .quiz-progress-text {
+    text-align: right;
+}
+
+.quiz-interface[dir="rtl"] .quiz-question-text,
+.quiz-interface[dir="rtl"] .quiz-question-context {
+    text-align: right;
+}
+
+.quiz-interface[dir="rtl"] .quiz-scale-buttons {
+    flex-direction: row-reverse;
+}
+
+.quiz-interface[dir="rtl"] .quiz-scale-btn {
+    flex-direction: column;
+}
+
+.quiz-interface[dir="rtl"] .quiz-navigation {
+    flex-direction: row-reverse;
+}
+
+.quiz-interface[dir="rtl"] .btn-quiz-prev {
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+.quiz-interface[dir="rtl"] .btn-quiz-next,
+.quiz-interface[dir="rtl"] .btn-quiz-submit {
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+.quiz-results[dir="rtl"] {
+    text-align: right;
+}
+
+.quiz-results[dir="rtl"] .result-recommendation {
+    border-left: none;
+    border-right: 4px solid var(--color-gold);
+    padding-right: 1.5rem;
+    padding-left: 0;
+}
+
+.quiz-results[dir="rtl"] .result-recommendation strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    margin-right: 0.5rem;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 768px) {
+    .quiz-interface {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .quiz-question-text {
+        font-size: 1.1rem;
+    }
+
+    .quiz-scale-buttons {
+        gap: 0.5rem;
+    }
+
+    .quiz-scale-btn {
+        min-width: 60px;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .score-value {
+        font-size: 2rem;
+    }
+
+    .quiz-results-title {
+        font-size: 1.5rem;
+    }
+
+    .quiz-navigation {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn-quiz {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-scale-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .quiz-scale-btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .quiz-navigation {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-quiz {
+        width: 100%;
+        padding: 0.6rem 1rem;
     }
 }
