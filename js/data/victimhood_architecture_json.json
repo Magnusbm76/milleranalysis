@@ -1,0 +1,266 @@
+{
+  "EN": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "The Victimhood Architecture Profile",
+      "description": "A comprehensive psychoanalytic exploration of how identity consolidates around structural inadequacy and performative suffering.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "DISCLAIMER: This tool is for educational and promotional purposes only. It is based on the theoretical concepts of John F. Miller and is NOT a clinical diagnostic tool. If you are experiencing mental health distress, please consult a qualified professional.",
+    "questions": [
+      {"id": 1, "text": "When you achieve a significant goal or success, your internal experience is best described as:", "type": "scale", "options": [{"text": "Uncomplicated satisfaction and pride", "points": 0}, {"text": "Pleasure mixed with mild anxiety about maintaining it", "points": 1}, {"text": "Relief rather than joy—I've temporarily escaped failure", "points": 2}, {"text": "Disorientation—success feels less familiar than struggle", "points": 3}, {"text": "A strange emptiness, as though I've lost something important", "points": 4}]},
+      {"id": 2, "text": "Reflecting on your personal narrative, the role of hardship or trauma functions as:", "type": "scale", "options": [{"text": "Unfortunate events I've largely moved past", "points": 0}, {"text": "Challenges that shaped me but don't define me", "points": 1}, {"text": "Central experiences that explain who I am", "points": 2}, {"text": "The foundation of my identity and worldview", "points": 3}, {"text": "The most real and authentic parts of my life story", "points": 4}]},
+      {"id": 3, "text": "In contexts where you could position yourself as competent or authoritative, you tend to:", "type": "scenario", "options": [{"text": "Comfortably claim that expertise when relevant", "points": 0}, {"text": "Acknowledge competence but remain modest about it", "points": 1}, {"text": "Downplay abilities to avoid appearing arrogant", "points": 2}, {"text": "Emphasise what I still don't know or haven't mastered", "points": 3}, {"text": "Find ways to reframe myself as still struggling or learning", "points": 4}]},
+      {"id": 4, "text": "When someone treats you as powerful, capable, or privileged, you feel:", "type": "scale", "options": [{"text": "Accurately perceived—that matches my self-concept", "points": 0}, {"text": "Flattered but aware of my limitations", "points": 1}, {"text": "Uncomfortable with the misperception", "points": 2}, {"text": "Compelled to correct them by revealing my vulnerabilities", "points": 3}, {"text": "Invalidated—they've fundamentally misunderstood who I am", "points": 4}]},
+      {"id": 5, "text": "Consider a relationship where you were clearly the more capable, stable, or resourced person. That dynamic felt:", "type": "scale", "options": [{"text": "Natural and allowed me to contribute generously", "points": 0}, {"text": "Satisfying but I remained aware of their needs", "points": 1}, {"text": "Somewhat uncomfortable—I prefer more balance", "points": 2}, {"text": "Wrong—I don't identify with the position of having more", "points": 3}, {"text": "Unbearable—I needed to rebalance by exposing my inadequacies", "points": 4}]},
+      {"id": 6, "text": "The idea of being 'over' your past pain or trauma makes you feel:", "type": "scale", "options": [{"text": "Hopeful—that's the goal of healing", "points": 0}, {"text": "Cautiously optimistic if it's genuinely possible", "points": 1}, {"text": "Sceptical—some wounds don't fully heal", "points": 2}, {"text": "Resistant—'getting over it' feels like a betrayal", "points": 3}, {"text": "Terrified—without that pain, I wouldn't know who I am", "points": 4}]},
+      {"id": 7, "text": "In professional or social contexts, you find yourself drawn to conversations about:", "type": "scenario", "options": [{"text": "Achievements, opportunities, and future possibilities", "points": 0}, {"text": "A balanced mix of challenges and successes", "points": 1}, {"text": "The difficulties and complexities beneath surface success", "points": 2}, {"text": "Systemic barriers, injustices, and structural obstacles", "points": 3}, {"text": "Shared experiences of woundedness and marginalisation", "points": 4}]},
+      {"id": 8, "text": "When you encounter someone who shares your demographic markers (gender, race, class, etc.) but has achieved significantly more success, you feel:", "type": "scale", "options": [{"text": "Inspired—their success feels accessible to me too", "points": 0}, {"text": "Motivated but aware of luck and circumstance", "points": 1}, {"text": "Ambivalent—pleased for them but aware of my differences", "points": 2}, {"text": "Subtly invalidated—their success implies my struggles are personal failures", "points": 3}, {"text": "Alienated—they must have escaped the structural conditions that trap me", "points": 4}]},
+      {"id": 9, "text": "The prospect of ordinary, stable contentment without dramatic highs or lows feels:", "type": "scale", "options": [{"text": "Ideal—that's what I'm working towards", "points": 0}, {"text": "Appealing though perhaps slightly boring", "points": 1}, {"text": "Fine but not emotionally compelling", "points": 2}, {"text": "Vaguely threatening—like a loss of intensity or meaning", "points": 3}, {"text": "Impossible—I wouldn't recognise myself in that life", "points": 4}]},
+      {"id": 10, "text": "When you advocate for yourself or others facing injustice, the emotional fuel behind that advocacy comes from:", "type": "scale", "options": [{"text": "Principled commitment to fairness and rights", "points": 0}, {"text": "Empathy and desire to prevent unnecessary suffering", "points": 1}, {"text": "Personal experience of similar treatment", "points": 2}, {"text": "A deep identification with the position of the wronged", "points": 3}, {"text": "The advocacy itself being inseparable from my identity", "points": 4}]},
+      {"id": 11, "text": "Imagine all the structural barriers you face were suddenly removed. Your honest reaction would be:", "type": "scenario", "options": [{"text": "Liberated—I could finally pursue my goals freely", "points": 0}, {"text": "Relieved and energised to move forward", "points": 1}, {"text": "Appreciative but aware that internal challenges remain", "points": 2}, {"text": "Disoriented—I'd need to find new explanations for my struggles", "points": 3}, {"text": "Panicked—those barriers are load-bearing structures in my psyche", "points": 4}]},
+      {"id": 12, "text": "In intimate relationships, you find yourself most comfortable when:", "type": "scale", "options": [{"text": "Both people are thriving and mutually supportive", "points": 0}, {"text": "There's reciprocal care with natural ebbs and flows", "points": 1}, {"text": "Your vulnerabilities are acknowledged and held", "points": 2}, {"text": "Your wounds are central and require ongoing attention", "points": 3}, {"text": "The relationship is organised around your fundamental inadequacy", "points": 4}]},
+      {"id": 13, "text": "When you observe privilege in others, your primary response is:", "type": "scale", "options": [{"text": "Neutral observation of different circumstances", "points": 0}, {"text": "Mild envy tempered by recognition of trade-offs", "points": 1}, {"text": "Critical awareness of unearned advantage", "points": 2}, {"text": "Moral indignation that sharpens my own identity position", "points": 3}, {"text": "A bitter satisfaction that confirms my victimised position", "points": 4}]},
+      {"id": 14, "text": "If a trusted person suggested that you derive unconscious satisfaction from your suffering, you would feel:", "type": "scale", "options": [{"text": "Confused—I genuinely want the suffering to end", "points": 0}, {"text": "Defensive but willing to consider it intellectually", "points": 1}, {"text": "Uncomfortable because it partially resonates", "points": 2}, {"text": "Angry—that's a cruel mischaracterisation of real pain", "points": 3}, {"text": "Devastated—they've threatened the foundation of my identity", "points": 4}]},
+      {"id": 15, "text": "Looking at the trajectory of your life, the narrative that feels most true is:", "type": "scenario", "options": [{"text": "Progressive growth with setbacks as learning opportunities", "points": 0}, {"text": "Mixed experiences that have shaped a complex self", "points": 1}, {"text": "Overcoming obstacles through resilience and adaptation", "points": 2}, {"text": "Persistent struggle against forces beyond my control", "points": 3}, {"text": "A coherent story of systematic victimisation that explains everything", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "The Resilient Subject", "summary": "Your identity is not organised around structural inadequacy or victimisation.", "analysis": "Your responses suggest that suffering, when it occurs, remains episodic rather than constitutive. You have not installed victimhood as the stable platform from which you relate to the world. This does not mean you haven't experienced genuine hardship—it means that hardship has not colonised your psychic structure as the master signifier around which everything else revolves. You likely possess a flexibility that allows you to occupy different positions: capable and vulnerable, powerful and limited, without existential crisis. The danger for you is not the economy of triumphant victimhood but potentially a different set of neurotic structures—perhaps obsessional defences against vulnerability, or hysterical demands for recognition that you cannot articulate. Your challenge is not to escape a victimhood architecture you don't inhabit, but to remain honest about whatever psychic strategies you do employ.", "referral": "To understand the broader context of identity formation beyond victimhood structures, see 'Triumphant Victim', particularly the Introduction and Chapters One and Two on The Subject's Impossible Position."},
+      {"minScore": 21, "maxScore": 35, "profileName": "The Ambivalent Survivor", "summary": "You oscillate between resilience narratives and identification with structural inadequacy.", "analysis": "Your responses reveal an unstable position where victimhood has significant but not totalising organising power. You have one foot in the economy of triumphant victimhood and one foot outside it. This suggests a neurotic structure where you feel the pull of identification with suffering but retain enough distance to recognise it as partial or problematic. You may experience this as internal conflict—part of you wants to move beyond the wound whilst another part clings to it as the most reliable source of identity and meaning. This divided position can be productive if it generates self-awareness, but it can also become exhausting, leaving you in perpetual negotiation with yourself about what you're allowed to claim and who you're allowed to be. The risk is remaining stuck in this oscillation rather than working through what the victimhood position provides that you are afraid to lose.", "referral": "For an exploration of this ambivalent position, see 'Triumphant Victim', especially Chapters Three through Five on The Double Structure of Suffering and The Libidinal Payoff of Inadequacy."},
+      {"minScore": 36, "maxScore": 50, "profileName": "The Embedded Victim", "summary": "Victimhood has become a load-bearing structure in your psychic architecture and social identity.", "analysis": "Your responses indicate that structural inadequacy is not simply something that happened to you—it has become who you are. You have discovered, perhaps without conscious intent, that the position of the victim provides a stable identity, a coherent narrative, and even a peculiar satisfaction that more conventional forms of achievement cannot deliver. This is not 'playing victim' in the trivial sense—it is a profound psychic reorganisation where your very sense of reality depends on maintaining this position. Success threatens you with disintegration; recognition of power or privilege feels like annihilation. You may have built relationships, career paths, and entire communities around this shared identification with woundedness. The question Miller poses is not whether your suffering is 'real'—it is—but whether you have become invested in its perpetuation because dismantling it would require rebuilding your entire subjective edifice from the ground up. The challenge is whether you can tolerate the loss of this architecture without losing yourself entirely.", "referral": "To understand the full implications of this structure and what might lie beyond it, engage with 'Triumphant Victim' in its entirety, particularly Part Two on The Triumphant Economy of Suffering and Part Three on The Impossibility of Cure."},
+      {"minScore": 51, "maxScore": 60, "profileName": "The Fortified Victim", "summary": "Victimhood has achieved near-total consolidation as your foundational identity structure.", "analysis": "Your responses suggest that the architecture of triumphant victimhood has achieved maximum density and integration. You have not simply identified with inadequacy—you have built an entire subjective fortress around it. Every aspect of your life may now be filtered through this lens: relationships are evaluated based on who properly witnesses your wounds; achievements are immediately reframed as exceptions that prove the structural rule; any suggestion that you possess power or privilege is experienced as a violent assault on your core being. This position provides extraordinary secondary gains: moral authority, relational centrality, freedom from the demands of reciprocity, and protection from the anxiety of genuine agency. But it comes at a devastating cost—you are trapped in a repetition compulsion where you must continually reproduce the conditions of your victimisation to maintain psychic coherence. The question Miller raises is whether this architecture can be dismantled at all, or whether it has become so totalising that any challenge to it triggers something akin to psychotic breakdown. You face the analyst's most difficult dilemma: the cure would require losing the very thing that holds you together.", "referral": "For the most rigorous analysis of this structure and its clinical implications, study 'Triumphant Victim' completely, paying special attention to Part Three on The Structural Impossibility of Emergence and the Epilogue on The Ethics of Confronting the Fortified Subject."}
+    ]
+  },
+  "FR": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "Le Profil d'Architecture de la Victimisation",
+      "description": "Une exploration psychanalytique complète de la manière dont l'identité se consolide autour de l'inadéquation structurelle et de la souffrance performative.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "AVERTISSEMENT: Cet outil est destiné à des fins éducatives et promotionnelles uniquement. Il est basé sur les concepts théoriques de John F. Miller et n'est PAS un outil de diagnostic clinique. Si vous souffrez de détresse psychologique, veuillez consulter un professionnel qualifié.",
+    "questions": [
+      {"id": 1, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 2, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 3, "text": "[FR]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 4, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 5, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 6, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 7, "text": "[FR]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 8, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 9, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 10, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 11, "text": "[FR]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 12, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 13, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 14, "text": "[FR]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 15, "text": "[FR]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "Le Sujet Résilient", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "Le Survivant Ambivalent", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "La Victime Intégrée", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "La Victime Fortifiée", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"}
+    ]
+  },
+  "ES": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "El Perfil de Arquitectura de la Victimización",
+      "description": "Una exploración psicoanalítica integral de cómo la identidad se consolida en torno a la inadecuación estructural y el sufrimiento performativo.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "DESCARGO DE RESPONSABILIDAD: Esta herramienta es solo para fines educativos y promocionales. Se basa en los conceptos teóricos de John F. Miller y NO es una herramienta de diagnóstico clínico. Si experimenta angustia de salud mental, consulte a un profesional calificado.",
+    "questions": [
+      {"id": 1, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 2, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 3, "text": "[ES]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 4, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 5, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 6, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 7, "text": "[ES]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 8, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 9, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 10, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 11, "text": "[ES]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 12, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 13, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 14, "text": "[ES]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 15, "text": "[ES]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "El Sujeto Resiliente", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "El Sobreviviente Ambivalente", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "La Víctima Integrada", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "La Víctima Fortificada", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"}
+    ]
+  },
+  "NO": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "Offerprofilen Arkitektur",
+      "description": "En omfattende psykoanalytisk utforskning av hvordan identitet konsolideres rundt strukturell utilstrekkelighet og performativ lidelse.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "ANSVARSFRASKRIVELSE: Dette verktøyet er kun til pedagogiske og kampanjeformål. Det er basert på de teoretiske konseptene til John F. Miller og er IKKE et klinisk diagnostisk verktøy. Hvis du opplever psykisk nød, vennligst konsulter en kvalifisert profesjonell.",
+    "questions": [
+      {"id": 1, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 2, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 3, "text": "[NO]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 4, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 5, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 6, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 7, "text": "[NO]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 8, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 9, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 10, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 11, "text": "[NO]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 12, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 13, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 14, "text": "[NO]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 15, "text": "[NO]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "Det Resiliente Subjekt", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "Den Ambivalente Overlevende", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "Det Innebygde Offer", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "Det Befestede Offer", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"}
+    ]
+  },
+  "PL": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "Profil Architektury Wiktymizacji",
+      "description": "Kompleksowa psychoanalityczna eksploracja tego, jak tożsamość konsoliduje się wokół strukturalnej nieadekwatności i performatywnego cierpienia.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "ZASTRZEŻENIE: To narzędzie służy wyłącznie celom edukacyjnym i promocyjnym. Opiera się na koncepcjach teoretycznych Johna F. Millera i NIE jest klinicznym narzędziem diagnostycznym. Jeśli doświadczasz cierpienia psychicznego, skonsultuj się z wykwalifikowanym specjalistą.",
+    "questions": [
+      {"id": 1, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 2, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 3, "text": "[PL]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 4, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 5, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 6, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 7, "text": "[PL]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 8, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 9, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 10, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 11, "text": "[PL]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 12, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 13, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 14, "text": "[PL]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 15, "text": "[PL]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "Resilientny Podmiot", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "Ambiwalentny Ocalały", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "Ofiara Wbudowana", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "Ofiara Ufortyfikowana", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"}
+    ]
+  },
+  "LA": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "Architectura Victimae Profilus",
+      "description": "Exploratio psychoanalytica comprehensiva quomodo identitas circa inadequationem structuralem et afflictionem performativam consolidatur.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 mins"
+    },
+    "disclaimer": "MONITUM: Hoc instrumentum solum ad fines educationis et promotionis est. In conceptibus theoreticis Ioannis F. Miller fundatur et instrumentum diagnosticum clinicum NON est. Si aegritudinem mentis pateris, professionalem qualificatum consulere debes.",
+    "questions": [
+      {"id": 1, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 2, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 3, "text": "[LA]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 4, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 5, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 6, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 7, "text": "[LA]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 8, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 9, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 10, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 11, "text": "[LA]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 12, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 13, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 14, "text": "[LA]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 15, "text": "[LA]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "Subiectum Resiliens", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "Superstes Ambivalens", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "Victima Incorporata", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "Victima Munita", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"}
+    ]
+  },
+  "EGY": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "ملف هندسة الضحية",
+      "description": "استكشاف تحليلي نفسي شامل لكيفية تماسك الهوية حول عدم الكفاءة الهيكلية والمعاناة الأدائية.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10 دقائق"
+    },
+    "disclaimer": "تنويه: هذه الأداة لأغراض تعليمية وترويجية فقط. تستند إلى المفاهيم النظرية لجون ف. ميلر وليست أداة تشخيص سريري. إذا كنت تعاني من ضائقة نفسية، يرجى استشارة متخصص مؤهل.",
+    "questions": [
+      {"id": 1, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 2, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 3, "text": "[EGY]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 4, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 5, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 6, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 7, "text": "[EGY]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 8, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 9, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 10, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 11, "text": "[EGY]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 12, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 13, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 14, "text": "[EGY]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 15, "text": "[EGY]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "الذات المرنة", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "الناجي المتناقض", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "الضحية المدمجة", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "الضحية المحصنة", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"}
+    ]
+  },
+  "ZH": {
+    "meta": {
+      "id": "victimhood_architecture_profile",
+      "title": "受害者架构档案",
+      "description": "全面的精神分析探索,揭示身份如何围绕结构性不足和表演性痛苦而巩固。",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "10分钟"
+    },
+    "disclaimer": "免责声明:此工具仅用于教育和宣传目的。它基于约翰·F·米勒的理论概念,不是临床诊断工具。如果您正在经历心理健康困扰,请咨询合格的专业人士。",
+    "questions": [
+      {"id": 1, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 2, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 3, "text": "[ZH]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 4, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 5, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 6, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 7, "text": "[ZH]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 8, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 9, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 10, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 11, "text": "[ZH]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 12, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 13, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 14, "text": "[ZH]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 15, "text": "[ZH]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 20, "profileName": "有韧性的主体", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 21, "maxScore": 35, "profileName": "矛盾的幸存者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 36, "maxScore": 50, "profileName": "嵌入式受害者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 51, "maxScore": 60, "profileName": "强化受害者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"}
+    ]
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "EN": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "The Analyst's Dilemma",
+      "description": "A diagnostic tool for clinicians, leaders, and educators navigating the tension between interpretive authority and ethical silence.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "DISCLAIMER: This tool is for educational and promotional purposes only. It is based on the theoretical concepts of John F. Miller and is NOT a clinical diagnostic tool. If you are experiencing mental health distress, please consult a qualified professional.",
+    "questions": [
+      {
+        "id": 1,
+        "text": "When a client/student/report presents material that you immediately recognise as significant, your first impulse is to:",
+        "type": "scenario",
+        "options": [
+          {"text": "Intervene quickly to prevent them from missing the insight", "points": 0},
+          {"text": "Offer a tentative interpretation to guide their discovery", "points": 1},
+          {"text": "Wait to see if they arrive at it themselves, then confirm", "points": 2},
+          {"text": "Remain silent and allow the meaning to emerge organically", "points": 3},
+          {"text": "Question whether my recognition is itself a countertransferential distortion", "points": 4}
+        ]
+      },
+      {
+        "id": 2,
+        "text": "You have a clear interpretation that would dramatically reframe the situation. Withholding it feels like:",
+        "type": "scale",
+        "options": [
+          {"text": "Negligence—I have a responsibility to share what I know", "points": 0},
+          {"text": "Difficult but sometimes necessary for their autonomy", "points": 1},
+          {"text": "Strategic—timing determines whether insight is productive", "points": 2},
+          {"text": "Ethical—my certainty may be the problem, not the solution", "points": 3},
+          {"text": "Inevitable—all interpretation is a form of colonising violence", "points": 4}
+        ]
+      },
+      {
+        "id": 3,
+        "text": "A supervisee/colleague consistently misses what seems obvious to you. You:",
+        "type": "scenario",
+        "options": [
+          {"text": "Directly name what they're missing—clarity is kindness", "points": 0},
+          {"text": "Use pointed questions to lead them toward the insight", "points": 1},
+          {"text": "Offer multiple possible interpretations including yours", "points": 2},
+          {"text": "Explore what makes this particular blindness necessary for them", "points": 3},
+          {"text": "Consider that my 'obviousness' reveals my own scopophilic investment", "points": 4}
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When your interpretation is met with resistance or denial, you typically:",
+        "type": "scale",
+        "options": [
+          {"text": "Become more insistent—resistance confirms I've touched the truth", "points": 0},
+          {"text": "Rephrase it in more accessible language", "points": 1},
+          {"text": "Withdraw and return to it later from another angle", "points": 2},
+          {"text": "Treat the resistance itself as the more important material", "points": 3},
+          {"text": "Question whether my need to be right has damaged the alliance", "points": 4}
+        ]
+      },
+      {
+        "id": 5,
+        "text": "In your role, silence primarily functions as:",
+        "type": "scale",
+        "options": [
+          {"text": "A waste of time—active intervention drives progress", "points": 0},
+          {"text": "A brief pause before offering guidance", "points": 1},
+          {"text": "A space for the other person to think and feel", "points": 2},
+          {"text": "A refusal to foreclose meaning prematurely", "points": 3},
+          {"text": "The ethical position—interpretation is always violent", "points": 4}
+        ]
+      },
+      {
+        "id": 6,
+        "text": "You realise retrospectively that a past interpretation was wrong or harmful. This makes you feel:",
+        "type": "scale",
+        "options": [
+          {"text": "Frustrated with myself for missing the correct reading", "points": 0},
+          {"text": "Committed to being more careful with future interpretations", "points": 1},
+          {"text": "Aware that all interpretation contains this risk", "points": 2},
+          {"text": "Concerned about the authority I claimed in that moment", "points": 3},
+          {"text": "Convinced that the interpretive position itself is ethically compromised", "points": 4}
+        ]
+      },
+      {
+        "id": 7,
+        "text": "When someone explicitly asks you for your interpretation or expert opinion, you:",
+        "type": "scenario",
+        "options": [
+          {"text": "Provide it directly—they've given permission", "points": 0},
+          {"text": "Offer a carefully qualified version of what I think", "points": 1},
+          {"text": "Ask what they imagine I might say before responding", "points": 2},
+          {"text": "Explore why they need my authoritative reading", "points": 3},
+          {"text": "Experience the request itself as a trap I should refuse", "points": 4}
+        ]
+      },
+      {
+        "id": 8,
+        "text": "The idea that 'knowing better than the other' is inherently problematic feels:",
+        "type": "scale",
+        "options": [
+          {"text": "Absurd—expertise exists for a reason", "points": 0},
+          {"text": "Overstated—hierarchy can be benevolent", "points": 1},
+          {"text": "Partially true—power must be handled carefully", "points": 2},
+          {"text": "Fundamentally correct—knowledge is always power", "points": 3},
+          {"text": "Absolutely true—all interpretation is epistemically violent", "points": 4}
+        ]
+      }
+    ],
+    "results": [
+      {
+        "minScore": 0,
+        "maxScore": 10,
+        "profileName": "The Certain Interpreter",
+        "summary": "You occupy the position of the one who knows, intervening actively with interpretive authority.",
+        "analysis": "Your responses suggest a strong identification with mastery and expertise. You experience your interpretive capacity as a tool to be deployed rather than a potential violence to be cautiously negotiated. This position is not inherently pathological—it may serve you and others well in contexts that demand decisive intervention. However, it carries the risk of colonising the other's subjective space, foreclosing meanings that do not align with your theoretical framework, and reproducing hierarchies where your knowledge becomes the only knowledge that matters. You may inadvertently create dependence rather than fostering autonomy, and you risk missing the ways your interpretations serve your own narcissistic needs rather than the other's development. The question is not whether you are wrong but whether you have sufficiently examined the power dynamics embedded in your certainty.",
+        "referral": "To explore the ethical problems embedded in interpretive authority, see 'Do You Read Me', especially the chapters on The Master's Discourse and The Analyst's Refusal of Knowledge."
+      },
+      {
+        "minScore": 11,
+        "maxScore": 21,
+        "profileName": "The Strategic Guide",
+        "summary": "You balance interpretive intervention with strategic restraint, calibrating based on context and relationship.",
+        "analysis": "You occupy a middle position that recognises both the necessity and the danger of interpretation. This suggests a neurotic negotiation of the analyst's dilemma—you have not resolved the tension but have developed practices for managing it case by case. You likely experience ongoing internal conflict between the impulse to share what you know and the ethical imperative to hold back. This position is sophisticated and reflects clinical maturity, but it may also mask an underlying ambivalence about authority itself. You risk becoming paralysed by deliberation, or you may deploy restraint strategically in ways that still centre your expertise as the silent arbiter of truth. The challenge is to inhabit this tension without collapsing into either authoritarian certainty or abdicated negligence, and to remain vigilant about the ways power operates even in your silences.",
+        "referral": "For an exploration of how to ethically navigate this tension without resolving it, engage with 'Do You Read Me', particularly Part Two on The Timing of Interpretation and The Analyst's Desire."
+      },
+      {
+        "minScore": 22,
+        "maxScore": 32,
+        "profileName": "The Hesitant Witness",
+        "summary": "You have become deeply sceptical of interpretive authority, privileging silence and self-questioning over intervention.",
+        "analysis": "Your responses indicate that you have traversed the fantasy of the analyst's mastery and arrived at a position of profound ethical hesitation. You recognise that all interpretation risks violence, that knowledge can be a form of domination, and that the other's autonomy may be best served by your refusal to occupy the position of the one who knows. This is a valuable insight that protects against many clinical and institutional abuses. However, it carries its own dangers: the position can become paralysing, transforming ethical caution into a refusal to engage that abandons the other to their own confusion. Your silence may feel ethical but it can also constitute a form of neglect, a withholding that leaves the other without the support they need. The question is whether your hesitation serves the other or serves your own anxieties about authority and complicity. There is a difference between ethical restraint and a phobic avoidance of responsibility.",
+        "referral": "To understand the risks of excessive interpretive abstinence and the responsibility embedded in clinical silence, see 'Do You Read Me', especially the final chapters on The Ethics of the Act and Interpretation as Wager."
+      }
+    ]
+  },
+  "FR": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "Le Dilemme de l'Analyste",
+      "description": "Un outil diagnostique pour cliniciens, leaders et éducateurs naviguant la tension entre autorité interprétative et silence éthique.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "AVERTISSEMENT: Cet outil est destiné à des fins éducatives et promotionnelles uniquement. Il est basé sur les concepts théoriques de John F. Miller et n'est PAS un outil de diagnostic clinique. Si vous souffrez de détresse psychologique, veuillez consulter un professionnel qualifié.",
+    "questions": [
+      {"id": 1, "text": "[Full French translation]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 2, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 3, "text": "[Full French translation]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 4, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 5, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 6, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 7, "text": "[Full French translation]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 8, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "L'Interprète Certain", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Le Guide Stratégique", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Le Témoin Hésitant", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"}
+    ]
+  },
+  "ES": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "El Dilema del Analista",
+      "description": "Una herramienta diagnóstica para clínicos, líderes y educadores que navegan la tensión entre autoridad interpretativa y silencio ético.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "DESCARGO DE RESPONSABILIDAD: Esta herramienta es solo para fines educativos y promocionales. Se basa en los conceptos teóricos de John F. Miller y NO es una herramienta de diagnóstico clínico. Si experimenta angustia de salud mental, consulte a un profesional calificado.",
+    "questions": [
+      {"id": 1, "text": "[Full Spanish translation]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 2, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 3, "text": "[Full Spanish translation]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 4, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 5, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 6, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 7, "text": "[Full Spanish translation]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 8, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "El Intérprete Seguro", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "El Guía Estratégico", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "El Testigo Vacilante", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"}
+    ]
+  },
+  "NO": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "Analytikeren Dilemma",
+      "description": "Et diagnostisk verktøy for klinikere, ledere og pedagoger som navigerer spenningen mellom tolkende autoritet og etisk taushet.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "ANSVARSFRASKRIVELSE: Dette verktøyet er kun til pedagogiske og kampanjeformål. Det er basert på de teoretiske konseptene til John F. Miller og er IKKE et klinisk diagnostisk verktøy. Hvis du opplever psykisk nød, vennligst konsulter en kvalifisert profesjonell.",
+    "questions": [
+      {"id": 1, "text": "[Full Norwegian translation]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 2, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 3, "text": "[Full Norwegian translation]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 4, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 5, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 6, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 7, "text": "[Full Norwegian translation]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 8, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Den Sikre Tolker", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Den Strategiske Veilederen", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Det Nølende Vitnet", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"}
+    ]
+  },
+  "PL": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "Dylemat Analityka",
+      "description": "Narzędzie diagnostyczne dla klinicystów, liderów i edukatorów poruszających się w napięciu między autorytetem interpretacyjnym a etycznym milczeniem.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "ZASTRZEŻENIE: To narzędzie służy wyłącznie celom edukacyjnym i promocyjnym. Opiera się na koncepcjach teoretycznych Johna F. Millera i NIE jest klinicznym narzędziem diagnostycznym. Jeśli doświadczasz cierpienia psychicznego, skonsultuj się z wykwalifikowanym specjalistą.",
+    "questions": [
+      {"id": 1, "text": "[Full Polish translation]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 2, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 3, "text": "[Full Polish translation]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 4, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 5, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 6, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 7, "text": "[Full Polish translation]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 8, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Pewny Interpretator", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Strategiczny Przewodnik", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Wahający się Świadek", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"}
+    ]
+  },
+  "LA": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "Dilemma Analytici",
+      "description": "Instrumentum diagnosticum pro clinicis, ducibus et educatoribus tensionem inter auctoritatem interpretativam et silentium ethicum navigantibus.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 mins"
+    },
+    "disclaimer": "MONITUM: Hoc instrumentum solum ad fines educationis et promotionis est. In conceptibus theoreticis Ioannis F. Miller fundatur et instrumentum diagnosticum clinicum NON est. Si aegritudinem mentis pateris, professionalem qualificatum consulere debes.",
+    "questions": [
+      {"id": 1, "text": "[Full Latin translation]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 2, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 3, "text": "[Full Latin translation]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 4, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 5, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 6, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 7, "text": "[Full Latin translation]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 8, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Interpres Certus", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Dux Strategicus", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Testis Haesitans", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"}
+    ]
+  },
+  "EGY": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "معضلة المحلل",
+      "description": "أداة تشخيصية للأطباء والقادة والمعلمين الذين يبحرون في التوتر بين السلطة التفسيرية والصمت الأخلاقي.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6 دقائق"
+    },
+    "disclaimer": "تنويه: هذه الأداة لأغراض تعليمية وترويجية فقط. تستند إلى المفاهيم النظرية لجون ف. ميلر وليست أداة تشخيص سريري. إذا كنت تعاني من ضائقة نفسية، يرجى استشارة متخصص مؤهل.",
+    "questions": [
+      {"id": 1, "text": "[Full Egyptian Arabic translation]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 2, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 3, "text": "[Full Egyptian Arabic translation]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 4, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 5, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 6, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 7, "text": "[Full Egyptian Arabic translation]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 8, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "المفسر المتأكد", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "المرشد الاستراتيجي", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "الشاهد المتردد", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"}
+    ]
+  },
+  "ZH": {
+    "meta": {
+      "id": "analyst_dilemma",
+      "title": "分析师的困境",
+      "description": "为临床医生、领导者和教育工作者设计的诊断工具,帮助他们驾驭解释权威与伦理沉默之间的张力。",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "6分钟"
+    },
+    "disclaimer": "免责声明:此工具仅用于教育和宣传目的。它基于约翰·F·米勒的理论概念,不是临床诊断工具。如果您正在经历心理健康困扰,请咨询合格的专业人士。",
+    "questions": [
+      {"id": 1, "text": "[Full Mandarin translation]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 2, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 3, "text": "[Full Mandarin translation]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 4, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 5, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 6, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 7, "text": "[Full Mandarin translation]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 8, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "确定的诠释者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "战略性引导者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "犹豫的见证者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"}
+    ]
+  }
+}

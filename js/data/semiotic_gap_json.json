@@ -1,0 +1,311 @@
+{
+  "EN": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "The Semiotic Gap Analysis",
+      "description": "An evaluation of how you navigate the constitutive failure of language to transmit meaning across the divide between subjects.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "DISCLAIMER: This tool is for educational and promotional purposes only. It is based on the theoretical concepts of John F. Miller and is NOT a clinical diagnostic tool. If you are experiencing mental health distress, please consult a qualified professional.",
+    "questions": [
+      {
+        "id": 1,
+        "text": "When someone close to you says 'I understand', your immediate internal response is:",
+        "type": "scale",
+        "options": [
+          {"text": "Relief—they have finally grasped what I meant", "points": 0},
+          {"text": "Cautious hope—perhaps they understand enough", "points": 1},
+          {"text": "Scepticism—they understand their version, not mine", "points": 2},
+          {"text": "Frustration—they clearly don't, but think they do", "points": 3},
+          {"text": "Acceptance—understanding is always approximate at best", "points": 4}
+        ]
+      },
+      {
+        "id": 2,
+        "text": "After an argument where you feel profoundly misunderstood, you typically attribute the failure to:",
+        "type": "scale",
+        "options": [
+          {"text": "Their unwillingness to truly listen to what I said", "points": 0},
+          {"text": "Their limited capacity to grasp my particular meaning", "points": 1},
+          {"text": "A combination of both our communicative limitations", "points": 2},
+          {"text": "The inherent instability of words themselves", "points": 3},
+          {"text": "The structural impossibility of one subject accessing another's Real", "points": 4}
+        ]
+      },
+      {
+        "id": 3,
+        "text": "You have spent significant time crafting a message to convey something important. The recipient responds in a way that completely misses your intended meaning. You:",
+        "type": "scenario",
+        "options": [
+          {"text": "Feel angry—I was perfectly clear, they chose not to understand", "points": 0},
+          {"text": "Try again with different words, certain I can close the gap", "points": 1},
+          {"text": "Feel disappointed but recognise communication is imperfect", "points": 2},
+          {"text": "Experience it as confirmation that language always betrays us", "points": 3},
+          {"text": "Feel strangely unsurprised—the gap itself is the structure we inhabit", "points": 4}
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When you say 'I love you' to someone, you experience the phrase as:",
+        "type": "scale",
+        "options": [
+          {"text": "An adequate transmission of the feeling I have", "points": 0},
+          {"text": "A somewhat clumsy approximation of something larger", "points": 1},
+          {"text": "A conventional marker that points toward the unsayable", "points": 2},
+          {"text": "A signifier impossibly distant from what it attempts to signify", "points": 3},
+          {"text": "A ritual acknowledgement that meaning cannot traverse the gap between us", "points": 4}
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Consider a moment when someone genuinely seemed to 'get' you. What made that recognition possible?",
+        "type": "scale",
+        "options": [
+          {"text": "I finally found the right words to express myself clearly", "points": 0},
+          {"text": "They were particularly attentive and intelligent", "points": 1},
+          {"text": "We shared enough contextual overlap to bridge the gap", "points": 2},
+          {"text": "They correctly interpreted my unconscious signifiers", "points": 3},
+          {"text": "An illusory moment where we both pretended the gap didn't exist", "points": 4}
+        ]
+      },
+      {
+        "id": 6,
+        "text": "In your most intimate relationships, the persistent experience of being 'not quite understood' makes you feel:",
+        "type": "scale",
+        "options": [
+          {"text": "Frustrated—it suggests we're not truly compatible", "points": 0},
+          {"text": "Motivated to communicate better until we align", "points": 1},
+          {"text": "Resigned but hopeful that partial understanding is enough", "points": 2},
+          {"text": "Melancholic about the fundamental solitude of subjectivity", "points": 3},
+          {"text": "Paradoxically intimate—the gap itself is where we meet", "points": 4}
+        ]
+      },
+      {
+        "id": 7,
+        "text": "When professional or personal communication fails catastrophically, your tendency is to:",
+        "type": "scenario",
+        "options": [
+          {"text": "Identify who was at fault and hold them accountable", "points": 0},
+          {"text": "Analyse what specific miscommunication occurred and correct it", "points": 1},
+          {"text": "Acknowledge both parties' role in the breakdown", "points": 2},
+          {"text": "Recognise that all communication contains the seeds of its failure", "points": 3},
+          {"text": "See it as an eruption of the Real that language cannot contain", "points": 4}
+        ]
+      },
+      {
+        "id": 8,
+        "text": "The idea that you will never be fully known by another person feels:",
+        "type": "scale",
+        "options": [
+          {"text": "False—true intimacy means complete mutual transparency", "points": 0},
+          {"text": "Pessimistic—we can get very close with enough effort", "points": 1},
+          {"text": "Realistic—but partial knowledge can still be profound", "points": 2},
+          {"text": "Inevitable—the subject is opaque even to itself", "points": 3},
+          {"text": "Structurally constitutive—we exist precisely in that unknowability", "points": 4}
+        ]
+      }
+    ],
+    "results": [
+      {
+        "minScore": 0,
+        "maxScore": 10,
+        "profileName": "The Transparent Believer",
+        "summary": "You maintain faith in language's capacity to transmit meaning across subjects.",
+        "analysis": "Your responses suggest an imaginary investment in communicative transparency—the belief that with sufficient clarity, precision, or effort, the gap between signifier and signified can be closed. This position is not 'wrong', but it may leave you perpetually frustrated when language inevitably fails to deliver the communion you seek. You likely experience miscommunication as a moral failure rather than a structural condition, leading to cycles of blame directed at yourself or others. The risk is that you will exhaust yourself trying to repair something that is not broken but is instead operating exactly as language must—at a distance from the Real it attempts to capture.",
+        "referral": "To explore why communication necessarily fails, begin with 'Do You Read Me', particularly the chapters on The Signifier's Autonomy and The Imaginary Demand for Wholeness."
+      },
+      {
+        "minScore": 11,
+        "maxScore": 21,
+        "profileName": "The Pragmatic Negotiator",
+        "summary": "You accept communication's imperfections while working to minimise misunderstanding.",
+        "analysis": "You occupy a middle position that acknowledges linguistic limitation without surrendering to nihilism. This suggests a neurotic structure that can tolerate ambiguity and partial failures without collapsing into either imaginary fusion or psychotic fragmentation. You have likely developed compensatory strategies—contextual scaffolding, metacommunication, patience—that allow you to navigate the semiotic gap without denying its existence. The danger here is a certain exhaustion, as you must constantly labour to bridge what cannot ultimately be bridged. You may also miss the radical implications of the gap itself, treating it as a problem to be managed rather than as the very condition of subjectivity and desire.",
+        "referral": "For a deeper engagement with how the gap structures rather than obstructs meaning, see 'Do You Read Me', especially the sections on Negative Capability and The Ethics of Misunderstanding."
+      },
+      {
+        "minScore": 22,
+        "maxScore": 32,
+        "profileName": "The Semiotic Realist",
+        "summary": "You recognise the structural impossibility of closing the gap between subjects and signifiers.",
+        "analysis": "Your responses indicate that you have traversed the fantasy of communicative wholeness and accepted the constitutive gap as the very ground of language and relation. This is not pessimism but a form of semiotic realism—you understand that the signifier's failure to capture the Real is not a bug but the essential feature that makes meaning possible at all. You likely experience less frustration with miscommunication because you do not demand that language perform miracles it was never designed for. However, this position carries its own risks: a certain detachment or melancholic resignation, and potentially a withdrawal from the ethical labour of attempting connection despite the gap. The challenge is to inhabit this knowledge without using it as an excuse to abandon the attempt to speak and be heard.",
+        "referral": "To understand the ethical and clinical implications of accepting the semiotic gap, engage with 'Do You Read Me' in its entirety, particularly Part Three on The Analyst's Wager and how interpretation operates within structural impossibility."
+      }
+    ]
+  },
+  "FR": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "L'Analyse de l'Écart Sémiotique",
+      "description": "Une évaluation de la manière dont vous naviguez l'échec constitutif du langage à transmettre le sens à travers la division entre sujets.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "AVERTISSEMENT: Cet outil est destiné à des fins éducatives et promotionnelles uniquement. Il est basé sur les concepts théoriques de John F. Miller et n'est PAS un outil de diagnostic clinique. Si vous souffrez de détresse psychologique, veuillez consulter un professionnel qualifié.",
+    "questions": [
+      {"id": 1, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 2, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 3, "text": "[Full French translation]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 4, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 5, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 6, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 7, "text": "[Full French translation]", "type": "scenario", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]},
+      {"id": 8, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 0}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Le Croyant Transparent", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Le Négociateur Pragmatique", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Le Réaliste Sémiotique", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"}
+    ]
+  },
+  "ES": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "El Análisis de la Brecha Semiótica",
+      "description": "Una evaluación de cómo navegas el fracaso constitutivo del lenguaje para transmitir significado a través de la división entre sujetos.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "DESCARGO DE RESPONSABILIDAD: Esta herramienta es solo para fines educativos y promocionales. Se basa en los conceptos teóricos de John F. Miller y NO es una herramienta de diagnóstico clínico. Si experimenta angustia de salud mental, consulte a un profesional calificado.",
+    "questions": [
+      {"id": 1, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 2, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 3, "text": "[Full Spanish translation]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 4, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 5, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 6, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 7, "text": "[Full Spanish translation]", "type": "scenario", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]},
+      {"id": 8, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 0}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "El Creyente Transparente", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "El Negociador Pragmático", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "El Realista Semiótico", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"}
+    ]
+  },
+  "NO": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "Den Semiotiske Gapanalysen",
+      "description": "En evaluering av hvordan du navigerer språkets konstitutive svikt i å overføre mening på tvers av skillet mellom subjekter.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "ANSVARSFRASKRIVELSE: Dette verktøyet er kun til pedagogiske og kampanjeformål. Det er basert på de teoretiske konseptene til John F. Miller og er IKKE et klinisk diagnostisk verktøy. Hvis du opplever psykisk nød, vennligst konsulter en kvalifisert profesjonell.",
+    "questions": [
+      {"id": 1, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 2, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 3, "text": "[Full Norwegian translation]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 4, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 5, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 6, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 7, "text": "[Full Norwegian translation]", "type": "scenario", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]},
+      {"id": 8, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 0}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Den Transparente Troende", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Den Pragmatiske Forhandleren", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Den Semiotiske Realisten", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"}
+    ]
+  },
+  "PL": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "Analiza Luki Semiotycznej",
+      "description": "Ocena tego, jak nawigujesz konstytutywną porażką języka w przekazywaniu znaczenia przez przepaść między podmiotami.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "ZASTRZEŻENIE: To narzędzie służy wyłącznie celom edukacyjnym i promocyjnym. Opiera się na koncepcjach teoretycznych Johna F. Millera i NIE jest klinicznym narzędziem diagnostycznym. Jeśli doświadczasz cierpienia psychicznego, skonsultuj się z wykwalifikowanym specjalistą.",
+    "questions": [
+      {"id": 1, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 2, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 3, "text": "[Full Polish translation]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 4, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 5, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 6, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 7, "text": "[Full Polish translation]", "type": "scenario", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]},
+      {"id": 8, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 0}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Transparentny Wierzący", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Pragmatyczny Negocjator", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Semiotyczny Realista", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"}
+    ]
+  },
+  "LA": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "Analysis Intervalli Semiotici",
+      "description": "Aestimatio quomodo defectum constitutivum linguae in transmittendo sensu trans divisionem inter subiecta navigas.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 mins"
+    },
+    "disclaimer": "MONITUM: Hoc instrumentum solum ad fines educationis et promotionis est. In conceptibus theoreticis Ioannis F. Miller fundatur et instrumentum diagnosticum clinicum NON est. Si aegritudinem mentis pateris, professionalem qualificatum consulere debes.",
+    "questions": [
+      {"id": 1, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 2, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 3, "text": "[Full Latin translation]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 4, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 5, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 6, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 7, "text": "[Full Latin translation]", "type": "scenario", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]},
+      {"id": 8, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 0}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "Credens Transparens", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "Negotiator Pragmaticus", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "Realista Semioticus", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"}
+    ]
+  },
+  "EGY": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "تحليل الفجوة السيميائية",
+      "description": "تقييم لكيفية تعاملك مع الفشل التكويني للغة في نقل المعنى عبر الانقسام بين الذوات.",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5 دقائق"
+    },
+    "disclaimer": "تنويه: هذه الأداة لأغراض تعليمية وترويجية فقط. تستند إلى المفاهيم النظرية لجون ف. ميلر وليست أداة تشخيص سريري. إذا كنت تعاني من ضائقة نفسية، يرجى استشارة متخصص مؤهل.",
+    "questions": [
+      {"id": 1, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 2, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 3, "text": "[Full Egyptian Arabic translation]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 4, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 5, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 6, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 7, "text": "[Full Egyptian Arabic translation]", "type": "scenario", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]},
+      {"id": 8, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 0}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "المؤمن الشفاف", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "المفاوض البراغماتي", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "الواقعي السيميائي", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"}
+    ]
+  },
+  "ZH": {
+    "meta": {
+      "id": "semiotic_gap_analysis",
+      "title": "符号学间隙分析",
+      "description": "评估你如何驾驭语言在主体之间传递意义的构成性失败。",
+      "primaryBook": "Do You Read Me",
+      "estimatedTime": "5分钟"
+    },
+    "disclaimer": "免责声明:此工具仅用于教育和宣传目的。它基于约翰·F·米勒的理论概念,不是临床诊断工具。如果您正在经历心理健康困扰,请咨询合格的专业人士。",
+    "questions": [
+      {"id": 1, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 2, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 3, "text": "[Full Mandarin translation]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 4, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 5, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 6, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 7, "text": "[Full Mandarin translation]", "type": "scenario", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]},
+      {"id": 8, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 0}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 4}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 10, "profileName": "透明信徒", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 11, "maxScore": 21, "profileName": "务实协商者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 22, "maxScore": 32, "profileName": "符号学现实主义者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"}
+    ]
+  }
+}

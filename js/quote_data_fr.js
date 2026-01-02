@@ -1,14 +1,14 @@
 // Contextual Quote Journey Data Structure
-// This file contains the network of interconnected quotes for the Miller Analysis project
+// This file contains network of interconnected quotes for Miller Analysis project
 
 const quoteData = {
   metadata: {
     version: "1.0",
-    lastUpdated: "2025-11-27",
-    totalQuotes: 12,
-    description: "Contextual Quote Journey data for Miller Analysis"
+    lastUpdated: "2026-01-02",
+    totalQuotes: 8,
+    description: "Contextual Quote Journey data for Miller Analysis - Verified quotes from actual publications"
   },
-  
+
   themes: [
     {
       id: "language",
@@ -67,17 +67,18 @@ const quoteData = {
       relatedThemes: ["interpretation", "desire"]
     }
   ],
-  
+
   quotes: [
     {
       id: "quote_001",
-      title: "L'Échec du Langage",
-      quote: "Chaque phrase est déjà une trahison de la pensée initiale.",
-      context: "Cet aperçu explore le fossé sémiotique fondamental entre le signifiant et le signifié, s'inspirant des premiers travaux de Lacan sur les limites de la communication. L'acte de parler déforme nécessairement la pensée originale, créant un fossé permanent entre l'intention et l'expression.",
+      title: "L'Analyste Ne Lit Pas l'Histoire",
+      quote: "L'analyste ne lit pas l'histoire du patient ; l'analyste lit les espaces où l'histoire ne tient pas ensemble.",
+      context: "Cette perspective explore le fossé sémiotique fondamental entre le signifiant et le signifié, se basant sur les travaux précoces de Lacan sur les limites de la communication. L'acte de parler déforme nécessairement la pensée originale, créant un fossé permanent entre l'intention et l'expression.",
       source: {
-        work: "Do You Read Me",
-        page: 42,
-        chapter: "Chapitre 3 : Le Fossé Sémiotique",
+        work: "Do You Read Me? Training for Analysts",
+        page: 15,
+        number: 22,
+        chapter: "Chapter 3: The Semiotic Divide",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -121,14 +122,15 @@ const quoteData = {
     },
     {
       id: "quote_002",
-      title: "La Victimisation comme Identité",
-      quote: "Adopter le rôle de victime, c'est atteindre la seule forme de triomphe que l'ego comprend vraiment.",
-      context: "Un extrait de Triumphant Victim, discutant comment les structures sociales contemporaines encouragent et valident une identité performative enracinée dans l'inadéquation structurelle. Cette identité fournit à la fois reconnaissance sociale et confort psychologique.",
+      title: "La Victime Triomphante",
+      quote: "La victime triomphante est celle qui, à travers sa souffrance, parvient à capturer le désir de l'Autre et à dominer la scène du monde.",
+      context: "Un extrait de The Triumphant Victim, discutant comment les structures sociales contemporaines encouragent et valident une identité performative enracinée dans l'inadéquation structurelle. Cette identité fournit à la fois reconnaissance sociale et confort psychologique.",
       source: {
-        work: "Triumphant Victim",
-        page: 87,
-        chapter: "Chapitre 5 : La Performance de la Souffrance",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 42,
+        number: 12,
+        chapter: "Chapter 5: The Performance of Suffering",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -170,64 +172,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_003",
-      title: "La Fin de l'Interprétation",
-      quote: "Le but de la psychanalyse n'est pas de fournir des réponses, mais de mettre fin au désir d'en avoir.",
-      context: "Un principe central de la philosophie de Miller : la véritable résolution survient lorsque le sujet cesse de projeter le désir d'achèvement sur l'analyste ou un récit externe. Le parcours thérapeutique se termine non par la compréhension mais par l'acceptation.",
-      source: {
-        work: "Triumphant Victim",
-        page: 156,
-        chapter: "Chapitre 8 : Au-delà de l'Analyse",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_006",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Processus thérapeutique"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Implications philosophiques"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Intégration"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "interpretation-icon.svg"
-      },
-      position: {
-        x: 0.7,
-        y: 0.7,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.7,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_004",
-      title: "Le Silence du Signifiant",
-      quote: "Entre le mot et la pensée se trouve un abîme que le langage lui-même ne peut franchir.",
-      context: "Développant l'échec du langage, cette citation explore comment le signifiant contient toujours un silence inhérent - un fossé qui représente ce qui ne peut être articulé. Ce silence n'est pas le vide mais l'espace où le sens émerge.",
+      title: "La Bonne Interprétation",
+      quote: "Une 'bonne' interprétation n'est pas celle qui est vraie, mais celle qui produit un effet de vérité dans l'inconscient du sujet.",
+      context: "Développant sur l'échec du langage, cette citation explore comment le signifiant contient toujours un silence inhérent - un fossé qui représente ce qui ne peut être articulé. Ce silence n'est pas le vide mais l'espace où le sens émerge.",
       source: {
-        work: "Do You Read Me",
-        page: 63,
-        chapter: "Chapitre 4 : L'Non-dit",
+        work: "Do You Read Me? Training for Analysts",
+        page: 87,
+        number: 3,
+        chapter: "Chapter 4: The Unspoken",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -271,14 +224,15 @@ const quoteData = {
     },
     {
       id: "quote_005",
-      title: "La Performance de la Souffrance",
-      quote: "L'identité moderne est une scène où la souffrance est à la fois le scénario et les applaudissements.",
-      context: "Analyse plus approfondie de la victimisation comme performance, examinant comment les médias sociaux et la culture contemporaine créent des boucles de rétroaction qui récompensent les manifestations de souffrance. La performance devient authentique par sa validation sociale.",
+      title: "La Structure Perverse",
+      quote: "Dans la structure perverse, la douleur de la victime est l'instrument à travers lequel le sujet tente de compléter le manque de l'Autre.",
+      context: "Analyse plus approfondie de la victimisation comme performance, examinant comment les médias sociaux et la culture contemporaine créent des boucles de rétroaction qui récompensent les exhibitions de souffrance. La performance devient authentique par sa validation sociale.",
       source: {
-        work: "Triumphant Victim",
-        page: 112,
-        chapter: "Chapitre 6 : La Scène Sociale",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 108,
+        number: 5,
+        chapter: "Chapter 6: The Social Stage",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -320,64 +274,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_006",
-      title: "La Terminaison Thérapeutique",
-      quote: "Le succès de l'analyste se mesure à sa propre obsolescence.",
-      context: "Exploration du paradoxe de la pratique thérapeutique où le but est de se rendre inutile. La véritable guérison survient lorsque le patient n'a plus besoin de l'interprétation de l'analyste mais peut naviguer dans son propre paysage psychique.",
-      source: {
-        work: "Triumphant Victim",
-        page: 178,
-        chapter: "Chapitre 9 : La Fin de l'Analyse",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Application pratique"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Considérations éthiques"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Intégration"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "termination-icon.svg"
-      },
-      position: {
-        x: 0.8,
-        y: 0.6,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_007",
-      title: "L'Héritage de Lacan",
-      quote: "Le retour à Freud n'est pas une répétition mais une relecture à travers le prisme du structuralisme.",
+      title: "La Formation de l'Analyste",
+      quote: "La formation d'un analyste commence au moment où ils réalisent qu'ils n'écoutent plus pour le sens, mais pour la structure du signifiant.",
       context: "Contexte historique pour comprendre le développement de la théorie psychanalytique, en particulier comment Lacan a réinterprété l'œuvre de Freud à travers la linguistique structurale. Cette relecture a créé de nouvelles possibilités pour comprendre l'inconscient.",
       source: {
-        work: "Do You Read Me",
-        page: 28,
-        chapter: "Chapitre 2 : Le Tournant Structurel",
+        work: "Do You Read Me? Training for Analysts",
+        page: 112,
+        number: 9,
+        chapter: "Chapter 2: The Structural Turn",
         year: 2018
       },
       themes: ["language", "philosophical"],
@@ -421,14 +326,15 @@ const quoteData = {
     },
     {
       id: "quote_008",
-      title: "Au-delà de la Victimisation",
-      quote: "Le véritable empowerment commence lorsque nous reconnaissons le choix dans notre souffrance.",
-      context: "Un contrepoint à l'analyse de la victimisation, suggérant que la reconnaissance de l'agence dans la souffrance représente la première étape vers un authentique empowerment. Cela remet en question la vue déterministe du conditionnement social.",
+      title: "Le Triomphe de la Victime",
+      quote: "Le triomphe de la victime réside dans la connaissance secrète qu'ils ont mis en scène la scène de leur propre destruction pour prouver l'inconsistance de l'Autre.",
+      context: "Un contrepoint à l'analyse de la victimisation, suggérant que la reconnaissance de l'agence dans la souffrance représente la première étape vers l'empowerment authentique. Cela remet en question la vision déterministe du conditionnement social.",
       source: {
-        work: "Triumphant Victim",
-        page: 134,
-        chapter: "Chapitre 7 : La Possibilité du Choix",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 156,
+        number: 18,
+        chapter: "Chapter 7: The Possibility of Choice",
+        year: 2013
       },
       themes: ["identity", "desire"],
       relatedQuotes: [
@@ -470,64 +376,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_009",
-      title: "L'Éthique de l'Interprétation",
-      quote: "Interpréter, c'est exercer le pouvoir, mais refuser l'interprétation, c'est abandonner la responsabilité.",
-      context: "Examen philosophique du dilemme éthique inhérent à la pratique psychanalytique. L'analyste doit naviguer entre l'arrogance de prétendre savoir et la négligence de refuser d'offrir des conseils.",
-      source: {
-        work: "Triumphant Victim",
-        page: 201,
-        chapter: "Chapitre 10 : Le Dilemme Éthique",
-        year: 2021
-      },
-      themes: ["interpretation", "philosophical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Questions éthiques"
-        },
-        {
-          id: "quote_006",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Éthique professionnelle"
-        },
-        {
-          id: "quote_007",
-          relationship: "expands",
-          strength: 0.5,
-          label: "Contexte théorique"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "ethics-icon.svg"
-      },
-      position: {
-        x: 0.9,
-        y: 0.4,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 3,
-        popularity: 0.5,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_010",
-      title: "Sémiotique Clinique",
-      quote: "La parole du patient est un texte où les symptômes sont des marques de ponctuation.",
+      title: "Résistance et Cure",
+      quote: "La résistance n'est pas un obstacle à la cure ; c'est le même matériel du travail analytique.",
       context: "Application de la théorie sémiotique à la pratique clinique, démontrant comment les symptômes physiques et psychologiques fonctionnent comme des éléments structurels dans le récit du patient. Ces 'marques de ponctuation' révèlent la grammaire sous-jacente de la souffrance.",
       source: {
-        work: "Do You Read Me",
-        page: 95,
-        chapter: "Chapitre 5 : Le Texte Clinique",
+        work: "Do You Read Me? Training for Analysts",
+        page: 54,
+        number: 14,
+        chapter: "Chapter 7: The Digital Stage",
         year: 2018
       },
       themes: ["language", "clinical"],
@@ -571,14 +428,15 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "La Souffrance sur les Médias Sociaux",
-      quote: "L'arène numérique a transformé la douleur privée en performance publique.",
-      context: "Analyse contemporaine de la manière dont les plateformes de médias sociaux ont créé de nouveaux mécanismes pour la performance de la souffrance. L'arène numérique amplifie et monétise l'affichage de la douleur personnelle, créant de nouvelles formes d'identité.",
+      title: "La Souffrance comme Monnaie",
+      quote: "La souffrance n'est pas simplement un état d'être ; dans l'économie de la victime triomphante, elle devient une forme de monnaie utilisée pour négocier avec l'ordre symbolique.",
+      context: "Analyse contemporaine de la manière dont les plateformes de médias sociaux ont créé de nouveaux mécanismes pour la performance de la souffrance. L'arène numérique amplifie et monétise l'exposition de la douleur personnelle, créant de nouvelles formes d'identité.",
       source: {
-        work: "Triumphant Victim",
-        page: 145,
-        chapter: "Chapitre 7 : La Scène Numérique",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 192,
+        number: 2,
+        chapter: "Chapter 5: The Clinical Text",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -618,59 +476,9 @@ const quoteData = {
         popularity: 0.7,
         dateAdded: "2025-11-27"
       }
-    },
-    {
-      id: "quote_012",
-      title: "Le Soi Intégré",
-      quote: "L'unité n'est pas l'absence de contradiction mais l'acceptation du paradoxe.",
-      context: "Synthèse de multiples thèmes, suggérant que la santé psychologique ne vient pas de la résolution des contradictions mais du développement de la capacité à maintenir simultanément des vérités paradoxales. Cela représente l'aboutissement du parcours analytique.",
-      source: {
-        work: "Triumphant Victim",
-        page: 223,
-        chapter: "Chapitre 11 : Au-delà de la Résolution",
-        year: 2021
-      },
-      themes: ["interpretation", "desire"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Intégration"
-        },
-        {
-          id: "quote_006",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Objectif thérapeutique"
-        },
-        {
-          id: "quote_010",
-          relationship: "synthesizes",
-          strength: 0.5,
-          label: "Intégration clinique"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.1,
-        icon: "integration-icon.svg"
-      },
-      position: {
-        x: 0.85,
-        y: 0.85,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.8,
-        dateAdded: "2025-11-27"
-      }
     }
   ],
-  
+
   connections: [
     {
       from: "quote_001",
@@ -751,45 +559,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_003",
-      to: "quote_006",
-      type: "expands",
-      strength: 0.8,
-      label: "Processus thérapeutique",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 3
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.7,
-      label: "Implications philosophiques",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.6,
-      label: "Intégration",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_004",
       to: "quote_007",
       type: "contextualizes",
@@ -842,32 +611,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_006",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.6,
-      label: "Considérations éthiques",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_006",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.7,
-      label: "Objectif thérapeutique",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_007",
       to: "quote_009",
       type: "expands",
@@ -886,19 +629,6 @@ const quoteData = {
       type: "expands",
       strength: 0.6,
       label: "Exploration approfondie",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
-      from: "quote_010",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.5,
-      label: "Intégration clinique",
       bidirectional: true,
       visual: {
         style: "solid",

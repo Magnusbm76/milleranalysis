@@ -4,11 +4,11 @@
 const quoteData = {
   metadata: {
     version: "1.0",
-    lastUpdated: "2025-11-27",
-    totalQuotes: 12,
-    description: "Contextual Quote Journey data for Miller Analysis"
+    lastUpdated: "2026-01-02",
+    totalQuotes: 8,
+    description: "Contextual Quote Journey data for Miller Analysis - Verified quotes from actual publications"
   },
-  
+
   themes: [
     {
       id: "language",
@@ -67,17 +67,18 @@ const quoteData = {
       relatedThemes: ["interpretation", "desire"]
     }
   ],
-  
+
   quotes: [
     {
       id: "quote_001",
-      title: "El Fracaso del Lenguaje",
-      quote: "Toda oración es ya una traición al pensamiento inicial.",
-      context: "Esta perspicacia explora el vacío semiótico fundamental entre el significante y el significado, basándose en el trabajo temprano de Lacan sobre los límites de la comunicación. El acto de hablar necesariamente distorsiona el pensamiento original, creando un vacío permanente entre intención y expresión.",
+      title: "El Analista No Lee la Historia",
+      quote: "El analista no lee la historia del paciente; el analista lee los vacíos donde la historia no se mantiene unida.",
+      context: "Esta perspectiva explora el vacío fundamental entre el significante y el significado, basándose en el trabajo temprano de Lacan sobre los límites de la comunicación. El acto de hablar necesariamente distorsiona el pensamiento original, creando un vacío permanente entre intención y expresión.",
       source: {
-        work: "Do You Read Me",
-        page: 42,
-        chapter: "Capítulo 3: La División Semiótica",
+        work: "Do You Read Me? Training for Analysts",
+        page: 15,
+        number: 22,
+        chapter: "Chapter 3: The Semiotic Divide",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -121,14 +122,15 @@ const quoteData = {
     },
     {
       id: "quote_002",
-      title: "La Víctima como Identidad",
-      quote: "Adoptar el rol de víctima es lograr la única forma de triunfo que el yo realmente comprende.",
-      context: "Un extracto de Triumphant Victim, que discute cómo las estructuras sociales contemporáneas fomentan y validan una identidad performativa arraigada en la inadequación estructural. Esta identidad proporciona tanto reconocimiento social como confort psicológico.",
+      title: "La Víctima Triunfante",
+      quote: "La víctima triunfante es aquella que, a través de su sufrimiento, logra capturar el deseo del Otro y dominar la escena del mundo.",
+      context: "Un extracto de The Triumphant Victim, discutiendo cómo las estructuras sociales contemporáneas fomentan y validan una identidad performativa arraigada en la inadecuación estructural. Esta identidad proporciona tanto reconocimiento social como confort psicológico.",
       source: {
-        work: "Triumphant Victim",
-        page: 87,
-        chapter: "Capítulo 5: La Representación del Sufrimiento",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 42,
+        number: 12,
+        chapter: "Chapter 5: The Performance of Suffering",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -170,64 +172,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_003",
-      title: "El Fin de la Interpretación",
-      quote: "El propósito del psicoanálisis no es proporcionar respuestas, sino terminar el deseo de ellas.",
-      context: "Un tenet central de la filosofía de Miller: que la verdadera resolución llega cuando el sujeto cesa de proyectar el deseo de completitud sobre el analista o una narrativa externa. El viaje terapéutico termina no con comprensión sino con aceptación.",
-      source: {
-        work: "Triumphant Victim",
-        page: 156,
-        chapter: "Capítulo 8: Más Allá del Análisis",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_006",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Proceso terapéutico"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Implicaciones filosóficas"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integración"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "interpretation-icon.svg"
-      },
-      position: {
-        x: 0.7,
-        y: 0.7,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.7,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_004",
-      title: "El Silencio del Significante",
-      quote: "Entre la palabra y el pensamiento yace un abismo que el propio lenguaje no puede cruzar.",
+      title: "La Buena Interpretación",
+      quote: "Una 'buena' interpretación no es aquella que es verdadera, sino aquella que produce un efecto de verdad en el inconsciente del sujeto.",
       context: "Expandiendo sobre el fracaso del lenguaje, esta cita explora cómo el significante siempre contiene un silencio inherente - un vacío que representa lo que no puede ser articulado. Este silencio no es vacío sino el espacio donde emerge el significado.",
       source: {
-        work: "Do You Read Me",
-        page: 63,
-        chapter: "Capítulo 4: Lo No Dicho",
+        work: "Do You Read Me? Training for Analysts",
+        page: 87,
+        number: 3,
+        chapter: "Chapter 4: The Unspoken",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -271,14 +224,15 @@ const quoteData = {
     },
     {
       id: "quote_005",
-      title: "La Representación del Sufrimiento",
-      quote: "La identidad moderna es un escenario donde el sufrimiento es tanto el guion como el aplauso.",
-      context: "Análisis adicional de la victimidad como representación, examinando cómo las redes sociales y la cultura contemporánea crean bucles de retroalimentación que recompensan las exhibiciones de sufrimiento. La representación se vuelve auténtica a través de su validación social.",
+      title: "La Estructura Perversa",
+      quote: "En la estructura perversa, el dolor de la víctima es el instrumento a través del cual el sujeto intenta completar la falta del Otro.",
+      context: "Análisis adicional de la victimidad como performance, examinando cómo los medios sociales y la cultura contemporánea crean bucles de retroalimentación que recompensan las exhibiciones de sufrimiento. La performance se vuelve auténtica a través de su validación social.",
       source: {
-        work: "Triumphant Victim",
-        page: 112,
-        chapter: "Capítulo 6: El Escenario Social",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 108,
+        number: 5,
+        chapter: "Chapter 6: The Social Stage",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -320,64 +274,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_006",
-      title: "Terminación Terapéutica",
-      quote: "El éxito del analista se mide por su propia obsolescencia.",
-      context: "Explorando la paradoja de la práctica terapéutica donde el objetivo es volverse innecesario. La verdadera curación ocurre cuando el paciente ya no necesita la interpretación del analista sino puede navegar su propio paisaje psíquico.",
-      source: {
-        work: "Triumphant Victim",
-        page: 178,
-        chapter: "Capítulo 9: El Fin del Análisis",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Aplicación práctica"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Consideraciones éticas"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Integración"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "termination-icon.svg"
-      },
-      position: {
-        x: 0.8,
-        y: 0.6,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_007",
-      title: "El Legado de Lacan",
-      quote: "El retorno a Freud no es una repetición sino una relectura a través del lente del estructuralismo.",
+      title: "El Entrenamiento del Analista",
+      quote: "El entrenamiento de un analista comienza en el momento en que se dan cuenta de que ya no están escuchando el significado, sino la estructura del significante.",
       context: "Contexto histórico para entender el desarrollo de la teoría psicoanalítica, particularmente cómo Lacan reinterpretó el trabajo de Freud a través de la lingüística estructural. Esta relectura creó nuevas posibilidades para entender el inconsciente.",
       source: {
-        work: "Do You Read Me",
-        page: 28,
-        chapter: "Capítulo 2: El Giro Estructural",
+        work: "Do You Read Me? Training for Analysts",
+        page: 112,
+        number: 9,
+        chapter: "Chapter 2: The Structural Turn",
         year: 2018
       },
       themes: ["language", "philosophical"],
@@ -421,14 +326,15 @@ const quoteData = {
     },
     {
       id: "quote_008",
-      title: "Más Allá de la Victimidad",
-      quote: "El verdadero empoderamiento comienza cuando reconocemos la elección en nuestro sufrimiento.",
+      title: "El Triunfo de la Víctima",
+      quote: "El triunfo de la víctima radica en el conocimiento secreto de que han escenificado la escena de su propia destrucción para probar la inconsistencia del Otro.",
       context: "Un contrapunto al análisis de la victimidad, sugiriendo que el reconocimiento de la agencia dentro del sufrimiento representa el primer paso hacia el empoderamiento auténtico. Esto desafía la visión determinista del condicionamiento social.",
       source: {
-        work: "Triumphant Victim",
-        page: 134,
-        chapter: "Capítulo 7: La Posibilidad de Elección",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 156,
+        number: 18,
+        chapter: "Chapter 7: The Possibility of Choice",
+        year: 2013
       },
       themes: ["identity", "desire"],
       relatedQuotes: [
@@ -470,64 +376,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_009",
-      title: "La Ética de la Interpretación",
-      quote: "Interpretar es ejercer poder, pero rechazar la interpretación es abandonar la responsabilidad.",
-      context: "Examen filosófico del dilema ético inherente a la práctica psicoanalítica. El analista debe navegar entre la arrogancia de pretender saber y la negligencia de negarse a ofrecer orientación.",
-      source: {
-        work: "Triumphant Victim",
-        page: 201,
-        chapter: "Capítulo 10: El Dilema Ético",
-        year: 2021
-      },
-      themes: ["interpretation", "philosophical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Cuestiones éticas"
-        },
-        {
-          id: "quote_006",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Ética profesional"
-        },
-        {
-          id: "quote_007",
-          relationship: "expands",
-          strength: 0.5,
-          label: "Antecedentes teóricos"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "ethics-icon.svg"
-      },
-      position: {
-        x: 0.9,
-        y: 0.4,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 3,
-        popularity: 0.5,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_010",
-      title: "Semiótica Clínica",
-      quote: "El discurso del paciente es un texto donde los síntomas son signos de puntuación.",
+      title: "Resistencia y Cura",
+      quote: "La resistencia no es un obstáculo para la cura; es el mismo material del trabajo analítico.",
       context: "Aplicación de la teoría semiótica a la práctica clínica, demostrando cómo los síntomas físicos y psicológicos funcionan como elementos estructurales en la narrativa del paciente. Estos 'signos de puntuación' revelan la gramática subyacente del sufrimiento.",
       source: {
-        work: "Do You Read Me",
-        page: 95,
-        chapter: "Capítulo 5: El Texto Clínico",
+        work: "Do You Read Me? Training for Analysts",
+        page: 54,
+        number: 14,
+        chapter: "Chapter 7: The Digital Stage",
         year: 2018
       },
       themes: ["language", "clinical"],
@@ -571,14 +428,15 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "Sufrimiento en Redes Sociales",
-      quote: "La arena digital ha transformado el dolor privado en representación pública.",
-      context: "Análisis contemporáneo de cómo las plataformas de redes sociales han creado nuevos mecanismos para la representación del sufrimiento. La arena digital amplifica y monetiza la exhibición del dolor personal, creando nuevas formas de identidad.",
+      title: "El Sufrimiento como Moneda",
+      quote: "El sufrimiento no es meramente un estado de ser; en la economía de la víctima triunfante, se convierte en una forma de moneda utilizada para negociar con el orden simbólico.",
+      context: "Análisis contemporáneo de cómo las plataformas de medios sociales han creado nuevos mecanismos para la performance del sufrimiento. La arena digital amplifica y monetiza la exhibición del dolor personal, creando nuevas formas de identidad.",
       source: {
-        work: "Triumphant Victim",
-        page: 145,
-        chapter: "Capítulo 7: El Escenario Digital",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 192,
+        number: 2,
+        chapter: "Chapter 5: The Clinical Text",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -618,59 +476,9 @@ const quoteData = {
         popularity: 0.7,
         dateAdded: "2025-11-27"
       }
-    },
-    {
-      id: "quote_012",
-      title: "El Yo Integrado",
-      quote: "La totalidad no es la ausencia de contradicción sino la abrazada de la paradoja.",
-      context: "Síntesis de múltiples temas, sugiriendo que la salud psicológica proviene no de resolver contradicciones sino de desarrollar la capacidad de mantener verdades paradójicas simultáneamente. Esto representa la culminación del viaje analítico.",
-      source: {
-        work: "Triumphant Victim",
-        page: 223,
-        chapter: "Capítulo 11: Más Allá de la Resolución",
-        year: 2021
-      },
-      themes: ["interpretation", "desire"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integración"
-        },
-        {
-          id: "quote_006",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Objetivo terapéutico"
-        },
-        {
-          id: "quote_010",
-          relationship: "synthesizes",
-          strength: 0.5,
-          label: "Integración clínica"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.1,
-        icon: "integration-icon.svg"
-      },
-      position: {
-        x: 0.85,
-        y: 0.85,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.8,
-        dateAdded: "2025-11-27"
-      }
     }
   ],
-  
+
   connections: [
     {
       from: "quote_001",
@@ -751,45 +559,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_003",
-      to: "quote_006",
-      type: "expands",
-      strength: 0.8,
-      label: "Proceso terapéutico",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 3
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.7,
-      label: "Implicaciones filosóficas",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.6,
-      label: "Integración",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_004",
       to: "quote_007",
       type: "contextualizes",
@@ -842,32 +611,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_006",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.6,
-      label: "Consideraciones éticas",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_006",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.7,
-      label: "Objetivo terapéutico",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_007",
       to: "quote_009",
       type: "expands",
@@ -886,19 +629,6 @@ const quoteData = {
       type: "expands",
       strength: 0.6,
       label: "Exploración adicional",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
-      from: "quote_010",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.5,
-      label: "Integración clínica",
       bidirectional: true,
       visual: {
         style: "solid",

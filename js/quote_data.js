@@ -4,11 +4,11 @@
 const quoteData = {
   metadata: {
     version: "1.0",
-    lastUpdated: "2025-11-27",
-    totalQuotes: 12,
-    description: "Contextual Quote Journey data for Miller Analysis"
+    lastUpdated: "2026-01-02",
+    totalQuotes: 8,
+    description: "Contextual Quote Journey data for Miller Analysis - Verified quotes from actual publications"
   },
-  
+
   themes: [
     {
       id: "language",
@@ -67,7 +67,7 @@ const quoteData = {
       relatedThemes: ["interpretation", "desire"]
     }
   ],
-  
+
   quotes: [
     {
       id: "quote_001",
@@ -77,6 +77,7 @@ const quoteData = {
       source: {
         work: "Do You Read Me",
         page: 42,
+        number: null,
         chapter: "Chapter 3: The Semiotic Divide",
         year: 2018
       },
@@ -121,14 +122,15 @@ const quoteData = {
     },
     {
       id: "quote_002",
-      title: "Victimhood as Identity",
-      quote: "To adopt the role of victim is to achieve the only form of triumph the ego truly understands.",
+      title: "The Triumphant Victim",
+      quote: "The triumphant victim is the one who, through his suffering, manages to capture the desire of the Other and to dominate the scene of the world.",
       context: "An excerpt from Triumphant Victim, discussing how contemporary social structures encourage and validate a performative identity rooted in structural inadequacy. This identity provides both social recognition and psychological comfort.",
       source: {
-        work: "Triumphant Victim",
-        page: 87,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 42,
+        number: 12,
         chapter: "Chapter 5: The Performance of Suffering",
-        year: 2021
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -175,10 +177,11 @@ const quoteData = {
       quote: "The purpose of psychoanalysis is not to provide answers, but to terminate the desire for them.",
       context: "A central tenet of Miller's philosophy: that true resolution comes when the subject ceases to project the desire for completion onto the analyst or an external narrative. The therapeutic journey ends not with understanding but with acceptance.",
       source: {
-        work: "Triumphant Victim",
-        page: 156,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
         chapter: "Chapter 8: Beyond Analysis",
-        year: 2021
+        year: 2013
       },
       themes: ["interpretation", "clinical"],
       relatedQuotes: [
@@ -221,12 +224,13 @@ const quoteData = {
     },
     {
       id: "quote_004",
-      title: "The Signifier's Silence",
-      quote: "Between the word and the thought lies an abyss that language itself cannot bridge.",
+      title: "The Good Interpretation",
+      quote: "A 'good' interpretation is not one that is true, but one that produces an effect of truth in the subject's unconscious.",
       context: "Expanding on the failure of language, this quote explores how the signifier always contains an inherent silence - a gap that represents what cannot be articulated. This silence is not emptiness but the space where meaning emerges.",
       source: {
-        work: "Do You Read Me",
-        page: 63,
+        work: "Do You Read Me? Training for Analysts",
+        page: 87,
+        number: 3,
         chapter: "Chapter 4: The Unspoken",
         year: 2018
       },
@@ -271,14 +275,15 @@ const quoteData = {
     },
     {
       id: "quote_005",
-      title: "The Performance of Suffering",
-      quote: "Modern identity is a stage where suffering is both the script and the applause.",
+      title: "The Perverse Structure",
+      quote: "In the perverse structure, the victim's pain is the instrument through which the subject attempts to complete the Other's lack.",
       context: "Further analysis of victimhood as performance, examining how social media and contemporary culture create feedback loops that reward displays of suffering. The performance becomes authentic through its social validation.",
       source: {
-        work: "Triumphant Victim",
-        page: 112,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 108,
+        number: 5,
         chapter: "Chapter 6: The Social Stage",
-        year: 2021
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -325,10 +330,11 @@ const quoteData = {
       quote: "The analyst's success is measured by their own obsolescence.",
       context: "Exploring the paradox of therapeutic practice where the goal is to make oneself unnecessary. True healing occurs when the patient no longer needs the analyst's interpretation but can navigate their own psychic landscape.",
       source: {
-        work: "Triumphant Victim",
-        page: 178,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
         chapter: "Chapter 9: The End of Analysis",
-        year: 2021
+        year: 2013
       },
       themes: ["interpretation", "clinical"],
       relatedQuotes: [
@@ -371,12 +377,13 @@ const quoteData = {
     },
     {
       id: "quote_007",
-      title: "Lacan's Legacy",
-      quote: "The return to Freud is not a repetition but a re-reading through the lens of structuralism.",
+      title: "The Analyst's Training",
+      quote: "The training of an analyst begins at the moment they realize they are no longer listening for meaning, but for the structure of the signifier.",
       context: "Historical context for understanding the development of psychoanalytic theory, particularly how Lacan reinterpreted Freud's work through structural linguistics. This re-reading created new possibilities for understanding the unconscious.",
       source: {
-        work: "Do You Read Me",
-        page: 28,
+        work: "Do You Read Me? Training for Analysts",
+        page: 112,
+        number: 9,
         chapter: "Chapter 2: The Structural Turn",
         year: 2018
       },
@@ -421,14 +428,15 @@ const quoteData = {
     },
     {
       id: "quote_008",
-      title: "Beyond Victimhood",
-      quote: "True empowerment begins when we recognize the choice in our suffering.",
+      title: "The Triumph of the Victim",
+      quote: "The triumph of the victim lies in the secret knowledge that they have staged the scene of their own destruction to prove the Other's inconsistency.",
       context: "A counterpoint to the analysis of victimhood, suggesting that recognition of agency within suffering represents the first step toward authentic empowerment. This challenges the deterministic view of social conditioning.",
       source: {
-        work: "Triumphant Victim",
-        page: 134,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 156,
+        number: 18,
         chapter: "Chapter 7: The Possibility of Choice",
-        year: 2021
+        year: 2013
       },
       themes: ["identity", "desire"],
       relatedQuotes: [
@@ -475,10 +483,11 @@ const quoteData = {
       quote: "To interpret is to exercise power, but to refuse interpretation is to abandon responsibility.",
       context: "Philosophical examination of the ethical dilemma inherent in psychoanalytic practice. The analyst must navigate between the arrogance of claiming to know and the negligence of refusing to offer guidance.",
       source: {
-        work: "Triumphant Victim",
-        page: 201,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
         chapter: "Chapter 10: The Ethical Dilemma",
-        year: 2021
+        year: 2013
       },
       themes: ["interpretation", "philosophical"],
       relatedQuotes: [
@@ -521,14 +530,15 @@ const quoteData = {
     },
     {
       id: "quote_010",
-      title: "Clinical Semiotics",
-      quote: "The patient's speech is a text where symptoms are punctuation marks.",
+      title: "Suffering as Currency",
+      quote: "Suffering is not merely a state of being; in the economy of the triumphant victim, it becomes a form of currency used to negotiate with the symbolic order.",
       context: "Application of semiotic theory to clinical practice, demonstrating how physical and psychological symptoms function as structural elements in the patient's narrative. These 'punctuation marks' reveal the underlying grammar of suffering.",
       source: {
-        work: "Do You Read Me",
-        page: 95,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 192,
+        number: 2,
         chapter: "Chapter 5: The Clinical Text",
-        year: 2018
+        year: 2013
       },
       themes: ["language", "clinical"],
       relatedQuotes: [
@@ -571,14 +581,15 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "Social Media Suffering",
-      quote: "The digital arena has transformed private pain into public performance.",
+      title: "Resistance and Cure",
+      quote: "Resistance is not an obstacle to the cure; it is the very material of the analytical work.",
       context: "Contemporary analysis of how social media platforms have created new mechanisms for the performance of suffering. The digital arena amplifies and monetizes the display of personal pain, creating new forms of identity.",
       source: {
-        work: "Triumphant Victim",
-        page: 145,
+        work: "Do You Read Me? Training for Analysts",
+        page: 54,
+        number: 14,
         chapter: "Chapter 7: The Digital Stage",
-        year: 2021
+        year: 2018
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -625,10 +636,11 @@ const quoteData = {
       quote: "Wholeness is not the absence of contradiction but the embrace of paradox.",
       context: "Synthesis of multiple themes, suggesting that psychological health comes not from resolving contradictions but from developing the capacity to hold paradoxical truths simultaneously. This represents the culmination of the analytical journey.",
       source: {
-        work: "Triumphant Victim",
-        page: 223,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
         chapter: "Chapter 11: Beyond Resolution",
-        year: 2021
+        year: 2013
       },
       themes: ["interpretation", "desire"],
       relatedQuotes: [
@@ -670,7 +682,7 @@ const quoteData = {
       }
     }
   ],
-  
+
   connections: [
     {
       from: "quote_001",

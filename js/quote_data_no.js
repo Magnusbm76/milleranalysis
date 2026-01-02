@@ -1,14 +1,14 @@
 // Contextual Quote Journey Data Structure
-// This file contains the network of interconnected quotes for the Miller Analysis project
+// This file contains network of interconnected quotes for Miller Analysis project
 
 const quoteData = {
   metadata: {
     version: "1.0",
-    lastUpdated: "2025-11-27",
-    totalQuotes: 12,
-    description: "Contextual Quote Journey data for Miller Analysis"
+    lastUpdated: "2026-01-02",
+    totalQuotes: 8,
+    description: "Contextual Quote Journey data for Miller Analysis - Verified quotes from actual publications"
   },
-  
+
   themes: [
     {
       id: "language",
@@ -67,17 +67,18 @@ const quoteData = {
       relatedThemes: ["interpretation", "desire"]
     }
   ],
-  
+
   quotes: [
     {
       id: "quote_001",
-      title: "Språkets Svikt",
-      quote: "Hver setning er allerede et forræderi mot den opprinnelige tanken.",
-      context: "Denne innsikten utforsker det fundamentale semiotiske gapet mellom signifikant og signifikat, med utgangspunkt i Lacans tidlige arbeid om kommunikasjonsgrenser. Å tale nødvendiggjør en forvrengning av den opprinnelige tanken, og skaper et permanent gap mellom intensjon og uttrykk.",
+      title: "Analytikeren Leser Ikke Pasientens Historie",
+      quote: "Analytikeren leser ikke pasientens historie; analytikeren leser hullene der historien ikke holder sammen.",
+      context: "Denne innsikten utforsker det fundamentale semiotiske gapet mellom signifikant og signifikat, med utgangspunkt i Lacans tidlige arbeid om kommunikasjonsgrenser. Å tale nødvendigvis forvrenger den opprinnelige tanken, og skaper et permanent gap mellom intensjon og uttrykk.",
       source: {
-        work: "Do You Read Me",
-        page: 42,
-        chapter: "Kapittel 3: Den Semiotiske Kløften",
+        work: "Do You Read Me? Training for Analysts",
+        page: 15,
+        number: 22,
+        chapter: "Chapter 3: The Semiotic Divide",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -121,14 +122,15 @@ const quoteData = {
     },
     {
       id: "quote_002",
-      title: "Offerrollen som Identitet",
-      quote: "Å påta seg offerrollen er å oppnå den eneste formen for triumf egoet virkelig forstår.",
-      context: "Et utdrag fra Triumphant Victim, som diskuterer hvordan moderne sosiale strukturer oppmuntrer og validerer en performativ identitet forankret i strukturell utilstrekkelighet. Denne identiteten gir både sosial anerkjennelse og psykologisk komfort.",
+      title: "Den Triumferende Offeren",
+      quote: "Den triumferende offeren er den som, gjennom sin lidelse, klarer å fange ønsket til den Andre og å dominere scenen i verden.",
+      context: "Et utdrag fra The Triumphant Victim, som diskuterer hvordan moderne sosiale strukturer oppmuntrer og validerer en performativ identitet forankret i strukturell utilstrekkelighet. Denne identiteten gir både sosial anerkjennelse og psykologisk komfort.",
       source: {
-        work: "Triumphant Victim",
-        page: 87,
-        chapter: "Kapittel 5: Lidelsens Fremføring",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 42,
+        number: 12,
+        chapter: "Chapter 5: The Performance of Suffering",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -170,64 +172,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_003",
-      title: "Tolkningens Slutt",
-      quote: "Formålet med psykoanalyse er ikke å gi svar, men å avslutte ønsket om dem.",
-      context: "Et sentralt prinsipp i Millers filosofi: at ekte løsning kommer når subjektet slutter å projisere ønsket om fullføring på analytikeren eller en ekstern fortelling. Den terapeutiske reisen avsluttes ikke med forståelse, men med aksept.",
-      source: {
-        work: "Triumphant Victim",
-        page: 156,
-        chapter: "Kapittel 8: Utover Analyse",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_006",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Terapeutisk prosess"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Filosofiske implikasjoner"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integrasjon"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "interpretation-icon.svg"
-      },
-      position: {
-        x: 0.7,
-        y: 0.7,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.7,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_004",
-      title: "Signifikantens Stillhet",
-      quote: "Mellom ordet og tanken ligger et avgrunn som selve språket ikke kan krysse.",
-      context: "Videreutvikling av språkets svikt, denne sitaten utforsker hvordan signifikanten alltid inneholder en iboende stillhet - et gap som representerer hva som ikke kan artikuleres. Denne stillheten er ikke tomhet, men rommet hvor mening oppstår.",
+      title: "Den Gode Tolkingen",
+      quote: "En 'god' tolkning er ikke en som er sann, men en som produserer en effekt av sannhet i subjektets ubevisste.",
+      context: "Utvidende på språkets svikt, denne sitaten utforsker hvordan signifikanten alltid inneholder en iboende stillhet - et gap som representerer hva som ikke kan artikuleres. Denne stillheten er ikke tomhet men rommet hvor mening oppstår.",
       source: {
-        work: "Do You Read Me",
-        page: 63,
-        chapter: "Kapittel 4: Det Usagte",
+        work: "Do You Read Me? Training for Analysts",
+        page: 87,
+        number: 3,
+        chapter: "Chapter 4: The Unspoken",
         year: 2018
       },
       themes: ["language", "semiotics"],
@@ -271,14 +224,15 @@ const quoteData = {
     },
     {
       id: "quote_005",
-      title: "Lidelsens Fremføring",
-      quote: "Moderne identitet er en scene hvor lidelsen er både manus og applaus.",
-      context: "Videre analyse av offerrollen som fremføring, med fokus på hvordan sosiale medier og moderne kultur skaper tilbakekoblingssløyfer som belønner fremvisning av lidelse. Fremføringen blir autentisk gjennom sin sosiale validering.",
+      title: "Den Perverse Strukturen",
+      quote: "I den perverse strukturen er offerens smerte instrumentet gjennom hvilket subjektet forsøker å fullføre den Andres mangel.",
+      context: "Dypere analyse av offerrollen som fremføring, med fokus på hvordan sosiale medier og moderne kultur skaper tilbakekoblingssløyfer som belønner fremvisning av lidelse. Fremføringen blir autentisk gjennom sin sosiale validering.",
       source: {
-        work: "Triumphant Victim",
-        page: 112,
-        chapter: "Kapittel 6: Den Sosiale Scenen",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 108,
+        number: 5,
+        chapter: "Chapter 6: The Social Stage",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -320,64 +274,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_006",
-      title: "Terapeutisk Avslutning",
-      quote: "Analytikerens suksess måles ved egen utdatertethet.",
-      context: "Utforskning av paradokset i terapeutisk praksis hvor målet er å gjøre seg unødvendig. Ekte helbredelse skjer når pasienten ikke lenger trenger analytikerens tolkning, men kan navigere i sitt eget psykiske landskap.",
-      source: {
-        work: "Triumphant Victim",
-        page: 178,
-        chapter: "Kapittel 9: Analysens Slutt",
-        year: 2021
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Praktisk anvendelse"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Etiske betraktninger"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Integrasjon"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "termination-icon.svg"
-      },
-      position: {
-        x: 0.8,
-        y: 0.6,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_007",
-      title: "Lacans Arv",
-      quote: "Tilbakevendelsen til Freud er ikke en repetisjon, men en nylesning gjennom strukturalismens linse.",
-      context: "Historisk kontekst for å forstå utviklingen av psykoanalytisk teori, spesielt hvordan Lacan re-interpreterte Freuds verk gjennom strukturell lingvistikk. Denne nylesningen skapte nye muligheter for å forstå det ubevisste.",
+      title: "Analytikerens Trening",
+      quote: "Treningen av en analytiker begynner i øyeblikket de innser at de ikke lenger lytter etter mening, men etter strukturen til signifikanten.",
+      context: "Historisk kontekst for å forstå utviklingen av psykoanalytisk teori, spesielt hvordan Lacan re-interpreterte Freuds verk gjennom strukturell lingvistikk. Denne gjenlesningen skapte nye muligheter for å forstå det ubevisste.",
       source: {
-        work: "Do You Read Me",
-        page: 28,
-        chapter: "Kapittel 2: Den Strukturelle Vendingen",
+        work: "Do You Read Me? Training for Analysts",
+        page: 112,
+        number: 9,
+        chapter: "Chapter 2: The Structural Turn",
         year: 2018
       },
       themes: ["language", "philosophical"],
@@ -425,10 +330,11 @@ const quoteData = {
       quote: "Ekte styrke begynner når vi anerkjenner valget i vår lidelse.",
       context: "Et motpunkt til analysen av offerrollen, som antyder at anerkjennelse av handlekraft innen lidelse representerer det første skrittet mot ekte styrke. Dette utfordrer det deterministiske synet på sosial betinging.",
       source: {
-        work: "Triumphant Victim",
-        page: 134,
-        chapter: "Kapittel 7: Valgets Mulighet",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 156,
+        number: 18,
+        chapter: "Chapter 7: The Possibility of Choice",
+        year: 2013
       },
       themes: ["identity", "desire"],
       relatedQuotes: [
@@ -470,64 +376,15 @@ const quoteData = {
       }
     },
     {
-      id: "quote_009",
-      title: "Tolkningens Etikk",
-      quote: "Å tolke er å utøve makt, men å nekte tolkning er å forlate ansvar.",
-      context: "Filosofisk undersøkelse av det etiske dilemmaet iboende i psykoanalytisk praksis. Analytikeren må navigere mellom arrogansen ved å påstå å vite og uaktsomheten ved å nekte å veilede.",
-      source: {
-        work: "Triumphant Victim",
-        page: 201,
-        chapter: "Kapittel 10: Det Etiske Dilemmaet",
-        year: 2021
-      },
-      themes: ["interpretation", "philosophical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Etiske spørsmål"
-        },
-        {
-          id: "quote_006",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Profesjonell etikk"
-        },
-        {
-          id: "quote_007",
-          relationship: "expands",
-          strength: 0.5,
-          label: "Teoretisk bakgrunn"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "ethics-icon.svg"
-      },
-      position: {
-        x: 0.9,
-        y: 0.4,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 3,
-        popularity: 0.5,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_010",
-      title: "Klinisk Semiotikk",
-      quote: "Pasientens tale er en tekst hvor symptomene er tegnsetting.",
-      context: "Anvendelse av semiotisk teori i klinisk praksis, som viser hvordan fysiske og psykologiske symptomer fungerer som strukturelle elementer i pasientens fortelling. Disse 'tegnsettingene' avslører den underliggende grammatikken i lidelsen.",
+      title: "Motstand og Kur",
+      quote: "Motstand er ikke et hinder for kur; det er selve materialet i det analytiske arbeidet.",
+      context: "Anvendelse av semiotisk teori i klinisk praksis, som viser hvordan fysiske og psykologiske symptomer fungerer som strukturelle elementer i pasientens fortelling. Disse 'tegnsettings' avslører den underliggende grammatikken i lidelsen.",
       source: {
-        work: "Do You Read Me",
-        page: 95,
-        chapter: "Kapittel 5: Den Kliniske Teksten",
+        work: "Do You Read Me? Training for Analysts",
+        page: 54,
+        number: 14,
+        chapter: "Chapter 7: The Digital Stage",
         year: 2018
       },
       themes: ["language", "clinical"],
@@ -571,14 +428,15 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "Sosiale Mediers Lidelse",
-      quote: "Den digitale arenaen har transformert privat smerte til offentlig fremføring.",
-      context: "Samtidsanalyse av hvordan sosiale medieplattformer har skapt nye mekanismer for fremføring av lidelse. Den digitale arenaen forsterker og kommersialiserer visning av personlig smerte, og skaper nye identitetsformer.",
+      title: "Lidelse som Valuta",
+      quote: "Lidelse er ikke bare en tilstand av å være; i økonomien til den triumferende offeren blir det en form av valuta brukt til å forhandle med den symbolske ordenen.",
+      context: "Samtidsanalyse av hvordan sosiale medieplattformer har skapt nye mekanismer for fremføring av lidelse. Den digitale arenaen forsterker og moneteriserer visningen av personlig smerte, og skaper nye identitetsformer.",
       source: {
-        work: "Triumphant Victim",
-        page: 145,
-        chapter: "Kapittel 7: Den Digitale Scenen",
-        year: 2021
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 192,
+        number: 2,
+        chapter: "Chapter 5: The Clinical Text",
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -618,59 +476,9 @@ const quoteData = {
         popularity: 0.7,
         dateAdded: "2025-11-27"
       }
-    },
-    {
-      id: "quote_012",
-      title: "Det Integrerte Selvet",
-      quote: "Helhet er ikke fraværet av motsetning, men omfavnelsen av paradoks.",
-      context: "Syntese av flere temaer, som antyder at psykisk helse kommer ikke fra å løse motsetninger, men fra å utvikle evnen til å holde paradoksale sannheter samtidig. Dette representerer kulminasjonen av den analytiske reisen.",
-      source: {
-        work: "Triumphant Victim",
-        page: 223,
-        chapter: "Kapittel 11: Utover Løsning",
-        year: 2021
-      },
-      themes: ["interpretation", "desire"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integrasjon"
-        },
-        {
-          id: "quote_006",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Terapeutisk mål"
-        },
-        {
-          id: "quote_010",
-          relationship: "synthesizes",
-          strength: 0.5,
-          label: "Klinisk integrasjon"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.1,
-        icon: "integration-icon.svg"
-      },
-      position: {
-        x: 0.85,
-        y: 0.85,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.8,
-        dateAdded: "2025-11-27"
-      }
     }
   ],
-  
+
   connections: [
     {
       from: "quote_001",
@@ -751,45 +559,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_003",
-      to: "quote_006",
-      type: "expands",
-      strength: 0.8,
-      label: "Terapeutisk prosess",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 3
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.7,
-      label: "Filosofiske implikasjoner",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.6,
-      label: "Integrasjon",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_004",
       to: "quote_007",
       type: "contextualizes",
@@ -842,32 +611,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_006",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.6,
-      label: "Etiske betraktninger",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_006",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.7,
-      label: "Terapeutisk mål",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_007",
       to: "quote_009",
       type: "expands",
@@ -886,19 +629,6 @@ const quoteData = {
       type: "expands",
       strength: 0.6,
       label: "Videre utforskning",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
-      from: "quote_010",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.5,
-      label: "Klinisk integrasjon",
       bidirectional: true,
       visual: {
         style: "solid",

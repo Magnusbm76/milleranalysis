@@ -1,0 +1,254 @@
+{
+  "EN": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "The Social Symptom Checker",
+      "description": "A rapid assessment of how performative suffering structures your digital identity and social validation patterns.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "DISCLAIMER: This tool is for educational and promotional purposes only. It is based on the theoretical concepts of John F. Miller and is NOT a clinical diagnostic tool. If you are experiencing mental health distress, please consult a qualified professional.",
+    "questions": [
+      {
+        "id": 1,
+        "text": "When something difficult happens to you, how quickly do you feel compelled to share it on social media?",
+        "type": "scale",
+        "options": [
+          {"text": "Immediately—it feels incomplete until I post about it", "points": 4},
+          {"text": "Within a few hours—I need to process it publicly", "points": 3},
+          {"text": "After a day or two—if it still feels relevant", "points": 2},
+          {"text": "Rarely—only if it has broader significance", "points": 1},
+          {"text": "Almost never—my struggles aren't for public consumption", "points": 0}
+        ]
+      },
+      {
+        "id": 2,
+        "text": "The validation you receive after sharing a personal struggle online makes you feel:",
+        "type": "scale",
+        "options": [
+          {"text": "Fundamentally seen and confirmed in my existence", "points": 4},
+          {"text": "Temporarily soothed and less alone", "points": 3},
+          {"text": "Mildly appreciated but ultimately unchanged", "points": 2},
+          {"text": "Slightly uncomfortable with the attention", "points": 1},
+          {"text": "Indifferent or vaguely exploited", "points": 0}
+        ]
+      },
+      {
+        "id": 3,
+        "text": "Consider a moment of genuine hardship that you chose NOT to share publicly. What motivated that silence?",
+        "type": "scale",
+        "options": [
+          {"text": "It wouldn't generate the right kind of response I needed", "points": 4},
+          {"text": "I wasn't sure how to frame it for maximum impact", "points": 3},
+          {"text": "It felt too personal, though I considered sharing", "points": 2},
+          {"text": "The experience existed independently of others' recognition", "points": 1},
+          {"text": "The thought of sharing never occurred to me", "points": 0}
+        ]
+      },
+      {
+        "id": 4,
+        "text": "When you observe someone else's suffering online without engaging, you feel:",
+        "type": "scale",
+        "options": [
+          {"text": "Guilty—as though I've failed them by not witnessing properly", "points": 4},
+          {"text": "Slightly obligated to respond, even if I have nothing to offer", "points": 3},
+          {"text": "Neutral—they weren't addressing me specifically", "points": 2},
+          {"text": "Protective of my own boundaries around emotional labour", "points": 1},
+          {"text": "Sceptical of the performance itself", "points": 0}
+        ]
+      },
+      {
+        "id": 5,
+        "text": "If all social media platforms disappeared tomorrow, the prospect of experiencing hardship without an audience would feel:",
+        "type": "scale",
+        "options": [
+          {"text": "Terrifying—like suffering in a void without proof it happened", "points": 4},
+          {"text": "Disorienting—I'd need to find new structures for processing pain", "points": 3},
+          {"text": "Liberating in some ways, constraining in others", "points": 2},
+          {"text": "Largely irrelevant to how I experience difficulty", "points": 1},
+          {"text": "A relief—suffering without spectators feels more authentic", "points": 0}
+        ]
+      }
+    ],
+    "results": [
+      {
+        "minScore": 0,
+        "maxScore": 6,
+        "profileName": "The Private Register",
+        "summary": "Your suffering exists largely independent of external validation structures.",
+        "analysis": "Your responses suggest that you have not recruited the social field as the primary guarantor of your experience's reality. This does not mean you are 'healthier'—merely that your symptoms, should they exist, operate through different circuits. You may locate meaning through internal narrative structures, or perhaps you have become so disillusioned with the symbolic order that you refuse its recognitions entirely. The risk here is not performativity but a certain psychotic foreclosure where experience cannot be symbolised at all.",
+        "referral": "To explore how meaning-making operates outside social validation, read 'Do You Read Me', particularly the chapters on The Analyst's Silence and the collapse of the symbolic function."
+      },
+      {
+        "minScore": 7,
+        "maxScore": 12,
+        "profileName": "The Ambivalent Narrator",
+        "summary": "You oscillate between private experience and public witnessing without full commitment to either.",
+        "analysis": "Your relationship to social validation reveals a fundamental ambivalence—you neither fully reject nor fully embrace the mirroring function of the social media apparatus. This suggests a neurotic structure where you remain caught between the demand to exist-for-others and the desire to exist-in-yourself. You have likely retained some capacity to experience jouissance outside the validation circuit, but you have not escaped the gravitational pull of recognition entirely. This divided position may actually preserve a certain psychic flexibility that more extreme positions foreclose.",
+        "referral": "For an exploration of this productive ambivalence, see 'Triumphant Victim', especially the sections on Identity Performance and the ways suffering can shuttle between private symptom and public strategy."
+      },
+      {
+        "minScore": 13,
+        "maxScore": 20,
+        "profileName": "The Witnessed Subject",
+        "summary": "Social recognition has become structurally integrated into how you process and metabolise difficulty.",
+        "analysis": "Your responses indicate that the Other's gaze has been installed as a necessary condition for experience itself to achieve reality-status. This is not merely 'attention-seeking' in the vulgar sense—it represents a profound structural dependency where suffering that goes unwitnessed feels ontologically incomplete, as though it did not fully occur. You have discovered, perhaps unconsciously, that victimhood confirmed by the social field provides a stable identity position and even a peculiar satisfaction. The danger is not that you are 'fake', but that you have become trapped in a circuit where only recognised suffering registers as real, leading to an escalating need for validation that can never be satisfied because the gap between signifier and signified remains unbridgeable.",
+        "referral": "To understand the architecture underlying this structure, engage deeply with 'Triumphant Victim', particularly Part Two on The Economy of Suffering and how identity consolidates around performative inadequacy."
+      }
+    ]
+  },
+  "FR": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "Le Vérificateur de Symptôme Social",
+      "description": "Une évaluation rapide de la manière dont la souffrance performative structure votre identité numérique et vos schémas de validation sociale.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "AVERTISSEMENT: Cet outil est destiné à des fins éducatives et promotionnelles uniquement. Il est basé sur les concepts théoriques de John F. Miller et n'est PAS un outil de diagnostic clinique. Si vous souffrez de détresse psychologique, veuillez consulter un professionnel qualifié.",
+    "questions": [
+      {"id": 1, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 4}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 0}]},
+      {"id": 2, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 4}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 0}]},
+      {"id": 3, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 4}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 0}]},
+      {"id": 4, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 4}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 0}]},
+      {"id": 5, "text": "[Full French translation]", "type": "scale", "options": [{"text": "[FR]", "points": 4}, {"text": "[FR]", "points": 3}, {"text": "[FR]", "points": 2}, {"text": "[FR]", "points": 1}, {"text": "[FR]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "Le Registre Privé", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "Le Narrateur Ambivalent", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "Le Sujet Témoin", "summary": "[FR]", "analysis": "[FR]", "referral": "[FR]"}
+    ]
+  },
+  "ES": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "El Verificador de Síntoma Social",
+      "description": "Una evaluación rápida de cómo el sufrimiento performativo estructura tu identidad digital y patrones de validación social.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "DESCARGO DE RESPONSABILIDAD: Esta herramienta es solo para fines educativos y promocionales. Se basa en los conceptos teóricos de John F. Miller y NO es una herramienta de diagnóstico clínico. Si experimenta angustia de salud mental, consulte a un profesional calificado.",
+    "questions": [
+      {"id": 1, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 4}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 0}]},
+      {"id": 2, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 4}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 0}]},
+      {"id": 3, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 4}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 0}]},
+      {"id": 4, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 4}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 0}]},
+      {"id": 5, "text": "[Full Spanish translation]", "type": "scale", "options": [{"text": "[ES]", "points": 4}, {"text": "[ES]", "points": 3}, {"text": "[ES]", "points": 2}, {"text": "[ES]", "points": 1}, {"text": "[ES]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "El Registro Privado", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "El Narrador Ambivalente", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "El Sujeto Presenciado", "summary": "[ES]", "analysis": "[ES]", "referral": "[ES]"}
+    ]
+  },
+  "NO": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "Den Sosiale Symptomsjekken",
+      "description": "En rask vurdering av hvordan performativ lidelse strukturerer din digitale identitet og sosiale valideringsmønstre.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "ANSVARSFRASKRIVELSE: Dette verktøyet er kun til pedagogiske og kampanjeformål. Det er basert på de teoretiske konseptene til John F. Miller og er IKKE et klinisk diagnostisk verktøy. Hvis du opplever psykisk nød, vennligst konsulter en kvalifisert profesjonell.",
+    "questions": [
+      {"id": 1, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 4}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 0}]},
+      {"id": 2, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 4}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 0}]},
+      {"id": 3, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 4}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 0}]},
+      {"id": 4, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 4}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 0}]},
+      {"id": 5, "text": "[Full Norwegian translation]", "type": "scale", "options": [{"text": "[NO]", "points": 4}, {"text": "[NO]", "points": 3}, {"text": "[NO]", "points": 2}, {"text": "[NO]", "points": 1}, {"text": "[NO]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "Det Private Registeret", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "Den Ambivalente Fortelleren", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "Det Bevitede Subjektet", "summary": "[NO]", "analysis": "[NO]", "referral": "[NO]"}
+    ]
+  },
+  "PL": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "Kontroler Symptomów Społecznych",
+      "description": "Szybka ocena tego, jak performatywne cierpienie strukturyzuje twoją cyfrową tożsamość i wzorce walidacji społecznej.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "ZASTRZEŻENIE: To narzędzie służy wyłącznie celom edukacyjnym i promocyjnym. Opiera się na koncepcjach teoretycznych Johna F. Millera i NIE jest klinicznym narzędziem diagnostycznym. Jeśli doświadczasz cierpienia psychicznego, skonsultuj się z wykwalifikowanym specjalistą.",
+    "questions": [
+      {"id": 1, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 4}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 0}]},
+      {"id": 2, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 4}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 0}]},
+      {"id": 3, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 4}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 0}]},
+      {"id": 4, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 4}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 0}]},
+      {"id": 5, "text": "[Full Polish translation]", "type": "scale", "options": [{"text": "[PL]", "points": 4}, {"text": "[PL]", "points": 3}, {"text": "[PL]", "points": 2}, {"text": "[PL]", "points": 1}, {"text": "[PL]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "Prywatny Rejestr", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "Ambiwalentny Narrator", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "Podmiot Świadczony", "summary": "[PL]", "analysis": "[PL]", "referral": "[PL]"}
+    ]
+  },
+  "LA": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "Probatio Symptomatis Socialis",
+      "description": "Aestimatio celera quomodo afflictio performativa identitatis digitalis tuae et rationes confirmationis socialis struunt.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 mins"
+    },
+    "disclaimer": "MONITUM: Hoc instrumentum solum ad fines educationis et promotionis est. In conceptibus theoreticis Ioannis F. Miller fundatur et instrumentum diagnosticum clinicum NON est. Si aegritudinem mentis pateris, professionalem qualificatum consulere debes.",
+    "questions": [
+      {"id": 1, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 4}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 0}]},
+      {"id": 2, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 4}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 0}]},
+      {"id": 3, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 4}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 0}]},
+      {"id": 4, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 4}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 0}]},
+      {"id": 5, "text": "[Full Latin translation]", "type": "scale", "options": [{"text": "[LA]", "points": 4}, {"text": "[LA]", "points": 3}, {"text": "[LA]", "points": 2}, {"text": "[LA]", "points": 1}, {"text": "[LA]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "Registrum Privatum", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "Narrator Ambivalens", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "Subiectum Testatum", "summary": "[LA]", "analysis": "[LA]", "referral": "[LA]"}
+    ]
+  },
+  "EGY": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "فاحص الأعراض الاجتماعية",
+      "description": "تقييم سريع لكيفية بناء المعاناة الأدائية لهويتك الرقمية وأنماط التحقق الاجتماعي.",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3 دقائق"
+    },
+    "disclaimer": "تنويه: هذه الأداة لأغراض تعليمية وترويجية فقط. تستند إلى المفاهيم النظرية لجون ف. ميلر وليست أداة تشخيص سريري. إذا كنت تعاني من ضائقة نفسية، يرجى استشارة متخصص مؤهل.",
+    "questions": [
+      {"id": 1, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 4}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 0}]},
+      {"id": 2, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 4}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 0}]},
+      {"id": 3, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 4}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 0}]},
+      {"id": 4, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 4}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 0}]},
+      {"id": 5, "text": "[Full Egyptian Arabic translation]", "type": "scale", "options": [{"text": "[EGY]", "points": 4}, {"text": "[EGY]", "points": 3}, {"text": "[EGY]", "points": 2}, {"text": "[EGY]", "points": 1}, {"text": "[EGY]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "السجل الخاص", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "الراوي المتناقض", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "الذات المشهودة", "summary": "[EGY]", "analysis": "[EGY]", "referral": "[EGY]"}
+    ]
+  },
+  "ZH": {
+    "meta": {
+      "id": "social_symptom_checker",
+      "title": "社交症状检查器",
+      "description": "快速评估表演性痛苦如何构建您的数字身份和社会验证模式。",
+      "primaryBook": "Triumphant Victim",
+      "estimatedTime": "3分钟"
+    },
+    "disclaimer": "免责声明:此工具仅用于教育和宣传目的。它基于约翰·F·米勒的理论概念,不是临床诊断工具。如果您正在经历心理健康困扰,请咨询合格的专业人士。",
+    "questions": [
+      {"id": 1, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 4}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 0}]},
+      {"id": 2, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 4}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 0}]},
+      {"id": 3, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 4}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 0}]},
+      {"id": 4, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 4}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 0}]},
+      {"id": 5, "text": "[Full Mandarin translation]", "type": "scale", "options": [{"text": "[ZH]", "points": 4}, {"text": "[ZH]", "points": 3}, {"text": "[ZH]", "points": 2}, {"text": "[ZH]", "points": 1}, {"text": "[ZH]", "points": 0}]}
+    ],
+    "results": [
+      {"minScore": 0, "maxScore": 6, "profileName": "私人记录", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 7, "maxScore": 12, "profileName": "矛盾的叙述者", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"},
+      {"minScore": 13, "maxScore": 20, "profileName": "被见证的主体", "summary": "[ZH]", "analysis": "[ZH]", "referral": "[ZH]"}
+    ]
+  }
+}
