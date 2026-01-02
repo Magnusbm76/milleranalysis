@@ -71,13 +71,13 @@ const quoteData = {
   quotes: [
     {
       id: "quote_001",
-      title: "The Failure of Language",
-      quote: "Every sentence is already a betrayal of the initial thought.",
+      title: "Reading the Gaps",
+      quote: "The analyst does not read the patient's story; the analyst reads the gaps where the story fails to hold together.",
       context: "This insight explores the fundamental semiotic gap between the signifier and the signified, drawing from Lacan's early work on communication limits. The act of speaking necessarily distorts the original thought, creating a permanent gap between intention and expression.",
       source: {
-        work: "Do You Read Me",
-        page: 42,
-        number: null,
+        work: "Do You Read Me? Training for Analysts",
+        page: 15,
+        number: 22,
         chapter: "Chapter 3: The Semiotic Divide",
         year: 2018
       },
@@ -168,57 +168,6 @@ const quoteData = {
         difficulty: "advanced",
         readingTime: 3,
         popularity: 0.8,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
-      id: "quote_003",
-      title: "Interpretation's End",
-      quote: "The purpose of psychoanalysis is not to provide answers, but to terminate the desire for them.",
-      context: "A central tenet of Miller's philosophy: that true resolution comes when the subject ceases to project the desire for completion onto the analyst or an external narrative. The therapeutic journey ends not with understanding but with acceptance.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: null,
-        number: null,
-        chapter: "Chapter 8: Beyond Analysis",
-        year: 2013
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_006",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Therapeutic process"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Philosophical implications"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integration"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "interpretation-icon.svg"
-      },
-      position: {
-        x: 0.7,
-        y: 0.7,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.7,
         dateAdded: "2025-11-27"
       }
     },
@@ -325,57 +274,6 @@ const quoteData = {
       }
     },
     {
-      id: "quote_006",
-      title: "Therapeutic Termination",
-      quote: "The analyst's success is measured by their own obsolescence.",
-      context: "Exploring the paradox of therapeutic practice where the goal is to make oneself unnecessary. True healing occurs when the patient no longer needs the analyst's interpretation but can navigate their own psychic landscape.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: null,
-        number: null,
-        chapter: "Chapter 9: The End of Analysis",
-        year: 2013
-      },
-      themes: ["interpretation", "clinical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Practical application"
-        },
-        {
-          id: "quote_009",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Ethical considerations"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Integration"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "termination-icon.svg"
-      },
-      position: {
-        x: 0.8,
-        y: 0.6,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_007",
       title: "The Analyst's Training",
       quote: "The training of an analyst begins at the moment they realize they are no longer listening for meaning, but for the structure of the signifier.",
@@ -401,12 +299,6 @@ const quoteData = {
           strength: 0.6,
           label: "Background"
         },
-        {
-          id: "quote_009",
-          relationship: "expands",
-          strength: 0.5,
-          label: "Philosophical implications"
-        }
       ],
       visual: {
         type: "gateway",
@@ -478,67 +370,16 @@ const quoteData = {
       }
     },
     {
-      id: "quote_009",
-      title: "The Ethics of Interpretation",
-      quote: "To interpret is to exercise power, but to refuse interpretation is to abandon responsibility.",
-      context: "Philosophical examination of the ethical dilemma inherent in psychoanalytic practice. The analyst must navigate between the arrogance of claiming to know and the negligence of refusing to offer guidance.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: null,
-        number: null,
-        chapter: "Chapter 10: The Ethical Dilemma",
-        year: 2013
-      },
-      themes: ["interpretation", "philosophical"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "questions",
-          strength: 0.7,
-          label: "Ethical questions"
-        },
-        {
-          id: "quote_006",
-          relationship: "questions",
-          strength: 0.6,
-          label: "Professional ethics"
-        },
-        {
-          id: "quote_007",
-          relationship: "expands",
-          strength: 0.5,
-          label: "Theoretical background"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#FFD700",
-        size: 1.0,
-        icon: "ethics-icon.svg"
-      },
-      position: {
-        x: 0.9,
-        y: 0.4,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 3,
-        popularity: 0.5,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
       id: "quote_010",
-      title: "Suffering as Currency",
-      quote: "Suffering is not merely a state of being; in the economy of the triumphant victim, it becomes a form of currency used to negotiate with the symbolic order.",
+      title: "Resistance and Cure",
+      quote: "Resistance is not an obstacle to the cure; it is the very material of the analytical work.",
       context: "Application of semiotic theory to clinical practice, demonstrating how physical and psychological symptoms function as structural elements in the patient's narrative. These 'punctuation marks' reveal the underlying grammar of suffering.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: 192,
-        number: 2,
+        work: "Do You Read Me? Training for Analysts",
+        page: 54,
+        number: 14,
         chapter: "Chapter 5: The Clinical Text",
-        year: 2013
+        year: 2018
       },
       themes: ["language", "clinical"],
       relatedQuotes: [
@@ -553,12 +394,6 @@ const quoteData = {
           relationship: "applies",
           strength: 0.7,
           label: "Clinical relevance"
-        },
-        {
-          id: "quote_012",
-          relationship: "synthesizes",
-          strength: 0.5,
-          label: "Integration"
         }
       ],
       visual: {
@@ -581,15 +416,15 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "Resistance and Cure",
-      quote: "Resistance is not an obstacle to the cure; it is the very material of the analytical work.",
+      title: "Suffering as Currency",
+      quote: "Suffering is not merely a state of being; in the economy of the triumphant victim, it becomes a form of currency used to negotiate with the symbolic order.",
       context: "Contemporary analysis of how social media platforms have created new mechanisms for the performance of suffering. The digital arena amplifies and monetizes the display of personal pain, creating new forms of identity.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 54,
-        number: 14,
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: 192,
+        number: 2,
         chapter: "Chapter 7: The Digital Stage",
-        year: 2018
+        year: 2013
       },
       themes: ["identity", "social"],
       relatedQuotes: [
@@ -630,57 +465,6 @@ const quoteData = {
         dateAdded: "2025-11-27"
       }
     },
-    {
-      id: "quote_012",
-      title: "The Integrated Self",
-      quote: "Wholeness is not the absence of contradiction but the embrace of paradox.",
-      context: "Synthesis of multiple themes, suggesting that psychological health comes not from resolving contradictions but from developing the capacity to hold paradoxical truths simultaneously. This represents the culmination of the analytical journey.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: null,
-        number: null,
-        chapter: "Chapter 11: Beyond Resolution",
-        year: 2013
-      },
-      themes: ["interpretation", "desire"],
-      relatedQuotes: [
-        {
-          id: "quote_003",
-          relationship: "synthesizes",
-          strength: 0.6,
-          label: "Integration"
-        },
-        {
-          id: "quote_006",
-          relationship: "synthesizes",
-          strength: 0.7,
-          label: "Therapeutic goal"
-        },
-        {
-          id: "quote_010",
-          relationship: "synthesizes",
-          strength: 0.5,
-          label: "Clinical integration"
-        }
-      ],
-      visual: {
-        type: "terminal",
-        color: "#FFD700",
-        size: 1.1,
-        icon: "integration-icon.svg"
-      },
-      position: {
-        x: 0.85,
-        y: 0.85,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "advanced",
-        readingTime: 2,
-        popularity: 0.8,
-        dateAdded: "2025-11-27"
-      }
-    }
   ],
 
   connections: [
@@ -763,45 +547,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_003",
-      to: "quote_006",
-      type: "expands",
-      strength: 0.8,
-      label: "Therapeutic process",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 3
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.7,
-      label: "Philosophical implications",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_003",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.6,
-      label: "Integration",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_004",
       to: "quote_007",
       type: "contextualizes",
@@ -854,45 +599,6 @@ const quoteData = {
       }
     },
     {
-      from: "quote_006",
-      to: "quote_009",
-      type: "questions",
-      strength: 0.6,
-      label: "Ethical considerations",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_006",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.7,
-      label: "Therapeutic goal",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
-      from: "quote_007",
-      to: "quote_009",
-      type: "expands",
-      strength: 0.5,
-      label: "Philosophical implications",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    },
-    {
       from: "quote_008",
       to: "quote_011",
       type: "expands",
@@ -905,19 +611,6 @@ const quoteData = {
         width: 2
       }
     },
-    {
-      from: "quote_010",
-      to: "quote_012",
-      type: "synthesizes",
-      strength: 0.5,
-      label: "Clinical integration",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 2
-      }
-    }
   ]
 };
 
