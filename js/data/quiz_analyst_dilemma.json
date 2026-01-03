@@ -7,7 +7,7 @@
       {
         "id": "ad1",
         "text": "I feel comfortable working with the inherent instability of meaning in therapeutic interpretation rather than seeking definitive answers.",
-        "context": "Exploring the analyst's capacity to tolerate ambiguity and semiotic uncertainty."
+        "context": "Exploring the analyst's capacity to tolerate ambiguity and uncertainty."
       },
       {
         "id": "ad2",
@@ -22,7 +22,7 @@
       {
         "id": "ad4",
         "text": "I am aware of how my position within the semiotic limitations of language affects what can be communicated in therapy.",
-        "context": "Analyzing the analyst's recognition of their own linguistic constraints."
+        "context": "Analyzing the analyst's recognition of their own language constraints."
       },
       {
         "id": "ad5",
@@ -32,7 +32,7 @@
       {
         "id": "ad6",
         "text": "I can tolerate the frustration that arises when interpretation inevitably fails to capture the fullness of experience.",
-        "context": "Examining the analyst's capacity to work within semiotic limitations."
+        "context": "Examining the analyst's capacity to work within language limitations."
       },
       {
         "id": "ad7",
@@ -47,19 +47,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Integrated Analytic Position",
-        "summary": "Your responses indicate a sophisticated understanding of the inherent dilemmas in analytic practice. You demonstrate a remarkable capacity to tolerate the fundamental tensions and paradoxes that define therapeutic work. This suggests you've developed a nuanced relationship with the unstable nature of meaning and the semiotic limitations that frame clinical practice. Your ability to navigate these challenges without seeking premature resolution indicates advanced analytic maturity.",
-        "recommendation": "Continue cultivating this balanced approach to analytic dilemmas. Your comfort with ambiguity and semiotic uncertainty serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Analytic Positioning' in 'Do You Read Me' and the section on 'The Space Between Interpretation' in 'Triumphant Victim'."
+        "summary": "Your responses indicate a sophisticated understanding of the inherent dilemmas in analytic practice. You demonstrate a remarkable capacity to tolerate the fundamental tensions and paradoxes that define therapeutic work. This suggests you've developed a nuanced relationship with the unstable nature of meaning and the language limitations that frame clinical practice. Your ability to navigate these challenges without seeking premature resolution indicates advanced analytic maturity.",
+        "recommendation": "Continue cultivating this balanced approach to analytic dilemmas. Your comfort with ambiguity and uncertainty serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Analytic Positioning' in 'Do You Read Me' and the section on 'The Space Between Interpretation' in 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Developing Analytic Tolerance",
         "summary": "Your responses reveal a developing awareness of the fundamental dilemmas in analytic work. You may occasionally feel conflicted about the tensions between structure and discovery, interpretation and silence, or patient expectations and analytic goals. This suggests you're navigating the complex paradoxes of clinical practice with growing success, though there may be moments when these dilemmas create genuine uncertainty or discomfort.",
         "recommendation": "Consider developing greater comfort with the inherent ambiguities of analytic practice. Practicing tolerance for the impossible positions that define therapeutic work can enhance your clinical effectiveness. For deeper understanding of these dynamics, refer to the chapter on 'Clinical Tensions' in 'Do You Read Me' and the section on 'Therapeutic Paradoxes' in 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Significant Analytic Conflict",
         "summary": "Your responses indicate a strong experience of the fundamental dilemmas as a source of professional conflict and uncertainty. You may frequently feel torn between competing demands of analytic work or struggle with the paradoxical nature of therapeutic interventions. This pattern suggests the inherent tensions of clinical practice significantly impact your confidence and effectiveness as an analyst.",
         "recommendation": "Your relationship with these fundamental dilemmas warrants careful exploration. Consider developing strategies for working within analytic tensions rather than seeking to resolve them. The chapter on 'Impossible Positions' in 'Do You Read Me' and the section on 'Working Through Dilemmas' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
@@ -74,7 +83,7 @@
       {
         "id": "ad1",
         "text": "Je me sens à l'aise de travailler avec l'instabilité inhérente du sens dans l'interprétation thérapeutique plutôt que de chercher des réponses définitives.",
-        "context": "Explorer la capacité de l'analyste à tolérer l'ambiguïté et l'incertitude sémiotique."
+        "context": "Explorer la capacité de l'analyste à tolérer l'ambiguïté et l'incertitude."
       },
       {
         "id": "ad2",
@@ -89,7 +98,7 @@
       {
         "id": "ad4",
         "text": "Je suis conscient de comment ma position dans les limitations sémiotiques du langage affecte ce qui peut être communiqué en thérapie.",
-        "context": "Analyser la reconnaissance par l'analyste de ses propres contraintes linguistiques."
+        "context": "Analyser la reconnaissance par l'analyste de ses propres contraintes de langage."
       },
       {
         "id": "ad5",
@@ -99,7 +108,7 @@
       {
         "id": "ad6",
         "text": "Je peux tolérer la frustration qui surgit quand l'interprétation échoue inévitablement à capturer la plénitude de l'expérience.",
-        "context": "Examiner la capacité de l'analyste à travailler dans les limitations sémiotiques."
+        "context": "Examiner la capacité de l'analyste à travailler dans les limitations de langage."
       },
       {
         "id": "ad7",
@@ -114,19 +123,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Position Analytique Intégrée",
-        "summary": "Vos réponses indiquent une compréhension sophistiquée des dilemmes inhérents dans la pratique analytique. Vous démontrez une capacité remarquable à tolérer les tensions fondamentales et paradoxes qui définissent le travail thérapeutique. Ceci suggère que vous avez développé une relation nuancée avec la nature instable du sens et les limitations sémiotiques qui encadrent la pratique clinique. Votre capacité à naviguer ces défis sans chercher de résolution prématurée indique une maturité analytique avancée.",
-        "recommendation": "Continuez à cultiver cette approche équilibrée des dilemmes analytiques. Votre confort avec l'ambiguïté et l'incertitude sémiotique sert de fondement à un travail clinique efficace. Pour une exploration plus approfondie de ces concepts, voir le chapitre sur 'Le Positionnement Analytique' dans 'Do You Read Me' et la section sur 'L'Espace Entre Interprétation' dans 'Triumphant Victim'."
+        "summary": "Vos réponses indiquent une compréhension sophistiquée des dilemmes inhérents dans la pratique analytique. Vous démontrez une capacité remarquable à tolérer les tensions fondamentales et paradoxes qui définissent le travail thérapeutique. Ceci suggère que vous avez développé une relation nuancée avec la nature instable du sens et les limitations de langage qui encadrent la pratique clinique. Votre capacité à naviguer ces défis sans chercher de résolution prématurée indique une maturité analytique avancée.",
+        "recommendation": "Continuez à cultiver cette approche équilibrée des dilemmes analytiques. Votre confort avec l'ambiguïté et l'incertitude sert de fondement à un travail clinique efficace. Pour une exploration plus approfondie de ces concepts, voir le chapitre sur 'Le Positionnement Analytique' dans 'Do You Read Me' et la section sur 'L'Espace Entre Interprétation' dans 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Tolérance Analytique en Développement",
         "summary": "Vos réponses révèlent une conscience en développement des dilemmes fondamentaux dans le travail analytique. Vous pouvez occasionnellement vous sentir en conflit sur les tensions entre structure et découverte, interprétation et silence, ou attentes des patients et objectifs analytiques. Ceci suggère que vous naviguez les paradoxes complexes de la pratique clinique avec un succès croissant, bien qu'il puisse y avoir des moments où ces dilemmes créent une incertitude ou un inconfort réels.",
         "recommendation": "Considérez développer un plus grand confort avec les ambiguïtés inhérentes de la pratique analytique. Pratiquer la tolérance pour les positions impossibles qui définissent le travail thérapeutique peut améliorer votre efficacité clinique. Pour une compréhension plus profonde de ces dynamiques, référez-vous au chapitre sur 'Tensions Cliniques' dans 'Do You Read Me' et à la section sur 'Paradoxes Thérapeutiques' dans 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Conflit Analytique Significatif",
         "summary": "Vos réponses indiquent une forte expérience des dilemmes fondamentaux comme source de conflit professionnel et d'incertitude. Vous pouvez fréquemment vous sentir déchiré entre les demandes concurrentes du travail analytique ou lutter avec la nature paradoxale des interventions thérapeutiques. Ce schéma suggère que les tensions inhérentes de la pratique clinique impactent significativement votre confiance et votre efficacité en tant qu'analyste.",
         "recommendation": "Votre relation avec ces dilemmes fondamentaux mérite une exploration attentive. Considérez développer des stratégies pour travailler dans les tensions analytiques plutôt que de chercher à les résoudre. Le chapitre sur 'Positions Impossibles' dans 'Do You Read Me' et la section sur 'Travailler à Travers les Dilemmes' dans 'Triumphant Victim' fournissent des cadres essentiels pour comprendre ces dynamiques."
@@ -156,7 +174,7 @@
       {
         "id": "ad4",
         "text": "Soy consciente de cómo mi posición dentro de las limitaciones semióticas del lenguaje afecta lo que puede ser comunicado en terapia.",
-        "context": "Analizando el reconocimiento del analista de sus propias limitaciones lingüísticas."
+        "context": "Analizando el reconocimiento del analista de sus propias limitaciones de lenguaje."
       },
       {
         "id": "ad5",
@@ -166,7 +184,7 @@
       {
         "id": "ad6",
         "text": "Puedo tolerar la frustración que surge cuando la interpretación inevitablemente falla en capturar la plenitud de la experiencia.",
-        "context": "Examinando la capacidad del analista para trabajar dentro de las limitaciones semióticas."
+        "context": "Examinando la capacidad del analista para trabajar dentro de las limitaciones de lenguaje."
       },
       {
         "id": "ad7",
@@ -181,19 +199,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Posición Analítica Integrada",
-        "summary": "Sus respuestas indican una comprensión sofisticada de los dilemmas inherentes en la práctica analítica. Demuestra una capacidad notable para tolerar las tensiones fundamentales y paradojas que definen el trabajo terapéutico. Esto sugiere que ha desarrollado una relación matizada con la naturaleza inestable del significado y las limitaciones semióticas que enmarcan la práctica clínica. Su capacidad para navegar estos desafíos sin buscar resolución prematura indica madurez analítica avanzada.",
-        "recommendation": "Continúe cultivando este enfoque equilibrado de los dilemas analíticos. Su comodidad con la ambigüedad y la incertidumbre semiótica sirve como base para un trabajo clínico efectivo. Para mayor exploración de estos conceptos, vea el capítulo sobre 'Posicionamiento Analítico' en 'Do You Read Me' y la sección sobre 'El Espacio Entre Interpretación' en 'Triumphant Victim'."
+        "summary": "Sus respuestas indican una comprensión sofisticada de los dilemmas inherentes en la práctica analítica. Demuestra una capacidad notable para tolerar las tensiones fundamentales y paradojas que definen el trabajo terapéutico. Esto sugiere que ha desarrollado una relación matizada con la naturaleza inestable del significado y las limitaciones de lenguaje que enmarcan la práctica clínica. Su capacidad para navegar estos desafíos sin buscar resolución prematura indica madurez analítica avanzada.",
+        "recommendation": "Continúe cultivando este enfoque equilibrado de los dilemas analíticos. Su comodidad con la ambigüedad y la incertidumbre sirve como base para un trabajo clínico efectivo. Para mayor exploración de estos conceptos, vea el capítulo sobre 'Posicionamiento Analítico' en 'Do You Read Me' y la sección sobre 'El Espacio Entre Interpretación' en 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Tolerancia Analítica en Desarrollo",
         "summary": "Sus respuestas revelan una conciencia en desarrollo de los dilemmas fundamentales en el trabajo analítico. Puede ocasionalmente sentirse en conflicto sobre las tensiones entre estructura y descubrimiento, interpretación y silencio, o expectativas del paciente y objetivos analíticos. Esto sugiere que navega las paradojas complejas de la práctica clínica con éxito creciente, aunque puede haber momentos en que estos dilemmas crean incertidumbre o incomodidad reales.",
         "recommendation": "Considere desarrollar mayor comodidad con las ambigüedades inherentes de la práctica analítica. Practicar tolerancia para las posiciones imposibles que definen el trabajo terapéutico puede mejorar su efectividad clínica. Para comprensión más profunda de estas dinámicas, consulte el capítulo sobre 'Tensiones Clínicas' en 'Do You Read Me' y la sección sobre 'Paradojas Terapéuticas' en 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Conflicto Analítico Significativo",
         "summary": "Sus respuestas indican una fuerte experiencia de los dilemmas fundamentales como fuente de conflicto profesional e incertidumbre. Puede frecuentemente sentirse dividido entre demandas competitivas del trabajo analítico o luchar con la naturaleza paradójica de las intervenciones terapéuticas. Este patrón sugiere que las tensiones inherentes de la práctica clínica impactan significativamente su confianza y efectividad como analista.",
         "recommendation": "Su relación con estos dilemmas fundamentales merece exploración cuidadosa. Considere desarrollar estrategias para trabajar dentro de tensiones analíticas más que buscar resolverlas. El capítulo sobre 'Posiciones Imposibles' en 'Do You Read Me' y la sección sobre 'Trabajando a Través de Dilemas' en 'Triumphant Victim' proporcionan marcos esenciales para entender estas dinámicas."
@@ -208,7 +235,7 @@
       {
         "id": "ad1",
         "text": "Jeg føler meg komfortabel med å jobbe med den iboende ustabiliteten i mening i terapeutisk tolkning heller enn å søke definitive svar.",
-        "context": "Utforske analytikerens kapasitet til å tolerere tvetydighet og semiotisk usikkerhet."
+        "context": "Utforske analytikerens kapasitet til å tolerere tvetydighet og usikkerhet."
       },
       {
         "id": "ad2",
@@ -223,7 +250,7 @@
       {
         "id": "ad4",
         "text": "Jeg er bevisst på hvordan min posisjon innenfor de semiotiske begrensningene i språket påvirker hva som kan kommuniseres i terapi.",
-        "context": "Analysere analytikerens anerkjennelse av sine egne språklige begrensninger."
+        "context": "Analysere analytikerens anerkjennelse av sine egne språkbegrensninger."
       },
       {
         "id": "ad5",
@@ -248,19 +275,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Integrert Analytisk Posisjon",
-        "summary": "Dine svar indikerer en sofistikert forståelse av de iboende dilemmaene i analytisk praksis. Du demonstrerer en bemerkelsesverdig kapasitet til å tolerere de fundamentale spenningene og paradoksene som definerer terapeutisk arbeid. Dette antyder at du har utviklet en nyansert relasjon til den ustabile naturen av mening og de semiotiske begrensningene som rammer inn klinisk praksis. Din evne til å navigere disse utfordringene uten å søke for tidlig oppløsning indikerer avansert analytisk modenhet.",
-        "recommendation": "Fortsett å dyrke denne balanserte tilnærmingen til analytiske dilemmaer. Din komfort med tvetydighet og semiotisk usikkerhet tjener som et fundament for effektivt klinisk arbeid. For videre utforskning av disse konseptene, se kapittelet om 'Analytisk Posisjonering' i 'Do You Read Me' og seksjonen om 'Rommet Mellom Tolkning' i 'Triumphant Victim'."
+        "summary": "Dine svar indikerer en sofistikert forståelse av de iboende dilemmaene i analytisk praksis. Du demonstrerer en bemerkelsesverdig kapasitet til å tolerere de fundamentale spenningene og paradoksene som definerer terapeutisk arbeid. Dette antyder at du har utviklet en nyansert relasjon til den ustabile naturen av mening og de språkbegrensningene som rammer inn klinisk praksis. Din evne til å navigere disse utfordringene uten å søke for tidlig oppløsning indikerer avansert analytisk modenhet.",
+        "recommendation": "Fortsett å dyrke denne balanserte tilnærmingen til analytiske dilemmaer. Din komfort med tvetydighet og usikkerhet tjener som et fundament for effektivt klinisk arbeid. For videre utforskning av disse konseptene, se kapittelet om 'Analytisk Posisjonering' i 'Do You Read Me' og seksjonen om 'Rommet Mellom Tolkning' i 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Utviklende Analytisk Toleranse",
         "summary": "Dine svar avslører en utviklende bevissthet om de fundamentale dilemmaene i analytisk arbeid. Du kan av og til føle deg i konflikt om spenningene mellom struktur og oppdagelse, tolkning og stillhet, eller pasientforventninger og analytiske mål. Dette antyder at du navigerer de komplekse paradoksene i klinisk praksis med voksende suksess, selv om det kan være øyeblikk når disse dilemmaene skaper reell usikkerhet eller ubehag.",
         "recommendation": "Vurder å utvikle større komfort med de iboende tvetydighetene i analytisk praksis. Å praktisere toleranse for de umulige posisjonene som definerer terapeutisk arbeid kan forbedre din kliniske effektivitet. For dypere forståelse av disse dynamikkene, se kapittelet om 'Kliniske Spenninger' i 'Do You Read Me' og seksjonen om 'Terapeutiske Paradokser' i 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Betydelig Analytisk Konflikt",
         "summary": "Dine svar indikerer en sterk opplevelse av de fundamentale dilemmaene som kilde til profesjonell konflikt og usikkerhet. Du kan ofte føle deg revet mellom konkurrerende krav i analytisk arbeid eller slite med den paradoksale naturen av terapeutiske intervensjoner. Dette mønsteret antyder at de iboende spenningene i klinisk praksis betydelig påvirker din selvtillit og effektivitet som analytiker.",
         "recommendation": "Din relasjon til disse fundamentale dilemmaene fortjener nøye utforskning. Vurder å utvikle strategier for å jobbe innenfor analytiske spenninger heller enn å søke å løse dem. Kapittelet om 'Umulige Posisjoner' i 'Do You Read Me' og seksjonen om 'Å Jobbe Gjennom Dilemmaer' i 'Triumphant Victim' gir essensielle rammeverk for å forstå disse dynamikkene."
@@ -275,7 +311,7 @@
       {
         "id": "ad1",
         "text": "Czuję się komfortowo pracując z nieodłączną niestabilnością znaczenia w interpretacji terapeutycznej, zamiast szukać ostatecznych odpowiedzi.",
-        "context": "Eksplorowanie zdolności analityka do tolerowania niejednoznaczności i niepewności semiotycznej."
+        "context": "Eksplorowanie zdolności analityka do tolerowania niejednoznaczności i niepewności."
       },
       {
         "id": "ad2",
@@ -290,7 +326,7 @@
       {
         "id": "ad4",
         "text": "Jestem świadomy, jak moja pozycja w ramach semiotycznych ograniczeń języka wpływa na to, co można zakomunikować w terapii.",
-        "context": "Analizowanie uznania przez analityka jego własnych ograniczeń językowych."
+        "context": "Analizowanie uznania przez analityka jego własnych ograniczeń języka."
       },
       {
         "id": "ad5",
@@ -300,7 +336,7 @@
       {
         "id": "ad6",
         "text": "Potrafię tolerować frustrację, która pojawia się, gdy interpretacja nieuchronnie zawodzi w uchwyceniu pełni doświadczenia.",
-        "context": "Badanie zdolności analityka do pracy w ramach ograniczeń semiotycznych."
+        "context": "Badanie zdolności analityka do pracy w ramach ograniczeń języka."
       },
       {
         "id": "ad7",
@@ -315,19 +351,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Zintegrowana Pozycja Analityczna",
         "summary": "Twoje odpowiedzi wskazują na wyrafinowane zrozumienie nieodłącznych dylematów w praktyce analitycznej. Demonstrowałeś niezwykłą zdolność do tolerowania fundamentalnych napięć i paradoksów, które definiują pracę terapeutyczną. To sugeruje, że rozwinąłeś zniuansowaną relację z niestabilną naturą znaczenia i semiotycznymi ograniczeniami, które ramują praktykę kliniczną. Twoja zdolność do nawigowania tych wyzwań bez szukania przedwczesnego rozwiązania wskazuje na zaawansowaną dojrzałość analityczną.",
-        "recommendation": "Kontynuuj kultywowanie tego zrównoważonego podejścia do dylematów analitycznych. Twój komfort z niejednoznacznością i niepewnością semiotyczną służy jako podstawa skutecznej pracy klinicznej. Dla dalszej eksploracji tych koncepcji, zobacz rozdział o 'Pozycjonowaniu Analitycznym' w 'Do You Read Me' i sekcję o 'Przestrzeni Między Interpretacją' w 'Triumphant Victim'."
+        "recommendation": "Kontynuuj kultywowanie tego zrównoważonego podejścia do dylematów analitycznych. Twój komfort z niejednoznacznością i niepewnością służy jako podstawa skutecznej pracy klinicznej. Dla dalszej eksploracji tych koncepcji, zobacz rozdział o 'Pozycjonowaniu Analitycznym' w 'Do You Read Me' i sekcję o 'Przestrzeni Między Interpretacją' w 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Rozwijająca się Tolerancja Analityczna",
         "summary": "Twoje odpowiedzi ujawniają rozwijającą się świadomość fundamentalnych dylematów w pracy analitycznej. Możesz okazjonalnie czuć się w konflikcie z powodu napięć między strukturą a odkryciem, interpretacją a ciszą, lub oczekiwaniami pacjenta a celami analitycznymi. To sugeruje, że nawigujesz złożone paradoksy praktyki klinicznej z rosnącym sukcesem, choć mogą występować momenty, gdy te dylematy tworzą prawdziwą niepewność lub dyskomfort.",
         "recommendation": "Rozważ rozwijanie większego komfortu z nieodłącznymi niejednoznacznościami praktyki analitycznej. Praktykowanie tolerancji dla niemożliwych pozycji, które definiują pracę terapeutyczną, może poprawić Twoją skuteczność kliniczną. Dla głębszego zrozumienia tych dynamik, odwołaj się do rozdziału o 'Napięciach Klinicznych' w 'Do You Read Me' i sekcji o 'Paradoksach Terapeutycznych' w 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Znaczny Konflikt Analityczny",
         "summary": "Twoje odpowiedzi wskazują na silne doświadczenie fundamentalnych dylematów jako źródło konfliktu zawodowego i niepewności. Możesz często czuć się rozdarty między konkurencyjnymi wymaganiami pracy analitycznej lub zmagając się z paradoksalną naturą interwencji terapeutycznych. Ten wzorzec sugeruje, że nieodłączne napięcia praktyki klinicznej znacząco wpływają na Twoją pewność siebie i skuteczność jako analityka.",
         "recommendation": "Twoja relacja z tymi fundamentalnymi dylematami wymaga starannej eksploracji. Rozważ rozwijanie strategii pracy w ramach napięć analitycznych zamiast szukania ich rozwiązania. Rozdział o 'Niemożliwych Pozycjach' w 'Do You Read Me' i sekcja o 'Pracy przez Dylematy' w 'Triumphant Victim' dostarczają istotnych ram do zrozumienia tych dynamik."
@@ -342,7 +387,7 @@
       {
         "id": "ad1",
         "text": "Commodus sentior laborans cum instabilitate inhaerenti significati in interpretatione therapeutica potius quam quaerens responsa definitiva.",
-        "context": "Explorans capacitatem analytici ad tolerandam ambiguitatem et incertitudinem semioticam."
+        "context": "Explorans capacitatem analytici ad tolerandam ambiguitatem et incertitudinem."
       },
       {
         "id": "ad2",
@@ -357,7 +402,7 @@
       {
         "id": "ad4",
         "text": "Conscius sum quomodo positio mea intra limitationes semioticas linguae afficit quid in therapia communicari potest.",
-        "context": "Analyticans recognitionem analytici de propriis limitationibus linguisticis."
+        "context": "Analyticans recognitionem analytici de propriis limitationibus linguae."
       },
       {
         "id": "ad5",
@@ -367,7 +412,7 @@
       {
         "id": "ad6",
         "text": "Possum tolerare frustrationem quae oritur cum interpretatio inevitabiliter fallit in capienda plenitudine experientiae.",
-        "context": "Examinans capacitatem analytici ad laborandum intra limitationes semioticas."
+        "context": "Examinans capacitatem analytici ad laborandum intra limitationes linguae."
       },
       {
         "id": "ad7",
@@ -382,19 +427,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "Positio Analytica Integrata",
-        "summary": "Responsiones tuae indicant intellegentiam sophisticatam dilemmatum inhaerentium in praxi analytica. Capacitatem remarcabilem demonstras ad tolerandas tensiones fundamentales et paradoxos qui opus therapeuticum definiunt. Hoc suggerit te relationem nuancatam cum natura instabili significati et limitationibus semioticis quae praxin clinicam inquadre evolvisse. Tua facultas ad has difficultates navigandas sine quaerenda resolutione praematura maturitatem analyticam progressam indicat.",
+        "summary": "Responsiones tuae indicant intellegentiam sophisticatam dilemmatum inhaerentium in praxi analytica. Capacitatem remarcabilem demonstras ad tolerandas tensiones fundamentales et paradoxos qui opus therapeuticum definiunt. Hoc suggerit te relationem nuancatam cum natura instabili significati et limitationibus linguae quae praxin clinicam inquadre evolvisse. Tua facultas ad has difficultates navigandas sine quaerenda resolutione praematura maturitatem analyticam progressam indicat.",
         "recommendation": "Perge hanc approachum aequilibratam ad dilemmata analytica colere. Tua commoditas cum ambiguitate et incertitudine semiotica ut fundamentum operis clinicalis efficacis fungit. Ad ulteriorem explorationem horum conceptuum, vide capitulum de 'Positione Analytica' in 'Do You Read Me' et sectionem de 'Spatio Inter Interpretationem' in 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "Tolerantia Analytica Evolvens",
         "summary": "Responsiones tuae conscientiam evolventem de dilemmatibus fundamentalibus in opere analytico revelant. Fortasse nonnumquam in confligto sentis de tensionibus inter structuram et inventionem, interpretationem et silentium, vel expectationes patientis et fines analyticos. Hoc suggerit te paradoxos complexos praxis clinicalis cum successu crescente navigare, etsi esse possunt momenta cum haec dilemmata incertitudinem vel discommoditatem realem creant.",
         "recommendation": "Considera maiorem commoditatem cum ambiguitatibus inhaerentibus praxis analyticae evolvendam. Practicandi tolerantia pro positionibus impossibilibus quae opus therapeuticum definiunt efficacitatem tuam clinicam meliorare potest. Ad profundiorem intellegentiam harum dynamicalium, refere ad capitulum de 'Tensionibus Clinicalibus' in 'Do You Read Me' et sectionem de 'Paradisibus Therapeuticis' in 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "Conflictus Analyticus Significans",
         "summary": "Responsiones tuae fortem experientiam dilemmatum fundamentalium ut fontem conflictus professionalis et incertitudinis indicant. Fortasse saepe sentiris discissus inter postulata competitiva operis analytici vel pugnans cum natura paradoxali interventionum therapeuticarum. Hoc pattern suggerit tensiones inhaerentes praxis clinicalis significanter confidentiam tuam et efficacitatem ut analyticum impedicere.",
         "recommendation": "Relatio tua cum his dilemmatibus fundamentalibus diligentem explorationem meretur. Considera strategias evolvendas ad laborandum intra tensiones analyticas potius quam quaerendas eas solvere. Capitulum de 'Positionibus Impossibilibus' in 'Do You Read Me' et sectio de 'Laborando per Dilemmata' in 'Triumphant Victim' fundamenta essentialia pro his dynamicalibus intellegendis praebent."
@@ -449,19 +503,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "التموضع التحليلي المتكامل",
         "summary": "تشير إجاباتك إلى فهم متقدم للمعضلات المتأصلة في الممارسة التحليلية. تظهر قدرة ملحوظة على تحمل التوترات الأساسية والمفارقات التي تحدد العمل العلاجي. هذا يشير إلى أنك طورت علاقة متطورة مع الطبيعة غير المستقرة للمعنى والقيود السيميائية التي تحيط بالممارسة السريرية. قدرتك على التنقل في هذه التحديات دون البحث عن حل سابق لأوانه تشير إلى نضج تحليلي متقدم.",
         "recommendation": "استمر في تنمية هذا النهج المتوازن لمعضلات التحليل. راحتك مع الغموض وعدم اليقين السيميائي تخدم كأساس للعمل السريري الفعال. لمزيد من استكشاف هذه المفاهيم، انظر الفصل حول 'التموضع التحليلي' في 'Do You Read Me' والقسم حول 'المسافة بين التفسير' في 'Triumphant Victim'."
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "التسامح التحليلي النامي",
         "summary": "تكشف إجاباتك عن وعي نامٍ بالمعضلات الأساسية في العمل التحليلي. قد تشعر أحيانًا بالتعارض حول التوترات بين الهيكل والاكتشاف، التفسير والصمت، أو توقعات المريض والأهداف التحليلية. هذا يشير إلى أنك تتنقل في المفارقات المعقدة للممارسة السريرية بنجاح متزايد، على الرغم من أن هناك لحظات قد تخلق فيها هذه المعضلات عدم يقين أو عدم راحة حقيقي.",
         "recommendation": "فكر في تطوير راحة أكبر مع الغموض المتأصل في الممارسة التحليلية. ممارسة التسامح للمواقف المستحيلة التي تحدد العمل العلاجي يمكن أن تعزز فعاليتك السريرية. لفهم أعمق لهذه الديناميكيات، راجع الفصل حول 'التوترات السريرية' في 'Do You Read Me' والقسم حول 'المفارقات العلاجية' في 'Triumphant Victim'."
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "الصراع التحليلي الكبير",
         "summary": "تشير إجاباتك إلى تجربة قوية للمعضلات الأساسية كمصدر للصراع المهني وعدم اليقين. قد تشعر غالبًا بالانقسام بين المتطلبات المتنافسة للعمل التحليلي أو تكافح مع الطبيعة المتناقضة للتدخلات العلاجية. هذا النمط يشير إلى أن التوترات المتأصلة في الممارسة السريرية تؤثر بشكل كبير على ثقتك وفعاليتك كمحلل.",
         "recommendation": "علاقتك بهذه المعضلات الأساسية تستحق استكشافًا دقيقًا. فكر في تطوير استراتيجيات للعمل ضمن التوترات التحليلية بدلاً من البحث عن حلول لها. الفصل حول 'المواقف المستحيلة' في 'Do You Read Me' والقسم حول 'العمل من خلال المعضلات' في 'Triumphant Victim' يوفران أطرًا أساسية لفهم هذه الديناميكيات."
@@ -516,19 +579,28 @@
     ],
     "results": [
       {
-        "range": [0, 10],
+        "range": [
+          0,
+          10
+        ],
         "title": "整合的分析定位",
         "summary": "您的回答表明您对分析实践中固有的困境有复杂的理解。您展示了容忍定义治疗工作的基本张力和悖论的卓越能力。这表明您已经发展了与意义的不稳定性和框定临床实践的符号学限制的微妙关系。您在不寻求过早解决方案的情况下应对这些挑战的能力表明了高级的分析成熟度。",
-        "recommendation": "继续培养这种平衡的分析困境方法。您对模糊性和符号学不确定性的舒适感为有效的临床工作提供了基础。为进一步探索这些概念，请参阅《Do You Read Me》中关于'分析定位'的章节和《Triumphant Victim》中关于'解释之间的空间'的部分。"
+        "recommendation": "继续培养这种平衡的分析困境方法。您对模糊性和不确定性的舒适感为有效的临床工作提供了基础。为进一步探索这些概念，请参阅《Do You Read Me》中关于'分析定位'的章节和《Triumphant Victim》中关于'解释之间的空间'的部分。"
       },
       {
-        "range": [11, 22],
+        "range": [
+          11,
+          22
+        ],
         "title": "发展中的分析容忍度",
         "summary": "您的回答揭示了您对分析工作中基本困境的发展中的意识。您可能偶尔对结构与发现、解释与沉默、或患者期望与分析目标之间的张力感到冲突。这表明您在某种程度上成功地导航了临床实践的复杂悖论，尽管可能有时这些困境会产生真正的不确定性或不适。",
         "recommendation": "考虑发展对分析实践中固有的模糊性的更大舒适度。练习对定义治疗工作的不可能位置的容忍可以增强您的临床效果。要更深入地理解这些动态，请参阅《Do You Read Me》中关于'临床张力'的章节和《Triumphant Victim》中关于'治疗悖论'的部分。"
       },
       {
-        "range": [23, 32],
+        "range": [
+          23,
+          32
+        ],
         "title": "显著的分析冲突",
         "summary": "您的回答表明您强烈体验基本困境作为专业冲突和不确定性的来源。您可能经常感到在分析工作的竞争要求之间被撕裂，或者与治疗干预的悖论性质作斗争。这种模式表明临床实践的固有张力显著影响您作为分析师的信心和效果。",
         "recommendation": "您与这些基本困境的关系值得仔细探索。考虑发展在分析张力内工作的策略，而不是寻求解决它们。《Do You Read Me》中关于'不可能的位置'的章节和《Triumphant Victim》中关于'通过困境工作'的部分为理解这些动态提供了基本框架。"
