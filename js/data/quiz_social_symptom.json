@@ -1,423 +1,85 @@
 {
   "EN": {
     "title": "Social Symptom Assessment",
-    "description": "This assessment explores how social validation dynamics and identity formation manifest in contemporary contexts, based on John F. Miller's theoretical framework of social symptoms and the triumphant victim complex.",
+    "description": "This assessment explores how individual difficulties manifest as social symptoms. Based on John F. Miller's theoretical framework, it examines the relationship between personal emotional dimensions and broader social manifestations of learning difficulties.",
     "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.",
     "questions": [
       {
         "id": "ss1",
-        "text": "I find myself seeking validation through social media metrics (likes, shares, followers) as a measure of my personal worth.",
-        "context": "Exploring the relationship between contemporary identity formation and digital validation systems."
+        "text": "I recognize that individual learning difficulties often reflect broader social and cultural patterns.",
+        "context": "Exploring awareness of the social dimension of individual difficulties."
       },
       {
         "id": "ss2",
-        "text": "I often frame my personal struggles in ways that position me as morally superior to those who don't recognize my suffering.",
-        "context": "Examining manifestations of the triumphant victim complex in social discourse."
+        "text": "I understand that what appears as personal failure may be symptomatic of larger social structures.",
+        "context": "Examining understanding of how social structures manifest as individual symptoms."
       },
       {
         "id": "ss3",
-        "text": "I feel a sense of disappointment when my personal narratives of hardship don't receive the social recognition I believe they deserve.",
-        "context": "Analyzing the expectation of cultural validation for individual symptoms."
+        "text": "I can see connections between my personal struggles and wider social dynamics.",
+        "context": "Investigating capacity to link personal experience to social context."
       },
       {
         "id": "ss4",
-        "text": "I sometimes exaggerate or emphasize certain aspects of my identity to gain social acceptance or belonging.",
-        "context": "Investigating the performance of identity within contemporary validation systems."
+        "text": "I recognize that emotional dimensions of learning difficulties have social as well as personal causes.",
+        "context": "Analyzing understanding of the dual nature of difficulties as both personal and social."
       },
       {
         "id": "ss5",
-        "text": "I notice myself unconsciously adopting the language and perspectives of marginalized groups, even when they don't reflect my actual experience.",
-        "context": "Exploring the appropriation of suffering as a form of social currency."
+        "text": "I understand that addressing social symptoms requires attention to both individual and collective dimensions.",
+        "context": "Exploring recognition of the need for dual-level intervention."
+      },
+      {
+        "id": "ss6",
+        "text": "I can work with patients to explore how their difficulties connect to social patterns.",
+        "context": "Examining capacity to help patients understand the social dimension of their experience."
+      },
+      {
+        "id": "ss7",
+        "text": "I recognize that therapeutic work exists within social contexts that shape what is possible.",
+        "context": "Investigating awareness of how social context frames therapeutic possibilities."
+      },
+      {
+        "id": "ss8",
+        "text": "I understand that analysis must address both personal and social dimensions of difficulties.",
+        "context": "Exploring the analytic understanding of the comprehensive nature of therapeutic work."
       }
     ],
     "results": [
       {
-        "range": [0, 8],
-        "title": "Integrated Social Identity",
-        "summary": "Your responses suggest a relatively healthy integration between your authentic self and social presentation. You appear to maintain boundaries between personal identity and external validation systems, indicating a stable sense of self that doesn't depend heavily on social metrics for validation. This suggests you've developed a resilient identity structure that can navigate contemporary social dynamics without excessive dependence on external approval.",
-        "recommendation": "Continue cultivating this balance between authentic self-expression and social engagement. Your ability to maintain perspective on social validation systems serves as a foundation for genuine relationships and personal growth. For further exploration of these dynamics, see the chapter on 'Identity Formation in the Digital Age' in 'Triumphant Victim' and the section on 'Authentic Communication' in 'Do You Read Me'."
+        "range": [
+          0,
+          10
+        ],
+        "title": "Integrated Social Awareness",
+        "summary": "Your responses demonstrate a sophisticated understanding of the relationship between individual difficulties and social manifestations. You show remarkable capacity to recognize how personal struggles connect to broader social patterns and structures. This suggests you've developed a nuanced understanding of the dual nature of difficulties as both personal and social. Your ability to work across individual and collective dimensions indicates advanced analytic maturity.",
+        "recommendation": "Continue cultivating this integrated approach to social dimensions of difficulty. Your awareness of the social context of individual experience serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Social Dimensions' in 'Do You Read Me' and the section on 'Individual and Social' in 'Triumphant Victim'."
       },
       {
-        "range": [9, 16],
-        "title": "Moderate Social Validation Dependency",
-        "summary": "Your responses indicate a moderate reliance on social validation systems for identity formation. You may find yourself occasionally seeking external approval or adjusting your presentation to gain social acceptance, though not to a problematic degree. This suggests you're navigating the complex dynamics of contemporary social life while maintaining some connection to your authentic self, though there may be room for greater independence from validation mechanisms.",
-        "recommendation": "Consider developing greater awareness of when and how you seek external validation. Practicing authentic self-expression in safe contexts can help strengthen your internal validation system. For deeper understanding of these patterns, refer to the chapter on 'Social Validation Dynamics' in 'Triumphant Victim' and the section on 'Authentic Communication' in 'Do You Read Me'."
+        "range": [
+          11,
+          22
+        ],
+        "title": "Developing Social Awareness",
+        "summary": "Your responses reveal a developing awareness of the social dimensions of individual difficulties. You may occasionally recognize connections between personal struggles and social patterns, though this understanding may not be fully integrated into your approach. This suggests you're beginning to navigate the complex relationship between individual and social manifestations with growing success.",
+        "recommendation": "Consider developing greater awareness of how social structures manifest as individual symptoms. Practicing attention to the social context of personal difficulties can enhance your clinical effectiveness. For deeper understanding of these dynamics, refer to the chapter on 'Social Context' in 'Do You Read Me' and the section on 'Personal and Social' in 'Triumphant Victim'."
       },
       {
-        "range": [17, 20],
-        "title": "Strong Social Validation Patterns",
-        "summary": "Your responses reveal a significant dependence on social validation systems for identity formation and self-worth. You may frequently find yourself adjusting your presentation, narratives, or even self-perception to gain social approval and recognition. This pattern suggests the triumphant victim complex may be influencing your social interactions, where suffering and identity become performative acts designed to elicit specific responses from your social environment.",
-        "recommendation": "Your relationship with social validation systems warrants careful reflection. Consider exploring the unconscious desires that may be driving these patterns and how they relate to deeper needs for recognition and belonging. The chapter on 'The Triumphant Victim Complex' in 'Triumphant Victim' and the section on 'Unconscious Social Desires' in 'Do You Read Me' provide essential frameworks for understanding these dynamics."
+        "range": [
+          23,
+          32
+        ],
+        "title": "Limited Social Awareness",
+        "summary": "Your responses indicate a primary focus on individual dimensions of difficulties with limited recognition of their social manifestations. You may struggle to see connections between personal struggles and broader social patterns or structures. This pattern suggests that the social context of individual experience may be underexplored in your understanding of therapeutic work.",
+        "recommendation": "Your understanding of the social dimensions of difficulty warrants careful development. Consider exploring how social structures and patterns manifest in individual experience. The chapter on 'Social Manifestations' in 'Do You Read Me' and the section on 'Beyond the Individual' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
       }
     ]
   },
-  "FR": {
-    "title": "Évaluation des Symptômes Sociaux",
-    "description": "Cette évaluation explore comment les dynamiques de validation sociale et la formation de l'identité se manifestent dans les contextes contemporains, basée sur le cadre théorique de John F. Miller sur les symptômes sociaux et le complexe de la victorieuse victime.",
-    "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation ou un diagnostic clinique professionnel. Vos réponses sont destinées à la réflexion personnelle et à l'apprentissage.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "Je me surprends à rechercher la validation à travers les métriques des médias sociaux (likes, partages, abonnés) comme mesure de ma valeur personnelle.",
-        "context": "Explorer la relation entre la formation de l'identité contemporaine et les systèmes de validation numérique."
-      },
-      {
-        "id": "ss2",
-        "text": "Je présente souvent mes luttes personnelles de manière à me positionner comme moralement supérieur à ceux qui ne reconnaissent pas ma souffrance.",
-        "context": "Examiner les manifestations du complexe de la victorieuse victime dans le discours social."
-      },
-      {
-        "id": "ss3",
-        "text": "Je ressens une déception lorsque mes récits personnels de difficultés ne reçoivent pas la reconnaissance sociale que je crois qu'ils méritent.",
-        "context": "Analyser l'attente de validation culturelle pour les symptômes individuels."
-      },
-      {
-        "id": "ss4",
-        "text": "Parfois, j'exagère ou j'accentue certains aspects de mon identité pour obtenir l'acceptation ou l'appartenance sociale.",
-        "context": "Investiguer la performance de l'identité dans les systèmes de validation contemporains."
-      },
-      {
-        "id": "ss5",
-        "text": "Je remarque que j'adopte inconsciemment le langage et les perspectives des groupes marginalisés, même quand ils ne reflètent pas mon expérience réelle.",
-        "context": "Explorer l'appropriation de la souffrance comme forme de monnaie sociale."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "Identité Sociale Intégrée",
-        "summary": "Vos réponses suggèrent une intégration relativement saine entre votre moi authentique et votre présentation sociale. Vous semblez maintenir des limites entre l'identité personnelle et les systèmes de validation externes, indiquant un sens de soi stable qui ne dépend pas lourdement des métriques sociales pour la validation. Ceci suggère que vous avez développé une structure d'identité résiliente capable de naviguer les dynamiques sociales contemporaines sans dépendance excessive de l'approbation externe.",
-        "recommendation": "Continuez à cultiver cet équilibre entre l'expression de soi authentique et l'engagement social. Votre capacité à maintenir une perspective sur les systèmes de validation sociale sert de fondement pour des relations authentiques et la croissance personnelle. Pour une exploration plus approfondie de ces dynamiques, voir le chapitre sur 'La Formation de l'Identité à l'Ère Numérique' dans 'Triumphant Victim' et la section sur 'La Communication Authentique' dans 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "Dépendance Modérée à la Validation Sociale",
-        "summary": "Vos réponses indiquent une dépendance modérée aux systèmes de validation sociale pour la formation de l'identité. Vous pourriez vous retrouver occasionnellement à rechercher l'approbation externe ou à ajuster votre présentation pour obtenir l'acceptation sociale, bien que pas à un degré problématique. Ceci suggère que vous naviguez les dynamiques complexes de la vie sociale contemporaine tout en maintenant une certaine connexion à votre moi authentique, bien qu'il puisse y avoir de la place pour une plus grande indépendance des mécanismes de validation.",
-        "recommendation": "Considérez développer une plus grande conscience de quand et comment vous recherchez la validation externe. Pratiquer l'expression de soi authentique dans des contextes sécurisés peut aider à renforcer votre système de validation interne. Pour une compréhension plus profonde de ces schémas, référez-vous au chapitre sur 'Les Dynamiques de Validation Sociale' dans 'Triumphant Victim' et à la section sur 'La Communication Authentique' dans 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "Forts Schémas de Validation Sociale",
-        "summary": "Vos réponses révèlent une dépendance significative aux systèmes de validation sociale pour la formation de l'identité et l'estime de soi. Vous pourriez fréquemment vous retrouver à ajuster votre présentation, vos récits, ou même votre auto-perception pour obtenir l'approbation et la reconnaissance sociales. Ce schéma suggère que le complexe de la victorieuse victime pourrait influencer vos interactions sociales, où la souffrance et l'identité deviennent des actes performatifs conçus pour susciter des réponses spécifiques de votre environnement social.",
-        "recommendation": "Votre relation avec les systèmes de validation sociale mérite une réflexion attentive. Considérez explorer les désirs inconscients qui pourraient conduire ces schémas et comment ils se rapportent à des besoins plus profonds de reconnaissance et d'appartenance. Le chapitre sur 'Le Complexe de la Victorieuse Victime' dans 'Triumphant Victim' et la section sur 'Les Désirs Sociaux Inconscients' dans 'Do You Read Me' fournissent des cadres essentiels pour comprendre ces dynamiques."
-      }
-    ]
-  },
-  "ES": {
-    "title": "Evaluación de Síntomas Sociales",
-    "description": "Esta evaluación explora cómo las dinámicas de validación social y la formación de identidad se manifiestan en contextos contemporáneos, basada en el marco teórico de John F. Miller sobre síntomas sociales y el complejo de la víctima triunfante.",
-    "disclaimer": "Esta evaluación está diseñada para fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación o diagnóstico clínico profesional. Sus respuestas son para reflexión personal y aprendizaje.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "Me encuentro buscando validación a través de métricas de redes sociales (me gusta, compartidos, seguidores) como medida de mi valor personal.",
-        "context": "Explorando la relación entre la formación de identidad contemporánea y los sistemas de validación digital."
-      },
-      {
-        "id": "ss2",
-        "text": "A menudo enmarco mis luchas personales de maneras que me posicionan como moralmente superior a aquellos que no reconocen mi sufrimiento.",
-        "context": "Examinando manifestaciones del complejo de la víctima triunfante en el discurso social."
-      },
-      {
-        "id": "ss3",
-        "text": "Siento una especie de decepción cuando mis narrativas personales de dificultades no reciben el reconocimiento social que creo que merecen.",
-        "context": "Analizando la expectativa de validación cultural para síntomas individuales."
-      },
-      {
-        "id": "ss4",
-        "text": "A veces exagero o enfatizo ciertos aspectos de mi identidad para ganar aceptación o pertenencia social.",
-        "context": "Investigando la actuación de la identidad dentro de sistemas de validación contemporáneos."
-      },
-      {
-        "id": "ss5",
-        "text": "Me doy cuenta de que adopto inconscientemente el lenguaje y perspectivas de grupos marginados, incluso cuando no reflejan mi experiencia real.",
-        "context": "Explorando la apropiación del sufrimiento como forma de moneda social."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "Identidad Social Integrada",
-        "summary": "Sus respuestas sugieren una integración relativamente saludable entre su yo auténtico y su presentación social. Parece mantener límites entre la identidad personal y los sistemas de validación externos, indicando un sentido de sí mismo estable que no depende fuertemente de métricas sociales para validación. Esto sugiere que ha desarrollado una estructura de identidad resiliente capaz de navegar dinámicas sociales contemporáneas sin dependencia excesiva de aprobación externa.",
-        "recommendation": "Continúe cultivando este equilibrio entre expresión personal auténtica y compromiso social. Su capacidad para mantener perspectiva sobre los sistemas de validación social sirve como base para relaciones genuinas y crecimiento personal. Para mayor exploración de estas dinámicas, vea el capítulo sobre 'Formación de Identidad en la Era Digital' en 'Triumphant Victim' y la sección sobre 'Comunicación Auténtica' en 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "Dependencia Moderada de Validación Social",
-        "summary": "Sus respuestas indican una dependencia moderada de sistemas de validación social para la formación de identidad. Puede encontrarse ocasionalmente buscando aprobación externa o ajustando su presentación para ganar aceptación social, aunque no a un grado problemático. Esto sugiere que está navegando las complejas dinámicas de la vida social contemporánea mientras mantiene alguna conexión con su yo auténtico, aunque puede haber espacio para mayor independencia de mecanismos de validación.",
-        "recommendation": "Considere desarrollar mayor conciencia de cuándo y cómo busca validación externa. Practicar la expresión auténtica en contextos seguros puede ayudar a fortalecer su sistema de validación interno. Para comprensión más profunda de estos patrones, consulte el capítulo sobre 'Dinámicas de Validación Social' en 'Triumphant Victim' y la sección sobre 'Comunicación Auténtica' en 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "Fuertes Patrones de Validación Social",
-        "summary": "Sus respuestas revelan una dependencia significativa de sistemas de validación social para la formación de identidad y autoestima. Puede encontrarse frecuentemente ajustando su presentación, narrativas, o incluso autopercepción para obtener aprobación y reconocimiento social. Este patrón sugiere que el complejo de la víctima triunfante puede estar influyendo en sus interacciones sociales, donde el sufrimiento y la identidad se convierten en actos performativos diseñados para elicir respuestas específicas de su entorno social.",
-        "recommendation": "Su relación con los sistemas de validación social merece reflexión cuidadosa. Considere explorar los deseos inconscientes que pueden estar impulsando estos patrones y cómo se relacionan con necesidades más profundas de reconocimiento y pertenencia. El capítulo sobre 'El Complejo de la Víctima Triunfante' en 'Triumphant Victim' y la sección sobre 'Deseos Sociales Inconscientes' en 'Do You Read Me' proporcionan marcos esenciales para entender estas dinámicas."
-      }
-    ]
-  },
-  "NO": {
-    "title": "Sosial Symptomvurdering",
-    "description": "Denne vurderingen utforsker hvordan sosiale valideringsdynamikker og identitetsdannelse manifesterer seg i sammenhengende sammenhenger, basert på John F. Millers teoretiske rammeverk for sosiale symptomer og det triumferende offerkomplekset.",
-    "disclaimer": "Denne vurderingen er designet for utdanningsformål for å utforske psykoanalytiske konsepter. Den er ikke en erstatning for profesjonell klinisk evaluering eller diagnose. Dine svar er for personlig refleksjon og læring.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "Jeg finner meg selv å søke validering gjennom sosiale medier-metrikker (liker, delinger, følgere) som et mål på min personlige verdi.",
-        "context": "Utforske forholdet mellom samtidig identitetsdannelse og digitale valideringssystemer."
-      },
-      {
-        "id": "ss2",
-        "text": "Jeg rammer ofte inn mine personlige kamper på måter som posisjonerer meg som moralsk overlegne de som ikke anerkjenner min lidelse.",
-        "context": "Undersøke manifestasjoner av det triumferende offerkomplekset i sosial diskurs."
-      },
-      {
-        "id": "ss3",
-        "text": "Jeg føler en skuffelse når mine personlige fortellinger om vanskeligheter ikke mottar den sosiale anerkjennelsen jeg tror de fortjener.",
-        "context": "Analysere forventningen om kulturell validering for individuelle symptomer."
-      },
-      {
-        "id": "ss4",
-        "text": "Noen ganger overdriver eller fremhever jeg visse aspekter av min identitet for å få sosial aksept eller tilhørighet.",
-        "context": "Undersøke fremføring av identitet innenfor samtidige valideringssystemer."
-      },
-      {
-        "id": "ss5",
-        "text": "Jeg legger merke til at jeg ubevisst tar i bruk språket og perspektivene til marginaliserte grupper, selv når de ikke reflekterer min faktiske erfaring.",
-        "context": "Utforske appropriasjon av lidelse som en form for sosial valuta."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "Integrert Sosial Identitet",
-        "summary": "Dine svar antyder en relativt sunn integrasjon mellom ditt autentiske jeg og sosial presentasjon. Du ser ut til å opprettholde grenser mellom personlig identitet og eksterne valideringssystemer, noe som indikerer en stabil følelse av selv som ikke er sterkt avhengig av sosiale metrikker for validering. Dette antyder at du har utviklet en resilient identitetsstruktur som kan navigere samtidige sosiale dynamikker uten overdreven avhengighet av ekstern godkjenning.",
-        "recommendation": "Fortsett å dyrke denne balansen mellom autentisk selvuttrykk og sosial engasjement. Din evne til å opprettholde perspektiv på sosiale valideringssystemer tjener som et fundament for ekte relasjoner og personlig vekst. For videre utforskning av disse dynamikkene, se kapittelet om 'Identitetsdannelse i den Digitale Alderen' i 'Triumphant Victim' og seksjonen om 'Autentisk Kommunikasjon' i 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "Moderat Sosial Valideringsavhengighet",
-        "summary": "Dine svar indikerer en moderat avhengighet av sosiale valideringssystemer for identitetsdannelse. Du kan finne deg selv å søke ekstern godkjenning eller justere din presentasjon for å få sosial aksept, selv om ikke i en problematisk grad. Dette antyder at du navigerer de komplekse dynamikkene i samtidig sosialt liv mens du opprettholder noen forbindelse til ditt autentiske jeg, selv om det kan være rom for større uavhengighet fra valideringsmekanismer.",
-        "recommendation": "Vurder å utvikle større bevissthet om når og hvordan du søker ekstern validering. Å praktisere autentisk selvuttrykk i trygge sammenhenger kan hjelpe med å styrke ditt interne valideringssystem. For dypere forståelse av disse mønstrene, se kapittelet om 'Sosiale Valideringsdynamikker' i 'Triumphant Victim' og seksjonen om 'Autentisk Kommunikasjon' i 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "Sterke Sosiale Valideringsmønstre",
-        "summary": "Dine svar avslører en betydelig avhengighet av sosiale valideringssystemer for identitetsdannelse og selvfølelse. Du kan ofte finne deg selv å justere din presentasjon, fortellinger, eller selvoppfatning for å få sosial godkjenning og anerkjennelse. Dette mønsteret antyder at det triumferende offerkomplekset kan påvirke dine sosiale interaksjoner, der lidelse og identitet blir performativt handlinger designet for å fremkalle spesifikke responser fra ditt sosiale miljø.",
-        "recommendation": "Ditt forhold til sosiale valideringssystemer fortjener nøye refleksjon. Vurder å utforske de ubevisste ønskene som kan drive disse mønstrene og hvordan de relaterer seg til dypere behov for anerkjennelse og tilhørighet. Kapittelet om 'Det Triumferende Offerkomplekset' i 'Triumphant Victim' og seksjonen om 'Ubevisste Sosiale Ønsker' i 'Do You Read Me' gir essensielle rammeverk for å forstå disse dynamikkene."
-      }
-    ]
-  },
-  "PL": {
-    "title": "Ocena Objawów Społecznych",
-    "description": "Ta ocena bada, jak dynamika walidacji społecznej i kształtowanie tożsamości manifestują się we współczesnych kontekstach, opierając się na teoretycznym ramie Johna F. Millera dotyczącym objawów społecznych i kompleksu triumfującej ofiary.",
-    "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy. Twoje odpowiedzi służą do osobistej refleksji i nauki.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "Znajduję siebie szukającego walidacji poprzez metryki mediów społecznościowych (polubienia, udostępnienia, obserwujących) jako miary mojej osobistej wartości.",
-        "context": "Eksplorowanie relacji między współczesnym kształtowaniem tożsamości a cyfrowymi systemami walidacji."
-      },
-      {
-        "id": "ss2",
-        "text": "Często przedstawiam swoje osobiste zmagania w sposób, który pozycjonuje mnie jako moralnie wyższego od tych, którzy nie uznają mojego cierpienia.",
-        "context": "Badanie manifestacji kompleksu triumfującej ofiary w dyskursie społecznym."
-      },
-      {
-        "id": "ss3",
-        "text": "Czuję rozczarowanie, gdy moje osobiste narracje o trudnościach nie otrzymują społecznego uznania, które uważam, że zasługują.",
-        "context": "Analizowanie oczekiwania kulturowej walidacji dla indywidualnych objawów."
-      },
-      {
-        "id": "ss4",
-        "text": "Czasem przesadzam lub podkreślam pewne aspekty mojej tożsamości, aby zdobyć akceptację społeczną lub przynależność.",
-        "context": "Badanie performansu tożsamości w ramach współczesnych systemów walidacji."
-      },
-      {
-        "id": "ss5",
-        "text": "Zauważam, że nieświadomie przejmuję język i perspektywy grup marginalizowanych, nawet gdy nie odzwierciedlają one mojego rzeczywistego doświadczenia.",
-        "context": "Eksplorowanie przywłaszczenia cierpienia jako formy waluty społecznej."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "Zintegrowana Tożsamość Społeczna",
-        "summary": "Twoje odpowiedzi sugerują stosunkowo zdrową integrację między Twoim autentycznym ja a prezentacją społeczną. Wydaje się, że utrzymujesz granice między tożsamością osobistą a zewnętrznymi systemami walidacji, wskazując na stabilne poczucie siebie, które nie zależy silnie od metryk społecznych w celu walidacji. To sugeruje, że rozwinąłeś odporną strukturę tożsamości zdolną do nawigowania współczesnych dynamik społecznych bez nadmiernej zależności od zewnętrznej aprobaty.",
-        "recommendation": "Kontynuuj kultywowanie tej równowagi między autentyczną ekspresją siebie a zaangażowaniem społecznym. Twoja zdolność do utrzymywania perspektywy na systemy walidacji społecznej służy jako fundament dla autentycznych relacji i osobistego wzrostu. Dla dalszej eksploracji tych dynamik, zobacz rozdział o 'Kształtowaniu Tożsamości w Erze Cyfrowej' w 'Triumphant Victim' i sekcję o 'Autentycznej Komunikacji' w 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "Umiarkowana Zależność od Walidacji Społecznej",
-        "summary": "Twoje odpowiedzi wskazują na umiarkowaną zależność od systemów walidacji społecznej dla kształtowania tożsamości. Możesz znajdować się okazjonalnie szukając zewnętrznej aprobaty lub dostosowując swoją prezentację, aby zdobyć akceptację społeczną, choć nie w stopniu problematycznym. To sugeruje, że nawigujesz złożone dynamiki współczesnego życia społecznego, utrzymując pewne połączenie ze swoim autentycznym ja, choć może być miejsce na większą niezależność od mechanizmów walidacji.",
-        "recommendation": "Rozważ rozwijanie większej świadomości, kiedy i jak szukasz zewnętrznej walidacji. Praktykowanie autentycznej ekspresji siebie w bezpiecznych kontekstach może pomóc wzmocnić Twój wewnętrzny system walidacji. Dla głębszego zrozumienia tych wzorców, odwołaj się do rozdziału o 'Dynamice Walidacji Społecznej' w 'Triumphant Victim' i sekcji o 'Uznaniu Semiotycznym' w 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "Silne Wzorce Walidacji Społecznej",
-        "summary": "Twoje odpowiedzi ujawniają znaczącą zależność od systemów walidacji społecznej dla kształtowania tożsamości i poczucia własnej wartości. Możesz często znajdować się dostosowując swoją prezentację, narracje, a nawet samoocenę, aby uzyskać społeczną aprobę i uznanie. Ten wzorzec sugeruje, że kompleks triumfującej ofiary może wpływać na Twoje interakcje społeczne, gdzie cierpienie i tożsamość stają się aktami performatywnymi zaprojektowanymi w celu wywołania konkretnych reakcji z Twojego środowiska społecznego.",
-        "recommendation": "Twoja relacja z systemami walidacji społecznej wymaga starannej refleksji. Rozważ eksplorację nieświadomych pragnień, które mogą napędzać te wzorce i jak odnoszą się one do głębszych potrzeb uznania i przynależności. Rozdział o 'Kompleksie Triumfującej Ofiary' w 'Triumphant Victim' i sekcja o 'Nieświadomych Pragnieniach Społecznych' w 'Do You Read Me' dostarczają istotnych ram do zrozumienia tych dynamik."
-      }
-    ]
-  },
-  "LA": {
-    "title": "Aestimatio Symptomatum Socialium",
-    "description": "Haec aestimatio explorat quomodo dynamica validationis socialis et formatio identitatis in contextibus hodiernis manifestentur, secundum theorethicum Ioannis F. Milleris de symptomatibus socialibus et complexu victoris triumphalis.",
-    "disclaimer": "Haec aestimatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis. Responsiones tuae ad reflectionem personalem et discendum sunt.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "Me invenio quaerentem validationem per metricas socialis media (likes, shares, followers) ut mensura valoris personalis mei.",
-        "context": "Explorans relationem inter formationem identitatis hodiernae et systema validationis digitalis."
-      },
-      {
-        "id": "ss2",
-        "text": "Saepe luctus meos personales praesento in modum qui me ponit ut moraliter superiorem his qui non recognoscunt dolorem meum.",
-        "context": "Examinans manifestationes complexus victoris triumphalis in discursu sociali."
-      },
-      {
-        "id": "ss3",
-        "text": "Sentio deceptionem quando narrationes meae personales de difficultatibus non accipiunt recognitionem socialem quam credo mereri.",
-        "context": "Analyticans expectationem validationis culturalis pro symptomatibus individualibus."
-      },
-      {
-        "id": "ss4",
-        "text": "Nonnumquam exaggero vel emphatice pono quosdam aspectus identitatis meae ut accipiam acceptance socialem vel pertinentiam.",
-        "context": "Investigans performantiam identitatis intra systemata validationis hodierna."
-      },
-      {
-        "id": "ss5",
-        "text": "Observo me inconscie adoptantem linguam et perspectivas gregum marginalizatorum, etiam cum non reflectant experientiam meam veram.",
-        "context": "Explorans appropriationem doloris ut formam monetae socialis."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "Identitas Socialis Integrata",
-        "summary": "Responsiones tuae suggerunt integrationem satis sanam inter ego tuum authenticum et presentationem socialem. Videris fines inter identitatem personalem et systemata validationis externa servare, indicans sensum sui stabile quod non fortiter dependet a metricis socialibus ad validationem. Hoc suggerit te structuram identitatis resilientem evolvisse quae dynamicas sociales hodiernas navigare potest sine dependentia exccessiva ab approbatione externa.",
-        "recommendation": "Perge hanc aequilibrium inter expressionem authenticam sui et engagementum socialem colere. Tua facultas perspectivam in systemata validationis socialis servare ut fundamentum relationum authenticarum et crescentis personalis fungit. Ad ulteriorem explorationem harum dynamicalium, vide capitulum de 'Formatione Identitatis in Aetate Digitali' in 'Triumphant Victim' et sectionem de 'Communicatione Authentica' in 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "Dependentia Moderata Validationis Socialis",
-        "summary": "Responsiones tuae indicant dependentiam moderatam a systematibus validationis socialis pro formatione identitatis. Fortasse te invenis occasionaliter quaerentem approbationem externam vel presentationem tuam accommodantem ut accipias acceptance socialem, etsi non ad gradum problematicum. Hoc suggerit te dynamicas complexas vitae socialis hodiernae navigare dum aliquam connectionem cum ego tuo authentico servas, etsi spatium pro maiori independentia a mechanismis validationis esse potest.",
-        "recommendation": "Considera maiorem conscientiam evolundum de quando et quomodo validationem externam quaeris. Practicandi expressio authenticus sui in contextibus tuts potest systema validationis internum tuum confirmare. Ad profundiorem intellegentiam horum patternorum, refere ad capitulum de 'Dynamica Validationis Socialis' in 'Triumphant Victim' et sectionem de 'Recognitione Semiotica' in 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "Forte Patterna Validationis Socialis",
-        "summary": "Responsiones tuae revelant dependentiam significativam a systematibus validationis socialis pro formatione identitatis et aestimatione sui. Fortasse te frequenter invenis presentationem tuam, narrationes, vel etiam perceptionem sui accommodantem ut accipias approbationem et recognitionem socialem. Hoc pattern suggerit complexum victoris triumphalis fortasse interactiones tuas sociales influere, ubi dolor et identitas fiunt actus performativi designati ad responsiones specificas e ambiente sociali tuo eliciendas.",
-        "recommendation": "Relatio tua cum systematibus validationis socialis diligentem reflectionem meretur. Considera desideria inconscia quae haec patterna impellere possunt et quomodo ad necessitates profundiores recognitionis et pertinentiae referantur. Capitulum de 'Complexu Victoris Triumphalis' in 'Triumphant Victim' et sectio de 'Desideriis Socialibus Inconscis' in 'Do You Read Me' fundamenta essentialia pro his dynamicalibus intellegendis praebent."
-      }
-    ]
-  },
-  "EGY": {
-    "title": "تقييم الأعراض الاجتماعية",
-    "description": "هذا التقييم يستكشف كيف تتجاهل ديناميكيات التحقق الاجتماعي وتكوين الهوية في السياقات المعاصرة، بناءً على الإطار النظري لجون ف. ميلر حول الأعراض الاجتماعية ومجمع الضحية المنتصرة.",
-    "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليلية النفسية. إنه ليس بديلاً عن التقييم السريري أو التشخيص الاحترافي. إجاباتك هي للتأمل الشخصي والتعلم.",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "أجد نفسي أبحث عن التحقق من خلال مقاييس وسائل التواصل الاجتماعي (الإعجابات، المشاركات، المتابعون) كمقياس لقيمتي الشخصية.",
-        "context": "استكشاف العلاقة بين تكوين الهوية المعاصر وأنظمة التحقق الرقمي."
-      },
-      {
-        "id": "ss2",
-        "text": "غالبًا ما أعرض صراعاتي الشخصية بطرق تضعني في موقف متفوق أخلاقياً على أولئك الذين لا يعترفون بمعاناتي.",
-        "context": "فحص مظاهر مجمع الضحية المنتصرة في الخطاب الاجتماعي."
-      },
-      {
-        "id": "ss3",
-        "text": "أشعر بخيبة أمل عندما لا تتلقى سردياتي الشخصية عن الصعوبات الاعتراف الاجتماعي الذي أعتقد أنها تستحقه.",
-        "context": "تحليل توقع التحقق الثقافي للأعراض الفردية."
-      },
-      {
-        "id": "ss4",
-        "text": "أحيانًا أبالغ أو أؤكد على جوانب معينة من هويتي للحصول على القبول الاجتماعي أو الانتماء.",
-        "context": "التحقيق في أداء الهوية داخل أنظمة التحقق المعاصرة."
-      },
-      {
-        "id": "ss5",
-        "text": "لاحظت أنني أتبنى بشكل لا واعٍ لغة ووجهات نظر المجموعات المهمشة، حتى عندما لا تعكس تجربتي الفعلية.",
-        "context": "استكشاف الاستيلاء على المعاناة كشكل من أشكال العملة الاجتماعية."
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "الهوية الاجتماعية المتكاملة",
-        "summary": "تشير إجاباتك إلى تكامل صحي نسبيًا بين ذاتك الحقيقية وعرضك الاجتماعي. يبدو أنك تحافظ على حدود بين الهوية الشخصية وأنظمة التحقق الخارجية، مما يشير إلى إحساس مستقر بالذات لا يعتمد بشكل كبير على المقاييس الاجتماعية للتحقق. هذا يشير إلى أنك طورت بنية هوية مرنة قادرة على التنقل في الديناميكيات الاجتماعية المعاصرة بدون اعتماد مفرط على الموافقة الخارجية.",
-        "recommendation": "استمر في تنمية هذا التوازن بين التعبير الذاتي الحقيقي والمشاركة الاجتماعية. قدرتك على الحفاظ على منظور حول أنظمة التحقق الاجتماعي serve كأساس للعلاقات الحقيقية والنمو الشخصي. لمزيد من استكشاف هذه الديناميكيات، انظر الفصل حول 'تكوين الهوية في العصر الرقمي' في 'Triumphant Victim' والقسم حول 'التواصل الحقيقي' في 'Do You Read Me'."
-      },
-      {
-        "range": [9, 16],
-        "title": "الاعتماد المعتدل على التحقق الاجتماعي",
-        "summary": "تشير إجاباتك إلى اعتماد معتدل على أنظمة التحقق الاجتماعي لتكوين الهوية. قد تجد نفسك أحيانًا تبحث عن الموافقة الخارجية أو تضبط عرضك للحصول على القبول الاجتماعي، على الرغم من عدم الوصول إلى درجة problematic. هذا يشير إلى أنك تتنقل في الديناميكيات المعقدة للحياة الاجتماعية المعاصرة مع الحفاظ على بعض الاتصال بذاتك الحقيقية، على الرغم من وجود مجال لاستقلالية أكبر من آليات التحقق.",
-        "recommendation": "فكر في تطوير وعي أكبر بمتى وكيف تبحث عن التحقق الخارجي. ممارسة التعبير الذاتي الحقيقي في سياقات آمنة يمكن أن تساعد في تعزيز نظام التحقق الداخلي الخاص بك. لفهم أعمق لهذه الأنماط، راجع الفصل حول 'ديناميكيات التحقق الاجتماعي' في 'Triumphant Victim' والقسم حول 'التواصل الحقيقي' في 'Do You Read Me'."
-      },
-      {
-        "range": [17, 20],
-        "title": "أنماط قوية للتحقق الاجتماعي",
-        "summary": "تكشف إجاباتك عن اعتماد كبير على أنظمة التحقق الاجتماعي لتكوين الهوية وتقدير الذات. قد تجد نفسك بشكل متكرر تضبط عرضك، سرديات، أو حتى إدراك الذات للحصول على الموافقة والاعتراف الاجتماعي. هذا النمط يشير إلى أن مجمع الضحية المنتصرة قد يؤثر على تفاعلاتك الاجتماعية، حيث تصبح المعاناة والهوية أفعالاً أدائية مصممة لإثارة استجابات محددة من بيئتك الاجتماعية.",
-        "recommendation": "علاقتك بأنظمة التحقق الاجتماعي تستحق تأملًا دقيقًا. فكر في استكشاف الرغبات اللاواعية التي قد تدفع هذه الأنماط وكيف تتعلق بالاحتياجات الأعمق للاعتراف والانتماء. الفصل حول 'مجمع الضحية المنتصرة' في 'Triumphant Victim' والقسم حول 'الرغبات الاجتماعية اللاواعية' في 'Do You Read Me' يوفران أطرًا أساسية لفهم هذه الديناميكيات."
-      }
-    ]
-  },
-  "ZH": {
-    "title": "社交症状评估",
-    "description": "本评估探讨社会验证动态和身份形成如何在当代环境中表现出来，基于约翰·F·米勒关于社交症状和胜利受害者综合症的理论框架。",
-    "disclaimer": "本评估专为教育目的设计，用于探索精神分析概念。它不能替代专业临床评估或诊断。您的回答仅供个人反思和学习。",
-    "questions": [
-      {
-        "id": "ss1",
-        "text": "我发现自己通过社交媒体指标（点赞、分享、关注者）寻求验证，作为衡量我个人价值的标准。",
-        "context": "探索当代身份形成与数字验证系统之间的关系。"
-      },
-      {
-        "id": "ss2",
-        "text": "我经常以将我定位为道德上优于那些不认识我痛苦的人的方式来构建我的个人挣扎。",
-        "context": "检查胜利受害者综合症在社会话语中的表现。"
-      },
-      {
-        "id": "ss3",
-        "text": "当我关于困难的个人叙述没有得到我认为应得的社会认可时，我感到失望。",
-        "context": "分析对个体症状的文化验证期望。"
-      },
-      {
-        "id": "ss4",
-        "text": "有时我会夸大或强调我身份的某些方面以获得社会接受或归属感。",
-        "context": "调查在当代验证系统内的身份表现。"
-      },
-      {
-        "id": "ss5",
-        "text": "我注意到自己无意识地采用边缘化群体的语言和观点，即使它们并不反映我的实际经历。",
-        "context": "探索将苦难挪用作为社会货币的形式。"
-      }
-    ],
-    "results": [
-      {
-        "range": [0, 8],
-        "title": "整合的社会身份",
-        "summary": "您的回答表明您的真实自我与社会表现之间相对健康地整合。您似乎在个人身份和外部验证系统之间保持界限，表明稳定的自我感不严重依赖社会指标进行验证。这表明您已经发展了有弹性的身份结构，能够在当代社会动态中导航，而不过度依赖外部认可。",
-        "recommendation": "继续培养真实自我表达与社会参与之间的平衡。您对社会验证系统保持视角的能力为真实关系和个人成长提供了基础。为进一步探索这些动态，请参阅《Triumphant Victim》中关于'数字时代的身份形成'的章节和《Do You Read Me》中关于'真实沟通'的部分。"
-      },
-      {
-        "range": [9, 16],
-        "title": "中度社会验证依赖",
-        "summary": "您的回答表明您对身份形成有中等程度的社会验证系统依赖。您可能偶尔发现自己寻求外部认可或调整自己的表现以获得社会接受，尽管没有达到问题程度。这表明您在导航当代社会生活的复杂动态的同时，与真实自我保持一些联系，尽管在验证机制方面可能存在更大独立性的空间。",
-        "recommendation": "考虑发展对何时以及如何寻求外部验证的更大意识。在安全环境中练习真实自我表达可以帮助加强您的内部验证系统。要更深入地理解这些模式，请参阅《Triumphant Victim》中关于'社会验证动态'的章节和《Do You Read Me》中关于'真实沟通'的部分。"
-      },
-      {
-        "range": [17, 20],
-        "title": "强烈的社会验证模式",
-        "summary": "您的回答揭示了您对身份形成和自我价值有显著的社会验证系统依赖。您可能经常发现自己调整表现、叙述，甚至自我认知以获得社会认可和承认。这种模式表明胜利受害者综合症可能影响您的社交互动，其中痛苦和身份成为旨在从您的社交环境中引发特定反应的表现行为。",
-        "recommendation": "您与社会验证系统的关系值得仔细反思。考虑探索可能驱动这些模式的潜意识欲望，以及它们如何与更深层次的认可和归属需求相关。《Triumphant Victim》中关于'胜利受害者综合症'的章节和《Do You Read Me》中关于'潜意识社会欲望'的部分为理解这些动态提供了基本框架。"
-      }
-    ]
-  },
-  "metadata": {
-    "version": "1.0",
-    "created": "2025-12-03",
-    "author": "John F. Miller"
-  }
+  "FR": [],
+  "ES": [],
+  "NO": [],
+  "PL": [],
+  "LA": [],
+  "EGY": [],
+  "ZH": []
 }

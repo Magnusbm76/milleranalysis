@@ -1,353 +1,85 @@
 {
-  "title": "Victimhood Architecture Assessment",
-  "description": "Assessment for understanding the architecture of victimhood in psychoanalytic context",
-  "questions": [
-    {
-      "id": "vha_01",
-      "text": {
-        "EN": "I find that acknowledging my limitations in social situations actually increases my influence with others",
-        "FR": "Je trouve que reconnaître mes limites dans les situations sociales augmente mon influence sur les autres",
-        "ES": "Descubro que reconocer mis limitaciones en situaciones sociales aumenta mi influencia en los demás",
-        "NO": "Jeg finner at å anerkjenne mine begrensninger i sosiale situasjoner faktisk øker min innflytelse på andre",
-        "PL": "Zauważam, że uznawanie moich ograniczeń w sytuacjach społecznych faktycznie zwiększa moją wpływ na innych",
-        "LA": "Invenio quod recognitio limitationum mearum in situatibus socialibus revera auget influentiam meam in alios",
-        "EGY": "أجد أن الاعتراف بحدودي في المواقف الاجتماعية يزيد في الواقع من تأثيري على الآخرين",
-        "ZH": "我发现承认自己在社交场合中的局限性实际上会增加对他人的影响力"
+  "EN": {
+    "title": "Victimhood Architecture Assessment",
+    "description": "This assessment explores the structural dimensions of victimhood and how it becomes organized in psychic life. Based on John F. Miller's theoretical framework, it examines how victimhood operates as a fundamental structure in emotional organization and therapeutic work.",
+    "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.",
+    "questions": [
+      {
+        "id": "va1",
+        "text": "I recognize that victimhood can operate as a structural position in psychic organization.",
+        "context": "Exploring awareness of victimhood as a psychic structure rather than just a temporary state."
       },
-      "category": "victimhood_power"
-    },
-    {
-      "id": "vha_02",
-      "text": {
-        "EN": "Social systems tend to validate and reinforce my experiences of marginalization",
-        "FR": "Les systèmes sociaux tendent à valider et renforcer mes expériences de marginalisation",
-        "ES": "Los sistemas sociales tienden a validar y reforzar mis experiencias de marginación",
-        "NO": "Sosiale systemer har en tendens til å validere og forsterke mine erfaringer med marginalisering",
-        "PL": "Systemy społeczne mają tendencję do potwierdzania i wzmacniania moich doświadczeń marginalizacji",
-        "LA": "Systemata socialia tendunt ad validandum et corroborandum experientias meas marginalizationis",
-        "EGY": "تميل الأنظمة الاجتماعية إلى التحقق من وتعزيز تجاربي بالتهميش",
-        "ZH": "社会系统往往会验证和强化我的边缘化经历"
+      {
+        "id": "va2",
+        "text": "I understand that the triumphant victim position involves complex dynamics of agency and suffering.",
+        "context": "Examining understanding of the paradoxical nature of triumphant victimhood."
       },
-      "category": "system_validation"
-    },
-    {
-      "id": "vha_03",
-      "text": {
-        "EN": "My perceived inadequacies have transformed into sources of social authority",
-        "FR": "Mes insuffisances perçues se sont transformées en sources d'autorité sociale",
-        "ES": "Mis insuficiencias percibidas se han transformado en fuentes de autoridad social",
-        "NO": "Mine oppfattede utilstrekkeligheter har forvandlet seg til kilder til sosial autoritet",
-        "PL": "Moje postrzegane niedostatki przekształciły się w źródła autorytetu społecznego",
-        "LA": "Inadequationes meae perceptae in fontes auctoritatis socialis sunt transmutatae",
-        "EGY": "تحولت أوجه القصور التي أراها في نفسي إلى مصادر للسلطة الاجتماعية",
-        "ZH": "我感知到的不足已经转化为社会权威的来源"
+      {
+        "id": "va3",
+        "text": "I can see how victimhood becomes organized into patterns that shape emotional life.",
+        "context": "Investigating capacity to recognize the architectural dimensions of victimhood."
       },
-      "category": "inadequacy_to_power"
-    },
-    {
-      "id": "vha_04",
-      "text": {
-        "EN": "I strategically maintain structural elements that support my victimhood identity",
-        "FR": "Je maintiens stratégiquement des éléments structurels qui soutiennent mon identité de victime",
-        "ES": "Mantengo estratégicamente elementos estructurales que apoyan mi identidad de víctima",
-        "NO": "Jeg strategisk vedlikeholder strukturelle elementer som støtter min offeridentitet",
-        "PL": "Strategicznie utrzymuję elementy strukturalne, które wspierają moją tożsamość ofiary",
-        "LA": "Strategice conservo elementa structuralia quae identitatem meam victimalem sustentant",
-        "EGY": "أحافظ بشكل استراتيجي على العناصر الهيكلية التي تدعم هويتي كضحية",
-        "ZH": "我策略性地维持着支持我受害者身份的结构要素"
+      {
+        "id": "va4",
+        "text": "I recognize that victimhood can serve functions beyond simple suffering or powerlessness.",
+        "context": "Analyzing understanding of the complex functions victimhood can serve."
       },
-      "category": "structural_maintenance"
-    },
-    {
-      "id": "vha_05",
-      "text": {
-        "EN": "My identity formation has been primarily shaped through experiences of structural inadequacy",
-        "FR": "Ma formation identitaire a été principalement façonnée à travers des expériences d'inadéquation structurelle",
-        "ES": "Mi formación de identidad ha sido moldeada principalmente a través de experiencias de inadequación estructural",
-        "NO": "Min identitetsdannelse har vært primært formet gjennom erfaringer med strukturell utilstrekkelighet",
-        "PL": "Moje kształtowanie się tożsamości zostało głównie ukształtowane przez doświadczenia strukturalnej nieadekwatności",
-        "LA": "Formatio identitatis meae praecipue per experientias inadequateae structuralis formata est",
-        "EGY": "تشكلت هويتي بشكل أساسي من خلال تجارب النقص الهيكلي",
-        "ZH": "我的身份形成主要是通过结构性不足的经历塑造的"
+      {
+        "id": "va5",
+        "text": "I understand that working with victimhood requires attention to its structural organization.",
+        "context": "Exploring recognition of the need to address victimhood as a structure."
       },
-      "category": "identity_formation"
-    },
-    {
-      "id": "vha_06",
-      "text": {
-        "EN": "Contemporary discourse increasingly recognizes the paradox of the triumphant victim",
-        "FR": "Le discours contemporain reconnaît de plus en plus le paradoxe de la victime triomphante",
-        "ES": "El discurso contemporáneo reconoce cada vez más la paradoja de la víctima triunfante",
-        "NO": "Samtidsdiskursen anerkjenner i økende grad paradokset til den seirende offeret",
-        "PL": "Współczesny dyskurs coraz bardziej uznaje paradoks triumfującej ofiary",
-        "LA": "Disursus hodiernus paradoxum victimae triumphantis magis magisque agnoscit",
-        "EGY": "الخطاب المعاصر يعترف بشكل متزايد بتناقض الضحية المنتصرة",
-        "ZH": "当代话语越来越认识到胜利受害者的悖论"
+      {
+        "id": "va6",
+        "text": "I can help patients explore how victimhood operates in their psychic organization.",
+        "context": "Examining capacity to work with the structural dimensions of victimhood."
       },
-      "category": "triumphant_paradox"
-    },
-    {
-      "id": "vha_07",
-      "text": {
-        "EN": "I leverage my marginalized status to gain access to institutional resources and attention",
-        "FR": "J'exploite mon statut de marginalisé pour accéder aux ressources institutionnelles et à l'attention",
-        "ES": "Aprovecho mi estado de marginación para acceder a recursos institucionales y atención",
-        "NO": "Jeg utnytter min marginaliserte status for å få tilgang til institusjonelle ressurser og oppmerksomhet",
-        "PL": "Wykorzystuję swoją status marginalizowany do uzyskania dostępu do zasobów instytucjonalnych i uwagi",
-        "LA": "Statum meum marginalizatum ad resources institutionales et attentionem accedendas excolo",
-        "EGY": "أستغل وضعي المهمش للوصول إلى الموارد المؤسسية والاهتمام",
-        "ZH": "我利用我的边缘化地位来获得机构资源和关注"
+      {
+        "id": "va7",
+        "text": "I recognize that victimhood can be both a source of suffering and a form of agency.",
+        "context": "Investigating understanding of the dual nature of victimhood."
       },
-      "category": "resource_leverage"
-    },
-    {
-      "id": "vha_08",
-      "text": {
-        "EN": "The architectural components of victimhood provide a stable framework for my social positioning",
-        "FR": "Les composantes architecturales de l'état de victime fournissent un cadre stable pour mon positionnement social",
-        "ES": "Los componentes arquitectónicos de la condición de víctima proporcionan un marco estable para mi posicionamiento social",
-        "NO": "De arkitektoniske komponentene av offerstatus gir et rammeverk for min sosiale posisjonering",
-        "PL": "Komponenty architektoniczne ofiary zapewniają stabilną ramę dla mojego pozycjonowania społecznego",
-        "LA": "Componentes architecturae victimatis stabilem contextum pro positione sociali mea praebent",
-        "EGY": "توفر المكونات المعمارية للضحية إطارًا مستقرًا لموقفي الاجتماعي",
-        "ZH": "受害者身份的架构组件为我的社会定位提供了稳定的框架"
-      },
-      "category": "architectural_framework"
-    },
-    {
-      "id": "vha_09",
-      "text": {
-        "EN": "I experience tension between the benefits of victimhood and the desire for authentic agency",
-        "FR": "Je ressens une tension entre les bénéfices de l'état de victime et le désir d'une agentivité authentique",
-        "ES": "Experimento tensión entre los beneficios de la condición de víctima y el deseo de agencia auténtica",
-        "NO": "Jeg opplever spenning mellom fordelene ved offerstatus og ønsket om ekte handlekraft",
-        "PL": "Doświadczam napięcia między korzyściami bycia ofiarą a pragnieniem autentycznej sprawczości",
-        "LA": "Tensionem inter profectibus victimatis et desiderio agentiae authenticae experior",
-        "EGY": "أشعر بتوتر بين فوائد كوني ضحية ورغبتي في الوكالة الحقيقية",
-        "ZH": "我体验到受害者身份的好处与对真实能动性的渴望之间的紧张关系"
-      },
-      "category": "agency_tension"
-    },
-    {
-      "id": "vha_10",
-      "text": {
-        "EN": "Social validation of my victimhood narrative has become essential to my sense of self-worth",
-        "FR": "La validation sociale de mon récit de victimisation est devenue essentielle à mon sens de la valeur personnelle",
-        "ES": "La validación social de mi narrativa de victimización se ha vuelto esencial para mi sentido de valía personal",
-        "NO": "Sosial validering av mitt offerfortelling har blitt essensielt for min følelse av selvverdi",
-        "PL": "Społeczne potwierdzenie mojej narracji ofiary stało się niezbędne dla mojego poczucia własnej wartości",
-        "LA": "Validatio socialis narrationis meae victimalis ad sensum dignitatis meae essentialis facta est",
-        "EGY": "أصبح التحقق الاجتماعي من سرديتي كضحية أمرًا ضروريًا لإحساسي بقيمتي الذاتية",
-        "ZH": "我的受害者叙事的社会验证已成为我自我价值感的重要组成部分"
-      },
-      "category": "validation_dependency"
-    },
-    {
-      "id": "vha_11",
-      "text": {
-        "EN": "I recognize how contemporary power structures are maintained through the distribution of victimhood status",
-        "FR": "Je reconnais comment les structures de pouvoir contemporaines sont maintenues à travers la distribution du statut de victime",
-        "ES": "Reconozco cómo las estructuras de poder contemporáneas se mantienen a través de la distribución del estatus de víctima",
-        "NO": "Jeg gjenkjenner hvordan moderne maktstrukturer opprettholdes gjennom distribusjon av offerstatus",
-        "PL": "Rozpoznaję, w jaki sposób współczesne struktury władzy są utrzymywane poprzez dystrybucję statusu ofiary",
-        "LA": "Quomodo potestatis hodiernae structurae per distributionem statusus victimalis conserventur recognosco",
-        "EGY": "أدرك كيف يتم الحفاظ على هياكل السلطة المعاصرة من خلال توزيع وضع الضحية",
-        "ZH": "我认识到当代权力结构是如何通过受害者身份的分配来维持的"
-      },
-      "category": "power_structures"
-    },
-    {
-      "id": "vha_12",
-      "text": {
-        "EN": "My communication strategies have evolved to maximize the perceived impact of my marginalization",
-        "FR": "Mes stratégies de communication ont évolué pour maximiser l'impact perçu de ma marginalisation",
-        "ES": "Mis estrategias de comunicación han evolucionado para maximizar el impacto percibido de mi marginación",
-        "NO": "Mine kommunikasjonsstrategier har utviklet seg for å maksimere den oppfattede effekten av min marginalisering",
-        "PL": "Moje strategie komunikacyjne ewoluowały, aby zmaksymalizować postrzegany wpływ mojej marginalizacji",
-        "LA": "Strategiae meae communicationis evolverunt ad effectum perceptum marginalizationis meae maximizandum",
-        "EGY": "تطورت استراتيجياتي التواصلية لتعظيم التأثير المتصور لتهميشي",
-        "ZH": "我的沟通策略已经发展到最大化我边缘化的感知影响"
-      },
-      "category": "communication_evolution"
-    },
-    {
-      "id": "vha_13",
-      "text": {
-        "EN": "I consciously construct narratives that position me within recognized victimhood categories",
-        "FR": "Je construis consciemment des récits qui me positionnent dans des catégories de victimisation reconnues",
-        "ES": "Construyo conscientemente narrativas que me posicionan dentro de categorías de victimización reconocidas",
-        "NO": "Jeg bevisst konstruerer fortellinger som plasserer meg innenfor anerkjente offerkategorier",
-        "PL": "Świadomie konstruuję narracje, które pozycjonują mnie w uznanych kategoriach ofiar",
-        "LA": "Conscie narrationes construo quae me intra categorias victimatis recognitas collocant",
-        "EGY": "أقوم بوعي ببناء سرديات تضعني ضمن فئات الضحايا المعترف بها",
-        "ZH": "我有意识地构建将我置于公认受害者类别中的叙事"
-      },
-      "category": "narrative_construction"
-    },
-    {
-      "id": "vha_14",
-      "text": {
-        "EN": "The triumphant victim complex represents both a constraint and an opportunity in my social navigation",
-        "FR": "Le complexe de la victime triomphante représente à la fois une contrainte et une opportunité dans ma navigation sociale",
-        "ES": "El complejo de la víctima triunfante representa tanto una restricción como una oportunidad en mi navegación social",
-        "NO": "Komplekset med den seirende offeret representerer både en begrensning og en mulighet i min sosiale navigasjon",
-        "PL": "Kompleks triumfującej ofiary reprezentuje zarówno ograniczenie, jak i możliwość w mojej nawigacji społecznej",
-        "LA": "Complexus victimae triumphantis tam restrictionem quam opportunitatem in navigatione sociali mea repraesentat",
-        "EGY": "يمثل معقد الضحية المنتصرة قيدًا وفرصة في تنقلي الاجتماعي",
-        "ZH": "胜利受害者情结在我的社会导航中既代表约束也代表机会"
-      },
-      "category": "complex_navigation"
-    },
-    {
-      "id": "vha_15",
-      "text": {
-        "EN": "I have developed sophisticated mechanisms for converting perceived suffering into social capital",
-        "FR": "J'ai développé des mécanismes sophistiqués pour convertir la souffrance perçue en capital social",
-        "ES": "He desarrollado mecanismos sofisticados para convertir el sufrimiento percibido en capital social",
-        "NO": "Jeg har utviklet sofistikerte mekanismer for å konvertere oppfattet lidelse til sosial kapital",
-        "PL": "Rozwinąłem zaawansowane mechanizmy konwertowania postrzeganego cierpienia w kapitał społeczny",
-        "LA": "Mechanismos sophisticatos evolvi ad convertendam passionem perceptam in capitalem socialem",
-        "EGY": "لقد طورت آليات متطورة لتحويل المعاناة المتصورة إلى رأس مال اجتماعي",
-        "ZH": "我已发展出将感知到的痛苦转化为社会资本的复杂机制"
-      },
-      "category": "suffering_conversion"
-    }
-  ],
-  "results": [
-    {
-      "range": [
-        0,
-        20
-      ],
-      "title": {
-        "EN": "Minimal Victimhood Architecture",
-        "FR": "Architecture Minimale de la Victimisation",
-        "ES": "Arquitectura Mínima de la Victimización",
-        "NO": "Minimal Offerarkitektur",
-        "PL": "Minimalna Architektura Ofiary",
-        "LA": "Minima Architectura Victimatis",
-        "EGY": "بنية ضحايا ضئيلة",
-        "ZH": "最小受害者架构"
-      },
-      "summary": {
-        "EN": "Your responses indicate minimal engagement with victimhood as an identity structure. You appear to maintain agency and self-concept independent of marginalization narratives. This suggests resistance to the architectural components that sustain contemporary victimhood as identity. For further exploration of these dynamics, see the chapters on structural identity formation in 'Triumphant Victim' and the analysis of authentic communication in 'Do You Read Me'.",
-        "FR": "Vos réponses indiquent un engagement minimal avec la victimisation comme structure identitaire. Vous semblez maintenir votre agentivité et votre concept de soi indépendamment des récits de marginalisation. Ceci suggère une résistance aux composantes architecturales qui soutiennent la victimisation contemporaine comme identité. Pour une exploration plus approfondie de ces dynamiques, consultez les chapitres sur la formation identitaire structurelle dans 'Triumphant Victim' et l'analyse de la communication authentique dans 'Do You Read Me'.",
-        "ES": "Tus respuestas indican una participación mínima con la victimización como estructura de identidad. Pareces mantener tu agencia y autoconcepto independientemente de las narrativas de marginación. Esto sugiere resistencia a los componentes arquitectónicos que sostienen la victimización contemporánea como identidad. Para una mayor exploración de estas dinámicas, consulta los capítulos sobre formación de identidad estructural en 'Triumphant Victim' y el análisis de comunicación auténtica en 'Do You Read Me'.",
-        "NO": "Dine svar indikerer minimal engasjement med offerstatus som identitetsstruktur. Du ser ut til å opprettholde handlekraft og selvkonsept uavhengig av marginaliseringsfortellinger. Dette antyder motstand mot de arkitektoniske komponentene som opprettholder samtidens offerstatus som identitet. For videre utforskning av disse dynamikkene, se kapitlene om strukturell identitetsdannelse i 'Triumphant Victim' og analysen av kommunikasjon i 'Do You Read Me'.",
-        "PL": "Twoje odpowiedzi wskazują na minimalne zaangażowanie w ofiarę jako strukturę tożsamości. Wydaje się, że utrzymujesz sprawczość i koncepcję siebie niezależnie od narracji marginalizacji. Sugeruje to opór wobec komponentów architektonicznych, które podtrzymują współczesną ofiarę jako tożsamość. Aby dalej badać te dynamiki, zobacz rozdziały o strukturalnym kształtowaniu się tożsamości w 'Triumphant Victim' i analizę komunikacji w 'Do You Read Me'.",
-        "LA": "Responsiones tuae minimam participationem cum victimate ut structura identitatis indicant. Agentiam et conceptum sui tuum independentem narrationum marginalizationis videris conservare. Hoc suggerit resistantiam ad componentes architectonicos qui victimatem hodiernam ut identitatem sustentant. Ad ulteriorem explorationem harum dynamismorum, vide capita de formatione identitatis structurali in 'Triumphant Victim' et analysim communicationis authenticae in 'Do You Read Me'.",
-        "EGY": "تشير إجاباتك إلى مشاركة ضئيلة في الضحية كبنية هوية. يبدو أنك تحافظ على وكالتك ومفهوم الذات بشكل مستقل عن سرديات التهميش. هذا يشير إلى مقاومة للمكونات المعمارية التي تدعم الضحية المعاصرة كهوية. لمزيد من استكشاف هذه الديناميكيات، راجع الفصول حول تشكيل الهوية الهيكلية في 'Triumphant Victim' وتحليل التواصل الحقيقي في 'Do You Read Me'.",
-        "ZH": "你的回答表明对受害者作为身份结构的参与度最低。你似乎保持了能动性和自我概念，独立于边缘化叙事。这表明对维持当代受害者身份的架构组成部分存在抵制。要进一步探索这些动态，请参阅《Triumphant Victim》中关于结构身份形成的章节以及《Do You Read Me》中关于真实沟通的分析。"
+      {
+        "id": "va8",
+        "text": "I understand that analysis must address the architecture of victimhood, not just its symptoms.",
+        "context": "Exploring the analytic understanding of working with victimhood structures."
       }
-    },
-    {
-      "range": [
-        21,
-        40
-      ],
-      "title": {
-        "EN": "Developing Victimhood Architecture",
-        "FR": "Architecture de Victimisation en Développement",
-        "ES": "Arquitectura de Victimización en Desarrollo",
-        "NO": "Utviklende Offerarkitektur",
-        "PL": "Rozwijająca się Architektura Ofiary",
-        "LA": "Architectura Victimatis in Developmente",
-        "EGY": "بنية ضحايا قيد التطوير",
-        "ZH": "发展中受害者架构"
+    ],
+    "results": [
+      {
+        "range": [
+          0,
+          10
+        ],
+        "title": "Integrated Understanding of Victimhood",
+        "summary": "Your responses demonstrate a sophisticated understanding of victimhood as a structural dimension of psychic organization. You show remarkable capacity to recognize the complex dynamics and functions of victimhood beyond simple suffering or powerlessness. This suggests you've developed a nuanced understanding of how victimhood operates as a fundamental structure in emotional life. Your ability to work with the architectural dimensions of victimhood indicates advanced analytic maturity.",
+        "recommendation": "Continue cultivating this integrated approach to victimhood structures. Your understanding of the complex nature of victimhood serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Victimhood Structure' in 'Do You Read Me' and the section on 'The Architecture of Victimhood' in 'Triumphant Victim'."
       },
-      "summary": {
-        "EN": "Your responses reveal developing engagement with victimhood as an identity structure, with selective adoption of architectural components. You appear to be navigating the tension between authentic experience and the social benefits of victimhood positioning. This transitional state reflects the early stages of what Miller identifies as the triumphant victim complex. For deeper understanding of this developmental process, consult the sections on identity transformation in 'Triumphant Victim' and the semiotics of emerging victimhood in 'Do You Read Me'.",
-        "FR": "Vos réponses révèlent un engagement en développement avec la victimisation comme structure identitaire, avec une adoption sélective des composantes architecturales. Vous semblez naviguer la tension entre l'expérience authentique et les bénéfices sociaux du positionnement en victime. Cet état de transition reflète les premiers stades de ce que Miller identifie comme le complexe de la victime triomphante. Pour une compréhension plus approfondie de ce processus de développement, consultez les sections sur la transformation identitaire dans 'Triumphant Victim' et la communication authentique de la victimisation émergente dans 'Do You Read Me'.",
-        "ES": "Tus respuestas revelan un participación en desarrollo con la victimización como estructura de identidad, con adopción selectiva de componentes arquitectónicos. Pareces navegar la tensión entre la experiencia auténtica y los beneficios sociales del posicionamiento como víctima. Este estado transicional refleja las primeras etapas de lo que Miller identifica como el complejo de la víctima triunfante. Para una comprensión más profunda de este proceso de desarrollo, consulta las secciones sobre transformación de identidad en 'Triumphant Victim' y la comunicación auténtica de la victimización emergente en 'Do You Read Me'.",
-        "NO": "Dine svar avslører utviklende engasjement med offerstatus som identitetsstruktur, med selektiv adopsjon av arkitektoniske komponenter. Du ser ut til å navigere spenningen mellom autentisk erfaring og de sosiale fordelene av offerposisjonering. Denne overgangstilstanden reflekterer de tidlige stadiene av det Miller identifiserer som det seirende offerkomplekset. For dypere forståelse av denne utviklingsprosessen, se delene om identitetstransformasjon i 'Triumphant Victim' og kommunasjon av fremvoksende offerstatus i 'Do You Read Me'.",
-        "PL": "Twoje odpowiedzi ujawniają rozwijające się zaangażowanie w ofiarę jako strukturę tożsamości, z selektywnym przyjmowaniem komponentów architektonicznych. Wydaje się, że nawigujesz napięcie między autentycznym doświadczeniem a społecznymi korzyściami pozycjonowania się jako ofiara. Ten stan przejściowy odzwierciedla wczesne etapy tego, co Miller identyfikuje jako kompleks triumfującej ofiary. Aby głębiej zrozumieć ten proces rozwojowy, zapoznaj się z sekcjami o transformacji tożsamości w 'Triumphant Victim' i komunikacji emerging victimhood w 'Do You Read Me'.",
-        "LA": "Responsiones tuae evolutionem participationis cum victimate ut structura identitatis revelant, cum selecta adoptione componentium architecturalium. Tensionem inter experientiam authenticam et profectus sociales positionis victimatis videris navigare. Hoc statum transitorium prima gradus exhibet eorum quae Miller ut complexum victimae triumphantis identificat. Ad profundiorem intellectionem huius processus evolutionarii, consulta partes de transformatione identitatis in 'Triumphant Victim' et de semiotica victimatis emergentis in 'Do You Read Me'.",
-        "EGY": "تكشف إجاباتك عن تطور المشاركة في الضحية كبنية هوية، مع تبني انتقائي للمكونات المعمارية. يبدو أنك تتنقل في التوتر بين التجربة الحقيقية والفوائد الاجتماعية لتحديد المواقع كضحية. هذه الحالة الانتقالية تعكس المراحل المبكرة لما يحدده ميلر بأنه معقد الضحية المنتصرة. لفهم أعمق لهذه العملية التطورية، راجع الأقسام حول تحول الهوية في 'Triumphant Victim' وعلم التواصل الحقيقي للضحية الناشئة في 'Do You Read Me'.",
-        "ZH": "你的回答揭示了与受害者作为身份结构的发展中参与，对架构组件的选择性采用。你似乎在真实体验与受害者定位的社会利益之间的紧张关系中航行。这种过渡状态反映了米勒所识别的胜利受害者情结的早期阶段。要更深入地理解这一发展过程，请参阅《Triumphant Victim》中关于身份转变的部分以及《Do You Read Me》中关于新兴受害者的真实沟通。"
-      }
-    },
-    {
-      "range": [
-        41,
-        60
-      ],
-      "title": {
-        "EN": "Moderate Victimhood Architecture",
-        "FR": "Architecture Modérée de la Victimisation",
-        "ES": "Arquitectura Moderada de la Victimización",
-        "NO": "Moderat Offerarkitektur",
-        "PL": "Umiarkowana Architektura Ofiary",
-        "LA": "Moderata Architectura Victimatis",
-        "EGY": "بنية ضحايا معتدلة",
-        "ZH": "中等受害者架构"
+      {
+        "range": [
+          11,
+          22
+        ],
+        "title": "Developing Understanding of Victimhood",
+        "summary": "Your responses reveal a developing awareness of victimhood as a structural dimension of psychic organization. You may occasionally recognize the complex functions of victimhood or its architectural organization, though this understanding may not be fully integrated into your approach. This suggests you're beginning to navigate the complex dynamics of victimhood with growing success.",
+        "recommendation": "Consider developing greater awareness of how victimhood operates as a structure in psychic organization. Practicing attention to the architectural dimensions of victimhood can enhance your clinical effectiveness. For deeper understanding of these dynamics, refer to the chapter on 'Victimhood Dynamics' in 'Do You Read Me' and the section on 'Structural Dimensions' in 'Triumphant Victim'."
       },
-      "summary": {
-        "EN": "Your responses indicate moderate integration of victimhood architecture into your identity structure. You demonstrate balanced engagement with both the benefits and constraints of victimhood positioning, suggesting conscious navigation of what Miller terms the triumphant victim paradox. This reflects a sophisticated understanding of how contemporary social systems validate and reinforce victimhood as identity. For further analysis of these dynamics, see the chapters on structural validation in 'Triumphant Victim' and the semiotics of social recognition in 'Do You Read Me'.",
-        "FR": "Vos réponses indiquent une intégration modérée de l'architecture de la victimisation dans votre structure identitaire. Vous démontrez un engagement équilibré avec les bénéfices et les contraintes du positionnement en victime, suggérant une navigation consciente de ce que Miller appelle le paradoxe de la victime triomphante. Ceci reflète une compréhension sophistiquée de la manière dont les systèmes sociaux contemporains valident et renforcent la victimisation comme identité. Pour une analyse plus approfondie de ces dynamiques, consultez les chapitres sur la validation structurelle dans 'Triumphant Victim' et la communication authentique de la reconnaissance sociale dans 'Do You Read Me'.",
-        "ES": "Tus respuestas indican una integración moderada de la arquitectura de la victimización en tu estructura de identidad. Demuestras un compromiso equilibrado con tanto los beneficios como las limitaciones del posicionamiento como víctima, sugiriendo una navegación consciente de lo que Miller llama la paradoja de la víctima triunfante. Esto refleja una comprensión sofisticada de cómo los sistemas sociales contemporáneos validan y refuerzan la victimización como identidad. Para un análisis más profundo de estas dinámicas, consulta los capítulos sobre validación estructural en 'Triumphant Victim' y la comunicación auténtica del reconocimiento social en 'Do You Read Me'.",
-        "NO": "Dine svar indikerer moderat integrering av offerarkitektur i din identitetsstruktur. Du demonstrerer balansert engasjement med både fordelene og begrensningene ved offerposisjonering, noe som antyder bevisst navigering av det Miller kaller det seirende offerparadokset. Dette reflekterer en sofistikert forståelse av hvordan moderne sosiale systemer validerer og forsterker offerstatus som identitet. For videre analyse av disse dynamikkene, se kapitlene om strukturell validering i 'Triumphant Victim' og sosial anerkjennelse i 'Do You Read Me'.",
-        "PL": "Twoje odpowiedzi wskazują na umiarkowaną integrację architektury ofiary w strukturę Twojej tożsamości. Demonstrujesz zrównoważone zaangażowanie zarówno w korzyści, jak i ograniczenia pozycjonowania się jako ofiara, co sugeruje świadome nawigowanie tym, co Miller nazywa paradoksem triumfującej ofiary. Odzwierciedla to wyrafinowane zrozumienie tego, jak współczesne systemy społeczne walidują i wzmacniają ofiarę jako tożsamość. Aby dalej analizować te dynamizmy, zobacz rozdziały o walidacji strukturalnej w 'Triumphant Victim' i semiotyce uznania społecznego w 'Do You Read Me'.",
-        "LA": "Responsiones tuae moderatam integrationem architecturae victimatis in structuram identitatis tuae indicant. Equilibratum engagementem cum profectibus et limitationibus positionis victimatis demonstras, quod conscientem navigationem eius quod Miller paradoxum victimae triumphantis appellat suggerit. Hoc sophisticatam intellectionem ostendit quomodo systemata socialia hodierna victimatem ut identitatem valident et corroborent. Ad ulteriorem analysim harum dynamismorum, vide capita de validatione structurali in 'Triumphant Victim' et de communicatione authentica recognitionis socialis in 'Do You Read Me'.",
-        "EGY": "تشير إجاباتك إلى تكامل معتدل لهيكلية الضحية في بنية هويتك. تظهر مشاركة متوازنة مع كل من الفوائد والقيود لتحديد المواقع كضحية، مما يوحي بالتنقل الواعي لما يسميه ميلر بتناقض الضحية المنتصرة. هذا يعكس فهمًا متطورًا لكيفية قيام الأنظمة الاجتماعية المعاصرة بالتحقق من وتعزيز الضحية كهوية. لمزيد من تحليل هذه الديناميكيات، راجع الفصول حول التحقق الهيكلي في 'Triumphant Victim' وعلم التواصل الحقيقي للاعتراف الاجتماعي في 'Do You Read Me'.",
-        "ZH": "你的回答表明受害者架构适度整合到你的身份结构中。你展示了与受害者定位的利益和约束的平衡参与，表明有意识地导航米勒所称的胜利受害者悖论。这反映了对当代社会系统如何验证和强化受害者身份的复杂理解。要进一步分析这些动态，请参阅《Triumphant Victim》中关于结构验证的章节以及《Do You Read Me》中关于真实沟通的符号学。"
+      {
+        "range": [
+          23,
+          32
+        ],
+        "title": "Limited Understanding of Victimhood",
+        "summary": "Your responses indicate a primary focus on victimhood as a state of suffering with limited recognition of its structural organization. You may struggle to see the complex functions or architectural dimensions of victimhood in psychic life. This pattern suggests that the structural nature of victimhood may be underexplored in your understanding of therapeutic work.",
+        "recommendation": "Your understanding of the structural dimensions of victimhood warrants careful development. Consider exploring how victimhood operates as a fundamental structure in psychic organization. The chapter on 'Victimhood Architecture' in 'Do You Read Me' and the section on 'Structural Analysis' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
       }
-    },
-    {
-      "range": [
-        61,
-        80
-      ],
-      "title": {
-        "EN": "Advanced Victimhood Architecture",
-        "FR": "Architecture Avancée de la Victimisation",
-        "ES": "Arquitectura Avanzada de la Victimización",
-        "NO": "Avansert Offerarkitektur",
-        "PL": "Zaawansowana Architektura Ofiary",
-        "LA": "Progressa Architectura Victimatis",
-        "EGY": "بنية ضحايا متقدمة",
-        "ZH": "高级受害者架构"
-      },
-      "summary": {
-        "EN": "Your responses reveal advanced integration of victimhood architecture into your identity structure. You demonstrate sophisticated mechanisms for converting perceived inadequacy into social power, reflecting what Miller identifies as the fully developed triumphant victim complex. This indicates mastery of the structural components that maintain victimhood as a source of social validation and authority. For deeper exploration of these advanced dynamics, consult the chapters on power transformation in 'Triumphant Victim' and the authentic communication of structural authority in 'Do You Read Me'.",
-        "FR": "Vos réponses révèlent une intégration avancée de l'architecture de la victimisation dans votre structure identitaire. Vous démontrez des mécanismes sophistiqués pour convertir l'insuffisance perçue en pouvoir social, reflétant ce que Miller identifie comme le complexe de la victime triomphante pleinement développé. Ceci indique la maîtrise des composantes structurelles qui maintiennent la victimisation comme source de validation sociale et d'autorité. Pour une exploration plus approfondie de ces dynamiques avancées, consultez les chapitres sur la transformation du pouvoir dans 'Triumphant Victim' et la communication authentique de l'autorité structurelle dans 'Do You Read Me'.",
-        "ES": "Tus respuestas revelan una integración avanzada de la arquitectura de la victimización en tu estructura de identidad. Demuestras mecanismos sofisticados para convertir la insuficiencia percibida en poder social, reflejando lo que Miller identifica como el complejo de la víctima triunfante completamente desarrollado. Esto indica dominio de los componentes estructurales que mantienen la victimización como fuente de validación social y autoridad. Para una exploración más profunda de estas dinámicas avanzadas, consulta los capítulos sobre transformación de poder en 'Triumphant Victim' y la comunicación auténtica de la autoridad estructural en 'Do You Read Me'.",
-        "NO": "Dine svar avslører avansert integrering av offerarkitektur i din identitetsstruktur. Du demonstrerer sofistikerte mekanismer for å konvertere oppfattet utilstrekkelighet til sosial makt, noe som reflekterer det Miller identifiserer som det fullt utviklede seirende offerkomplekset. Dette indikerer mestring av de strukturelle komponentene som opprettholder offerstatus som kilde til sosial validering og autoritet. For dypere utforskning av disse avanserte dynamikkene, se kapitlene om makttransformasjon i 'Triumphant Victim' og kommunasjon av strukturell autoritet i 'Do You Read Me'.",
-        "PL": "Twoje odpowiedzi ujawniają zaawansowaną integrację architektury ofiary w strukturę Twojej tożsamości. Demonstrujesz wyrafinowane mechanizmy konwertowania postrzeganej nieadekwatności w władzę społeczną, odzwierciedlając to, co Miller identyfikuje jako w pełni rozwinięty kompleks triumfującej ofiary. Wskazuje to na opanowanie komponentów strukturalnych, które utrzymują ofiarę jako źródło walidacji społecznej i autorytetu. Aby głębiej zbadać te zaawansowane dynamizmy, zapoznaj się z rozdziałami o transformacji władzy w 'Triumphant Victim' i semiotyce autorytetu strukturalnego w 'Do You Read Me'.",
-        "LA": "Responsiones tuae progressam integrationem architecturae victimatis in structuram identitatis tuae revelant. Mechanismos sophisticatos ad convertendam inadequateam perceptam in potestatem socialem demonstras, quod reflectit id quod Miller ut plene evolutum complexum victimae triumphantis identificat. Hoc dominationem componentium structuralium quae victimatem ut fontem validationis socialis et auctoritatis sustentant indicat. Ad profundiorem explorationem harum progressarum dynamismorum, consulta capita de transformatione potestatis in 'Triumphant Victim' et de semiotica auctoritatis structuralis in 'Do You Read Me'.",
-        "EGY": "تكشف إجاباتك عن تكامل متقدم لهيكلية الضحية في بنية هويتك. تظهر آليات متطورة لتحويل النقص المتصور إلى سلطة اجتماعية، مما يعكس ما يحدده ميلر بأنه معقد الضحية المنتصرة المكتمل بالكامل. هذا يشير إلى إتقان المكونات الهيكلية التي تحافظ على الضحية كمصدر للتحقق الاجتماعي والسلطة. لمزيد من الاستكشاف لهذه الديناميكيات المتقدمة، راجع الفصول حول تحول السلطة في 'Triumphant Victim' وعلم العلامات للسلطة الهيكلية في 'Do You Read Me'.",
-        "ZH": "你的回答揭示了受害者架构高级整合到你的身份结构中。你展示了将感知到的不足转化为社会权力的复杂机制，反映了米勒所识别的完全发展的胜利受害者情结。这表明掌握了维持受害者身份作为社会验证和权威来源的结构组件。要更深入地探索这些高级动态，请参阅《Triumphant Victim》中关于权力转变的章节以及《Do You Read Me》中关于真实沟通的结构权威的符号学。"
-      }
-    },
-    {
-      "range": [
-        81,
-        100
-      ],
-      "title": {
-        "EN": "Comprehensive Victimhood Architecture",
-        "FR": "Architecture Complète de la Victimisation",
-        "ES": "Arquitectura Integral de la Victimización",
-        "NO": "Omfattende Offerarkitektur",
-        "PL": "Kompleksowa Architektura Ofiary",
-        "LA": "Completa Architectura Victimatis",
-        "EGY": "بنية ضحايا شاملة",
-        "ZH": "全面受害者架构"
-      },
-      "summary": {
-        "EN": "Your responses indicate comprehensive integration of victimhood architecture into your identity structure. You demonstrate complete mastery of the triumphant victim complex, with sophisticated systems for converting perceived marginalization into social authority. This reflects what Miller identifies as the fully actualized architecture of contemporary victimhood, where identity formation is primarily structured through experiences of structural inadequacy. For complete understanding of these dynamics, see the comprehensive analysis in 'Triumphant Victim' and the authentic communication of total identity integration in 'Do You Read Me'.",
-        "FR": "Vos réponses indiquent une intégration complète de l'architecture de la victimisation dans votre structure identitaire. Vous démontrez une maîtrise complète du complexe de la victimime triomphante, avec des systèmes sophistiqués pour convertir la marginalisation perçue en autorité sociale. Ceci reflète ce que Miller identifie comme l'architecture pleinement actualisée de la victimisation contemporaine, où la formation identitaire est principalement structurée à travers les expériences d'inadéquation structurelle. Pour une compréhension complète de ces dynamiques, consultez l'analyse complète dans 'Triumphant Victim' et la communication authentique de l'intégration identitaire totale dans 'Do You Read Me'.",
-        "ES": "Tus respuestas indican una integración completa de la arquitectura de la victimización en tu estructura de identidad. Demuestras dominio completo del complejo de la víctima triunfante, con sistemas sofisticados para convertir la marginación percibida en autoridad social. Esto refleja lo que Miller identifica como la arquitectura completamente actualizada de la victimización contemporánea, donde la formación de identidad se estructura principalmente a través de experiencias de inadequación estructural. Para una comprensión completa de estas dinámicas, consulta el análisis completo en 'Triumphant/ Victim' y la comunicación auténtica de la integración identitaria total en 'Do You Read Me'.",
-        "NO": "Dine svar indikerer omfattende integrering av offerarkitektur i din identitetsstruktur. Du demonstrerer full mestring av det seirende offerkomplekset, med sofistikerte systemer for å konvertere oppfattet marginalisering til sosial autoritet. Dette reflekterer det Miller identifiserer som den fullt utviklede arkitekturen av samtidens offerstatus, der identitetsdannelse primært er strukturert gjennom erfaringer med strukturell utilstrekkelighet. For full forståelse av disse dynamikkene, se den omfattende analysen i 'Triumphant Victim' og kommunasjon av total identitetsintegrasjon i 'Do You Read Me'.",
-        "PL": "Twoje odpowiedzi wskazują na kompleksową integrację architektury ofiary w strukturę Twojej tożsamości. Demonstrujesz pełne opanowanie kompleksu triumfującej ofiary, z wyrafinowanymi systemami konwertowania postrzeganej marginalizacji w autorytet społeczny. Odzwierciedla to to, co Miller identyfikuje jako w pełni zrealizowaną architekturę współczesnej ofiary, gdzie kształtowanie się tożsamości jest głównie ustrukturyzowane przez doświadczenia strukturalnej nieadekwatności. Aby w pełni zrozumieć te dynamizmy, zobacz kompleksową analizę w 'Triumphant Victim' i semiotykę całkowitej integracji tożsamości w 'Do You Read Me'.",
-        "LA": "Responsiones tuae completam integrationem architecturae victimatis in structuram identitatis tuae indicant. Plenam dominationem complexi victimae triumphantis demonstras, cum systematis sophisticatis ad convertendam marginalizationem perceptam in auctoritatem socialem. Hoc reflectit id quod Miller ut plene actualisatam architecturam victimatis hodiernae identificat, ubi formatio identitatis praecipue per experientias inadequateae structuralis structuratur. Ad completam intellectionem harum dynamismorum, vide completam analysim in 'Triumphant Victim' et de semiotica integrationis identitatis totalis in 'Do You Read Me'.",
-        "EGY": "تشير إجاباتك إلى تكامل شامل لهيكلية الضحية في بنية هويتك. تظهر إتقانًا كاملاً لمعقد الضحية المنتصرة، مع أنظمة متطورة لتحويل التهميش المتصور إلى سلطة اجتماعية. هذا يعكس ما يحدده ميلر بأنه بنية الضحية المعاصرة المكتملة بالكامل، حيث يتم تشكيل الهوية بشكل أساسي من خلال تجارب النقص الهيكلي. لفهم شامل لهذه الديناميكيات، راجع التحليل الشامل في 'Triumphant Victim' وعلم العلامات للتكامل الكامل للهوية في 'Do You Read Me'.",
-        "ZH": "你的回答表明受害者架构全面整合到你的身份结构中。你展示了对胜利受害者情结的完全掌握，拥有将感知到的边缘化转化为社会权威的复杂系统。这反映了米勒所识别的当代受害者身份的完全实现架构，其中身份形成主要通过结构性不足的经历来构建。要完全理解这些动态，请参阅《Triumphant Victim》中的综合分析以及《Do You Read Me》中关于真实沟通的完全身份整合的符号学。"
-      }
-    }
-  ],
-  "metadata": {
-    "version": "1.0",
-    "created": "2025-12-03",
-    "author": "John F. Miller"
-  }
+    ]
+  },
+  "FR": [],
+  "ES": [],
+  "NO": [],
+  "PL": [],
+  "LA": [],
+  "EGY": [],
+  "ZH": []
 }
