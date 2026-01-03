@@ -2389,3 +2389,61 @@ async function renderQuizLobby() {
         }
     }
 }
+
+/**
+ * Quiz state management object
+ */
+let quizState = {
+    currentQuizIndex: 0,
+    quizData: null,
+    currentQuestionIndex: 0,
+    answers: [],
+    isComplete: false
+};
+
+/**
+ * Starts a quiz by loading its data and rendering the interface
+ * @param {string} quizFileName - The filename of the quiz to start (e.g., 'quiz_social_symptom.json')
+ */
+async function startQuiz(quizFileName) {
+    try {
+        console.log(`[startQuiz] Starting quiz: ${quizFileName}`);
+
+        // Find the index of this quiz in the quizFiles array
+        const quizIndex = quizFiles.indexOf(quizFileName);
+        if (quizIndex === -1) {
+            throw new Error(`Quiz file not found in quizFiles: ${quizFileName}`);
+        }
+
+        // Initialize quiz state
+        quizState = {
+            currentQuizIndex: quizIndex,
+            quizData: null,
+            currentQuestionIndex: 0,
+            answers: [],
+            isComplete: false
+        };
+
+        // Load quiz data
+        const filePath = `js/data/${quizFileName}`;
+        quizState.quizData = await loadQuizData(filePath);
+
+        // Get localized content
+        const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+        // Initialize answers array with undefined for each question
+        quizState.answers = new Array(localizedContent.questions.length).fill(undefined);
+
+        // Render quiz interface
+        renderQuizInterface();
+
+        console.log(`[startQuiz] Quiz started successfully with ${localizedContent.questions.length} questions`);
+
+    } catch (error) {
+        console.error('[startQuiz] Error starting quiz:', error);
+        showQuizError();
+    }
+}
+
+// Force startQuiz into global scope for event listeners
+window.startQuiz = startQuiz;
