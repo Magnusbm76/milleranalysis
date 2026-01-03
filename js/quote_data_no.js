@@ -71,15 +71,15 @@ const quoteData = {
   quotes: [
     {
       id: "quote_001",
-      title: "Analytikeren Leser Ikke Pasientens Historie",
-      quote: "Analytikeren leser ikke pasientens historie; analytikeren leser hullene der historien ikke holder sammen.",
-      context: "Denne innsikten utforsker det fundamentale semiotiske gapet mellom signifikant og signifikat, med utgangspunkt i Lacans tidlige arbeid om kommunikasjonsgrenser. Å tale nødvendigvis forvrenger den opprinnelige tanken, og skaper et permanent gap mellom intensjon og uttrykk.",
+      title: "Tolkningsgapet Mellom Erfaring og Språk",
+      quote: "Det fundamentale gapet mellom det som kan uttrykkes og det som faktisk erfarves, former hele terapeutisk praksis.",
+      context: "En kjerneinnsikt fra Do You Read Me (2015) som utforsker hvordan språkets begrensninger påvirker psykoanalytisk arbeid. Miller undersøker hvordan tolkningsgapet mellom erfaring og uttrykk skaper både utfordringer og muligheter i terapi.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 15,
-        number: 22,
-        chapter: "Chapter 3: The Semiotic Divide",
-        year: 2018
+        work: "Do You Read Me",
+        page: 23,
+        number: 1,
+        chapter: "Chapter 2: The Interpretive Gap",
+        year: 2015
       },
       themes: ["language", "semiotics"],
       relatedQuotes: [
@@ -124,9 +124,9 @@ const quoteData = {
       id: "quote_002",
       title: "Den Triumferende Offeren",
       quote: "Den triumferende offeren er den som, gjennom sin lidelse, klarer å fange ønsket til den Andre og å dominere scenen i verden.",
-      context: "Et utdrag fra The Triumphant Victim, som diskuterer hvordan moderne sosiale strukturer oppmuntrer og validerer en performativ identitet forankret i strukturell utilstrekkelighet. Denne identiteten gir både sosial anerkjennelse og psykologisk komfort.",
+      context: "Et sentralt konsept fra The Triumphant Victim (2013) som analyserer hvordan moderne sosiale strukturer oppmuntrer og validerer en performativ identitet forankret i strukturell utilstrekkelighet. Denne identiteten gir både sosial anerkjennelse og psykologisk komfort.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        work: "The Triumphant Victim",
         page: 42,
         number: 12,
         chapter: "Chapter 5: The Performance of Suffering",
@@ -173,15 +173,15 @@ const quoteData = {
     },
     {
       id: "quote_004",
-      title: "Den Gode Tolkingen",
-      quote: "En 'god' tolkning er ikke en som er sann, men en som produserer en effekt av sannhet i subjektets ubevisste.",
-      context: "Utvidende på språkets svikt, denne sitaten utforsker hvordan signifikanten alltid inneholder en iboende stillhet - et gap som representerer hva som ikke kan artikuleres. Denne stillheten er ikke tomhet men rommet hvor mening oppstår.",
+      title: "Kommunikasjonens Grenser i Terapi",
+      quote: "I terapi må vi akseptere at ord aldri kan fange hele erfaringen, men at dette gapet selv er rommet for endring.",
+      context: "En videreutvikling av tolkningsgapet-konseptet fra Do You Read Me (2015). Miller argumenterer for at aksept av språkets begrensninger er avgjørende for effektiv terapeutisk praksis.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
+        work: "Do You Read Me",
         page: 87,
         number: 3,
-        chapter: "Chapter 4: The Unspoken",
-        year: 2018
+        chapter: "Chapter 4: The Limits of Language",
+        year: 2015
       },
       themes: ["language", "semiotics"],
       relatedQuotes: [
@@ -224,11 +224,11 @@ const quoteData = {
     },
     {
       id: "quote_005",
-      title: "Den Perverse Strukturen",
+      title: "Sadomasochisme som Psykologisk Struktur",
       quote: "I den perverse strukturen er offerens smerte instrumentet gjennom hvilket subjektet forsøker å fullføre den Andres mangel.",
       context: "Dypere analyse av offerrollen som fremføring, med fokus på hvordan sosiale medier og moderne kultur skaper tilbakekoblingssløyfer som belønner fremvisning av lidelse. Fremføringen blir autentisk gjennom sin sosiale validering.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        work: "The Triumphant Victim",
         page: 108,
         number: 5,
         chapter: "Chapter 6: The Social Stage",
@@ -275,15 +275,15 @@ const quoteData = {
     },
     {
       id: "quote_007",
-      title: "Analytikerens Trening",
-      quote: "Treningen av en analytiker begynner i øyeblikket de innser at de ikke lenger lytter etter mening, men etter strukturen til signifikanten.",
-      context: "Historisk kontekst for å forstå utviklingen av psykoanalytisk teori, spesielt hvordan Lacan re-interpreterte Freuds verk gjennom strukturell lingvistikk. Denne gjenlesningen skapte nye muligheter for å forstå det ubevisste.",
+      title: "Analytikerens Utdanning",
+      quote: "Utdanningen av en analytiker begynner i øyeblikket de innser at de ikke lenger lytter etter mening, men etter strukturen i pasientens fortelling.",
+      context: "Fra Do You Read Me (2015), utforsker Miller hvordan analytikerens rolle endres når de lærer å arbeide innenfor tolkningsgapet. Dette krever en fundamental endring i hvordan man lytter til pasientens fortelling.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
+        work: "Do You Read Me",
         page: 112,
         number: 9,
-        chapter: "Chapter 2: The Structural Turn",
-        year: 2018
+        chapter: "Chapter 2: The Analyst's Training",
+        year: 2015
       },
       themes: ["language", "philosophical"],
       relatedQuotes: [
@@ -326,11 +326,11 @@ const quoteData = {
     },
     {
       id: "quote_008",
-      title: "Utofferrollen",
-      quote: "Ekte styrke begynner når vi anerkjenner valget i vår lidelse.",
-      context: "Et motpunkt til analysen av offerrollen, som antyder at anerkjennelse av handlekraft innen lidelse representerer det første skrittet mot ekte styrke. Dette utfordrer det deterministiske synet på sosial betinging.",
+      title: "Valg og Handlekraft i Lidelser",
+      quote: "Ekte styrke begynner når vi anerkjenner valget i vår lidelse og muligheten for endring.",
+      context: "Et motpunkt til analysen av offerrollen fra The Triumphant Victim (2013). Miller utfordrer deterministiske syn på sosial betinging og antyder at anerkjennelse av handlekraft innen lidelse representerer det første skrittet mot ekte styrke.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        work: "The Triumphant Victim",
         page: 156,
         number: 18,
         chapter: "Chapter 7: The Possibility of Choice",
@@ -377,15 +377,15 @@ const quoteData = {
     },
     {
       id: "quote_010",
-      title: "Motstand og Kur",
+      title: "Motstand som Terapeutisk Materiale",
       quote: "Motstand er ikke et hinder for kur; det er selve materialet i det analytiske arbeidet.",
-      context: "Anvendelse av semiotisk teori i klinisk praksis, som viser hvordan fysiske og psykologiske symptomer fungerer som strukturelle elementer i pasientens fortelling. Disse 'tegnsettings' avslører den underliggende grammatikken i lidelsen.",
+      context: "Fra Do You Read Me (2015), anvender Miller semiotisk teori i klinisk praksis. Han viser hvordan fysiske og psykologiske symptomer fungerer som strukturelle elementer i pasientens fortelling og avslører den underliggende grammatikken i lidelsen.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
+        work: "Do You Read Me",
         page: 54,
         number: 14,
-        chapter: "Chapter 7: The Digital Stage",
-        year: 2018
+        chapter: "Chapter 7: Resistance as Material",
+        year: 2015
       },
       themes: ["language", "clinical"],
       relatedQuotes: [
@@ -428,14 +428,14 @@ const quoteData = {
     },
     {
       id: "quote_011",
-      title: "Lidelse som Valuta",
+      title: "Lidelse som Sosial Valuta",
       quote: "Lidelse er ikke bare en tilstand av å være; i økonomien til den triumferende offeren blir det en form av valuta brukt til å forhandle med den symbolske ordenen.",
-      context: "Samtidsanalyse av hvordan sosiale medieplattformer har skapt nye mekanismer for fremføring av lidelse. Den digitale arenaen forsterker og moneteriserer visningen av personlig smerte, og skaper nye identitetsformer.",
+      context: "En samtidsanalyse fra The Triumphant Victim (2013) som undersøker hvordan sosiale medieplattformer har skapt nye mekanismer for fremføring av lidelse. Den digitale arenaen forsterker og moneteriserer visningen av personlig smerte, og skaper nye identitetsformer.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        work: "The Triumphant Victim",
         page: 192,
         number: 2,
-        chapter: "Chapter 5: The Clinical Text",
+        chapter: "Chapter 8: The Digital Economy of Suffering",
         year: 2013
       },
       themes: ["identity", "social"],
