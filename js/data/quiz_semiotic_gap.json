@@ -1,6 +1,6 @@
 {
   "EN": {
-    "title": "Semiotic Gap Assessment",
+    "title": "Language and Experience Assessment",
     "description": "This assessment explores the fundamental gap between lived experience and the language used to represent it. Based on John F. Miller's theoretical framework, it examines how this gap manifests in therapeutic work and human subjectivity.",
     "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis. Your responses are for personal reflection and learning.",
     "questions": [
@@ -27,7 +27,7 @@
       {
         "id": "sg5",
         "text": "I accept that communication in therapy is always mediated through this fundamental gap between experience and expression.",
-        "context": "Exploring acceptance of semiotic limitations in therapeutic communication."
+        "context": "Exploring acceptance of language limitations in therapeutic communication."
       },
       {
         "id": "sg6",
@@ -36,13 +36,13 @@
       },
       {
         "id": "sg7",
-        "text": "I recognize that the therapeutic relationship itself exists within this semiotic gap.",
+        "text": "I recognize that the therapeutic relationship itself exists within this fundamental gap between experience and expression.",
         "context": "Investigating understanding of how therapeutic bond operates within language constraints."
       },
       {
         "id": "sg8",
         "text": "I understand that the goal of analysis is not to bridge this gap but to help patients navigate within it.",
-        "context": "Exploring the analytic understanding of working within rather than resolving semiotic limitations."
+        "context": "Exploring the analytic understanding of working within rather than resolving language limitations."
       }
     ],
     "results": [
@@ -51,27 +51,27 @@
           0,
           10
         ],
-        "title": "Integrated Semiotic Awareness",
-        "summary": "Your responses demonstrate a sophisticated understanding of the fundamental gap between experience and language. You show remarkable capacity to work within language limitations without seeking premature resolution or false completion. This suggests you've developed a nuanced relationship with the semiotic constraints that frame all communication, particularly therapeutic work. Your ability to tolerate the space where words fail indicates advanced analytic maturity.",
-        "recommendation": "Continue cultivating this integrated approach to semiotic limitations. Your comfort with the gap between experience and expression serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Language and Limits' in 'Do You Read Me' and the section on 'The Space Between Words' in 'Triumphant Victim'."
+        "title": "Integrated Language Awareness",
+        "summary": "Your responses demonstrate a sophisticated understanding of the fundamental gap between experience and language. You show remarkable capacity to work within language limitations without seeking premature resolution or false completion. This suggests you've developed a nuanced relationship with the constraints that frame all communication, particularly therapeutic work. Your ability to tolerate the space where words fail indicates advanced analytic maturity.",
+        "recommendation": "Continue cultivating this integrated approach to language limitations. Your comfort with the gap between experience and expression serves as a foundation for effective clinical work. For further exploration of these concepts, see the chapter on 'Language and Limits' in 'Do You Read Me' and the section on 'The Space Between Words' in 'Triumphant Victim'."
       },
       {
         "range": [
           11,
           22
         ],
-        "title": "Developing Semiotic Tolerance",
-        "summary": "Your responses reveal a developing awareness of the gap between experience and language. You may occasionally feel frustrated by language limitations or struggle with the incompleteness of communication. This suggests you're navigating the semiotic constraints of therapeutic work with growing success, though there may be moments when the gap between experience and expression creates genuine uncertainty or discomfort.",
-        "recommendation": "Consider developing greater comfort with the inherent limitations of language in representing experience. Practicing tolerance for the semiotic gap can enhance your clinical effectiveness. For deeper understanding of these dynamics, refer to the chapter on 'Communication Limits' in 'Do You Read Me' and the section on 'Working Within Language' in 'Triumphant Victim'."
+        "title": "Developing Language Tolerance",
+        "summary": "Your responses reveal a developing awareness of the gap between experience and language. You may occasionally feel frustrated by language limitations or struggle with the incompleteness of communication. This suggests you're navigating the constraints of therapeutic work with growing success, though there may be moments when the gap between experience and expression creates genuine uncertainty or discomfort.",
+        "recommendation": "Consider developing greater comfort with the inherent limitations of language in representing experience. Practicing tolerance for the gap between experience and expression can enhance your clinical effectiveness. For deeper understanding of these dynamics, refer to the chapter on 'Communication Limits' in 'Do You Read Me' and the section on 'Working Within Language' in 'Triumphant Victim'."
       },
       {
         "range": [
           23,
           32
         ],
-        "title": "Significant Semiotic Conflict",
-        "summary": "Your responses indicate a strong experience of the gap between experience and language as a source of professional conflict and frustration. You may frequently feel torn by the limitations of communication or struggle with the incompleteness of therapeutic expression. This pattern suggests that semiotic constraints significantly impact your confidence and effectiveness as an analyst.",
-        "recommendation": "Your relationship with language limitations warrants careful exploration. Consider developing strategies for working within semiotic constraints rather than seeking to overcome them. The chapter on 'The Ineffable' in 'Do You Read Me' and the section on 'Language and Loss' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
+        "title": "Significant Language Conflict",
+        "summary": "Your responses indicate a strong experience of the gap between experience and language as a source of professional conflict and frustration. You may frequently feel torn by the limitations of communication or struggle with the incompleteness of therapeutic expression. This pattern suggests that language constraints significantly impact your confidence and effectiveness as an analyst.",
+        "recommendation": "Your relationship with language limitations warrants careful exploration. Consider developing strategies for working within language constraints rather than seeking to overcome them. The chapter on 'The Ineffable' in 'Do You Read Me' and the section on 'Language and Loss' in 'Triumphant Victim' provide essential frameworks for understanding these dynamics."
       }
     ]
   },
