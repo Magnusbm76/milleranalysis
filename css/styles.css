@@ -1312,7 +1312,7 @@ html {
     background-color: var(--color-oxford-blue);
     border: 1px solid var(--color-gold);
     border-radius: 0.5rem;
-    padding: 2rem;
+    padding: 2rem 2rem 8rem 2rem;
     max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1804,7 +1804,7 @@ html {
 
 @media (max-width: 768px) {
     .quiz-interface {
-        padding: 1.5rem;
+        padding: 1.5rem 1.5rem 6rem 1.5rem;
         margin: 0 1rem;
     }
 
@@ -1887,7 +1887,7 @@ html {
 .quiz-lobby {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1rem 1rem 8rem 1rem;
 }
 
 .quiz-lobby-title {
@@ -1977,6 +1977,10 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .quiz-lobby {
+        padding: 0.5rem 0.5rem 6rem 0.5rem;
+    }
+
     .quiz-lobby-title {
         font-size: 2rem;
     }
