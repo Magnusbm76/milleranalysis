@@ -1,104 +1,98 @@
 // Contextual Quote Journey Data Structure
-// This file contains the network of interconnected quotes for the Miller Analysis project
+// This file contains verified book summaries for the Miller Analysis project
 
 const quoteData = {
   metadata: {
-    version: "1.0",
-    lastUpdated: "2026-01-02",
-    totalQuotes: 8,
-    description: "Contextual Quote Journey data for Miller Analysis - Verified quotes from actual publications"
+    version: "2.0",
+    lastUpdated: "2026-01-03",
+    totalQuotes: 6,
+    description: "Verified book summaries from actual publications - no fabricated quotes"
   },
 
   themes: [
     {
-      id: "language",
-      name: "Language & Semiotics",
-      description: "Exploration of linguistic limitations and the gap between signifier and signified",
+      id: "sadomasochism",
+      name: "Sadomasochism & Perverse Thinking",
+      description: "Examination of sadomasochistic patterns and perverse thinking in personal relationships and society",
       color: "#FFD700",
-      icon: "language-theme.svg",
-      relatedThemes: ["semiotics", "communication"]
+      icon: "sadomasochism-theme.svg",
+      relatedThemes: ["victimhood", "clinical"]
     },
     {
-      id: "identity",
-      name: "Identity & Selfhood",
-      description: "Formation of identity through social structures and personal narratives",
+      id: "victimhood",
+      name: "The Triumphant Victim",
+      description: "How suffering becomes a source of identity, moral superiority, and control",
       color: "#002147",
-      icon: "identity-theme.svg",
-      relatedThemes: ["social", "desire"]
+      icon: "victimhood-theme.svg",
+      relatedThemes: ["sadomasochism", "social"]
     },
     {
-      id: "interpretation",
-      name: "Interpretation & Analysis",
-      description: "The process and limits of psychoanalytic interpretation",
+      id: "learning",
+      name: "Learning Difficulties",
+      description: "Exploration of dyslexia, learning difficulties, and the denial of meaning",
       color: "#36454F",
-      icon: "interpretation-theme.svg",
-      relatedThemes: ["clinical", "philosophical"]
+      icon: "learning-theme.svg",
+      relatedThemes: ["education", "emotional"]
     },
     {
-      id: "desire",
-      name: "Desire & Subjectivity",
-      description: "The nature of desire and its role in shaping subjective experience",
-      color: "#8B0000",
-      icon: "desire-theme.svg",
-      relatedThemes: ["identity", "philosophical"]
+      id: "education",
+      name: "Educational Psychology",
+      description: "The emotional dimensions of reading, writing, and education",
+      color: "#2F4F4F",
+      icon: "education-theme.svg",
+      relatedThemes: ["learning", "emotional"]
+    },
+    {
+      id: "emotional",
+      name: "Emotional Development",
+      description: "Understanding emotional conflicts and their impact on learning and relationships",
+      color: "#483D8B",
+      icon: "emotional-theme.svg",
+      relatedThemes: ["learning", "clinical"]
     },
     {
       id: "clinical",
       name: "Clinical Applications",
-      description: "Practical applications of psychoanalytic theory in clinical settings",
-      color: "#2F4F4F",
-      icon: "clinical-theme.svg",
-      relatedThemes: ["interpretation", "language"]
-    },
-    {
-      id: "social",
-      name: "Social & Cultural Context",
-      description: "The impact of social structures on individual psychology",
-      color: "#483D8B",
-      icon: "social-theme.svg",
-      relatedThemes: ["identity", "desire"]
-    },
-    {
-      id: "philosophical",
-      name: "Philosophical Foundations",
-      description: "Underlying philosophical principles of psychoanalytic theory",
+      description: "Practical applications of post-Kleinian psychoanalysis in therapeutic settings",
       color: "#556B2F",
-      icon: "philosophical-theme.svg",
-      relatedThemes: ["interpretation", "desire"]
+      icon: "clinical-theme.svg",
+      relatedThemes: ["sadomasochism", "emotional"]
+    },
+    {
+      id: "post-kleinian",
+      name: "Post-Kleinian Psychoanalysis",
+      description: "Projective identification, symbolic thinking, and the claustrum",
+      color: "#8B0000",
+      icon: "post-kleinian-theme.svg",
+      relatedThemes: ["clinical", "emotional"]
     }
   ],
 
   quotes: [
     {
-      id: "quote_001",
-      title: "Reading the Gaps",
-      quote: "The analyst does not read the patient's story; the analyst reads the gaps where the story fails to hold together.",
-      context: "This insight explores the fundamental semiotic gap between the signifier and the signified, drawing from Lacan's early work on communication limits. The act of speaking necessarily distorts the original thought, creating a permanent gap between intention and expression.",
+      id: "summary_001",
+      title: "The Triumphant Victim - Overview",
+      quote: "The book examines the unrecognised prevalence of sadomasochism and perverse thinking in personal relationships and the public domain, discussing how it contributes to the culture of the victim.",
+      context: "This book offers a provocative examination of sadomasochism and perverse thinking in both personal relationships and wider society. Miller argues that we live in a 'culture of the victim' where suffering has become a source of identity and power.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 15,
-        number: 22,
-        chapter: "Chapter 3: The Semiotic Divide",
-        year: 2018
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
+        chapter: "Introduction",
+        year: 2013
       },
-      themes: ["language", "semiotics"],
+      themes: ["sadomasochism", "victimhood"],
       relatedQuotes: [
         {
-          id: "quote_004",
+          id: "summary_002",
           relationship: "expands",
-          strength: 0.8,
-          label: "Further exploration"
+          strength: 0.9,
+          label: "Deeper analysis"
         },
         {
-          id: "quote_007",
-          relationship: "contextualizes",
-          strength: 0.7,
-          label: "Historical context"
-        },
-        {
-          id: "quote_010",
+          id: "summary_003",
           relationship: "applies",
-          strength: 0.6,
+          strength: 0.8,
           label: "Clinical application"
         }
       ],
@@ -106,7 +100,7 @@ const quoteData = {
         type: "central",
         color: "#002147",
         size: 1.2,
-        icon: "language-icon.svg"
+        icon: "victim-icon.svg"
       },
       position: {
         x: 0.5,
@@ -114,50 +108,44 @@ const quoteData = {
         fixed: false
       },
       metadata: {
-        difficulty: "intermediate",
-        readingTime: 2,
+        difficulty: "advanced",
+        readingTime: 5,
         popularity: 0.9,
-        dateAdded: "2025-11-27"
+        dateAdded: "2026-01-03"
       }
     },
     {
-      id: "quote_002",
-      title: "The Triumphant Victim",
-      quote: "The triumphant victim is the one who, through his suffering, manages to capture the desire of the Other and to dominate the scene of the world.",
-      context: "An excerpt from Triumphant Victim, discussing how contemporary social structures encourage and validate a performative identity rooted in structural inadequacy. This identity provides both social recognition and psychological comfort.",
+      id: "summary_002",
+      title: "Part One: Origins of Perverse Pathology",
+      quote: "Part One traces the origins of perverse pathology and how it operates in obstructing emotional development and producing dysfunctional relationships, explored through hysteria, exhibitionism, voyeurism, and projective identification.",
+      context: "Drawing on 30 years of psychoanalytical practice, Miller explores how sadomasochistic patterns obstruct emotional development and create dysfunctional relationships. The book examines these dynamics through the lens of hysteria, exhibitionism, voyeurism, and projective identification, illustrated with detailed clinical material from couple- and family-therapy experiences and educational consultations.",
       source: {
         work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: 42,
-        number: 12,
-        chapter: "Chapter 5: The Performance of Suffering",
+        page: null,
+        number: null,
+        chapter: "Part One",
         year: 2013
       },
-      themes: ["identity", "social"],
+      themes: ["sadomasochism", "clinical"],
       relatedQuotes: [
         {
-          id: "quote_005",
+          id: "summary_001",
           relationship: "expands",
           strength: 0.9,
-          label: "Deeper analysis"
+          label: "Foundation"
         },
         {
-          id: "quote_008",
-          relationship: "contradicts",
+          id: "summary_003",
+          relationship: "contextualizes",
           strength: 0.7,
-          label: "Alternative view"
-        },
-        {
-          id: "quote_011",
-          relationship: "applies",
-          strength: 0.6,
-          label: "Social implications"
+          label: "Social context"
         }
       ],
       visual: {
-        type: "central",
+        type: "node",
         color: "#36454F",
         size: 1.1,
-        icon: "identity-icon.svg"
+        icon: "pathology-icon.svg"
       },
       position: {
         x: 0.3,
@@ -166,350 +154,197 @@ const quoteData = {
       },
       metadata: {
         difficulty: "advanced",
-        readingTime: 3,
+        readingTime: 4,
         popularity: 0.8,
-        dateAdded: "2025-11-27"
+        dateAdded: "2026-01-03"
       }
     },
     {
-      id: "quote_004",
-      title: "The Good Interpretation",
-      quote: "A 'good' interpretation is not one that is true, but one that produces an effect of truth in the subject's unconscious.",
-      context: "Expanding on the failure of language, this quote explores how the signifier always contains an inherent silence - a gap that represents what cannot be articulated. This silence is not emptiness but the space where meaning emerges.",
+      id: "summary_003",
+      title: "Part Two: Contemporary Modes of Thinking",
+      quote: "Part Two examines current modes of thinking and belief systems with particular emphasis on tribal mentality, Cartesian dualism, the Enlightenment's contribution to marginalisation of feminine values, and negative masculine control.",
+      context: "In the second half, Miller turns his attention to society at large, examining how perverse thinking has infiltrated our belief systems, educational institutions, and cultural assumptions. He critiques the legacy of Cartesian dualism, explores the tension between masculine control and feminine values, and challenges both religious and secular fundamentalisms.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 87,
-        number: 3,
-        chapter: "Chapter 4: The Unspoken",
-        year: 2018
+        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
+        page: null,
+        number: null,
+        chapter: "Part Two",
+        year: 2013
       },
-      themes: ["language", "semiotics"],
+      themes: ["sadomasochism", "post-kleinian"],
       relatedQuotes: [
         {
-          id: "quote_001",
-          relationship: "expands",
-          strength: 0.8,
-          label: "Foundation"
-        },
-        {
-          id: "quote_007",
-          relationship: "contextualizes",
-          strength: 0.6,
-          label: "Theoretical background"
-        },
-        {
-          id: "quote_010",
+          id: "summary_001",
           relationship: "applies",
-          strength: 0.7,
+          strength: 0.8,
           label: "Clinical relevance"
+        },
+        {
+          id: "summary_002",
+          relationship: "contextualizes",
+          strength: 0.7,
+          label: "Theoretical background"
         }
       ],
       visual: {
         type: "node",
         color: "#002147",
         size: 1.0,
-        icon: "silence-icon.svg"
+        icon: "society-icon.svg"
       },
       position: {
-        x: 0.4,
-        y: 0.2,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "intermediate",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
-      id: "quote_005",
-      title: "The Perverse Structure",
-      quote: "In the perverse structure, the victim's pain is the instrument through which the subject attempts to complete the Other's lack.",
-      context: "Further analysis of victimhood as performance, examining how social media and contemporary culture create feedback loops that reward displays of suffering. The performance becomes authentic through its social validation.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: 108,
-        number: 5,
-        chapter: "Chapter 6: The Social Stage",
-        year: 2013
-      },
-      themes: ["identity", "social"],
-      relatedQuotes: [
-        {
-          id: "quote_002",
-          relationship: "expands",
-          strength: 0.9,
-          label: "Core concept"
-        },
-        {
-          id: "quote_008",
-          relationship: "contradicts",
-          strength: 0.5,
-          label: "Counterpoint"
-        },
-        {
-          id: "quote_011",
-          relationship: "applies",
-          strength: 0.8,
-          label: "Contemporary relevance"
-        }
-      ],
-      visual: {
-        type: "node",
-        color: "#36454F",
-        size: 1.0,
-        icon: "performance-icon.svg"
-      },
-      position: {
-        x: 0.2,
+        x: 0.7,
         y: 0.5,
         fixed: false
       },
       metadata: {
-        difficulty: "advanced",
-        readingTime: 3,
+        difficulty: "intermediate",
+        readingTime: 4,
         popularity: 0.7,
-        dateAdded: "2025-11-27"
+        dateAdded: "2026-01-03"
       }
     },
     {
-      id: "quote_007",
-      title: "The Analyst's Training",
-      quote: "The training of an analyst begins at the moment they realize they are no longer listening for meaning, but for the structure of the signifier.",
-      context: "Historical context for understanding the development of psychoanalytic theory, particularly how Lacan reinterpreted Freud's work through structural linguistics. This re-reading created new possibilities for understanding the unconscious.",
+      id: "summary_004",
+      title: "Do You Read Me? - Core Thesis",
+      quote: "Reading and writing are fundamentally about the communication of meaning. Miller's contention is that the concept of dyslexia is something that has been invented, rather than discovered, in order to evade the question of meaning and the understanding of the individual.",
+      context: "A fascinating and compelling exploration of the learning process for parents, teachers, and anyone with an interest in education. Miller argues that when a child has difficulty in learning to read and write, the one area that is never seen as having any relevance is the child's life experiences. The book examines this as part of a culture in which child-rearing and education are increasingly depersonalising, and children are viewed as assets or commodities rather than individuals.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 112,
-        number: 9,
-        chapter: "Chapter 2: The Structural Turn",
-        year: 2018
+        work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
+        page: null,
+        number: null,
+        chapter: "Introduction",
+        year: 2015
       },
-      themes: ["language", "philosophical"],
+      themes: ["learning", "education"],
       relatedQuotes: [
         {
-          id: "quote_001",
-          relationship: "contextualizes",
-          strength: 0.7,
-          label: "Theoretical foundation"
-        },
-        {
-          id: "quote_004",
-          relationship: "contextualizes",
-          strength: 0.6,
-          label: "Background"
-        },
-      ],
-      visual: {
-        type: "gateway",
-        color: "#002147",
-        size: 0.9,
-        icon: "history-icon.svg"
-      },
-      position: {
-        x: 0.6,
-        y: 0.1,
-        fixed: false
-      },
-      metadata: {
-        difficulty: "beginner",
-        readingTime: 2,
-        popularity: 0.5,
-        dateAdded: "2025-11-27"
-      }
-    },
-    {
-      id: "quote_008",
-      title: "The Triumph of the Victim",
-      quote: "The triumph of the victim lies in the secret knowledge that they have staged the scene of their own destruction to prove the Other's inconsistency.",
-      context: "A counterpoint to the analysis of victimhood, suggesting that recognition of agency within suffering represents the first step toward authentic empowerment. This challenges the deterministic view of social conditioning.",
-      source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: 156,
-        number: 18,
-        chapter: "Chapter 7: The Possibility of Choice",
-        year: 2013
-      },
-      themes: ["identity", "desire"],
-      relatedQuotes: [
-        {
-          id: "quote_002",
-          relationship: "contradicts",
-          strength: 0.7,
-          label: "Alternative perspective"
-        },
-        {
-          id: "quote_005",
-          relationship: "contradicts",
-          strength: 0.5,
-          label: "Counterpoint"
-        },
-        {
-          id: "quote_011",
+          id: "summary_005",
           relationship: "expands",
-          strength: 0.6,
+          strength: 0.9,
           label: "Further exploration"
+        },
+        {
+          id: "summary_006",
+          relationship: "applies",
+          strength: 0.8,
+          label: "Practical application"
         }
       ],
       visual: {
-        type: "node",
-        color: "#36454F",
-        size: 1.0,
-        icon: "empowerment-icon.svg"
+        type: "central",
+        color: "#FFD700",
+        size: 1.2,
+        icon: "reading-icon.svg"
       },
       position: {
-        x: 0.1,
+        x: 0.5,
         y: 0.7,
         fixed: false
       },
       metadata: {
         difficulty: "intermediate",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
+        readingTime: 4,
+        popularity: 0.9,
+        dateAdded: "2026-01-03"
       }
     },
     {
-      id: "quote_010",
-      title: "Resistance and Cure",
-      quote: "Resistance is not an obstacle to the cure; it is the very material of the analytical work.",
-      context: "Application of semiotic theory to clinical practice, demonstrating how physical and psychological symptoms function as structural elements in the patient's narrative. These 'punctuation marks' reveal the underlying grammar of suffering.",
+      id: "summary_005",
+      title: "Part I: Reading Disability",
+      quote: "Part I examines the dyslexia muddle, acronyms and non-science, emotional health and fitness, family matters, secrets and hidden agendas, and the function of aggression in healthy development.",
+      context: "Based on 30 years' experience of both educational psychology and analytical therapy, the book sets out a radical approach to learning difficulties in which the primary assumption is that there will usually be underlying emotional conflicts, tensions, and anxieties. Any learning disability is thus more likely to be the symptom of less-evident, personal difficulties, rather than a problem in itself.",
       source: {
-        work: "Do You Read Me? Training for Analysts",
-        page: 54,
-        number: 14,
-        chapter: "Chapter 5: The Clinical Text",
-        year: 2018
+        work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
+        page: null,
+        number: null,
+        chapter: "Part I: Reading Disability",
+        year: 2015
       },
-      themes: ["language", "clinical"],
+      themes: ["learning", "emotional"],
       relatedQuotes: [
         {
-          id: "quote_001",
-          relationship: "applies",
-          strength: 0.6,
-          label: "Practical application"
+          id: "summary_004",
+          relationship: "expands",
+          strength: 0.9,
+          label: "Core concept"
         },
         {
-          id: "quote_004",
-          relationship: "applies",
+          id: "summary_006",
+          relationship: "contextualizes",
           strength: 0.7,
-          label: "Clinical relevance"
+          label: "Educational context"
         }
       ],
       visual: {
         type: "node",
-        color: "#002147",
+        color: "#FFD700",
         size: 1.0,
-        icon: "clinical-icon.svg"
+        icon: "disability-icon.svg"
       },
       position: {
         x: 0.3,
-        y: 0.3,
+        y: 0.8,
         fixed: false
       },
       metadata: {
         difficulty: "intermediate",
-        readingTime: 2,
-        popularity: 0.6,
-        dateAdded: "2025-11-27"
+        readingTime: 3,
+        popularity: 0.8,
+        dateAdded: "2026-01-03"
       }
     },
     {
-      id: "quote_011",
-      title: "Suffering as Currency",
-      quote: "Suffering is not merely a state of being; in the economy of the triumphant victim, it becomes a form of currency used to negotiate with the symbolic order.",
-      context: "Contemporary analysis of how social media platforms have created new mechanisms for the performance of suffering. The digital arena amplifies and monetizes the display of personal pain, creating new forms of identity.",
+      id: "summary_006",
+      title: "Part III: The Education Issue",
+      quote: "Part III explores schooling versus education, asking whether education is liberation or persecution, and examining the broader cultural context of how children are treated as assets or commodities.",
+      context: "The book examines learning difficulties within the context of a depersonalising culture where children are viewed as assets or commodities rather than individuals. Miller provides a framework for understanding how underlying emotional conflicts, tensions, and anxieties manifest as learning problems. The work challenges conventional thinking about dyslexia and learning difficulties, arguing that these are often symptoms of deeper emotional issues rather than purely technical problems.",
       source: {
-        work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
-        page: 192,
-        number: 2,
-        chapter: "Chapter 7: The Digital Stage",
-        year: 2013
+        work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
+        page: null,
+        number: null,
+        chapter: "Part III: The Education Issue",
+        year: 2015
       },
-      themes: ["identity", "social"],
+      themes: ["education", "emotional"],
       relatedQuotes: [
         {
-          id: "quote_002",
-          relationship: "applies",
-          strength: 0.6,
-          label: "Contemporary application"
-        },
-        {
-          id: "quote_005",
+          id: "summary_004",
           relationship: "applies",
           strength: 0.8,
-          label: "Modern context"
+          label: "Theoretical foundation"
         },
         {
-          id: "quote_008",
-          relationship: "expands",
-          strength: 0.6,
-          label: "Further analysis"
+          id: "summary_005",
+          relationship: "contextualizes",
+          strength: 0.7,
+          label: "Practical context"
         }
       ],
       visual: {
         type: "node",
-        color: "#36454F",
+        color: "#FFD700",
         size: 1.0,
-        icon: "digital-icon.svg"
+        icon: "education-icon.svg"
       },
       position: {
-        x: 0.15,
-        y: 0.85,
+        x: 0.7,
+        y: 0.8,
         fixed: false
       },
       metadata: {
         difficulty: "intermediate",
-        readingTime: 2,
+        readingTime: 3,
         popularity: 0.7,
-        dateAdded: "2025-11-27"
+        dateAdded: "2026-01-03"
       }
-    },
+    }
   ],
 
   connections: [
     {
-      from: "quote_001",
-      to: "quote_004",
-      type: "expands",
-      strength: 0.8,
-      label: "Further exploration",
-      bidirectional: true,
-      visual: {
-        style: "solid",
-        color: "#FFD700",
-        width: 3
-      }
-    },
-    {
-      from: "quote_001",
-      to: "quote_007",
-      type: "contextualizes",
-      strength: 0.7,
-      label: "Historical context",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#002147",
-        width: 2
-      }
-    },
-    {
-      from: "quote_001",
-      to: "quote_010",
-      type: "applies",
-      strength: 0.6,
-      label: "Clinical application",
-      bidirectional: true,
-      visual: {
-        style: "dotted",
-        color: "#36454F",
-        width: 2
-      }
-    },
-    {
-      from: "quote_002",
-      to: "quote_005",
+      from: "summary_001",
+      to: "summary_002",
       type: "expands",
       strength: 0.9,
       label: "Deeper analysis",
@@ -521,37 +356,11 @@ const quoteData = {
       }
     },
     {
-      from: "quote_002",
-      to: "quote_008",
-      type: "contradicts",
-      strength: 0.7,
-      label: "Alternative view",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#dc3545",
-        width: 2
-      }
-    },
-    {
-      from: "quote_002",
-      to: "quote_011",
+      from: "summary_001",
+      to: "summary_003",
       type: "applies",
-      strength: 0.6,
-      label: "Social implications",
-      bidirectional: true,
-      visual: {
-        style: "dotted",
-        color: "#36454F",
-        width: 2
-      }
-    },
-    {
-      from: "quote_004",
-      to: "quote_007",
-      type: "contextualizes",
-      strength: 0.6,
-      label: "Theoretical background",
+      strength: 0.8,
+      label: "Clinical application",
       bidirectional: true,
       visual: {
         style: "dashed",
@@ -560,11 +369,11 @@ const quoteData = {
       }
     },
     {
-      from: "quote_004",
-      to: "quote_010",
-      type: "applies",
+      from: "summary_002",
+      to: "summary_003",
+      type: "contextualizes",
       strength: 0.7,
-      label: "Clinical relevance",
+      label: "Social context",
       bidirectional: true,
       visual: {
         style: "dotted",
@@ -573,44 +382,44 @@ const quoteData = {
       }
     },
     {
-      from: "quote_005",
-      to: "quote_008",
-      type: "contradicts",
-      strength: 0.5,
-      label: "Counterpoint",
-      bidirectional: true,
-      visual: {
-        style: "dashed",
-        color: "#dc3545",
-        width: 2
-      }
-    },
-    {
-      from: "quote_005",
-      to: "quote_011",
-      type: "applies",
-      strength: 0.8,
-      label: "Contemporary relevance",
-      bidirectional: true,
-      visual: {
-        style: "dotted",
-        color: "#36454F",
-        width: 2
-      }
-    },
-    {
-      from: "quote_008",
-      to: "quote_011",
+      from: "summary_004",
+      to: "summary_005",
       type: "expands",
-      strength: 0.6,
+      strength: 0.9,
       label: "Further exploration",
       bidirectional: true,
       visual: {
         style: "solid",
         color: "#FFD700",
+        width: 3
+      }
+    },
+    {
+      from: "summary_004",
+      to: "summary_006",
+      type: "applies",
+      strength: 0.8,
+      label: "Practical application",
+      bidirectional: true,
+      visual: {
+        style: "dashed",
+        color: "#002147",
         width: 2
       }
     },
+    {
+      from: "summary_005",
+      to: "summary_006",
+      type: "contextualizes",
+      strength: 0.7,
+      label: "Educational context",
+      bidirectional: true,
+      visual: {
+        style: "dotted",
+        color: "#36454F",
+        width: 2
+      }
+    }
   ]
 };
 
