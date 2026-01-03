@@ -1374,772 +1374,6 @@ async function renderInitialScreen(quizList) {
             });
         }
 
-        // ==================== QUIZ ENGINE IMPLEMENTATION ====================
-
-        /**
-         * Loads quiz data from JSON file and normalizes structure
-         * @param {string} filePath - Path to the quiz JSON file
-         * @returns {Promise<Object>} - Normalized quiz data
-         */
-        async function loadQuizData(filePath) {
-            try {
-                const response = await fetch(filePath);
-                if (!response.ok) {
-                    throw new Error(`Failed to load quiz data: ${response.status}`);
-                }
-
-                const data = await response.json();
-
-                // Normalize data structure to handle both top-level and nested formats
-                return normalizeQuizData(data);
-            } catch (error) {
-                console.error('[Quiz Engine] Error loading quiz data:', error);
-                throw error;
-            }
-        }
-
-        /**
-         * Normalizes quiz data structure to handle both top-level and nested formats
-         * @param {Object} data - Raw quiz data
-         * @returns {Object} - Normalized quiz data
-         */
-        function normalizeQuizData(data) {
-            // Check if data has top-level language keys (nested structure)
-            const hasLanguageKeys = Object.keys(data).some(key =>
-                ['EN', 'FR', 'ES', 'NO', 'PL', 'LA', 'EGY', 'ZH'].includes(key)
-            );
-
-            if (hasLanguageKeys) {
-                // Already in nested format - return as-is
-                return data;
-            } else {
-                // Top-level structure - convert to nested format
-                // This handles quiz_victimhood_architecture.json format
-                const normalized = {};
-                const languages = ['EN', 'FR', 'ES', 'NO', 'PL', 'LA', 'EGY', 'ZH'];
-
-                languages.forEach(lang => {
-                    normalized[lang] = {
-                        title: data.title?.[lang] || data.title || 'Assessment',
-                        description: data.description?.[lang] || data.description || '',
-                        disclaimer: data.disclaimer?.[lang] || data.disclaimer || '',
-                        questions: data.questions?.map(q => ({
-                            id: q.id,
-                            text: q.text?.[lang] || q.text || '',
-                            context: q.context?.[lang] || q.context || ''
-                        })) || [],
-                        results: data.results?.map(r => ({
-                            range: r.range,
-                            title: r.title?.[lang] || r.title || 'Result',
-                            summary: r.summary?.[lang] || r.summary || '',
-                            recommendation: r.recommendation?.[lang] || r.recommendation || ''
-                        })) || []
-                    };
-                });
-
-                return normalized;
-            }
-        }
-
-        /**
-         * Gets localized content for the current language
-         * @param {Object} quizData - The quiz data object
-         * @returns {Object} - Localized quiz content
-         */
-        function getLocalizedQuizContent(quizData) {
-            const currentLang = document.documentElement.lang || 'en';
-            const langCode = currentLang.substring(0, 2).toUpperCase();
-
-            // Try to get content for current language, fallback to English
-            const content = quizData[langCode] || quizData.EN;
-
-            if (!content) {
-                console.warn(`[Quiz Engine] No content found for language: ${langCode}, falling back to EN`);
-                return quizData.EN;
-            }
-
-            return content;
-        }
-
-        /**
-         * Renders the quiz interface with progress bar and questions
-         */
-        function renderQuizInterface() {
-            const assessmentsSection = document.getElementById('assessments');
-            if (!assessmentsSection) {
-                console.error('[Quiz Engine] Assessments section not found');
-                return;
-            }
-
-            const localizedContent = getLocalizedQuizContent(quizState.quizData);
-            const currentLang = document.documentElement.lang || 'en';
-            const isRTL = currentLang === 'ar-EG';
-
-            // Set RTL direction on container
-            const assessmentContainer = assessmentsSection.querySelector('.assessment-container');
-            if (assessmentContainer) {
-                assessmentContainer.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
-            }
-
-            // Determine scale range based on number of questions
-            const numQuestions = localizedContent.questions.length;
-            const maxScore = numQuestions * 3; // Assuming 0-3 scale for most quizzes
-            const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
-            const scaleMax = isSocialSymptomQuiz ? 4 : 3; // 0-4 for social symptom, 0-3 for others
-
-            // Localized UI text
-            const uiText = {
-                questionLabel: {
-                    'en': 'Question',
-                    'fr': 'Question',
-                    'es': 'Pregunta',
-                    'no': 'Spørsmål',
-                    'pl': 'Pytanie',
-                    'la': 'Quaestio',
-                    'egy': 'سؤال',
-                    'zh': '问题'
-                }[currentLang] || 'Question',
-                ofLabel: {
-                    'en': 'of',
-                    'fr': 'sur',
-                    'es': 'de',
-                    'no': 'av',
-                    'pl': 'z',
-                    'la': 'de',
-                    'egy': 'من',
-                    'zh': '共'
-                }[currentLang] || 'of',
-                previousBtn: {
-                    'en': 'Previous',
-                    'fr': 'Précédent',
-                    'es': 'Anterior',
-                    'no': 'Forrige',
-                    'pl': 'Poprzedni',
-                    'la': 'Anterior',
-                    'egy': 'السابق',
-                    'zh': '上一题'
-                }[currentLang] || 'Previous',
-                nextBtn: {
-                    'en': 'Next',
-                    'fr': 'Suivant',
-                    'es': 'Siguiente',
-                    'no': 'Neste',
-                    'pl': 'Następny',
-                    'la': 'Sequens',
-                    'egy': 'التالي',
-                    'zh': '下一题'
-                }[currentLang] || 'Next',
-                submitBtn: {
-                    'en': 'Submit Assessment',
-                    'fr': 'Soumettre l\'évaluation',
-                    'es': 'Enviar evaluación',
-                    'no': 'Send inn vurdering',
-                    'pl': 'Wyślij ocenę',
-                    'la': 'Mitte aestimationem',
-                    'egy': 'إرسال التقييم',
-                    'zh': '提交评估'
-                }[currentLang] || 'Submit',
-                retakeBtn: {
-                    'en': 'Retake Assessment',
-                    'fr': 'Refaire l\'évaluation',
-                    'es': 'Repetir evaluación',
-                    'no': 'Ta vurdering på nytt',
-                    'pl': 'Ponów ocenę',
-                    'la': 'Iterum aestimationem',
-                    'egy': 'إعادة التقييم',
-                    'zh': '重新评估'
-                }[currentLang] || 'Retake',
-                scoreLabel: {
-                    'en': 'Your Score',
-                    'fr': 'Votre Score',
-                    'es': 'Su Puntuación',
-                    'no': 'Din Poengsum',
-                    'pl': 'Twój Wynik',
-                    'la': 'Tua Punctuatio',
-                    'egy': 'نتيجتك',
-                    'zh': '你的分数'
-                }[currentLang] || 'Your Score',
-                resultLabel: {
-                    'en': 'Your Result',
-                    'fr': 'Votre Résultat',
-                    'es': 'Tu Resultado',
-                    'no': 'Ditt Resultat',
-                    'pl': 'Twój Wynik',
-                    'la': 'Tuum Resultatum',
-                    'egy': 'نتيجتك',
-                    'zh': '你的结果'
-                }[currentLang] || 'Your Result'
-            };
-
-            // Generate scale labels
-            const scaleLabels = [];
-            for (let i = 0; i <= scaleMax; i++) {
-                const label = {
-                    0: {
-                        'en': 'Strongly Disagree',
-                        'fr': 'Fortement en désaccord',
-                        'es': 'Muy en desacuerdo',
-                        'no': 'Helt uenig',
-                        'pl': 'Zdecydowanie się nie zgadzam',
-                        'la': 'Fortiter dissentio',
-                        'egy': 'لا أوافق بشدة',
-                        'zh': '强烈不同意'
-                    },
-                    1: {
-                        'en': 'Disagree',
-                        'fr': 'En désaccord',
-                        'es': 'En desacuerdo',
-                        'no': 'Uenig',
-                        'pl': 'Nie zgadzam',
-                        'la': 'Dissentio',
-                        'egy': 'لا أوافق',
-                        'zh': '不同意'
-                    },
-                    2: {
-                        'en': 'Neutral',
-                        'fr': 'Neutre',
-                        'es': 'Neutral',
-                        'no': 'Nøytral',
-                        'pl': 'Neutralny',
-                        'la': 'Neutrum',
-                        'egy': 'محايد',
-                        'zh': '中立'
-                    },
-                    3: {
-                        'en': 'Agree',
-                        'fr': 'D\'accord',
-                        'es': 'De acuerdo',
-                        'no': 'Enig',
-                        'pl': 'Zgadzam',
-                        'la': 'Consenio',
-                        'egy': 'أوافق',
-                        'zh': '同意'
-                    },
-                    4: {
-                        'en': 'Strongly Agree',
-                        'fr': 'Fortement d\'accord',
-                        'es': 'Muy de acuerdo',
-                        'no': 'Helt enig',
-                        'pl': 'Zdecydowanie się zgadzam',
-                        'la': 'Fortiter consentio',
-                        'egy': 'أوافق بشدة',
-                        'zh': '强烈同意'
-                    }
-                }[i] || {
-                    'en': `${i}`,
-                    'fr': `${i}`,
-                    'es': `${i}`,
-                    'no': `${i}`,
-                    'pl': `${i}`,
-                    'la': `${i}`,
-                    'egy': `${i}`,
-                    'zh': `${i}`
-                };
-                scaleLabels.push(label[currentLang] || label['en']);
-            }
-
-            // Render quiz interface
-            const quizHTML = `
-                <div class="quiz-interface ${isRTL ? 'rtl' : ''}">
-                    <!-- Progress Bar -->
-                    <div class="quiz-progress-container">
-                        <div class="quiz-progress-bar">
-                            <div class="quiz-progress-fill" style="width: 0%"></div>
-                        </div>
-                        <div class="quiz-progress-text">
-                            ${uiText.questionLabel} <span class="current-question">1</span> ${uiText.ofLabel} ${numQuestions}
-                        </div>
-                    </div>
-                    
-                    <!-- Question Container -->
-                    <div class="quiz-question-container">
-                        <div class="quiz-question-text">
-                            ${localizedContent.questions[0].text}
-                        </div>
-                        <div class="quiz-question-context">
-                            ${localizedContent.questions[0].context}
-                        </div>
-                        
-                        <!-- Likert Scale -->
-                        <div class="quiz-scale-container">
-                            ${generateScaleHTML(0, scaleMax, scaleLabels)}
-                        </div>
-                    </div>
-                    
-                    <!-- Navigation Buttons -->
-                    <div class="quiz-navigation">
-                        <button id="quizPrevBtn" class="btn-quiz btn-quiz-prev" disabled>
-                            ${uiText.previousBtn}
-                        </button>
-                        <button id="quizNextBtn" class="btn-quiz btn-quiz-next">
-                            ${uiText.nextBtn}
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            // Update the assessment content area
-            const assessmentContent = document.getElementById('assessmentContent');
-            if (assessmentContent) {
-                assessmentContent.innerHTML = quizHTML;
-                assessmentContent.classList.remove('hidden');
-            }
-
-            // Initialize quiz controls
-            initializeQuizControls(scaleMax, uiText);
-
-            // Scroll to quiz
-            assessmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        /**
-         * Generates HTML for Likert scale buttons
-         * @param {number} questionIndex - Current question index
-         * @param {number} maxScore - Maximum score value
-         * @param {Array} labels - Scale labels
-         * @returns {string} - HTML for scale buttons
-         */
-        function generateScaleHTML(questionIndex, maxScore, labels) {
-            const currentAnswer = quizState.answers[questionIndex];
-
-            let scaleHTML = '<div class="quiz-scale-buttons">';
-            for (let i = 0; i <= maxScore; i++) {
-                const isSelected = currentAnswer === i;
-                scaleHTML += `
-                    <button class="quiz-scale-btn ${isSelected ? 'selected' : ''}" data-score="${i}">
-                        <span class="score-value">${i}</span>
-                        <span class="score-label">${labels[i]}</span>
-                    </button>
-                `;
-            }
-            scaleHTML += '</div>';
-
-            return scaleHTML;
-        }
-
-        /**
-         * Initializes quiz control event listeners
-         * @param {number} maxScore - Maximum score value
-         * @param {Object} uiText - Localized UI text
-         */
-        function initializeQuizControls(maxScore, uiText) {
-            const prevBtn = document.getElementById('quizPrevBtn');
-            const nextBtn = document.getElementById('quizNextBtn');
-            const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
-
-            // Previous button
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    if (quizState.currentQuestionIndex > 0) {
-                        goToQuestion(quizState.currentQuestionIndex - 1);
-                    }
-                });
-            }
-
-            // Next/Submit button
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    const localizedContent = getLocalizedQuizContent(quizState.quizData);
-                    const numQuestions = localizedContent.questions.length;
-
-                    if (quizState.currentQuestionIndex < numQuestions - 1) {
-                        // Check if answer is selected
-                        if (quizState.answers[quizState.currentQuestionIndex] === undefined) {
-                            // Show warning that answer is required
-                            showAnswerRequiredWarning();
-                            return;
-                        }
-                        goToQuestion(quizState.currentQuestionIndex + 1);
-                    } else {
-                        // Submit quiz
-                        submitQuiz();
-                    }
-                });
-            }
-
-            // Scale buttons
-            scaleButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const score = parseInt(btn.getAttribute('data-score'));
-                    selectAnswer(score);
-                });
-            });
-        }
-
-        /**
-         * Clears the selected state from all quiz scale buttons
-         */
-        function clearQuizButtonState() {
-            const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
-            scaleButtons.forEach(btn => {
-                btn.classList.remove('selected');
-            });
-        }
-
-        /**
-         * Shows warning that answer is required
-         */
-        function showAnswerRequiredWarning() {
-            const currentLang = document.documentElement.lang || 'en';
-            const warningText = {
-                'en': 'Please select an answer before proceeding.',
-                'fr': 'Veuillez sélectionner une réponse avant de continuer.',
-                'es': 'Por favor seleccione una respuesta antes de continuar.',
-                'no': 'Vennligst velg et svar før du fortsetter.',
-                'pl': 'Proszę wybrać odpowiedź przed przejściem dalej.',
-                'la': 'Quaeso roga responsum priusquam pergas.',
-                'egy': 'يرجى تحديد إجابة قبل المتابعة.',
-                'zh': '请选择答案后再继续。'
-            }[currentLang] || 'Please select an answer before proceeding.';
-
-            alert(warningText);
-        }
-
-        /**
-         * Navigates to a specific question
-         * @param {number} questionIndex - The question index to navigate to
-         */
-        function goToQuestion(questionIndex) {
-            const localizedContent = getLocalizedQuizContent(quizState.quizData);
-            const numQuestions = localizedContent.questions.length;
-            const isRTL = document.documentElement.lang === 'ar-EG';
-
-            // Update state
-            quizState.currentQuestionIndex = questionIndex;
-
-            // Update progress bar
-            const progressPercent = ((questionIndex + 1) / numQuestions) * 100;
-            const progressFill = document.querySelector('.quiz-progress-fill');
-            const progressText = document.querySelector('.current-question');
-            if (progressFill) {
-                progressFill.style.width = `${progressPercent}%`;
-            }
-            if (progressText) {
-                progressText.textContent = questionIndex + 1;
-            }
-
-            // Update question text
-            const questionText = document.querySelector('.quiz-question-text');
-            const questionContext = document.querySelector('.quiz-question-context');
-            if (questionText) {
-                questionText.textContent = localizedContent.questions[questionIndex].text;
-            }
-            if (questionContext) {
-                questionContext.textContent = localizedContent.questions[questionIndex].context;
-            }
-
-            // Update scale buttons
-            const scaleContainer = document.querySelector('.quiz-scale-container');
-            if (scaleContainer) {
-                const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
-                const scaleMax = isSocialSymptomQuiz ? 4 : 3;
-
-                const currentLang = document.documentElement.lang || 'en';
-                const scaleLabels = {
-                    0: {
-                        'en': 'Strongly Disagree',
-                        'fr': 'Fortement en désaccord',
-                        'es': 'Muy en desacuerdo',
-                        'no': 'Helt uenig',
-                        'pl': 'Zdecydowanie się nie zgadzam',
-                        'la': 'Fortiter dissentio',
-                        'egy': 'لا أوافق بشدة',
-                        'zh': '强烈不同意'
-                    },
-                    1: {
-                        'en': 'Disagree',
-                        'fr': 'En désaccord',
-                        'es': 'En desacuerdo',
-                        'no': 'Uenig',
-                        'pl': 'Nie zgadzam',
-                        'la': 'Dissentio',
-                        'egy': 'لا أوافق',
-                        'zh': '不同意'
-                    },
-                    2: {
-                        'en': 'Neutral',
-                        'fr': 'Neutre',
-                        'es': 'Neutral',
-                        'no': 'Nøytral',
-                        'pl': 'Neutralny',
-                        'la': 'Neutrum',
-                        'egy': 'محايد',
-                        'zh': '中立'
-                    },
-                    3: {
-                        'en': 'Agree',
-                        'fr': 'D\'accord',
-                        'es': 'De acuerdo',
-                        'no': 'Enig',
-                        'pl': 'Zgadzam',
-                        'la': 'Consenio',
-                        'egy': 'أوافق',
-                        'zh': '同意'
-                    },
-                    4: {
-                        'en': 'Strongly Agree',
-                        'fr': 'Fortement d\'accord',
-                        'es': 'Muy de acuerdo',
-                        'no': 'Helt enig',
-                        'pl': 'Zdecydowanie się zgadzam',
-                        'la': 'Fortiter consentio',
-                        'egy': 'أوافق بشدة',
-                        'zh': '强烈同意'
-                    }
-                };
-
-                // Clear existing button state before regeneration
-                clearQuizButtonState();
-
-                scaleContainer.innerHTML = generateScaleHTML(questionIndex, scaleMax,
-                    scaleLabels.map(l => l[currentLang] || l['en']));
-
-                // Restore selected state after innerHTML replacement
-                const currentAnswer = quizState.answers[questionIndex];
-                if (currentAnswer !== undefined) {
-                    const selectedBtn = document.querySelector(`.quiz-scale-btn[data-score="${currentAnswer}"]`);
-                    if (selectedBtn) {
-                        selectedBtn.classList.add('selected');
-                    }
-                }
-            }
-
-            // Update navigation buttons
-            const prevBtn = document.getElementById('quizPrevBtn');
-            const nextBtn = document.getElementById('quizNextBtn');
-
-            if (prevBtn) {
-                prevBtn.disabled = questionIndex === 0;
-            }
-
-            if (nextBtn) {
-                const uiText = {
-                    nextBtn: {
-                        'en': 'Next',
-                        'fr': 'Suivant',
-                        'es': 'Siguiente',
-                        'no': 'Neste',
-                        'pl': 'Następny',
-                        'la': 'Sequens',
-                        'egy': 'التالي',
-                        'zh': '下一题'
-                    },
-                    submitBtn: {
-                        'en': 'Submit Assessment',
-                        'fr': 'Soumettre l\'évaluation',
-                        'es': 'Enviar evaluación',
-                        'no': 'Send inn vurdering',
-                        'pl': 'Wyślij ocenę',
-                        'la': 'Mitte aestimationem',
-                        'egy': 'إرسال التقييم',
-                        'zh': '提交评估'
-                    }
-                };
-
-                const buttonText = questionIndex === numQuestions - 1
-                    ? uiText.submitBtn[currentLang] || 'Submit Assessment'
-                    : uiText.nextBtn[currentLang] || 'Next';
-
-                nextBtn.textContent = buttonText;
-            }
-
-            // Re-initialize scale button listeners
-            const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
-            scaleButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const score = parseInt(btn.getAttribute('data-score'));
-                    selectAnswer(score);
-                });
-            });
-        }
-
-        /**
-         * Selects an answer for the current question
-         * @param {number} score - The score value selected
-         */
-        function selectAnswer(score) {
-            quizState.answers[quizState.currentQuestionIndex] = score;
-
-            // Update visual selection
-            const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
-            scaleButtons.forEach(btn => {
-                const btnScore = parseInt(btn.getAttribute('data-score'));
-                if (btnScore === score) {
-                    btn.classList.add('selected');
-                } else {
-                    btn.classList.remove('selected');
-                }
-            });
-        }
-
-        /**
-         * Submits the quiz and calculates results
-         */
-        function submitQuiz() {
-            const localizedContent = getLocalizedQuizContent(quizState.quizData);
-
-            // Calculate total score
-            const totalScore = quizState.answers.reduce((sum, answer) => sum + answer, 0);
-
-            // Find matching result
-            const result = findMatchingResult(totalScore, localizedContent.results);
-
-            // Mark quiz as complete
-            quizState.isComplete = true;
-
-            // Render results
-            renderQuizResults(totalScore, result, localizedContent);
-        }
-
-        /**
-         * Finds the matching result based on total score
-         * @param {number} totalScore - The total quiz score
-         * @param {Array} results - Array of result objects
-         * @returns {Object} - The matching result object
-         */
-        function findMatchingResult(totalScore, results) {
-            for (const result of results) {
-                const [min, max] = result.range;
-                if (totalScore >= min && totalScore <= max) {
-                    return result;
-                }
-            }
-
-            // Default to first result if no match found
-            return results[0];
-        }
-
-        /**
-         * Renders the quiz results
-         * @param {number} totalScore - The total quiz score
-         * @param {Object} result - The result object
-         * @param {Object} localizedContent - Localized quiz content
-         */
-        function renderQuizResults(totalScore, result, localizedContent) {
-            const assessmentsSection = document.getElementById('assessments');
-            if (!assessmentsSection) {
-                console.error('[Quiz Engine] Assessments section not found');
-                return;
-            }
-
-            const currentLang = document.documentElement.lang || 'en';
-            const isRTL = currentLang === 'ar-EG';
-
-            // Localized UI text
-            const uiText = {
-                scoreLabel: {
-                    'en': 'Your Score',
-                    'fr': 'Votre Score',
-                    'es': 'Su Puntuación',
-                    'no': 'Din Poengsum',
-                    'pl': 'Twój Wynik',
-                    'la': 'Tua Punctuatio',
-                    'egy': 'نتيجتك',
-                    'zh': '你的分数'
-                }[currentLang] || 'Your Score',
-                resultLabel: {
-                    'en': 'Your Result',
-                    'fr': 'Votre Résultat',
-                    'es': 'Tu Resultado',
-                    'no': 'Ditt Resultat',
-                    'pl': 'Twój Wynik',
-                    'la': 'Tuum Resultatum',
-                    'egy': 'نتيجتك',
-                    'zh': '你的结果'
-                }[currentLang] || 'Your Result',
-                retakeBtn: {
-                    'en': 'Retake Assessment',
-                    'fr': 'Refaire l\'évaluation',
-                    'es': 'Repetir evaluación',
-                    'no': 'Ta vurdering på nytt',
-                    'pl': 'Ponów ocenę',
-                    'la': 'Iterum aestimationem',
-                    'egy': 'إعادة التقييم',
-                    'zh': '重新评估'
-                }[currentLang] || 'Retake'
-            };
-
-            // Render results
-            const resultsHTML = `
-                <div class="quiz-results ${isRTL ? 'rtl' : ''}">
-                    <div class="quiz-results-header">
-                        <h2 class="quiz-results-title">${uiText.resultLabel}</h2>
-                        <div class="quiz-score-display">
-                            <span class="score-label">${uiText.scoreLabel}:</span>
-                            <span class="score-value">${totalScore}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="quiz-result-content">
-                        <h3 class="result-title">${result.title}</h3>
-                        <p class="result-summary">${result.summary}</p>
-                        <div class="result-recommendation">
-                            <strong>${localizedContent.disclaimer}</strong>
-                            <p>${result.recommendation}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="quiz-results-actions">
-                        <button id="quizRetakeBtn" class="btn-quiz btn-quiz-retake">
-                            ${uiText.retakeBtn}
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            // Update the assessment content area
-            const assessmentContent = document.getElementById('assessmentContent');
-            if (assessmentContent) {
-                assessmentContent.innerHTML = resultsHTML;
-            }
-
-            // Initialize retake button
-            const retakeBtn = document.getElementById('quizRetakeBtn');
-            if (retakeBtn) {
-                retakeBtn.addEventListener('click', () => {
-                    startQuiz(quizFiles[quizState.currentQuizIndex]);
-                });
-            }
-
-            // Scroll to results
-            assessmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        /**
-         * Shows quiz error message
-         */
-        function showQuizError() {
-            const assessmentsSection = document.getElementById('assessments');
-            if (!assessmentsSection) {
-                console.error('[Quiz Engine] Assessments section not found');
-                return;
-            }
-
-            const currentLang = document.documentElement.lang || 'en';
-            const errorText = {
-                'en': 'An error occurred while loading the quiz. Please try again later.',
-                'fr': 'Une erreur s\'est produite lors du chargement du quiz. Veuillez réessayer plus tard.',
-                'es': 'Ocurrió un error al cargar el cuestionario. Por favor, inténtelo de nuevo más tarde.',
-                'no': 'Det oppstod en feil ved lasting av spørsmålet. Vennligst prøv igjen senere.',
-                'pl': 'Wystąpił błąd podczas ładowania quizu. Proszę spróbuj ponownie później.',
-                'la': 'Errore factum est dum quaestio onerabatur. Quaeso conare iterum postea.',
-                'egy': 'حدث خطأ أثناء تحميل الاختبار. يرجى المحاولة مرة أخرى لاحقًا.',
-                'zh': '加载测验时发生错误。请稍后再试。'
-            }[currentLang] || 'An error occurred while loading the quiz. Please try again later.';
-
-            const errorHTML = `
-                <div class="quiz-error">
-                    <p class="error-message">${errorText}</p>
-                </div>
-            `;
-
-            const assessmentContent = document.getElementById('assessmentContent');
-            if (assessmentContent) {
-                assessmentContent.innerHTML = errorHTML;
-                assessmentContent.classList.remove('hidden');
-            }
-        }
-
         console.log('Initial assessment screen rendered successfully');
 
     } catch (error) {
@@ -2180,6 +1414,802 @@ async function renderInitialScreen(quizList) {
             `;
             assessmentsSection.appendChild(errorContainer);
         }
+    }
+}
+
+// ==================== QUIZ ENGINE IMPLEMENTATION (GLOBAL SCOPE) ====================
+
+/**
+ * Normalizes quiz data structure to handle both top-level and nested formats
+ * @param {Object} data - Raw quiz data
+ * @returns {Object} - Normalized quiz data
+ */
+function normalizeQuizData(data) {
+    // Check if data has top-level language keys (nested structure)
+    const hasLanguageKeys = Object.keys(data).some(key =>
+        ['EN', 'FR', 'ES', 'NO', 'PL', 'LA', 'EGY', 'ZH'].includes(key)
+    );
+
+    if (hasLanguageKeys) {
+        // Already in nested format - return as-is
+        return data;
+    } else {
+        // Top-level structure - convert to nested format
+        // This handles quiz_victimhood_architecture.json format
+        const normalized = {};
+        const languages = ['EN', 'FR', 'ES', 'NO', 'PL', 'LA', 'EGY', 'ZH'];
+
+        languages.forEach(lang => {
+            normalized[lang] = {
+                title: data.title?.[lang] || data.title || 'Assessment',
+                description: data.description?.[lang] || data.description || '',
+                disclaimer: data.disclaimer?.[lang] || data.disclaimer || '',
+                questions: data.questions?.map(q => ({
+                    id: q.id,
+                    text: q.text?.[lang] || q.text || '',
+                    context: q.context?.[lang] || q.context || ''
+                })) || [],
+                results: data.results?.map(r => ({
+                    range: r.range,
+                    title: r.title?.[lang] || r.title || 'Result',
+                    summary: r.summary?.[lang] || r.summary || '',
+                    recommendation: r.recommendation?.[lang] || r.recommendation || ''
+                })) || []
+            };
+        });
+
+        return normalized;
+    }
+}
+
+/**
+ * Gets localized content for the current language
+ * @param {Object} quizData - The quiz data object
+ * @returns {Object} - Localized quiz content
+ */
+function getLocalizedQuizContent(quizData) {
+    const currentLang = document.documentElement.lang || 'en';
+    const langCode = currentLang.substring(0, 2).toUpperCase();
+
+    // Try to get content for current language, fallback to English
+    const content = quizData[langCode] || quizData.EN;
+
+    if (!content) {
+        console.warn(`[Quiz Engine] No content found for language: ${langCode}, falling back to EN`);
+        return quizData.EN;
+    }
+
+    return content;
+}
+
+/**
+ * Renders the quiz interface with progress bar and questions
+ */
+function renderQuizInterface() {
+    const assessmentsSection = document.getElementById('assessments');
+    if (!assessmentsSection) {
+        console.error('[Quiz Engine] Assessments section not found');
+        return;
+    }
+
+    const localizedContent = getLocalizedQuizContent(quizState.quizData);
+    const currentLang = document.documentElement.lang || 'en';
+    const isRTL = currentLang === 'ar-EG';
+
+    // Set RTL direction on container
+    const assessmentContainer = assessmentsSection.querySelector('.assessment-container');
+    if (assessmentContainer) {
+        assessmentContainer.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+    }
+
+    // Determine scale range based on number of questions
+    const numQuestions = localizedContent.questions.length;
+    const maxScore = numQuestions * 3; // Assuming 0-3 scale for most quizzes
+    const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
+    const scaleMax = isSocialSymptomQuiz ? 4 : 3; // 0-4 for social symptom, 0-3 for others
+
+    // Localized UI text
+    const uiText = {
+        questionLabel: {
+            'en': 'Question',
+            'fr': 'Question',
+            'es': 'Pregunta',
+            'no': 'Spørsmål',
+            'pl': 'Pytanie',
+            'la': 'Quaestio',
+            'egy': 'سؤال',
+            'zh': '问题'
+        }[currentLang] || 'Question',
+        ofLabel: {
+            'en': 'of',
+            'fr': 'sur',
+            'es': 'de',
+            'no': 'av',
+            'pl': 'z',
+            'la': 'de',
+            'egy': 'من',
+            'zh': '共'
+        }[currentLang] || 'of',
+        previousBtn: {
+            'en': 'Previous',
+            'fr': 'Précédent',
+            'es': 'Anterior',
+            'no': 'Forrige',
+            'pl': 'Poprzedni',
+            'la': 'Anterior',
+            'egy': 'السابق',
+            'zh': '上一题'
+        }[currentLang] || 'Previous',
+        nextBtn: {
+            'en': 'Next',
+            'fr': 'Suivant',
+            'es': 'Siguiente',
+            'no': 'Neste',
+            'pl': 'Następny',
+            'la': 'Sequens',
+            'egy': 'التالي',
+            'zh': '下一题'
+        }[currentLang] || 'Next',
+        submitBtn: {
+            'en': 'Submit Assessment',
+            'fr': 'Soumettre l\'évaluation',
+            'es': 'Enviar evaluación',
+            'no': 'Send inn vurdering',
+            'pl': 'Wyślij ocenę',
+            'la': 'Mitte aestimationem',
+            'egy': 'إرسال التقييم',
+            'zh': '提交评估'
+        }[currentLang] || 'Submit',
+        retakeBtn: {
+            'en': 'Retake Assessment',
+            'fr': 'Refaire l\'évaluation',
+            'es': 'Repetir evaluación',
+            'no': 'Ta vurdering på nytt',
+            'pl': 'Ponów ocenę',
+            'la': 'Iterum aestimationem',
+            'egy': 'إعادة التقييم',
+            'zh': '重新评估'
+        }[currentLang] || 'Retake',
+        scoreLabel: {
+            'en': 'Your Score',
+            'fr': 'Votre Score',
+            'es': 'Su Puntuación',
+            'no': 'Din Poengsum',
+            'pl': 'Twój Wynik',
+            'la': 'Tua Punctuatio',
+            'egy': 'نتيجتك',
+            'zh': '你的分数'
+        }[currentLang] || 'Your Score',
+        resultLabel: {
+            'en': 'Your Result',
+            'fr': 'Votre Résultat',
+            'es': 'Tu Resultado',
+            'no': 'Ditt Resultat',
+            'pl': 'Twój Wynik',
+            'la': 'Tuum Resultatum',
+            'egy': 'نتيجتك',
+            'zh': '你的结果'
+        }[currentLang] || 'Your Result',
+        exitBtn: {
+            'en': 'Exit',
+            'fr': 'Sortir',
+            'es': 'Salir',
+            'no': 'Avslutt',
+            'pl': 'Wyjdź',
+            'la': 'Exeunde',
+            'egy': 'خروج',
+            'zh': '退出'
+        }[currentLang] || 'Exit'
+    };
+
+    // Generate scale labels
+    const scaleLabels = [];
+    for (let i = 0; i <= scaleMax; i++) {
+        const label = {
+            0: {
+                'en': 'Strongly Disagree',
+                'fr': 'Fortement en désaccord',
+                'es': 'Muy en desacuerdo',
+                'no': 'Helt uenig',
+                'pl': 'Zdecydowanie się nie zgadzam',
+                'la': 'Fortiter dissentio',
+                'egy': 'لا أوافق بشدة',
+                'zh': '强烈不同意'
+            },
+            1: {
+                'en': 'Disagree',
+                'fr': 'En désaccord',
+                'es': 'En desacuerdo',
+                'no': 'Uenig',
+                'pl': 'Nie zgadzam',
+                'la': 'Dissentio',
+                'egy': 'لا أوافق',
+                'zh': '不同意'
+            },
+            2: {
+                'en': 'Neutral',
+                'fr': 'Neutre',
+                'es': 'Neutral',
+                'no': 'Nøytral',
+                'pl': 'Neutralny',
+                'la': 'Neutrum',
+                'egy': 'محايد',
+                'zh': '中立'
+            },
+            3: {
+                'en': 'Agree',
+                'fr': 'D\'accord',
+                'es': 'De acuerdo',
+                'no': 'Enig',
+                'pl': 'Zgadzam',
+                'la': 'Consenio',
+                'egy': 'أوافق',
+                'zh': '同意'
+            },
+            4: {
+                'en': 'Strongly Agree',
+                'fr': 'Fortement d\'accord',
+                'es': 'Muy de acuerdo',
+                'no': 'Helt enig',
+                'pl': 'Zdecydowanie się zgadzam',
+                'la': 'Fortiter consentio',
+                'egy': 'أوافق بشدة',
+                'zh': '强烈同意'
+            }
+        }[i] || {
+            'en': `${i}`,
+            'fr': `${i}`,
+            'es': `${i}`,
+            'no': `${i}`,
+            'pl': `${i}`,
+            'la': `${i}`,
+            'egy': `${i}`,
+            'zh': `${i}`
+        };
+        scaleLabels.push(label[currentLang] || label['en']);
+    }
+
+    // Render quiz interface
+    const quizHTML = `
+        <div class="quiz-interface ${isRTL ? 'rtl' : ''}">
+            <!-- Header with Exit Button -->
+            <div class="quiz-header">
+                <button id="quizExitBtn" class="btn-quiz-exit" aria-label="Exit quiz and return to assessment lobby">
+                    ${uiText.exitBtn}
+                </button>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="quiz-progress-container">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="quiz-progress-text">
+                    ${uiText.questionLabel} <span class="current-question">1</span> ${uiText.ofLabel} ${numQuestions}
+                </div>
+            </div>
+            
+            <!-- Question Container -->
+            <div class="quiz-question-container">
+                <div class="quiz-question-text">
+                    ${localizedContent.questions[0].text}
+                </div>
+                <div class="quiz-question-context">
+                    ${localizedContent.questions[0].context}
+                </div>
+                
+                <!-- Likert Scale -->
+                <div class="quiz-scale-container">
+                    ${generateScaleHTML(0, scaleMax, scaleLabels)}
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="quiz-navigation">
+                <button id="quizPrevBtn" class="btn-quiz btn-quiz-prev" disabled>
+                    ${uiText.previousBtn}
+                </button>
+                <button id="quizNextBtn" class="btn-quiz btn-quiz-next">
+                    ${uiText.nextBtn}
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Update the assessment content area
+    // FIX: Re-create container if destroyed by Lobby logic
+    let assessmentContent = document.getElementById('assessmentContent');
+    if (!assessmentContent) {
+        const assessmentsSection = document.getElementById('assessments');
+        if (assessmentsSection) {
+            assessmentsSection.innerHTML = ''; // Clear Lobby UI
+            assessmentContent = document.createElement('div');
+            assessmentContent.id = 'assessmentContent';
+            assessmentsSection.appendChild(assessmentContent);
+        }
+    }
+    if (assessmentContent) {
+        assessmentContent.innerHTML = quizHTML;
+        assessmentContent.classList.remove('hidden');
+    }
+
+    // Initialize quiz controls
+    initializeQuizControls(scaleMax, uiText);
+
+    // Initialize exit button
+    const exitBtn = document.getElementById('quizExitBtn');
+    if (exitBtn) {
+        exitBtn.addEventListener('click', exitQuiz);
+    }
+
+    // Scroll to quiz
+    assessmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Generates HTML for Likert scale buttons
+ * @param {number} questionIndex - Current question index
+ * @param {number} maxScore - Maximum score value
+ * @param {Array} labels - Scale labels
+ * @returns {string} - HTML for scale buttons
+ */
+function generateScaleHTML(questionIndex, maxScore, labels) {
+    const currentAnswer = quizState.answers[questionIndex];
+
+    let scaleHTML = '<div class="quiz-scale-buttons">';
+    for (let i = 0; i <= maxScore; i++) {
+        const isSelected = currentAnswer === i;
+        scaleHTML += `
+            <button class="quiz-scale-btn ${isSelected ? 'selected' : ''}" data-score="${i}">
+                <span class="score-value">${i}</span>
+                <span class="score-label">${labels[i]}</span>
+            </button>
+        `;
+    }
+    scaleHTML += '</div>';
+
+    return scaleHTML;
+}
+
+/**
+ * Initializes quiz control event listeners
+ * @param {number} maxScore - Maximum score value
+ * @param {Object} uiText - Localized UI text
+ */
+function initializeQuizControls(maxScore, uiText) {
+    const prevBtn = document.getElementById('quizPrevBtn');
+    const nextBtn = document.getElementById('quizNextBtn');
+    const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
+
+    // Previous button
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (quizState.currentQuestionIndex > 0) {
+                goToQuestion(quizState.currentQuestionIndex - 1);
+            }
+        });
+    }
+
+    // Next/Submit button
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const localizedContent = getLocalizedQuizContent(quizState.quizData);
+            const numQuestions = localizedContent.questions.length;
+
+            if (quizState.currentQuestionIndex < numQuestions - 1) {
+                // Check if answer is selected
+                if (quizState.answers[quizState.currentQuestionIndex] === undefined) {
+                    // Show warning that answer is required
+                    showAnswerRequiredWarning();
+                    return;
+                }
+                goToQuestion(quizState.currentQuestionIndex + 1);
+            } else {
+                // Submit quiz
+                submitQuiz();
+            }
+        });
+    }
+
+    // Scale buttons
+    scaleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const score = parseInt(btn.getAttribute('data-score'));
+            selectAnswer(score);
+        });
+    });
+}
+
+/**
+ * Clears the selected state from all quiz scale buttons
+ */
+function clearQuizButtonState() {
+    const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
+    scaleButtons.forEach(btn => {
+        btn.classList.remove('selected');
+    });
+}
+
+/**
+ * Shows warning that answer is required
+ */
+function showAnswerRequiredWarning() {
+    const currentLang = document.documentElement.lang || 'en';
+    const warningText = {
+        'en': 'Please select an answer before proceeding.',
+        'fr': 'Veuillez sélectionner une réponse avant de continuer.',
+        'es': 'Por favor seleccione una respuesta antes de continuar.',
+        'no': 'Vennligst velg et svar før du fortsetter.',
+        'pl': 'Proszę wybrać odpowiedź przed przejściem dalej.',
+        'la': 'Quaeso roga responsum priusquam pergas.',
+        'egy': 'يرجى تحديد إجابة قبل المتابعة.',
+        'zh': '请选择答案后再继续。'
+    }[currentLang] || 'Please select an answer before proceeding.';
+
+    alert(warningText);
+}
+
+/**
+ * Navigates to a specific question
+ * @param {number} questionIndex - The question index to navigate to
+ */
+function goToQuestion(questionIndex) {
+    const localizedContent = getLocalizedQuizContent(quizState.quizData);
+    const numQuestions = localizedContent.questions.length;
+    const isRTL = document.documentElement.lang === 'ar-EG';
+
+    // Update state
+    quizState.currentQuestionIndex = questionIndex;
+
+    // Update progress bar
+    const progressPercent = ((questionIndex + 1) / numQuestions) * 100;
+    const progressFill = document.querySelector('.quiz-progress-fill');
+    const progressText = document.querySelector('.current-question');
+    if (progressFill) {
+        progressFill.style.width = `${progressPercent}%`;
+    }
+    if (progressText) {
+        progressText.textContent = questionIndex + 1;
+    }
+
+    // Update question text
+    const questionText = document.querySelector('.quiz-question-text');
+    const questionContext = document.querySelector('.quiz-question-context');
+    if (questionText) {
+        questionText.textContent = localizedContent.questions[questionIndex].text;
+    }
+    if (questionContext) {
+        questionContext.textContent = localizedContent.questions[questionIndex].context;
+    }
+
+    // Update scale buttons
+    const scaleContainer = document.querySelector('.quiz-scale-container');
+    if (scaleContainer) {
+        const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
+        const scaleMax = isSocialSymptomQuiz ? 4 : 3;
+
+        const currentLang = document.documentElement.lang || 'en';
+        const scaleLabels = {
+            0: {
+                'en': 'Strongly Disagree',
+                'fr': 'Fortement en désaccord',
+                'es': 'Muy en desacuerdo',
+                'no': 'Helt uenig',
+                'pl': 'Zdecydowanie się nie zgadzam',
+                'la': 'Fortiter dissentio',
+                'egy': 'لا أوافق بشدة',
+                'zh': '强烈不同意'
+            },
+            1: {
+                'en': 'Disagree',
+                'fr': 'En désaccord',
+                'es': 'En desacuerdo',
+                'no': 'Uenig',
+                'pl': 'Nie zgadzam',
+                'la': 'Dissentio',
+                'egy': 'لا أوافق',
+                'zh': '不同意'
+            },
+            2: {
+                'en': 'Neutral',
+                'fr': 'Neutre',
+                'es': 'Neutral',
+                'no': 'Nøytral',
+                'pl': 'Neutralny',
+                'la': 'Neutrum',
+                'egy': 'محايد',
+                'zh': '中立'
+            },
+            3: {
+                'en': 'Agree',
+                'fr': 'D\'accord',
+                'es': 'De acuerdo',
+                'no': 'Enig',
+                'pl': 'Zgadzam',
+                'la': 'Consenio',
+                'egy': 'أوافق',
+                'zh': '同意'
+            },
+            4: {
+                'en': 'Strongly Agree',
+                'fr': 'Fortement d\'accord',
+                'es': 'Muy de acuerdo',
+                'no': 'Helt enig',
+                'pl': 'Zdecydowanie się zgadzam',
+                'la': 'Fortiter consentio',
+                'egy': 'أوافق بشدة',
+                'zh': '强烈同意'
+            }
+        };
+
+        // Clear existing button state before regeneration
+        clearQuizButtonState();
+
+        scaleContainer.innerHTML = generateScaleHTML(questionIndex, scaleMax,
+            scaleLabels.map(l => l[currentLang] || l['en']));
+
+        // Restore selected state after innerHTML replacement
+        const currentAnswer = quizState.answers[questionIndex];
+        if (currentAnswer !== undefined) {
+            const selectedBtn = document.querySelector(`.quiz-scale-btn[data-score="${currentAnswer}"]`);
+            if (selectedBtn) {
+                selectedBtn.classList.add('selected');
+            }
+        }
+    }
+
+    // Update navigation buttons
+    const prevBtn = document.getElementById('quizPrevBtn');
+    const nextBtn = document.getElementById('quizNextBtn');
+
+    if (prevBtn) {
+        prevBtn.disabled = questionIndex === 0;
+    }
+
+    if (nextBtn) {
+        const uiText = {
+            nextBtn: {
+                'en': 'Next',
+                'fr': 'Suivant',
+                'es': 'Siguiente',
+                'no': 'Neste',
+                'pl': 'Następny',
+                'la': 'Sequens',
+                'egy': 'التالي',
+                'zh': '下一题'
+            },
+            submitBtn: {
+                'en': 'Submit Assessment',
+                'fr': 'Soumettre l\'évaluation',
+                'es': 'Enviar evaluación',
+                'no': 'Send inn vurdering',
+                'pl': 'Wyślij ocenę',
+                'la': 'Mitte aestimationem',
+                'egy': 'إرسال التقييم',
+                'zh': '提交评估'
+            }
+        };
+
+        const buttonText = questionIndex === numQuestions - 1
+            ? uiText.submitBtn[currentLang] || 'Submit Assessment'
+            : uiText.nextBtn[currentLang] || 'Next';
+
+        nextBtn.textContent = buttonText;
+    }
+
+    // Re-initialize scale button listeners
+    const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
+    scaleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const score = parseInt(btn.getAttribute('data-score'));
+            selectAnswer(score);
+        });
+    });
+}
+
+/**
+ * Selects an answer for the current question
+ * @param {number} score - The score value selected
+ */
+function selectAnswer(score) {
+    quizState.answers[quizState.currentQuestionIndex] = score;
+
+    // Update visual selection
+    const scaleButtons = document.querySelectorAll('.quiz-scale-btn');
+    scaleButtons.forEach(btn => {
+        const btnScore = parseInt(btn.getAttribute('data-score'));
+        if (btnScore === score) {
+            btn.classList.add('selected');
+        } else {
+            btn.classList.remove('selected');
+        }
+    });
+}
+
+/**
+ * Submits the quiz and calculates results
+ */
+function submitQuiz() {
+    const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+    // Calculate total score
+    const totalScore = quizState.answers.reduce((sum, answer) => sum + answer, 0);
+
+    // Find matching result
+    const result = findMatchingResult(totalScore, localizedContent.results);
+
+    // Mark quiz as complete
+    quizState.isComplete = true;
+
+    // Render results
+    renderQuizResults(totalScore, result, localizedContent);
+}
+
+/**
+ * Finds the matching result based on total score
+ * @param {number} totalScore - The total quiz score
+ * @param {Array} results - Array of result objects
+ * @returns {Object} - The matching result object
+ */
+function findMatchingResult(totalScore, results) {
+    for (const result of results) {
+        const [min, max] = result.range;
+        if (totalScore >= min && totalScore <= max) {
+            return result;
+        }
+    }
+
+    // Default to first result if no match found
+    return results[0];
+}
+
+/**
+ * Renders the quiz results
+ * @param {number} totalScore - The total quiz score
+ * @param {Object} result - The result object
+ * @param {Object} localizedContent - Localized quiz content
+ */
+function renderQuizResults(totalScore, result, localizedContent) {
+    const assessmentsSection = document.getElementById('assessments');
+    if (!assessmentsSection) {
+        console.error('[Quiz Engine] Assessments section not found');
+        return;
+    }
+
+    const currentLang = document.documentElement.lang || 'en';
+    const isRTL = currentLang === 'ar-EG';
+
+    // Localized UI text
+    const uiText = {
+        scoreLabel: {
+            'en': 'Your Score',
+            'fr': 'Votre Score',
+            'es': 'Su Puntuación',
+            'no': 'Din Poengsum',
+            'pl': 'Twój Wynik',
+            'la': 'Tua Punctuatio',
+            'egy': 'نتيجتك',
+            'zh': '你的分数'
+        }[currentLang] || 'Your Score',
+        resultLabel: {
+            'en': 'Your Result',
+            'fr': 'Votre Résultat',
+            'es': 'Tu Resultado',
+            'no': 'Ditt Resultat',
+            'pl': 'Twój Wynik',
+            'la': 'Tuum Resultatum',
+            'egy': 'نتيجتك',
+            'zh': '你的结果'
+        }[currentLang] || 'Your Result',
+        retakeBtn: {
+            'en': 'Retake Assessment',
+            'fr': 'Refaire l\'évaluation',
+            'es': 'Repetir evaluación',
+            'no': 'Ta vurdering på nytt',
+            'pl': 'Ponów ocenę',
+            'la': 'Iterum aestimationem',
+            'egy': 'إعادة التقييم',
+            'zh': '重新评估'
+        }[currentLang] || 'Retake',
+        returnToLobbyBtn: {
+            'en': 'Return to Lobby',
+            'fr': 'Retour au Vestibule',
+            'es': 'Volver al Vestíbulo',
+            'no': 'Tilbake til Lobby',
+            'pl': 'Powrót do Hallu',
+            'la': 'Redite ad Vestibulum',
+            'egy': 'العودة إلى الردهة',
+            'zh': '返回大厅'
+        }[currentLang] || 'Return to Lobby'
+    };
+
+    // Render results
+    const resultsHTML = `
+        <div class="quiz-results ${isRTL ? 'rtl' : ''}">
+            <div class="quiz-results-header">
+                <h2 class="quiz-results-title">${uiText.resultLabel}</h2>
+                <div class="quiz-score-display">
+                    <span class="score-label">${uiText.scoreLabel}:</span>
+                    <span class="score-value">${totalScore}</span>
+                </div>
+            </div>
+            
+            <div class="quiz-result-content">
+                <h3 class="result-title">${result.title}</h3>
+                <p class="result-summary">${result.summary}</p>
+                <div class="result-recommendation">
+                    <strong>${localizedContent.disclaimer}</strong>
+                    <p>${result.recommendation}</p>
+                </div>
+            </div>
+            
+            <div class="quiz-results-actions">
+                <button id="quizReturnLobbyBtn" class="btn-quiz btn-quiz-return-lobby">
+                    ${uiText.returnToLobbyBtn}
+                </button>
+                <button id="quizRetakeBtn" class="btn-quiz btn-quiz-retake">
+                    ${uiText.retakeBtn}
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Update the assessment content area
+    const assessmentContent = document.getElementById('assessmentContent');
+    if (assessmentContent) {
+        assessmentContent.innerHTML = resultsHTML;
+    }
+
+    // Initialize retake and return to lobby buttons
+    const retakeBtn = document.getElementById('quizRetakeBtn');
+    const returnLobbyBtn = document.getElementById('quizReturnLobbyBtn');
+
+    if (retakeBtn) {
+        retakeBtn.addEventListener('click', () => {
+            startQuiz(quizFiles[quizState.currentQuizIndex]);
+        });
+    }
+
+    if (returnLobbyBtn) {
+        returnLobbyBtn.addEventListener('click', exitQuiz);
+    }
+
+    // Scroll to results
+    assessmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Shows quiz error message
+ */
+function showQuizError() {
+    const assessmentsSection = document.getElementById('assessments');
+    if (!assessmentsSection) {
+        console.error('[Quiz Engine] Assessments section not found');
+        return;
+    }
+
+    const currentLang = document.documentElement.lang || 'en';
+    const errorText = {
+        'en': 'An error occurred while loading the quiz. Please try again later.',
+        'fr': 'Une erreur s\'est produite lors du chargement du quiz. Veuillez réessayer plus tard.',
+        'es': 'Ocurrió un error al cargar el cuestionario. Por favor, inténtelo de nuevo más tarde.',
+        'no': 'Det oppstod en feil ved lasting av spørsmålet. Vennligst prøv igjen senere.',
+        'pl': 'Wystąpił błąd podczas ładowania quizu. Proszę spróbuj ponownie później.',
+        'la': 'Errore factum est dum quaestio onerabatur. Quaeso conare iterum postea.',
+        'egy': 'حدث خطأ أثناء تحميل الاختبار. يرجى المحاولة مرة أخرى لاحقًا.',
+        'zh': '加载测验时发生错误。请稍后再试。'
+    }[currentLang] || 'An error occurred while loading the quiz. Please try again later.';
+
+    const errorHTML = `
+        <div class="quiz-error">
+            <p class="error-message">${errorText}</p>
+        </div>
+    `;
+
+    const assessmentContent = document.getElementById('assessmentContent');
+    if (assessmentContent) {
+        assessmentContent.innerHTML = errorHTML;
+        assessmentContent.classList.remove('hidden');
     }
 }
 
@@ -2391,6 +2421,39 @@ async function renderQuizLobby() {
 }
 
 /**
+ * Resets quiz state to default values
+ */
+function resetQuizState() {
+    quizState = {
+        currentQuizIndex: 0,
+        quizData: null,
+        currentQuestionIndex: 0,
+        answers: [],
+        isComplete: false
+    };
+    console.log('[Quiz Engine] Quiz state reset');
+}
+
+/**
+ * Exits the current quiz and returns to the lobby
+ */
+function exitQuiz() {
+    console.log('[Quiz Engine] Exiting quiz');
+
+    // Reset quiz state
+    resetQuizState();
+
+    // Render quiz lobby
+    renderQuizLobby();
+
+    // Scroll to assessments section
+    const assessmentsSection = document.getElementById('assessments');
+    if (assessmentsSection) {
+        assessmentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+/**
  * Quiz state management object
  */
 let quizState = {
@@ -2424,9 +2487,10 @@ async function startQuiz(quizFileName) {
             isComplete: false
         };
 
-        // Load quiz data
+        // Load AND Normalize quiz data
         const filePath = `js/data/${quizFileName}`;
-        quizState.quizData = await loadQuizData(filePath);
+        const rawData = await loadQuizData(filePath);
+        quizState.quizData = normalizeQuizData(rawData); // <--- The Fix
 
         // Get localized content
         const localizedContent = getLocalizedQuizContent(quizState.quizData);
@@ -2441,7 +2505,7 @@ async function startQuiz(quizFileName) {
 
     } catch (error) {
         console.error('[startQuiz] Error starting quiz:', error);
-        showQuizError();
+        alert(error);
     }
 }
 
