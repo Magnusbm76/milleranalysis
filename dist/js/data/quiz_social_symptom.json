@@ -1,0 +1,199 @@
+{
+    "quizId": "quiz_social_symptom",
+    "title": "Social Symptom Assessment",
+    "description": "Evaluate your understanding of social symptoms, communication patterns, and interpersonal dynamics in clinical contexts.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "Which of the following is a primary social symptom associated with social anxiety disorder?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Excessive fear of negative evaluation in social situations"
+                },
+                {
+                    "id": "b",
+                    "text": "Persistent sadness and loss of interest in activities"
+                },
+                {
+                    "id": "c",
+                    "text": "Repetitive behaviors aimed at reducing anxiety"
+                },
+                {
+                    "id": "d",
+                    "text": "Disorganized thinking and speech patterns"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Social anxiety disorder is characterized by an intense fear of being judged, embarrassed, or humiliated in social situations, leading to avoidance behaviors."
+        },
+        {
+            "id": 2,
+            "question": "In interpersonal communication theory, what does 'double-bind' refer to?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A situation where contradictory messages are received simultaneously"
+                },
+                {
+                    "id": "b",
+                    "text": "A method of conflict resolution through compromise"
+                },
+                {
+                    "id": "c",
+                    "text": "A technique for active listening and validation"
+                },
+                {
+                    "id": "d",
+                    "text": "A form of non-verbal communication through body language"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Double-bind theory, developed by Gregory Bateson, describes a situation where a person receives two or more conflicting messages, making it impossible to respond appropriately to either."
+        },
+        {
+            "id": 3,
+            "question": "Which social withdrawal pattern is most characteristic of early-stage depression?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Gradual reduction in social engagement and responsiveness"
+                },
+                {
+                    "id": "b",
+                    "text": "Sudden and complete isolation from all social contact"
+                },
+                {
+                    "id": "c",
+                    "text": "Increased social interaction as a coping mechanism"
+                },
+                {
+                    "id": "d",
+                    "text": "Selective withdrawal from specific relationships only"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Early depression typically manifests as a gradual decline in social participation, reduced initiative in relationships, and diminished emotional responsiveness to social stimuli."
+        },
+        {
+            "id": 4,
+            "question": "What is 'alexithymia' in the context of social-emotional functioning?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Difficulty identifying and describing one's own emotions"
+                },
+                {
+                    "id": "b",
+                    "text": "Inability to recognize emotions in others"
+                },
+                {
+                    "id": "c",
+                    "text": "Excessive emotional expression in social settings"
+                },
+                {
+                    "id": "d",
+                    "text": "Complete absence of emotional experience"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Alexithymia is a personality construct characterized by difficulties in recognizing and describing emotions, which can significantly impact social relationships and emotional communication."
+        },
+        {
+            "id": 5,
+            "question": "Which attachment style is most associated with fear of intimacy and difficulty trusting others?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Avoidant attachment"
+                },
+                {
+                    "id": "b",
+                    "text": "Secure attachment"
+                },
+                {
+                    "id": "c",
+                    "text": "Anxious-preoccupied attachment"
+                },
+                {
+                    "id": "d",
+                    "text": "Disorganized attachment"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Avoidant attachment is characterized by a discomfort with closeness, reluctance to depend on others, and fear of intimacy, often stemming from early experiences with unavailable caregivers."
+        },
+        {
+            "id": 6,
+            "question": "In family systems theory, what is 'triangulation'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A third person brought into a dyadic conflict to reduce tension"
+                },
+                {
+                    "id": "b",
+                    "text": "A geometric method for mapping family relationships"
+                },
+                {
+                    "id": "c",
+                    "text": "A therapy technique involving three therapists"
+                },
+                {
+                    "id": "d",
+                    "text": "A form of communication using three distinct channels"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Triangulation occurs when two individuals in conflict involve a third person to stabilize their relationship, often creating unhealthy dynamics and shifting the focus from the original issue."
+        },
+        {
+            "id": 7,
+            "question": "Which social symptom is most commonly observed in individuals with autism spectrum disorder?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Difficulty with reciprocal social communication and interaction"
+                },
+                {
+                    "id": "b",
+                    "text": "Excessive and inappropriate emotional expression"
+                },
+                {
+                    "id": "c",
+                    "text": "Heightened sensitivity to social rejection"
+                },
+                {
+                    "id": "d",
+                    "text": "Intense desire for social approval and validation"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Core features of ASD include challenges in social-emotional reciprocity, nonverbal communicative behaviors, and developing/maintaining relationships appropriate to developmental level."
+        },
+        {
+            "id": 8,
+            "question": "What is 'social anhedonia'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Reduced ability to experience pleasure from social interactions"
+                },
+                {
+                    "id": "b",
+                    "text": "Fear of social situations and public scrutiny"
+                },
+                {
+                    "id": "c",
+                    "text": "Excessive enjoyment of social activities"
+                },
+                {
+                    "id": "d",
+                    "text": "Inability to recognize social cues"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Social anhedonia refers to a diminished capacity to derive pleasure or satisfaction from social interactions and relationships, often associated with schizophrenia spectrum disorders and depression."
+        }
+    ]
+}

@@ -1257,7 +1257,7 @@ const quizFiles = [
  */
 async function fetchAssessmentData(fileName) {
     try {
-        const filePath = `js/data/${fileName}`;
+        const filePath = `/js/data/${fileName}`;
         const response = await fetch(filePath);
         if (!response.ok) {
             throw new Error(`Failed to fetch assessment data: ${response.status} ${response.statusText}`);
@@ -2488,7 +2488,7 @@ async function startQuiz(quizFileName) {
         };
 
         // Load AND Normalize quiz data
-        const filePath = `js/data/${quizFileName}`;
+        const filePath = `/js/data/${quizFileName}`;
         const rawData = await loadQuizData(filePath);
         quizState.quizData = normalizeQuizData(rawData); // <--- The Fix
 
