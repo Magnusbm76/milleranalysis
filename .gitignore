@@ -1,0 +1,16 @@
+# System debris
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Build artifacts
+release.zip.zip
