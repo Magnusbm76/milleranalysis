@@ -419,9 +419,9 @@ function renderAllInsightsInGrid() {
         }
 
         if (quote.source.work.includes("Do You Read Me")) {
-            bookLink = "books/do-you-read-me.html";
+            bookLink = "/books/do-you-read-me.html";
         } else if (quote.source.work.includes("Triumphant Victim")) {
-            bookLink = "books/triumphant-victim.html";
+            bookLink = "/books/triumphant-victim.html";
         }
 
         return `

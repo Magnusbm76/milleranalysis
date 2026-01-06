@@ -419,9 +419,9 @@ function renderAllInsightsInGrid() {
         }
 
         if (quote.source.work.includes("Do You Read Me")) {
-            bookLink = "books/do-you-read-me.html";
+            bookLink = "/books/do-you-read-me.html";
         } else if (quote.source.work.includes("Triumphant Victim")) {
-            bookLink = "books/triumphant-victim.html";
+            bookLink = "/books/triumphant-victim.html";
         }
 
         return `
@@ -1257,7 +1257,7 @@ const quizFiles = [
  */
 async function fetchAssessmentData(fileName) {
     try {
-        const filePath = `js/data/${fileName}`;
+        const filePath = `/js/data/${fileName}`;
         const response = await fetch(filePath);
         if (!response.ok) {
             throw new Error(`Failed to fetch assessment data: ${response.status} ${response.statusText}`);
@@ -2488,7 +2488,7 @@ async function startQuiz(quizFileName) {
         };
 
         // Load AND Normalize quiz data
-        const filePath = `js/data/${quizFileName}`;
+        const filePath = `/js/data/${quizFileName}`;
         const rawData = await loadQuizData(filePath);
         quizState.quizData = normalizeQuizData(rawData); // <--- The Fix
 
