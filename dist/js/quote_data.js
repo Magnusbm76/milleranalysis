@@ -1789,9 +1789,9 @@ const quoteData = {
     EGY: [
       {
         id: "summary_001_egy",
-        title: "The Triumphant Victim - Overview",
-        quote: "The book examines unrecognised prevalence of sadomasochism and perverse thinking in personal relationships and public domain, discussing how it contributes to culture of victim.",
-        context: "This book offers a provocative examination of sadomasochism and perverse thinking in both personal relationships and wider society. Miller argues that we live in a 'culture of victim' where suffering has become a source of identity and power.",
+        title: "الضحية المنتصرة - نظرة عامة",
+        quote: "يناقش الكتاب الانتشار غير المعترف به للسادية والتفكير المنحرف في العلاقات الشخصية والمجال العام، وكيف يساهم في ثقافة الضحية.",
+        context: "يقدم هذا الكتاب فحصًا مثيرًا للسادية والتفكير المنحرف في العلاقات الشخصية والمجتمع الأوسع. يجادل ميلر بأننا نعيش في 'ثقافة الضحية' حيث أصبح المعاناة مصدرًا للهوية والسلطة.",
         source: {
           work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
           page: null,
@@ -1799,19 +1799,19 @@ const quoteData = {
           chapter: "Introduction",
           year: 2013
         },
-        themes: ["sadomasochism", "victimhood"],
+        themes: ["سادية", "ضحية"],
         relatedQuotes: [
           {
             id: "summary_002_egy",
-            relationship: "expands",
+            relationship: "يوسع",
             strength: 0.9,
-            label: "Deeper analysis"
+            label: "تحليل أعمق"
           },
           {
             id: "summary_003_egy",
-            relationship: "applies",
+            relationship: "يطبق",
             strength: 0.8,
-            label: "Clinical application"
+            label: "التطبيق السريري"
           }
         ],
         visual: {
@@ -1826,7 +1826,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "advanced",
+          difficulty: "متقدم",
           readingTime: 5,
           popularity: 0.9,
           dateAdded: "2026-01-03"
@@ -1834,9 +1834,9 @@ const quoteData = {
       },
       {
         id: "summary_002_egy",
-        title: "Part One: Origins of Perverse Pathology",
-        quote: "Part One traces origins of perverse pathology and how it operates in obstructing emotional development and producing dysfunctional relationships, explored through hysteria, exhibitionism, voyeurism and projective identification.",
-        context: "Drawing on 30 years of psychoanalytical practice, Miller explores how sadomasochistic patterns obstruct emotional development and create dysfunctional relationships. The book examines these dynamics through lens of hysteria, exhibitionism, voyeurism and projective identification, illustrated with detailed clinical material from couple- and family-therapy experiences and educational consultations.",
+        title: "الجزء الأول: أصول علم الأمراض المنحرف",
+        quote: "يتتبع الجزء الأول أصول علم الأمراض المنحرف وكيف يعمل في عرقلة التطور العاطفي وإنتاج العلاقات غير الوظيفية، تم استكشافه من خلال الهستيريا والاستعراضية والاستراقبة والتعريف الإسقاطي.",
+        context: "بالاعتماد على 30 عامًا من الممارسة التحليلية النفسية، يستكشف ميلر كيف تعيق أنماط السادية التطور العاطفي وتخلق علاقات غير وظيفية. يفحص الكتاب هذه الديناميات من خلال عدسة الهستيريا والاستعراضية والاستراقبة والتعريف الإسقاطي، مع توضيحها بمادة سريرية مفصلة من تجارب علاج الأزواج والعائلات والاستشارات التعليمية.",
         source: {
           work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
           page: null,
@@ -1844,19 +1844,19 @@ const quoteData = {
           chapter: "Part One",
           year: 2013
         },
-        themes: ["sadomasochism", "clinical"],
+        themes: ["سادية", "سريري"],
         relatedQuotes: [
           {
             id: "summary_001_egy",
-            relationship: "expands",
+            relationship: "يوسع",
             strength: 0.9,
-            label: "Foundation"
+            label: "الأساس"
           },
           {
             id: "summary_003_egy",
-            relationship: "contextualizes",
+            relationship: "يضع في سياق",
             strength: 0.7,
-            label: "Social context"
+            label: "السياق الاجتماعي"
           }
         ],
         visual: {
@@ -1871,7 +1871,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "advanced",
+          difficulty: "متقدم",
           readingTime: 4,
           popularity: 0.8,
           dateAdded: "2026-01-03"
@@ -1879,9 +1879,9 @@ const quoteData = {
       },
       {
         id: "summary_003_egy",
-        title: "Part Two: Contemporary Modes of Thinking",
-        quote: "Part Two examines current modes of thinking and belief systems with particular emphasis on tribal mentality, Cartesian dualism, Enlightenment's contribution to marginalisation of feminine values, and negative masculine control.",
-        context: "In second half, Miller turns his attention to society at large, examining how perverse thinking has infiltrated our belief systems, educational institutions, and cultural assumptions. He critiques legacy of Cartesian dualism, explores tension between masculine control and feminine values, and challenges both religious and secular fundamentalisms.",
+        title: "الجزء الثاني: أنماط التفكير المعاصرة",
+        quote: "يفحص الجزء الثاني أنماط التفكير الحالية وأنظمة المعتقدات مع التركيز الخاص على العقلية القبلية، والثنائية الديكارتية، ومساهمة عصر التنوير في تهميش القيم الأنثوية، والسيطرة الذكورية السلبية.",
+        context: "في النصف الثاني، يوجه ميلر انتباهه إلى المجتمع ككل، فاحصًا كيف تسرب التفكير المنحرف إلى أنظمة معتقداتنا ومؤسساتنا التعليمية وافتراضاتنا الثقافية. ينتقد إرث الثنائية الديكارتية، ويستكشف التوتر بين السيطرة الذكورية والقيم الأنثوية، ويحدى كلا من الأصولية الدينية والعلمانية.",
         source: {
           work: "The Triumphant Victim: A Psychoanalytical Perspective on Sadomasochism and Perverse Thinking",
           page: null,
@@ -1889,19 +1889,19 @@ const quoteData = {
           chapter: "Part Two",
           year: 2013
         },
-        themes: ["sadomasochism", "post-kleinian"],
+        themes: ["سادية", "ما بعد كلايني"],
         relatedQuotes: [
           {
             id: "summary_001_egy",
-            relationship: "applies",
+            relationship: "يطبق",
             strength: 0.8,
-            label: "Clinical relevance"
+            label: "الصلة السريرية"
           },
           {
             id: "summary_002_egy",
-            relationship: "contextualizes",
+            relationship: "يضع في سياق",
             strength: 0.7,
-            label: "Theoretical background"
+            label: "الخلفية النظرية"
           }
         ],
         visual: {
@@ -1916,7 +1916,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "intermediate",
+          difficulty: "متوسط",
           readingTime: 4,
           popularity: 0.7,
           dateAdded: "2026-01-03"
@@ -1924,9 +1924,9 @@ const quoteData = {
       },
       {
         id: "summary_004_egy",
-        title: "Do You Read Me? - Core Thesis",
-        quote: "Reading and writing are fundamentally about communication of meaning. Miller's contention is that concept of dyslexia is something that has been invented, rather than discovered, in order to evade question of meaning and understanding of individual.",
-        context: "A fascinating and compelling exploration of learning process for parents, teachers, and anyone with an interest in education. Miller contends that when a child has difficulty in learning to read and write, one area that is never seen as having any relevance is child's life experiences. The book examines this as part of a culture in which child-rearing and education are increasingly depersonalising, and children are viewed as assets or commodities rather than as individuals.",
+        title: "هل تقرأني؟ - الأطروحة الأساسية",
+        quote: "القراءة والكتابة تتعلقان أساسًا بتواصل المعنى. يجادل ميلر بأن مفهوم عسر القراءة هو شيء تم اختراعه بدلاً من اكتشافه لتجنب سؤال المعنى وفهم الفرد.",
+        context: "استكشاف رائع ومقنع لعملية التعلم للآباء والمعلمين وأي شخص مهتم بالتعليم. يجادل ميلر بأن عندما يواجه الطفل صعوبة في تعلم القراءة والكتابة، فإن منطقة لا ترى أبدًا ذات صلة هي تجارب حياة الطفل. يفحص الكتاب هذا كجزء من ثقافة أصبح فيها تربية الأطفال والتعليم أكثر فأكثر لا شخصية، ويُنظر إلى الأطفال كأصول أو سلع بدلاً من كأفراد.",
         source: {
           work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
           page: null,
@@ -1934,19 +1934,19 @@ const quoteData = {
           chapter: "Introduction",
           year: 2015
         },
-        themes: ["learning", "education"],
+        themes: ["تعلم", "تعليم"],
         relatedQuotes: [
           {
             id: "summary_005_egy",
-            relationship: "expands",
+            relationship: "يوسع",
             strength: 0.9,
-            label: "Further exploration"
+            label: "استكشاف أعمق"
           },
           {
             id: "summary_006_egy",
-            relationship: "applies",
+            relationship: "يطبق",
             strength: 0.8,
-            label: "Practical application"
+            label: "التطبيق العملي"
           }
         ],
         visual: {
@@ -1961,7 +1961,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "intermediate",
+          difficulty: "متوسط",
           readingTime: 4,
           popularity: 0.9,
           dateAdded: "2026-01-03"
@@ -1969,9 +1969,9 @@ const quoteData = {
       },
       {
         id: "summary_005_egy",
-        title: "Part I: Reading Disability",
-        quote: "Part I examines dyslexia muddle, acronyms and non-science, emotional health and fitness, family matters, secrets and hidden agendas, and function of aggression in healthy development.",
-        context: "Based on 30 years' experience of both educational psychology and analytical therapy, book sets out radical approach to learning difficulties in which primary assumption is that there will usually be underlying emotional conflicts, tensions, and anxieties. Any learning disability is thus more likely to be a symptom of less-evident, personal difficulties, rather than a problem in itself.",
+        title: "الجزء الأول: إعاقة القراءة",
+        quote: "يفحص الجزء الأول فوضى عسر القراءة، والاختصارات وغير العلم، والصحة العاطفية واللياقة البدنية، والمسائل العائلية، والأسرار والم agendas المخفية، ووظيفة العدوان في التطور الصحي.",
+        context: "بناءً على 30 عامًا من الخبرة في علم النفس التربوي والعلاج التحليلي، يحدد الكتاب نهجًا جذريًا لصعوبات التعلم حيث الافتراض الأساسي هو أنه عادة ما يكون هناك صراعات عاطفية وتوترات وقلق كامنة. أي إعاقة تعلم هي بالتالي أكثر احتمالًا أن تكون عرضًا لصعوبات شخصية أقل وضوحًا، بدلاً من مشكلة في حد ذاتها.",
         source: {
           work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
           page: null,
@@ -1979,19 +1979,19 @@ const quoteData = {
           chapter: "Part I: Reading Disability",
           year: 2015
         },
-        themes: ["learning", "emotional"],
+        themes: ["تعلم", "عاطفي"],
         relatedQuotes: [
           {
             id: "summary_004_egy",
-            relationship: "expands",
+            relationship: "يوسع",
             strength: 0.9,
-            label: "Core concept"
+            label: "المفهوم الأساسي"
           },
           {
             id: "summary_006_egy",
-            relationship: "contextualizes",
+            relationship: "يضع في سياق",
             strength: 0.7,
-            label: "Educational context"
+            label: "السياق التعليمي"
           }
         ],
         visual: {
@@ -2006,7 +2006,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "intermediate",
+          difficulty: "متوسط",
           readingTime: 3,
           popularity: 0.8,
           dateAdded: "2026-01-03"
@@ -2014,9 +2014,9 @@ const quoteData = {
       },
       {
         id: "summary_006_egy",
-        title: "Part III: The Education Issue",
-        quote: "Part III explores schooling versus education, asking whether education is liberation or persecution, and examining broader cultural context of how children are treated as assets or commodities rather than as individuals.",
-        context: "The book examines learning difficulties within context of a depersonalising culture where children are viewed as assets or commodities rather than as individuals. Miller provides framework for understanding how underlying emotional conflicts, tensions, and anxieties manifest as learning problems. The work challenges conventional thinking about dyslexia and learning difficulties, arguing that these are often symptoms of deeper emotional issues rather than purely technical problems.",
+        title: "الجزء الثالث: قضية التعليم",
+        quote: "يستكشف الجزء الثالث التعليم المدرسي مقابل التعليم، سائلًا ما إذا كان التعليم تحريرًا أو اضطهادًا، ويفحص السياق الثقافي الأوسع لكيفية معاملة الأطفال كأصول أو سلع بدلاً من كأفراد.",
+        context: "يفحص الكتاب صعوبات التعلم في سياق ثقافة لا شخصية حيث يُنظر إلى الأطفال كأصول أو سلع بدلاً من كأفراد. يوفر ميلر إطارًا لفهم كيف تظهر الصراعات العاطفية والتوترات والقلق الكامنة كمشاكل تعلم. يتحدى العمل التفكير التقليدي حول عسر القراءة وصعوبات التعلم، مجادلًا بأن هذه غالبًا ما تكون أعراضًا لمشاكل عاطفية أعمق بدلاً من مشاكل تقنية بحتة.",
         source: {
           work: "Do You Read Me?: Learning Difficulties, Dyslexia and the Denial of Meaning",
           page: null,
@@ -2024,19 +2024,19 @@ const quoteData = {
           chapter: "Part III: The Education Issue",
           year: 2015
         },
-        themes: ["education", "emotional"],
+        themes: ["تعليم", "عاطفي"],
         relatedQuotes: [
           {
             id: "summary_004_egy",
-            relationship: "applies",
+            relationship: "يطبق",
             strength: 0.8,
-            label: "Theoretical foundation"
+            label: "الأساس النظري"
           },
           {
             id: "summary_005_egy",
-            relationship: "contextualizes",
+            relationship: "يضع في سياق",
             strength: 0.7,
-            label: "Practical context"
+            label: "السياق العملي"
           }
         ],
         visual: {
@@ -2051,7 +2051,7 @@ const quoteData = {
           fixed: false
         },
         metadata: {
-          difficulty: "intermediate",
+          difficulty: "متوسط",
           readingTime: 3,
           popularity: 0.7,
           dateAdded: "2026-01-03"
@@ -3997,6 +3997,8 @@ const uiTextTranslations = {
       3: 'Agree',
       4: 'Strongly Agree'
     },
+    viewBookContents: 'View Book Contents',
+    learnMore: 'Learn More',
     // Additional UI text keys for quiz engine (simple key aliases)
     next: 'Next',
     previous: 'Previous',
@@ -4035,6 +4037,8 @@ const uiTextTranslations = {
       3: 'Stimme zu',
       4: 'Stimme voll zu'
     },
+    viewBookContents: 'Buchinhalt anzeigen',
+    learnMore: 'Mehr erfahren',
     // Additional UI text keys for quiz engine (simple key aliases)
     next: 'Weiter',
     previous: 'Zurück',
