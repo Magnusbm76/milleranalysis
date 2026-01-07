@@ -33,15 +33,28 @@ function getUIText(key) {
 
     // Check if uiTextTranslations is available
     if (typeof uiTextTranslations === 'undefined') {
-        console.warn('[getUIText] uiTextTranslations not available, falling back to English');
+        console.error('[getUIText] uiTextTranslations not available, falling back to key name:', key);
         return key; // Fallback to key name
     }
 
     // Get language-specific translations
     const langText = uiTextTranslations[currentLang] || uiTextTranslations.en;
 
-    // Return the requested key or fallback to English
-    return langText[key] || uiTextTranslations.en[key] || key;
+    // Check if the key exists in the language object
+    if (!langText) {
+        console.error(`[getUIText] Language object not found for: ${currentLang}, falling back to English`);
+        return uiTextTranslations.en[key] || key;
+    }
+
+    // Check if the key exists in the language object
+    if (!langText[key]) {
+        console.error(`[getUIText] Key "${key}" not found in language ${currentLang}, falling back to English`);
+        return uiTextTranslations.en[key] || key;
+    }
+
+    // Return the requested key
+    console.log(`[getUIText] Retrieved "${key}" for language "${currentLang}":`, langText[key]);
+    return langText[key];
 }
 
 /**

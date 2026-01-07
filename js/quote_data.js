@@ -3996,7 +3996,14 @@ const uiTextTranslations = {
       2: 'Neutral',
       3: 'Agree',
       4: 'Strongly Agree'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Next',
+    previous: 'Previous',
+    submit: 'Submit',
+    results: 'Results',
+    score: 'Score',
+    back_to_lobby: 'Back to Lobby'
   },
   de: {
     nextButton: 'Weiter',
@@ -4027,7 +4034,14 @@ const uiTextTranslations = {
       2: 'Neutral',
       3: 'Stimme zu',
       4: 'Stimme voll zu'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Weiter',
+    previous: 'Zurück',
+    submit: 'Absenden',
+    results: 'Ergebnisse',
+    score: 'Punktzahl',
+    back_to_lobby: 'Zurück zum Eingangsbereich'
   },
   egy: {
     nextButton: 'التالي',
@@ -4058,7 +4072,14 @@ const uiTextTranslations = {
       2: 'محايد',
       3: 'أوافق',
       4: 'أوافق بشدة'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'التالي',
+    previous: 'السابق',
+    submit: 'إرسال',
+    results: 'النتائج',
+    score: 'النتيجة',
+    back_to_lobby: 'العودة إلى الردهة'
   },
   el: {
     nextButton: 'Επόμενο',
@@ -4089,7 +4110,14 @@ const uiTextTranslations = {
       2: 'Ουδέτερο',
       3: 'Συμφωνώ',
       4: 'Συμφωνώ έντονα'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Επόμενο',
+    previous: 'Προηγούμενο',
+    submit: 'Υποβολή',
+    results: 'Αποτελέσματα',
+    score: 'Βαθμολογία',
+    back_to_lobby: 'Επιστροφή στο Λόμπι'
   },
   es: {
     nextButton: 'Siguiente',
@@ -4120,7 +4148,14 @@ const uiTextTranslations = {
       2: 'Neutral',
       3: 'De acuerdo',
       4: 'Muy de acuerdo'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Siguiente',
+    previous: 'Anterior',
+    submit: 'Enviar',
+    results: 'Resultados',
+    score: 'Puntuación',
+    back_to_lobby: 'Volver al Vestíbulo'
   },
   fr: {
     nextButton: 'Suivant',
@@ -4151,7 +4186,14 @@ const uiTextTranslations = {
       2: 'Neutre',
       3: 'D\'accord',
       4: 'Fortement d\'accord'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Suivant',
+    previous: 'Précédent',
+    submit: 'Soumettre',
+    results: 'Résultats',
+    score: 'Score',
+    back_to_lobby: 'Retour au Vestibule'
   },
   it: {
     nextButton: 'Successivo',
@@ -4182,7 +4224,14 @@ const uiTextTranslations = {
       2: 'Neutrale',
       3: 'D\'accordo',
       4: 'Fortemente d\'accordo'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Successivo',
+    previous: 'Precedente',
+    submit: 'Invia',
+    results: 'Risultati',
+    score: 'Punteggio',
+    back_to_lobby: 'Torna al Vestibolo'
   },
   ja: {
     nextButton: '次へ',
@@ -4213,7 +4262,14 @@ const uiTextTranslations = {
       2: '中立',
       3: '賛成',
       4: '強く賛成'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: '次へ',
+    previous: '前へ',
+    submit: '送信',
+    results: '結果',
+    score: 'スコア',
+    back_to_lobby: 'ロビーに戻る'
   },
   la: {
     nextButton: 'Sequens',
@@ -4244,7 +4300,14 @@ const uiTextTranslations = {
       2: 'Neutrum',
       3: 'Consenio',
       4: 'Fortiter consentio'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Sequens',
+    previous: 'Anterior',
+    submit: 'Mitte',
+    results: 'Resultata',
+    score: 'Punctuatio',
+    back_to_lobby: 'Redite ad Vestibulum'
   },
   nl: {
     nextButton: 'Volgende',
@@ -4275,7 +4338,14 @@ const uiTextTranslations = {
       2: 'Neutraal',
       3: 'Mee eens',
       4: 'Helemaal mee eens'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Volgende',
+    previous: 'Vorige',
+    submit: 'Indienen',
+    results: 'Resultaten',
+    score: 'Score',
+    back_to_lobby: 'Terug naar Lobby'
   },
   no: {
     nextButton: 'Neste',
@@ -4306,7 +4376,14 @@ const uiTextTranslations = {
       2: 'Nøytral',
       3: 'Enig',
       4: 'Helt enig'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Neste',
+    previous: 'Forrige',
+    submit: 'Send',
+    results: 'Resultater',
+    score: 'Poengsum',
+    back_to_lobby: 'Tilbake til Lobby'
   },
   pl: {
     nextButton: 'Następny',
@@ -4337,7 +4414,14 @@ const uiTextTranslations = {
       2: 'Neutralny',
       3: 'Zgadzam',
       4: 'Zdecydowanie się zgadzam'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Dalej',
+    previous: 'Wstecz',
+    submit: 'Wyślij',
+    results: 'Wyniki',
+    score: 'Wynik',
+    back_to_lobby: 'Powrót do lobby'
   },
   pt: {
     nextButton: 'Próximo',
@@ -4368,7 +4452,14 @@ const uiTextTranslations = {
       2: 'Neutro',
       3: 'Concordo',
       4: 'Concordo totalmente'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: 'Próximo',
+    previous: 'Anterior',
+    submit: 'Enviar',
+    results: 'Resultados',
+    score: 'Pontuação',
+    back_to_lobby: 'Voltar ao Vestíbulo'
   },
   zh: {
     nextButton: '下一题',
@@ -4399,7 +4490,14 @@ const uiTextTranslations = {
       2: '中立',
       3: '同意',
       4: '强烈同意'
-    }
+    },
+    // Additional UI text keys for quiz engine (simple key aliases)
+    next: '下一题',
+    previous: '上一题',
+    submit: '提交',
+    results: '结果',
+    score: '分数',
+    back_to_lobby: '返回大厅'
   }
 };
 
