@@ -1539,165 +1539,24 @@ function renderQuizInterface() {
     const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
     const scaleMax = isSocialSymptomQuiz ? 4 : 3; // 0-4 for social symptom, 0-3 for others
 
-    // Localized UI text
+    // Localized UI text - dynamically mapped from uiTextTranslations
     const uiText = {
-        questionLabel: {
-            'en': 'Question',
-            'fr': 'Question',
-            'es': 'Pregunta',
-            'no': 'Spørsmål',
-            'pl': 'Pytanie',
-            'la': 'Quaestio',
-            'egy': 'سؤال',
-            'zh': '问题'
-        }[currentLang] || 'Question',
-        ofLabel: {
-            'en': 'of',
-            'fr': 'sur',
-            'es': 'de',
-            'no': 'av',
-            'pl': 'z',
-            'la': 'de',
-            'egy': 'من',
-            'zh': '共'
-        }[currentLang] || 'of',
-        previousBtn: {
-            'en': 'Previous',
-            'fr': 'Précédent',
-            'es': 'Anterior',
-            'no': 'Forrige',
-            'pl': 'Poprzedni',
-            'la': 'Anterior',
-            'egy': 'السابق',
-            'zh': '上一题'
-        }[currentLang] || 'Previous',
-        nextBtn: {
-            'en': 'Next',
-            'fr': 'Suivant',
-            'es': 'Siguiente',
-            'no': 'Neste',
-            'pl': 'Następny',
-            'la': 'Sequens',
-            'egy': 'التالي',
-            'zh': '下一题'
-        }[currentLang] || 'Next',
-        submitBtn: {
-            'en': 'Submit Assessment',
-            'fr': 'Soumettre l\'évaluation',
-            'es': 'Enviar evaluación',
-            'no': 'Send inn vurdering',
-            'pl': 'Wyślij ocenę',
-            'la': 'Mitte aestimationem',
-            'egy': 'إرسال التقييم',
-            'zh': '提交评估'
-        }[currentLang] || 'Submit',
-        retakeBtn: {
-            'en': 'Retake Assessment',
-            'fr': 'Refaire l\'évaluation',
-            'es': 'Repetir evaluación',
-            'no': 'Ta vurdering på nytt',
-            'pl': 'Ponów ocenę',
-            'la': 'Iterum aestimationem',
-            'egy': 'إعادة التقييم',
-            'zh': '重新评估'
-        }[currentLang] || 'Retake',
-        scoreLabel: {
-            'en': 'Your Score',
-            'fr': 'Votre Score',
-            'es': 'Su Puntuación',
-            'no': 'Din Poengsum',
-            'pl': 'Twój Wynik',
-            'la': 'Tua Punctuatio',
-            'egy': 'نتيجتك',
-            'zh': '你的分数'
-        }[currentLang] || 'Your Score',
-        resultLabel: {
-            'en': 'Your Result',
-            'fr': 'Votre Résultat',
-            'es': 'Tu Resultado',
-            'no': 'Ditt Resultat',
-            'pl': 'Twój Wynik',
-            'la': 'Tuum Resultatum',
-            'egy': 'نتيجتك',
-            'zh': '你的结果'
-        }[currentLang] || 'Your Result',
-        exitBtn: {
-            'en': 'Exit',
-            'fr': 'Sortir',
-            'es': 'Salir',
-            'no': 'Avslutt',
-            'pl': 'Wyjdź',
-            'la': 'Exeunde',
-            'egy': 'خروج',
-            'zh': '退出'
-        }[currentLang] || 'Exit'
+        questionLabel: getUIText('questionLabel'),
+        ofLabel: getUIText('ofLabel'),
+        previousBtn: getUIText('previousButton'),
+        nextBtn: getUIText('nextButton'),
+        submitBtn: getUIText('submitButton'),
+        retakeBtn: getUIText('retakeButton'),
+        scoreLabel: getUIText('scoreLabel'),
+        resultLabel: getUIText('resultsTitle'),
+        exitBtn: getUIText('exitButton')
     };
 
-    // Generate scale labels
+    // Generate scale labels - dynamically mapped from uiTextTranslations
+    const scaleLabelsObj = getScaleLabels();
     const scaleLabels = [];
     for (let i = 0; i <= scaleMax; i++) {
-        const label = {
-            0: {
-                'en': 'Strongly Disagree',
-                'fr': 'Fortement en désaccord',
-                'es': 'Muy en desacuerdo',
-                'no': 'Helt uenig',
-                'pl': 'Zdecydowanie się nie zgadzam',
-                'la': 'Fortiter dissentio',
-                'egy': 'لا أوافق بشدة',
-                'zh': '强烈不同意'
-            },
-            1: {
-                'en': 'Disagree',
-                'fr': 'En désaccord',
-                'es': 'En desacuerdo',
-                'no': 'Uenig',
-                'pl': 'Nie zgadzam',
-                'la': 'Dissentio',
-                'egy': 'لا أوافق',
-                'zh': '不同意'
-            },
-            2: {
-                'en': 'Neutral',
-                'fr': 'Neutre',
-                'es': 'Neutral',
-                'no': 'Nøytral',
-                'pl': 'Neutralny',
-                'la': 'Neutrum',
-                'egy': 'محايد',
-                'zh': '中立'
-            },
-            3: {
-                'en': 'Agree',
-                'fr': 'D\'accord',
-                'es': 'De acuerdo',
-                'no': 'Enig',
-                'pl': 'Zgadzam',
-                'la': 'Consenio',
-                'egy': 'أوافق',
-                'zh': '同意'
-            },
-            4: {
-                'en': 'Strongly Agree',
-                'fr': 'Fortement d\'accord',
-                'es': 'Muy de acuerdo',
-                'no': 'Helt enig',
-                'pl': 'Zdecydowanie się zgadzam',
-                'la': 'Fortiter consentio',
-                'egy': 'أوافق بشدة',
-                'zh': '强烈同意'
-            }
-        }[i] || {
-            'en': `${i}`,
-            'fr': `${i}`,
-            'es': `${i}`,
-            'no': `${i}`,
-            'pl': `${i}`,
-            'la': `${i}`,
-            'egy': `${i}`,
-            'zh': `${i}`
-        };
-        scaleLabels.push(label[currentLang] || label['en']);
+        scaleLabels.push(scaleLabelsObj[i] || `${i}`);
     }
 
     // Render quiz interface
@@ -1866,16 +1725,7 @@ function clearQuizButtonState() {
  */
 function showAnswerRequiredWarning() {
     const currentLang = document.documentElement.lang || 'en';
-    const warningText = {
-        'en': 'Please select an answer before proceeding.',
-        'fr': 'Veuillez sélectionner une réponse avant de continuer.',
-        'es': 'Por favor seleccione una respuesta antes de continuar.',
-        'no': 'Vennligst velg et svar før du fortsetter.',
-        'pl': 'Proszę wybrać odpowiedź przed przejściem dalej.',
-        'la': 'Quaeso roga responsum priusquam pergas.',
-        'egy': 'يرجى تحديد إجابة قبل المتابعة.',
-        'zh': '请选择答案后再继续。'
-    }[currentLang] || 'Please select an answer before proceeding.';
+    const warningText = getUIText('answerRequiredWarning') || 'Please select an answer before proceeding.';
 
     alert(warningText);
 }
@@ -1919,65 +1769,13 @@ function goToQuestion(questionIndex) {
         const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
         const scaleMax = isSocialSymptomQuiz ? 4 : 3;
 
-        const currentLang = document.documentElement.lang || 'en';
-        const scaleLabels = {
-            0: {
-                'en': 'Strongly Disagree',
-                'fr': 'Fortement en désaccord',
-                'es': 'Muy en desacuerdo',
-                'no': 'Helt uenig',
-                'pl': 'Zdecydowanie się nie zgadzam',
-                'la': 'Fortiter dissentio',
-                'egy': 'لا أوافق بشدة',
-                'zh': '强烈不同意'
-            },
-            1: {
-                'en': 'Disagree',
-                'fr': 'En désaccord',
-                'es': 'En desacuerdo',
-                'no': 'Uenig',
-                'pl': 'Nie zgadzam',
-                'la': 'Dissentio',
-                'egy': 'لا أوافق',
-                'zh': '不同意'
-            },
-            2: {
-                'en': 'Neutral',
-                'fr': 'Neutre',
-                'es': 'Neutral',
-                'no': 'Nøytral',
-                'pl': 'Neutralny',
-                'la': 'Neutrum',
-                'egy': 'محايد',
-                'zh': '中立'
-            },
-            3: {
-                'en': 'Agree',
-                'fr': 'D\'accord',
-                'es': 'De acuerdo',
-                'no': 'Enig',
-                'pl': 'Zgadzam',
-                'la': 'Consenio',
-                'egy': 'أوافق',
-                'zh': '同意'
-            },
-            4: {
-                'en': 'Strongly Agree',
-                'fr': 'Fortement d\'accord',
-                'es': 'Muy de acuerdo',
-                'no': 'Helt enig',
-                'pl': 'Zdecydowanie się zgadzam',
-                'la': 'Fortiter consentio',
-                'egy': 'أوافق بشدة',
-                'zh': '强烈同意'
-            }
-        };
+        const scaleLabelsObj = getScaleLabels();
 
         // Clear existing button state before regeneration
         clearQuizButtonState();
 
         scaleContainer.innerHTML = generateScaleHTML(questionIndex, scaleMax,
-            scaleLabels.map(l => l[currentLang] || l['en']));
+            scaleLabelsObj);
 
         // Restore selected state after innerHTML replacement
         const currentAnswer = quizState.answers[questionIndex];
@@ -1998,32 +1796,9 @@ function goToQuestion(questionIndex) {
     }
 
     if (nextBtn) {
-        const uiText = {
-            nextBtn: {
-                'en': 'Next',
-                'fr': 'Suivant',
-                'es': 'Siguiente',
-                'no': 'Neste',
-                'pl': 'Następny',
-                'la': 'Sequens',
-                'egy': 'التالي',
-                'zh': '下一题'
-            },
-            submitBtn: {
-                'en': 'Submit Assessment',
-                'fr': 'Soumettre l\'évaluation',
-                'es': 'Enviar evaluación',
-                'no': 'Send inn vurdering',
-                'pl': 'Wyślij ocenę',
-                'la': 'Mitte aestimationem',
-                'egy': 'إرسال التقييم',
-                'zh': '提交评估'
-            }
-        };
-
         const buttonText = questionIndex === numQuestions - 1
-            ? uiText.submitBtn[currentLang] || 'Submit Assessment'
-            : uiText.nextBtn[currentLang] || 'Next';
+            ? getUIText('submitButton')
+            : getUIText('nextButton');
 
         nextBtn.textContent = buttonText;
     }
@@ -2110,48 +1885,12 @@ function renderQuizResults(totalScore, result, localizedContent) {
     const currentLang = document.documentElement.lang || 'en';
     const isRTL = currentLang === 'ar-EG';
 
-    // Localized UI text
+    // Localized UI text - dynamically mapped from uiTextTranslations
     const uiText = {
-        scoreLabel: {
-            'en': 'Your Score',
-            'fr': 'Votre Score',
-            'es': 'Su Puntuación',
-            'no': 'Din Poengsum',
-            'pl': 'Twój Wynik',
-            'la': 'Tua Punctuatio',
-            'egy': 'نتيجتك',
-            'zh': '你的分数'
-        }[currentLang] || 'Your Score',
-        resultLabel: {
-            'en': 'Your Result',
-            'fr': 'Votre Résultat',
-            'es': 'Tu Resultado',
-            'no': 'Ditt Resultat',
-            'pl': 'Twój Wynik',
-            'la': 'Tuum Resultatum',
-            'egy': 'نتيجتك',
-            'zh': '你的结果'
-        }[currentLang] || 'Your Result',
-        retakeBtn: {
-            'en': 'Retake Assessment',
-            'fr': 'Refaire l\'évaluation',
-            'es': 'Repetir evaluación',
-            'no': 'Ta vurdering på nytt',
-            'pl': 'Ponów ocenę',
-            'la': 'Iterum aestimationem',
-            'egy': 'إعادة التقييم',
-            'zh': '重新评估'
-        }[currentLang] || 'Retake',
-        returnToLobbyBtn: {
-            'en': 'Return to Lobby',
-            'fr': 'Retour au Vestibule',
-            'es': 'Volver al Vestíbulo',
-            'no': 'Tilbake til Lobby',
-            'pl': 'Powrót do Hallu',
-            'la': 'Redite ad Vestibulum',
-            'egy': 'العودة إلى الردهة',
-            'zh': '返回大厅'
-        }[currentLang] || 'Return to Lobby'
+        scoreLabel: getUIText('scoreLabel'),
+        resultLabel: getUIText('resultsTitle'),
+        retakeBtn: getUIText('retakeButton'),
+        returnToLobbyBtn: getUIText('returnToLobbyButton')
     };
 
     // Render results
@@ -2220,16 +1959,7 @@ function showQuizError() {
     }
 
     const currentLang = document.documentElement.lang || 'en';
-    const errorText = {
-        'en': 'An error occurred while loading the quiz. Please try again later.',
-        'fr': 'Une erreur s\'est produite lors du chargement du quiz. Veuillez réessayer plus tard.',
-        'es': 'Ocurrió un error al cargar el cuestionario. Por favor, inténtelo de nuevo más tarde.',
-        'no': 'Det oppstod en feil ved lasting av spørsmålet. Vennligst prøv igjen senere.',
-        'pl': 'Wystąpił błąd podczas ładowania quizu. Proszę spróbuj ponownie później.',
-        'la': 'Errore factum est dum quaestio onerabatur. Quaeso conare iterum postea.',
-        'egy': 'حدث خطأ أثناء تحميل الاختبار. يرجى المحاولة مرة أخرى لاحقًا.',
-        'zh': '加载测验时发生错误。请稍后再试。'
-    }[currentLang] || 'An error occurred while loading the quiz. Please try again later.';
+    const errorText = getUIText('quizLoadError') || 'An error occurred while loading the quiz. Please try again later.';
 
     const errorHTML = `
         <div class="quiz-error">
