@@ -1,0 +1,199 @@
+{
+    "quizId": "quiz_analyst_dilemma",
+    "title": "Analyst Dilemma Assessment",
+    "description": "Evaluate your understanding of analytical challenges, decision-making dilemmas, and professional judgment in clinical practice.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is the 'dual relationship' dilemma in clinical practice?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "When a clinician has multiple roles with a client beyond the therapeutic relationship"
+                },
+                {
+                    "id": "b",
+                    "text": "When two clients are in a relationship with each other"
+                },
+                {
+                    "id": "c",
+                    "text": "When a clinician works with two different supervisors"
+                },
+                {
+                    "id": "d",
+                    "text": "When a client has two separate diagnoses"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Dual relationships occur when clinicians engage in additional roles with clients (such as friend, business partner, or family member), which can compromise professional boundaries, objectivity, and therapeutic effectiveness."
+        },
+        {
+            "id": 2,
+            "question": "In clinical decision-making, what is 'confirmation bias'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The tendency to seek information that confirms pre-existing beliefs"
+                },
+                {
+                    "id": "b",
+                    "text": "The practice of confirming diagnoses with multiple sources"
+                },
+                {
+                    "id": "c",
+                    "text": "The bias toward confirming treatment effectiveness"
+                },
+                {
+                    "id": "d",
+                    "text": "The tendency to confirm client statements without question"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Confirmation bias is a cognitive bias where individuals favor information that confirms their existing beliefs or hypotheses while discounting contradictory evidence, potentially leading to diagnostic errors in clinical practice."
+        },
+        {
+            "id": 3,
+            "question": "What is the 'duty to warn' versus 'duty to protect' distinction?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Duty to warn is informing potential victims; duty to protect includes broader interventions"
+                },
+                {
+                    "id": "b",
+                    "text": "Duty to warn applies to self-harm; duty to protect applies to harm to others"
+                },
+                {
+                    "id": "c",
+                    "text": "Duty to warn is legal; duty to protect is ethical"
+                },
+                {
+                    "id": "d",
+                    "text": "Duty to warn is for therapists; duty to protect is for physicians"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Duty to warn specifically requires informing identifiable potential victims of threats, while duty to protect encompasses a broader range of actions including hospitalization, medication, and other interventions to prevent harm."
+        },
+        {
+            "id": 4,
+            "question": "What is 'therapeutic nihilism'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The belief that treatment is futile or ineffective for certain conditions"
+                },
+                {
+                    "id": "b",
+                    "text": "The rejection of all therapeutic interventions"
+                },
+                {
+                    "id": "c",
+                    "text": "The philosophical position that suffering has meaning"
+                },
+                {
+                    "id": "d",
+                    "text": "The practice of minimal intervention in therapy"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Therapeutic nihilism refers to the pessimistic belief that certain conditions cannot be effectively treated, which can lead to premature disengagement from treatment and failure to explore potentially beneficial interventions."
+        },
+        {
+            "id": 5,
+            "question": "In clinical assessment, what is 'base rate neglect'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Ignoring the prevalence of a condition in the general population when making diagnoses"
+                },
+                {
+                    "id": "b",
+                    "text": "Failing to assess the basic functioning of a client"
+                },
+                {
+                    "id": "c",
+                    "text": "Neglecting to establish a baseline for treatment"
+                },
+                {
+                    "id": "d",
+                    "text": "Overlooking the foundational theories of psychology"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Base rate neglect is a cognitive error where clinicians disregard the actual prevalence of a condition (base rate) and instead rely on specific case details, leading to over-diagnosis of rare conditions and under-diagnosis of common ones."
+        },
+        {
+            "id": 6,
+            "question": "What is the 'imposter phenomenon' in professional development?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Persistent self-doubt despite evidence of competence and achievement"
+                },
+                {
+                    "id": "b",
+                    "text": "The tendency to impersonate other professionals"
+                },
+                {
+                    "id": "c",
+                    "text": "A deliberate strategy to appear more experienced than one is"
+                },
+                {
+                    "id": "d",
+                    "text": "The phenomenon of clients pretending to have symptoms"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "The imposter phenomenon (or imposter syndrome) describes high-achieving individuals who are unable to internalize their accomplishments and have a persistent fear of being exposed as a fraud, despite objective evidence of their competence."
+        },
+        {
+            "id": 7,
+            "question": "What is 'diagnostic overshadowing'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Attributing physical symptoms to mental illness without proper investigation"
+                },
+                {
+                    "id": "b",
+                    "text": "Making multiple diagnoses to explain all symptoms"
+                },
+                {
+                    "id": "c",
+                    "text": "Allowing one diagnosis to overshadow others in treatment planning"
+                },
+                {
+                    "id": "d",
+                    "text": "The tendency to diagnose based on first impressions only"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Diagnostic overshadowing occurs when physical symptoms or complaints in individuals with mental illness are incorrectly attributed to their psychiatric condition, leading to missed diagnoses and inadequate medical care."
+        },
+        {
+            "id": 8,
+            "question": "In ethical decision-making, what is the 'principle of double effect'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "An action with both good and bad effects may be permissible under certain conditions"
+                },
+                {
+                    "id": "b",
+                    "text": "The requirement to consider both sides of an ethical dilemma"
+                },
+                {
+                    "id": "c",
+                    "text": "The prohibition against actions with harmful consequences"
+                },
+                {
+                    "id": "d",
+                    "text": "The obligation to double-check all clinical decisions"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "The principle of double effect provides ethical justification for actions that have both good and bad effects, requiring that the action itself is good or neutral, the bad effect is not intended, and the good effect outweighs the bad effect."
+        }
+    ]
+}

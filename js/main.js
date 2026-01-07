@@ -1,5 +1,69 @@
 // Import quote data from the newly created js/quote_data.js file
-// This will be loaded as a script tag in index.html, so quoteData is available globally
+// This will be loaded as a script tag in index.html, so quoteData and uiTextTranslations are available globally
+
+/**
+ * Detects the current language from the URL path
+ * @returns {string} - Language code (e.g., 'en', 'es', 'de', etc.)
+ */
+function detectLanguageFromPath() {
+    const pathname = window.location.pathname;
+    // Match language folder pattern: /en/, /es/, /de/, etc.
+    const langMatch = pathname.match(/^\/([a-z]{2,3})\//i);
+
+    if (langMatch) {
+        const detectedLang = langMatch[1].toLowerCase();
+        console.log(`[Language Detection] Detected language from path: ${detectedLang}`);
+        return detectedLang;
+    }
+
+    // Fallback to document language attribute
+    const docLang = document.documentElement.lang || 'en';
+    const langCode = docLang.substring(0, 2).toLowerCase();
+    console.log(`[Language Detection] Fallback to document language: ${langCode}`);
+    return langCode;
+}
+
+/**
+ * Gets UI text for the current language
+ * @param {string} key - The UI text key to retrieve
+ * @returns {string} - Localized text for the key
+ */
+function getUIText(key) {
+    const currentLang = detectLanguageFromPath();
+
+    // Check if uiTextTranslations is available
+    if (typeof uiTextTranslations === 'undefined') {
+        console.warn('[getUIText] uiTextTranslations not available, falling back to English');
+        return key; // Fallback to key name
+    }
+
+    // Get language-specific translations
+    const langText = uiTextTranslations[currentLang] || uiTextTranslations.en;
+
+    // Return the requested key or fallback to English
+    return langText[key] || uiTextTranslations.en[key] || key;
+}
+
+/**
+ * Gets scale labels for the current language
+ * @returns {Object} - Scale labels object with localized labels
+ */
+function getScaleLabels() {
+    const currentLang = detectLanguageFromPath();
+
+    if (typeof uiTextTranslations === 'undefined') {
+        return {
+            0: 'Strongly Disagree',
+            1: 'Disagree',
+            2: 'Neutral',
+            3: 'Agree',
+            4: 'Strongly Agree'
+        };
+    }
+
+    const langText = uiTextTranslations[currentLang] || uiTextTranslations.en;
+    return langText.scaleLabels || uiTextTranslations.en.scaleLabels;
+}
 
 // --- PAGINATION STATE ---
 const QUOTES_PER_PAGE = 3;
@@ -1318,19 +1382,7 @@ async function renderInitialScreen(quizList) {
         const localizedContent = getLocalizedContent(firstQuizData);
 
         // Localized text based on language
-        const currentLang = document.documentElement.lang || 'en';
-        const localizedText = {
-            startButton: {
-                'en': 'Start Assessment',
-                'fr': 'Commencer l\'évaluation',
-                'es': 'Comenzar evaluación',
-                'no': 'Start vurdering',
-                'pl': 'Rozpocznij ocenę',
-                'la': 'Incepta aestimationem',
-                'zh': '开始评估',
-                'egy': 'ابدأ التقييم'
-            }[currentLang] || 'Start Assessment'
-        };
+        const startButtonText = getUIText('startButton');
 
         // Create the assessment content container
         const assessmentContainer = document.createElement('div');
@@ -1352,7 +1404,7 @@ async function renderInitialScreen(quizList) {
                 </div>
                 <div class="mt-6 text-center">
                     <button id="startAssessmentBtn" class="px-8 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                        ${localizedText.startButton}
+                        ${startButtonText}
                     </button>
                 </div>
             </div>
@@ -1382,35 +1434,14 @@ async function renderInitialScreen(quizList) {
         // Display an error message to the user
         const assessmentsSection = document.getElementById('assessments');
         if (assessmentsSection) {
-            const currentLang = document.documentElement.lang || 'en';
-            const localizedText = {
-                errorTitle: {
-                    'en': 'Unable to Load Assessment',
-                    'fr': 'Impossible de charger l\'évaluation',
-                    'es': 'No se puede cargar la evaluación',
-                    'no': 'Kan ikke laste vurdering',
-                    'pl': 'Nie można załadować oceny',
-                    'la': 'Aestimatio non potest onerari',
-                    'zh': '无法加载评估',
-                    'egy': 'غير قادر على تحميل التقييم'
-                }[currentLang] || 'Unable to Load Assessment',
-                errorMessage: {
-                    'en': 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.',
-                    'fr': 'Nous sommes désolés, mais l\'évaluation n\'a pas pu être chargée pour le moment. Veuillez réessayer plus tard.',
-                    'es': 'Lo sentimos, pero la evaluación no se pudo cargar en este momento. Por favor, inténtelo de nuevo más tarde.',
-                    'no': 'Vi er lei oss, men vurderingen kunne ikke lastes inn på dette tidspunktet. Vennligst prøv igjen senere.',
-                    'pl': 'Przykro namy, ale ocena nie mogła zostać załadowana w tym czasie. Spróbuj ponownie później.',
-                    'la': 'Dolemus, sed aestimatio non potest onerari hoc tempore. Quaeso conare iterum postea.',
-                    'zh': '很抱歉，评估目前无法加载。请稍后再试。',
-                    'egy': 'نحن آسفون ، ولكن لا يمكن تحميل التقييم في هذا الوقت. يرجى المحاولة مرة أخرى لاحقاً.'
-                }[currentLang] || 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.'
-            };
+            const errorTitle = getUIText('errorTitle');
+            const errorMessage = getUIText('errorMessage');
 
             const errorContainer = document.createElement('div');
             errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
             errorContainer.innerHTML = `
-                <h3 class="text-xl font-bold text-red-800 mb-2">${localizedText.errorTitle}</h3>
-                <p class="text-red-700">${localizedText.errorMessage}</p>
+                <h3 class="text-xl font-bold text-red-800 mb-2">${errorTitle}</h3>
+                <p class="text-red-700">${errorMessage}</p>
             `;
             assessmentsSection.appendChild(errorContainer);
         }
@@ -1674,7 +1705,7 @@ function renderQuizInterface() {
         <div class="quiz-interface ${isRTL ? 'rtl' : ''}">
             <!-- Header with Exit Button -->
             <div class="quiz-header">
-                <button id="quizExitBtn" class="btn-quiz-exit" aria-label="Exit quiz and return to assessment lobby">
+                <button id="quizExitBtn" class="btn-quiz-exit" aria-label="${uiText.exitBtn}">
                     ${uiText.exitBtn}
                 </button>
             </div>
@@ -2341,28 +2372,10 @@ async function renderQuizLobby() {
         );
 
         // Localized lobby title
-        const lobbyTitle = {
-            'en': 'Select Assessment',
-            'fr': 'Sélectionnez votre évaluation',
-            'es': 'Seleccione su evaluación',
-            'no': 'Velg din vurdering',
-            'pl': 'Wybierz swoją ocenę',
-            'la': 'Elige tuam aestimationem',
-            'egy': 'اختيار التقييم',
-            'zh': '选择评估'
-        }[currentLang] || 'Select Assessment';
+        const lobbyTitle = getUIText('selectAssessment');
 
         // Localized start button text
-        const startButtonText = {
-            'en': 'Start',
-            'fr': 'Commencer',
-            'es': 'Comenzar',
-            'no': 'Start',
-            'pl': 'Rozpocznij',
-            'la': 'Incepta',
-            'egy': 'ابدأ',
-            'zh': '开始'
-        }[currentLang] || 'Start';
+        const startButtonText = getUIText('startButton');
 
         // Generate lobby HTML
         const lobbyHTML = `
@@ -2400,17 +2413,7 @@ async function renderQuizLobby() {
         // Display error message
         const assessmentsSection = document.getElementById('assessments');
         if (assessmentsSection) {
-            const currentLang = document.documentElement.lang || 'en';
-            const errorText = {
-                'en': 'Failed to load assessments. Please try again later.',
-                'fr': 'Échec du chargement des évaluations. Veuillez réessayer plus tard.',
-                'es': 'Error al cargar evaluaciones. Por favor, inténtelo de nuevo más tarde.',
-                'no': 'Kunne ikke laste vurderinger. Vennligst prøv igjen senere.',
-                'pl': 'Nie udało się załadować ocen. Proszę spróbować ponownie później.',
-                'la': 'Aestimationes onerari non potuerunt. Quaeso conare iterum postea.',
-                'egy': 'فشل تحميل التقييمات. يرجى المحاولة مرة أخرى لاحقًا.',
-                'zh': '加载评估失败。请稍后再试。'
-            }[currentLang] || 'Failed to load assessments. Please try again later.';
+            const errorText = getUIText('lobbyErrorMessage');
 
             const errorContainer = document.createElement('div');
             errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
@@ -2505,7 +2508,8 @@ async function startQuiz(quizFileName) {
 
     } catch (error) {
         console.error('[startQuiz] Error starting quiz:', error);
-        alert(error);
+        const errorMessage = getUIText('errorMessage') || 'An error occurred. Please try again.';
+        alert(errorMessage);
     }
 }
 

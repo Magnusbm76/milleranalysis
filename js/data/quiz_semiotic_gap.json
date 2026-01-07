@@ -1,0 +1,199 @@
+{
+    "quizId": "quiz_semiotic_gap",
+    "title": "Semiotic Gap Assessment",
+    "description": "Test your understanding of semiotics, meaning gaps, and interpretation challenges in communication.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is the 'semiotic gap' in communication theory?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The disconnect between intended meaning and interpreted meaning"
+                },
+                {
+                    "id": "b",
+                    "text": "The physical distance between communicators"
+                },
+                {
+                    "id": "c",
+                    "text": "The time delay in message transmission"
+                },
+                {
+                    "id": "d",
+                    "text": "The difference between spoken and written language"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "The semiotic gap refers to the inevitable difference between what a speaker intends to communicate and what the listener actually understands, due to differences in cultural, personal, and contextual frameworks."
+        },
+        {
+            "id": 2,
+            "question": "In semiotics, what is the 'signifier'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The form that a sign takes (sound, image, word)"
+                },
+                {
+                    "id": "b",
+                    "text": "The concept or meaning represented by the sign"
+                },
+                {
+                    "id": "c",
+                    "text": "The object being referred to in reality"
+                },
+                {
+                    "id": "d",
+                    "text": "The relationship between sign and object"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "The signifier is the physical form of a sign (such as a sound, written word, or image), while the signified is the mental concept it represents. This distinction comes from Saussure's structural linguistics."
+        },
+        {
+            "id": 3,
+            "question": "What does 'polysemy' refer to in semiotic analysis?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The capacity of a sign to have multiple meanings"
+                },
+                {
+                    "id": "b",
+                    "text": "The use of multiple signs to convey one meaning"
+                },
+                {
+                    "id": "c",
+                    "text": "The absence of meaning in communication"
+                },
+                {
+                    "id": "d",
+                    "text": "The universal understanding of symbols"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Polysemy describes how a single sign, word, or image can carry multiple possible meanings depending on context, cultural background, and individual interpretation."
+        },
+        {
+            "id": 4,
+            "question": "Which concept describes the process where meaning is never fixed but constantly negotiated?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Intertextuality"
+                },
+                {
+                    "id": "b",
+                    "text": "Monosemy"
+                },
+                {
+                    "id": "c",
+                    "text": "Denotation"
+                },
+                {
+                    "id": "d",
+                    "text": "Iconicity"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Intertextuality refers to how texts and meanings are shaped by and reference other texts, creating a web of meanings that are never static but constantly reinterpreted through cultural and personal lenses."
+        },
+        {
+            "id": 5,
+            "question": "What is 'denotation' versus 'connotation' in semiotics?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Denotation is literal meaning; connotation is cultural and emotional association"
+                },
+                {
+                    "id": "b",
+                    "text": "Denotation is emotional meaning; connotation is literal meaning"
+                },
+                {
+                    "id": "c",
+                    "text": "Denotation is written text; connotation is spoken word"
+                },
+                {
+                    "id": "d",
+                    "text": "Denotation is visual; connotation is auditory"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Denotation refers to the explicit, literal meaning of a sign (dictionary definition), while connotation encompasses the cultural, emotional, and associative meanings that accumulate around a sign over time."
+        },
+        {
+            "id": 6,
+            "question": "What is the 'hermeneutic circle' in interpretation theory?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The reciprocal relationship between understanding parts and the whole"
+                },
+                {
+                    "id": "b",
+                    "text": "A circular argument that never reaches conclusion"
+                },
+                {
+                    "id": "c",
+                    "text": "The process of translating between languages"
+                },
+                {
+                    "id": "d",
+                    "text": "A method for decoding secret messages"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "The hermeneutic circle describes how understanding any text or phenomenon requires moving back and forth between comprehending its parts and grasping it as a whole—each informs and transforms the other."
+        },
+        {
+            "id": 7,
+            "question": "In clinical communication, what is 'semantic noise'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Interference caused by differences in language, vocabulary, or meaning"
+                },
+                {
+                    "id": "b",
+                    "text": "Physical background noise during conversation"
+                },
+                {
+                    "id": "c",
+                    "text": "Psychological resistance to treatment"
+                },
+                {
+                    "id": "d",
+                    "text": "Technical difficulties in communication devices"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Semantic noise refers to interference in communication that arises from differences in the meaning systems of the communicators, including language barriers, jargon, cultural references, or different conceptual frameworks."
+        },
+        {
+            "id": 8,
+            "question": "What is 'pragmatic failure' in cross-cultural communication?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Inability to achieve intended communicative goals despite linguistic accuracy"
+                },
+                {
+                    "id": "b",
+                    "text": "Failure to use correct grammar and vocabulary"
+                },
+                {
+                    "id": "c",
+                    "text": "Physical inability to speak or hear"
+                },
+                {
+                    "id": "d",
+                    "text": "Deliberate refusal to communicate"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Pragmatic failure occurs when speakers use language correctly in terms of grammar and vocabulary but fail to achieve their communicative goals due to cultural differences in norms, expectations, and social conventions."
+        }
+    ]
+}

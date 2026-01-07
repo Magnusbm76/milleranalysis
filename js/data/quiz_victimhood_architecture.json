@@ -1,0 +1,199 @@
+{
+    "quizId": "quiz_victimhood_architecture",
+    "title": "Victimhood Architecture Assessment",
+    "description": "Test your understanding of victimhood constructs, psychological patterns, and the architecture of victim narratives.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is 'victimhood culture' in sociological terms?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A cultural framework where moral status is derived from perceived victimization"
+                },
+                {
+                    "id": "b",
+                    "text": "The study of historical victims and their experiences"
+                },
+                {
+                    "id": "c",
+                    "text": "A therapeutic approach for trauma survivors"
+                },
+                {
+                    "id": "d",
+                    "text": "The celebration of overcoming adversity"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Victimhood culture, as described by sociologists Campbell and Manning, is a moral culture where individuals compete for status by highlighting their victimization and oppression, contrasting with honor and dignity cultures."
+        },
+        {
+            "id": 2,
+            "question": "What is 'secondary gain' in the context of victimhood narratives?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Unconscious benefits derived from maintaining a victim identity"
+                },
+                {
+                    "id": "b",
+                    "text": "Financial compensation received by victims of crime"
+                },
+                {
+                    "id": "c",
+                    "text": "The support provided by secondary caregivers"
+                },
+                {
+                    "id": "d",
+                    "text": "The additional trauma experienced after initial victimization"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Secondary gain refers to the indirect or unconscious benefits individuals may derive from their symptoms or situation, such as attention, sympathy, or avoidance of responsibilities, which can reinforce maladaptive patterns."
+        },
+        {
+            "id": 3,
+            "question": "What is 'learned helplessness'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A psychological state where individuals believe they have no control over outcomes"
+                },
+                {
+                    "id": "b",
+                    "text": "The process of learning to help others in need"
+                },
+                {
+                    "id": "c",
+                    "text": "A therapeutic technique for building resilience"
+                },
+                {
+                    "id": "d",
+                    "text": "The conscious choice to remain passive in difficult situations"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Learned helplessness, discovered by Martin Seligman, occurs when individuals repeatedly experience uncontrollable events and generalize this experience to believe they have no control over any situation, even when they actually do."
+        },
+        {
+            "id": 4,
+            "question": "What is 'martyr complex'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A psychological pattern of seeking to suffer or be sacrificed for a perceived greater cause"
+                },
+                {
+                    "id": "b",
+                    "text": "A religious devotion to martyrdom"
+                },
+                {
+                    "id": "c",
+                    "text": "The tendency to sacrifice for others without complaint"
+                },
+                {
+                    "id": "d",
+                    "text": "A form of post-traumatic growth after persecution"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Martyr complex is a psychological construct where individuals desire to feel like martyrs, often exaggerating or seeking out suffering to gain a sense of moral superiority or significance through self-sacrifice."
+        },
+        {
+            "id": 5,
+            "question": "What is 'identity foreclosure' in relation to victimhood?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "Premature commitment to an identity based on victimization without exploring alternatives"
+                },
+                {
+                    "id": "b",
+                    "text": "The loss of identity following traumatic victimization"
+                },
+                {
+                    "id": "c",
+                    "text": "The process of rebuilding identity after trauma"
+                },
+                {
+                    "id": "d",
+                    "text": "The inability to form any stable identity"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Identity foreclosure, a concept from Erikson's identity development, occurs when individuals commit to an identity without exploring alternatives. When this identity is based on victimization, it can limit growth and reinforce victim narratives."
+        },
+        {
+            "id": 6,
+            "question": "What is 'external locus of control'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The belief that life events are controlled by external forces rather than one's own actions"
+                },
+                {
+                    "id": "b",
+                    "text": "The tendency to blame others for one's problems"
+                },
+                {
+                    "id": "c",
+                    "text": "The ability to control external environments"
+                },
+                {
+                    "id": "d",
+                    "text": "A psychological test measuring external influences"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "External locus of control is a personality characteristic where individuals believe that outcomes in their lives are determined by external factors such as luck, fate, or other people, rather than their own choices and actions."
+        },
+        {
+            "id": 7,
+            "question": "What is 'trauma bonding'?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "A strong emotional attachment formed between abuser and victim through cycles of abuse and reconciliation"
+                },
+                {
+                    "id": "b",
+                    "text": "The therapeutic bond formed between trauma survivor and counselor"
+                },
+                {
+                    "id": "c",
+                    "text": "A shared experience of trauma creating community connection"
+                },
+                {
+                    "id": "d",
+                    "text": "The process of healing from trauma through relationships"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Trauma bonding describes the powerful emotional attachment that can develop between an abused person and their abuser, created through intermittent reinforcement cycles of abuse followed by affection or kindness, making it difficult to leave the relationship."
+        },
+        {
+            "id": 8,
+            "question": "What is 'narrative identity' in the context of victimhood?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "The internalized story individuals construct about themselves, often incorporating experiences of victimization"
+                },
+                {
+                    "id": "b",
+                    "text": "The factual account of victimization events"
+                },
+                {
+                    "id": "c",
+                    "text": "The external validation of victim status"
+                },
+                {
+                    "id": "d",
+                    "text": "The legal documentation of victimization"
+                }
+            ],
+            "correctAnswer": "a",
+            "explanation": "Narrative identity refers to the internalized and evolving story people create about themselves, integrating past experiences, present concerns, and future aspirations. When victimization becomes central to this narrative, it can shape self-concept and behavior."
+        }
+    ]
+}
