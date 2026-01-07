@@ -36,7 +36,7 @@
     <link rel="alternate" hreflang="fr" href="https://johnmilleranalysis.com/fr/">
     <link rel="alternate" hreflang="es" href="https://johnmilleranalysis.com/es/">
     <link rel="alternate" hreflang="de" href="https://johnmilleranalysis.com/de/">
-    <link rel="alternate" hreflang="x-default" href="https://johnmilleranalysis.com/">
+    <link rel="alternate" hreflang="x-default" href="https://milleranalysis.com/">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Professional portrait of John F. Miller, Oxford psychoanalyst and author">
@@ -179,30 +179,7 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="css/styles.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        // Using the variables defined in styles.css
-                        'serif': ['var(--font-serif)'],
-                        'sans': ['var(--font-sans)'],
-                    },
-                    colors: {
-                        // Using the variables defined in styles.css
-                        'oxford-blue': 'var(--color-oxford-blue)',
-                        'cream': 'var(--color-cream)',
-                        'charcoal': 'var(--color-charcoal)',
-                        'gold': 'var(--color-gold)',
-                    },
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="font-serif bg-cream">
@@ -277,6 +254,24 @@
                         <a href="zh/index.html"
                             class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
                             role="menuitem">ZH</a>
+                        <a href="de/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">DE</a>
+                        <a href="pt/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">PT</a>
+                        <a href="it/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">IT</a>
+                        <a href="el/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">EL</a>
+                        <a href="nl/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">NL</a>
+                        <a href="ja/index.html"
+                            class="block px-4 py-2 text-charcoal hover:bg-oxford-blue hover:text-cream"
+                            role="menuitem">JA</a>
                     </div>
                 </div>
             </div>
@@ -288,7 +283,7 @@
         <section id="hero" class="reveal h-[80vh] flex items-center justify-center">
             <div class="text-center max-w-4xl mx-auto px-6">
                 <h1
-                    class="hero-title reveal reveal-delay-1 text-5xl md:text-7xl text-cream font-serif font-bold tracking-wide mb-6 drop-shadow-lg">
+                    class="hero-title reveal reveal-delay-1 text-4xl md:text-6xl text-cream font-serif font-bold tracking-wide mb-6 drop-shadow-lg">
                     Understanding the Hidden Dynamics of Human Suffering</h1>
                 <p
                     class="reveal reveal-delay-2 mt-8 text-xl md:text-3xl text-cream opacity-95 font-serif leading-normal tracking-wide max-w-4xl mx-auto drop-shadow-md">
@@ -659,7 +654,8 @@
                         use the form below.
                     </p>
 
-                    <form id="contactForm" class="space-y-6" novalidate>
+                    <form id="contactForm" action="https://formspree.io/f/xrebdpjr" method="POST" class="space-y-6"
+                        novalidate>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-oxford-blue font-bold mb-2">Name *</label>
