@@ -1,199 +1,762 @@
 {
-    "quizId": "quiz_victimhood_architecture",
-    "title": "Victimhood Architecture Assessment",
-    "description": "Test your understanding of victimhood constructs, psychological patterns, and the architecture of victim narratives.",
-    "questions": [
-        {
-            "id": 1,
-            "question": "What is 'victimhood culture' in sociological terms?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A cultural framework where moral status is derived from perceived victimization"
-                },
-                {
-                    "id": "b",
-                    "text": "The study of historical victims and their experiences"
-                },
-                {
-                    "id": "c",
-                    "text": "A therapeutic approach for trauma survivors"
-                },
-                {
-                    "id": "d",
-                    "text": "The celebration of overcoming adversity"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Victimhood culture, as described by sociologists Campbell and Manning, is a moral culture where individuals compete for status by highlighting their victimization and oppression, contrasting with honor and dignity cultures."
-        },
-        {
-            "id": 2,
-            "question": "What is 'secondary gain' in the context of victimhood narratives?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Unconscious benefits derived from maintaining a victim identity"
-                },
-                {
-                    "id": "b",
-                    "text": "Financial compensation received by victims of crime"
-                },
-                {
-                    "id": "c",
-                    "text": "The support provided by secondary caregivers"
-                },
-                {
-                    "id": "d",
-                    "text": "The additional trauma experienced after initial victimization"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Secondary gain refers to the indirect or unconscious benefits individuals may derive from their symptoms or situation, such as attention, sympathy, or avoidance of responsibilities, which can reinforce maladaptive patterns."
-        },
-        {
-            "id": 3,
-            "question": "What is 'learned helplessness'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A psychological state where individuals believe they have no control over outcomes"
-                },
-                {
-                    "id": "b",
-                    "text": "The process of learning to help others in need"
-                },
-                {
-                    "id": "c",
-                    "text": "A therapeutic technique for building resilience"
-                },
-                {
-                    "id": "d",
-                    "text": "The conscious choice to remain passive in difficult situations"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Learned helplessness, discovered by Martin Seligman, occurs when individuals repeatedly experience uncontrollable events and generalize this experience to believe they have no control over any situation, even when they actually do."
-        },
-        {
-            "id": 4,
-            "question": "What is 'martyr complex'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A psychological pattern of seeking to suffer or be sacrificed for a perceived greater cause"
-                },
-                {
-                    "id": "b",
-                    "text": "A religious devotion to martyrdom"
-                },
-                {
-                    "id": "c",
-                    "text": "The tendency to sacrifice for others without complaint"
-                },
-                {
-                    "id": "d",
-                    "text": "A form of post-traumatic growth after persecution"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Martyr complex is a psychological construct where individuals desire to feel like martyrs, often exaggerating or seeking out suffering to gain a sense of moral superiority or significance through self-sacrifice."
-        },
-        {
-            "id": 5,
-            "question": "What is 'identity foreclosure' in relation to victimhood?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Premature commitment to an identity based on victimization without exploring alternatives"
-                },
-                {
-                    "id": "b",
-                    "text": "The loss of identity following traumatic victimization"
-                },
-                {
-                    "id": "c",
-                    "text": "The process of rebuilding identity after trauma"
-                },
-                {
-                    "id": "d",
-                    "text": "The inability to form any stable identity"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Identity foreclosure, a concept from Erikson's identity development, occurs when individuals commit to an identity without exploring alternatives. When this identity is based on victimization, it can limit growth and reinforce victim narratives."
-        },
-        {
-            "id": 6,
-            "question": "What is 'external locus of control'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The belief that life events are controlled by external forces rather than one's own actions"
-                },
-                {
-                    "id": "b",
-                    "text": "The tendency to blame others for one's problems"
-                },
-                {
-                    "id": "c",
-                    "text": "The ability to control external environments"
-                },
-                {
-                    "id": "d",
-                    "text": "A psychological test measuring external influences"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "External locus of control is a personality characteristic where individuals believe that outcomes in their lives are determined by external factors such as luck, fate, or other people, rather than their own choices and actions."
-        },
-        {
-            "id": 7,
-            "question": "What is 'trauma bonding'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A strong emotional attachment formed between abuser and victim through cycles of abuse and reconciliation"
-                },
-                {
-                    "id": "b",
-                    "text": "The therapeutic bond formed between trauma survivor and counselor"
-                },
-                {
-                    "id": "c",
-                    "text": "A shared experience of trauma creating community connection"
-                },
-                {
-                    "id": "d",
-                    "text": "The process of healing from trauma through relationships"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Trauma bonding describes the powerful emotional attachment that can develop between an abused person and their abuser, created through intermittent reinforcement cycles of abuse followed by affection or kindness, making it difficult to leave the relationship."
-        },
-        {
-            "id": 8,
-            "question": "What is 'narrative identity' in the context of victimhood?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The internalized story individuals construct about themselves, often incorporating experiences of victimization"
-                },
-                {
-                    "id": "b",
-                    "text": "The factual account of victimization events"
-                },
-                {
-                    "id": "c",
-                    "text": "The external validation of victim status"
-                },
-                {
-                    "id": "d",
-                    "text": "The legal documentation of victimization"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Narrative identity refers to the internalized and evolving story people create about themselves, integrating past experiences, present concerns, and future aspirations. When victimization becomes central to this narrative, it can shape self-concept and behavior."
-        }
-    ]
+    "EN": {
+        "title": "Victimhood Architecture Assessment",
+        "description": "Test your understanding of victimhood constructs, psychological patterns, and architecture of victim narratives.",
+        "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "I understand how moral status can be derived from perceived victimization.",
+                "context": "Victimhood culture describes competing for status by highlighting victimization."
+            },
+            {
+                "id": 2,
+                "text": "I recognize unconscious benefits that may come from maintaining a victim identity.",
+                "context": "Secondary gain refers to indirect or unconscious benefits derived from symptoms."
+            },
+            {
+                "id": 3,
+                "text": "I understand how repeated uncontrollable events can create learned helplessness.",
+                "context": "Learned helplessness occurs when individuals believe they have no control over outcomes."
+            },
+            {
+                "id": 4,
+                "text": "I recognize patterns of seeking to suffer for perceived greater causes.",
+                "context": "Martyr complex describes seeking to suffer to gain moral superiority."
+            },
+            {
+                "id": 5,
+                "text": "I understand how premature commitment to victim identity can limit growth.",
+                "context": "Identity foreclosure occurs when individuals commit to identity without exploring alternatives."
+            },
+            {
+                "id": 6,
+                "text": "I recognize beliefs that life events are controlled by external forces.",
+                "context": "External locus of control is believing outcomes are determined by external factors."
+            },
+            {
+                "id": 7,
+                "text": "I understand how abuse-reconciliation cycles can create trauma bonding.",
+                "context": "Trauma bonding describes strong emotional attachment between abuser and victim."
+            },
+            {
+                "id": 8,
+                "text": "I recognize how victimization becomes central to one's narrative identity.",
+                "context": "Narrative identity refers to the internalized story individuals construct about themselves."
+            },
+            {
+                "id": 9,
+                "text": "I understand how victim narratives can shape self-concept and behavior.",
+                "context": "When victimization becomes central to narrative identity, it shapes behavior."
+            },
+            {
+                "id": 10,
+                "text": "I recognize patterns of seeking validation through victim status.",
+                "context": "Seeking validation through victim status can reinforce maladaptive patterns."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Developing Awareness",
+                "summary": "You are beginning to understand victimhood constructs and their psychological implications. This awareness is important for recognizing complex identity patterns.",
+                "recommendation": "Study case examples of victimhood in various contexts. Reflect on how victim narratives develop and persist."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Growing Understanding",
+                "summary": "You demonstrate solid knowledge of victimhood patterns and psychological mechanisms. You can identify key features of victim identity formation.",
+                "recommendation": "Continue exploring how victim narratives affect behavior. Learn to distinguish between genuine victimization and maladaptive patterns."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Advanced Insight",
+                "summary": "You show sophisticated understanding of victimhood architecture and psychological patterns. You effectively recognize complex dynamics in victim narratives.",
+                "recommendation": "Consider specializing in trauma psychology or narrative therapy. Share your knowledge to help others understand these patterns."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Expert Level Understanding",
+                "summary": "You demonstrate exceptional knowledge of victimhood constructs and their clinical implications. You have mastered the assessment of victimhood dynamics.",
+                "recommendation": "Contribute to research on victimhood and identity. Consider advanced training in narrative therapy and trauma-informed care."
+            }
+        ]
+    },
+    "FR": {
+        "title": "Évaluation de l'Architecture de la Victimisation",
+        "description": "Testez votre compréhension des construits de victimisation, des modèles psychologiques et de l'architecture des récits de victime.",
+        "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation clinique professionnelle ou un diagnostic.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Je comprends comment le statut moral peut être dérivé de la victimisation perçue.",
+                "context": "La culture de la victimisation décrit la compétition pour le statut en mettant en évidence la victimisation."
+            },
+            {
+                "id": 2,
+                "text": "Je reconnais les bénéfices inconscients qui peuvent provenir du maintien d'une identité de victime.",
+                "context": "Le gain secondaire fait référence aux bénéfices indirects ou inconscients dérivés des symptômes."
+            },
+            {
+                "id": 3,
+                "text": "Je comprends comment des événements incontrôlables répétés peuvent créer l'impuissance apprise.",
+                "context": "L'impuissance apprise survient lorsque les individus croient n'avoir aucun contrôle sur les résultats."
+            },
+            {
+                "id": 4,
+                "text": "Je reconnais les modèles de chercher à souffrir pour des causes perçues comme supérieures.",
+                "context": "Le complexe de martyr décrit chercher à souffrir pour gagner une supériorité morale."
+            },
+            {
+                "id": 5,
+                "text": "Je comprends comment l'engagement prématuré à une identité de victime peut limiter la croissance.",
+                "context": "Le clôture d'identité survient lorsque les individus s'engagent dans une identité sans explorer d'alternatives."
+            },
+            {
+                "id": 6,
+                "text": "Je reconnais les croyances que les événements de vie sont contrôlés par des forces externes.",
+                "context": "Le lieu de contrôle externe est la croyance que les résultats sont déterminés par des facteurs externes."
+            },
+            {
+                "id": 7,
+                "text": "Je comprends comment les cycles d'abus-réconciliation peuvent créer un lien traumatique.",
+                "context": "Le lien traumatique décrit une forte attache émotionnelle entre l'abuseur et la victime."
+            },
+            {
+                "id": 8,
+                "text": "Je reconnais comment la victimisation devient centrale à l'identité narrative de soi.",
+                "context": "L'identité narrative fait référence à l'histoire internalisée que les individus construisent sur eux-mêmes."
+            },
+            {
+                "id": 9,
+                "text": "Je comprends comment les récits de victime peuvent façonner le concept de soi et le comportement.",
+                "context": "Lorsque la victimisation devient centrale à l'identité narrative, elle façonne le comportement."
+            },
+            {
+                "id": 10,
+                "text": "Je reconnais les modèles de chercher la validation par le statut de victime.",
+                "context": "Chercher la validation par le statut de victime peut renforcer les modèles maladaptatifs."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conscience en Développement",
+                "summary": "Vous commencez à comprendre les construits de victimisation et leurs implications psychologiques. Cette conscience est importante pour reconnaître les modèles d'identité complexes.",
+                "recommendation": "Étudiez des exemples de cas de victimisation dans divers contextes. Réfléchissez à la façon dont les récits de victime se développent et persistent."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Compréhension Croissante",
+                "summary": "Vous démontrez une connaissance solide des modèles de victimisation et des mécanismes psychologiques. Vous pouvez identifier les caractéristiques clés de la formation de l'identité de victime.",
+                "recommendation": "Continuez à explorer comment les récits de victime affectent le comportement. Apprenez à distinguer entre la victimisation réelle et les modèles maladaptatifs."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Perspicacité Avancée",
+                "summary": "Vous montrez une compréhension sophistiquée de l'architecture de la victimisation et des modèles psychologiques. Vous reconnaissez efficacement les dynamiques complexes dans les récits de victime.",
+                "recommendation": "Envisagez de vous spécialiser en psychologie traumatique ou thérapie narrative. Partagez vos connaissances pour aider les autres à comprendre ces modèles."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Compréhension de Niveau Expert",
+                "summary": "Vous démontrez une connaissance exceptionnelle des construits de victimisation et de leurs implications cliniques. Vous avez maîtrisé l'évaluation des dynamiques de victimisation.",
+                "recommendation": "Contribuez à la recherche sur la victimisation et l'identité. Envisagez une formation avancée en thérapie narrative et soins informés par le traumatisme."
+            }
+        ]
+    },
+    "ES": {
+        "title": "Evaluación de la Arquitectura de la Victimización",
+        "description": "Pon a prueba tu comprensión de los constructos de victimización, patrones psicológicos y arquitectura de narrativas de víctima.",
+        "disclaimer": "Esta evaluación está diseñada con fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación clínica profesional o el diagnóstico.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Entiendo cómo el estatus moral puede derivarse de la victimización percibida.",
+                "context": "La cultura de la victimización describe competir por estatus destacando la victimización."
+            },
+            {
+                "id": 2,
+                "text": "Reconozco beneficios inconscientes que pueden provenir de mantener una identidad de víctima.",
+                "context": "La ganancia secundaria se refiere a beneficios indirectos o inconscientes derivados de síntomas."
+            },
+            {
+                "id": 3,
+                "text": "Entiendo cómo eventos incontrolables repetidos pueden crear indefensión aprendida.",
+                "context": "La indefensión aprendida ocurre cuando los individuos creen que no tienen control sobre los resultados."
+            },
+            {
+                "id": 4,
+                "text": "Reconozco patrones de buscar sufrir por causas percibidas como superiores.",
+                "context": "El complejo de mártir describe buscar sufrir para ganar superioridad moral."
+            },
+            {
+                "id": 5,
+                "text": "Entiendo cómo el compromiso prematuro con una identidad de víctima puede limitar el crecimiento.",
+                "context": "El cierre de identidad ocurre cuando los individuos se comprometen con una identidad sin explorar alternativas."
+            },
+            {
+                "id": 6,
+                "text": "Reconozco creencias de que los eventos de vida son controlados por fuerzas externas.",
+                "context": "El locus de control externo es creer que los resultados son determinados por factores externos."
+            },
+            {
+                "id": 7,
+                "text": "Entiendo cómo los ciclos de abuso-reconciliación pueden crear vínculo traumático.",
+                "context": "El vínculo traumático describe fuerte apego emocional entre abusador y víctima."
+            },
+            {
+                "id": 8,
+                "text": "Reconozco cómo la victimización se vuelve central a la identidad narrativa de uno mismo.",
+                "context": "La identidad narrativa se refiere a la historia internalizada que los individuos construyen sobre sí mismos."
+            },
+            {
+                "id": 9,
+                "text": "Entiendo cómo las narrativas de víctima pueden moldear el autoconcepto y el comportamiento.",
+                "context": "Cuando la victimización se vuelve central a la identidad narrativa, moldea el comportamiento."
+            },
+            {
+                "id": 10,
+                "text": "Reconozco patrones de buscar validación a través del estatus de víctima.",
+                "context": "Buscar validación a través del estatus de víctima puede reforzar patrones maladaptativos."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conciencia en Desarrollo",
+                "summary": "Estás comenzando a entender los constructos de victimización y sus implicaciones psicológicas. Esta conciencia es importante para reconocer patrones de identidad complejos.",
+                "recommendation": "Estudia ejemplos de casos de victimización en varios contextos. Reflexiona sobre cómo se desarrollan y persisten las narrativas de víctima."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Comprensión Creciente",
+                "summary": "Demuestras un conocimiento sólido de patrones de victimización y mecanismos psicológicos. Puedes identificar características clave de la formación de identidad de víctima.",
+                "recommendation": "Continúa explorando cómo las narrativas de víctima afectan el comportamiento. Aprende a distinguir entre victimización genuina y patrones maladaptativos."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Perspicacia Avanzada",
+                "summary": "Muestras una comprensión sofisticada de la arquitectura de victimización y patrones psicológicos. Reconoces efectivamente dinámicas complejas en narrativas de víctima.",
+                "recommendation": "Considera especializarte en psicología traumática o terapia narrativa. Comparte tus conocimientos para ayudar a otros a entender estos patrones."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Comprensión de Nivel Experto",
+                "summary": "Demuestras un conocimiento excepcional de constructos de victimización y sus implicaciones clínicas. Has dominado la evaluación de dinámicas de victimización.",
+                "recommendation": "Contribuye a la investigación sobre victimización e identidad. Considera formación avanzada en terapia narrativa y atención informada por trauma."
+            }
+        ]
+    },
+    "NO": {
+        "title": "Arkitektur av Offerstatus Vurdering",
+        "description": "Test din forståelse av offerstatus-konstrukt, psykologiske mønstre og arkitektur av offer-narrativer.",
+        "disclaimer": "Denne vurderingen er designet for pedagogiske formål for å utforske psykoanalytiske konsepter. Den erstatter ikke profesjonell klinisk evaluering eller diagnose.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Jeg forstår hvordan moralsk status kan utledes fra oppfattet offerstatus.",
+                "context": "Offerstatus-kultur beskriver konkurrans om status ved å fremheve offerstatus."
+            },
+            {
+                "id": 2,
+                "text": "Jeg anerkjenner ubevisste fordeler som kan komme fra å opprettholde en offer-identitet.",
+                "context": "Sekundær gevinst refererer til indirekte eller ubevisste fordeler avledet fra symptomer."
+            },
+            {
+                "id": 3,
+                "text": "Jeg forstår hvordan gjentatte ukontrollerbare hendelser kan skape lært hjelpeløshet.",
+                "context": "Lært hjelpeløshet oppstår når individer tror de ikke har kontroll over utfall."
+            },
+            {
+                "id": 4,
+                "text": "Jeg anerkjenner mønstre av å søke å lide for oppfattede høyere årsaker.",
+                "context": "Martyr-kompleks beskriver å søke å lide for å oppnå moralsk overlegenhet."
+            },
+            {
+                "id": 5,
+                "text": "Jeg forstår hvordan forpliktelse til offer-identitet kan begrense vekst.",
+                "context": "Identitetsstenging oppstår når individer forplikter seg til en identitet uten å utforske alternativer."
+            },
+            {
+                "id": 6,
+                "text": "Jeg anerkjenner tro på at livshendelser kontrolleres av eksterne krefter.",
+                "context": "Ekstern kontroll-locus er tro på at utfall bestemmes av eksterne faktorer."
+            },
+            {
+                "id": 7,
+                "text": "Jeg forstår hvordan misbruk-forsoningssykluser kan skape traumebinding.",
+                "context": "Traumebinding beskriver sterk emosjonell tilknytning mellom misbruker og offer."
+            },
+            {
+                "id": 8,
+                "text": "Jeg anerkjenner hvordan offerstatus blir sentral i ens narrativ identitet.",
+                "context": "Narrativ identitet refererer til den internaliserte historien individer konstruerer om seg selv."
+            },
+            {
+                "id": 9,
+                "text": "Jeg forstår hvordan offer-narrativer kan forme selvkonsept og atferd.",
+                "context": "Når offerstatus blir sentral i narrativ identitet, former den atferd."
+            },
+            {
+                "id": 10,
+                "text": "Jeg anerkjenner mønstre av å søke validasjon gjennom offerstatus.",
+                "context": "Å søke validasjon gjennom offerstatus kan forsterke maladaptive mønstre."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Utviklende Bevissthet",
+                "summary": "Du begynner å forstå offerstatus-konstrukt og deres psykologiske implikasjoner. Denne bevisstheten er viktig for å gjenkjenne komplekse identitetsmønstre.",
+                "recommendation": "Studer kasuseksempler på offerstatus i ulike sammenhenger. Reflekter over hvordan offer-narrativer utvikler seg og vedvarer."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Voksende Forståelse",
+                "summary": "Du demonstrerer solid kunnskap om offerstatus-mønstre og psykologiske mekanismer. Du kan identifisere nøkkeltrekk ved dannelsen av offer-identitet.",
+                "recommendation": "Fortsett å utforske hvordan offer-narrativer påvirker atferd. Lær å skille mellom genuin offerstatus og maladaptive mønstre."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Avansert Innsikt",
+                "summary": "Du viser sofistikert forståelse av offerstatus-arkitektur og psykologiske mønstre. Du gjenkjenner effektivt komplekse dynamikker i offer-narrativer.",
+                "recommendation": "Vurder å spesialisere deg i traumepsykologi eller narrativ terapi. Del din kunnskap for å hjelpe andre med å forstå disse mønstrene."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Ekspertnivå Forståelse",
+                "summary": "Du demonstrerer eksepsjonell kunnskap om offerstatus-konstrukt og deres kliniske implikasjoner. Du har mestret evaluering av offerstatus-dynamikker.",
+                "recommendation": "Bidra til forskning på offerstatus og identitet. Vurder avansert opplæring i narrativ terapi og traumeinformert omsorg."
+            }
+        ]
+    },
+    "PL": {
+        "title": "Ocena Architektury Ofiary",
+        "description": "Sprawdź swoją wiedzę na temat konstruktów ofiary, wzorców psychologicznych i architektury narratyw ofiary.",
+        "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Rozumiem, jak status moralny może być wywodzony z postrzeganej ofiary.",
+                "context": "Kultura ofiary opisuje rywalizację o status poprzez podkreślanie ofiary."
+            },
+            {
+                "id": 2,
+                "text": "Uznaję nieświadome korzyści, które mogą wynikać z utrzymywania tożsamości ofiary.",
+                "context": "Zysk wtórny odnosi się do pośrednich lub nieświadomych korzyści wynikających z objawów."
+            },
+            {
+                "id": 3,
+                "text": "Rozumiem, jak powtarzające się niekontrolowane wydarzenia mogą stworzyć wyuczoną bezradność.",
+                "context": "Wyuczona bezradność występuje, gdy jednostki wierzą, że nie mają kontroli nad wynikami."
+            },
+            {
+                "id": 4,
+                "text": "Uznaję wzorce dążenia do cierpienia dla postrzeganych wyższych przyczyn.",
+                "context": "Kompleks męczennika opisuje dążenie do cierpienia w celu osiągnięcia wyższości moralnej."
+            },
+            {
+                "id": 5,
+                "text": "Rozumiem, jak przedwczesne zaangażowanie w tożsamość ofiary może ograniczyć rozwój.",
+                "context": "Zamknięcie tożsamości występuje, gdy jednostki angażują się w tożsamość bez eksplorowania alternatyw."
+            },
+            {
+                "id": 6,
+                "text": "Uznaję przekonania, że wydarzenia życiowe są kontrolowane przez siły zewnętrzne.",
+                "context": "Zewnętrzne miejsce kontroli to wiara, że wyniki są determinowane przez czynniki zewnętrzne."
+            },
+            {
+                "id": 7,
+                "text": "Rozumiem, jak cykle nadużycie-pojednanie mogą stworzyć więź traumatyczną.",
+                "context": "Więź traumatyczna opisuje silną więź emocjonalną między nadużycielem a ofiarą."
+            },
+            {
+                "id": 8,
+                "text": "Uznaję, jak ofiara staje się centralna dla narracyjnej tożsamości własnej.",
+                "context": "Tożsamość narracyjna odnosi się do internalizowanej historii, którą jednostki konstruują o sobie."
+            },
+            {
+                "id": 9,
+                "text": "Rozumiem, jak narratywy ofiary mogą kształtować samoocenę i zachowanie.",
+                "context": "Gdy ofiara staje się centralna dla tożsamości narracyjnej, kształtuje zachowanie."
+            },
+            {
+                "id": 10,
+                "text": "Uznaję wzorce dążenia do walidacji przez status ofiary.",
+                "context": "Dążenie do walidacji przez status ofiary może wzmacniać wzorce maladaptacyjne."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Rozwijająca się Świadomość",
+                "summary": "Zaczynasz rozumieć konstruktów ofiary i ich implikacje psychologiczne. Ta świadomość jest ważna dla rozpoznawania złożonych wzorców tożsamości.",
+                "recommendation": "Studiuj przykłady przypadków ofiary w różnych kontekstach. Zastanów się, jak narratywy ofiary się rozwijają i utrzymują."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Rosnące Zrozumienie",
+                "summary": "Demonstrujesz solidną wiedzę o wzorcach ofiary i mechanizmach psychologicznych. Potrafisz identyfikować kluczowe cechy tworzenia się tożsamości ofiary.",
+                "recommendation": "Kontynuuj eksplorację, jak narratywy ofiary wpływają na zachowanie. Naucz się odróżniać rzeczywistą ofiarę od wzorców maladaptacyjnych."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Zaawansowana Wgląd",
+                "summary": "Wykazujesz wyrafinowane zrozumienie architektury ofiary i wzorców psychologicznych. Skutecznie rozpoznajesz złożone dynamiki w narratywach ofiary.",
+                "recommendation": "Rozważ specjalizację w psychologii traumatycznej lub terapii narracyjnej. Podziel się swoją wiedzą, aby pomóc innym zrozumieć te wzorce."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Zrozumienie na Poziomie Eksperta",
+                "summary": "Demonstrujesz wyjątkową wiedzę o konstruktach ofiary i ich implikacjach klinicznych. Opanowałeś ocenę dynamik ofiary.",
+                "recommendation": "Wnieś wkład w badania nad ofiarą i tożsamością. Rozważ zaawansowane szkolenie w terapii narracyjnej i opiece świadomej traumie."
+            }
+        ]
+    },
+    "LA": {
+        "title": "Appretiatio Architecturae Victimatis",
+        "description": "Tuam intelligentiam de constructibus victimatis, schematibus psychologicalibus, et architectura narrationum victimatis perpende.",
+        "disclaimer": "Haec appretiatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Intelligo quaenam status moralis ex victimatione percepta deduci possit.",
+                "context": "Cultura victimatis descriptionem statum per victimationem eminens competendo describit."
+            },
+            {
+                "id": 2,
+                "text": "Agnosco beneficia inconscia quae ex identificatione victimatis manenda evenire possunt.",
+                "context": "Lucrum secundarium refert ad beneficia indirecta vel inconscia ex symptomatis orta."
+            },
+            {
+                "id": 3,
+                "text": "Intelligo quaenam eventus incontinuabiles repetiti impotentiam doctam creare possint.",
+                "context": "Impotentia docta fit cum individua se in eventus non habere potestatem credunt."
+            },
+            {
+                "id": 4,
+                "text": "Agnosco schemata quaerendi pati pro causis perceptis superioribus.",
+                "context": "Complexus martyris quaerere pati ad excellentiam moralem consequendam describit."
+            },
+            {
+                "id": 5,
+                "text": "Intelligo quaenam comissio ad identificationem victimatis incrementum limitare possit.",
+                "context": "Clausura identificationis fit cum individui in identificationem sine alternis explorandis se committunt."
+            },
+            {
+                "id": 6,
+                "text": "Agnosco opiniones quaenam eventus vitae per vires externas controllentur.",
+                "context": "Locus externus controlis est opinio eventus per factores externos determinari."
+            },
+            {
+                "id": 7,
+                "text": "Intelligo quaenam cycli abusus-reconciliationis vinculum traumaticum creare possint.",
+                "context": "Vinculum traumaticum descriptionem nexum emotionalem fortem inter abuser et victimam describit."
+            },
+            {
+                "id": 8,
+                "text": "Agnosco quaenam victimatio centralis ad identificationem narrativam propriam fiat.",
+                "context": "Identificatio narrativa refert ad historiam internalisatam quam individui de se ipsis construunt."
+            },
+            {
+                "id": 9,
+                "text": "Intelligo quaenam narrationes victimatis conceptum sui et comportamentum formare possint.",
+                "context": "Quando victimatio centralis ad identificationem narrativam fit, comportamentum format."
+            },
+            {
+                "id": 10,
+                "text": "Agnosco schemata quaerendi validationem per statum victimatis.",
+                "context": "Quaerere validationem per statum victimatis schemata maladaptiva firmare potest."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conscientia Evolvens",
+                "summary": "Tu incipis intelligere constructus victimatis et eorum implicationes psychologicas. Haec conscientia ad recognoscenda schemata identificationis complexa est necessaria.",
+                "recommendation": "Studia exempla casuum victimatis in variis contextibus. Refecte quaenam narrationes victimatis evolvant et persistant."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Intelligentia Crescens",
+                "summary": "Fundamentum solidum in schematibus victimatis et mechanimis psychologicalibus demonstras. Proprietates claves formationis identificationis victimatis identificare potes.",
+                "recommendation": "Continua explorare quaenam narrationes victimatis comportamentum afficiant. Discerne victimationem genuinam a schematibus maladaptivis discere."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Inspectio Progressa",
+                "summary": "Intelligentiam sophisticatam architecturae victimatis et schematum psychologicalium ostendis. Dynamicas complexas in narrationibus victimatis efficaciter recognoscis.",
+                "recommendation": "Considera te in psychologia traumatica vel therapia narrativa speciare. Tuum scientiam ad alios adiuvandos hos schemata intelligenda parte."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Intelligentia Nivei Periti",
+                "summary": "Scientiam exceptionalem constructuum victimatis et eorum implicationum clinicarum demonstras. Evaluationem dynamicarum victimatis dominatus es.",
+                "recommendation": "Ad investigationem victimatis et identificationis contribute. Considera exercitationem progressam in therapia narrativa et cura traumata informata."
+            }
+        ]
+    },
+    "EGY": {
+        "title": "تقييم هيكلية الضحية",
+        "description": "اختبر فهمك لبنيات الضحية، والأنماط النفسية، وهيكلية سرديات الضحية.",
+        "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليل النفسي. لا يحل محل التقييم السريري المهني أو التشخيص.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "أفهم كيف يمكن اشتقاق الوضع الأخلاقي من الضحية المُدرَكة.",
+                "context": "ثقافة الضحية تصف التنافس على الوضع من خلال إبراز الضحية."
+            },
+            {
+                "id": 2,
+                "text": "أدرك الفوائد غير الواعية التي قد تأتي من الحفاظ على هوية الضحية.",
+                "context": "الكسب الثانوي يشير إلى فوائد غير مباشرة أو غير واعية مشتقة من الأعراض."
+            },
+            {
+                "id": 3,
+                "text": "أفهم كيف يمكن للأحداث غير القابلة للسيطرة المتكررة أن تخلق العجز المتعلم.",
+                "context": "العجز المتعلم يحدث عندما يعتقد الأفراد أنهم ليس لديهم سيطرة على النتائج."
+            },
+            {
+                "id": 4,
+                "text": "أدرك أنماط السعي للمعاناة لأسباب مُدرَكة على أنها أعلى.",
+                "context": "معقد الشهيد يصف السعي للمعاناة لتحقيق التفوق الأخلاقي."
+            },
+            {
+                "id": 5,
+                "text": "أفهم كيف يمكن للالتزام المبكر بهوية الضحية أن يحد من النمو.",
+                "context": "إغلاق الهوية يحدث عندما يلتزم الأفراد بهوية دون استكشاف البدائل."
+            },
+            {
+                "id": 6,
+                "text": "أدرك المعتقدات بأن أحداث الحياة تسيطر عليها قوى خارجية.",
+                "context": "موقع التحكم الخارجي هو الاعتقاد بأن النتائج تحدد من خلال عوامل خارجية."
+            },
+            {
+                "id": 7,
+                "text": "أفهم كيف يمكن لدورات الإساءة-المصالحة أن تخلق رابطة الصدمة.",
+                "context": "رابطة الصدمة تصف التعلق العاطفي القوي بين المسيء والضحية."
+            },
+            {
+                "id": 8,
+                "text": "أدرك كيف تصبح الضحية مركزية لهوية السرد الذاتي.",
+                "context": "الهوية السردية تشير إلى القصة الداخلية التي يبنيها الأفراد عن أنفسهم."
+            },
+            {
+                "id": 9,
+                "text": "أفهم كيف يمكن لسرديات الضحية تشكيل مفهوم الذات والسلوك.",
+                "context": "عندما تصبح الضحية مركزية للهوية السردية، تشكل السلوك."
+            },
+            {
+                "id": 10,
+                "text": "أدرك أنماط السعي للتحقق من خلال وضع الضحية.",
+                "context": "السعي للتحقق من خلال وضع الضحية يمكن أن يعزز الأنماط غير التكيفية."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "الوعي النامي",
+                "summary": "أنت تبدأ في فهم بنيات الضحية وآثارها النفسية. هذا الوعي مهم للتعرف على أنماط الهوية المعقدة.",
+                "recommendation": "ادرس أمثلة الحالات للضحية في سياقات مختلفة. فكر في كيفية تطور واستمرار سرديات الضحية."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "الفهم المتزايد",
+                "summary": "أنت تظهر معرفة قوية بأنماط الضحية والآليات النفسية. يمكنك تحديد الميزات الرئيسية لتشكيل هوية الضحية.",
+                "recommendation": "استمر في استكشاف كيف تؤثر سرديات الضحية على السلوك. تعلم التمييز بين الضحية الحقيقية والأنماط غير التكيفية."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "البصيرة المتقدمة",
+                "summary": "أنت تظهر فهمًا متطورًا لهيكلية الضحية والأنماط النفسية. تتعرف بفعالية على الديناميات المعقدة في سرديات الضحية.",
+                "recommendation": "فكر في التخصص في علم النفس الصدمي أو العلاج السردي. شارك معرفتك لمساعدة الآخرين في فهم هذه الأنماط."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "فهم مستوى الخبير",
+                "summary": "أنت تظهر معرفة استثنائية لبنيات الضحية وآثارها السريرية. أتقنت تقييم ديناميات الضحية.",
+                "recommendation": "ساهم في البحث حول الضحية والهوية. فكر في تدريب متقدم في العلاج السردي والرعاية الواعية بالصدمة."
+            }
+        ]
+    },
+    "ZH": {
+        "title": "受害者身份架构评估",
+        "description": "测试您对受害者身份建构、心理模式和受害者叙事架构的理解。",
+        "disclaimer": "本评估旨在教育目的，探索精神分析概念。它不能替代专业临床评估或诊断。",
+        "questions": [
+            {
+                "id": 1,
+                "text": "我理解道德地位如何可以从感知的受害者身份中衍生。",
+                "context": "受害者文化描述通过突出受害者身份来竞争地位。"
+            },
+            {
+                "id": 2,
+                "text": "我认识到保持受害者身份可能带来的无意识好处。",
+                "context": "次要收益指的是从症状中获得的间接或无意识的好处。"
+            },
+            {
+                "id": 3,
+                "text": "我理解重复的不可控事件如何可以造成习得性无助。",
+                "context": "习得性无助发生在个体认为他们对结果没有控制时。"
+            },
+            {
+                "id": 4,
+                "text": "我认识到为了感知的更高原因而寻求受苦的模式。",
+                "context": "烈士情结描述寻求受苦以获得道德优越感。"
+            },
+            {
+                "id": 5,
+                "text": "我理解过早承诺受害者身份如何可能限制成长。",
+                "context": "身份过早关闭发生在个体在没有探索替代方案的情况下承诺身份时。"
+            },
+            {
+                "id": 6,
+                "text": "我认识到生活事件由外力控制的信念。",
+                "context": "外控型是相信结果由外部因素决定。"
+            },
+            {
+                "id": 7,
+                "text": "我理解虐待-和解周期如何可以造成创伤性联结。",
+                "context": "创伤性联结描述施虐者和受害者之间强烈的情感依恋。"
+            },
+            {
+                "id": 8,
+                "text": "我认识到受害者身份如何成为自我叙事身份的核心。",
+                "context": "叙事身份指的是个体关于自己构建的内在化故事。"
+            },
+            {
+                "id": 9,
+                "text": "我理解受害者叙事如何可以塑造自我概念和行为。",
+                "context": "当受害者身份成为叙事身份的核心时，它塑造行为。"
+            },
+            {
+                "id": 10,
+                "text": "我认识到通过受害者身份寻求验证的模式。",
+                "context": "通过受害者身份寻求验证可能会强化适应不良的模式。"
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "发展中的意识",
+                "summary": "您开始理解受害者身份建构及其心理影响。这种意识对于识别复杂的身份模式很重要。",
+                "recommendation": "研究各种语境中受害者身份的案例示例。反思受害者叙事如何发展和持续。"
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "增长的理解",
+                "summary": "您对受害者身份模式和心理学机制表现出扎实的知识。您可以识别受害者身份形成的关键特征。",
+                "recommendation": "继续探索受害者叙事如何影响行为。学习区分真正的受害者身份和适应不良的模式。"
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "先进的洞察",
+                "summary": "您对受害者身份架构和心理模式表现出复杂的理解。您有效地识别受害者叙事中的复杂动态。",
+                "recommendation": "考虑专攻创伤心理学或叙事疗法。分享您的知识以帮助他人理解这些模式。"
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "专家级理解",
+                "summary": "您对受害者身份建构及其临床影响表现出卓越的知识。您已经掌握了受害者身份动态的评估。",
+                "recommendation": "为受害者身份和认同的研究做出贡献。考虑在叙事疗法和创伤知情护理方面进行高级培训。"
+            }
+        ]
+    }
 }

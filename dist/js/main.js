@@ -1,5 +1,69 @@
 // Import quote data from the newly created js/quote_data.js file
-// This will be loaded as a script tag in index.html, so quoteData is available globally
+// This will be loaded as a script tag in index.html, so quoteData and uiTextTranslations are available globally
+
+/**
+ * Detects the current language from the URL path
+ * @returns {string} - Language code (e.g., 'en', 'es', 'de', etc.)
+ */
+function detectLanguageFromPath() {
+    const pathname = window.location.pathname;
+    // Match language folder pattern: /en/, /es/, /de/, etc.
+    const langMatch = pathname.match(/^\/([a-z]{2,3})\//i);
+
+    if (langMatch) {
+        const detectedLang = langMatch[1].toLowerCase();
+        console.log(`[Language Detection] Detected language from path: ${detectedLang}`);
+        return detectedLang;
+    }
+
+    // Fallback to document language attribute
+    const docLang = document.documentElement.lang || 'en';
+    const langCode = docLang.substring(0, 2).toLowerCase();
+    console.log(`[Language Detection] Fallback to document language: ${langCode}`);
+    return langCode;
+}
+
+/**
+ * Gets UI text for the current language
+ * @param {string} key - The UI text key to retrieve
+ * @returns {string} - Localized text for the key
+ */
+function getUIText(key) {
+    const currentLang = detectLanguageFromPath();
+
+    // Check if uiTextTranslations is available
+    if (typeof uiTextTranslations === 'undefined') {
+        console.warn('[getUIText] uiTextTranslations not available, falling back to English');
+        return key; // Fallback to key name
+    }
+
+    // Get language-specific translations
+    const langText = uiTextTranslations[currentLang] || uiTextTranslations.en;
+
+    // Return the requested key or fallback to English
+    return langText[key] || uiTextTranslations.en[key] || key;
+}
+
+/**
+ * Gets scale labels for the current language
+ * @returns {Object} - Scale labels object with localized labels
+ */
+function getScaleLabels() {
+    const currentLang = detectLanguageFromPath();
+
+    if (typeof uiTextTranslations === 'undefined') {
+        return {
+            0: 'Strongly Disagree',
+            1: 'Disagree',
+            2: 'Neutral',
+            3: 'Agree',
+            4: 'Strongly Agree'
+        };
+    }
+
+    const langText = uiTextTranslations[currentLang] || uiTextTranslations.en;
+    return langText.scaleLabels || uiTextTranslations.en.scaleLabels;
+}
 
 // --- PAGINATION STATE ---
 const QUOTES_PER_PAGE = 3;
@@ -1318,19 +1382,7 @@ async function renderInitialScreen(quizList) {
         const localizedContent = getLocalizedContent(firstQuizData);
 
         // Localized text based on language
-        const currentLang = document.documentElement.lang || 'en';
-        const localizedText = {
-            startButton: {
-                'en': 'Start Assessment',
-                'fr': 'Commencer l\'évaluation',
-                'es': 'Comenzar evaluación',
-                'no': 'Start vurdering',
-                'pl': 'Rozpocznij ocenę',
-                'la': 'Incepta aestimationem',
-                'zh': '开始评估',
-                'egy': 'ابدأ التقييم'
-            }[currentLang] || 'Start Assessment'
-        };
+        const startButtonText = getUIText('startButton');
 
         // Create the assessment content container
         const assessmentContainer = document.createElement('div');
@@ -1352,7 +1404,7 @@ async function renderInitialScreen(quizList) {
                 </div>
                 <div class="mt-6 text-center">
                     <button id="startAssessmentBtn" class="px-8 py-3 bg-oxford-blue text-cream font-bold rounded-md hover:bg-charcoal transition duration-300 focus:outline-none focus:ring-2 focus:ring-gold">
-                        ${localizedText.startButton}
+                        ${startButtonText}
                     </button>
                 </div>
             </div>
@@ -1382,35 +1434,14 @@ async function renderInitialScreen(quizList) {
         // Display an error message to the user
         const assessmentsSection = document.getElementById('assessments');
         if (assessmentsSection) {
-            const currentLang = document.documentElement.lang || 'en';
-            const localizedText = {
-                errorTitle: {
-                    'en': 'Unable to Load Assessment',
-                    'fr': 'Impossible de charger l\'évaluation',
-                    'es': 'No se puede cargar la evaluación',
-                    'no': 'Kan ikke laste vurdering',
-                    'pl': 'Nie można załadować oceny',
-                    'la': 'Aestimatio non potest onerari',
-                    'zh': '无法加载评估',
-                    'egy': 'غير قادر على تحميل التقييم'
-                }[currentLang] || 'Unable to Load Assessment',
-                errorMessage: {
-                    'en': 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.',
-                    'fr': 'Nous sommes désolés, mais l\'évaluation n\'a pas pu être chargée pour le moment. Veuillez réessayer plus tard.',
-                    'es': 'Lo sentimos, pero la evaluación no se pudo cargar en este momento. Por favor, inténtelo de nuevo más tarde.',
-                    'no': 'Vi er lei oss, men vurderingen kunne ikke lastes inn på dette tidspunktet. Vennligst prøv igjen senere.',
-                    'pl': 'Przykro namy, ale ocena nie mogła zostać załadowana w tym czasie. Spróbuj ponownie później.',
-                    'la': 'Dolemus, sed aestimatio non potest onerari hoc tempore. Quaeso conare iterum postea.',
-                    'zh': '很抱歉，评估目前无法加载。请稍后再试。',
-                    'egy': 'نحن آسفون ، ولكن لا يمكن تحميل التقييم في هذا الوقت. يرجى المحاولة مرة أخرى لاحقاً.'
-                }[currentLang] || 'We\'re sorry, but the assessment could not be loaded at this time. Please try again later.'
-            };
+            const errorTitle = getUIText('errorTitle');
+            const errorMessage = getUIText('errorMessage');
 
             const errorContainer = document.createElement('div');
             errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
             errorContainer.innerHTML = `
-                <h3 class="text-xl font-bold text-red-800 mb-2">${localizedText.errorTitle}</h3>
-                <p class="text-red-700">${localizedText.errorMessage}</p>
+                <h3 class="text-xl font-bold text-red-800 mb-2">${errorTitle}</h3>
+                <p class="text-red-700">${errorMessage}</p>
             `;
             assessmentsSection.appendChild(errorContainer);
         }
@@ -1468,6 +1499,12 @@ function normalizeQuizData(data) {
  * @returns {Object} - Localized quiz content
  */
 function getLocalizedQuizContent(quizData) {
+    // Safety check for quizData
+    if (!quizData || typeof quizData !== 'object') {
+        console.error('[getLocalizedQuizContent] Invalid quizData:', quizData);
+        return null;
+    }
+
     const currentLang = document.documentElement.lang || 'en';
     const langCode = currentLang.substring(0, 2).toUpperCase();
 
@@ -1493,6 +1530,19 @@ function renderQuizInterface() {
     }
 
     const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+    // Safety checks for localized content
+    if (!localizedContent || typeof localizedContent !== 'object') {
+        console.error('[Quiz Engine] Invalid localizedContent:', localizedContent);
+        showQuizError();
+        return;
+    }
+
+    if (!localizedContent.questions || !Array.isArray(localizedContent.questions)) {
+        console.error('[Quiz Engine] Invalid questions array:', localizedContent.questions);
+        showQuizError();
+        return;
+    }
     const currentLang = document.documentElement.lang || 'en';
     const isRTL = currentLang === 'ar-EG';
 
@@ -1508,165 +1558,24 @@ function renderQuizInterface() {
     const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
     const scaleMax = isSocialSymptomQuiz ? 4 : 3; // 0-4 for social symptom, 0-3 for others
 
-    // Localized UI text
+    // Localized UI text - dynamically mapped from uiTextTranslations
     const uiText = {
-        questionLabel: {
-            'en': 'Question',
-            'fr': 'Question',
-            'es': 'Pregunta',
-            'no': 'Spørsmål',
-            'pl': 'Pytanie',
-            'la': 'Quaestio',
-            'egy': 'سؤال',
-            'zh': '问题'
-        }[currentLang] || 'Question',
-        ofLabel: {
-            'en': 'of',
-            'fr': 'sur',
-            'es': 'de',
-            'no': 'av',
-            'pl': 'z',
-            'la': 'de',
-            'egy': 'من',
-            'zh': '共'
-        }[currentLang] || 'of',
-        previousBtn: {
-            'en': 'Previous',
-            'fr': 'Précédent',
-            'es': 'Anterior',
-            'no': 'Forrige',
-            'pl': 'Poprzedni',
-            'la': 'Anterior',
-            'egy': 'السابق',
-            'zh': '上一题'
-        }[currentLang] || 'Previous',
-        nextBtn: {
-            'en': 'Next',
-            'fr': 'Suivant',
-            'es': 'Siguiente',
-            'no': 'Neste',
-            'pl': 'Następny',
-            'la': 'Sequens',
-            'egy': 'التالي',
-            'zh': '下一题'
-        }[currentLang] || 'Next',
-        submitBtn: {
-            'en': 'Submit Assessment',
-            'fr': 'Soumettre l\'évaluation',
-            'es': 'Enviar evaluación',
-            'no': 'Send inn vurdering',
-            'pl': 'Wyślij ocenę',
-            'la': 'Mitte aestimationem',
-            'egy': 'إرسال التقييم',
-            'zh': '提交评估'
-        }[currentLang] || 'Submit',
-        retakeBtn: {
-            'en': 'Retake Assessment',
-            'fr': 'Refaire l\'évaluation',
-            'es': 'Repetir evaluación',
-            'no': 'Ta vurdering på nytt',
-            'pl': 'Ponów ocenę',
-            'la': 'Iterum aestimationem',
-            'egy': 'إعادة التقييم',
-            'zh': '重新评估'
-        }[currentLang] || 'Retake',
-        scoreLabel: {
-            'en': 'Your Score',
-            'fr': 'Votre Score',
-            'es': 'Su Puntuación',
-            'no': 'Din Poengsum',
-            'pl': 'Twój Wynik',
-            'la': 'Tua Punctuatio',
-            'egy': 'نتيجتك',
-            'zh': '你的分数'
-        }[currentLang] || 'Your Score',
-        resultLabel: {
-            'en': 'Your Result',
-            'fr': 'Votre Résultat',
-            'es': 'Tu Resultado',
-            'no': 'Ditt Resultat',
-            'pl': 'Twój Wynik',
-            'la': 'Tuum Resultatum',
-            'egy': 'نتيجتك',
-            'zh': '你的结果'
-        }[currentLang] || 'Your Result',
-        exitBtn: {
-            'en': 'Exit',
-            'fr': 'Sortir',
-            'es': 'Salir',
-            'no': 'Avslutt',
-            'pl': 'Wyjdź',
-            'la': 'Exeunde',
-            'egy': 'خروج',
-            'zh': '退出'
-        }[currentLang] || 'Exit'
+        questionLabel: getUIText('questionLabel'),
+        ofLabel: getUIText('ofLabel'),
+        previousBtn: getUIText('previousButton'),
+        nextBtn: getUIText('nextButton'),
+        submitBtn: getUIText('submitButton'),
+        retakeBtn: getUIText('retakeButton'),
+        scoreLabel: getUIText('scoreLabel'),
+        resultLabel: getUIText('resultsTitle'),
+        exitBtn: getUIText('exitButton')
     };
 
-    // Generate scale labels
+    // Generate scale labels - dynamically mapped from uiTextTranslations
+    const scaleLabelsObj = getScaleLabels();
     const scaleLabels = [];
     for (let i = 0; i <= scaleMax; i++) {
-        const label = {
-            0: {
-                'en': 'Strongly Disagree',
-                'fr': 'Fortement en désaccord',
-                'es': 'Muy en desacuerdo',
-                'no': 'Helt uenig',
-                'pl': 'Zdecydowanie się nie zgadzam',
-                'la': 'Fortiter dissentio',
-                'egy': 'لا أوافق بشدة',
-                'zh': '强烈不同意'
-            },
-            1: {
-                'en': 'Disagree',
-                'fr': 'En désaccord',
-                'es': 'En desacuerdo',
-                'no': 'Uenig',
-                'pl': 'Nie zgadzam',
-                'la': 'Dissentio',
-                'egy': 'لا أوافق',
-                'zh': '不同意'
-            },
-            2: {
-                'en': 'Neutral',
-                'fr': 'Neutre',
-                'es': 'Neutral',
-                'no': 'Nøytral',
-                'pl': 'Neutralny',
-                'la': 'Neutrum',
-                'egy': 'محايد',
-                'zh': '中立'
-            },
-            3: {
-                'en': 'Agree',
-                'fr': 'D\'accord',
-                'es': 'De acuerdo',
-                'no': 'Enig',
-                'pl': 'Zgadzam',
-                'la': 'Consenio',
-                'egy': 'أوافق',
-                'zh': '同意'
-            },
-            4: {
-                'en': 'Strongly Agree',
-                'fr': 'Fortement d\'accord',
-                'es': 'Muy de acuerdo',
-                'no': 'Helt enig',
-                'pl': 'Zdecydowanie się zgadzam',
-                'la': 'Fortiter consentio',
-                'egy': 'أوافق بشدة',
-                'zh': '强烈同意'
-            }
-        }[i] || {
-            'en': `${i}`,
-            'fr': `${i}`,
-            'es': `${i}`,
-            'no': `${i}`,
-            'pl': `${i}`,
-            'la': `${i}`,
-            'egy': `${i}`,
-            'zh': `${i}`
-        };
-        scaleLabels.push(label[currentLang] || label['en']);
+        scaleLabels.push(scaleLabelsObj[i] || `${i}`);
     }
 
     // Render quiz interface
@@ -1674,7 +1583,7 @@ function renderQuizInterface() {
         <div class="quiz-interface ${isRTL ? 'rtl' : ''}">
             <!-- Header with Exit Button -->
             <div class="quiz-header">
-                <button id="quizExitBtn" class="btn-quiz-exit" aria-label="Exit quiz and return to assessment lobby">
+                <button id="quizExitBtn" class="btn-quiz-exit" aria-label="${uiText.exitBtn}">
                     ${uiText.exitBtn}
                 </button>
             </div>
@@ -1835,16 +1744,7 @@ function clearQuizButtonState() {
  */
 function showAnswerRequiredWarning() {
     const currentLang = document.documentElement.lang || 'en';
-    const warningText = {
-        'en': 'Please select an answer before proceeding.',
-        'fr': 'Veuillez sélectionner une réponse avant de continuer.',
-        'es': 'Por favor seleccione una respuesta antes de continuar.',
-        'no': 'Vennligst velg et svar før du fortsetter.',
-        'pl': 'Proszę wybrać odpowiedź przed przejściem dalej.',
-        'la': 'Quaeso roga responsum priusquam pergas.',
-        'egy': 'يرجى تحديد إجابة قبل المتابعة.',
-        'zh': '请选择答案后再继续。'
-    }[currentLang] || 'Please select an answer before proceeding.';
+    const warningText = getUIText('answerRequiredWarning') || 'Please select an answer before proceeding.';
 
     alert(warningText);
 }
@@ -1855,6 +1755,18 @@ function showAnswerRequiredWarning() {
  */
 function goToQuestion(questionIndex) {
     const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+    // Safety checks to prevent TypeErrors
+    if (!localizedContent || typeof localizedContent !== 'object') {
+        console.error('[goToQuestion] Invalid localizedContent:', localizedContent);
+        return;
+    }
+
+    if (!localizedContent.questions || !Array.isArray(localizedContent.questions)) {
+        console.error('[goToQuestion] Invalid questions array in localizedContent:', localizedContent.questions);
+        return;
+    }
+
     const numQuestions = localizedContent.questions.length;
     const isRTL = document.documentElement.lang === 'ar-EG';
 
@@ -1888,65 +1800,13 @@ function goToQuestion(questionIndex) {
         const isSocialSymptomQuiz = quizFiles[quizState.currentQuizIndex] === 'quiz_social_symptom.json';
         const scaleMax = isSocialSymptomQuiz ? 4 : 3;
 
-        const currentLang = document.documentElement.lang || 'en';
-        const scaleLabels = {
-            0: {
-                'en': 'Strongly Disagree',
-                'fr': 'Fortement en désaccord',
-                'es': 'Muy en desacuerdo',
-                'no': 'Helt uenig',
-                'pl': 'Zdecydowanie się nie zgadzam',
-                'la': 'Fortiter dissentio',
-                'egy': 'لا أوافق بشدة',
-                'zh': '强烈不同意'
-            },
-            1: {
-                'en': 'Disagree',
-                'fr': 'En désaccord',
-                'es': 'En desacuerdo',
-                'no': 'Uenig',
-                'pl': 'Nie zgadzam',
-                'la': 'Dissentio',
-                'egy': 'لا أوافق',
-                'zh': '不同意'
-            },
-            2: {
-                'en': 'Neutral',
-                'fr': 'Neutre',
-                'es': 'Neutral',
-                'no': 'Nøytral',
-                'pl': 'Neutralny',
-                'la': 'Neutrum',
-                'egy': 'محايد',
-                'zh': '中立'
-            },
-            3: {
-                'en': 'Agree',
-                'fr': 'D\'accord',
-                'es': 'De acuerdo',
-                'no': 'Enig',
-                'pl': 'Zgadzam',
-                'la': 'Consenio',
-                'egy': 'أوافق',
-                'zh': '同意'
-            },
-            4: {
-                'en': 'Strongly Agree',
-                'fr': 'Fortement d\'accord',
-                'es': 'Muy de acuerdo',
-                'no': 'Helt enig',
-                'pl': 'Zdecydowanie się zgadzam',
-                'la': 'Fortiter consentio',
-                'egy': 'أوافق بشدة',
-                'zh': '强烈同意'
-            }
-        };
+        const scaleLabelsObj = getScaleLabels();
 
         // Clear existing button state before regeneration
         clearQuizButtonState();
 
         scaleContainer.innerHTML = generateScaleHTML(questionIndex, scaleMax,
-            scaleLabels.map(l => l[currentLang] || l['en']));
+            scaleLabelsObj);
 
         // Restore selected state after innerHTML replacement
         const currentAnswer = quizState.answers[questionIndex];
@@ -1967,32 +1827,9 @@ function goToQuestion(questionIndex) {
     }
 
     if (nextBtn) {
-        const uiText = {
-            nextBtn: {
-                'en': 'Next',
-                'fr': 'Suivant',
-                'es': 'Siguiente',
-                'no': 'Neste',
-                'pl': 'Następny',
-                'la': 'Sequens',
-                'egy': 'التالي',
-                'zh': '下一题'
-            },
-            submitBtn: {
-                'en': 'Submit Assessment',
-                'fr': 'Soumettre l\'évaluation',
-                'es': 'Enviar evaluación',
-                'no': 'Send inn vurdering',
-                'pl': 'Wyślij ocenę',
-                'la': 'Mitte aestimationem',
-                'egy': 'إرسال التقييم',
-                'zh': '提交评估'
-            }
-        };
-
         const buttonText = questionIndex === numQuestions - 1
-            ? uiText.submitBtn[currentLang] || 'Submit Assessment'
-            : uiText.nextBtn[currentLang] || 'Next';
+            ? getUIText('submitButton')
+            : getUIText('nextButton');
 
         nextBtn.textContent = buttonText;
     }
@@ -2079,48 +1916,12 @@ function renderQuizResults(totalScore, result, localizedContent) {
     const currentLang = document.documentElement.lang || 'en';
     const isRTL = currentLang === 'ar-EG';
 
-    // Localized UI text
+    // Localized UI text - dynamically mapped from uiTextTranslations
     const uiText = {
-        scoreLabel: {
-            'en': 'Your Score',
-            'fr': 'Votre Score',
-            'es': 'Su Puntuación',
-            'no': 'Din Poengsum',
-            'pl': 'Twój Wynik',
-            'la': 'Tua Punctuatio',
-            'egy': 'نتيجتك',
-            'zh': '你的分数'
-        }[currentLang] || 'Your Score',
-        resultLabel: {
-            'en': 'Your Result',
-            'fr': 'Votre Résultat',
-            'es': 'Tu Resultado',
-            'no': 'Ditt Resultat',
-            'pl': 'Twój Wynik',
-            'la': 'Tuum Resultatum',
-            'egy': 'نتيجتك',
-            'zh': '你的结果'
-        }[currentLang] || 'Your Result',
-        retakeBtn: {
-            'en': 'Retake Assessment',
-            'fr': 'Refaire l\'évaluation',
-            'es': 'Repetir evaluación',
-            'no': 'Ta vurdering på nytt',
-            'pl': 'Ponów ocenę',
-            'la': 'Iterum aestimationem',
-            'egy': 'إعادة التقييم',
-            'zh': '重新评估'
-        }[currentLang] || 'Retake',
-        returnToLobbyBtn: {
-            'en': 'Return to Lobby',
-            'fr': 'Retour au Vestibule',
-            'es': 'Volver al Vestíbulo',
-            'no': 'Tilbake til Lobby',
-            'pl': 'Powrót do Hallu',
-            'la': 'Redite ad Vestibulum',
-            'egy': 'العودة إلى الردهة',
-            'zh': '返回大厅'
-        }[currentLang] || 'Return to Lobby'
+        scoreLabel: getUIText('scoreLabel'),
+        resultLabel: getUIText('resultsTitle'),
+        retakeBtn: getUIText('retakeButton'),
+        returnToLobbyBtn: getUIText('returnToLobbyButton')
     };
 
     // Render results
@@ -2189,16 +1990,7 @@ function showQuizError() {
     }
 
     const currentLang = document.documentElement.lang || 'en';
-    const errorText = {
-        'en': 'An error occurred while loading the quiz. Please try again later.',
-        'fr': 'Une erreur s\'est produite lors du chargement du quiz. Veuillez réessayer plus tard.',
-        'es': 'Ocurrió un error al cargar el cuestionario. Por favor, inténtelo de nuevo más tarde.',
-        'no': 'Det oppstod en feil ved lasting av spørsmålet. Vennligst prøv igjen senere.',
-        'pl': 'Wystąpił błąd podczas ładowania quizu. Proszę spróbuj ponownie później.',
-        'la': 'Errore factum est dum quaestio onerabatur. Quaeso conare iterum postea.',
-        'egy': 'حدث خطأ أثناء تحميل الاختبار. يرجى المحاولة مرة أخرى لاحقًا.',
-        'zh': '加载测验时发生错误。请稍后再试。'
-    }[currentLang] || 'An error occurred while loading the quiz. Please try again later.';
+    const errorText = getUIText('quizLoadError') || 'An error occurred while loading the quiz. Please try again later.';
 
     const errorHTML = `
         <div class="quiz-error">
@@ -2341,28 +2133,10 @@ async function renderQuizLobby() {
         );
 
         // Localized lobby title
-        const lobbyTitle = {
-            'en': 'Select Assessment',
-            'fr': 'Sélectionnez votre évaluation',
-            'es': 'Seleccione su evaluación',
-            'no': 'Velg din vurdering',
-            'pl': 'Wybierz swoją ocenę',
-            'la': 'Elige tuam aestimationem',
-            'egy': 'اختيار التقييم',
-            'zh': '选择评估'
-        }[currentLang] || 'Select Assessment';
+        const lobbyTitle = getUIText('selectAssessment');
 
         // Localized start button text
-        const startButtonText = {
-            'en': 'Start',
-            'fr': 'Commencer',
-            'es': 'Comenzar',
-            'no': 'Start',
-            'pl': 'Rozpocznij',
-            'la': 'Incepta',
-            'egy': 'ابدأ',
-            'zh': '开始'
-        }[currentLang] || 'Start';
+        const startButtonText = getUIText('startButton');
 
         // Generate lobby HTML
         const lobbyHTML = `
@@ -2400,17 +2174,7 @@ async function renderQuizLobby() {
         // Display error message
         const assessmentsSection = document.getElementById('assessments');
         if (assessmentsSection) {
-            const currentLang = document.documentElement.lang || 'en';
-            const errorText = {
-                'en': 'Failed to load assessments. Please try again later.',
-                'fr': 'Échec du chargement des évaluations. Veuillez réessayer plus tard.',
-                'es': 'Error al cargar evaluaciones. Por favor, inténtelo de nuevo más tarde.',
-                'no': 'Kunne ikke laste vurderinger. Vennligst prøv igjen senere.',
-                'pl': 'Nie udało się załadować ocen. Proszę spróbować ponownie później.',
-                'la': 'Aestimationes onerari non potuerunt. Quaeso conare iterum postea.',
-                'egy': 'فشل تحميل التقييمات. يرجى المحاولة مرة أخرى لاحقًا.',
-                'zh': '加载评估失败。请稍后再试。'
-            }[currentLang] || 'Failed to load assessments. Please try again later.';
+            const errorText = getUIText('lobbyErrorMessage');
 
             const errorContainer = document.createElement('div');
             errorContainer.className = 'max-w-4xl mx-auto bg-red-50 border border-red-200 rounded-lg p-6';
@@ -2505,7 +2269,8 @@ async function startQuiz(quizFileName) {
 
     } catch (error) {
         console.error('[startQuiz] Error starting quiz:', error);
-        alert(error);
+        const errorMessage = getUIText('errorMessage') || 'An error occurred. Please try again.';
+        alert(errorMessage);
     }
 }
 

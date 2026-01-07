@@ -1,199 +1,610 @@
 {
-    "quizId": "quiz_analyst_dilemma",
-    "title": "Analyst Dilemma Assessment",
-    "description": "Evaluate your understanding of analytical challenges, decision-making dilemmas, and professional judgment in clinical practice.",
-    "questions": [
-        {
-            "id": 1,
-            "question": "What is the 'dual relationship' dilemma in clinical practice?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "When a clinician has multiple roles with a client beyond the therapeutic relationship"
-                },
-                {
-                    "id": "b",
-                    "text": "When two clients are in a relationship with each other"
-                },
-                {
-                    "id": "c",
-                    "text": "When a clinician works with two different supervisors"
-                },
-                {
-                    "id": "d",
-                    "text": "When a client has two separate diagnoses"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Dual relationships occur when clinicians engage in additional roles with clients (such as friend, business partner, or family member), which can compromise professional boundaries, objectivity, and therapeutic effectiveness."
-        },
-        {
-            "id": 2,
-            "question": "In clinical decision-making, what is 'confirmation bias'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The tendency to seek information that confirms pre-existing beliefs"
-                },
-                {
-                    "id": "b",
-                    "text": "The practice of confirming diagnoses with multiple sources"
-                },
-                {
-                    "id": "c",
-                    "text": "The bias toward confirming treatment effectiveness"
-                },
-                {
-                    "id": "d",
-                    "text": "The tendency to confirm client statements without question"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Confirmation bias is a cognitive bias where individuals favor information that confirms their existing beliefs or hypotheses while discounting contradictory evidence, potentially leading to diagnostic errors in clinical practice."
-        },
-        {
-            "id": 3,
-            "question": "What is the 'duty to warn' versus 'duty to protect' distinction?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Duty to warn is informing potential victims; duty to protect includes broader interventions"
-                },
-                {
-                    "id": "b",
-                    "text": "Duty to warn applies to self-harm; duty to protect applies to harm to others"
-                },
-                {
-                    "id": "c",
-                    "text": "Duty to warn is legal; duty to protect is ethical"
-                },
-                {
-                    "id": "d",
-                    "text": "Duty to warn is for therapists; duty to protect is for physicians"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Duty to warn specifically requires informing identifiable potential victims of threats, while duty to protect encompasses a broader range of actions including hospitalization, medication, and other interventions to prevent harm."
-        },
-        {
-            "id": 4,
-            "question": "What is 'therapeutic nihilism'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The belief that treatment is futile or ineffective for certain conditions"
-                },
-                {
-                    "id": "b",
-                    "text": "The rejection of all therapeutic interventions"
-                },
-                {
-                    "id": "c",
-                    "text": "The philosophical position that suffering has meaning"
-                },
-                {
-                    "id": "d",
-                    "text": "The practice of minimal intervention in therapy"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Therapeutic nihilism refers to the pessimistic belief that certain conditions cannot be effectively treated, which can lead to premature disengagement from treatment and failure to explore potentially beneficial interventions."
-        },
-        {
-            "id": 5,
-            "question": "In clinical assessment, what is 'base rate neglect'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Ignoring the prevalence of a condition in the general population when making diagnoses"
-                },
-                {
-                    "id": "b",
-                    "text": "Failing to assess the basic functioning of a client"
-                },
-                {
-                    "id": "c",
-                    "text": "Neglecting to establish a baseline for treatment"
-                },
-                {
-                    "id": "d",
-                    "text": "Overlooking the foundational theories of psychology"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Base rate neglect is a cognitive error where clinicians disregard the actual prevalence of a condition (base rate) and instead rely on specific case details, leading to over-diagnosis of rare conditions and under-diagnosis of common ones."
-        },
-        {
-            "id": 6,
-            "question": "What is the 'imposter phenomenon' in professional development?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Persistent self-doubt despite evidence of competence and achievement"
-                },
-                {
-                    "id": "b",
-                    "text": "The tendency to impersonate other professionals"
-                },
-                {
-                    "id": "c",
-                    "text": "A deliberate strategy to appear more experienced than one is"
-                },
-                {
-                    "id": "d",
-                    "text": "The phenomenon of clients pretending to have symptoms"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "The imposter phenomenon (or imposter syndrome) describes high-achieving individuals who are unable to internalize their accomplishments and have a persistent fear of being exposed as a fraud, despite objective evidence of their competence."
-        },
-        {
-            "id": 7,
-            "question": "What is 'diagnostic overshadowing'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Attributing physical symptoms to mental illness without proper investigation"
-                },
-                {
-                    "id": "b",
-                    "text": "Making multiple diagnoses to explain all symptoms"
-                },
-                {
-                    "id": "c",
-                    "text": "Allowing one diagnosis to overshadow others in treatment planning"
-                },
-                {
-                    "id": "d",
-                    "text": "The tendency to diagnose based on first impressions only"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Diagnostic overshadowing occurs when physical symptoms or complaints in individuals with mental illness are incorrectly attributed to their psychiatric condition, leading to missed diagnoses and inadequate medical care."
-        },
-        {
-            "id": 8,
-            "question": "In ethical decision-making, what is the 'principle of double effect'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "An action with both good and bad effects may be permissible under certain conditions"
-                },
-                {
-                    "id": "b",
-                    "text": "The requirement to consider both sides of an ethical dilemma"
-                },
-                {
-                    "id": "c",
-                    "text": "The prohibition against actions with harmful consequences"
-                },
-                {
-                    "id": "d",
-                    "text": "The obligation to double-check all clinical decisions"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "The principle of double effect provides ethical justification for actions that have both good and bad effects, requiring that the action itself is good or neutral, the bad effect is not intended, and the good effect outweighs the bad effect."
-        }
-    ]
+    "EN": {
+        "title": "Analyst Dilemma Assessment",
+        "description": "Evaluate your understanding of analytical challenges, decision-making dilemmas, and professional judgment in clinical practice.",
+        "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "I feel confident in my ability to navigate dual relationships in clinical practice.",
+                "context": "Dual relationships occur when clinicians engage in additional roles with clients beyond the therapeutic relationship."
+            },
+            {
+                "id": 2,
+                "text": "I am aware of confirmation bias in my clinical decision-making process.",
+                "context": "Confirmation bias is the tendency to seek information that confirms pre-existing beliefs."
+            },
+            {
+                "id": 3,
+                "text": "I clearly understand the distinction between duty to warn and duty to protect.",
+                "context": "Duty to warn involves informing potential victims, while duty to protect includes broader interventions."
+            },
+            {
+                "id": 4,
+                "text": "I maintain hope for treatment effectiveness even with challenging cases.",
+                "context": "Therapeutic nihilism refers to the belief that treatment is futile for certain conditions."
+            },
+            {
+                "id": 5,
+                "text": "I consider base rates when making clinical diagnoses.",
+                "context": "Base rate neglect involves ignoring the prevalence of conditions in the general population."
+            },
+            {
+                "id": 6,
+                "text": "I recognize and address imposter feelings in my professional development.",
+                "context": "The imposter phenomenon describes persistent self-doubt despite evidence of competence."
+            },
+            {
+                "id": 7,
+                "text": "I avoid attributing physical symptoms to mental illness without proper investigation.",
+                "context": "Diagnostic overshadowing occurs when physical symptoms are incorrectly attributed to psychiatric conditions."
+            },
+            {
+                "id": 8,
+                "text": "I understand the principle of double effect in ethical decision-making.",
+                "context": "The principle of double effect provides ethical justification for actions with both good and bad effects."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Developing Awareness",
+                "summary": "You are in the early stages of recognizing analytical challenges and ethical dilemmas in clinical practice. This is an important first step toward professional growth.",
+                "recommendation": "Consider seeking mentorship or supervision to deepen your understanding of these concepts. Reflect on how these dilemmas manifest in your practice and engage with case studies to build awareness."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Growing Competence",
+                "summary": "You demonstrate a solid foundation in understanding analytical challenges and ethical considerations. You are developing the skills needed for sound clinical judgment.",
+                "recommendation": "Continue building on this foundation through case consultation, peer discussion, and ongoing education. Focus on applying these concepts consistently in your practice."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Advanced Understanding",
+                "summary": "You show sophisticated awareness of analytical challenges, ethical dilemmas, and professional judgment issues. You demonstrate strong clinical reasoning and ethical decision-making skills.",
+                "recommendation": "Share your knowledge with colleagues through supervision, teaching, or consultation. Consider contributing to professional discourse on these important topics."
+            }
+        ]
+    },
+    "FR": {
+        "title": "Évaluation du Dilemme de l'Analyste",
+        "description": "Évaluez votre compréhension des défis analytiques, des dilemmes décisionnels et du jugement professionnel dans la pratique clinique.",
+        "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation clinique professionnelle ou un diagnostic.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Je me sens confiant dans ma capacité à naviguer les relations doubles en pratique clinique.",
+                "context": "Les relations doubles surviennent lorsque les cliniciens s'engagent dans des rôles supplémentaires avec les clients."
+            },
+            {
+                "id": 2,
+                "text": "Je suis conscient du biais de confirmation dans mon processus de décision clinique.",
+                "context": "Le biais de confirmation est la tendance à rechercher des informations qui confirment les croyances existantes."
+            },
+            {
+                "id": 3,
+                "text": "Je comprends clairement la distinction entre le devoir d'avertir et le devoir de protéger.",
+                "context": "Le devoir d'avertir implique d'informer les victimes potentielles, tandis que le devoir de protéger inclut des interventions plus larges."
+            },
+            {
+                "id": 4,
+                "text": "Je maintiens l'espoir d'efficacité du traitement même pour les cas difficiles.",
+                "context": "Le nihilisme thérapeutique fait référence à la conviction que le traitement est futile pour certaines conditions."
+            },
+            {
+                "id": 5,
+                "text": "Je considère les taux de base lors des diagnostics cliniques.",
+                "context": "La négligence des taux de base implique d'ignorer la prévalence des conditions dans la population générale."
+            },
+            {
+                "id": 6,
+                "text": "Je reconnais et j'aborde les sentiments d'imposteur dans mon développement professionnel.",
+                "context": "Le phénomène de l'imposteur décrit un doute persistant malgré des preuves de compétence."
+            },
+            {
+                "id": 7,
+                "text": "J'évite d'attribuer des symptômes physiques à une maladie mentale sans enquête appropriée.",
+                "context": "Le dépassement diagnostique survient lorsque des symptômes physiques sont incorrectement attribués à des conditions psychiatriques."
+            },
+            {
+                "id": 8,
+                "text": "Je comprends le principe du double effet dans la prise de décision éthique.",
+                "context": "Le principe du double effet fournit une justification éthique pour les actions ayant à la fois des effets bons et mauvais."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conscience en Développement",
+                "summary": "Vous êtes aux premiers stades de la reconnaissance des défis analytiques et des dilemmes éthiques dans la pratique clinique. C'est une première étape importante vers la croissance professionnelle.",
+                "recommendation": "Envisagez de chercher un mentorat ou une supervision pour approfondir votre compréhension de ces concepts. Réfléchissez à la manière dont ces dilemmes se manifestent dans votre pratique."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Compétence Croissante",
+                "summary": "Vous démontrez une base solide dans la compréhension des défis analytiques et des considérations éthiques. Vous développez les compétences nécessaires pour un bon jugement clinique.",
+                "recommendation": "Continuez à construire sur cette base grâce à la consultation de cas, aux discussions entre pairs et à l'éducation continue. Concentrez-vous sur l'application cohérente de ces concepts dans votre pratique."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Compréhension Avancée",
+                "summary": "Vous montrez une conscience sophistiquée des défis analytiques, des dilemmes éthiques et des problèmes de jugement professionnel. Vous démontrez de solides compétences de raisonnement clinique et de prise de décision éthique.",
+                "recommendation": "Partagez vos connaissances avec vos collègues par le biais de la supervision, de l'enseignement ou de la consultation. Envisagez de contribuer au discours professionnel sur ces sujets importants."
+            }
+        ]
+    },
+    "ES": {
+        "title": "Evaluación del Dilema del Analista",
+        "description": "Evalúe su comprensión de los desafíos analíticos, los dilemas de toma de decisiones y el juicio profesional en la práctica clínica.",
+        "disclaimer": "Esta evaluación está diseñada con fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación clínica profesional o el diagnóstico.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Me siento confiado en mi capacidad para navegar relaciones duales en la práctica clínica.",
+                "context": "Las relaciones duales ocurren cuando los clínicos se involucran en roles adicionales con los clientes."
+            },
+            {
+                "id": 2,
+                "text": "Soy consciente del sesgo de confirmación en mi proceso de toma de decisiones clínicas.",
+                "context": "El sesgo de confirmación es la tendencia a buscar información que confirme creencias preexistentes."
+            },
+            {
+                "id": 3,
+                "text": "Entiendo claramente la distinción entre el deber de advertir y el deber de proteger.",
+                "context": "El deber de advertir implica informar a víctimas potenciales, mientras que el deber de proteger incluye intervenciones más amplias."
+            },
+            {
+                "id": 4,
+                "text": "Mantengo la esperanza de efectividad del tratamiento incluso para casos difíciles.",
+                "context": "El nihilismo terapéutico se refiere a la creencia de que el tratamiento es inútil para ciertas condiciones."
+            },
+            {
+                "id": 5,
+                "text": "Considero las tasas base al hacer diagnósticos clínicos.",
+                "context": "La negligencia de la tasa base implica ignorar la prevalencia de condiciones en la población general."
+            },
+            {
+                "id": 6,
+                "text": "Reconozco y abordo los sentimientos de impostor en mi desarrollo profesional.",
+                "context": "El fenómeno del impostor describe dudas persistentes a pesar de evidencia de competencia."
+            },
+            {
+                "id": 7,
+                "text": "Evito atribuir síntomas físicos a enfermedad mental sin investigación apropiada.",
+                "context": "El diagnóstico por eclipsamiento ocurre cuando los síntomas físicos se atribuyen incorrectamente a condiciones psiquiátricas."
+            },
+            {
+                "id": 8,
+                "text": "Entiendo el principio del doble efecto en la toma de decisiones ética.",
+                "context": "El principio del doble efecto proporciona justificación ética para acciones con efectos tanto buenos como malos."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conciencia en Desarrollo",
+                "summary": "Usted está en las primeras etapas de reconocer los desafíos analíticos y dilemas éticos en la práctica clínica. Este es un primer paso importante hacia el crecimiento profesional.",
+                "recommendation": "Considere buscar mentoría o supervisión para profundizar su comprensión de estos conceptos. Reflexione sobre cómo estos dilemas se manifiestan en su práctica."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Competencia Creciente",
+                "summary": "Usted demuestra una base sólida en la comprensión de los desafíos analíticos y consideraciones éticas. Está desarrollando las habilidades necesarias para un buen juicio clínico.",
+                "recommendation": "Continúe construyendo sobre esta base a través de consultas de casos, discusiones entre pares y educación continua. Concéntrese en aplicar estos conceptos consistentemente en su práctica."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Comprensión Avanzada",
+                "summary": "Usted muestra una conciencia sofisticada de los desafíos analíticos, dilemas éticos y problemas de juicio profesional. Demuestra sólidas habilidades de razonamiento clínico y toma de decisiones ética.",
+                "recommendation": "Comparta sus conocimientos con colegas a través de supervisión, enseñanza o consulta. Considere contribuir al discurso profesional sobre estos temas importantes."
+            }
+        ]
+    },
+    "NO": {
+        "title": "Analytiker Dilemma Vurdering",
+        "description": "Vurder din forståelse av analytiske utfordringer, beslutningsdilemmaer og profesjonell dømmekraft i klinisk praksis.",
+        "disclaimer": "Denne vurderingen er designet for pedagogiske formål for å utforske psykoanalytiske konsepter. Den erstatter ikke profesjonell klinisk evaluering eller diagnose.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Jeg føler meg trygg på min evne til å navigere i dobbelte relasjoner i klinisk praksis.",
+                "context": "Dobbelte relasjoner oppstår når klinikere engasjerer seg i tilleggroller med klienter."
+            },
+            {
+                "id": 2,
+                "text": "Jeg er klar over bekreftelsesbias i mitt kliniske beslutningsprosess.",
+                "context": "Bekreftelsesbias er tendensen til å søke informasjon som bekrefter eksisterende overbevisninger."
+            },
+            {
+                "id": 3,
+                "text": "Jeg forstår tydelig forskjellen mellom plikten til å advare og plikten til å beskytte.",
+                "context": "Plikten til å advare innebærer å informere potensielle ofre, mens plikten til å beskytte inkluderer bredere inngrep."
+            },
+            {
+                "id": 4,
+                "text": "Jeg opprettholder håp om behandlingseffektivitet selv for utfordrende tilfeller.",
+                "context": "Terapeutisk nihilisme refererer til troen på at behandling er nytteløs for visse tilstander."
+            },
+            {
+                "id": 5,
+                "text": "Jeg vurderer baserater når jeg stiller kliniske diagnoser.",
+                "context": "Baserat-neglisjering innebærer å ignorere forekomsten av tilstander i den generelle befolkningen."
+            },
+            {
+                "id": 6,
+                "text": "Jeg gjenkjenner og tar opp bedragerfølelser i min profesjonelle utvikling.",
+                "context": "Bedragerfenomenet beskriver vedvarende tvil til tross for bevis på kompetanse."
+            },
+            {
+                "id": 7,
+                "text": "Jeg unngår å tilskrive fysiske symptomer til mental sykdom uten passende undersøkelse.",
+                "context": "Diagnostisk overskygging oppstår når fysiske symptomer feilaktig tilskrives psykiatriske tilstander."
+            },
+            {
+                "id": 8,
+                "text": "Jeg forstår prinsippet om dobbel effekt i etisk beslutningstaking.",
+                "context": "Prinsippet om dobbel effekt gir etisk begrunnelse for handlinger med både gode og dårlige effekter."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Utviklende Bevissthet",
+                "summary": "Du er i de tidlige stadiene av å gjenkjenne analytiske utfordringer og etiske dilemmaer i klinisk praksis. Dette er et viktig første skritt mot profesjonell vekst.",
+                "recommendation": "Vurder å søke mentorveiledning eller veiledning for å dypere din forståelse av disse konseptene. Reflekter over hvordan disse dilemmaene manifesterer seg i din praksis."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Voksende Kompetanse",
+                "summary": "Du demonstrerer et solid grunnlag i forståelsen av analytiske utfordringer og etiske hensyn. Du utvikler ferdighetene som kreves for godt klinisk skjønn.",
+                "recommendation": "Fortsett å bygge på dette grunnlaget gjennom sakskonsultasjon, fagdiskusjoner og videreutdanning. Fokuser på å anvende disse konseptene konsekvent i din praksis."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Avansert Forståelse",
+                "summary": "Du viser sofistikert bevissthet om analytiske utfordringer, etiske dilemmaer og problemer med profesjonell dømmekraft. Du demonstrerer sterke ferdigheter i klinisk resonnement og etisk beslutningstaking.",
+                "recommendation": "Del din kunnskap med kolleger gjennom veiledning, undervisning eller konsultasjon. Vurder å bidra til profesjonell diskurs om disse viktige temaene."
+            }
+        ]
+    },
+    "PL": {
+        "title": "Ocena Dylematu Analityka",
+        "description": "Oceń swoją wiedzę na temat wyzwań analitycznych, dylematów decyzyjnych i profesjonalnego osądu w praktyce klinicznej.",
+        "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Czuję się pewnie w swojej zdolności do radzenia sobie z podwójnymi relacjami w praktyce klinicznej.",
+                "context": "Podwójne relacje występują, gdy klinicyści angażują się w dodatkowe role z klientami."
+            },
+            {
+                "id": 2,
+                "text": "Jestem świadomy błędu potwierdzenia w moim procesie podejmowania decyzji klinicznych.",
+                "context": "Błąd potwierdzenia to tendencja do szukania informacji, które potwierdzają istniejące przekonania."
+            },
+            {
+                "id": 3,
+                "text": "Jasno rozumiem różnicę między obowiązkiem ostrzegania a obowiązkiem ochrony.",
+                "context": "Obowiązek ostrzegania obejmuje informowanie potencjalnych ofiar, podczas gdy obowiązek ochrony obejmuje szersze interwencje."
+            },
+            {
+                "id": 4,
+                "text": "Utrzymuję nadzieję na skuteczność leczenia nawet w trudnych przypadkach.",
+                "context": "Nihilizm terapeutyczny odnosi się do przekonania, że leczenie jest bezużyteczne w przypadku niektórych schorzeń."
+            },
+            {
+                "id": 5,
+                "text": "Biorę pod uwagę częstości występowania przy stawianiu diagnoz klinicznych.",
+                "context": "Zaniedbanie częstości występowania polega na ignorowaniu powszechności schorzeń w populacji ogólnej."
+            },
+            {
+                "id": 6,
+                "text": "Rozpoznajem i zajmuję się uczuciem oszustwa w moim rozwoju zawodowym.",
+                "context": "Zjawisko oszustwa opisuje uporczywe wątpliwości mimo dowodów kompetencji."
+            },
+            {
+                "id": 7,
+                "text": "Unikam przypisywania objawów fizycznych chorobie psychicznej bez odpowiedniego badania.",
+                "context": "Nadmierna diagnostyka występuje, gdy objawy fizyczne są błędnie przypisywane schorzeniom psychiatrycznym."
+            },
+            {
+                "id": 8,
+                "text": "Rozumiem zasadę podwójnego skutku w podejmowaniu decyzji etycznych.",
+                "context": "Zasada podwójnego skutku zapewnia etyczne uzasadnienie dla działań mających zarówno dobre, jak i złe skutki."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Rozwijająca się Świadomość",
+                "summary": "Jesteś we wczesnych etapach rozpoznawania wyzwań analitycznych i dylematów etycznych w praktyce klinicznej. To ważny pierwszy krok do rozwoju zawodowego.",
+                "recommendation": "Rozważ poszukiwanie mentorstwa lub nadzoru w celu pogłębienia zrozumienia tych koncepcji. Zastanów się, jak te dylematy manifestują się w Twojej praktyce."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Rosnąca Kompetencja",
+                "summary": "Demonstrujesz solidne podstawy w rozumieniu wyzwań analitycznych i rozważań etycznych. Rozwijasz umiejętności potrzebne do dobrego osądu klinicznego.",
+                "recommendation": "Kontynuuj budowanie na tej podstawie poprzez konsultacje przypadków, dyskusje z rówieśnikami i edukację ciągłą. Skup się na konsekwentnym stosowaniu tych koncepcji w swojej praktyce."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Zaawansowane Rozumienie",
+                "summary": "Wykazujesz wyrafinowaną świadomość wyzwań analitycznych, dylematów etycznych i problemów z profesjonalnym osądem. Demonstrujesz silne umiejętności rozumowania klinicznego i podejmowania decyzji etycznych.",
+                "recommendation": "Podziel się swoją wiedzą z kolegami poprzez nadzór, nauczanie lub konsultacje. Rozważ wkład w dyskurs profesjonalny na te ważne tematy."
+            }
+        ]
+    },
+    "LA": {
+        "title": "Dilematis Analystae Appretiatio",
+        "description": "Tuam intelligentiam de difficultatibus analyticis, dilemmatibus decisionum, et iudicio professionali in praxi clinica perpende.",
+        "disclaimer": "Haec appretiatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "In mea facultate relationum duplicium in praxi clinica navigandi confido.",
+                "context": "Relationes dupliciae fiunt cum clinici in partes additas cum clientibus se implicant."
+            },
+            {
+                "id": 2,
+                "text": "Confirmationis bias in mea processus decisionis clinicae conscious sum.",
+                "context": "Confirmationis bias est tendentia quaerendi informationes quae praexistentes opiniones confirmant."
+            },
+            {
+                "id": 3,
+                "text": "Differentiam inter officium monendi et officium protegendi clare intelligo.",
+                "context": "Officium monendi implicat informandas victimas potentiales, dum officium protegendi interventiones latiores includit."
+            },
+            {
+                "id": 4,
+                "text": "Spem efficaciae tractationis etiam in casibus difficilibus sustineo.",
+                "context": "Nihilismus therapeuticus refert ad opinionem tractationem pro certis conditionibus inutilem esse."
+            },
+            {
+                "id": 5,
+                "text": "Basim frequentiae in diagnoses clinicis faci considero.",
+                "context": "Negligentia basim frequentiae implicat ignorandum praesentiam conditionum in populo generali."
+            },
+            {
+                "id": 6,
+                "text": "Sentimentum impostoris in mea evolutione professionali recognosco et tracto.",
+                "context": "Phenomenon impostoris describit dubitationes persistentes quamquam evidentia competentiae adsit."
+            },
+            {
+                "id": 7,
+                "text": "Symptomata physica morbi mentali sine investigatione appropriata vitando attribuo.",
+                "context": "Overshadowing diagnosticum fit cum symptomata physicae conditionibus psychiatricis falso attribuuntur."
+            },
+            {
+                "id": 8,
+                "text": "Principium duplicis effectus in decisione ethica intelligo.",
+                "context": "Principium duplicis effectus iustificationem ethicam actionibus cum effectis bonis et malis praebet."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conscientia Evolvens",
+                "summary": "Tu in primis gradibus recognitionis difficultatum analyticarum et dilemmatum ethicorum in praxi clinica es. Hoc est primum gradum importante ad evolutionem professionalem.",
+                "recommendation": "Considera quaerendum mentoratum vel supervisionem ad tuam intelligentiam horum conceptuum profundandam. Refecte quomodo haec dilemmata in tua praxi se manifestant."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Competentia Crescens",
+                "summary": "Fundamentum solidum in intelligentia difficultatum analyticarum et considerationum ethicarum demonstras. Facultates necessarias ad bonum iudicium clinicum evolveris.",
+                "recommendation": "Continua construere super hoc fundamento per consultationes casuum, disputationes cum paribus et educationem continuam. In applicatione constanti horum conceptuum in tua praxi focum pone."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Intelligentia Progressa",
+                "summary": "Conscientiam sophisticatam difficultatum analyticarum, dilemmatum ethicorum et problematum iudicii professionalis ostendis. Fortes facultates ratiocinationis clinicae et decisionis ethicae demonstras.",
+                "recommendation": "Tuum scientiam cum collegis per supervisionem, docentiam vel consultationem partito. Considera contributionem ad discursum professionalem de his thematibus importantibus."
+            }
+        ]
+    },
+    "EGY": {
+        "title": "تقييم معضلة المحلل",
+        "description": "قيّم فهمك للتحديات التحليلية، ومعضلات اتخاذ القرار، والحكم المهني في الممارسة السريرية.",
+        "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليل النفسي. لا يحل محل التقييم السريري المهني أو التشخيص.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "أشعر بالثقة في قدرتي على التعامل مع العلاقات المزدوجة في الممارسة السريرية.",
+                "context": "تحدث العلاقات المزدوجة عندما يشارك الأطباء السريريون في أدوار إضافية مع المرضى."
+            },
+            {
+                "id": 2,
+                "text": "أنا مدرك لتحيز التأكيد في عملية اتخاذ القرارات السريرية الخاصة بي.",
+                "context": "تحيز التأكيد هو الميل للبحث عن معلومات تؤكد المعتقدات الموجودة مسبقًا."
+            },
+            {
+                "id": 3,
+                "text": "أفهم بوضوح الفرق بين واجب التحذير وواجب الحماية.",
+                "context": "واجب التحذير يتضمن إعلام الضحايا المحتملين، بينما واجب الحماية يشمل تدخلات أوسع."
+            },
+            {
+                "id": 4,
+                "text": "أحافظ على الأمل في فعالية العلاج حتى في الحالات الصعبة.",
+                "context": "العدمية العلاجية تشير إلى الاعتقاد بأن العلاج عديم الفائدة لبعض الحالات."
+            },
+            {
+                "id": 5,
+                "text": "أأخذ في الاعتبار المعدلات الأساسية عند إجراء التشخيصات السريرية.",
+                "context": "إهمال المعدل الأساسي يتضمن تجاهل انتشار الحالات في السكان العامين."
+            },
+            {
+                "id": 6,
+                "text": "أتعرف وأتعامل مع مشاعر المحتال في تطوري المهني.",
+                "context": "ظاهرة المحتال تصف الشكوك المستمرة على الرغم من الأدلة على الكفاءة."
+            },
+            {
+                "id": 7,
+                "text": "أتجنب إسناد الأعراض الجسدية إلى المرض العقلي دون تحقيق مناسب.",
+                "context": "التشخيص المفرط يحدث عندما يتم إسناد الأعراض الجسدية بشكل خاطئ إلى حالات نفسية."
+            },
+            {
+                "id": 8,
+                "text": "أفهم مبدأ التأثير المزدوج في اتخاذ القرارات الأخلاقية.",
+                "context": "مبدأ التأثير المزدوج يوفر تبريرًا أخلاقيًا للإجراءات التي لها آثار جيدة وسيئة."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "الوعي النامي",
+                "summary": "أنت في المراحل الأولى من التعرف على التحديات التحليلية والمعضلات الأخلاقية في الممارسة السريرية. هذه خطوة مهمة نحو النمو المهني.",
+                "recommendation": "فكر في البحث عن الإرشاد أو الإشراف لتعميق فهمك لهذه المفاهيم. فكر في كيفية ظهور هذه المعضلات في ممارستك."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "الكفاءة المتزايدة",
+                "summary": "أنت تظهر أساسًا قويًا في فهم التحديات التحليلية والاعتبارات الأخلاقية. أنت تطور المهارات اللازمة للحكم السريري الجيد.",
+                "recommendation": "استمر في البناء على هذا الأساس من خلال استشارات الحالات، والمناقشات بين الأقران، والتعليم المستمر. ركز على تطبيق هذه المفاهيم باستمرار في ممارستك."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "الفهم المتقدم",
+                "summary": "أنت تظهر وعيًا متطورًا بالتحديات التحليلية، والمعضلات الأخلاقية، ومشاكل الحكم المهني. أنت تظهر مهارات قوية في الاستدلال السريري واتخاذ القرارات الأخلاقية.",
+                "recommendation": "شارك معرفتك مع الزملاء من خلال الإشراف، أو التدريس، أو الاستشارة. فكر في المساهمة في الخطاب المهني حول هذه المواضيع المهمة."
+            }
+        ]
+    },
+    "ZH": {
+        "title": "分析师困境评估",
+        "description": "评估您对临床实践中的分析挑战、决策困境和专业判断的理解。",
+        "disclaimer": "本评估旨在教育目的，探索精神分析概念。它不能替代专业临床评估或诊断。",
+        "questions": [
+            {
+                "id": 1,
+                "text": "我对在临床实践中处理双重关系感到自信。",
+                "context": "双重关系发生在临床医生与患者建立额外角色时。"
+            },
+            {
+                "id": 2,
+                "text": "我意识到我的临床决策过程中存在确认偏差。",
+                "context": "确认偏差是倾向于寻找确认既有信念的信息。"
+            },
+            {
+                "id": 3,
+                "text": "我清楚地理解警告义务和保护义务之间的区别。",
+                "context": "警告义务涉及通知潜在受害者，而保护义务包括更广泛的干预。"
+            },
+            {
+                "id": 4,
+                "text": "即使在困难的情况下，我也保持对治疗有效性的希望。",
+                "context": "治疗虚无主义指的是认为治疗对某些病症无效的信念。"
+            },
+            {
+                "id": 5,
+                "text": "在进行临床诊断时，我考虑基础率。",
+                "context": "基础率忽视涉及忽略一般人群中病症的普遍性。"
+            },
+            {
+                "id": 6,
+                "text": "我认识到并处理我职业发展中的冒充者感。",
+                "context": "冒充者现象描述了尽管有能力证据但仍持续存在的自我怀疑。"
+            },
+            {
+                "id": 7,
+                "text": "在没有适当调查的情况下，我避免将身体症状归因于精神疾病。",
+                "context": "诊断遮蔽发生在身体症状被错误地归因于精神疾病时。"
+            },
+            {
+                "id": 8,
+                "text": "我理解伦理决策中的双重效果原则。",
+                "context": "双重效果原则为具有良好和不良影响的行为提供伦理理由。"
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "发展中的意识",
+                "summary": "您正处于识别临床实践中分析挑战和伦理困境的早期阶段。这是专业成长的重要第一步。",
+                "recommendation": "考虑寻求指导或监督，以加深对这些概念的理解。反思这些困境如何在您的实践中表现出来。"
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "增长的能力",
+                "summary": "您在对分析挑战和伦理考虑的理解方面表现出坚实的基础。您正在发展良好临床判断所需的技能。",
+                "recommendation": "通过案例咨询、同行讨论和继续教育，继续在此基础上发展。专注于在您的实践中始终应用这些概念。"
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "先进的理解",
+                "summary": "您对分析挑战、伦理困境和专业判断问题表现出复杂的意识。您表现出强大的临床推理和伦理决策技能。",
+                "recommendation": "通过监督、教学或咨询与同事分享您的知识。考虑为关于这些重要主题的专业话语做出贡献。"
+            }
+        ]
+    }
 }

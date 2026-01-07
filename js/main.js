@@ -1499,6 +1499,12 @@ function normalizeQuizData(data) {
  * @returns {Object} - Localized quiz content
  */
 function getLocalizedQuizContent(quizData) {
+    // Safety check for quizData
+    if (!quizData || typeof quizData !== 'object') {
+        console.error('[getLocalizedQuizContent] Invalid quizData:', quizData);
+        return null;
+    }
+
     const currentLang = document.documentElement.lang || 'en';
     const langCode = currentLang.substring(0, 2).toUpperCase();
 
@@ -1524,6 +1530,19 @@ function renderQuizInterface() {
     }
 
     const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+    // Safety checks for localized content
+    if (!localizedContent || typeof localizedContent !== 'object') {
+        console.error('[Quiz Engine] Invalid localizedContent:', localizedContent);
+        showQuizError();
+        return;
+    }
+
+    if (!localizedContent.questions || !Array.isArray(localizedContent.questions)) {
+        console.error('[Quiz Engine] Invalid questions array:', localizedContent.questions);
+        showQuizError();
+        return;
+    }
     const currentLang = document.documentElement.lang || 'en';
     const isRTL = currentLang === 'ar-EG';
 
@@ -1736,6 +1755,18 @@ function showAnswerRequiredWarning() {
  */
 function goToQuestion(questionIndex) {
     const localizedContent = getLocalizedQuizContent(quizState.quizData);
+
+    // Safety checks to prevent TypeErrors
+    if (!localizedContent || typeof localizedContent !== 'object') {
+        console.error('[goToQuestion] Invalid localizedContent:', localizedContent);
+        return;
+    }
+
+    if (!localizedContent.questions || !Array.isArray(localizedContent.questions)) {
+        console.error('[goToQuestion] Invalid questions array in localizedContent:', localizedContent.questions);
+        return;
+    }
+
     const numQuestions = localizedContent.questions.length;
     const isRTL = document.documentElement.lang === 'ar-EG';
 

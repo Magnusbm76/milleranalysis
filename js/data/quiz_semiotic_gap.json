@@ -1,199 +1,610 @@
 {
-    "quizId": "quiz_semiotic_gap",
-    "title": "Semiotic Gap Assessment",
-    "description": "Test your understanding of semiotics, meaning gaps, and interpretation challenges in communication.",
-    "questions": [
-        {
-            "id": 1,
-            "question": "What is the 'semiotic gap' in communication theory?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The disconnect between intended meaning and interpreted meaning"
-                },
-                {
-                    "id": "b",
-                    "text": "The physical distance between communicators"
-                },
-                {
-                    "id": "c",
-                    "text": "The time delay in message transmission"
-                },
-                {
-                    "id": "d",
-                    "text": "The difference between spoken and written language"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "The semiotic gap refers to the inevitable difference between what a speaker intends to communicate and what the listener actually understands, due to differences in cultural, personal, and contextual frameworks."
-        },
-        {
-            "id": 2,
-            "question": "In semiotics, what is the 'signifier'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The form that a sign takes (sound, image, word)"
-                },
-                {
-                    "id": "b",
-                    "text": "The concept or meaning represented by the sign"
-                },
-                {
-                    "id": "c",
-                    "text": "The object being referred to in reality"
-                },
-                {
-                    "id": "d",
-                    "text": "The relationship between sign and object"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "The signifier is the physical form of a sign (such as a sound, written word, or image), while the signified is the mental concept it represents. This distinction comes from Saussure's structural linguistics."
-        },
-        {
-            "id": 3,
-            "question": "What does 'polysemy' refer to in semiotic analysis?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The capacity of a sign to have multiple meanings"
-                },
-                {
-                    "id": "b",
-                    "text": "The use of multiple signs to convey one meaning"
-                },
-                {
-                    "id": "c",
-                    "text": "The absence of meaning in communication"
-                },
-                {
-                    "id": "d",
-                    "text": "The universal understanding of symbols"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Polysemy describes how a single sign, word, or image can carry multiple possible meanings depending on context, cultural background, and individual interpretation."
-        },
-        {
-            "id": 4,
-            "question": "Which concept describes the process where meaning is never fixed but constantly negotiated?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Intertextuality"
-                },
-                {
-                    "id": "b",
-                    "text": "Monosemy"
-                },
-                {
-                    "id": "c",
-                    "text": "Denotation"
-                },
-                {
-                    "id": "d",
-                    "text": "Iconicity"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Intertextuality refers to how texts and meanings are shaped by and reference other texts, creating a web of meanings that are never static but constantly reinterpreted through cultural and personal lenses."
-        },
-        {
-            "id": 5,
-            "question": "What is 'denotation' versus 'connotation' in semiotics?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Denotation is literal meaning; connotation is cultural and emotional association"
-                },
-                {
-                    "id": "b",
-                    "text": "Denotation is emotional meaning; connotation is literal meaning"
-                },
-                {
-                    "id": "c",
-                    "text": "Denotation is written text; connotation is spoken word"
-                },
-                {
-                    "id": "d",
-                    "text": "Denotation is visual; connotation is auditory"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Denotation refers to the explicit, literal meaning of a sign (dictionary definition), while connotation encompasses the cultural, emotional, and associative meanings that accumulate around a sign over time."
-        },
-        {
-            "id": 6,
-            "question": "What is the 'hermeneutic circle' in interpretation theory?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "The reciprocal relationship between understanding parts and the whole"
-                },
-                {
-                    "id": "b",
-                    "text": "A circular argument that never reaches conclusion"
-                },
-                {
-                    "id": "c",
-                    "text": "The process of translating between languages"
-                },
-                {
-                    "id": "d",
-                    "text": "A method for decoding secret messages"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "The hermeneutic circle describes how understanding any text or phenomenon requires moving back and forth between comprehending its parts and grasping it as a whole—each informs and transforms the other."
-        },
-        {
-            "id": 7,
-            "question": "In clinical communication, what is 'semantic noise'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Interference caused by differences in language, vocabulary, or meaning"
-                },
-                {
-                    "id": "b",
-                    "text": "Physical background noise during conversation"
-                },
-                {
-                    "id": "c",
-                    "text": "Psychological resistance to treatment"
-                },
-                {
-                    "id": "d",
-                    "text": "Technical difficulties in communication devices"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Semantic noise refers to interference in communication that arises from differences in the meaning systems of the communicators, including language barriers, jargon, cultural references, or different conceptual frameworks."
-        },
-        {
-            "id": 8,
-            "question": "What is 'pragmatic failure' in cross-cultural communication?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Inability to achieve intended communicative goals despite linguistic accuracy"
-                },
-                {
-                    "id": "b",
-                    "text": "Failure to use correct grammar and vocabulary"
-                },
-                {
-                    "id": "c",
-                    "text": "Physical inability to speak or hear"
-                },
-                {
-                    "id": "d",
-                    "text": "Deliberate refusal to communicate"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Pragmatic failure occurs when speakers use language correctly in terms of grammar and vocabulary but fail to achieve their communicative goals due to cultural differences in norms, expectations, and social conventions."
-        }
-    ]
+    "EN": {
+        "title": "Semiotic Gap Assessment",
+        "description": "Test your understanding of semiotics, meaning gaps, and interpretation challenges in communication.",
+        "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "I recognize that my intended meaning may differ from how others interpret my communication.",
+                "context": "The semiotic gap refers to the difference between intended meaning and interpreted meaning."
+            },
+            {
+                "id": 2,
+                "text": "I understand that the signifier (form) and signified (meaning) can be separate.",
+                "context": "In semiotics, the signifier is the form a sign takes, while signified is the concept it represents."
+            },
+            {
+                "id": 3,
+                "text": "I acknowledge that words and symbols can have multiple meanings depending on context.",
+                "context": "Polysemy describes how a single sign can carry multiple possible meanings."
+            },
+            {
+                "id": 4,
+                "text": "I recognize that meaning is constantly negotiated through cultural and personal lenses.",
+                "context": "Intertextuality refers to how meanings are shaped by and reference other texts and contexts."
+            },
+            {
+                "id": 5,
+                "text": "I distinguish between literal meaning and cultural/emotional associations in communication.",
+                "context": "Denotation is literal meaning, while connotation encompasses cultural and emotional associations."
+            },
+            {
+                "id": 6,
+                "text": "I understand that interpreting parts requires understanding the whole, and vice versa.",
+                "context": "The hermeneutic circle describes the reciprocal relationship between understanding parts and whole."
+            },
+            {
+                "id": 7,
+                "text": "I am aware of how language and vocabulary differences can interfere with communication.",
+                "context": "Semantic noise refers to interference from differences in meaning systems of communicators."
+            },
+            {
+                "id": 8,
+                "text": "I recognize that cultural differences can affect achieving communicative goals.",
+                "context": "Pragmatic failure occurs when speakers fail to achieve goals due to cultural differences."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Developing Awareness",
+                "summary": "You are beginning to recognize the complexities of meaning and interpretation in communication. This awareness is foundational for effective communication.",
+                "recommendation": "Practice active listening and ask clarifying questions to bridge semiotic gaps. Study how context influences meaning in different situations."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Growing Understanding",
+                "summary": "You demonstrate a solid grasp of semiotic principles and communication challenges. You can navigate meaning differences with increasing skill.",
+                "recommendation": "Continue developing your interpretive skills through diverse cultural experiences and reflective practice. Consider how your own background shapes your interpretations."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Advanced Interpretive Skills",
+                "summary": "You show sophisticated understanding of semiotic gaps and meaning negotiation. You effectively navigate complex communication challenges across contexts.",
+                "recommendation": "Share your insights with others to improve collective communication. Consider teaching or mentoring others in semiotic awareness and interpretation skills."
+            }
+        ]
+    },
+    "FR": {
+        "title": "Évaluation de l'Écart Sémiotique",
+        "description": "Testez votre compréhension de la sémiotique, des écarts de sens et des défis d'interprétation dans la communication.",
+        "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation clinique professionnelle ou un diagnostic.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Je reconnais que mon sens intentionnel peut différer de la façon dont les autres interprètent ma communication.",
+                "context": "L'écart sémiotique fait référence à la différence entre le sens intentionnel et le sens interprété."
+            },
+            {
+                "id": 2,
+                "text": "Je comprends que le signifiant (forme) et le signifié (sens) peuvent être séparés.",
+                "context": "En sémiotique, le signifiant est la forme qu'un signe prend, tandis que le signifié est le concept qu'il représente."
+            },
+            {
+                "id": 3,
+                "text": "Je reconnais que les mots et symboles peuvent avoir plusieurs significations selon le contexte.",
+                "context": "La polysémie décrit comment un seul signe peut porter plusieurs significations possibles."
+            },
+            {
+                "id": 4,
+                "text": "Je reconnais que le sens est constamment négocié à travers des lentilles culturelles et personnelles.",
+                "context": "L'intertextualité fait référence à la façon dont les sens sont façonnés par d'autres textes et contextes."
+            },
+            {
+                "id": 5,
+                "text": "Je distingue le sens littéral des associations culturelles et émotionnelles dans la communication.",
+                "context": "La dénotation est le sens littéral, tandis que la connotation englobe les associations culturelles et émotionnelles."
+            },
+            {
+                "id": 6,
+                "text": "Je comprends qu'interpréter les parties nécessite de comprendre le tout, et vice versa.",
+                "context": "Le cercle herméneutique décrit la relation réciproque entre la compréhension des parties et du tout."
+            },
+            {
+                "id": 7,
+                "text": "Je suis conscient de la façon dont les différences de langue et de vocabulaire peuvent interférer avec la communication.",
+                "context": "Le bruit sémantique fait référence aux interférences dues aux différences dans les systèmes de sens des communicateurs."
+            },
+            {
+                "id": 8,
+                "text": "Je reconnais que les différences culturelles peuvent affecter l'atteinte des objectifs communicationnels.",
+                "context": "L'échec pragmatique survient lorsque les locuteurs n'atteignent pas leurs objectifs en raison de différences culturelles."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conscience en Développement",
+                "summary": "Vous commencez à reconnaître les complexités du sens et de l'interprétation dans la communication. Cette conscience est fondamentale pour une communication efficace.",
+                "recommendation": "Pratiquez l'écoute active et posez des questions de clarification pour combler les écarts sémiotiques. Étudiez comment le contexte influence le sens dans différentes situations."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Compréhension Croissante",
+                "summary": "Vous démontrez une bonne maîtrise des principes sémiotiques et des défis de communication. Vous pouvez naviguer les différences de sens avec une compétence croissante.",
+                "recommendation": "Continuez à développer vos compétences interprétatives à travers des expériences culturelles diverses et une pratique réflexive. Considérez comment votre propre contexte façonne vos interprétations."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Compétences Interprétatives Avancées",
+                "summary": "Vous montrez une compréhension sophistiquée des écarts sémiotiques et de la négociation du sens. Vous naviguez efficacement les défis de communication complexes à travers les contextes.",
+                "recommendation": "Partagez vos idées avec les autres pour améliorer la communication collective. Envisagez d'enseigner ou de mentoriser les autres dans la conscience sémiotique et les compétences d'interprétation."
+            }
+        ]
+    },
+    "ES": {
+        "title": "Evaluación del Hueco Semiótico",
+        "description": "Pon a prueba tu comprensión de la semiótica, los huecos de significado y los desafíos de interpretación en la comunicación.",
+        "disclaimer": "Esta evaluación está diseñada con fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación clínica profesional o el diagnóstico.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Reconozco que mi significado intencional puede diferir de cómo otros interpretan mi comunicación.",
+                "context": "El hueco semiótico se refiere a la diferencia entre el significado intencional y el significado interpretado."
+            },
+            {
+                "id": 2,
+                "text": "Entiendo que el significante (forma) y el significado (significado) pueden estar separados.",
+                "context": "En semiótica, el significante es la forma que toma un signo, mientras que el significado es el concepto que representa."
+            },
+            {
+                "id": 3,
+                "text": "Reconozco que las palabras y símbolos pueden tener múltiples significados según el contexto.",
+                "context": "La polisemia describe cómo un solo signo puede llevar múltiples significados posibles."
+            },
+            {
+                "id": 4,
+                "text": "Reconozco que el significado se negocia constantemente a través de lentes culturales y personales.",
+                "context": "La intertextualidad se refiere a cómo los significados son moldeados por otros textos y contextos."
+            },
+            {
+                "id": 5,
+                "text": "Distingo entre el significado literal y las asociaciones culturales y emocionales en la comunicación.",
+                "context": "La denotación es el significado literal, mientras que la connotación abarca las asociaciones culturales y emocionales."
+            },
+            {
+                "id": 6,
+                "text": "Entiendo que interpretar las partes requiere comprender el todo, y viceversa.",
+                "context": "El círculo hermenéutico describe la relación recíproca entre comprender las partes y el todo."
+            },
+            {
+                "id": 7,
+                "text": "Soy consciente de cómo las diferencias de idioma y vocabulario pueden interferir con la comunicación.",
+                "context": "El ruido semántico se refiere a la interferencia de diferencias en los sistemas de significado de los comunicadores."
+            },
+            {
+                "id": 8,
+                "text": "Reconozco que las diferencias culturales pueden afectar el logro de los objetivos comunicativos.",
+                "context": "El fallo pragmático ocurre cuando los hablantes no logran sus objetivos debido a diferencias culturales."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conciencia en Desarrollo",
+                "summary": "Estás comenzando a reconocer las complejidades del significado y la interpretación en la comunicación. Esta conciencia es fundamental para una comunicación efectiva.",
+                "recommendation": "Practica la escucha activa y haz preguntas de aclaración para cerrar los huecos semióticos. Estudia cómo el contexto influye en el significado en diferentes situaciones."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Comprensión Creciente",
+                "summary": "Demuestras un dominio sólido de los principios semióticos y los desafíos de comunicación. Puedes navegar las diferencias de significado con una habilidad creciente.",
+                "recommendation": "Continúa desarrollando tus habilidades interpretativas a través de experiencias culturales diversas y práctica reflexiva. Considera cómo tu propio contexto moldea tus interpretaciones."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Habilidades Interpretativas Avanzadas",
+                "summary": "Muestras una comprensión sofisticada de los huecos semióticos y la negociación del significado. Navegas eficazmente los desafíos de comunicación complejos a través de contextos.",
+                "recommendation": "Comparte tus ideas con otros para mejorar la comunicación colectiva. Considera enseñar o mentorear a otros en la conciencia semiótica y habilidades de interpretación."
+            }
+        ]
+    },
+    "NO": {
+        "title": "Semiotisk Gap Vurdering",
+        "description": "Test din forståelse av semiotikk, meningsgap og tolkningsutfordringer i kommunikasjon.",
+        "disclaimer": "Denne vurderingen er designet for pedagogiske formål for å utforske psykoanalytiske konsepter. Den erstatter ikke profesjonell klinisk evaluering eller diagnose.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Jeg anerkjenner at min tiltenkte mening kan skille seg fra hvordan andre tolker min kommunikasjon.",
+                "context": "Det semiotiske gapet refererer til forskjellen mellom tiltenkt mening og tolket mening."
+            },
+            {
+                "id": 2,
+                "text": "Jeg forstår at tegnbæreren (form) og det betegnede (betydning) kan være atskilt.",
+                "context": "I semiotikk er tegnbæreren formen et tegn tar, mens det betegnede er konseptet det representerer."
+            },
+            {
+                "id": 3,
+                "text": "Jeg anerkjenner at ord og symboler kan ha flere betydninger avhengig av kontekst.",
+                "context": "Polysemi beskriver hvordan et enkelt tegn kan bære flere mulige betydninger."
+            },
+            {
+                "id": 4,
+                "text": "Jeg anerkjenner at mening konstant forhandles gjennom kulturelle og personlige linser.",
+                "context": "Intertekstualitet refererer til hvordan meninger formes av og refererer til andre tekster og kontekster."
+            },
+            {
+                "id": 5,
+                "text": "Jeg skiller mellom bokstavelig mening og kulturelle/følelsesmessige assosiasjoner i kommunikasjon.",
+                "context": "Denotasjon er bokstavelig mening, mens konnotasjon omfatter kulturelle og følelsesmessige assosiasjoner."
+            },
+            {
+                "id": 6,
+                "text": "Jeg forstår at å tolke deler krever å forstå helheten, og omvendt.",
+                "context": "Den hermeneutiske sirkelen beskriver det gjensidige forholdet mellom å forstå deler og helhet."
+            },
+            {
+                "id": 7,
+                "text": "Jeg er klar over hvordan språk- og vokabularforskjeller kan forstyrre kommunikasjon.",
+                "context": "Semantisk støy refererer til interferens fra forskjeller i kommunikatorers meningsystemer."
+            },
+            {
+                "id": 8,
+                "text": "Jeg anerkjenner at kulturelle forskjeller kan påvirke oppnåelsen av kommunikative mål.",
+                "context": "Pragmatisk svikt oppstår når talere ikke oppnår sine mål på grunn av kulturelle forskjeller."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Utviklende Bevissthet",
+                "summary": "Du begynner å gjenkjenne kompleksitetene i mening og tolkning i kommunikasjon. Denne bevisstheten er grunnleggende for effektiv kommunikasjon.",
+                "recommendation": "Øv aktiv lytting og still avklarende spørsmål for å lukke semiotiske gap. Studer hvordan kontekst påvirker mening i ulike situasjoner."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Voksende Forståelse",
+                "summary": "Du demonstrerer solid forståelse av semiotiske prinsipper og kommunikasjonsutfordringer. Du kan navigere meningsforskjeller med økende ferdighet.",
+                "recommendation": "Fortsett å utvikle dine tolkningsferdigheter gjennom mangfoldige kulturelle opplevelser og refleksiv praksis. Vurder hvordan din egen bakgrunn former dine tolkninger."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Avanserte Tolkningsferdigheter",
+                "summary": "Du viser sofistikert forståelse av semiotiske gap og meningsforhandling. Du navigerer effektivt komplekse kommunikasjonsutfordringer på tvers av kontekster.",
+                "recommendation": "Del dine innsikter med andre for å forbedre kollektiv kommunikasjon. Vurder å undervise eller mentorere andre i semiotisk bevissthet og tolkningsferdigheter."
+            }
+        ]
+    },
+    "PL": {
+        "title": "Ocena Luki Semiotycznej",
+        "description": "Sprawdź swoją wiedzę na temat semiotyki, luk w znaczeniu i wyzwań interpretacyjnych w komunikacji.",
+        "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Uznaję, że moje zamierzone znaczenie może różnić się od tego, jak inni interpretują moją komunikację.",
+                "context": "Luka semiotyczna odnosi się do różnicy między zamierzonym znaczeniem a znaczeniem zinterpretowanym."
+            },
+            {
+                "id": 2,
+                "text": "Rozumiem, że znaczący (forma) i oznaczany (znaczenie) mogą być oddzielone.",
+                "context": "W semiotyce znaczący jest formą, jaką przyjmuje znak, podczas gdy oznaczany jest pojęciem, które reprezentuje."
+            },
+            {
+                "id": 3,
+                "text": "Uznaję, że słowa i symbole mogą mieć wiele znaczeń w zależności od kontekstu.",
+                "context": "Polisemia opisuje, jak pojedynczy znak może nosić wiele możliwych znaczeń."
+            },
+            {
+                "id": 4,
+                "text": "Uznaję, że znaczenie jest stale negocjowane przez pryzmaty kulturowe i osobiste.",
+                "context": "Intertekstualność odnosi się do tego, jak znaczenia są kształtowane przez inne teksty i konteksty."
+            },
+            {
+                "id": 5,
+                "text": "Rozróżniam dosłowne znaczenie od skojarzeń kulturowych i emocjonalnych w komunikacji.",
+                "context": "Denotacja jest znaczeniem dosłownym, podczas gdy konotacja obejmuje skojarzenia kulturowe i emocjonalne."
+            },
+            {
+                "id": 6,
+                "text": "Rozumiem, że interpretowanie części wymaga zrozumienia całości, i odwrotnie.",
+                "context": "Krąg hermeneutyczny opisuje wzajemną relację między rozumieniem części i całości."
+            },
+            {
+                "id": 7,
+                "text": "Jestem świadomy, jak różnice w języku i słownictwie mogą zakłócać komunikację.",
+                "context": "Szum semantyczny odnosi się do interferencji z powodu różnic w systemach znaczenia komunikatorów."
+            },
+            {
+                "id": 8,
+                "text": "Uznaję, że różnice kulturowe mogą wpływać na osiąganie celów komunikacyjnych.",
+                "context": "Porażka pragmatyczna występuje, gdy mówcy nie osiągają swoich celów z powodu różnic kulturowych."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Rozwijająca się Świadomość",
+                "summary": "Zaczynasz rozpoznawać złożoności znaczenia i interpretacji w komunikacji. Ta świadomość jest fundamentalna dla skutecznej komunikacji.",
+                "recommendation": "Ćwicz aktywne słuchanie i zadawaj pytania wyjaśniające, aby zamykać luki semiotyczne. Badaj, jak kontekst wpływa na znaczenie w różnych sytuacjach."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Rosnące Zrozumienie",
+                "summary": "Demonstrujesz solidne zrozumienie zasad semiotycznych i wyzwań komunikacyjnych. Potrafisz nawigować różnice znaczeniowe z rosnącą biegłością.",
+                "recommendation": "Kontynuuj rozwijanie swoich umiejętności interpretacyjnych poprzez zróżnicowane doświadczenia kulturowe i praktykę refleksyjną. Zastanów się, jak Twoje własne tło kształtuje Twoje interpretacje."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Zaawansowane Umiejętności Interpretacyjne",
+                "summary": "Wykazujesz wyrafinowane zrozumienie luk semiotycznych i negocjacji znaczenia. Skutecznie nawigujesz złożone wyzwania komunikacyjne w różnych kontekstach.",
+                "recommendation": "Podziel się swoimi spostrzeżeniami z innymi, aby poprawić komunikację zbiorową. Rozważ nauczanie lub mentorowanie innych w świadomości semiotycznej i umiejętnościach interpretacyjnych."
+            }
+        ]
+    },
+    "LA": {
+        "title": "Appretiatio Hiatus Semiotici",
+        "description": "Tuam intelligentiam de semiotica, hiatus significationis, et difficultatibus interpretationis in communicatione perpende.",
+        "disclaimer": "Haec appretiatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Agnosco significationem meam intentam differre posse a qua alii meam communicationem interpretantur.",
+                "context": "Hiatus semioticus refert ad differentiam inter significationem intentam et interpretatam."
+            },
+            {
+                "id": 2,
+                "text": "Intelligo significantem (formam) et significatum (significationem) separari posse.",
+                "context": "In semiotica, significans est forma quam signum accipit, dum significatum est conceptum quem repraesentat."
+            },
+            {
+                "id": 3,
+                "text": "Agnosco verba et symbola plures significationes habere posse secundum contextum.",
+                "context": "Polysemia describit quemadmodum signum unum plures significationes possibiles ferre potest."
+            },
+            {
+                "id": 4,
+                "text": "Agnosco significationem per lentis culturales et personales constanter negotiari.",
+                "context": "Intertextualitas refert ad quem modum significationes per alios textus et contextus formantur."
+            },
+            {
+                "id": 5,
+                "text": "In communicatione significationem litteralem ab associationibus culturalibus et emotionalibus distingo.",
+                "context": "Denotatio est significatio litteralis, dum connotatio associationes culturales et emotionales comprehendit."
+            },
+            {
+                "id": 6,
+                "text": "Intelligo partes interpretari totum intelligere requirere, et vice versa.",
+                "context": "Circulus hermeneuticus relationem mutuam inter partes et totum intelligens describit."
+            },
+            {
+                "id": 7,
+                "text": "Conscius sum quaenam differentiae linguae et vocabularii communicationem perturbare possint.",
+                "context": "Strepitus semanticus refert ad interferences ex differentiis in significationum systematibus communicantium."
+            },
+            {
+                "id": 8,
+                "text": "Agnosco differentias culturales scopos communicativos attingere posse afficere.",
+                "context": "Defectus pragmaticus fit cum loquentes suos scopos propter differentias culturales non attingunt."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "Conscientia Evolvens",
+                "summary": "Tu incipis recognoscere complexitates significationis et interpretationis in communicatione. Haec conscientia est fundamentalis ad communicationem efficacem.",
+                "recommendation": "Exerce auditionem activam et quaestiones clarificationis pone ad hiatus semioticos claudendos. Studia quaenam contextus significationem in variis situatibus afficiat."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "Intelligentia Crescens",
+                "summary": "Fundamentum solidum in principiis semioticis et difficultatibus communicationis demonstras. Differentias significationis cum facultate crescente navigare potes.",
+                "recommendation": "Continua facultates tuas interpretationales per experientias culturales varias et praxim reflexivam evolvere. Considera quaenam tuus proprius contextus interpretationes tuas formet."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "Facultates Interpretationis Progressae",
+                "summary": "Intelligentiam sophisticatam hiatus semioticorum et significationis negotiationis ostendis. Difficultates communicationis complexas per contextus efficaciter navigas.",
+                "recommendation": "Tuae cogitationes cum aliis parte pro communicatione collectiva melioranda. Considera alios docere vel mentorem in conscientia semiotica et facultatibus interpretationis esse."
+            }
+        ]
+    },
+    "EGY": {
+        "title": "تقييم الفجوة السيميائية",
+        "description": "اختبر فهمك للسيميائيات، وفجوات المعنى، وتحديات التفسير في التواصل.",
+        "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليل النفسي. لا يحل محل التقييم السريري المهني أو التشخيص.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "أدرك أن المعنى المقصود قد يختلف عن كيفية تفسير الآخرين لتواصلي.",
+                "context": "الفجوة السيميائية تشير إلى الفرق بين المعنى المقصود والمعنى المفسر."
+            },
+            {
+                "id": 2,
+                "text": "أفهم أن الدال (الشكل) والمدلول (المعنى) يمكن أن يكونا منفصلين.",
+                "context": "في السيميائيات، الدال هو الشكل الذي يتخذه العلامة، بينما المدلول هو المفهوم الذي يمثله."
+            },
+            {
+                "id": 3,
+                "text": "أدرك أن الكلمات والرموز يمكن أن لها معاني متعددة حسب السياق.",
+                "context": "تتعدد المعاني يصف كيف يمكن لعلامة واحدة أن تحمل معاني متعددة ممكنة."
+            },
+            {
+                "id": 4,
+                "text": "أدرك أن المعنى يتم التفاوض عليه باستمرار من خلال العدسات الثقافية والشخصية.",
+                "context": "النصية المتبادلة تشير إلى كيفية تشكيل المعاني من خلال نصوص وسياقات أخرى."
+            },
+            {
+                "id": 5,
+                "text": "أميز بين المعنى الحرفي والارتباطات الثقافية والعاطفية في التواصل.",
+                "context": "الدلالة هي المعنى الحرفي، بينما التضمين يشمل الارتباطات الثقافية والعاطفية."
+            },
+            {
+                "id": 6,
+                "text": "أفهم أن تفسير الأجزاء يتطلب فهم الكل، والعكس صحيح.",
+                "context": "الدائرة التأويلية تصف العلاقة المتبادلة بين فهم الأجزاء والكل."
+            },
+            {
+                "id": 7,
+                "text": "أنا مدرك لكيف يمكن لاختلافات اللغة والمفردات أن تتداخل مع التواصل.",
+                "context": "الضوضاء الدلالية تشير إلى التداخل من اختلافات في أنظمة معنى المتواصلين."
+            },
+            {
+                "id": 8,
+                "text": "أدرك أن الاختلافات الثقافية يمكن أن تؤثر على تحقيق الأهداف التواصلية.",
+                "context": "الفشل البراغماتي يحدث عندما لا يحقق المتحدثون أهدافهم بسبب الاختلافات الثقافية."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "الوعي النامي",
+                "summary": "أنت تبدأ في التعرف على تعقيدات المعنى والتفسير في التواصل. هذا الوعي أساسي للتواصل الفعال.",
+                "recommendation": "مارس الاستماع النشط واطرح أسئلة توضيحية لسد الفجوات السيميائية. درس كيف يؤثر السياق على المعنى في مواقف مختلفة."
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "الفهم المتزايد",
+                "summary": "أنت تظهر فهمًا قويًا للمبادئ السيميائية وتحديات التواصل. يمكنك التنقل بين اختلافات المعنى بمهارة متزايدة.",
+                "recommendation": "استمر في تطوير مهاراتك التفسيرية من خلال تجارب ثقافية متنوعة وممارسة تفكيرية. فكر في كيف يشكل سياقك الخاص تفسيراتك."
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "مهارات تفسيرية متقدمة",
+                "summary": "أنت تظهر فهمًا متطورًا للفجوات السيميائية والتفاوض على المعنى. تتنقل بفعالية في تحديات التواصل المعقدة عبر السياقات.",
+                "recommendation": "شارك أفكارك مع الآخرين لتحسين التواصل الجماعي. فكر في تدريس أو توجيه الآخرين في الوعي السيميائي ومهارات التفسير."
+            }
+        ]
+    },
+    "ZH": {
+        "title": "符号学差距评估",
+        "description": "测试您对符号学、意义差距和沟通中解释挑战的理解。",
+        "disclaimer": "本评估旨在教育目的，探索精神分析概念。它不能替代专业临床评估或诊断。",
+        "questions": [
+            {
+                "id": 1,
+                "text": "我认识到我的预期意义可能与他人解释我的沟通方式不同。",
+                "context": "符号学差距指的是预期意义与解释意义之间的差异。"
+            },
+            {
+                "id": 2,
+                "text": "我理解能指（形式）和所指（意义）可以是分开的。",
+                "context": "在符号学中，能指是符号采取的形式，而所指是它代表的概念。"
+            },
+            {
+                "id": 3,
+                "text": "我认识到词语和符号根据上下文可以有多种含义。",
+                "context": "多义性描述了一个符号如何可以承载多种可能的含义。"
+            },
+            {
+                "id": 4,
+                "text": "我认识到意义是通过文化和个人视角不断协商的。",
+                "context": "互文性指的是意义如何由其他文本和语境塑造。"
+            },
+            {
+                "id": 5,
+                "text": "在沟通中，我区分字面意义和文化/情感联想。",
+                "context": "外延是字面意义，而内涵包括文化和情感联想。"
+            },
+            {
+                "id": 6,
+                "text": "我理解解释部分需要理解整体，反之亦然。",
+                "context": "解释学循环描述了理解部分与整体之间的相互关系。"
+            },
+            {
+                "id": 7,
+                "text": "我意识到语言和词汇差异如何可能干扰沟通。",
+                "context": "语义噪声指的是来自沟通者意义系统差异的干扰。"
+            },
+            {
+                "id": 8,
+                "text": "我认识到文化差异可能影响实现沟通目标。",
+                "context": "语用失败发生在说话者由于文化差异而无法实现目标时。"
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    8
+                ],
+                "title": "发展中的意识",
+                "summary": "您开始认识到沟通中意义和解释的复杂性。这种意识对于有效沟通是基础的。",
+                "recommendation": "练习积极倾听并提出澄清问题，以弥合符号学差距。研究上下文如何在不同情况下影响意义。"
+            },
+            {
+                "range": [
+                    9,
+                    16
+                ],
+                "title": "增长的理解",
+                "summary": "您对符号学原则和沟通挑战表现出扎实的掌握。您可以以日益增长的技能应对意义差异。",
+                "recommendation": "通过多样化的文化体验和反思实践，继续发展您的解释技能。考虑您自己的背景如何塑造您的解释。"
+            },
+            {
+                "range": [
+                    17,
+                    24
+                ],
+                "title": "先进的解释技能",
+                "summary": "您对符号学差距和意义协商表现出复杂的理解。您有效地在各个语境中应对复杂的沟通挑战。",
+                "recommendation": "与他人分享您的见解，以改善集体沟通。考虑在符号学意识和解释技能方面教学或指导他人。"
+            }
+        ]
+    }
 }

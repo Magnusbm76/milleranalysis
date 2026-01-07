@@ -1,199 +1,762 @@
 {
-    "quizId": "quiz_social_symptom",
-    "title": "Social Symptom Assessment",
-    "description": "Evaluate your understanding of social symptoms, communication patterns, and interpersonal dynamics in clinical contexts.",
-    "questions": [
-        {
-            "id": 1,
-            "question": "Which of the following is a primary social symptom associated with social anxiety disorder?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Excessive fear of negative evaluation in social situations"
-                },
-                {
-                    "id": "b",
-                    "text": "Persistent sadness and loss of interest in activities"
-                },
-                {
-                    "id": "c",
-                    "text": "Repetitive behaviors aimed at reducing anxiety"
-                },
-                {
-                    "id": "d",
-                    "text": "Disorganized thinking and speech patterns"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Social anxiety disorder is characterized by an intense fear of being judged, embarrassed, or humiliated in social situations, leading to avoidance behaviors."
-        },
-        {
-            "id": 2,
-            "question": "In interpersonal communication theory, what does 'double-bind' refer to?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A situation where contradictory messages are received simultaneously"
-                },
-                {
-                    "id": "b",
-                    "text": "A method of conflict resolution through compromise"
-                },
-                {
-                    "id": "c",
-                    "text": "A technique for active listening and validation"
-                },
-                {
-                    "id": "d",
-                    "text": "A form of non-verbal communication through body language"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Double-bind theory, developed by Gregory Bateson, describes a situation where a person receives two or more conflicting messages, making it impossible to respond appropriately to either."
-        },
-        {
-            "id": 3,
-            "question": "Which social withdrawal pattern is most characteristic of early-stage depression?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Gradual reduction in social engagement and responsiveness"
-                },
-                {
-                    "id": "b",
-                    "text": "Sudden and complete isolation from all social contact"
-                },
-                {
-                    "id": "c",
-                    "text": "Increased social interaction as a coping mechanism"
-                },
-                {
-                    "id": "d",
-                    "text": "Selective withdrawal from specific relationships only"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Early depression typically manifests as a gradual decline in social participation, reduced initiative in relationships, and diminished emotional responsiveness to social stimuli."
-        },
-        {
-            "id": 4,
-            "question": "What is 'alexithymia' in the context of social-emotional functioning?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Difficulty identifying and describing one's own emotions"
-                },
-                {
-                    "id": "b",
-                    "text": "Inability to recognize emotions in others"
-                },
-                {
-                    "id": "c",
-                    "text": "Excessive emotional expression in social settings"
-                },
-                {
-                    "id": "d",
-                    "text": "Complete absence of emotional experience"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Alexithymia is a personality construct characterized by difficulties in recognizing and describing emotions, which can significantly impact social relationships and emotional communication."
-        },
-        {
-            "id": 5,
-            "question": "Which attachment style is most associated with fear of intimacy and difficulty trusting others?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Avoidant attachment"
-                },
-                {
-                    "id": "b",
-                    "text": "Secure attachment"
-                },
-                {
-                    "id": "c",
-                    "text": "Anxious-preoccupied attachment"
-                },
-                {
-                    "id": "d",
-                    "text": "Disorganized attachment"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Avoidant attachment is characterized by a discomfort with closeness, reluctance to depend on others, and fear of intimacy, often stemming from early experiences with unavailable caregivers."
-        },
-        {
-            "id": 6,
-            "question": "In family systems theory, what is 'triangulation'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "A third person brought into a dyadic conflict to reduce tension"
-                },
-                {
-                    "id": "b",
-                    "text": "A geometric method for mapping family relationships"
-                },
-                {
-                    "id": "c",
-                    "text": "A therapy technique involving three therapists"
-                },
-                {
-                    "id": "d",
-                    "text": "A form of communication using three distinct channels"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Triangulation occurs when two individuals in conflict involve a third person to stabilize their relationship, often creating unhealthy dynamics and shifting the focus from the original issue."
-        },
-        {
-            "id": 7,
-            "question": "Which social symptom is most commonly observed in individuals with autism spectrum disorder?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Difficulty with reciprocal social communication and interaction"
-                },
-                {
-                    "id": "b",
-                    "text": "Excessive and inappropriate emotional expression"
-                },
-                {
-                    "id": "c",
-                    "text": "Heightened sensitivity to social rejection"
-                },
-                {
-                    "id": "d",
-                    "text": "Intense desire for social approval and validation"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Core features of ASD include challenges in social-emotional reciprocity, nonverbal communicative behaviors, and developing/maintaining relationships appropriate to developmental level."
-        },
-        {
-            "id": 8,
-            "question": "What is 'social anhedonia'?",
-            "options": [
-                {
-                    "id": "a",
-                    "text": "Reduced ability to experience pleasure from social interactions"
-                },
-                {
-                    "id": "b",
-                    "text": "Fear of social situations and public scrutiny"
-                },
-                {
-                    "id": "c",
-                    "text": "Excessive enjoyment of social activities"
-                },
-                {
-                    "id": "d",
-                    "text": "Inability to recognize social cues"
-                }
-            ],
-            "correctAnswer": "a",
-            "explanation": "Social anhedonia refers to a diminished capacity to derive pleasure or satisfaction from social interactions and relationships, often associated with schizophrenia spectrum disorders and depression."
-        }
-    ]
+    "EN": {
+        "title": "Social Symptom Assessment",
+        "description": "Evaluate your understanding of social symptoms, communication patterns, and interpersonal dynamics in clinical contexts.",
+        "disclaimer": "This assessment is designed for educational purposes to explore psychoanalytic concepts. It is not a substitute for professional clinical evaluation or diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "I recognize how fear of negative evaluation can impact social behavior.",
+                "context": "Social anxiety disorder is characterized by intense fear of being judged in social situations."
+            },
+            {
+                "id": 2,
+                "text": "I understand how contradictory messages can create confusion in relationships.",
+                "context": "Double-bind theory describes receiving two or more conflicting messages simultaneously."
+            },
+            {
+                "id": 3,
+                "text": "I can identify early signs of social withdrawal in depression.",
+                "context": "Early depression typically manifests as gradual decline in social participation."
+            },
+            {
+                "id": 4,
+                "text": "I recognize difficulties in identifying and describing emotions.",
+                "context": "Alexithymia is difficulty recognizing and describing one's own emotions."
+            },
+            {
+                "id": 5,
+                "text": "I understand how attachment styles affect relationship patterns.",
+                "context": "Avoidant attachment is characterized by discomfort with closeness and fear of intimacy."
+            },
+            {
+                "id": 6,
+                "text": "I recognize how triangulation can create unhealthy family dynamics.",
+                "context": "Triangulation occurs when a third person is brought into dyadic conflict."
+            },
+            {
+                "id": 7,
+                "text": "I understand challenges in reciprocal social communication.",
+                "context": "Core features of ASD include challenges in social-emotional reciprocity."
+            },
+            {
+                "id": 8,
+                "text": "I recognize diminished pleasure from social interactions.",
+                "context": "Social anhedonia refers to reduced ability to derive pleasure from social interactions."
+            },
+            {
+                "id": 9,
+                "text": "I understand how social support affects mental health outcomes.",
+                "context": "Social support is a protective factor against various mental health conditions."
+            },
+            {
+                "id": 10,
+                "text": "I recognize patterns of social isolation and their impact.",
+                "context": "Chronic social isolation is associated with increased risk of mental health disorders."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Developing Awareness",
+                "summary": "You are beginning to recognize social symptoms and their impact on interpersonal functioning. This awareness is crucial for clinical assessment.",
+                "recommendation": "Study case examples of social symptoms in various disorders. Practice observing social interactions to identify patterns."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Growing Understanding",
+                "summary": "You demonstrate solid knowledge of social symptoms and communication patterns. You can identify key indicators of social dysfunction.",
+                "recommendation": "Continue developing your assessment skills through supervised practice. Learn to differentiate between normal social variations and pathological symptoms."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Advanced Clinical Insight",
+                "summary": "You show sophisticated understanding of social symptoms and interpersonal dynamics. You effectively recognize complex patterns in social functioning.",
+                "recommendation": "Consider specializing in social psychology or social work. Share your knowledge through teaching or supervision."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Expert Level Understanding",
+                "summary": "You demonstrate exceptional knowledge of social symptoms and their clinical implications. You have mastered the assessment of interpersonal dynamics.",
+                "recommendation": "Contribute to research on social symptoms. Consider advanced training in psychosocial assessment and intervention."
+            }
+        ]
+    },
+    "FR": {
+        "title": "Évaluation des Symptômes Sociaux",
+        "description": "Évaluez votre compréhension des symptômes sociaux, des modèles de communication et des dynamiques interpersonnelles dans les contextes cliniques.",
+        "disclaimer": "Cette évaluation est conçue à des fins éducatives pour explorer les concepts psychanalytiques. Elle ne remplace pas une évaluation clinique professionnelle ou un diagnostic.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Je reconnais comment la peur de l'évaluation négative peut impacter le comportement social.",
+                "context": "Le trouble d'anxiété sociale est caractérisé par une peur intense d'être jugé dans les situations sociales."
+            },
+            {
+                "id": 2,
+                "text": "Je comprends comment les messages contradictoires peuvent créer de la confusion dans les relations.",
+                "context": "La théorie du double lien décrit recevoir deux ou plusieurs messages conflictuels simultanément."
+            },
+            {
+                "id": 3,
+                "text": "Je peux identifier les premiers signes de retrait social dans la dépression.",
+                "context": "La dépression précoce se manifeste généralement par un déclin progressif de la participation sociale."
+            },
+            {
+                "id": 4,
+                "text": "Je reconnais les difficultés à identifier et décrire les émotions.",
+                "context": "L'alexithymie est la difficulté à reconnaître et décrire ses propres émotions."
+            },
+            {
+                "id": 5,
+                "text": "Je comprends comment les styles d'attachement affectent les modèles relationnels.",
+                "context": "L'attachement évitant est caractérisé par un inconfort avec l'intimité et la peur de l'intimité."
+            },
+            {
+                "id": 6,
+                "text": "Je reconnais comment la triangulation peut créer des dynamiques familiales malsaines.",
+                "context": "La triangulation survient lorsqu'une troisième personne est introduite dans un conflit dyadique."
+            },
+            {
+                "id": 7,
+                "text": "Je comprends les défis dans la communication sociale réciproque.",
+                "context": "Les caractéristiques principales du TSA incluent des défis dans la réciprocité socio-émotionnelle."
+            },
+            {
+                "id": 8,
+                "text": "Je reconnais le plaisir diminué des interactions sociales.",
+                "context": "L'anhédonie sociale fait référence à la capacité réduite de tirer du plaisir des interactions sociales."
+            },
+            {
+                "id": 9,
+                "text": "Je comprends comment le soutien social affecte les résultats de santé mentale.",
+                "context": "Le soutien social est un facteur protecteur contre divers troubles de santé mentale."
+            },
+            {
+                "id": 10,
+                "text": "Je reconnais les modèles d'isolement social et leur impact.",
+                "context": "L'isolement social chronique est associé à un risque accru de troubles de santé mentale."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conscience en Développement",
+                "summary": "Vous commencez à reconnaître les symptômes sociaux et leur impact sur le fonctionnement interpersonnel. Cette conscience est cruciale pour l'évaluation clinique.",
+                "recommendation": "Étudiez des exemples de cas de symptômes sociaux dans divers troubles. Pratiquez l'observation des interactions sociales pour identifier les modèles."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Compréhension Croissante",
+                "summary": "Vous démontrez une connaissance solide des symptômes sociaux et des modèles de communication. Vous pouvez identifier les indicateurs clés de dysfonctionnement social.",
+                "recommendation": "Continuez à développer vos compétences d'évaluation par une pratique supervisée. Apprenez à différencier les variations sociales normales des symptômes pathologiques."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Perspicacité Clinique Avancée",
+                "summary": "Vous montrez une compréhension sophistiquée des symptômes sociaux et des dynamiques interpersonnelles. Vous reconnaissez efficacement les modèles complexes dans le fonctionnement social.",
+                "recommendation": "Envisagez de vous spécialiser en psychologie sociale ou en travail social. Partagez vos connaissances par l'enseignement ou la supervision."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Compréhension de Niveau Expert",
+                "summary": "Vous démontrez une connaissance exceptionnelle des symptômes sociaux et de leurs implications cliniques. Vous avez maîtrisé l'évaluation des dynamiques interpersonnelles.",
+                "recommendation": "Contribuez à la recherche sur les symptômes sociaux. Envisagez une formation avancée en évaluation et intervention psychosociale."
+            }
+        ]
+    },
+    "ES": {
+        "title": "Evaluación de Síntomas Sociales",
+        "description": "Evalúe su comprensión de los síntomas sociales, patrones de comunicación y dinámicas interpersonales en contextos clínicos.",
+        "disclaimer": "Esta evaluación está diseñada con fines educativos para explorar conceptos psicoanalíticos. No sustituye la evaluación clínica profesional o el diagnóstico.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Reconozco cómo el miedo a la evaluación negativa puede impactar el comportamiento social.",
+                "context": "El trastorno de ansiedad social se caracteriza por un miedo intenso a ser juzgado en situaciones sociales."
+            },
+            {
+                "id": 2,
+                "text": "Entiendo cómo los mensajes contradictorios pueden crear confusión en las relaciones.",
+                "context": "La teoría del doble vínculo describe recibir dos o más mensajes conflictivos simultáneamente."
+            },
+            {
+                "id": 3,
+                "text": "Puedo identificar los primeros signos de retiro social en la depresión.",
+                "context": "La depresión temprana típicamente se manifiesta como un declive gradual en la participación social."
+            },
+            {
+                "id": 4,
+                "text": "Reconozco dificultades en identificar y describir emociones.",
+                "context": "La alexitimia es la dificultad de reconocer y describir las propias emociones."
+            },
+            {
+                "id": 5,
+                "text": "Entiendo cómo los estilos de apego afectan los patrones relacionales.",
+                "context": "El apego evitativo se caracteriza por incomodidad con la intimidad y miedo a la intimidad."
+            },
+            {
+                "id": 6,
+                "text": "Reconozco cómo la triangulación puede crear dinámicas familiares poco saludables.",
+                "context": "La triangulación ocurre cuando una tercera persona es introducida en un conflicto diádico."
+            },
+            {
+                "id": 7,
+                "text": "Entiendo los desafíos en la comunicación social recíproca.",
+                "context": "Las características centrales del TEA incluyen desafíos en reciprocidad socio-emocional."
+            },
+            {
+                "id": 8,
+                "text": "Reconozco el placer disminuido de las interacciones sociales.",
+                "context": "La anhedonia social se refiere a la capacidad reducida de derivar placer de las interacciones sociales."
+            },
+            {
+                "id": 9,
+                "text": "Entiendo cómo el apoyo social afecta los resultados de salud mental.",
+                "context": "El apoyo social es un factor protector contra varios trastornos de salud mental."
+            },
+            {
+                "id": 10,
+                "text": "Reconozco patrones de aislamiento social y su impacto.",
+                "context": "El aislamiento social crónico está asociado con un riesgo aumentado de trastornos de salud mental."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conciencia en Desarrollo",
+                "summary": "Estás comenzando a reconocer los síntomas sociales y su impacto en el funcionamiento interpersonal. Esta conciencia es crucial para la evaluación clínica.",
+                "recommendation": "Estudia ejemplos de casos de síntomas sociales en varios trastornos. Practica la observación de interacciones sociales para identificar patrones."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Comprensión Creciente",
+                "summary": "Demuestras un conocimiento sólido de los síntomas sociales y patrones de comunicación. Puedes identificar indicadores clave de disfunción social.",
+                "recommendation": "Continúa desarrollando tus habilidades de evaluación a través de práctica supervisada. Aprende a diferenciar variaciones sociales normales de síntomas patológicos."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Perspicacia Clínica Avanzada",
+                "summary": "Muestras una comprensión sofisticada de los síntomas sociales y dinámicas interpersonales. Reconoces efectivamente patrones complejos en el funcionamiento social.",
+                "recommendation": "Considera especializarte en psicología social o trabajo social. Comparte tus conocimientos a través de enseñanza o supervisión."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Comprensión de Nivel Experto",
+                "summary": "Demuestras un conocimiento excepcional de los síntomas sociales y sus implicaciones clínicas. Has dominado la evaluación de dinámicas interpersonales.",
+                "recommendation": "Contribuye a la investigación sobre síntomas sociales. Considera formación avanzada en evaluación e intervención psicosocial."
+            }
+        ]
+    },
+    "NO": {
+        "title": "Sosiale Symptomer Vurdering",
+        "description": "Vurder din forståelse av sosiale symptomer, kommunikasjonsmønstre og mellommenneskelige dynamikker i kliniske sammenhenger.",
+        "disclaimer": "Denne vurderingen er designet for pedagogiske formål for å utforske psykoanalytiske konsepter. Den erstatter ikke profesjonell klinisk evaluering eller diagnose.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Jeg anerkjenner hvordan frykt for negativ vurdering kan påvirke sosial atferd.",
+                "context": "Sosial angstlidelse er kjennetegnet av intens frykt for å bli vurdert i sosiale situasjoner."
+            },
+            {
+                "id": 2,
+                "text": "Jeg forstår hvordan motstridende meldinger kan skape forvirring i relasjoner.",
+                "context": "Dobbelt-bind teori beskriver å motta to eller flere konfliktende meldinger samtidig."
+            },
+            {
+                "id": 3,
+                "text": "Jeg kan identifisere tidlige tegn på sosial tilbaketrekning i depresjon.",
+                "context": "Tidlig depresjon manifesterer seg typisk som gradvis nedgang i sosial deltakelse."
+            },
+            {
+                "id": 4,
+                "text": "Jeg anerkjenner vanskeligheter i å identifisere og beskrive følelser.",
+                "context": "Alexitymi er vanskelighet med å gjenkjenne og beskrive egne følelser."
+            },
+            {
+                "id": 5,
+                "text": "Jeg forstår hvordan tilknytningsstiler påvirker relasjonelle mønstre.",
+                "context": "Unngående tilknytning er kjennetegnet av ubehag med nærhet og frykt for intimitet."
+            },
+            {
+                "id": 6,
+                "text": "Jeg anerkjenner hvordan triangulering kan skape usunne familiedynamikker.",
+                "context": "Triangulering oppstår når en tredje person bringes inn i en diadisk konflikt."
+            },
+            {
+                "id": 7,
+                "text": "Jeg forstår utfordringer i gjensidig sosial kommunikasjon.",
+                "context": "Kjernefunksjoner i ASD inkluderer utfordringer i sosio-emosjonell gjensidighet."
+            },
+            {
+                "id": 8,
+                "text": "Jeg anerkjenner redusert glede fra sosiale interaksjoner.",
+                "context": "Sosial anhedoni refererer til redusert evne til å oppleve glede fra sosiale interaksjoner."
+            },
+            {
+                "id": 9,
+                "text": "Jeg forstår hvordan sosial støtte påvirker psykisk helseutfall.",
+                "context": "Sosial støtte er en beskyttende faktor mot ulike psykiske helseforhold."
+            },
+            {
+                "id": 10,
+                "text": "Jeg anerkjenner mønstre av sosial isolasjon og deres innvirkning.",
+                "context": "Kronisk sosial isolasjon er assosiert med økt risiko for psykiske helseforstyrrelser."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Utviklende Bevissthet",
+                "summary": "Du begynner å gjenkjenne sosiale symptomer og deres innvirkning på mellommenneskelig fungering. Denne bevisstheten er avgjørende for klinisk evaluering.",
+                "recommendation": "Studer kasuseksempler på sosiale symptomer i ulike forstyrrelser. Øv observasjon av sosiale interaksjoner for å identifisere mønstre."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Voksende Forståelse",
+                "summary": "Du demonstrerer solid kunnskap om sosiale symptomer og kommunikasjonsmønstre. Du kan identifisere nøkkelindikatorer for sosial dysfunksjon.",
+                "recommendation": "Fortsett å utvikle dine evalueringsferdigheter gjennom veiledet praksis. Lær å skille normale sosiale variasjoner fra patologiske symptomer."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Avansert Klinisk Innsikt",
+                "summary": "Du viser sofistikert forståelse av sosiale symptomer og mellommenneskelige dynamikker. Du gjenkjenner effektivt komplekse mønstre i sosial fungering.",
+                "recommendation": "Vurder å spesialisere deg i sosial psykologi eller sosialt arbeid. Del din kunnskap gjennom undervisning eller veiledning."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Ekspertnivå Forståelse",
+                "summary": "Du demonstrerer eksepsjonell kunnskap om sosiale symptomer og deres kliniske implikasjoner. Du har mestret evaluering av mellommenneskelige dynamikker.",
+                "recommendation": "Bidra til forskning på sosiale symptomer. Vurder avansert opplæring i psykososial evaluering og intervensjon."
+            }
+        ]
+    },
+    "PL": {
+        "title": "Ocena Objawów Społecznych",
+        "description": "Oceń swoją wiedzę na temat objawów społecznych, wzorców komunikacji i dynamiki interpersonalnej w kontekstach klinicznych.",
+        "disclaimer": "Ta ocena jest przeznaczona do celów edukacyjnych w celu eksploracji koncepcji psychoanalitycznych. Nie zastępuje profesjonalnej oceny klinicznej ani diagnozy.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Uznaję, jak lęk przed negatywną oceną może wpływać na zachowanie społeczne.",
+                "context": "Zaburzenie lęku społecznego charakteryzuje się intensywnym lękiem przed byciem ocenianym w sytuacjach społecznych."
+            },
+            {
+                "id": 2,
+                "text": "Rozumiem, jak sprzeczne komunikaty mogą tworzyć zamieszanie w relacjach.",
+                "context": "Teoria podwójnego wiązania opisuje otrzymywanie dwóch lub więcej sprzecznych komunikatów jednocześnie."
+            },
+            {
+                "id": 3,
+                "text": "Potrafię identyfikować wczesne oznaki wycofania społecznego w depresji.",
+                "context": "Wczesna depresja zazwyczaj objawia się jako stopniowy spadek uczestnictwa społecznego."
+            },
+            {
+                "id": 4,
+                "text": "Uznaję trudności w identyfikowaniu i opisywaniu emocji.",
+                "context": "Aleksytymia jest trudnością w rozpoznawaniu i opisywaniu własnych emocji."
+            },
+            {
+                "id": 5,
+                "text": "Rozumiem, jak style przywiązania wpływają na wzorce relacyjne.",
+                "context": "Unikający styl przywiązania charakteryzuje się dyskomfortem z bliskością i lękiem przed intymnością."
+            },
+            {
+                "id": 6,
+                "text": "Uznaję, jak triangulacja może tworzyć niezdrowe dynamiki rodzinne.",
+                "context": "Triangulacja występuje, gdy trzecia osoba jest wprowadzana do konfliktu diadycznego."
+            },
+            {
+                "id": 7,
+                "text": "Rozumiem wyzwania w wzajemnej komunikacji społecznej.",
+                "context": "Kluczowe cechy ZAS obejmują wyzwania w wzajemności społeczno-emocjonalnej."
+            },
+            {
+                "id": 8,
+                "text": "Uznaję zmniejszoną przyjemność z interakcji społecznych.",
+                "context": "Anhedonia społeczna odnosi się do zmniejszonej zdolności czerpania przyjemności z interakcji społecznych."
+            },
+            {
+                "id": 9,
+                "text": "Rozumiem, jak wsparcie społeczne wpływa na wyniki zdrowia psychicznego.",
+                "context": "Wsparcie społeczne jest czynnikiem ochronnym przed różnymi zaburzeniami zdrowia psychicznego."
+            },
+            {
+                "id": 10,
+                "text": "Uznaję wzorce izolacji społecznej i ich wpływ.",
+                "context": "Przewlekła izolacja społeczna jest powiązana ze zwiększonym ryzykiem zaburzeń zdrowia psychicznego."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Rozwijająca się Świadomość",
+                "summary": "Zaczynasz rozpoznawać objawy społeczne i ich wpływ na funkcjonowanie interpersonalne. Ta świadomość jest kluczowa dla oceny klinicznej.",
+                "recommendation": "Studiuj przykłady przypadków objawów społecznych w różnych zaburzeniach. Ćwicz obserwację interakcji społecznych, aby identyfikować wzorce."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Rosnące Zrozumienie",
+                "summary": "Demonstrujesz solidną wiedzę o objawach społecznych i wzorcach komunikacji. Potrafisz identyfikować kluczowe wskaźniki dysfunkcji społecznej.",
+                "recommendation": "Kontynuuj rozwijanie swoich umiejętności oceny poprzez nadzorowaną praktykę. Naucz się odróżniać normalne wariacje społeczne od objawów patologicznych."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Zaawansowana Wgląd Kliniczny",
+                "summary": "Wykazujesz wyrafinowane zrozumienie objawów społecznych i dynamiki interpersonalnej. Skutecznie rozpoznajesz złożone wzorce w funkcjonowaniu społecznym.",
+                "recommendation": "Rozważ specjalizację w psychologii społecznej lub pracy społecznej. Podziel się swoją wiedzą poprzez nauczanie lub nadzór."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Zrozumienie na Poziomie Eksperta",
+                "summary": "Demonstrujesz wyjątkową wiedzę o objawach społecznych i ich implikacjach klinicznych. Opanowałeś ocenę dynamiki interpersonalnej.",
+                "recommendation": "Wnieś wkład w badania nad objawami społecznymi. Rozważ zaawansowane szkolenie w ocenie i interwencji psychospołecznej."
+            }
+        ]
+    },
+    "LA": {
+        "title": "Appretiatio Symptomatum Socialium",
+        "description": "Tuam intelligentiam de symptomatibus socialibus, schematibus communicationis, et dynamiciis interpersonalibus in contextibus clinicis perpende.",
+        "disclaimer": "Haec appretiatio ad finem educativum designata est ad conceptus psychoanalyticos explorandos. Non substituit evaluationem clinicam professionalem vel diagnosis.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "Agnosco quaenam timor negativae evaluationis comportamentum sociale afficere possit.",
+                "context": "Morbus anxietatis socialis timore iudicandi in situatibus socialibus intensus est."
+            },
+            {
+                "id": 2,
+                "text": "Intelligo quaenam nuntii contradictorii in relationibus confusionem creare possint.",
+                "context": "Theoria vinculi duplicis duo vel plures nuntios contradictorios simul recipere describit."
+            },
+            {
+                "id": 3,
+                "text": "Signa prima recessus socialis in depressione identificare possum.",
+                "context": "Depressio praecoca typice decrementum graduale participationis socialis ut manifestatur."
+            },
+            {
+                "id": 4,
+                "text": "Difficultates in identificatione et descriptione affectionum agnosco.",
+                "context": "Alexithymia est difficultas affectiones proprias recognoscendi et describendi."
+            },
+            {
+                "id": 5,
+                "text": "Intelligo quaenam modi adnexiones schemata relationales afficiant.",
+                "context": "Adnexio evitans incommodo cum intimitate et timore intimitatis est."
+            },
+            {
+                "id": 6,
+                "text": "Agnosco quaenam triangulatio dynamicas familiares insanas creare possit.",
+                "context": "Triangulatio fit cum tertia persona in conflictum dyadicum introducitur."
+            },
+            {
+                "id": 7,
+                "text": "Difficultates in communicatione sociali reciproca intelligo.",
+                "context": "Proprietates principales ASD difficultates in reciprocitate socio-emotionali includunt."
+            },
+            {
+                "id": 8,
+                "text": "Gaudium diminutum ex interactionibus socialibus agnosco.",
+                "context": "Anhedonia socialis facultatem reductam gaudii ex interactionibus socialibus capiendi refert."
+            },
+            {
+                "id": 9,
+                "text": "Intelligo quaenam subsidium sociale effectus sanitatis mentis afficiat.",
+                "context": "Subsidium sociale est factor protectivus contra varias condiciones sanitatis mentis."
+            },
+            {
+                "id": 10,
+                "text": "Schemata isolationis socialis et eorum effectum agnosco.",
+                "context": "Isolatio socialis chronica cum aucto morborum sanitatis mentis periculo associata est."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "Conscientia Evolvens",
+                "summary": "Tu incipis recognoscere symptomata socialia et eorum effectum in functionamento interpersonali. Haec conscientia ad evaluationem clinicam est necessaria.",
+                "recommendation": "Studia exempla casuum symptomatum socialium in variis morbis. Exerce observationem interactionum socialium ad schemata recognoscenda."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "Intelligentia Crescens",
+                "summary": "Fundamentum solidum in symptomatibus socialibus et schematibus communicationis demonstras. Indicatores claves dysfunctionis socialis identificare potes.",
+                "recommendation": "Continua facultates tuas evaluationales per praxim supervisam evolvere. Discerne variationes sociales normales a symptomatibus pathologicis discere."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "Inspectio Clinica Progressa",
+                "summary": "Intelligentiam sophisticatam symptomatum socialium et dynamicorum interpersonalium ostendis. Schemata complexa in functionamento sociali efficaciter recognoscis.",
+                "recommendation": "Considera te in psychologia sociali vel opere sociali speciare. Tuum scientiam per docentiam vel supervisionem parte."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "Intelligentia Nivei Periti",
+                "summary": "Scientiam exceptionalem symptomatum socialium et eorum implicationum clinicarum demonstras. Evaluationem dynamicorum interpersonalium dominatus es.",
+                "recommendation": "Ad investigationem symptomatum socialium contribute. Considera exercitationem progressam in evaluatione et interventione psychosociali."
+            }
+        ]
+    },
+    "EGY": {
+        "title": "تقييم الأعراض الاجتماعية",
+        "description": "قيّم فهمك للأعراض الاجتماعية، وأنماط الاتصال، والديناميات الشخصية في السياقات السريرية.",
+        "disclaimer": "هذا التقييم مصمم لأغراض تعليمية لاستكشاف المفاهيم التحليل النفسي. لا يحل محل التقييم السريري المهني أو التشخيص.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "أدرك كيف يمكن أن يؤثر الخوف من التقييم السلبي على السلوك الاجتماعي.",
+                "context": "اضطراب القلق الاجتماعي يتميز بالخوف الشديد من الحكم في المواقف الاجتماعية."
+            },
+            {
+                "id": 2,
+                "text": "أفهم كيف يمكن للرسائل المتناقضة أن تخلق ارتباكًا في العلاقات.",
+                "context": "نظرية الربط المزدوج تصف استلام رسالتين أو أكثر متناقضة في وقت واحد."
+            },
+            {
+                "id": 3,
+                "text": "أستطيع تحديد العلامات المبكرة للانسحاب الاجتماعي في الاكتئاب.",
+                "context": "الاكتئاب المبكر يتظاهر عادةً كتراجع تدريجي في المشاركة الاجتماعية."
+            },
+            {
+                "id": 4,
+                "text": "أدرك صعوبات في تحديد ووصف المشاعر.",
+                "context": "أليكسيثيميا هي صعوبة في التعرف على وصف المشاعر الخاصة."
+            },
+            {
+                "id": 5,
+                "text": "أفهم كيف تؤثر أنماط التعلق على الأنماط العلائقية.",
+                "context": "التعلق التجنب يتميز بعدم الراحة مع الحميمية والخوف من الحميمية."
+            },
+            {
+                "id": 6,
+                "text": "أدرك كيف يمكن للتثليث أن يخلق ديناميات عائلية غير صحية.",
+                "context": "يحدث التثليث عندما يتم إدخال شخص ثالث في صراع ثنائي."
+            },
+            {
+                "id": 7,
+                "text": "أفهم التحديات في الاتصال الاجتماعي المتبادل.",
+                "context": "الخصائص الرئيسية لاضطراب طيف التوحد تشمل التحديات في المتبادلية الاجتماعية العاطفية."
+            },
+            {
+                "id": 8,
+                "text": "أدرك المتعة المنخفضة من التفاعلات الاجتماعية.",
+                "context": "اللاهوذية الاجتماعية تشير إلى القدرة المنخفضة على اشتقاق المتعة من التفاعلات الاجتماعية."
+            },
+            {
+                "id": 9,
+                "text": "أفهم كيف يؤثر الدعم الاجتماعي على نتائج الصحة النفسية.",
+                "context": "الدعم الاجتماعي هو عامل وقائي ضد اضطرابات الصحة النفسية المختلفة."
+            },
+            {
+                "id": 10,
+                "text": "أدرك أنماط العزلة الاجتماعية وتأثيرها.",
+                "context": "العزلة الاجتماعية المزمنة مرتبطة بزيادة خطر اضطرابات الصحة النفسية."
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "الوعي النامي",
+                "summary": "أنت تبدأ في التعرف على الأعراض الاجتماعية وتأثيرها على الأداء الشخصي. هذا الوعي حاسم للتقييم السريري.",
+                "recommendation": "ادرس أمثلة الحالات للأعراض الاجتماعية في اضطرابات مختلفة. تدرب على مراقبة التفاعلات الاجتماعية لتحديد الأنماط."
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "الفهم المتزايد",
+                "summary": "أنت تظهر معرفة قوية بالأعراض الاجتماعية وأنماط الاتصال. يمكنك تحديد المؤشرات الرئيسية لخلل الوظيفة الاجتماعية.",
+                "recommendation": "استمر في تطوير مهاراتك التقييمية من خلال الممارسة المشرفة. تعلم التمييز بين التباينات الاجتماعية الطبيعية والأعراض المرضية."
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "البصيرة السريرية المتقدمة",
+                "summary": "أنت تظهر فهمًا متطورًا للأعراض الاجتماعية والديناميات الشخصية. تتعرف بفعالية على الأنماط المعقدة في الأداء الاجتماعي.",
+                "recommendation": "فكر في التخصص في علم النفس الاجتماعي أو العمل الاجتماعي. شارك معرفتك من خلال التعليم أو الإشراف."
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "فهم مستوى الخبير",
+                "summary": "أنت تظهر معرفة استثنائية بالأعراض الاجتماعية وآثارها السريرية. أتقنت تقييم الديناميات الشخصية.",
+                "recommendation": "ساهم في البحث حول الأعراض الاجتماعية. فكر في تدريب متقدم في التقييم والتدخل النفسي الاجتماعي."
+            }
+        ]
+    },
+    "ZH": {
+        "title": "社会症状评估",
+        "description": "评估您对临床环境中的社会症状、沟通模式和人际动态的理解。",
+        "disclaimer": "本评估旨在教育目的，探索精神分析概念。它不能替代专业临床评估或诊断。",
+        "questions": [
+            {
+                "id": 1,
+                "text": "我认识到对负面评价的恐惧如何影响社交行为。",
+                "context": "社交焦虑障碍的特征是在社交场合中被评判的强烈恐惧。"
+            },
+            {
+                "id": 2,
+                "text": "我理解矛盾的信息如何在关系中造成困惑。",
+                "context": "双重束缚理论描述同时接收两个或更多冲突信息。"
+            },
+            {
+                "id": 3,
+                "text": "我可以识别抑郁症中社交退缩的早期迹象。",
+                "context": "早期抑郁通常表现为社会参与逐渐下降。"
+            },
+            {
+                "id": 4,
+                "text": "我认识到识别和描述情绪的困难。",
+                "context": "述情障碍是识别和描述自己情绪的困难。"
+            },
+            {
+                "id": 5,
+                "text": "我理解依恋风格如何影响关系模式。",
+                "context": "回避型依恋的特征是对亲密关系的不适和对亲密关系的恐惧。"
+            },
+            {
+                "id": 6,
+                "text": "我认识到三角关系如何创造不健康的家庭动态。",
+                "context": "三角关系发生在将第三方引入二元冲突时。"
+            },
+            {
+                "id": 7,
+                "text": "我理解相互社交沟通中的挑战。",
+                "context": "自闭症谱系障碍的核心特征包括社会情感互惠方面的挑战。"
+            },
+            {
+                "id": 8,
+                "text": "我认识到从社交互动中获得减少的愉悦感。",
+                "context": "社会快感缺乏指的是从社交互动中获得愉悦的能力降低。"
+            },
+            {
+                "id": 9,
+                "text": "我理解社会支持如何影响心理健康结果。",
+                "context": "社会支持是防止各种心理健康状况的保护因素。"
+            },
+            {
+                "id": 10,
+                "text": "我认识到社会孤立模式及其影响。",
+                "context": "慢性社会孤立与心理健康障碍风险增加有关。"
+            }
+        ],
+        "results": [
+            {
+                "range": [
+                    0,
+                    10
+                ],
+                "title": "发展中的意识",
+                "summary": "您开始认识到社会症状及其对人际功能的影响。这种意识对于临床评估至关重要。",
+                "recommendation": "研究各种障碍中社会症状的案例示例。练习观察社交互动以识别模式。"
+            },
+            {
+                "range": [
+                    11,
+                    20
+                ],
+                "title": "增长的理解",
+                "summary": "您对社会症状和沟通模式表现出扎实的知识。您可以识别社交功能障碍的关键指标。",
+                "recommendation": "通过监督实践继续发展您的评估技能。学习区分正常的社会变化和病理性症状。"
+            },
+            {
+                "range": [
+                    21,
+                    30
+                ],
+                "title": "先进的临床洞察",
+                "summary": "您对社会症状和人际动态表现出复杂的理解。您有效地识别社会功能中的复杂模式。",
+                "recommendation": "考虑专攻社会心理学或社会工作。通过教学或监督分享您的知识。"
+            },
+            {
+                "range": [
+                    31,
+                    40
+                ],
+                "title": "专家级理解",
+                "summary": "您对社会症状及其临床影响表现出卓越的知识。您已经掌握了人际动态的评估。",
+                "recommendation": "为社会症状的研究做出贡献。考虑在心理社会评估和干预方面进行高级培训。"
+            }
+        ]
+    }
 }
